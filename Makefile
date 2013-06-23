@@ -4,9 +4,9 @@ GENERATED_FILES = \
 
 all: $(GENERATED_FILES)
 
-d3.geo.projection.js: $(shell node_modules/.bin/smash --list index.js)
+d3.geo.projection.js: $(shell node_modules/.bin/smash --list src/index.js)
 	@rm -f $@
-	node_modules/.bin/smash index.js | node_modules/.bin/uglifyjs - -b indent-level=2 -o $@
+	node_modules/.bin/smash src/index.js | node_modules/.bin/uglifyjs - -b indent-level=2 -o $@
 	@chmod a-w $@
 
 d3.geo.projection.min.js: d3.geo.projection.js
