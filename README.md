@@ -224,6 +224,16 @@ This plugin requires [D3 3.0](https://github.com/mbostock/d3/wiki/Upgrading-to-3
 
 Alternatively, you can clone this repo, [download the zipball](http://github.com/d3/d3-plugins/zipball/master), or right-click [d3.geo.projection.v0.min.js](http://d3js.org/d3.geo.projection.v0.min.js) and save.
 
+To use this plugin within a Node.js context, you can `npm install d3 d3-geo-projection` and then say:
+
+```js
+var d3 = require("d3");
+
+require("d3-geo-projection")(d3);
+```
+
+Subsequently, `d3.geo` will contain all the extended projections.
+
 ## Defining a New Projection
 
 First define your raw projection function:
