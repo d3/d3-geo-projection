@@ -61,48 +61,39 @@ var d3_geo_projectPoint = {
 };
 
 var d3_geo_projectLine = {
-  lineStart: function() {
-    d3_geo_projectPoints = [];
-  },
+  lineStart: d3_geo_projectNoop,
   point: function(x, y) {
     d3_geo_projectPoints.push([x, y]);
   },
   lineEnd: function() {
-    if (d3_geo_projectPoints.length) d3_geo_projectLines.push(d3_geo_projectPoints);
+    if (d3_geo_projectPoints.length) d3_geo_projectLines.push(d3_geo_projectPoints), d3_geo_projectPoints = [];
   },
   result: function() {
     var result = !d3_geo_projectLines.length ? null
         : d3_geo_projectLines.length < 2 ? {type: "LineString", coordinates: d3_geo_projectLines[0]}
         : {type: "MultiLineString", coordinates: d3_geo_projectLines};
     d3_geo_projectLines = [];
-    d3_geo_projectPoints = [];
     return result;
   }
 };
 
 var d3_geo_projectPolygon = {
-  polygonStart: function() {
-    d3_geo_projectLines = [];
-  },
-  lineStart: function() {
-    d3_geo_projectPoints = [];
-  },
+  polygonStart: d3_geo_projectNoop,
+  lineStart: d3_geo_projectNoop,
   point: function(x, y) {
     d3_geo_projectPoints.push([x, y]);
   },
   lineEnd: function() {
-    if (d3_geo_projectPoints.length) d3_geo_projectLines.push(d3_geo_projectPoints);
+    if (d3_geo_projectPoints.length) d3_geo_projectLines.push(d3_geo_projectPoints), d3_geo_projectPoints = [];
   },
   polygonEnd: function() {
-    if (d3_geo_projectLines.length) d3_geo_projectPolygons.push(d3_geo_projectLines);
+    if (d3_geo_projectLines.length) d3_geo_projectPolygons.push(d3_geo_projectLines), d3_geo_projectLines = [];
   },
   result: function() {
     var result = !d3_geo_projectPolygons.length ? null
         : d3_geo_projectPolygons.length < 2 ? {type: "Polygon", coordinates: d3_geo_projectPolygons[0]}
         : {type: "MultiPolygon", coordinates: d3_geo_projectPolygons};
     d3_geo_projectPolygons = [];
-    d3_geo_projectLines = [];
-    d3_geo_projectPoints = [];
     return result;
   }
 };
@@ -115,3 +106,5 @@ var d3_geo_projectGeometryType = {
   Polygon: d3_geo_projectPolygon,
   MultiPolygon: d3_geo_projectPolygon
 };
+
+function d3_geo_projectNoop() {}
