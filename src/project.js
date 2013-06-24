@@ -43,65 +43,66 @@ var d3_geo_projectObjectType = {
   }
 };
 
+var d3_geo_projectPoints = [],
+    d3_geo_projectLines = [],
+    d3_geo_projectPolygons = [];
+
 var d3_geo_projectPoint = {
-  _points: [],
   point: function(x, y) {
-    this._points.push([x, y]);
+    d3_geo_projectPoints.push([x, y]);
   },
   result: function() {
-    var result = !this._points.length ? null
-        : this._points.length < 2 ? {type: "Point", coordinates: this._points[0]}
-        : {type: "MultiPoint", coordinates: this._points};
-    this._points = [];
+    var result = !d3_geo_projectPoints.length ? null
+        : d3_geo_projectPoints.length < 2 ? {type: "Point", coordinates: d3_geo_projectPoints[0]}
+        : {type: "MultiPoint", coordinates: d3_geo_projectPoints};
+    d3_geo_projectPoints = [];
     return result;
   }
 };
 
 var d3_geo_projectLine = {
-  _lines: [],
-  _line: null,
   lineStart: function() {
-    this._line = [];
-  },
-  lineEnd: function() {
-    if (this._line.length) this._lines.push(this._line);
+    d3_geo_projectPoints = [];
   },
   point: function(x, y) {
-    this._line.push([x, y]);
+    d3_geo_projectPoints.push([x, y]);
+  },
+  lineEnd: function() {
+    if (d3_geo_projectPoints.length) d3_geo_projectLines.push(d3_geo_projectPoints);
   },
   result: function() {
-    var result = !this._lines.length ? null
-        : this._lines.length < 2 ? {type: "LineString", coordinates: this._lines[0]}
-        : {type: "MultiLineString", coordinates: this._lines};
-    this._lines = [];
+    var result = !d3_geo_projectLines.length ? null
+        : d3_geo_projectLines.length < 2 ? {type: "LineString", coordinates: d3_geo_projectLines[0]}
+        : {type: "MultiLineString", coordinates: d3_geo_projectLines};
+    d3_geo_projectLines = [];
+    d3_geo_projectPoints = [];
     return result;
   }
 };
 
 var d3_geo_projectPolygon = {
-  _polygons: [],
-  _polygon: null,
-  _ring: null,
   polygonStart: function() {
-    this._polygon = [];
-  },
-  polygonEnd: function() {
-    if (this._polygon.length) this._polygons.push(this._polygon);
+    d3_geo_projectLines = [];
   },
   lineStart: function() {
-    this._ring = [];
-  },
-  lineEnd: function() {
-    if (this._ring.length) rings.push(this._ring);
+    d3_geo_projectPoints = [];
   },
   point: function(x, y) {
-    this._ring.push([x, y]);
+    d3_geo_projectPoints.push([x, y]);
+  },
+  lineEnd: function() {
+    if (d3_geo_projectPoints.length) d3_geo_projectLines.push(d3_geo_projectPoints);
+  },
+  polygonEnd: function() {
+    if (d3_geo_projectLines.length) d3_geo_projectPolygons.push(d3_geo_projectLines);
   },
   result: function() {
-    var result = !this._polygons.length ? null
-        : this._polygons.length < 2 ? {type: "Polygon", coordinates: this._polygons[0]}
-        : {type: "MultiPolygon", coordinates: this._polygons};
-    this._polygons = [];
+    var result = !d3_geo_projectPolygons.length ? null
+        : d3_geo_projectPolygons.length < 2 ? {type: "Polygon", coordinates: d3_geo_projectPolygons[0]}
+        : {type: "MultiPolygon", coordinates: d3_geo_projectPolygons};
+    d3_geo_projectPolygons = [];
+    d3_geo_projectLines = [];
+    d3_geo_projectPoints = [];
     return result;
   }
 };
