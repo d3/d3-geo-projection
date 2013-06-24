@@ -12,9 +12,7 @@ function armadillo(φ0) {
         cosλ = Math.cos(λ /= 2);
     return [
       (1 + cosφ) * Math.sin(λ),
-      // TODO D3 core should allow null or [NaN, NaN] to be returned.
-      (sφ0 * φ > -Math.atan2(cosλ, tanφ0) - 1e-3 ? 0 : -sφ0 * 10) +
-        k + Math.sin(φ) * cosφ0 - (1 + cosφ) * sinφ0 * cosλ
+      k + Math.sin(φ) * cosφ0 - (1 + cosφ) * sinφ0 * cosλ
     ];
   }
 
@@ -50,32 +48,28 @@ function armadilloProjection() {
       sφ0 = φ0 > 0 ? 1 : -1,
       tanφ0 = Math.tan(sφ0 * φ0),
       m = projectionMutator(armadillo),
-      p = m(φ0),
-      stream_ = p.stream;
+      p = m(φ0);
 
   p.parallel = function(_) {
     if (!arguments.length) return φ0 / π * 180;
     tanφ0 = Math.tan((sφ0 = (φ0 = _ * π / 180) > 0 ? 1 : -1) * φ0);
-    return m(φ0);
+    return clip(m(φ0));
   };
 
-  p.stream = function(stream) {
-    var rotate = p.rotate(),
-        rotateStream = stream_(stream),
-        sphereStream = (p.rotate([0, 0]), stream_(stream));
-    p.rotate(rotate);
-    rotateStream.sphere = function() {
-      sphereStream.polygonStart(), sphereStream.lineStart();
-      for (var λ = sφ0 * -180; sφ0 * λ < 180; λ += sφ0 * 90) sphereStream.point(λ, sφ0 * 90);
-      while (sφ0 * (λ -= φ0) >= -180) { // TODO precision?
-        sphereStream.point(λ, sφ0 * -Math.atan2(Math.cos(λ * radians / 2), tanφ0) * degrees);
-      }
-      sphereStream.lineEnd(), sphereStream.polygonEnd();
-    };
-    return rotateStream;
-  };
+  function clip(p) {
+    var clipPolygon = [],
+        λ1 = sφ0 * (1 - 1e-6),
+        φ1 = sφ0 * (90 - 1e-6);
+    for (var λ = sφ0 * -180; sφ0 * λ < 180; λ += φ1) clipPolygon.push([λ, φ1]);
+    λ -= φ1;
+    while (sφ0 * (λ -= λ1) > -180) { // TODO precision?
+      clipPolygon.push([λ, sφ0 * -Math.atan2(Math.cos(λ * radians / 2), tanφ0) * degrees]);
+    }
+    clipPolygon.push(clipPolygon[0]);
+    return p.clipPolygon([clipPolygon]);
+  }
 
-  return p;
+  return clip(p);
 }
 
 (d3.geo.armadillo = armadilloProjection).raw = armadillo;

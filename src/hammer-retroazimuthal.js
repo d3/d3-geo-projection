@@ -81,21 +81,19 @@ function hammerRetroazimuthalProjection() {
   p.stream = function(stream) {
     stream = stream_(stream);
     stream.sphere = function() {
-      stream.polygonStart();
       var ε = 1e-2,
           ring = circle.angle(90 - ε)().coordinates[0],
           n = ring.length - 1,
           i = -1,
           p;
-      stream.lineStart();
+      stream.polygonStart(), stream.lineStart();
       while (++i < n) stream.point((p = ring[i])[0], p[1]);
-      stream.lineEnd();
+      stream.lineEnd(), stream.polygonEnd();
       ring = circle.angle(90 + ε)().coordinates[0];
       n = ring.length - 1;
-      stream.lineStart();
+      stream.polygonStart(), stream.lineStart();
       while (--i >= 0) stream.point((p = ring[i])[0], p[1]);
-      stream.lineEnd();
-      stream.polygonEnd();
+      stream.lineEnd(), stream.polygonEnd();
     };
     return stream;
   };
