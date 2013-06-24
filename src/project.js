@@ -84,7 +84,11 @@ var d3_geo_projectPolygon = {
     d3_geo_projectPoints.push([x, y]);
   },
   lineEnd: function() {
-    if (d3_geo_projectPoints.length) d3_geo_projectLines.push(d3_geo_projectPoints), d3_geo_projectPoints = [];
+    var n = d3_geo_projectPoints.length;
+    if (n) {
+      do d3_geo_projectPoints.push(d3_geo_projectPoints[0].slice()); while (++n < 4);
+      d3_geo_projectLines.push(d3_geo_projectPoints), d3_geo_projectPoints = [];
+    }
   },
   polygonEnd: function() {
     if (d3_geo_projectLines.length) d3_geo_projectPolygons.push(d3_geo_projectLines), d3_geo_projectLines = [];
