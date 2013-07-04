@@ -1,6 +1,6 @@
 {
   "name": "d3-geo-projection",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Extended geographic projections for D3.js.",
   "keywords": [
     "cartography",
@@ -30,6 +30,7 @@
     "vows": "0.7"
   },
   "scripts": {
+    "prepublish": "make",
     "test": "node_modules/.bin/vows"
   },
   "licenses": [
