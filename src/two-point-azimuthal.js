@@ -31,9 +31,9 @@ function twoPointAzimuthalProjection() {
 
     var interpolate = d3.geo.interpolate(_[0], _[1]),
         origin = interpolate(.5),
-        p = twoPointEquidistant_rotate(-origin[0] * radians, -origin[1] * radians, _[0][0] * radians, _[0][1] * radians),
+        p = d3.geo.rotation([-origin[0], -origin[1]])(_[0]),
         b = interpolate.distance * .5, // |[0, 0] - p|
-        c = (p[0] < 0 ? -1 : +1) * p[1], // |[p[0], 0] - p|
+        c = (p[0] < 0 ? -1 : +1) * p[1] * radians, // |[p[0], 0] - p|
         γ = asin(Math.sin(c) / Math.sin(b));
 
     rotate.call(p, [-origin[0], -origin[1], -γ * degrees]);

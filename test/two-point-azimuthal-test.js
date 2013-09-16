@@ -17,6 +17,14 @@ suite.addBatch({
         assert.equalInverse(twoPointAzimuthal, [  1,   1], [ 482.618259, 247.381341]);
         assert.equalInverse(twoPointAzimuthal, [ 15,  45], [ 520.192378,  94.708572]);
       }
+    },
+    "Honolulu, HI ↔ Washington, DC": {
+      topic: function(geo) { return geo.twoPointAzimuthal().points([[-158, 21.5], [-77, 39]]); },
+      "projections and inverse projections": function(twoPointAzimuthal) {
+        assert.equalInverse(twoPointAzimuthal, [-158, 21], [ 393.154103, 251.309973]);
+        assert.equalInverse(twoPointAzimuthal, [ -77, 39], [ 565.922652, 250]);
+        assert.equalInverse(twoPointAzimuthal, [-121, 37], [ 481.201449, 251.540304]);
+      }
     }
   }
 });
