@@ -2,130 +2,130 @@
 
 <table class="highlight">
   <tr height="146" valign="top">
-    <td>airy<br><a href="http://bl.ocks.org/mbostock/5620807"><img src="https://raw.github.com/gist/5620807/thumbnail.png" width="202"></a></td>
-    <td>aitoff<br><a href="http://bl.ocks.org/mbostock/3682698"><img src="https://raw.github.com/gist/3682698/thumbnail.png" width="202"></a></td>
-    <td class="gi">albers *<br><a href="http://bl.ocks.org/mbostock/3734308"><img src="https://raw.github.com/gist/3734308/thumbnail.png" width="202"></a></td>
-    <td class="gi">albersUsa *<br><a href="http://bl.ocks.org/mbostock/4090848"><img src="https://raw.github.com/gist/4090848/thumbnail.png" width="202"></a></td>
+    <td>airy<br><a href="http://bl.ocks.org/mbostock/5620807"><img src="http://bl.ocks.org/mbostock/raw/5620807/thumbnail.png" width="202"></a></td>
+    <td>aitoff<br><a href="http://bl.ocks.org/mbostock/3682698"><img src="http://bl.ocks.org/mbostock/raw/3682698/thumbnail.png" width="202"></a></td>
+    <td class="gi">albers *<br><a href="http://bl.ocks.org/mbostock/3734308"><img src="http://bl.ocks.org/mbostock/raw/3734308/thumbnail.png" width="202"></a></td>
+    <td class="gi">albersUsa *<br><a href="http://bl.ocks.org/mbostock/4090848"><img src="http://bl.ocks.org/mbostock/raw/4090848/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td>armadillo<br><a href="http://bl.ocks.org/mbostock/4463127"><img src="https://raw.github.com/gist/4463127/thumbnail.png" width="202"></a></td>
-    <td>august<br><a href="http://bl.ocks.org/mbostock/3797581"><img src="https://raw.github.com/gist/3797581/thumbnail.png" width="202"></a></td>
-    <td class="gi">azimuthalEqualArea *<br><a href="http://bl.ocks.org/mbostock/3757101"><img src="https://raw.github.com/gist/3757101/thumbnail.png" width="202"></a></td>
-    <td class="gi">azimuthalEquidistant *<br><a href="http://bl.ocks.org/mbostock/3757110"><img src="https://raw.github.com/gist/3757110/thumbnail.png" width="202"></a></td>
+    <td>armadillo<br><a href="http://bl.ocks.org/mbostock/4463127"><img src="http://bl.ocks.org/mbostock/raw/4463127/thumbnail.png" width="202"></a></td>
+    <td>august<br><a href="http://bl.ocks.org/mbostock/3797581"><img src="http://bl.ocks.org/mbostock/raw/3797581/thumbnail.png" width="202"></a></td>
+    <td class="gi">azimuthalEqualArea *<br><a href="http://bl.ocks.org/mbostock/3757101"><img src="http://bl.ocks.org/mbostock/raw/3757101/thumbnail.png" width="202"></a></td>
+    <td class="gi">azimuthalEquidistant *<br><a href="http://bl.ocks.org/mbostock/3757110"><img src="http://bl.ocks.org/mbostock/raw/3757110/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td>baker<br><a href="http://bl.ocks.org/mbostock/4476279"><img src="https://raw.github.com/gist/4476279/thumbnail.png" width="202"></a></td>
-    <td>berghaus<br><a href="http://bl.ocks.org/mbostock/4463049"><img src="https://raw.github.com/gist/4463049/thumbnail.png" width="202"></a></td>
-    <td>boggs<br><a href="http://bl.ocks.org/mbostock/4481220"><img src="https://raw.github.com/gist/4481220/thumbnail.png" width="202"></a></td>
-    <td>bonne<br><a href="http://bl.ocks.org/mbostock/3734313"><img src="https://raw.github.com/gist/3734313/thumbnail.png" width="202"></a></td>
+    <td>baker<br><a href="http://bl.ocks.org/mbostock/4476279"><img src="http://bl.ocks.org/mbostock/raw/4476279/thumbnail.png" width="202"></a></td>
+    <td>berghaus<br><a href="http://bl.ocks.org/mbostock/4463049"><img src="http://bl.ocks.org/mbostock/raw/4463049/thumbnail.png" width="202"></a></td>
+    <td>boggs<br><a href="http://bl.ocks.org/mbostock/4481220"><img src="http://bl.ocks.org/mbostock/raw/4481220/thumbnail.png" width="202"></a></td>
+    <td>bonne<br><a href="http://bl.ocks.org/mbostock/3734313"><img src="http://bl.ocks.org/mbostock/raw/3734313/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td>bromley<br><a href="http://bl.ocks.org/mbostock/4487695"><img src="https://raw.github.com/gist/4487695/thumbnail.png" width="202"></a></td>
-    <td>chamberlin<br><a href="http://bl.ocks.org/mbostock/5625053"><img src="https://raw.github.com/gist/5625053/thumbnail.png" width="202"></a></td>
-    <td>collignon<br><a href="http://bl.ocks.org/mbostock/3734316"><img src="https://raw.github.com/gist/3734316/thumbnail.png" width="202"></a></td>
-    <td class="gi">conicEqualArea *<br><a href="http://bl.ocks.org/mbostock/3734308"><img src="https://raw.github.com/gist/3734308/thumbnail.png" width="202"></a></td>
+    <td>bromley<br><a href="http://bl.ocks.org/mbostock/4487695"><img src="http://bl.ocks.org/mbostock/raw/4487695/thumbnail.png" width="202"></a></td>
+    <td>chamberlin<br><a href="http://bl.ocks.org/mbostock/5625053"><img src="http://bl.ocks.org/mbostock/raw/5625053/thumbnail.png" width="202"></a></td>
+    <td>collignon<br><a href="http://bl.ocks.org/mbostock/3734316"><img src="http://bl.ocks.org/mbostock/raw/3734316/thumbnail.png" width="202"></a></td>
+    <td class="gi">conicEqualArea *<br><a href="http://bl.ocks.org/mbostock/3734308"><img src="http://bl.ocks.org/mbostock/raw/3734308/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td class="gi">conicConformal *<br><a href="http://bl.ocks.org/mbostock/3734321"><img src="https://raw.github.com/gist/3734321/thumbnail.png" width="202"></a></td>
-    <td class="gi">conicEquidistant *<br><a href="http://bl.ocks.org/mbostock/3734317"><img src="https://raw.github.com/gist/3734317/thumbnail.png" width="202"></a></td>
-    <td>craig<br><a href="http://bl.ocks.org/mbostock/4459466"><img src="https://raw.github.com/gist/4459466/thumbnail.png" width="202"></a></td>
-    <td>craster<br><a href="http://bl.ocks.org/mbostock/4465118"><img src="https://raw.github.com/gist/4465118/thumbnail.png" width="202"></a></td>
+    <td class="gi">conicConformal *<br><a href="http://bl.ocks.org/mbostock/3734321"><img src="http://bl.ocks.org/mbostock/raw/3734321/thumbnail.png" width="202"></a></td>
+    <td class="gi">conicEquidistant *<br><a href="http://bl.ocks.org/mbostock/3734317"><img src="http://bl.ocks.org/mbostock/raw/3734317/thumbnail.png" width="202"></a></td>
+    <td>craig<br><a href="http://bl.ocks.org/mbostock/4459466"><img src="http://bl.ocks.org/mbostock/raw/4459466/thumbnail.png" width="202"></a></td>
+    <td>craster<br><a href="http://bl.ocks.org/mbostock/4465118"><img src="http://bl.ocks.org/mbostock/raw/4465118/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td>cylindricalEqualArea<br><a href="http://bl.ocks.org/mbostock/3712408"><img src="https://raw.github.com/gist/3712408/thumbnail.png" width="202"></a></td>
-    <td>cylindricalStereographic<br><a href="http://bl.ocks.org/mbostock/5234763"><img src="https://raw.github.com/gist/5234763/thumbnail.png" width="202"></a></td>
-    <td>eckert1<br><a href="http://bl.ocks.org/mbostock/3734322"><img src="https://raw.github.com/gist/3734322/thumbnail.png" width="202"></a></td>
-    <td>eckert2<br><a href="http://bl.ocks.org/mbostock/3734324"><img src="https://raw.github.com/gist/3734324/thumbnail.png" width="202"></a></td>
+    <td>cylindricalEqualArea<br><a href="http://bl.ocks.org/mbostock/3712408"><img src="http://bl.ocks.org/mbostock/raw/3712408/thumbnail.png" width="202"></a></td>
+    <td>cylindricalStereographic<br><a href="http://bl.ocks.org/mbostock/5234763"><img src="http://bl.ocks.org/mbostock/raw/5234763/thumbnail.png" width="202"></a></td>
+    <td>eckert1<br><a href="http://bl.ocks.org/mbostock/3734322"><img src="http://bl.ocks.org/mbostock/raw/3734322/thumbnail.png" width="202"></a></td>
+    <td>eckert2<br><a href="http://bl.ocks.org/mbostock/3734324"><img src="http://bl.ocks.org/mbostock/raw/3734324/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td>eckert3<br><a href="http://bl.ocks.org/mbostock/3734325"><img src="https://raw.github.com/gist/3734325/thumbnail.png" width="202"></a></td>
-    <td>eckert4<br><a href="http://bl.ocks.org/mbostock/3734327"><img src="https://raw.github.com/gist/3734327/thumbnail.png" width="202"></a></td>
-    <td>eckert5<br><a href="http://bl.ocks.org/mbostock/3734328"><img src="https://raw.github.com/gist/3734328/thumbnail.png" width="202"></a></td>
-    <td>eckert6<br><a href="http://bl.ocks.org/mbostock/3734329"><img src="https://raw.github.com/gist/3734329/thumbnail.png" width="202"></a></td>
+    <td>eckert3<br><a href="http://bl.ocks.org/mbostock/3734325"><img src="http://bl.ocks.org/mbostock/raw/3734325/thumbnail.png" width="202"></a></td>
+    <td>eckert4<br><a href="http://bl.ocks.org/mbostock/3734327"><img src="http://bl.ocks.org/mbostock/raw/3734327/thumbnail.png" width="202"></a></td>
+    <td>eckert5<br><a href="http://bl.ocks.org/mbostock/3734328"><img src="http://bl.ocks.org/mbostock/raw/3734328/thumbnail.png" width="202"></a></td>
+    <td>eckert6<br><a href="http://bl.ocks.org/mbostock/3734329"><img src="http://bl.ocks.org/mbostock/raw/3734329/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td>eisenlohr<br><a href="http://bl.ocks.org/mbostock/3797585"><img src="https://raw.github.com/gist/3797585/thumbnail.png" width="202"></a></td>
-    <td class="gi">equirectangular *<br><a href="http://bl.ocks.org/mbostock/3757119"><img src="https://raw.github.com/gist/3757119/thumbnail.png" width="202"></a></td>
-    <td>fahey<br><a href="http://bl.ocks.org/mbostock/4731228"><img src="https://raw.github.com/gist/4731228/thumbnail.png" width="202"></a></td>
+    <td>eisenlohr<br><a href="http://bl.ocks.org/mbostock/3797585"><img src="http://bl.ocks.org/mbostock/raw/3797585/thumbnail.png" width="202"></a></td>
+    <td class="gi">equirectangular *<br><a href="http://bl.ocks.org/mbostock/3757119"><img src="http://bl.ocks.org/mbostock/raw/3757119/thumbnail.png" width="202"></a></td>
+    <td>fahey<br><a href="http://bl.ocks.org/mbostock/4731228"><img src="http://bl.ocks.org/mbostock/raw/4731228/thumbnail.png" width="202"></a></td>
     <td>gilbert<br><a href="http://www.jasondavies.com/maps/gilbert/"><img src="http://www.jasondavies.com/maps/gilbert/thumb.d3.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td>ginzburg4<br><a href="http://bl.ocks.org/mbostock/5288565"><img src="https://raw.github.com/gist/5288565/thumbnail.png" width="202"></a></td>
-    <td>ginzburg5<br><a href="http://bl.ocks.org/mbostock/5288571"><img src="https://raw.github.com/gist/5288571/thumbnail.png" width="202"></a></td>
-    <td>ginzburg6<br><a href="http://bl.ocks.org/mbostock/5288577"><img src="https://raw.github.com/gist/5288577/thumbnail.png" width="202"></a></td>
-    <td>ginzburg8<br><a href="http://bl.ocks.org/mbostock/5288583"><img src="https://raw.github.com/gist/5288583/thumbnail.png" width="202"></a></td>
+    <td>ginzburg4<br><a href="http://bl.ocks.org/mbostock/5288565"><img src="http://bl.ocks.org/mbostock/raw/5288565/thumbnail.png" width="202"></a></td>
+    <td>ginzburg5<br><a href="http://bl.ocks.org/mbostock/5288571"><img src="http://bl.ocks.org/mbostock/raw/5288571/thumbnail.png" width="202"></a></td>
+    <td>ginzburg6<br><a href="http://bl.ocks.org/mbostock/5288577"><img src="http://bl.ocks.org/mbostock/raw/5288577/thumbnail.png" width="202"></a></td>
+    <td>ginzburg8<br><a href="http://bl.ocks.org/mbostock/5288583"><img src="http://bl.ocks.org/mbostock/raw/5288583/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td>ginzburg9<br><a href="http://bl.ocks.org/mbostock/5288590"><img src="https://raw.github.com/gist/5288590/thumbnail.png" width="202"></a></td>
-    <td class="gi">gnomonic *<br><a href="http://bl.ocks.org/mbostock/3757349"><img src="https://raw.github.com/gist/3757349/thumbnail.png" width="202"></a></td>
-    <td>gringorten<br><a href="http://bl.ocks.org/mbostock/4362031"><img src="https://raw.github.com/gist/4362031/thumbnail.png" width="202"></a></td>
-    <td>guyou<br><a href="http://bl.ocks.org/mbostock/3763867"><img src="https://raw.github.com/gist/3763867/thumbnail.png" width="202"></a></td>
+    <td>ginzburg9<br><a href="http://bl.ocks.org/mbostock/5288590"><img src="http://bl.ocks.org/mbostock/raw/5288590/thumbnail.png" width="202"></a></td>
+    <td class="gi">gnomonic *<br><a href="http://bl.ocks.org/mbostock/3757349"><img src="http://bl.ocks.org/mbostock/raw/3757349/thumbnail.png" width="202"></a></td>
+    <td>gringorten<br><a href="http://bl.ocks.org/mbostock/4362031"><img src="http://bl.ocks.org/mbostock/raw/4362031/thumbnail.png" width="202"></a></td>
+    <td>guyou<br><a href="http://bl.ocks.org/mbostock/3763867"><img src="http://bl.ocks.org/mbostock/raw/3763867/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td>hammer<br><a href="http://bl.ocks.org/mbostock/3712397"><img src="https://raw.github.com/gist/3712397/thumbnail.png" width="202"></a></td>
-    <td>hammerRetroazimuthal<br><a href="http://bl.ocks.org/mbostock/4459130"><img src="https://raw.github.com/gist/4459130/thumbnail.png" width="202"></a></td>
-    <td>healpix<br><a href="http://bl.ocks.org/mbostock/4463237"><img src="https://raw.github.com/gist/4463237/thumbnail.png" width="202"></a></td>
-    <td>hill<br><a href="http://bl.ocks.org/mbostock/4479513"><img src="https://raw.github.com/gist/4479513/thumbnail.png" width="202"></a></td>
+    <td>hammer<br><a href="http://bl.ocks.org/mbostock/3712397"><img src="http://bl.ocks.org/mbostock/raw/3712397/thumbnail.png" width="202"></a></td>
+    <td>hammerRetroazimuthal<br><a href="http://bl.ocks.org/mbostock/4459130"><img src="http://bl.ocks.org/mbostock/raw/4459130/thumbnail.png" width="202"></a></td>
+    <td>healpix<br><a href="http://bl.ocks.org/mbostock/4463237"><img src="http://bl.ocks.org/mbostock/raw/4463237/thumbnail.png" width="202"></a></td>
+    <td>hill<br><a href="http://bl.ocks.org/mbostock/4479513"><img src="http://bl.ocks.org/mbostock/raw/4479513/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td>homolosine<br><a href="http://bl.ocks.org/mbostock/3734330"><img src="https://raw.github.com/gist/3734330/thumbnail.png" width="202"></a></td>
-    <td>kavrayskiy7<br><a href="http://bl.ocks.org/mbostock/3710082"><img src="https://raw.github.com/gist/3710082/thumbnail.png" width="202"></a></td>
-    <td>lagrange<br><a href="http://bl.ocks.org/mbostock/3797591"><img src="https://raw.github.com/gist/3797591/thumbnail.png" width="202"></a></td>
-    <td>larrivee<br><a href="http://bl.ocks.org/mbostock/3719042"><img src="https://raw.github.com/gist/3719042/thumbnail.png" width="202"></a></td>
+    <td>homolosine<br><a href="http://bl.ocks.org/mbostock/3734330"><img src="http://bl.ocks.org/mbostock/raw/3734330/thumbnail.png" width="202"></a></td>
+    <td>kavrayskiy7<br><a href="http://bl.ocks.org/mbostock/3710082"><img src="http://bl.ocks.org/mbostock/raw/3710082/thumbnail.png" width="202"></a></td>
+    <td>lagrange<br><a href="http://bl.ocks.org/mbostock/3797591"><img src="http://bl.ocks.org/mbostock/raw/3797591/thumbnail.png" width="202"></a></td>
+    <td>larrivee<br><a href="http://bl.ocks.org/mbostock/3719042"><img src="http://bl.ocks.org/mbostock/raw/3719042/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td>laskowski<br><a href="http://bl.ocks.org/mbostock/4489342"><img src="https://raw.github.com/gist/4489342/thumbnail.png" width="202"></a></td>
-    <td>littrow<br><a href="http://bl.ocks.org/mbostock/4459071"><img src="https://raw.github.com/gist/4459071/thumbnail.png" width="202"></a></td>
-    <td>loximuthal<br><a href="http://bl.ocks.org/mbostock/3867220"><img src="https://raw.github.com/gist/3867220/thumbnail.png" width="202"></a></td>
-    <td class="gi">mercator *<br><a href="http://bl.ocks.org/mbostock/3757132"><img src="https://raw.github.com/gist/3757132/thumbnail.png" width="202"></a></td>
+    <td>laskowski<br><a href="http://bl.ocks.org/mbostock/4489342"><img src="http://bl.ocks.org/mbostock/raw/4489342/thumbnail.png" width="202"></a></td>
+    <td>littrow<br><a href="http://bl.ocks.org/mbostock/4459071"><img src="http://bl.ocks.org/mbostock/raw/4459071/thumbnail.png" width="202"></a></td>
+    <td>loximuthal<br><a href="http://bl.ocks.org/mbostock/3867220"><img src="http://bl.ocks.org/mbostock/raw/3867220/thumbnail.png" width="202"></a></td>
+    <td class="gi">mercator *<br><a href="http://bl.ocks.org/mbostock/3757132"><img src="http://bl.ocks.org/mbostock/raw/3757132/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td>miller<br><a href="http://bl.ocks.org/mbostock/3734333"><img src="https://raw.github.com/gist/3734333/thumbnail.png" width="202"></a></td>
+    <td>miller<br><a href="http://bl.ocks.org/mbostock/3734333"><img src="http://bl.ocks.org/mbostock/raw/3734333/thumbnail.png" width="202"></a></td>
     <td>modifiedStereographic<br><a href="http://www.jasondavies.com/maps/modified-stereographic/"><img src="http://www.jasondavies.com/maps/modified-stereographic/gs50/thumb.d3.png" width="202"></a></td>
-    <td>mollweide<br><a href="http://bl.ocks.org/mbostock/3734336"><img src="https://raw.github.com/gist/3734336/thumbnail.png" width="202"></a></td>
-    <td>mtFlatPolarParabolic<br><a href="http://bl.ocks.org/mbostock/4465130"><img src="https://raw.github.com/gist/4465130/thumbnail.png" width="202"></a></td>
+    <td>mollweide<br><a href="http://bl.ocks.org/mbostock/3734336"><img src="http://bl.ocks.org/mbostock/raw/3734336/thumbnail.png" width="202"></a></td>
+    <td>mtFlatPolarParabolic<br><a href="http://bl.ocks.org/mbostock/4465130"><img src="http://bl.ocks.org/mbostock/raw/4465130/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td>mtFlatPolarQuartic<br><a href="http://bl.ocks.org/mbostock/4465137"><img src="https://raw.github.com/gist/4465137/thumbnail.png" width="202"></a></td>
-    <td>mtFlatPolarSinusoidal<br><a href="http://bl.ocks.org/mbostock/4465140"><img src="https://raw.github.com/gist/4465140/thumbnail.png" width="202"></a></td>
-    <td>naturalEarth<br><a href="http://bl.ocks.org/mbostock/4479477"><img src="https://raw.github.com/gist/4479477/thumbnail.png" width="202"></a></td>
-    <td>nellHammer<br><a href="http://bl.ocks.org/mbostock/3734342"><img src="https://raw.github.com/gist/3734342/thumbnail.png" width="202"></a></td>
+    <td>mtFlatPolarQuartic<br><a href="http://bl.ocks.org/mbostock/4465137"><img src="http://bl.ocks.org/mbostock/raw/4465137/thumbnail.png" width="202"></a></td>
+    <td>mtFlatPolarSinusoidal<br><a href="http://bl.ocks.org/mbostock/4465140"><img src="http://bl.ocks.org/mbostock/raw/4465140/thumbnail.png" width="202"></a></td>
+    <td>naturalEarth<br><a href="http://bl.ocks.org/mbostock/4479477"><img src="http://bl.ocks.org/mbostock/raw/4479477/thumbnail.png" width="202"></a></td>
+    <td>nellHammer<br><a href="http://bl.ocks.org/mbostock/3734342"><img src="http://bl.ocks.org/mbostock/raw/3734342/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td class="gi">orthographic *<br><a href="http://bl.ocks.org/mbostock/3757125"><img src="https://raw.github.com/gist/3757125/thumbnail.png" width="202"></a></td>
-    <td>peirceQuincuncial<br><a href="http://bl.ocks.org/mbostock/4310087"><img src="https://raw.github.com/gist/4310087/thumbnail.png" width="202"></a></td>
-    <td>polyconic<br><a href="http://bl.ocks.org/mbostock/3734343"><img src="https://raw.github.com/gist/3734343/thumbnail.png" width="202"></a></td>
-    <td>polyhedron.butterfly<br><a href="http://bl.ocks.org/mbostock/4458680"><img src="https://raw.github.com/gist/4458680/thumbnail.png" width="202"></a></td>
+    <td class="gi">orthographic *<br><a href="http://bl.ocks.org/mbostock/3757125"><img src="http://bl.ocks.org/mbostock/raw/3757125/thumbnail.png" width="202"></a></td>
+    <td>peirceQuincuncial<br><a href="http://bl.ocks.org/mbostock/4310087"><img src="http://bl.ocks.org/mbostock/raw/4310087/thumbnail.png" width="202"></a></td>
+    <td>polyconic<br><a href="http://bl.ocks.org/mbostock/3734343"><img src="http://bl.ocks.org/mbostock/raw/3734343/thumbnail.png" width="202"></a></td>
+    <td>polyhedron.butterfly<br><a href="http://bl.ocks.org/mbostock/4458680"><img src="http://bl.ocks.org/mbostock/raw/4458680/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td>polyhedron.waterman<br><a href="http://bl.ocks.org/mbostock/4458497"><img src="https://raw.github.com/gist/4458497/thumbnail.png" width="202"></a></td>
-    <td>rectangularPolyconic<br><a href="http://bl.ocks.org/mbostock/5230202"><img src="https://raw.github.com/gist/5230202/thumbnail.png" width="202"></a></td>
-    <td>robinson<br><a href="http://bl.ocks.org/mbostock/3710566"><img src="https://raw.github.com/gist/3710566/thumbnail.png" width="202"></a></td>
-    <td>satellite<br><a href="http://bl.ocks.org/mbostock/3790444"><img src="https://raw.github.com/gist/3790444/thumbnail.png" width="202"></a></td>
+    <td>polyhedron.waterman<br><a href="http://bl.ocks.org/mbostock/4458497"><img src="http://bl.ocks.org/mbostock/raw/4458497/thumbnail.png" width="202"></a></td>
+    <td>rectangularPolyconic<br><a href="http://bl.ocks.org/mbostock/5230202"><img src="http://bl.ocks.org/mbostock/raw/5230202/thumbnail.png" width="202"></a></td>
+    <td>robinson<br><a href="http://bl.ocks.org/mbostock/3710566"><img src="http://bl.ocks.org/mbostock/raw/3710566/thumbnail.png" width="202"></a></td>
+    <td>satellite<br><a href="http://bl.ocks.org/mbostock/3790444"><img src="http://bl.ocks.org/mbostock/raw/3790444/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td>sinuMollweide<br><a href="http://bl.ocks.org/mbostock/4319903"><img src="https://raw.github.com/gist/4319903/thumbnail.png" width="202"></a></td>
-    <td>sinusoidal<br><a href="http://bl.ocks.org/mbostock/3712399"><img src="https://raw.github.com/gist/3712399/thumbnail.png" width="202"></a></td>
-    <td class="gi">stereographic *<br><a href="http://bl.ocks.org/mbostock/3757137"><img src="https://raw.github.com/gist/3757137/thumbnail.png" width="202"></a></td>
-    <td>times<br><a href="http://bl.ocks.org/mbostock/5230564"><img src="https://raw.github.com/gist/5230564/thumbnail.png" width="202"></a></td>
+    <td>sinuMollweide<br><a href="http://bl.ocks.org/mbostock/4319903"><img src="http://bl.ocks.org/mbostock/raw/4319903/thumbnail.png" width="202"></a></td>
+    <td>sinusoidal<br><a href="http://bl.ocks.org/mbostock/3712399"><img src="http://bl.ocks.org/mbostock/raw/3712399/thumbnail.png" width="202"></a></td>
+    <td class="gi">stereographic *<br><a href="http://bl.ocks.org/mbostock/3757137"><img src="http://bl.ocks.org/mbostock/raw/3757137/thumbnail.png" width="202"></a></td>
+    <td>times<br><a href="http://bl.ocks.org/mbostock/5230564"><img src="http://bl.ocks.org/mbostock/raw/5230564/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
     <td>twoPointAzimuthal<br><a href="http://www.jasondavies.com/maps/two-point-azimuthal/"><img src="http://www.jasondavies.com/maps/two-point-azimuthal/thumb.d3.png" width="202"></a></td>
     <td>twoPointEquidistant<br><a href="http://www.jasondavies.com/maps/two-point-equidistant/"><img src="http://www.jasondavies.com/maps/two-point-equidistant/thumb.d3.png" width="202"></a></td>
-    <td class="gi">transverseMercator *<br><a href="http://bl.ocks.org/mbostock/5126418"><img src="https://raw.github.com/gist/5126418/thumbnail.png" width="202"></a></td>
-    <td>vanDerGrinten<br><a href="http://bl.ocks.org/mbostock/3796831"><img src="https://raw.github.com/gist/3796831/thumbnail.png" width="202"></a></td>
+    <td class="gi">transverseMercator *<br><a href="http://bl.ocks.org/mbostock/5126418"><img src="http://bl.ocks.org/mbostock/raw/5126418/thumbnail.png" width="202"></a></td>
+    <td>vanDerGrinten<br><a href="http://bl.ocks.org/mbostock/3796831"><img src="http://bl.ocks.org/mbostock/raw/3796831/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td>vanDerGrinten2<br><a href="http://bl.ocks.org/mbostock/5230571"><img src="https://raw.github.com/gist/5230571/thumbnail.png" width="202"></a></td>
-    <td>vanDerGrinten3<br><a href="http://bl.ocks.org/mbostock/5230580"><img src="https://raw.github.com/gist/5230580/thumbnail.png" width="202"></a></td>
-    <td>vanDerGrinten4<br><a href="http://bl.ocks.org/mbostock/4489365"><img src="https://raw.github.com/gist/4489365/thumbnail.png" width="202"></a></td>
-    <td>wagner4<br><a href="http://bl.ocks.org/mbostock/4487674"><img src="https://raw.github.com/gist/4487674/thumbnail.png" width="202"></a></td>
+    <td>vanDerGrinten2<br><a href="http://bl.ocks.org/mbostock/5230571"><img src="http://bl.ocks.org/mbostock/raw/5230571/thumbnail.png" width="202"></a></td>
+    <td>vanDerGrinten3<br><a href="http://bl.ocks.org/mbostock/5230580"><img src="http://bl.ocks.org/mbostock/raw/5230580/thumbnail.png" width="202"></a></td>
+    <td>vanDerGrinten4<br><a href="http://bl.ocks.org/mbostock/4489365"><img src="http://bl.ocks.org/mbostock/raw/4489365/thumbnail.png" width="202"></a></td>
+    <td>wagner4<br><a href="http://bl.ocks.org/mbostock/4487674"><img src="http://bl.ocks.org/mbostock/raw/4487674/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
-    <td>wagner6<br><a href="http://bl.ocks.org/mbostock/3710148"><img src="https://raw.github.com/gist/3710148/thumbnail.png" width="202"></a></td>
-    <td>wagner7<br><a href="http://bl.ocks.org/mbostock/4465109"><img src="https://raw.github.com/gist/4465109/thumbnail.png" width="202"></a></td>
-    <td>wiechel<br><a href="http://bl.ocks.org/mbostock/4463155"><img src="https://raw.github.com/gist/4463155/thumbnail.png" width="202"></a></td>
-    <td>winkel3<br><a href="http://bl.ocks.org/mbostock/3682676"><img src="https://raw.github.com/gist/3682676/thumbnail.png" width="202"></a></td>
+    <td>wagner6<br><a href="http://bl.ocks.org/mbostock/3710148"><img src="http://bl.ocks.org/mbostock/raw/3710148/thumbnail.png" width="202"></a></td>
+    <td>wagner7<br><a href="http://bl.ocks.org/mbostock/4465109"><img src="http://bl.ocks.org/mbostock/raw/4465109/thumbnail.png" width="202"></a></td>
+    <td>wiechel<br><a href="http://bl.ocks.org/mbostock/4463155"><img src="http://bl.ocks.org/mbostock/raw/4463155/thumbnail.png" width="202"></a></td>
+    <td>winkel3<br><a href="http://bl.ocks.org/mbostock/3682676"><img src="http://bl.ocks.org/mbostock/raw/3682676/thumbnail.png" width="202"></a></td>
   </tr>
 </table>
 
