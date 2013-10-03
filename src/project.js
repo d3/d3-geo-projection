@@ -44,7 +44,8 @@ var d3_geo_projectObjectType = {
 };
 
 var d3_geo_projectPoints = [],
-    d3_geo_projectLines = [];
+    d3_geo_projectLines = [],
+    d3_geo_projectPolygons = [];
 
 var d3_geo_projectPoint = {
   point: function(x, y) {
@@ -89,34 +90,15 @@ var d3_geo_projectPolygon = {
       d3_geo_projectLines.push(d3_geo_projectPoints), d3_geo_projectPoints = [];
     }
   },
-  polygonEnd: d3_geo_projectNoop,
+  polygonEnd: function() {
+    if (d3_geo_projectLines.length) d3_geo_projectPolygons.push(d3_geo_projectLines), d3_geo_projectLines = [];
+  },
   result: function() {
-    if (!d3_geo_projectLines.length) return null;
-    var polygons = [],
-        holes = [];
-
-    // https://github.com/mbostock/d3/issues/1558
-
-    d3_geo_projectLines.forEach(function(ring) {
-      if (d3_geo_projectClockwise(ring)) polygons.push([ring]);
-      else holes.push(ring);
-    });
-
-    holes.forEach(function(hole) {
-      var point = hole[0];
-      polygons.some(function(polygon) {
-        if (d3_geo_projectContains(polygon[0], point)) {
-          polygon.push(hole);
-          return true;
-        }
-      }) || polygons.push([hole]);
-    });
-
-    d3_geo_projectLines = [];
-
-    return !polygons.length ? null
-        : polygons.length > 1 ? {type: "MultiPolygon", coordinates: polygons}
-        : {type: "Polygon", coordinates: polygons[0]};
+    var result = !d3_geo_projectPolygons.length ? null
+        : d3_geo_projectPolygons.length < 2 ? {type: "Polygon", coordinates: d3_geo_projectPolygons[0]}
+        : {type: "MultiPolygon", coordinates: d3_geo_projectPolygons};
+    d3_geo_projectPolygons = [];
+    return result;
   }
 };
 
@@ -130,24 +112,3 @@ var d3_geo_projectGeometryType = {
 };
 
 function d3_geo_projectNoop() {}
-
-function d3_geo_projectClockwise(ring) {
-  if ((n = ring.length) < 4) return false;
-  var i = 0,
-      n,
-      area = ring[n - 1][1] * ring[0][0] - ring[n - 1][0] * ring[0][1];
-  while (++i < n) area += ring[i - 1][1] * ring[i][0] - ring[i - 1][0] * ring[i][1];
-  return area <= 0;
-}
-
-function d3_geo_projectContains(ring, point) {
-  var x = point[0],
-      y = point[1],
-      contains = false;
-  for (var i = 0, n = ring.length, j = n - 1; i < n; j = i++) {
-    var pi = ring[i], xi = pi[0], yi = pi[1],
-        pj = ring[j], xj = pj[0], yj = pj[1];
-    if (((yi > y) ^ (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi)) contains = !contains;
-  }
-  return contains;
-}
