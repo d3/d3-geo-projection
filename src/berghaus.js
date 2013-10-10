@@ -40,11 +40,13 @@ function berghausProjection() {
   var n = 5,
       m = projectionMutator(berghaus),
       p = m(n),
-      stream_ = p.stream;
+      stream_ = p.stream,
+      circle = d3.geo.circle().angle(180 - ε).precision(360 / n);
 
   p.lobes = function(_) {
     if (!arguments.length) return n;
-    return m(n = +_);
+    circle.precision(360 / (n = +_));
+    return m(n);
   };
 
   p.stream = function(stream) {
@@ -54,9 +56,11 @@ function berghausProjection() {
     p.rotate(rotate);
     rotateStream.sphere = function() {
       sphereStream.polygonStart(), sphereStream.lineStart();
-      var ε = 1e-4;
+      var ε = 1e-2,
+          coordinates = circle().coordinates[0],
+          point;
       for (var i = 0, δ = 360 / n, φ = 90 - 180 / n; i < n; ++i, φ -= δ) {
-        sphereStream.point(180, 0);
+        sphereStream.point((point = coordinates[i])[0], point[1]);
         if (φ < -90) {
           sphereStream.point(-90, 180 - φ + ε);
           sphereStream.point(-90, 180 - φ - ε);
