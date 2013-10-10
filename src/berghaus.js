@@ -41,12 +41,13 @@ function berghausProjection() {
       m = projectionMutator(berghaus),
       p = m(n),
       stream_ = p.stream,
-      circle = d3.geo.circle().angle(180 - ε).precision(360 / n);
+      ε = 1e-2,
+      cr = -Math.cos(ε * radians),
+      sr = Math.sin(ε * radians);
 
   p.lobes = function(_) {
     if (!arguments.length) return n;
-    circle.precision(360 / (n = +_));
-    return m(n);
+    return m(n = +_);
   };
 
   p.stream = function(stream) {
@@ -56,17 +57,14 @@ function berghausProjection() {
     p.rotate(rotate);
     rotateStream.sphere = function() {
       sphereStream.polygonStart(), sphereStream.lineStart();
-      var ε = 1e-2,
-          coordinates = circle().coordinates[0],
-          point;
-      for (var i = 0, δ = 360 / n, φ = 90 - 180 / n; i < n; ++i, φ -= δ) {
-        sphereStream.point((point = coordinates[i])[0], point[1]);
+      for (var i = 0, δ = 360 / n, δ0 = 2 * π / n, φ = 90 - 180 / n, φ0 = π / 2 ; i < n; ++i, φ -= δ, φ0 -= δ0) {
+        sphereStream.point(Math.atan2(sr * Math.cos(φ0), cr) * degrees, asin(sr * Math.sin(φ0)) * degrees);
         if (φ < -90) {
-          sphereStream.point(-90, 180 - φ + ε);
-          sphereStream.point(-90, 180 - φ - ε);
+          sphereStream.point(-90, -180 - φ - ε);
+          sphereStream.point(-90, -180 - φ + ε);
         } else {
-          sphereStream.point(90, φ - ε);
           sphereStream.point(90, φ + ε);
+          sphereStream.point(90, φ - ε);
         }
       }
       sphereStream.lineEnd(), sphereStream.polygonEnd();
