@@ -1,7 +1,7 @@
 import "projection";
 
 function eckert4(λ, φ) {
-  var k = (2 + π / 2) * Math.sin(φ);
+  var k = (2 + halfπ) * Math.sin(φ);
   φ /= 2;
   for (var i = 0, δ = Infinity; i < 10 && Math.abs(δ) > ε; i++) {
     var cosφ = Math.cos(φ);
@@ -19,7 +19,7 @@ eckert4.invert = function(x, y) {
       c = Math.cos(k);
   return [
     x / (2 / Math.sqrt(π * (4 + π)) * (1 + c)),
-    asin((k + A * (c + 2)) / (2 + π / 2))
+    asin((k + A * (c + 2)) / (2 + halfπ))
   ];
 };
 

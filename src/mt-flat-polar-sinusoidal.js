@@ -17,7 +17,7 @@ function mtFlatPolarSinusoidal(λ, φ) {
 mtFlatPolarSinusoidal.invert = function(x, y) {
   var A = Math.sqrt(6 / (4 + π)),
       θ = y / A;
-  if (Math.abs(Math.abs(θ) - π / 2) < ε) θ = θ < 0 ? -π / 2 : π / 2;
+  if (Math.abs(Math.abs(θ) - halfπ) < ε) θ = θ < 0 ? -halfπ : halfπ;
   return [
     1.5 * x / (A * (.5 + Math.cos(θ))),
     asin((θ / 2 + Math.sin(θ)) / (1 + π / 4))

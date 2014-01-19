@@ -17,7 +17,7 @@ function hammerRetroazimuthal(φ0) {
         K = Math.abs(sinz) > ε ? z / sinz : 1;
     return [
       K * cosφ0 * Math.sin(λ),
-      (Math.abs(λ) > π / 2 ? K : -K) // rotate for back hemisphere
+      (Math.abs(λ) > halfπ ? K : -K) // rotate for back hemisphere
         * (sinφ0 * cosφ - cosφ0 * sinφ * cosλ)
     ];
   }
@@ -31,7 +31,7 @@ function hammerRetroazimuthal(φ0) {
         c = ρ * sinφ0,
         d = asqrt(a * a + b * b - c * c),
         φ = Math.atan2(a * c + b * d, b * c - a * d),
-        λ = (ρ > π / 2 ? -1 : 1) * Math.atan2(x * sinz, ρ * Math.cos(φ) * cosz + y * Math.sin(φ) * sinz);
+        λ = (ρ > halfπ ? -1 : 1) * Math.atan2(x * sinz, ρ * Math.cos(φ) * cosz + y * Math.sin(φ) * sinz);
     return rotate.invert(λ, φ);
   };
 

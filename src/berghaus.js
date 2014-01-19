@@ -7,10 +7,10 @@ function berghaus(n) {
 
   function forward(λ, φ) {
     var p = berghausAzimuthalEquidistant(λ, φ);
-    if (Math.abs(λ) > π / 2) { // back hemisphere
+    if (Math.abs(λ) > halfπ) { // back hemisphere
       var θ = Math.atan2(p[1], p[0]),
           r = Math.sqrt(p[0] * p[0] + p[1] * p[1]),
-          θ0 = k * Math.round((θ - π / 2) / k) + π / 2,
+          θ0 = k * Math.round((θ - halfπ) / k) + halfπ,
           α = Math.atan2(Math.sin(θ -= θ0), 2 - Math.cos(θ)); // angle relative to lobe end
       θ = θ0 + asin(π / r * Math.sin(α)) - α;
       p[0] = r * Math.cos(θ);
@@ -21,9 +21,9 @@ function berghaus(n) {
 
   forward.invert = function(x, y) {
     var r = Math.sqrt(x * x + y * y);
-    if (r > π / 2) {
+    if (r > halfπ) {
       var θ = Math.atan2(y, x),
-          θ0 = k * Math.round((θ - π / 2) / k) + π / 2,
+          θ0 = k * Math.round((θ - halfπ) / k) + halfπ,
           s = θ > θ0 ? -1 : 1,
           A = r * Math.cos(θ0 - θ),
           cotα = 1 / Math.tan(s * Math.acos((A - π) / Math.sqrt(π * (π - 2 * A) + r * r)));
@@ -57,7 +57,7 @@ function berghausProjection() {
     p.rotate(rotate);
     rotateStream.sphere = function() {
       sphereStream.polygonStart(), sphereStream.lineStart();
-      for (var i = 0, δ = 360 / n, δ0 = 2 * π / n, φ = 90 - 180 / n, φ0 = π / 2 ; i < n; ++i, φ -= δ, φ0 -= δ0) {
+      for (var i = 0, δ = 360 / n, δ0 = 2 * π / n, φ = 90 - 180 / n, φ0 = halfπ ; i < n; ++i, φ -= δ, φ0 -= δ0) {
         sphereStream.point(Math.atan2(sr * Math.cos(φ0), cr) * degrees, asin(sr * Math.sin(φ0)) * degrees);
         if (φ < -90) {
           sphereStream.point(-90, -180 - φ - ε);

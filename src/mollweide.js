@@ -32,6 +32,6 @@ function mollweideBromley(Cx, Cy, Cp) {
 }
 
 var mollweideθ = mollweideBromleyθ(π),
-    mollweide = mollweideBromley(2 * Math.SQRT2 / π, Math.SQRT2, π);
+    mollweide = mollweideBromley(Math.SQRT2 / halfπ, Math.SQRT2, π);
 
 (d3.geo.mollweide = function() { return projection(mollweide); }).raw = mollweide;

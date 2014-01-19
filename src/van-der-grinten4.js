@@ -3,30 +3,30 @@ import "projection";
 function vanDerGrinten4(λ, φ) {
   if (!φ) return [λ, 0];
   var φ0 = Math.abs(φ);
-  if (!λ || φ0 === π / 2) return [0, φ];
-  var B = 2 * φ0 / π,
+  if (!λ || φ0 === halfπ) return [0, φ];
+  var B = φ0 / halfπ,
       B2 = B * B,
       C = (8 * B - B2 * (B2 + 2) - 5) / (2 * B2 * (B - 1)),
       C2 = C * C,
       BC = B * C,
       B_C2 = B2 + C2 + 2 * BC,
       B_3C = B + 3 * C,
-      λ0 = 2 * λ / π,
+      λ0 = λ / halfπ,
       λ1 = λ0 + 1 / λ0,
-      D = sgn(Math.abs(λ) - π / 2) * Math.sqrt(λ1 * λ1 - 4),
+      D = sgn(Math.abs(λ) - halfπ) * Math.sqrt(λ1 * λ1 - 4),
       D2 = D * D,
       F = B_C2 * (B2 + C2 * D2 - 1) + (1 - B2) * (B2 * (B_3C * B_3C + 4 * C2) + 12 * BC * C2 + 4 * C2 * C2),
       x1 = (D * (B_C2 + C2 - 1) + 2 * asqrt(F)) / (4 * B_C2 + D2);
   return [
-    sgn(λ) * π * x1 / 2,
-    sgn(φ) * π / 2 * asqrt(1 + D * Math.abs(x1) - x1 * x1)
+    sgn(λ) * halfπ * x1,
+    sgn(φ) * halfπ * asqrt(1 + D * Math.abs(x1) - x1 * x1)
   ];
 }
 
 vanDerGrinten4.invert = function(x, y) {
   if (!x || !y) return [x, y];
   y /= π;
-  var x1 = sgn(x) * x * 2 / π,
+  var x1 = sgn(x) * x / halfπ,
       D = (x1 * x1 - 1 + 4 * y * y) / Math.abs(x1),
       D2 = D * D,
       B = 2 * y,
@@ -49,7 +49,7 @@ vanDerGrinten4.invert = function(x, y) {
   } while (δ > ε && --i > 0);
   return [
     sgn(x) * (Math.sqrt(D * D + 4) + D) * π / 4,
-    π / 2 * B
+    halfπ * B
   ];
 };
 

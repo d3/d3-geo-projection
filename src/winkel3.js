@@ -4,7 +4,7 @@ import "aitoff";
 function winkel3(λ, φ) {
   var coordinates = aitoff(λ, φ);
   return [
-    (coordinates[0] + λ * 2 / π) / 2,
+    (coordinates[0] + λ / halfπ) / 2,
     (coordinates[1] + φ) / 2
   ];
 }
@@ -24,9 +24,9 @@ winkel3.invert = function(x, y) {
         C = 1 - cos2φ * cosλ_2 * cosλ_2,
         E = C ? acos(cosφ * cosλ_2) * Math.sqrt(F = 1 / C) : F = 0,
         F,
-        fx = .5 * (2 * E * cosφ * sinλ_2 + λ * 2 / π) - x,
+        fx = .5 * (2 * E * cosφ * sinλ_2 + λ / halfπ) - x,
         fy = .5 * (E * sinφ + φ) - y,
-        δxδλ = .5 * F * (cos2φ * sin2λ_2 + E * cosφ * cosλ_2 * sin2φ) + .5 * 2 / π,
+        δxδλ = .5 * F * (cos2φ * sin2λ_2 + E * cosφ * cosλ_2 * sin2φ) + .5 / halfπ,
         δxδφ = F * (sinλ * sin_2φ / 4 - E * sinφ * sinλ_2),
         δyδλ = .125 * F * (sin_2φ * sinλ_2 - E * sinφ * cos2φ * sinλ),
         δyδφ = .5 * F * (sin2φ * cosλ_2 + E * sin2λ_2 * cosφ) + .5,

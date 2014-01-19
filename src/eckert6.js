@@ -1,7 +1,7 @@
 import "projection";
 
 function eckert6(λ, φ) {
-  var k = (1 + π / 2) * Math.sin(φ);
+  var k = (1 + halfπ) * Math.sin(φ);
   for (var i = 0, δ = Infinity; i < 10 && Math.abs(δ) > ε; i++) {
     φ -= δ = (φ + Math.sin(φ) - k) / (1 + Math.cos(φ));
   }
@@ -13,7 +13,7 @@ function eckert6(λ, φ) {
 }
 
 eckert6.invert = function(x, y) {
-  var j = 1 + π / 2,
+  var j = 1 + halfπ,
       k = Math.sqrt(j / 2);
   return [
     x * 2 * k / (1 + Math.cos(y *= k)),

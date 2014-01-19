@@ -3,8 +3,8 @@ import "math";
 
 d3.geo.interrupt = function(project) {
   var lobes = [
-    [[[-π, 0], [0,  π / 2], [π, 0]]],
-    [[[-π, 0], [0, -π / 2], [π, 0]]]
+    [[[-π, 0], [0,  halfπ], [π, 0]]],
+    [[[-π, 0], [0, -halfπ], [π, 0]]]
   ];
 
   var bounds;

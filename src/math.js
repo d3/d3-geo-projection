@@ -1,6 +1,7 @@
 var ε = 1e-6,
     ε2 = ε * ε,
     π = Math.PI,
+    halfπ = π / 2,
     sqrtπ = Math.sqrt(π),
     radians = π / 180,
     degrees = 180 / π;
@@ -14,7 +15,7 @@ function sgn(x) {
 }
 
 function asin(x) {
-  return x > 1 ? π / 2 : x < -1 ? -π / 2 : Math.asin(x);
+  return x > 1 ? halfπ : x < -1 ? -halfπ : Math.asin(x);
 }
 
 function acos(x) {

@@ -40,12 +40,12 @@ function robinson(λ, φ) {
       k;
   return [
     λ * (bx + di * (cx - ax) / 2 + di * di * (cx - 2 * bx + ax) / 2),
-    (φ > 0 ? π : -π) / 2 * (by + di * (cy - ay) / 2 + di * di * (cy - 2 * by + ay) / 2)
+    (φ > 0 ? halfπ : -halfπ) * (by + di * (cy - ay) / 2 + di * di * (cy - 2 * by + ay) / 2)
   ];
 }
 
 robinson.invert = function(x, y) {
-  var yy = 2 * y / π,
+  var yy = y / halfπ,
       φ = yy * 90,
       i = Math.min(18, Math.abs(φ / 5)),
       i0 = Math.max(0, Math.floor(i));
@@ -68,7 +68,7 @@ robinson.invert = function(x, y) {
         ay = robinsonConstants[i0][1];
         by = robinsonConstants[i0 + 1][1];
         cy = robinsonConstants[Math.min(19, i0 + 2)][1];
-        φ -= (δ = (y >= 0 ? π : -π) / 2 * (by + di * (cy - ay) / 2 + di * di * (cy - 2 * by + ay) / 2) - y) * degrees;
+        φ -= (δ = (y >= 0 ? halfπ : -halfπ) * (by + di * (cy - ay) / 2 + di * di * (cy - 2 * by + ay) / 2) - y) * degrees;
       } while (Math.abs(δ) > ε2 && --j > 0);
       break;
     }

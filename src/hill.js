@@ -15,7 +15,7 @@ function hill(K) {
         ρ,
         ω;
     if (t && t < 2) {
-      var θ = π / 2 - φ, i = 25, δ;
+      var θ = halfπ - φ, i = 25, δ;
       do {
         var sinθ = Math.sin(θ),
             cosθ = Math.cos(θ),

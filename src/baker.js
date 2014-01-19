@@ -13,7 +13,7 @@ function baker(λ, φ) {
 }
 
 baker.invert = function(x, y) {
-  if ((y0 = Math.abs(y)) < bakerφ) return [x, 2 * Math.atan(Math.exp(y)) - π / 2];
+  if ((y0 = Math.abs(y)) < bakerφ) return [x, 2 * Math.atan(Math.exp(y)) - halfπ];
   var sqrt8 = Math.sqrt(8),
       φ = π / 4, i = 25, δ, y0;
   do {

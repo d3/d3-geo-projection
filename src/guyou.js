@@ -7,7 +7,7 @@ function guyou(λ, φ) {
 
   var k_ = (Math.SQRT2 - 1) / (Math.SQRT2 + 1),
       k = Math.sqrt(1 - k_ * k_),
-      K = ellipticF(π / 2, k * k),
+      K = ellipticF(halfπ, k * k),
       f = -1;
 
   var ψ = Math.log(Math.tan(π / 4 + Math.abs(φ) / 2)),
@@ -39,7 +39,7 @@ function guyouComplexDivide(a, b) {
 guyou.invert = function(x, y) {
   var k_ = (Math.SQRT2 - 1) / (Math.SQRT2 + 1),
       k = Math.sqrt(1 - k_ * k_),
-      K = ellipticF(π / 2, k * k),
+      K = ellipticF(halfπ, k * k),
       f = -1;
 
   var j = ellipticJi(.5 * K - y, -x, k * k),
@@ -48,7 +48,7 @@ guyou.invert = function(x, y) {
 
   return [
     λ,
-    2 * Math.atan(Math.exp(.5 / f * Math.log(k_ * tn[0] * tn[0] + k_ * tn[1] * tn[1]))) - π / 2
+    2 * Math.atan(Math.exp(.5 / f * Math.log(k_ * tn[0] * tn[0] + k_ * tn[1] * tn[1]))) - halfπ
   ];
 };
 

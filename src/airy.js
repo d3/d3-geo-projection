@@ -40,7 +40,7 @@ function airy(β) {
 }
 
 function airyProjection() {
-  var β = π / 2,
+  var β = halfπ,
       m = projectionMutator(airy),
       p = m(β);
 

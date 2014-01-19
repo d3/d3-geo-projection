@@ -66,9 +66,9 @@ eisenlohr.invert = function(x, y) {
     var δλ = (fy * δxδφ - fx * δyδφ) / denominator,
         δφ = (fx * δyδλ - fy * δxδλ) / denominator;
     λ -= δλ;
-    φ = Math.max(-π / 2, Math.min(π / 2, φ - δφ));
+    φ = Math.max(-halfπ, Math.min(halfπ, φ - δφ));
   } while ((Math.abs(δλ) > ε || Math.abs(δφ) > ε) && --i > 0);
-  return Math.abs(Math.abs(φ) - π / 2) < ε
+  return Math.abs(Math.abs(φ) - halfπ) < ε
       ? [0, φ]
       : i && [λ, φ];
 };

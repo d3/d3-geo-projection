@@ -46,7 +46,7 @@ function ellipticJ(u, m) {
       t + ai * (twon - u) / (b * b),
       φ - ai * t * φ * (twon - u),
       φ + ai * t * φ * (twon + u),
-      2 * Math.atan(Math.exp(u)) - π / 2 + ai * (twon - u) / b
+      2 * Math.atan(Math.exp(u)) - halfπ + ai * (twon - u) / b
     ];
   }
 

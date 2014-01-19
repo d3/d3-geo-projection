@@ -12,8 +12,8 @@ function gringorten(λ, φ) {
   λ = Math.abs(Math.atan2(y, z));
   φ = asin(x);
 
-  if (Math.abs(λ - π / 2) > ε) λ %= π / 2;
-  var point = gringortenHexadecant(λ > π / 4 ? π / 2 - λ : λ, φ);
+  if (Math.abs(λ - halfπ) > ε) λ %= halfπ;
+  var point = gringortenHexadecant(λ > π / 4 ? halfπ - λ : λ, φ);
 
   if (λ > π / 4) z = point[0], point[0] = -point[1], point[1] = -z;
 
@@ -30,7 +30,7 @@ gringorten.invert = function(x, y) {
       λ = p[0],
       φ = p[1];
 
-  if (t) λ = -π / 2 - λ;
+  if (t) λ = -halfπ - λ;
 
   var cosφ = Math.cos(φ),
       x = Math.cos(λ) * cosφ,
@@ -41,7 +41,7 @@ gringorten.invert = function(x, y) {
 };
 
 function gringortenHexadecant(λ, φ) {
-  if (φ === π / 2) return [0, 0];
+  if (φ === halfπ) return [0, 0];
 
   var sinφ = Math.sin(φ),
       r = sinφ * sinφ,

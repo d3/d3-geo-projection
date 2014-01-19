@@ -11,7 +11,7 @@ function healpix(h) {
       dx1 = d3.geo.collignon.raw(π, φ0)[0] - d3.geo.collignon.raw(-π, φ0)[0],
       y0 = lambert(0, φ0)[1],
       y1 = d3.geo.collignon.raw(0, φ0)[1],
-      dy1 = d3.geo.collignon.raw(0, π / 2)[1] - y1,
+      dy1 = d3.geo.collignon.raw(0, halfπ)[1] - y1,
       k = 2 * π / h;
 
   function forward(λ, φ) {

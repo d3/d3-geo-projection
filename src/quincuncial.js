@@ -1,7 +1,7 @@
 import "projection";
 
 function quincuncialProjection(projectHemisphere) {
-  var dx = projectHemisphere(π / 2, 0)[0] - projectHemisphere(-π / 2, 0)[0];
+  var dx = projectHemisphere(halfπ, 0)[0] - projectHemisphere(-halfπ, 0)[0];
 
   function projection() {
     var quincuncial = false,
@@ -18,7 +18,7 @@ function quincuncialProjection(projectHemisphere) {
 
   function projectAt(quincuncial) {
     var forward = quincuncial ? function(λ, φ) {
-      var t = Math.abs(λ) < π / 2,
+      var t = Math.abs(λ) < halfπ,
           p = projectHemisphere(t ? λ : λ > 0 ? λ - π : λ + π, φ);
 
       var x = (p[0] - p[1]) * Math.SQRT1_2,

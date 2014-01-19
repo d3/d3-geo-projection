@@ -23,7 +23,7 @@ polyconic.invert = function(x, y) {
   } while (Math.abs(δ) > ε && --i > 0);
   tanφ = Math.tan(φ);
   return [
-    (Math.abs(y) < Math.abs(φ + 1 / tanφ) ? asin(x * tanφ) : sgn(x) * (acos(Math.abs(x * tanφ)) + π / 2)) / Math.sin(φ),
+    (Math.abs(y) < Math.abs(φ + 1 / tanφ) ? asin(x * tanφ) : sgn(x) * (acos(Math.abs(x * tanφ)) + halfπ)) / Math.sin(φ),
     φ
   ];
 };

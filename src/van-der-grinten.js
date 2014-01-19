@@ -2,9 +2,9 @@ import "projection";
 
 function vanDerGrinten(λ, φ) {
   if (Math.abs(φ) < ε) return [λ, 0];
-  var sinθ = Math.abs(2 * φ / π),
+  var sinθ = Math.abs(φ / halfπ),
       θ = asin(sinθ);
-  if (Math.abs(λ) < ε || Math.abs(Math.abs(φ) - π / 2) < ε) return [0, sgn(φ) * π * Math.tan(θ / 2)];
+  if (Math.abs(λ) < ε || Math.abs(Math.abs(φ) - halfπ) < ε) return [0, sgn(φ) * π * Math.tan(θ / 2)];
   var cosθ = Math.cos(θ),
       A = Math.abs(π / λ - λ / π) / 2,
       A2 = A * A,
@@ -22,7 +22,7 @@ function vanDerGrinten(λ, φ) {
 
 vanDerGrinten.invert = function(x, y) {
   if (Math.abs(y) < ε) return [x, 0];
-  if (Math.abs(x) < ε) return [0, π / 2 * Math.sin(2 * Math.atan(y / π))];
+  if (Math.abs(x) < ε) return [0, halfπ * Math.sin(2 * Math.atan(y / π))];
   var x2 = (x /= π) * x,
       y2 = (y /= π) * y,
       x2_y2 = x2 + y2,
