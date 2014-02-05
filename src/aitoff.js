@@ -10,6 +10,10 @@ function aitoff(λ, φ) {
 }
 
 aitoff.invert = function(x, y) {
+  // Abort if [x, y] is not within an ellipse centered at [0, 0] with
+  // semi-major axis π and semi-minor axis π/2.
+  if (x * x + 4 * y * y > π * π + ε) return;
+
   var λ = x, φ = y, i = 25;
   do {
     var sinλ = Math.sin(λ),

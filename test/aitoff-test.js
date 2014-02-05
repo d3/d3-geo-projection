@@ -20,6 +20,9 @@ suite.addBatch({
         assert.equalInverse(aitoff, [-179,  15], [ 27.261952, 189.342293]);
         assert.equalInverse(aitoff, [   1,   1], [482.617728, 247.381972]);
         assert.equalInverse(aitoff, [  45,  87], [489.158099, 21.6821110]);
+      },
+      "the inverse projection of points outside the target region are falsey": function(aitoff) {
+        assert.ok(!aitoff.invert([0, 0]));
       }
     }
   }
