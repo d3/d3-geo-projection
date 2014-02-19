@@ -219,17 +219,29 @@ This plugin requires [D3 3.0](https://github.com/mbostock/d3/wiki/Upgrading-to-3
 
 ```html
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>
+<script src="http://d3js.org/d3.geo.projection.v1.min.js" charset="utf-8"></script>
 ```
 
-Alternatively, you can clone this repo, [download the zipball](http://github.com/d3/d3-plugins/zipball/master), or right-click [d3.geo.projection.v0.min.js](http://d3js.org/d3.geo.projection.v0.min.js) and save.
+This plugin supports the asynchronous module definition (AMD) API. For example, if you use [RequireJS](http://requirejs.org/), you may load D3, the extended projection plugin, and [TopoJSON](https://github.com/mbostock/topojson) as follows:
+
+```js
+require.config({
+  paths: {
+    "d3": "http://d3js.org/d3.v3.min",
+    "d3.geo.projection": "http://d3js.org/d3.geo.projection.v1.min",
+    "topojson": "http://d3js.org/topojson.v1.min"
+  }
+});
+
+require(["d3.geo.projection", "topojson"], function(d3, topojson) {
+  console.log(d3.version);
+});
+```
 
 To use this plugin within a Node.js context, you can `npm install d3 d3-geo-projection` and then say:
 
 ```js
-var d3 = require("d3");
-
-require("d3-geo-projection")(d3);
+var d3 = require("d3-geo-projection");
 ```
 
 Subsequently, `d3.geo` will contain all the extended projections.
