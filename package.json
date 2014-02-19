@@ -1,6 +1,6 @@
 {
   "name": "d3-geo-projection",
-  "version": "0.2.8",
+  "version": "1.0.0",
   "description": "Extended geographic projections for D3.js.",
   "keywords": [
     "cartography",
@@ -22,16 +22,16 @@
     "type": "git",
     "url": "https://github.com/d3/d3-geo-projection.git"
   },
-  "main": "index.js",
+  "main": "d3.geo.projection.js",
   "devDependencies": {
     "d3": "3",
     "smash": "0.0",
-    "uglify-js": "2.3",
+    "uglify-js": "2.4",
     "vows": "0.7"
   },
   "scripts": {
     "prepublish": "make",
-    "test": "node_modules/.bin/vows"
+    "test": "vows; echo"
   },
   "licenses": [
     {

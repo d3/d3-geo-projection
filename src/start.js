@@ -1,1 +1,2 @@
-(function() {
+!function() {
+  function init(d3) {
