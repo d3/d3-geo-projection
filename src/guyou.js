@@ -15,7 +15,7 @@ function guyou(λ, φ) {
       at = guyouComplexAtan(r * Math.cos(f * λ), r * Math.sin(f * λ)),
       t = ellipticFi(at[0], at[1], k * k);
 
-  return [-t[1], sgn(φ) * (.5 * K - t[0])];
+  return [-t[1], (φ >= 0 ? 1 : -1) * (.5 * K - t[0])];
 }
 
 function guyouComplexAtan(x, y) {
@@ -23,7 +23,7 @@ function guyouComplexAtan(x, y) {
       y_1 = y + 1,
       t = 1 - x2 - y * y;
   return [
-    sgn(x) * π / 4 - .5 * Math.atan2(t, 2 * x),
+    .5 * ((x >= 0 ? halfπ : -halfπ) - Math.atan2(t, 2 * x)),
     -.25 * Math.log(t * t + 4 * x2) + .5 * Math.log(y_1 * y_1 + x2)
   ];
 }
