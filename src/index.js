@@ -23,6 +23,7 @@ import "eckert4";
 import "eckert5";
 import "eckert6";
 import "eisenlohr";
+import "europe-atlantic";
 import "fahey";
 import "foucaut";
 import "gilbert";
