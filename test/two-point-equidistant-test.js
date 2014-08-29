@@ -19,6 +19,26 @@ suite.addBatch({
         assert.equalInverse(twoPointEquidistant, [  1,   1], [778.820119, 219.170442]);
         assert.equalInverse(twoPointEquidistant, [ 15,  45], [641.328901,  95.403073]);
       }
+    },
+    "points ordering is respected": {
+      "[[-30, 0], [30, 0]]": {
+        topic: function(geo) { return geo.twoPointEquidistant().points([[-30, 0], [30, 0]]); },
+        "projections and inverse projections": function(twoPointEquidistant) {
+          assert.equalInverse(twoPointEquidistant, [-30,   0], [401.460183, 250]);
+          assert.equalInverse(twoPointEquidistant, [ 30,   0], [558.539816, 250]);
+          assert.equalInverse(twoPointEquidistant, [  0,  30], [480, 175.272126]);
+          assert.equalInverse(twoPointEquidistant, [  0, -30], [480, 324.727873]);
+        }
+      },
+      "[[30, 0], [-30, 0]]": {
+        topic: function(geo) { return geo.twoPointEquidistant().points([[30, 0], [-30, 0]]); },
+        "projections and inverse projections": function(twoPointEquidistant) {
+          assert.equalInverse(twoPointEquidistant, [ 30,   0], [401.460183, 250]);
+          assert.equalInverse(twoPointEquidistant, [-30,   0], [558.539816, 250]);
+          assert.equalInverse(twoPointEquidistant, [  0, -30], [480, 175.272126]);
+          assert.equalInverse(twoPointEquidistant, [  0,  30], [480, 324.727873]);
+        }
+      }
     }
   }
 });

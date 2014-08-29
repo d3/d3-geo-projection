@@ -32,9 +32,9 @@ function twoPointAzimuthalProjection() {
     var interpolate = d3.geo.interpolate(_[0], _[1]),
         origin = interpolate(.5),
         p = d3.geo.rotation([-origin[0], -origin[1]])(_[0]),
-        b = interpolate.distance * .5, // |[0, 0] - p|
-        c = (p[0] < 0 ? -1 : +1) * p[1] * radians, // |[p[0], 0] - p|
-        γ = asin(Math.sin(c) / Math.sin(b));
+        b = interpolate.distance * .5,
+        γ = -asin(Math.sin(p[1] * radians) / Math.sin(b));
+    if (p[0] > 0) γ = π - γ;
 
     rotate.call(p, [-origin[0], -origin[1], -γ * degrees]);
 
