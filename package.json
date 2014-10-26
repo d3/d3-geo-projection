@@ -1,6 +1,6 @@
 {
   "name": "d3-geo-projection",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "Extended geographic projections for D3.js.",
   "keywords": [
     "cartography",
@@ -15,7 +15,7 @@
   "contributors": [
     {
       "name": "Jason Davies",
-      "url": "http://jasondavies.com"
+      "url": "http://www.jasondavies.com"
     }
   ],
   "repository": {
