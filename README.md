@@ -94,7 +94,7 @@
   <tr height="146" valign="top">
     <td>nellHammer<br><a href="http://bl.ocks.org/mbostock/3734342"><img src="http://bl.ocks.org/mbostock/raw/3734342/thumbnail.png" width="202"></a></td>
     <td class="gi">orthographic *<br><a href="http://bl.ocks.org/mbostock/3757125"><img src="http://bl.ocks.org/mbostock/raw/3757125/thumbnail.png" width="202"></a></td>
-    <td>patterson<br><a href="http://bl.ocks.org/mbostock/5723d93e4f617b542991"><img src="http://bl.ocks.org/mbostock/raw/5723d93e4f617b542991/thumbnail.png" width="202"></a></td>
+    <td>patterson<br><a href="http://bl.ocks.org/mbostock/d4021aa4dccfd65edffd"><img src="http://bl.ocks.org/mbostock/raw/d4021aa4dccfd65edffd/thumbnail.png" width="202"></a></td>
     <td>peirceQuincuncial<br><a href="http://bl.ocks.org/mbostock/4310087"><img src="http://bl.ocks.org/mbostock/raw/4310087/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
@@ -196,7 +196,7 @@ Projections:
 * naturalEarth - [Natural Earth](http://bl.ocks.org/mbostock/4479477)
 * nellHammer - [Nell–Hammer](http://bl.ocks.org/mbostock/3734342)
 * orthographic - [orthographic](http://bl.ocks.org/mbostock/3757125)
-* patterson - [patterson](http://bl.ocks.org/mbostock/5723d93e4f617b542991)
+* patterson - [patterson](http://bl.ocks.org/mbostock/d4021aa4dccfd65edffd)
 * peirceQuincuncial - [Pierce quincuncial](http://bl.ocks.org/mbostock/4310087)
 * polyconic - [polyconic](http://bl.ocks.org/mbostock/3734343)
 * rectangularPolyconic - [rectangular polyconic](http://bl.ocks.org/mbostock/5230202)
