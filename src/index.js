@@ -54,6 +54,7 @@ import "mt-flat-polar-quartic";
 import "mt-flat-polar-sinusoidal";
 import "natural-earth";
 import "nell-hammer";
+import "patterson";
 import "peirce-quincuncial";
 import "polyconic";
 import "rectangular-polyconic";
