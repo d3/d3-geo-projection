@@ -94,40 +94,41 @@
   <tr height="146" valign="top">
     <td>nellHammer<br><a href="http://bl.ocks.org/mbostock/3734342"><img src="http://bl.ocks.org/mbostock/raw/3734342/thumbnail.png" width="202"></a></td>
     <td class="gi">orthographic *<br><a href="http://bl.ocks.org/mbostock/3757125"><img src="http://bl.ocks.org/mbostock/raw/3757125/thumbnail.png" width="202"></a></td>
+    <td>patterson<br><a href="http://bl.ocks.org/mbostock/5723d93e4f617b542991"><img src="http://bl.ocks.org/mbostock/raw/5723d93e4f617b542991/thumbnail.png" width="202"></a></td>
     <td>peirceQuincuncial<br><a href="http://bl.ocks.org/mbostock/4310087"><img src="http://bl.ocks.org/mbostock/raw/4310087/thumbnail.png" width="202"></a></td>
-    <td>polyconic<br><a href="http://bl.ocks.org/mbostock/3734343"><img src="http://bl.ocks.org/mbostock/raw/3734343/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
+    <td>polyconic<br><a href="http://bl.ocks.org/mbostock/3734343"><img src="http://bl.ocks.org/mbostock/raw/3734343/thumbnail.png" width="202"></a></td>
     <td>polyhedron.butterfly<br><a href="http://bl.ocks.org/mbostock/4458680"><img src="http://bl.ocks.org/mbostock/raw/4458680/thumbnail.png" width="202"></a></td>
     <td>polyhedron.waterman<br><a href="http://bl.ocks.org/mbostock/4458497"><img src="http://bl.ocks.org/mbostock/raw/4458497/thumbnail.png" width="202"></a></td>
     <td>rectangularPolyconic<br><a href="http://bl.ocks.org/mbostock/5230202"><img src="http://bl.ocks.org/mbostock/raw/5230202/thumbnail.png" width="202"></a></td>
-    <td>robinson<br><a href="http://bl.ocks.org/mbostock/3710566"><img src="http://bl.ocks.org/mbostock/raw/3710566/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
+    <td>robinson<br><a href="http://bl.ocks.org/mbostock/3710566"><img src="http://bl.ocks.org/mbostock/raw/3710566/thumbnail.png" width="202"></a></td>
     <td>satellite<br><a href="http://bl.ocks.org/mbostock/3790444"><img src="http://bl.ocks.org/mbostock/raw/3790444/thumbnail.png" width="202"></a></td>
     <td>sinuMollweide<br><a href="http://bl.ocks.org/mbostock/4319903"><img src="http://bl.ocks.org/mbostock/raw/4319903/thumbnail.png" width="202"></a></td>
     <td>sinusoidal<br><a href="http://bl.ocks.org/mbostock/3712399"><img src="http://bl.ocks.org/mbostock/raw/3712399/thumbnail.png" width="202"></a></td>
-    <td class="gi">stereographic *<br><a href="http://bl.ocks.org/mbostock/3757137"><img src="http://bl.ocks.org/mbostock/raw/3757137/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
+    <td class="gi">stereographic *<br><a href="http://bl.ocks.org/mbostock/3757137"><img src="http://bl.ocks.org/mbostock/raw/3757137/thumbnail.png" width="202"></a></td>
     <td>times<br><a href="http://bl.ocks.org/mbostock/5230564"><img src="http://bl.ocks.org/mbostock/raw/5230564/thumbnail.png" width="202"></a></td>
     <td>twoPointAzimuthal<br><a href="http://www.jasondavies.com/maps/two-point-azimuthal/"><img src="http://www.jasondavies.com/maps/two-point-azimuthal/thumb.d3.png" width="202"></a></td>
     <td>twoPointEquidistant<br><a href="http://www.jasondavies.com/maps/two-point-equidistant/"><img src="http://www.jasondavies.com/maps/two-point-equidistant/thumb.d3.png" width="202"></a></td>
-    <td class="gi">transverseMercator *<br><a href="http://bl.ocks.org/mbostock/5126418"><img src="http://bl.ocks.org/mbostock/raw/5126418/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
+    <td class="gi">transverseMercator *<br><a href="http://bl.ocks.org/mbostock/5126418"><img src="http://bl.ocks.org/mbostock/raw/5126418/thumbnail.png" width="202"></a></td>
     <td>vanDerGrinten<br><a href="http://bl.ocks.org/mbostock/3796831"><img src="http://bl.ocks.org/mbostock/raw/3796831/thumbnail.png" width="202"></a></td>
     <td>vanDerGrinten2<br><a href="http://bl.ocks.org/mbostock/5230571"><img src="http://bl.ocks.org/mbostock/raw/5230571/thumbnail.png" width="202"></a></td>
     <td>vanDerGrinten3<br><a href="http://bl.ocks.org/mbostock/5230580"><img src="http://bl.ocks.org/mbostock/raw/5230580/thumbnail.png" width="202"></a></td>
-    <td>vanDerGrinten4<br><a href="http://bl.ocks.org/mbostock/4489365"><img src="http://bl.ocks.org/mbostock/raw/4489365/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
+    <td>vanDerGrinten4<br><a href="http://bl.ocks.org/mbostock/4489365"><img src="http://bl.ocks.org/mbostock/raw/4489365/thumbnail.png" width="202"></a></td>
     <td>wagner4<br><a href="http://bl.ocks.org/mbostock/4487674"><img src="http://bl.ocks.org/mbostock/raw/4487674/thumbnail.png" width="202"></a></td>
     <td>wagner6<br><a href="http://bl.ocks.org/mbostock/3710148"><img src="http://bl.ocks.org/mbostock/raw/3710148/thumbnail.png" width="202"></a></td>
     <td>wagner7<br><a href="http://bl.ocks.org/mbostock/4465109"><img src="http://bl.ocks.org/mbostock/raw/4465109/thumbnail.png" width="202"></a></td>
-    <td>wiechel<br><a href="http://bl.ocks.org/mbostock/4463155"><img src="http://bl.ocks.org/mbostock/raw/4463155/thumbnail.png" width="202"></a></td>
   </tr>
   <tr height="146" valign="top">
+    <td>wiechel<br><a href="http://bl.ocks.org/mbostock/4463155"><img src="http://bl.ocks.org/mbostock/raw/4463155/thumbnail.png" width="202"></a></td>
     <td>winkel3<br><a href="http://bl.ocks.org/mbostock/3682676"><img src="http://bl.ocks.org/mbostock/raw/3682676/thumbnail.png" width="202"></a></td>
   </tr>
 </table>
@@ -195,6 +196,7 @@ Projections:
 * naturalEarth - [Natural Earth](http://bl.ocks.org/mbostock/4479477)
 * nellHammer - [Nell–Hammer](http://bl.ocks.org/mbostock/3734342)
 * orthographic - [orthographic](http://bl.ocks.org/mbostock/3757125)
+* patterson - [patterson](http://bl.ocks.org/mbostock/5723d93e4f617b542991)
 * peirceQuincuncial - [Pierce quincuncial](http://bl.ocks.org/mbostock/4310087)
 * polyconic - [polyconic](http://bl.ocks.org/mbostock/3734343)
 * rectangularPolyconic - [rectangular polyconic](http://bl.ocks.org/mbostock/5230202)
