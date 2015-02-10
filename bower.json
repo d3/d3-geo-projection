@@ -1,6 +1,6 @@
 {
   "name": "d3-geo-projection",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "main": "d3-geo-projection.js",
   "scripts": [
     "d3-geo-projection.js"
