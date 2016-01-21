@@ -20,8 +20,8 @@ function d3_geo_projectGeometry(geometry, stream) {
 
   if (geometry.type === "GeometryCollection") return {
     type: "GeometryCollection",
-    geometries: object.geometries.map(function(geometry) {
-      return d3_geo_projectGeometry(geometry, stream);
+    geometries: geometry.geometries.map(function(subgeometry) {
+      return d3_geo_projectGeometry(subgeometry, stream);
     })
   };
 
