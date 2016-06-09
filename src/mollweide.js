@@ -11,14 +11,30 @@ function mollweideBromleyθ(Cp) {
 }
 
 function mollweideBromley(Cx, Cy, Cp) {
-  var θ = mollweideBromleyθ(Cp);
+  var θgen = mollweideBromleyθ(Cp);
 
   function forward(λ, φ) {
+    var θ = θgen(φ);
     return [
-      Cx * λ * Math.cos(φ = θ(φ)),
-      Cy * Math.sin(φ)
+      Cx * λ * Math.cos(θ),
+      Cy * Math.sin(θ)
     ];
   }
+  
+  forward.tangentSpace = function(λ,φ) {
+    var θ = θgen(φ);
+    var dθdφ = Cp * Math.cos(φ) / (2*(1+Math.cos(2*θ)));
+    return [
+      [
+        Cx * λ * Math.cos(θ),
+        Cy * Math.sin(θ)
+      ],
+      [
+        [Cx * Math.cos(θ), 0],
+        [-Cx * λ * Math.sin(θ) * dθdφ, 0.25 * Cy * Cp * Math.cos(φ) / Math.cos(θ)] // Since dθdφ gets tends to infinity towards the poles we need to do something special for dydφ.
+      ]
+    ];
+  };
 
   forward.invert = function(x, y) {
     var θ = asin(y / Cy);
