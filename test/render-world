@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+
+var width = 960,
+    height = 500,
+    projectionName = process.argv[2],
+    projectionSymbol = "geo" + projectionName[0].toUpperCase() + projectionName.slice(1);
+
+if (!/^[a-z0-9]+$/i.test(projectionName)) throw new Error;
+
+var fs = require("fs"),
+    topojson = require("topojson"),
+    Canvas = require("canvas"),
+    d3_geo = require("d3-geo"),
+    d3_geo_projection = require("../");
+
+var canvas = new Canvas(width, height),
+    context = canvas.getContext("2d");
+
+var world = require("./data/world-50m.json");
+
+var graticule = d3_geo.geoGraticule();
+
+var path = d3_geo.geoPath()
+    .projection(d3_geo_projection[projectionSymbol]().precision(0.1))
+    .context(context);
+
+context.fillStyle = "#fff";
+context.fillRect(0, 0, width, height);
+
+context.beginPath();
+path(topojson.feature(world, world.objects.land));
+context.fillStyle = "#000";
+context.fill();
+
+context.beginPath();
+path(graticule());
+context.strokeStyle = "rgba(119,119,119,0.5)";
+context.stroke();
+
+context.beginPath();
+path({type: "Sphere"});
+context.strokeStyle = "#000";
+context.stroke();
+
+console.warn("↳ test/output/" + projectionName + ".png");
+canvas.pngStream().pipe(fs.createWriteStream("test/output/" + projectionName + ".png"));
