@@ -22,7 +22,7 @@ var aitoff = d3.geoAitoff();
 
 <a href="#geoAitoff" name="geoAitoff">#</a> d3.<b>geoAitoff</b>()
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/aitoff.png" width="480" height="250">](http://bl.ocks.org/mbostock/3682698)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/aitoff.png" width="480" height="250">](http://bl.ocks.org/mbostock/3682698)
 
 The Aitoff projection.
 
