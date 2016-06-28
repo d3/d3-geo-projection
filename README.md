@@ -38,7 +38,9 @@ Defaults to 90°.
 
 <a href="#geoAlbers" name="geoAlbers">#</a> d3.<b>geoAlbers</b>()
 
-[Albers equal-area conic](http://bl.ocks.org/mbostock/3734308)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/albers.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734308)
+
+Alber’s [equal-area conic projection](#geoConicEqualArea); see [d3-geo](https://github.com/d3/d3-geo#geoAlbers).
 
 <a href="#geoArmadillo" name="geoArmadillo">#</a> d3.<b>geoArmadillo</b>()
 
@@ -50,11 +52,15 @@ Defaults to 90°.
 
 <a href="#geoAzimuthalEqualArea" name="geoAzimuthalEqualArea">#</a> d3.<b>geoAzimuthalEqualArea</b>()
 
-[Lambert azimuthal equal-area](http://bl.ocks.org/mbostock/3757101)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/azimuthalEqualArea.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757101)
+
+The Lambert azimuthal equal-area projection; see [d3-geo](https://github.com/d3/d3-geo#geoAzimuthalEqualArea).
 
 <a href="#geoAzimuthalEquidistant" name="geoAzimuthalEquidistant">#</a> d3.<b>geoAzimuthalEquidistant</b>()
 
-[azimuthal equidistant](http://bl.ocks.org/mbostock/3757110)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/azimuthalEquidistant.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757110)
+
+The azimuthal equidistant projection; see [d3-geo](https://github.com/d3/d3-geo#geoAzimuthalEquidistant).
 
 <a href="#geoBaker" name="geoBaker">#</a> d3.<b>geoBaker</b>()
 
@@ -86,11 +92,23 @@ Defaults to 90°.
 
 <a href="#geoConicConformal" name="geoConicConformal">#</a> d3.<b>geoConicConformal</b>()
 
-[Lambert conformal conic](http://bl.ocks.org/mbostock/3734321)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/conicConformal.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734321)
+
+The Lambert conformal conic projection; see [d3-geo](https://github.com/d3/d3-geo#geoConicConformal).
+
+<a href="#geoConicEqualArea" name="geoConicEqualArea">#</a> d3.<b>geoConicEqualArea</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/geoConicEqualArea.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734308)
+
+Alber’s conic equal-area projection; see [d3-geo](https://github.com/d3/d3-geo#geoConicEqualArea).
 
 <a href="#geoConicEquidistant" name="geoConicEquidistant">#</a> d3.<b>geoConicEquidistant</b>()
 
-[conic equidistant](http://bl.ocks.org/mbostock/3734317)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/conicEquidistant.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734317)
+
+The conic equidistant projection; see [d3-geo](https://github.com/d3/d3-geo#geoConicEquidistant).
+
+<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/conicEqualArea.png" width="480" height="250">
 
 <a href="#geoCraig" name="geoCraig">#</a> d3.<b>geoCraig</b>()
 
@@ -102,11 +120,15 @@ Defaults to 90°.
 
 <a href="#geoCylindricalEqualArea" name="geoCylindricalEqualArea">#</a> d3.<b>geoCylindricalEqualArea</b>()
 
-[cylindrical equal-area](http://bl.ocks.org/mbostock/3712408), [Gall–Peters](http://bl.ocks.org/mbostock/3946824), [Hobo–Dyer](http://bl.ocks.org/mbostock/4476487), [Tobler world-in-a-square](http://bl.ocks.org/mbostock/4476496)
+[cylindrical equal-area](http://bl.ocks.org/mbostock/3712408),
+[Gall–Peters](http://bl.ocks.org/mbostock/3946824),
+[Hobo–Dyer](http://bl.ocks.org/mbostock/4476487),
+[Tobler world-in-a-square](http://bl.ocks.org/mbostock/4476496)
 
 <a href="#geoCylindricalStereographic" name="geoCylindricalStereographic">#</a> d3.<b>geoCylindricalStereographic</b>()
 
-cylindrical stereographic, [Gall’s stereographic](http://bl.ocks.org/mbostock/5234763)
+cylindrical stereographic,
+[Gall’s stereographic](http://bl.ocks.org/mbostock/5234763)
 
 <a href="#geoEckert1" name="geoEckert1">#</a> d3.<b>geoEckert1</b>()
 
@@ -138,7 +160,9 @@ cylindrical stereographic, [Gall’s stereographic](http://bl.ocks.org/mbostock/
 
 <a href="#geoEquirectangular" name="geoEquirectangular">#</a> d3.<b>geoEquirectangular</b>()
 
-[Equirectangular (Plate Carrée)](http://bl.ocks.org/mbostock/3757119), [Cassini](http://bl.ocks.org/mbostock/5695142)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/equirectangular.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757119).
+
+The equirectangular (plate carrée) projection; see [d3-geo](https://github.com/d3/d3-geo#geoEquirectangular). The [Cassini projection](http://bl.ocks.org/mbostock/5695142) is the transverse aspect of the equirectangular projection.
 
 <a href="#geoFahey" name="geoFahey">#</a> d3.<b>geoFahey</b>()
 
@@ -178,7 +202,9 @@ Foucaut
 
 <a href="#geoGnomonic" name="geoGnomonic">#</a> d3.<b>geoGnomonic</b>()
 
-[gnomonic](http://bl.ocks.org/mbostock/3757349)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/gnomonic.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757349)
+
+The gnomonic projection; see [d3-geo](https://github.com/d3/d3-geo#geoGnomonic).
 
 <a href="#geoGringorten" name="geoGringorten">#</a> d3.<b>geoGringorten</b>()
 
@@ -234,7 +260,9 @@ Foucaut
 
 <a href="#geoMercator" name="geoMercator">#</a> d3.<b>geoMercator</b>()
 
-[Mercator](http://bl.ocks.org/mbostock/3757132)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/mercator.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757132)
+
+The spherical Mercator projection; see [d3-geo](https://github.com/d3/d3-geo#geoMercator).
 
 <a href="#geoMiller" name="geoMiller">#</a> d3.<b>geoMiller</b>()
 
@@ -270,7 +298,9 @@ Foucaut
 
 <a href="#geoOrthographic" name="geoOrthographic">#</a> d3.<b>geoOrthographic</b>()
 
-[orthographic](http://bl.ocks.org/mbostock/3757125)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/orthographic.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757125)
+
+The orthographic projection; see [d3-geo](https://github.com/d3/d3-geo#geoOrthographic).
 
 <a href="#geoPatterson" name="geoPatterson">#</a> d3.<b>geoPatterson</b>()
 
@@ -306,7 +336,9 @@ Foucaut
 
 <a href="#geoStereographic" name="geoStereographic">#</a> d3.<b>geoStereographic</b>()
 
-[stereographic](http://bl.ocks.org/mbostock/3757137)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/stereographic.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757137)
+
+The stereographic projection; see [d3-geo](https://github.com/d3/d3-geo#geoStereographic).
 
 <a href="#geoTimes" name="geoTimes">#</a> d3.<b>geoTimes</b>()
 
@@ -314,7 +346,9 @@ Foucaut
 
 <a href="#geoTransverseMercator" name="geoTransverseMercator">#</a> d3.<b>geoTransverseMercator</b>()
 
-[transverse Mercator](http://bl.ocks.org/mbostock/5126418)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/transverseMercator.png" width="480" height="250">](http://bl.ocks.org/mbostock/5126418)
+
+The transverse spherical Mercator projection; see [d3-geo](https://github.com/d3/d3-geo#geoTransverseMercator).
 
 <a href="#geoTwoPointAzimuthal" name="geoTwoPointAzimuthal">#</a> d3.<b>geoTwoPointAzimuthal</b>()
 
