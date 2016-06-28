@@ -10,6 +10,7 @@ if (!/^[a-z0-9]+$/i.test(projectionName)) throw new Error;
 var fs = require("fs"),
     topojson = require("topojson"),
     Canvas = require("canvas"),
+    d3 = require("d3"),
     d3_geo = require("d3-geo"),
     d3_geo_projection = require("../");
 
@@ -27,6 +28,14 @@ var path = d3_geo.geoPath()
 context.fillStyle = "#fff";
 context.fillRect(0, 0, width, height);
 
+context.save();
+
+if (projectionName === "armadillo") {
+  context.beginPath();
+  path({type: "Sphere"});
+  context.clip();
+}
+
 context.beginPath();
 path(topojson.feature(world, world.objects.land));
 context.fillStyle = "#000";
@@ -36,6 +45,8 @@ context.beginPath();
 path(graticule());
 context.strokeStyle = "rgba(119,119,119,0.5)";
 context.stroke();
+
+context.restore();
 
 context.beginPath();
 path({type: "Sphere"});

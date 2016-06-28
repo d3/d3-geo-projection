@@ -44,7 +44,9 @@ Alber’s [equal-area conic projection](#geoConicEqualArea); see [d3-geo](https:
 
 <a href="#geoArmadillo" name="geoArmadillo">#</a> d3.<b>geoArmadillo</b>()
 
-[Armadillo](http://bl.ocks.org/mbostock/4463127)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/armadillo.png" width="480" height="250">](http://bl.ocks.org/mbostock/4463127)
+
+The armadillo projection. Note: requires clipping to the sphere.
 
 <a href="#geoAugust" name="geoAugust">#</a> d3.<b>geoAugust</b>()
 

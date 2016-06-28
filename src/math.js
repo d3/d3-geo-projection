@@ -7,24 +7,13 @@ export var abs = Math.abs;
 export var atan2 = Math.atan2;
 export var cos = Math.cos;
 export var log = Math.log;
+export var sign = Math.sign || function(x) { return x > 0 ? 1 : x < 0 ? -1 : 0; };
 export var sin = Math.sin;
-export var sqrt = Math.sqrt;
 export var tan = Math.tan;
-
-//     ε2 = ε * ε,
-//     π = Math.PI,
-//     halfπ = π / 2,
-//     sqrtπ = Math.sqrt(π),
-//     radians = π / 180,
-//     degrees = 180 / π;
 
 export function sinci(x) {
   return x ? x / Math.sin(x) : 1;
 }
-
-// function sgn(x) {
-//   return x > 0 ? 1 : x < 0 ? -1 : 0;
-// }
 
 export function asin(x) {
   return x > 1 ? halfPi : x < -1 ? -halfPi : Math.asin(x);
@@ -34,6 +23,6 @@ export function acos(x) {
   return x > 1 ? 0 : x < -1 ? pi : Math.acos(x);
 }
 
-// function asqrt(x) {
-//   return x > 0 ? Math.sqrt(x) : 0;
-// }
+export function sqrt(x) {
+  return x > 0 ? Math.sqrt(x) : 0;
+}
