@@ -28,7 +28,13 @@ The Aitoff projection.
 
 <a href="#geoAiry" name="geoAiry">#</a> d3.<b>geoAiry</b>()
 
-[Airy’s minimum-error azimuthal](http://bl.ocks.org/mbostock/5620807)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/airy.png" width="480" height="250">](http://bl.ocks.org/mbostock/5620807)
+
+Airy’s minimum-error azimuthal projection.
+
+<a href="airy_radius" name="airy_raidus">#</a> <i>airy</i>.<b>radius</b>([<i>radius</i>])
+
+Defaults to 90°.
 
 <a href="#geoAlbers" name="geoAlbers">#</a> d3.<b>geoAlbers</b>()
 
