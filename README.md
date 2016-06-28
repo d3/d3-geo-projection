@@ -98,7 +98,7 @@ The Lambert conformal conic projection; see [d3-geo](https://github.com/d3/d3-ge
 
 <a href="#geoConicEqualArea" name="geoConicEqualArea">#</a> d3.<b>geoConicEqualArea</b>()
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/geoConicEqualArea.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734308)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/conicEqualArea.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734308)
 
 Alber’s conic equal-area projection; see [d3-geo](https://github.com/d3/d3-geo#geoConicEqualArea).
 
