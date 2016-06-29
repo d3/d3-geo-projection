@@ -68,7 +68,9 @@ The azimuthal equidistant projection; see [d3-geo](https://github.com/d3/d3-geo#
 
 <a href="#geoBaker" name="geoBaker">#</a> d3.<b>geoBaker</b>()
 
-[Baker Dinomic](http://bl.ocks.org/mbostock/4476279)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/baker.png" width="480" height="250">](http://bl.ocks.org/mbostock/4476279)
+
+The Baker Dinomic projection.
 
 <a href="#geoBerghaus" name="geoBerghaus">#</a> d3.<b>geoBerghaus</b>()
 

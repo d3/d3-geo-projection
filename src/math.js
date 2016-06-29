@@ -1,9 +1,5 @@
-export var epsilon = 1e-6;
-export var pi = Math.PI;
-export var halfPi = pi / 2;
-export var degrees = 180 / pi;
-export var radians = pi / 180;
 export var abs = Math.abs;
+export var atan = Math.atan;
 export var atan2 = Math.atan2;
 export var cos = Math.cos;
 export var exp = Math.exp;
@@ -11,6 +7,15 @@ export var log = Math.log;
 export var sign = Math.sign || function(x) { return x > 0 ? 1 : x < 0 ? -1 : 0; };
 export var sin = Math.sin;
 export var tan = Math.tan;
+
+export var epsilon = 1e-6;
+export var epsilon2 = 1e-12;
+export var pi = Math.PI;
+export var halfPi = pi / 2;
+export var quarterPi = pi / 4;
+export var sqrt2 = sqrt(2);
+export var degrees = 180 / pi;
+export var radians = pi / 180;
 
 export function sinci(x) {
   return x ? x / Math.sin(x) : 1;

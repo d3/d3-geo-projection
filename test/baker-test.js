@@ -1,28 +1,34 @@
-var vows = require("vows"),
-    assert = require("./assert"),
-    load = require("./load");
+var tape = require("tape"),
+    d3 = require("../");
 
-var suite = vows.describe("d3.geo.baker");
+require("./inDelta");
 
-suite.addBatch({
-  "baker": {
-    topic: load("baker"),
-    "default": {
-      topic: function(geo) { return geo.baker(); },
-      "projections and inverse projections": function(baker) {
-        assert.equalInverse(baker, [   0,   0], [480,        250]);
-        assert.equalInverse(baker, [   0, -90], [480,        583.216220]);
-        assert.equalInverse(baker, [   0,  90], [480,        -83.216220]);
-        assert.equalInverse(baker, [   0, -45], [480,        382.206038]);
-        assert.equalInverse(baker, [   0,  45], [480,        117.793961]);
-        assert.equalInverse(baker, [-180,   0], [  8.761101, 250]);
-        assert.equalInverse(baker, [ 180,   0], [951.238898, 250]);
-        assert.equalInverse(baker, [-179,  15], [ 11.379095, 210.273662]);
-        assert.equalInverse(baker, [   1,   1], [482.617993, 247.381873]);
-        assert.equalInverse(baker, [  45,  87], [491.265043, -68.859378]);
-      }
-    }
-  }
+tape("geoBaker(point) returns the expected values", function(test) {
+  var baker = d3.geoBaker();
+  test.inDelta(baker([   0,   0]), [480.000000, 250.000000]);
+  test.inDelta(baker([   0, -90]), [480.000000, 583.216220]);
+  test.inDelta(baker([   0,  90]), [480.000000, -83.216220]);
+  test.inDelta(baker([   0, -45]), [480.000000, 382.206038]);
+  test.inDelta(baker([   0,  45]), [480.000000, 117.793961]);
+  test.inDelta(baker([-180,   0]), [  8.761101, 250.000000]);
+  test.inDelta(baker([ 180,   0]), [951.238898, 250.000000]);
+  test.inDelta(baker([-179,  15]), [ 11.379095, 210.273662]);
+  test.inDelta(baker([   1,   1]), [482.617993, 247.381873]);
+  test.inDelta(baker([  45,  87]), [491.265043, -68.859378]);
+  test.end();
 });
 
-suite.export(module);
+tape("geoBaker.invert(point) returns the expected values", function(test) {
+  var baker = d3.geoBaker();
+  test.inDelta(baker.invert([480.000000, 250.000000]), [   0,   0]);
+  test.inDelta(baker.invert([480.000000, 583.216220]), [   0, -90]);
+  test.inDelta(baker.invert([480.000000, -83.216220]), [   0,  90]);
+  test.inDelta(baker.invert([480.000000, 382.206038]), [   0, -45]);
+  test.inDelta(baker.invert([480.000000, 117.793961]), [   0,  45]);
+  test.inDelta(baker.invert([  8.761101, 250.000000]), [ 180,   0]); // TODO -180°?
+  test.inDelta(baker.invert([951.238898, 250.000000]), [ 180,   0]);
+  test.inDelta(baker.invert([ 11.379095, 210.273662]), [-179,  15]);
+  test.inDelta(baker.invert([482.617993, 247.381873]), [   1,   1]);
+  test.inDelta(baker.invert([491.265043, -68.859378]), [  45,  87], 1e-5);
+  test.end();
+});
