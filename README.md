@@ -80,7 +80,7 @@ Berghaus’ star projection. Note: requires clipping to the sphere.
 
 <a href="#berghaus_lobs" name="berghaus_lobes">#</a> <i>berghaus</i>.<b>lobes</b>([<i>lobes</i>])
 
-If *lobes* is specified, set the number of lobes in the star. If *lobes* is not specified, returns the current number of lobes, which defaults to five.
+If *lobes* is specified, set the number of star lobes. If *lobes* is not specified, returns the current lobe number, which defaults to 5.
 
 <a href="#geoBoggs" name="geoBoggs">#</a> d3.<b>geoBoggs</b>()
 
