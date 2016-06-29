@@ -286,7 +286,9 @@ The spherical Mercator projection; see [d3-geo](https://github.com/d3/d3-geo#geo
 
 <a href="#geoMollweide" name="geoMollweide">#</a> d3.<b>geoMollweide</b>()
 
-[Mollweide](http://bl.ocks.org/mbostock/3734336), [Atlantis](http://bl.ocks.org/mbostock/4519975)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/mollweide.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734336)
+
+The equal-area, pseudocylindrical Mollweide projection. The oblique aspect is known as the [Atlantis projection](http://bl.ocks.org/mbostock/4519975). [Goode’s interrupted Mollweide](http://bl.ocks.org/mbostock/4498187) is also widely known.
 
 <a href="#geoMtFlatPolarParabolic" name="geoMtFlatPolarParabolic">#</a> d3.<b>geoMtFlatPolarParabolic</b>()
 

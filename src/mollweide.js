@@ -1,37 +1,32 @@
-import "projection";
+import {geoProjection} from "d3-geo";
+import {abs, asin, cos, epsilon, halfPi, pi, sin, sqrt2} from "./math";
 
-function mollweideBromleyθ(Cp) {
-  return function(θ) {
-    var Cpsinθ = Cp * Math.sin(θ),
-        i = 30, δ;
-    do θ -= δ = (θ + Math.sin(θ) - Cpsinθ) / (1 + Math.cos(θ));
-    while (Math.abs(δ) > ε && --i > 0);
-    return θ / 2;
+function mollweideBromleyTheta(cp) {
+  return function(theta) {
+    var cpsinTheta = cp * sin(theta), i = 30, delta;
+    do theta -= delta = (theta + sin(theta) - cpsinTheta) / (1 + cos(theta));
+    while (abs(delta) > epsilon && --i > 0);
+    return theta / 2;
   };
 }
 
-function mollweideBromley(Cx, Cy, Cp) {
-  var θ = mollweideBromleyθ(Cp);
+function mollweideBromley(cx, cy, cp) {
+  var theta = mollweideBromleyTheta(cp);
 
-  function forward(λ, φ) {
-    return [
-      Cx * λ * Math.cos(φ = θ(φ)),
-      Cy * Math.sin(φ)
-    ];
+  function forward(lambda, phi) {
+    return [cx * lambda * cos(phi = theta(phi)), cy * sin(phi)];
   }
 
   forward.invert = function(x, y) {
-    var θ = asin(y / Cy);
-    return [
-      x / (Cx * Math.cos(θ)),
-      asin((2 * θ + Math.sin(2 * θ)) / Cp)
-    ];
+    var theta = asin(y / cy);
+    return [x / (cx * cos(theta)), asin((2 * theta + sin(2 * theta)) / cp)];
   };
 
   return forward;
 }
 
-var mollweideθ = mollweideBromleyθ(π),
-    mollweide = mollweideBromley(Math.SQRT2 / halfπ, Math.SQRT2, π);
+var mollweide = mollweideBromley(sqrt2 / halfPi, sqrt2, pi);
 
-(d3.geo.mollweide = function() { return projection(mollweide); }).raw = mollweide;
+export default function() {
+  return geoProjection(mollweide).scale(165);
+}
