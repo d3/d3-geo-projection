@@ -78,6 +78,10 @@ The Baker Dinomic projection.
 
 Berghaus’ star projection. Note: requires clipping to the sphere.
 
+<a href="#berghaus_lobs" name="berghaus_lobes">#</a> <i>berghaus</i>.<b>lobes</b>([<i>lobes</i>])
+
+If *lobes* is specified, set the number of lobes in the star. If *lobes* is not specified, returns the current number of lobes, which defaults to five.
+
 <a href="#geoBoggs" name="geoBoggs">#</a> d3.<b>geoBoggs</b>()
 
 [Boggs eumorphic](http://bl.ocks.org/mbostock/4481220)
