@@ -74,7 +74,9 @@ The Baker Dinomic projection.
 
 <a href="#geoBerghaus" name="geoBerghaus">#</a> d3.<b>geoBerghaus</b>()
 
-[Berghaus Star](http://bl.ocks.org/mbostock/4463049)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/berghaus.png" width="480" height="250">](http://bl.ocks.org/mbostock/4463049)
+
+Berghaus’ star projection. Note: requires clipping to the sphere.
 
 <a href="#geoBoggs" name="geoBoggs">#</a> d3.<b>geoBoggs</b>()
 

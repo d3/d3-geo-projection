@@ -3,7 +3,8 @@
 var width = 960,
     height = 500,
     projectionName = process.argv[2],
-    projectionSymbol = "geo" + projectionName[0].toUpperCase() + projectionName.slice(1);
+    projectionSymbol = "geo" + projectionName[0].toUpperCase() + projectionName.slice(1),
+    projectionClips = ["armadillo", "berghaus"];
 
 if (!/^[a-z0-9]+$/i.test(projectionName)) throw new Error;
 
@@ -30,7 +31,7 @@ context.fillRect(0, 0, width, height);
 
 context.save();
 
-if (projectionName === "armadillo") {
+if (projectionClips.indexOf(projectionName) >= 0) {
   context.beginPath();
   path({type: "Sphere"});
   context.clip();

@@ -4,6 +4,7 @@ export var atan2 = Math.atan2;
 export var cos = Math.cos;
 export var exp = Math.exp;
 export var log = Math.log;
+export var round = Math.round;
 export var sign = Math.sign || function(x) { return x > 0 ? 1 : x < 0 ? -1 : 0; };
 export var sin = Math.sin;
 export var tan = Math.tan;
