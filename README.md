@@ -50,7 +50,9 @@ The armadillo projection. Note: requires clipping to the sphere.
 
 <a href="#geoAugust" name="geoAugust">#</a> d3.<b>geoAugust</b>()
 
-[August conformal](http://bl.ocks.org/mbostock/3797581)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/august.png" width="480" height="250">](http://bl.ocks.org/mbostock/3797581)
+
+August’s epicycloidal conformal projection.
 
 <a href="#geoAzimuthalEqualArea" name="geoAzimuthalEqualArea">#</a> d3.<b>geoAzimuthalEqualArea</b>()
 

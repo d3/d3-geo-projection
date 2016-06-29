@@ -6,6 +6,7 @@ export var radians = pi / 180;
 export var abs = Math.abs;
 export var atan2 = Math.atan2;
 export var cos = Math.cos;
+export var exp = Math.exp;
 export var log = Math.log;
 export var sign = Math.sign || function(x) { return x > 0 ? 1 : x < 0 ? -1 : 0; };
 export var sin = Math.sin;
@@ -25,4 +26,25 @@ export function acos(x) {
 
 export function sqrt(x) {
   return x > 0 ? Math.sqrt(x) : 0;
+}
+
+export function tanh(x) {
+  x = exp(2 * x);
+  return (x - 1) / (x + 1);
+}
+
+export function sinh(x) {
+  return (exp(x) - exp(-x)) / 2;
+}
+
+export function cosh(x) {
+  return (exp(x) + exp(-x)) / 2;
+}
+
+export function arsinh(x) {
+  return log(x + sqrt(x * x + 1));
+}
+
+export function arcosh(x) {
+  return log(x + sqrt(x * x - 1));
 }
