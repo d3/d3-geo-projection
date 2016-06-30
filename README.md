@@ -128,7 +128,9 @@ Defaults to [[0, 22], [45, 22], [22.5, -22]].
 
 <a href="#geoCollignon" name="geoCollignon">#</a> d3.<b>geoCollignon</b>()
 
-[Collignon](http://bl.ocks.org/mbostock/3734316)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/collignon.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734316)
+
+The Collignon equal-area pseudocylindrical projection. This projection is used in the polar areas of the [HEALPix projection](#geoHealpix).
 
 <a href="#geoConicConformal" name="geoConicConformal">#</a> d3.<b>geoConicConformal</b>()
 
@@ -483,6 +485,18 @@ Raw projections are typically passed to the [d3.geoProjection](#geoProjection) c
 …
 
 <a href="#geoBottomleyRaw" name="geoBottomleyRaw">#</a> d3.<b>geoBottomleyRaw</b>(<i>psi</i>)
+
+…
+
+<a href="#geoBromleyRaw" name="geoBromleyRaw">#</a> d3.<b>geoBromleyRaw</b>
+
+…
+
+<a href="#geoChamberlinRaw" name="geoChamberlinRaw">#</a> d3.<b>geoChamberlinRaw</b>
+
+…
+
+<a href="#geoCollignonRaw" name="geoCollignonRaw">#</a> d3.<b>geoCollignonRaw</b>
 
 …
 
