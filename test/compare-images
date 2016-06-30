@@ -7,6 +7,7 @@ for i in \
     august \
     baker \
     berghaus \
+    boggs \
     mollweide; do
   test/render-world $i \
       && [ "$(compare -metric rmse img/$i.png test/output/$i.png null: 2>&1)" = "0 (0)" ] \

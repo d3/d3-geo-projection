@@ -1,7 +1,7 @@
 import {geoProjection} from "d3-geo";
 import {abs, asin, cos, epsilon, halfPi, pi, sin, sqrt2} from "./math";
 
-function mollweideBromleyTheta(cp, phi) {
+export function mollweideBromleyTheta(cp, phi) {
   var cpsinPhi = cp * sin(phi), i = 30, delta;
   do phi -= delta = (phi + sin(phi) - cpsinPhi) / (1 + cos(phi));
   while (abs(delta) > epsilon && --i > 0);

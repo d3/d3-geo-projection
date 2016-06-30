@@ -86,7 +86,9 @@ If *lobes* is specified, sets the number of lobes in the resulting star, and ret
 
 <a href="#geoBoggs" name="geoBoggs">#</a> d3.<b>geoBoggs</b>()
 
-[Boggs eumorphic](http://bl.ocks.org/mbostock/4481220)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/boggs.png" width="480" height="250">](http://bl.ocks.org/mbostock/4481220)
+
+The Boggs eumorphic projection.
 
 <a href="#geoBonne" name="geoBonne">#</a> d3.<b>geoBonne</b>()
 
