@@ -168,10 +168,13 @@ The Craster parabolic projection; also known as Putniņš P4.
 
 <a href="#geoCylindricalEqualArea" name="geoCylindricalEqualArea">#</a> d3.<b>geoCylindricalEqualArea</b>()
 
-[cylindrical equal-area](http://bl.ocks.org/mbostock/3712408),
-[Gall–Peters](http://bl.ocks.org/mbostock/3946824),
-[Hobo–Dyer](http://bl.ocks.org/mbostock/4476487),
-[Tobler world-in-a-square](http://bl.ocks.org/mbostock/4476496)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/cylindricalEqualArea.png" width="480" height="250">](http://bl.ocks.org/mbostock/3712408)
+
+The cylindrical equal-area projection. With a different [parallel](#cylindricalEqualArea_parallel), this projection is also known as [Gall–Peters](http://bl.ocks.org/mbostock/3946824), [Hobo–Dyer](http://bl.ocks.org/mbostock/4476487), and [Tobler world-in-a-square](http://bl.ocks.org/mbostock/4476496).
+
+<a href="#cylindricalEqualArea_parallel" name="cylindricalEqualArea_parallel">#</a> <i>cylindricalEqualArea</i>.<b>parallel</b>([<i>parallel</i>])
+
+Defaults to approximately 38.58°, fitting the world in a 960×500 rectangle.
 
 <a href="#geoCylindricalStereographic" name="geoCylindricalStereographic">#</a> d3.<b>geoCylindricalStereographic</b>()
 
@@ -513,6 +516,10 @@ Raw projections are typically passed to the [d3.geoProjection](#geoProjection) c
 …
 
 <a href="#geoCrasterRaw" name="geoCrasterRaw">#</a> d3.<b>geoCrasterRaw</b>
+
+…
+
+<a href="#geoCylindricalEqualAreaRaw" name="geoCylindricalEqualAreaRaw">#</a> d3.<b>geoCylindricalEqualAreaRaw</b>
 
 …
 
