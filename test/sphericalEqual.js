@@ -1,7 +1,7 @@
 var tape = require("tape");
 
 tape.Test.prototype.sphericalEqual = function(actual, expected, delta) {
-  delta = delta || 1e-6;
+  delta = delta || 1e-4;
   this._assert(sphericalEqual(actual, expected, delta), {
     message: "should be equal degrees [longitude, latitude] within ±" + delta,
     operator: "sphericalEqual",
