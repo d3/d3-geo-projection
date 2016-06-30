@@ -152,7 +152,13 @@ The conic equidistant projection; see [d3-geo](https://github.com/d3/d3-geo#geoC
 
 <a href="#geoCraig" name="geoCraig">#</a> d3.<b>geoCraig</b>()
 
-[Craig retroazimuthal](http://bl.ocks.org/mbostock/4459466)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/craig.png" width="480" height="250">](http://bl.ocks.org/mbostock/4459466)
+
+The Craig retroazimuthal projection. Note: this projection tends to [fold over itself](http://bl.ocks.org/mbostock/4459716) if the [standard parallel](#craig_parallel) is non-zero; we have not yet implemented the necessary advanced clipping to avoid overlap.
+
+<a href="#craig_parallel" name="craig_parallel">#</a> <i>craig</i>.<b>parallel</b>([<i>parallel</i>])
+
+Defaults to 0°.
 
 <a href="#geoCraster" name="geoCraster">#</a> d3.<b>geoCraster</b>()
 
@@ -497,6 +503,10 @@ Raw projections are typically passed to the [d3.geoProjection](#geoProjection) c
 …
 
 <a href="#geoCollignonRaw" name="geoCollignonRaw">#</a> d3.<b>geoCollignonRaw</b>
+
+…
+
+<a href="#geoCraigRaw" name="geoCraigRaw">#</a> d3.<b>geoCraigRaw</b>(<i>phi</i>)
 
 …
 
