@@ -7,7 +7,7 @@ function hatanoRaw(lambda, phi) {
     if (Math.abs(delta) < epsilon) break;
   }
   return [
-   0.85 * lambda * Math.cos(phi *=0.5),
+   0.85 * lambda * Math.cos(phi *= 0.5),
     Math.sin(phi) * (phi < 0 ? 1.93052 : 1.75859)
   ];
 }

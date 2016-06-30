@@ -1,7 +1,7 @@
 import {geoProjection} from "d3-geo";
-import {abs, cos, epsilon, sin, tan} from "./math";
+import {abs, cos, epsilon, sign, sin, tan} from "./math";
 
-function polyconicRaw(lambda, phi) {
+export function polyconicRaw(lambda, phi) {
   if (abs(phi) < epsilon) return [lambda, 0];
   var tanPhi = tan(phi),
       k = lambda * sin(phi);
@@ -14,7 +14,7 @@ function polyconicRaw(lambda, phi) {
 polyconicRaw.invert = function(x, y) {
   if (abs(y) < epsilon) return [x, 0];
   var k = x * x + y * y,
-      phi = y *0.5,
+      phi = y * 0.5,
       i = 10, delta;
   do {
     var tanPhi = tan(phi),

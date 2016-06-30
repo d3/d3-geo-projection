@@ -15,7 +15,7 @@ function guyou(lambda, phi) {
       at = guyouComplexAtan(r * Math.cos(f * lambda), r * Math.sin(f * lambda)),
       t = ellipticFi(at[0], at[1], k * k);
 
-  return [-t[1], (phi >= 0 ? 1 : -1) * (.5 * K - t[0])];
+  return [-t[1], (phi >= 0 ? 1 : -1) * (0.5 * K - t[0])];
 }
 
 function guyouComplexAtan(x, y) {
@@ -42,13 +42,13 @@ guyouRaw.invert = function(x, y) {
       K = ellipticF(halfPi, k * k),
       f = -1;
 
-  var j = ellipticJi(.5 * K - y, -x, k * k),
+  var j = ellipticJi(0.5 * K - y, -x, k * k),
       tn = guyouComplexDivide(j[0], j[1]),
       lambda = Math.atan2(tn[1], tn[0]) / f;
 
   return [
     lambda,
-    2 * Math.atan(Math.exp(.5 / f * Math.log(k_ * tn[0] * tn[0] + k_ * tn[1] * tn[1]))) - halfPi
+    2 * Math.atan(Math.exp(0.5 / f * Math.log(k_ * tn[0] * tn[0] + k_ * tn[1] * tn[1]))) - halfPi
   ];
 };
 

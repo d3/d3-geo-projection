@@ -65,15 +65,15 @@ function hammerRetroazimuthalProjection() {
       circle = d3.geo.circle();
 
   p.parallel = function(_) {
-    if (!arguments.length) return phi0 / pi * 180;
+    if (!arguments.length) return phi0 * degrees;
     var r = p.rotate();
-    return m(phi0 = _ * pi / 180).rotate(r);
+    return m(phi0 = _ * radians).rotate(r);
   };
 
   // Temporary hack; see hammerRetroazimuthalRotation.
   p.rotate = function(_) {
-    if (!arguments.length) return (_ = rotate_.call(p), _[1] += phi0 / pi * 180, _);
-    rotate_.call(p, [_[0], _[1] - phi0 / pi * 180]);
+    if (!arguments.length) return (_ = rotate_.call(p), _[1] += phi0 * degrees, _);
+    rotate_.call(p, [_[0], _[1] - phi0 * degrees]);
     circle.origin([-_[0], -_[1]]);
     return p;
   };

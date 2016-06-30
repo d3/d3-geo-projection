@@ -5,7 +5,7 @@ function lagrangeRaw(n) {
     if (Math.abs(Math.abs(phi) - halfPi) < epsilon) return [0, phi < 0 ? -2 : 2];
     var sinPhi = Math.sin(phi),
         v = Math.pow((1 + sinPhi) / (1 - sinPhi), n / 2),
-        c =0.5 * (v + 1 / v) + Math.cos(lambda *= n);
+        c = 0.5 * (v + 1 / v) + Math.cos(lambda *= n);
     return [
       2 * Math.sin(lambda) / c,
       (v - 1 / v) / c
@@ -32,7 +32,7 @@ function lagrangeRaw(n) {
 }
 
 function lagrangeProjection() {
-  var n =0.5,
+  var n = 0.5,
       m = geoProjectionMutator(lagrange),
       p = m(n);
 

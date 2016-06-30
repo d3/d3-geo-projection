@@ -96,7 +96,7 @@ function gingeryIntegrate(f, a, b) {
       h = (b - a) / n,
       s = f(a) + f(b);
   for (var i = 1, x = a; i < n; ++i) s += 2 * f(x += h);
-  return s *0.5 * h;
+  return s * 0.5 * h;
 }
 
 export default function() {

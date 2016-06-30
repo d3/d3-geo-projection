@@ -55,7 +55,7 @@ function modifiedStereographicRaw(C) {
 
     if (i) {
       var rho = Math.sqrt(zr * zr + zi * zi),
-          c = 2 * Math.atan(rho *0.5),
+          c = 2 * Math.atan(rho * 0.5),
           sinc = Math.sin(c);
       return [Math.atan2(zr * sinc, rho * Math.cos(c)), rho ? asin(zi * sinc / rho) : 0];
     }

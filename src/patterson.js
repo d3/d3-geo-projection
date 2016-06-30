@@ -1,4 +1,5 @@
 import {geoProjection} from "d3-geo";
+import {abs, epsilon} from "./math";
 
 // Based on Java implementation by Bojan Savric.
 // https://github.com/OSUCartography/JMapProjLib/blob/master/src/com/jhlabs/map/proj/PattersonProjection.java
@@ -13,7 +14,7 @@ var pattersonK1 = 1.0148,
     pattersonC4 = 9 * pattersonK4,
     pattersonYmax = 1.790857183;
 
-function patterson(lambda, phi) {
+export function pattersonRaw(lambda, phi) {
   var phi2 = phi * phi;
   return [
     lambda,
@@ -29,7 +30,7 @@ pattersonRaw.invert = function(x, y) {
   do { // Newton-Raphson
     var y2 = yc * yc;
     yc -= delta = ((yc * (pattersonK1 + y2 * y2 * (pattersonK2 + y2 * (pattersonK3 + pattersonK4 * y2)))) - y) / (pattersonC1 + y2 * y2 * (pattersonC2 + y2 * (pattersonC3 + pattersonC4 * y2)));
-  } while (Math.abs(delta) > epsilon);
+  } while (abs(delta) > epsilon);
 
   return [x, yc];
 };

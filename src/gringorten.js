@@ -63,7 +63,7 @@ function gringortenHexadecant(lambda, phi) {
       drdPhi = 2 * sinPhi * cosPhi,
       dvdPhi = (-3 * r + z * k) * drdPhi,
       dp2dPhi = (-v * cosPhi - (1 - sinPhi) * dvdPhi) / (v * v),
-      dpdPhi = (.5 * dp2dPhi) / p,
+      dpdPhi = (0.5 * dp2dPhi) / p,
       dhdPhi = q * dpdPhi - 2 * r * p * drdPhi,
       dra2dPhi = r * j * dp2dPhi + p2 * k * drdPhi,
       μ = -secPhi * drdPhi,
@@ -77,16 +77,16 @@ function gringortenHexadecant(lambda, phi) {
     if (lambda > pi / 4) return [x, x];
 
     var x1 = x,
-        x0 =0.5 * x,
+        x0 = 0.5 * x,
         i = 50;
-    x =0.5 * (x0 + x1);
+    x = 0.5 * (x0 + x1);
     do {
       var g = Math.sqrt(a2 - x * x),
           f = (x * (ζ + μ * g) + ν * asin(x / a)) - lambda;
       if (!f) break;
       if (f < 0) x0 = x;
       else x1 = x;
-      x =0.5 * (x0 + x1);
+      x = 0.5 * (x0 + x1);
     } while (Math.abs(x1 - x0) > epsilon && --i > 0);
   } else {
     // Newton-Raphson.
@@ -106,7 +106,7 @@ function gringortenHexadecant(lambda, phi) {
 function gringortenHexadecantInvert(x, y) {
   var x0 = 0,
       x1 = 1,
-      r =0.5,
+      r = 0.5,
       i = 50;
 
   while (true) {
@@ -127,7 +127,7 @@ function gringortenHexadecantInvert(x, y) {
     if (y0 > 0) x0 = r;
     else x1 = r;
 
-    r =0.5 * (x0 + x1);
+    r = 0.5 * (x0 + x1);
   }
 
   if (!i) return null;
@@ -138,7 +138,7 @@ function gringortenHexadecantInvert(x, y) {
       drdPhi = 2 * sinPhi * cosPhi,
       dvdPhi = (-3 * r + z * (1 + 3 * r2)) * drdPhi,
       dp2dPhi = (-v * cosPhi - (1 - sinPhi) * dvdPhi) / (v * v),
-      dpdPhi =0.5 * dp2dPhi / p,
+      dpdPhi = 0.5 * dp2dPhi / p,
       dhdPhi = (1 - r2) * dpdPhi - 2 * r * p * drdPhi,
       ζ = -2 * secPhi * dhdPhi,
       μ = -secPhi * drdPhi,

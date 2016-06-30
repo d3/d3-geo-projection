@@ -4,7 +4,7 @@ function mtFlatPolarQuarticRaw(lambda, phi) {
   var k = (1 + Math.SQRT1_2) * Math.sin(phi),
       theta = phi;
   for (var i = 0, delta; i < 25; i++) {
-    theta -= delta = (Math.sin(theta / 2) + Math.sin(theta) - k) / (.5 * Math.cos(theta / 2) + Math.cos(theta));
+    theta -= delta = (Math.sin(theta / 2) + Math.sin(theta) - k) / (0.5 * Math.cos(theta / 2) + Math.cos(theta));
     if (Math.abs(delta) < epsilon) break;
   }
   return [

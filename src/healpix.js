@@ -6,7 +6,7 @@ var healpixParallel = 41 + 48 / 36 + 37 / 3600; // TODO automate
 
 function healpix(h) {
   var lambert = d3.geo.cylindricalEqualArea.raw(0),
-      phi0 = healpixParallel * pi / 180,
+      phi0 = healpixParallel * radians,
       dx0 = 2 * pi,
       dx1 = d3.geo.collignon.raw(pi, phi0)[0] - d3.geo.collignon.raw(-pi, phi0)[0],
       y0 = lambert(0, phi0)[1],

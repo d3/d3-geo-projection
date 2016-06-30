@@ -10,7 +10,7 @@ function millerRaw(lambda, phi) {
 millerRaw.invert = function(x, y) {
   return [
     x,
-    2.5 * Math.atan(Math.exp(.8 * y)) -0.625 * pi
+    2.5 * Math.atan(Math.exp(0.8 * y)) -0.625 * pi
   ];
 };
 

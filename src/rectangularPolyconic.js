@@ -1,36 +1,37 @@
 import {geoProjection} from "d3-geo";
-import "parallel1";
+import {abs, acos, asin, atan, cos, epsilon, pi, sin, tan} from "./math";
+import parallel1Projection from "./parallel1";
 
-function rectangularPolyconic(phi0) {
-  var sinPhi0 = Math.sin(phi0);
+export function rectangularPolyconicRaw(phi0) {
+  var sinPhi0 = sin(phi0);
 
   function forward(lambda, phi) {
-    var A = sinPhi0 ? Math.tan(lambda * sinPhi0 / 2) / sinPhi0 : lambda / 2;
+    var A = sinPhi0 ? tan(lambda * sinPhi0 / 2) / sinPhi0 : lambda / 2;
     if (!phi) return [2 * A, -phi0];
-    var E = 2 * Math.atan(A * Math.sin(phi)),
-        cotPhi = 1 / Math.tan(phi);
+    var E = 2 * atan(A * sin(phi)),
+        cotPhi = 1 / tan(phi);
     return [
-      Math.sin(E) * cotPhi,
-      phi + (1 - Math.cos(E)) * cotPhi - phi0
+      sin(E) * cotPhi,
+      phi + (1 - cos(E)) * cotPhi - phi0
     ];
   }
 
   // TODO return null for points outside outline.
   forward.invert = function(x, y) {
-    if (Math.abs(y += phi0) < epsilon) return [sinPhi0 ? 2 * Math.atan(sinPhi0 * x / 2) / sinPhi0 : x, 0];
+    if (abs(y += phi0) < epsilon) return [sinPhi0 ? 2 * atan(sinPhi0 * x / 2) / sinPhi0 : x, 0];
     var k = x * x + y * y,
         phi = 0,
         i = 10, delta;
     do {
-      var tanPhi = Math.tan(phi),
-          secPhi = 1 / Math.cos(phi),
+      var tanPhi = tan(phi),
+          secPhi = 1 / cos(phi),
           j = k - 2 * y * phi + phi * phi;
       phi -= delta = (tanPhi * j + 2 * (phi - y)) / (2 + j * secPhi * secPhi + 2 * (phi - y) * tanPhi);
-    } while (Math.abs(delta) > epsilon && --i > 0);
-    var E = x * (tanPhi = Math.tan(phi)),
-        A = Math.tan(Math.abs(y) < Math.abs(phi + 1 / tanPhi) ? asin(E) *0.5 : acos(E) *0.5 + pi / 4) / Math.sin(phi);
+    } while (abs(delta) > epsilon && --i > 0);
+    var E = x * (tanPhi = tan(phi)),
+        A = tan(abs(y) < abs(phi + 1 / tanPhi) ? asin(E) * 0.5 : acos(E) * 0.5 + pi / 4) / sin(phi);
     return [
-      sinPhi0 ? 2 * Math.atan(sinPhi0 * A) / sinPhi0 : 2 * A,
+      sinPhi0 ? 2 * atan(sinPhi0 * A) / sinPhi0 : 2 * A,
       phi
     ];
   };
@@ -38,4 +39,6 @@ function rectangularPolyconic(phi0) {
   return forward;
 }
 
-(d3.geo.rectangularPolyconic = function() { return parallel1Projection(rectangularPolyconic); }).raw = rectangularPolyconic;
+export default function() {
+  return parallel1Projection(rectangularPolyconicRaw);
+}

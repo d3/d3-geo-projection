@@ -1,20 +1,21 @@
 import {geoProjection} from "d3-geo";
+import {abs, cos, epsilon, tan} from "./math";
 
-function nellHammerRaw(lambda, phi) {
+export function nellHammerRaw(lambda, phi) {
   return [
-    lambda * (1 + Math.cos(phi)) / 2,
-    2 * (phi - Math.tan(phi / 2))
+    lambda * (1 + cos(phi)) / 2,
+    2 * (phi - tan(phi / 2))
   ];
 }
 
 nellHammerRaw.invert = function(x, y) {
   var p = y / 2;
-  for (var i = 0, delta = Infinity; i < 10 && Math.abs(delta) > epsilon; i++) {
-    var c = Math.cos(y / 2);
-    y -= delta = (y - Math.tan(y / 2) - p) / (1 -0.5 / (c * c));
+  for (var i = 0, delta = Infinity; i < 10 && abs(delta) > epsilon; ++i) {
+    var c = cos(y / 2);
+    y -= delta = (y - tan(y / 2) - p) / (1 -0.5 / (c * c));
   }
   return [
-    2 * x / (1 + Math.cos(y)),
+    2 * x / (1 + cos(y)),
     y
   ];
 };

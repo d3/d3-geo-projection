@@ -6,14 +6,14 @@ function hillRaw(K) {
       β = asin(sinβ),
       A = 2 * Math.sqrt(pi / (B = pi + 4 * β * L)),
       B,
-      rho0 =0.5 * A * (L + Math.sqrt(K * (2 + K))),
+      rho0 = 0.5 * A * (L + Math.sqrt(K * (2 + K))),
       K2 = K * K,
       L2 = L * L;
 
   function forward(lambda, phi) {
     var t = 1 - Math.sin(phi),
         rho,
-        ω;
+        omega;
     if (t && t < 2) {
       var theta = halfPi - phi, i = 25, delta;
       do {
@@ -24,14 +24,14 @@ function hillRaw(K) {
         theta -= delta = (theta - K2 * β - L * sinTheta + C * β_β1 -0.5 * t * B) / (2 * L * sinTheta * β_β1);
       } while (Math.abs(delta) > epsilon2 && --i > 0);
       rho = A * Math.sqrt(C);
-      ω = lambda * β_β1 / pi;
+      omega = lambda * β_β1 / pi;
     } else {
       rho = A * (K + t);
-      ω = lambda * β / pi;
+      omega = lambda * β / pi;
     }
     return [
-      rho * Math.sin(ω),
-      rho0 - rho * Math.cos(ω)
+      rho * Math.sin(omega),
+      rho0 - rho * Math.cos(omega)
     ];
   };
 

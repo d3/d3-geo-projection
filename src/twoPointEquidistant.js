@@ -8,7 +8,7 @@ function twoPointEquidistant(z0) {
       lambdab = -lambdaa,
       z02 = z0 * z0,
       tanLambda0 = Math.tan(lambdab),
-      S =0.5 / Math.sin(lambdab);
+      S = 0.5 / Math.sin(lambdab);
 
   function forward(lambda, phi) {
     var za = acos(Math.cos(phi) * Math.cos(lambda - lambdaa)),
@@ -52,9 +52,9 @@ function twoPointEquidistantProjection() {
     // Rotate one of the reference points by the origin.
     // Apply the spherical law of sines to compute γ rotation.
     var interpolate = d3.geo.interpolate(_[0], _[1]),
-        origin = interpolate(.5),
+        origin = interpolate(0.5),
         p = d3.geo.rotation([-origin[0], -origin[1]])(_[0]),
-        b = interpolate.distance *0.5,
+        b = interpolate.distance * 0.5,
         γ = -asin(Math.sin(p[1] * radians) / Math.sin(b));
     if (p[0] > 0) γ = pi - γ;
 

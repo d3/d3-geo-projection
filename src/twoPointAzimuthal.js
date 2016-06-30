@@ -30,7 +30,7 @@ function twoPointAzimuthalProjection() {
     points = _;
 
     var interpolate = d3.geo.interpolate(_[0], _[1]),
-        origin = interpolate(.5),
+        origin = interpolate(0.5),
         p = d3.geo.rotation([-origin[0], -origin[1]])(_[0]),
         b = interpolate.distance * 0.5,
         γ = -asin(Math.sin(p[1] * radians) / Math.sin(b));
