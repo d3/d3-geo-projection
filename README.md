@@ -420,7 +420,10 @@ The transverse spherical Mercator projection; see [d3-geo](https://github.com/d3
 
 <a href="#geoWinkel3" name="geoWinkel3">#</a> d3.<b>geoWinkel3</b>()
 
-[Winkel tripel](http://bl.ocks.org/mbostock/3682676)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/winkel3.png" width="480" height="250">](http://bl.ocks.org/mbostock/3682676)
+
+The Winkel tripel projection.
+
 
 ### Raw Projections
 

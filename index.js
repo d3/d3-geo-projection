@@ -8,3 +8,4 @@ export {default as geoBoggs, boggsRaw as geoBoggsRaw} from "./src/boggs";
 export {default as geoBonne, bonneRaw as geoBonneRaw} from "./src/bonne";
 export {default as geoMollweide, mollweideRaw as geoMollweideRaw} from "./src/mollweide";
 export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./src/sinusoidal";
+export {default as geoWinkel3, winkel3Raw as geoWinkel3Raw} from "./src/winkel3";
