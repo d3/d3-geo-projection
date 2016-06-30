@@ -178,7 +178,7 @@ Defaults to approximately 38.58°, fitting the world in a 960×500 rectangle.
 
 <a href="#geoCylindricalStereographic" name="geoCylindricalStereographic">#</a> d3.<b>geoCylindricalStereographic</b>()
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/geoCylindricalStereographic.png" width="480" height="250">](http://bl.ocks.org/mbostock/5234763)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/cylindricalStereographic.png" width="480" height="250">](http://bl.ocks.org/mbostock/5234763)
 
 The cylindrical stereographic projection. With a [parallel](#cylindricalStereographic_parallel) of 45°, also known as Gall’s stereographic.
 
