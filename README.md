@@ -118,7 +118,13 @@ The Bromley projection is a rescaled [Mollweide projection](#geoMollweide).
 
 <a href="#geoChamberlin" name="geoChamberlin">#</a> d3.<b>geoChamberlin</b>()
 
-[Chamberlin trimetric](http://bl.ocks.org/mbostock/5625053)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/chamberlin.png" width="480" height="250">](http://bl.ocks.org/mbostock/5625053)
+
+The Chamberlin trimetric projection. This method does not support *projection*.rotate: the [three reference points](#chamberlin_points) implicitly determine a fixed rotation.
+
+<a href="#chamberlin_points" name="chamberlin_points">#</a> <i>chamberlin</i>.<b>points</b>([<i>points</i>])
+
+Defaults to [[0, 22], [45, 22], [22.5, -22]].
 
 <a href="#geoCollignon" name="geoCollignon">#</a> d3.<b>geoCollignon</b>()
 

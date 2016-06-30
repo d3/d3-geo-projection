@@ -1,8 +1,10 @@
 export var abs = Math.abs;
 export var atan = Math.atan;
 export var atan2 = Math.atan2;
+export var ceil = Math.ceil;
 export var cos = Math.cos;
 export var exp = Math.exp;
+export var floor = Math.floor;
 export var log = Math.log;
 export var round = Math.round;
 export var sign = Math.sign || function(x) { return x > 0 ? 1 : x < 0 ? -1 : 0; };
