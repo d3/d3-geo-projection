@@ -178,8 +178,13 @@ Defaults to approximately 38.58°, fitting the world in a 960×500 rectangle.
 
 <a href="#geoCylindricalStereographic" name="geoCylindricalStereographic">#</a> d3.<b>geoCylindricalStereographic</b>()
 
-cylindrical stereographic,
-[Gall’s stereographic](http://bl.ocks.org/mbostock/5234763)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/geoCylindricalStereographic.png" width="480" height="250">](http://bl.ocks.org/mbostock/5234763)
+
+The cylindrical stereographic projection. With a [parallel](#cylindricalStereographic_parallel) of 45°, also known as Gall’s stereographic.
+
+<a href="#cylindricalStereographic_parallel" name="cylindricalStereographic_parallel">#</a> <i>cylindricalStereographic</i>.<b>parallel</b>([<i>parallel</i>])
+
+Defaults to 0°.
 
 <a href="#geoEckert1" name="geoEckert1">#</a> d3.<b>geoEckert1</b>()
 
@@ -520,6 +525,10 @@ Raw projections are typically passed to the [d3.geoProjection](#geoProjection) c
 …
 
 <a href="#geoCylindricalEqualAreaRaw" name="geoCylindricalEqualAreaRaw">#</a> d3.<b>geoCylindricalEqualAreaRaw</b>
+
+…
+
+<a href="#geoCylindricalStereographicRaw" name="geoCylindricalStereographicRaw">#</a> d3.<b>geoCylindricalStereographicRaw</b>
 
 …
 

@@ -16,6 +16,7 @@ for i in \
     craig \
     craster \
     cylindricalEqualArea \
+    cylindricalStereographic \
     mollweide \
     sinusoidal \
     winkel3 \
