@@ -1,7 +1,7 @@
-export {default as geoAitoff} from "./src/aitoff";
-export {default as geoAiry} from "./src/airy";
-export {default as geoArmadillo} from "./src/armadillo";
-export {default as geoAugust} from "./src/august";
-export {default as geoBaker} from "./src/baker";
-export {default as geoBerghaus} from "./src/berghaus";
-export {default as geoMollweide} from "./src/mollweide";
+export {default as geoAitoff, aitoffRaw as geoAitoffRaw} from "./src/aitoff";
+export {default as geoAiry, airyRaw as geoAiryRaw} from "./src/airy";
+export {default as geoArmadillo, armadilloRaw as geoArmadilloRaw} from "./src/armadillo";
+export {default as geoAugust, augustRaw as geoAugustRaw} from "./src/august";
+export {default as geoBaker, bakerRaw as geoBakerRaw} from "./src/baker";
+export {default as geoBerghaus, berghausRaw as geoBerghausRaw} from "./src/berghaus";
+export {default as geoMollweide, mollweideRaw as geoMollweideRaw} from "./src/mollweide";

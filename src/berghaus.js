@@ -1,12 +1,11 @@
-import {geoProjectionMutator} from "d3-geo";
-import {azimuthalEquidistant, azimuthalEquidistantInvert} from "./azimuthalEquidistant";
+import {geoProjectionMutator, geoAzimuthalEquidistantRaw} from "d3-geo";
 import {abs, acos, asin, atan, atan2, cos, degrees, halfPi, pi, radians, round, sin, sqrt, tan} from "./math";
 
-function berghaus(lobes) {
+export function berghausRaw(lobes) {
   var k = 2 * pi / lobes;
 
   function forward(lambda, phi) {
-    var p = azimuthalEquidistant(lambda, phi);
+    var p = geoAzimuthalEquidistantRaw(lambda, phi);
     if (abs(lambda) > halfPi) { // back hemisphere
       var theta = atan2(p[1], p[0]),
           r = sqrt(p[0] * p[0] + p[1] * p[1]),
@@ -30,7 +29,7 @@ function berghaus(lobes) {
       theta = theta0 + 2 * atan((cotα + s * sqrt(cotα * cotα - 3)) / 3);
       x = r * cos(theta), y = r * sin(theta);
     }
-    return azimuthalEquidistantInvert(x, y);
+    return geoAzimuthalEquidistantRaw.invert(x, y);
   };
 
   return forward;
@@ -38,7 +37,7 @@ function berghaus(lobes) {
 
 export default function() {
   var lobes = 5,
-      m = geoProjectionMutator(berghaus),
+      m = geoProjectionMutator(berghausRaw),
       p = m(lobes),
       projectionStream = p.stream,
       epsilon = 1e-2,

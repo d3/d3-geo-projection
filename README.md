@@ -20,6 +20,8 @@ var aitoff = d3.geoAitoff();
 
 ## API Reference
 
+### Projections
+
 <a href="#geoAitoff" name="geoAitoff">#</a> d3.<b>geoAitoff</b>()
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/aitoff.png" width="480" height="250">](http://bl.ocks.org/mbostock/3682698)
@@ -407,3 +409,34 @@ The transverse spherical Mercator projection; see [d3-geo](https://github.com/d3
 <a href="#geoWinkel3" name="geoWinkel3">#</a> d3.<b>geoWinkel3</b>()
 
 [Winkel tripel](http://bl.ocks.org/mbostock/3682676)
+
+### Raw Projections
+
+<a href="#geoAitoffRaw" name="geoAitoffRaw">#</a> d3.<b>geoAitoffRaw</b>(<i>lambda</i>, <i>phi</i>)
+
+…
+
+<a href="#geoAiryRaw" name="geoAiryRaw">#</a> d3.<b>geoAiryRaw</b>(<i>beta</i>)
+
+…
+
+<a href="#geoArmadilloRaw" name="geoArmadilloRaw">#</a> d3.<b>geoArmadilloRaw</b>(<i>phi0</i>)
+
+…
+
+<a href="#geoAugustRaw" name="geoAugustRaw">#</a> d3.<b>geoAugustRaw</b>(<i>lambda</i>, <i>phi</i>)
+
+…
+
+<a href="#geoBakerRaw" name="geoBakerRaw">#</a> d3.<b>geoBakerRaw</b>(<i>lambda</i>, <i>phi</i>)
+
+…
+
+<a href="#geoBerghausRaw" name="geoBerghausRaw">#</a> d3.<b>geoBerghausRaw</b>(<i>lobes</i>)
+
+…
+
+<a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>(<i>lambda</i>, <i>phi</i>)
+
+…
+

@@ -1,7 +1,7 @@
 import {geoProjectionMutator} from "d3-geo";
 import {abs, atan2, cos, degrees, epsilon, radians, sin, tan} from "./math";
 
-function armadillo(phi0) {
+export function armadilloRaw(phi0) {
   var sinPhi0 = sin(phi0),
       cosPhi0 = cos(phi0),
       sPhi0 = phi0 >= 0 ? 1 : -1,
@@ -48,7 +48,7 @@ export default function() {
   var phi0 = 20 * radians,
       sPhi0 = phi0 >= 0 ? 1 : -1,
       tanPhi0 = tan(sPhi0 * phi0),
-      m = geoProjectionMutator(armadillo),
+      m = geoProjectionMutator(armadilloRaw),
       p = m(phi0),
       stream_ = p.stream;
 

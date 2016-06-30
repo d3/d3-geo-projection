@@ -1,7 +1,7 @@
 import {geoProjection} from "d3-geo";
 import {abs, arcosh, arsinh, asin, atan2, cos, cosh, sign, sin, sinh, sqrt, tan} from "./math";
 
-function august(lambda, phi) {
+export function augustRaw(lambda, phi) {
   var tanPhi = tan(phi / 2),
       k = sqrt(1 - tanPhi * tanPhi),
       c = 1 + k * cos(lambda /= 2),
@@ -15,7 +15,7 @@ function august(lambda, phi) {
   ];
 }
 
-august.invert = function(x, y) {
+augustRaw.invert = function(x, y) {
   x *= 3 / 8, y *= 3 / 8;
   if (!x && abs(y) > 1) return null;
   var x2 = x * x,
@@ -34,5 +34,5 @@ august.invert = function(x, y) {
 };
 
 export default function() {
-  return geoProjection(august).scale(63);
+  return geoProjection(augustRaw).scale(63);
 }

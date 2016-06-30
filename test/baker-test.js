@@ -4,7 +4,7 @@ var tape = require("tape"),
 require("./inDelta");
 
 tape("geoBaker(point) returns the expected values", function(test) {
-  var baker = d3.geoBaker();
+  var baker = d3.geoBaker().scale(150);
   test.inDelta(baker([   0,   0]), [480.000000, 250.000000]);
   test.inDelta(baker([   0, -90]), [480.000000, 583.216220]);
   test.inDelta(baker([   0,  90]), [480.000000, -83.216220]);
@@ -19,7 +19,7 @@ tape("geoBaker(point) returns the expected values", function(test) {
 });
 
 tape("geoBaker.invert(point) returns the expected values", function(test) {
-  var baker = d3.geoBaker();
+  var baker = d3.geoBaker().scale(150);
   test.inDelta(baker.invert([480.000000, 250.000000]), [   0,   0]);
   test.inDelta(baker.invert([480.000000, 583.216220]), [   0, -90]);
   test.inDelta(baker.invert([480.000000, -83.216220]), [   0,  90]);

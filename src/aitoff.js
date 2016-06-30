@@ -1,14 +1,14 @@
 import {geoProjection} from "d3-geo";
 import {abs, acos, cos, epsilon, pi, sin, sinci, sqrt} from "./math";
 
-function aitoff(x, y) {
+export function aitoffRaw(x, y) {
   var cosy = cos(y), sincia = sinci(acos(cosy * cos(x /= 2)));
   return [2 * cosy * sin(x) * sincia, sin(y) * sincia];
 }
 
 // Abort if [x, y] is not within an ellipse centered at [0, 0] with
 // semi-major axis pi and semi-minor axis pi/2.
-aitoff.invert = function(x, y) {
+aitoffRaw.invert = function(x, y) {
   if (x * x + 4 * y * y > pi * pi + epsilon) return;
   var x1 = x, y1 = y, i = 25;
   do {
@@ -40,5 +40,5 @@ aitoff.invert = function(x, y) {
 };
 
 export default function() {
-  return geoProjection(aitoff);
+  return geoProjection(aitoffRaw);
 }
