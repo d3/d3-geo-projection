@@ -104,7 +104,7 @@ Defaults to 45°.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/bottomley.png" width="480" height="250">](http://bl.ocks.org/mbostock/ad2d520dd26dcc5af13b)
 
-Defined in 2003 by Henry Bottomley (see http://cybergeo.revues.org/3977), this projection offers a parameter `psi` (default `Pi/6`).
+The [Bottomley projection](http://cybergeo.revues.org/3977) “draws lines of latitude as concentric circular arcs, with arc lengths equal to their lengths on the globe, and placed symmetrically and equally spaced across the vertical central meridian.”
 
 <a href="#geoBromley" name="geoBromley">#</a> d3.<b>geoBromley</b>()
 
