@@ -94,7 +94,11 @@ The Boggs eumorphic projection. More commonly used in [interrupted form](http://
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/boggs.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734313)
 
-The Bonne pseudoconical equal-area projection.
+The Bonne pseudoconical equal-area projection. The [Werner projection](http://bl.ocks.org/mbostock/a7ae83252305ed4d54d4) is a limiting form of the Bonne projection with a standard parallel at ±90°.
+
+<a href="#bonne_parallel" name="bonne_parallel">#</a> <i>bonne</i>.<b>parallel</b>([<i>parallel</i>])
+
+Defaults to 45°.
 
 <a href="#geoBromley" name="geoBromley">#</a> d3.<b>geoBromley</b>()
 
