@@ -8,7 +8,7 @@ export function mollweideBromleyTheta(cp, phi) {
   return phi / 2;
 }
 
-function mollweideBromleyRaw(cx, cy, cp) {
+export function mollweideBromleyRaw(cx, cy, cp) {
 
   function forward(lambda, phi) {
     return [cx * lambda * cos(phi = mollweideBromleyTheta(cp, phi)), cy * sin(phi)];

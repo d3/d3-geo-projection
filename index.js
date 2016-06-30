@@ -7,6 +7,7 @@ export {default as geoBerghaus, berghausRaw as geoBerghausRaw} from "./src/bergh
 export {default as geoBoggs, boggsRaw as geoBoggsRaw} from "./src/boggs";
 export {default as geoBonne, bonneRaw as geoBonneRaw} from "./src/bonne";
 export {default as geoBottomley, bottomleyRaw as geoBottomleyRaw} from "./src/bottomley";
+export {default as geoBromley, bromleyRaw as geoBromleyRaw} from "./src/bromley";
 export {default as geoMollweide, mollweideRaw as geoMollweideRaw} from "./src/mollweide";
 export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./src/sinusoidal";
 export {default as geoWinkel3, winkel3Raw as geoWinkel3Raw} from "./src/winkel3";

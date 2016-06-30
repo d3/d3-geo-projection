@@ -112,7 +112,9 @@ Defaults to 0.5, corresponding to a sin(ψ) where ψ = π/6.
 
 <a href="#geoBromley" name="geoBromley">#</a> d3.<b>geoBromley</b>()
 
-[Bromley](http://bl.ocks.org/mbostock/4487695)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/bromley.png" width="480" height="250">](http://bl.ocks.org/mbostock/4487695)
+
+The Bromley projection is a rescaled [Mollweide projection](#geoMollweide).
 
 <a href="#geoChamberlin" name="geoChamberlin">#</a> d3.<b>geoChamberlin</b>()
 
