@@ -1,7 +1,7 @@
 var tape = require("tape"),
     d3 = require("../");
 
-require("./inDelta");
+require("./sphericalEqual");
 
 var points = [ [[   0,   0], [480,        250]],
     [[   0, -90], [480,        485.619449]],
@@ -18,7 +18,7 @@ var points = [ [[   0,   0], [480,        250]],
 tape("winkel3(point) returns the expected values", function(test) {
   var winkel3 = d3.geoWinkel3();
   points.forEach(function(x) {
-   test.inDelta(winkel3(x[0]), x[1]);
+   test.sphericalEqual(winkel3(x[0]), x[1]);
   });
   test.end();
 });
@@ -26,7 +26,7 @@ tape("winkel3(point) returns the expected values", function(test) {
 tape("winkel3.invert(point) returns the expected values", function(test) {
   var winkel3 = d3.geoWinkel3();
   points.forEach(function(x) {
-   test.inDelta(x[0], winkel3.invert(x[1]));
+   test.sphericalEqual(x[0], winkel3.invert(x[1]));
   });
   test.end();
 });
