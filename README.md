@@ -100,6 +100,10 @@ The Bonne pseudoconical equal-area projection. The [Werner projection](http://bl
 
 Defaults to 45°.
 
+<a href="#geoBottomley" name="geoBottomley">#</a> d3.<b>geoBottomley</b>()
+
+[Bottomley](http://bl.ocks.org/mbostock/ad2d520dd26dcc5af13b)
+
 <a href="#geoBromley" name="geoBromley">#</a> d3.<b>geoBromley</b>()
 
 [Bromley](http://bl.ocks.org/mbostock/4487695)
