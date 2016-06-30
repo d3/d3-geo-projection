@@ -5,4 +5,6 @@ export {default as geoAugust, augustRaw as geoAugustRaw} from "./src/august";
 export {default as geoBaker, bakerRaw as geoBakerRaw} from "./src/baker";
 export {default as geoBerghaus, berghausRaw as geoBerghausRaw} from "./src/berghaus";
 export {default as geoBoggs, boggsRaw as geoBoggsRaw} from "./src/boggs";
+export {default as geoBonne, bonneRaw as geoBonneRaw} from "./src/bonne";
 export {default as geoMollweide, mollweideRaw as geoMollweideRaw} from "./src/mollweide";
+export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./src/sinusoidal";

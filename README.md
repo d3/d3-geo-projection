@@ -92,7 +92,9 @@ The Boggs eumorphic projection. More commonly used in [interrupted form](http://
 
 <a href="#geoBonne" name="geoBonne">#</a> d3.<b>geoBonne</b>()
 
-[Bonne](http://bl.ocks.org/mbostock/3734313)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/boggs.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734313)
+
+The Bonne pseudoconical equal-area projection.
 
 <a href="#geoBromley" name="geoBromley">#</a> d3.<b>geoBromley</b>()
 
@@ -346,7 +348,9 @@ The orthographic projection; see [d3-geo](https://github.com/d3/d3-geo#geoOrthog
 
 <a href="#geoSinusoidal" name="geoSinusoidal">#</a> d3.<b>geoSinusoidal</b>()
 
-[sinusoidal](http://bl.ocks.org/mbostock/3712399)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/sinusoidal.png" width="480" height="250">](http://bl.ocks.org/mbostock/3712399)
+
+The sinusoidal projection.
 
 <a href="#geoSinuMollweide" name="geoSinuMollweide">#</a> d3.<b>geoSinuMollweide</b>()
 
@@ -438,7 +442,18 @@ The transverse spherical Mercator projection; see [d3-geo](https://github.com/d3
 
 …
 
+<a href="#geoBoggsRaw" name="geoBoggsRaw">#</a> d3.<b>geoBoggsRaw</b>(<i>lambda</i>, <i>phi</i>)
+
+…
+
+<a href="#geoBonneRaw" name="geoBonneRaw">#</a> d3.<b>geoBonneRaw</b>(<i>lambda</i>, <i>phi</i>)
+
+…
+
 <a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>(<i>lambda</i>, <i>phi</i>)
 
 …
 
+<a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>(<i>lambda</i>, <i>phi</i>)
+
+…
