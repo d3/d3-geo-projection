@@ -17,6 +17,7 @@ export var pi = Math.PI;
 export var halfPi = pi / 2;
 export var quarterPi = pi / 4;
 export var sqrt2 = sqrt(2);
+export var sqrtPi = sqrt(pi);
 export var degrees = 180 / pi;
 export var radians = pi / 180;
 

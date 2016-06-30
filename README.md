@@ -162,7 +162,9 @@ Defaults to 0°.
 
 <a href="#geoCraster" name="geoCraster">#</a> d3.<b>geoCraster</b>()
 
-[Craster parabolic](http://bl.ocks.org/mbostock/4465118)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/craster.png" width="480" height="250">](http://bl.ocks.org/mbostock/4465118)
+
+The Craster parabolic projection.
 
 <a href="#geoCylindricalEqualArea" name="geoCylindricalEqualArea">#</a> d3.<b>geoCylindricalEqualArea</b>()
 
@@ -507,6 +509,10 @@ Raw projections are typically passed to the [d3.geoProjection](#geoProjection) c
 …
 
 <a href="#geoCraigRaw" name="geoCraigRaw">#</a> d3.<b>geoCraigRaw</b>(<i>phi</i>)
+
+…
+
+<a href="#geoCrasterRaw" name="geoCrasterRaw">#</a> d3.<b>geoCrasterRaw</b>
 
 …
 

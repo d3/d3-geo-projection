@@ -1,7 +1,5 @@
 import {geoProjection} from "d3-geo";
-import {asin, pi, sin, sqrt} from "./math";
-
-var sqrtPi = sqrt(pi);
+import {asin, pi, sin, sqrt, sqrtPi} from "./math";
 
 export function collignonRaw(lambda, phi) {
   var alpha = sqrt(1 - sin(phi));

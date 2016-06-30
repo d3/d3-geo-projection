@@ -11,6 +11,7 @@ export {default as geoBromley, bromleyRaw as geoBromleyRaw} from "./src/bromley"
 export {default as geoChamberlin, chamberlinRaw as geoChamberlinRaw} from "./src/chamberlin";
 export {default as geoCollignon, collignonRaw as geoCollignonRaw} from "./src/collignon";
 export {default as geoCraig, craigRaw as geoCraigRaw} from "./src/craig";
+export {default as geoCraster, crasterRaw as geoCrasterRaw} from "./src/craster";
 export {default as geoMollweide, mollweideRaw as geoMollweideRaw} from "./src/mollweide";
 export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./src/sinusoidal";
 export {default as geoWinkel3, winkel3Raw as geoWinkel3Raw} from "./src/winkel3";
