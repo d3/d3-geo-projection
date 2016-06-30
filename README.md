@@ -427,7 +427,7 @@ The Winkel tripel projection.
 
 ### Raw Projections
 
-<a href="#geoAitoffRaw" name="geoAitoffRaw">#</a> d3.<b>geoAitoffRaw</b>(<i>lambda</i>, <i>phi</i>)
+<a href="#geoAitoffRaw" name="geoAitoffRaw">#</a> d3.<b>geoAitoffRaw</b>
 
 …
 
@@ -439,11 +439,11 @@ The Winkel tripel projection.
 
 …
 
-<a href="#geoAugustRaw" name="geoAugustRaw">#</a> d3.<b>geoAugustRaw</b>(<i>lambda</i>, <i>phi</i>)
+<a href="#geoAugustRaw" name="geoAugustRaw">#</a> d3.<b>geoAugustRaw</b>
 
 …
 
-<a href="#geoBakerRaw" name="geoBakerRaw">#</a> d3.<b>geoBakerRaw</b>(<i>lambda</i>, <i>phi</i>)
+<a href="#geoBakerRaw" name="geoBakerRaw">#</a> d3.<b>geoBakerRaw</b>
 
 …
 
@@ -451,18 +451,22 @@ The Winkel tripel projection.
 
 …
 
-<a href="#geoBoggsRaw" name="geoBoggsRaw">#</a> d3.<b>geoBoggsRaw</b>(<i>lambda</i>, <i>phi</i>)
+<a href="#geoBoggsRaw" name="geoBoggsRaw">#</a> d3.<b>geoBoggsRaw</b>
 
 …
 
-<a href="#geoBonneRaw" name="geoBonneRaw">#</a> d3.<b>geoBonneRaw</b>(<i>lambda</i>, <i>phi</i>)
+<a href="#geoBonneRaw" name="geoBonneRaw">#</a> d3.<b>geoBonneRaw</b>
 
 …
 
-<a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>(<i>lambda</i>, <i>phi</i>)
+<a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
 
 …
 
-<a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>(<i>lambda</i>, <i>phi</i>)
+<a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
+
+…
+
+<a href="#geoWinkel3Raw" name="geoWinkel3Raw">#</a> d3.<b>geoWinkel3Raw</b>
 
 …
