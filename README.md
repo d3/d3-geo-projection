@@ -426,8 +426,17 @@ The transverse spherical Mercator projection; see [d3-geo](https://github.com/d3
 
 The Winkel tripel projection.
 
-
 ### Raw Projections
+
+Raw projections are typically passed to the [d3.geoProjection](#geoProjection) constructor. They are exposed here to facilitate the derivation of related projections.
+
+<a href="#project" name="project">#</a> <i>project</i>(<i>lambda</i>, <i>phi</i>)
+
+…
+
+<a href="#project_invert" name="project_invert">#</a> <i>project</i>.<b>invert</b>(<i>x</i>, <i>y</i>)
+
+…
 
 <a href="#geoAitoffRaw" name="geoAitoffRaw">#</a> d3.<b>geoAitoffRaw</b>
 
