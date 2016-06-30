@@ -164,7 +164,7 @@ Defaults to 0°.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/craster.png" width="480" height="250">](http://bl.ocks.org/mbostock/4465118)
 
-The Craster parabolic projection.
+The Craster parabolic projection; also known as Putniņš P4.
 
 <a href="#geoCylindricalEqualArea" name="geoCylindricalEqualArea">#</a> d3.<b>geoCylindricalEqualArea</b>()
 
