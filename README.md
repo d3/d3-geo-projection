@@ -92,7 +92,7 @@ The Boggs eumorphic projection. More commonly used in [interrupted form](http://
 
 <a href="#geoBonne" name="geoBonne">#</a> d3.<b>geoBonne</b>()
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/boggs.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734313)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/bonne.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734313)
 
 The Bonne pseudoconical equal-area projection. The [Werner projection](http://bl.ocks.org/mbostock/a7ae83252305ed4d54d4) is a limiting form of the Bonne projection with a standard parallel at ±90°.
 
@@ -129,8 +129,6 @@ Alber’s conic equal-area projection; see [d3-geo](https://github.com/d3/d3-geo
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/conicEquidistant.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734317)
 
 The conic equidistant projection; see [d3-geo](https://github.com/d3/d3-geo#geoConicEquidistant).
-
-<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/conicEqualArea.png" width="480" height="250">
 
 <a href="#geoCraig" name="geoCraig">#</a> d3.<b>geoCraig</b>()
 
