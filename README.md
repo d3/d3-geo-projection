@@ -461,6 +461,10 @@ The Winkel tripel projection.
 
 …
 
+<a href="#geoBottomleyRaw" name="geoBottomleyRaw">#</a> d3.<b>geoBottomleyRaw</b>(<i>psi</i>)
+
+…
+
 <a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
 
 …
