@@ -106,6 +106,10 @@ Defaults to 45°.
 
 The [Bottomley projection](http://cybergeo.revues.org/3977) “draws lines of latitude as concentric circular arcs, with arc lengths equal to their lengths on the globe, and placed symmetrically and equally spaced across the vertical central meridian.”
 
+<a href="#bottomley_fraction" name="bottomley_fraction">#</a> <i>bottomley</i>.<b>fraction</b>([<i>fraction</i>])
+
+Defaults to 0.5, corresponding to a sin(ψ) where ψ = π/6.
+
 <a href="#geoBromley" name="geoBromley">#</a> d3.<b>geoBromley</b>()
 
 [Bromley](http://bl.ocks.org/mbostock/4487695)
