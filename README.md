@@ -236,7 +236,9 @@ The equirectangular (plate carrée) projection; see [d3-geo](https://github.com/
 
 <a href="#geoFahey" name="geoFahey">#</a> d3.<b>geoFahey</b>()
 
-[Fahey](http://bl.ocks.org/mbostock/4731228)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/fahey.png" width="480" height="250">](http://bl.ocks.org/mbostock/4731228)
+
+The Fahey pseudocylindrical projection.
 
 <a href="#geoFoucaut" name="geoFoucaut">#</a> d3.<b>geoFoucaut</b>()
 
@@ -577,6 +579,10 @@ Raw projections are typically passed to the [d3.geoProjection](#geoProjection) c
 …
 
 <a href="#geoEckert6Raw" name="geoEckert6Raw">#</a> d3.<b>geoEckert6Raw</b>
+
+…
+
+<a href="#geoFaheyRaw" name="geoFaheyRaw">#</a> d3.<b>geoFaheyRaw</b>
 
 …
 
