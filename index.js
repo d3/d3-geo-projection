@@ -30,6 +30,7 @@ export {default as geoGinzburg5, ginzburg5Raw as geoGinzburg5Raw} from "./src/gi
 export {default as geoGinzburg6, ginzburg6Raw as geoGinzburg6Raw} from "./src/ginzburg6.js";
 export {default as geoGinzburg8, ginzburg8Raw as geoGinzburg8Raw} from "./src/ginzburg8.js";
 export {default as geoGinzburg9, ginzburg9Raw as geoGinzburg9Raw} from "./src/ginzburg9.js";
+export {default as geoGringorten, gringortenRaw as geoGringortenRaw} from "./src/gringorten.js";
 export {default as geoMollweide, mollweideRaw as geoMollweideRaw} from "./src/mollweide";
 export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./src/sinusoidal";
 export {default as geoWinkel3, winkel3Raw as geoWinkel3Raw} from "./src/winkel3";

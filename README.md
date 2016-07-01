@@ -304,7 +304,13 @@ The gnomonic projection; see [d3-geo](https://github.com/d3/d3-geo#geoGnomonic).
 
 <a href="#geoGringorten" name="geoGringorten">#</a> d3.<b>geoGringorten</b>()
 
-[Gringorten](http://bl.ocks.org/mbostock/4362031)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/gringorten.png" width="480" height="250">](http://bl.ocks.org/mbostock/4362031)
+
+The Gringorten square equal-area projection.
+
+<a href="#gringorten_quincuncial" name="gringorten_quincuncial">#</a> <i>gringorten</i>.<b>quincuncial</b>([<i>quincuncial</i>])
+
+Defaults to true. When false, the quadrants are rearranged to give each hemisphere an entire square.
 
 <a href="#geoGuyou" name="geoGuyou">#</a> d3.<b>geoGuyou</b>()
 
