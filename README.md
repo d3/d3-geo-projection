@@ -180,7 +180,7 @@ Defaults to approximately 38.58°, fitting the world in a 960×500 rectangle.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/cylindricalStereographic.png" width="480" height="250">](http://bl.ocks.org/mbostock/5234763)
 
-The cylindrical stereographic projection. With a [parallel](#cylindricalStereographic_parallel) of 45°, also known as Gall’s stereographic.
+The cylindrical stereographic projection. Depending on the chosen [parallel](#cylindricalStereographic_parallel), this projection is also known as Braun’s stereographic (0°) and Gall’s stereographic (45°).
 
 <a href="#cylindricalStereographic_parallel" name="cylindricalStereographic_parallel">#</a> <i>cylindricalStereographic</i>.<b>parallel</b>([<i>parallel</i>])
 
