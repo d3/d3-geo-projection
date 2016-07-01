@@ -224,7 +224,9 @@ The Eckert VI projection.
 
 <a href="#geoEisenlohr" name="geoEisenlohr">#</a> d3.<b>geoEisenlohr</b>()
 
-[Eisenlohr conformal](http://bl.ocks.org/mbostock/3797585)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/eisenlohr.png" width="480" height="250">](http://bl.ocks.org/mbostock/3797585)
+
+The Eisenlohr conformal projection.
 
 <a href="#geoEquirectangular" name="geoEquirectangular">#</a> d3.<b>geoEquirectangular</b>()
 
