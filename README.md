@@ -252,23 +252,33 @@ Foucaut
 
 <a href="#geoGinzburg4" name="geoGinzburg4">#</a> d3.<b>geoGinzburg4</b>()
 
-[Ginzburg IV](http://bl.ocks.org/mbostock/5288565)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/ginzburg4.png" width="480" height="250">](http://bl.ocks.org/mbostock/5288565)
+
+The Ginzburg IV projection.
 
 <a href="#geoGinzburg5" name="geoGinzburg5">#</a> d3.<b>geoGinzburg5</b>()
 
-[Ginzburg V](http://bl.ocks.org/mbostock/5288571)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/ginzburg5.png" width="480" height="250">](http://bl.ocks.org/mbostock/5288571)
+
+The Ginzburg V projection.
 
 <a href="#geoGinzburg6" name="geoGinzburg6">#</a> d3.<b>geoGinzburg6</b>()
 
-[Ginzburg VI](http://bl.ocks.org/mbostock/5288577)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/ginzburg6.png" width="480" height="250">](http://bl.ocks.org/mbostock/5288577)
+
+The Ginzburg VI projection.
 
 <a href="#geoGinzburg8" name="geoGinzburg8">#</a> d3.<b>geoGinzburg8</b>()
 
-[Ginzburg VIII](http://bl.ocks.org/mbostock/5288583)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/ginzburg8.png" width="480" height="250">](http://bl.ocks.org/mbostock/5288583)
+
+The Ginzburg VIII projection.
 
 <a href="#geoGinzburg9" name="geoGinzburg9">#</a> d3.<b>geoGinzburg9</b>()
 
-[Ginzburg IX](http://bl.ocks.org/mbostock/5288590)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/ginzburg9.png" width="480" height="250">](http://bl.ocks.org/mbostock/5288590)
+
+The Ginzburg IX projection.
 
 <a href="#geoGnomonic" name="geoGnomonic">#</a> d3.<b>geoGnomonic</b>()
 
@@ -567,6 +577,26 @@ Raw projections are typically passed to the [d3.geoProjection](#geoProjection) c
 …
 
 <a href="#geoEckert6Raw" name="geoEckert6Raw">#</a> d3.<b>geoEckert6Raw</b>
+
+…
+
+<a href="#geoGinzburg4Raw" name="geoGinzburg4Raw">#</a> d3.<b>geoGinzburg4Raw</b>
+
+…
+
+<a href="#geoGinzburg5Raw" name="geoGinzburg5Raw">#</a> d3.<b>geoGinzburg5Raw</b>
+
+…
+
+<a href="#geoGinzburg6Raw" name="geoGinzburg6Raw">#</a> d3.<b>geoGinzburg6Raw</b>
+
+…
+
+<a href="#geoGinzburg8Raw" name="geoGinzburg8Raw">#</a> d3.<b>geoGinzburg8Raw</b>
+
+…
+
+<a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
 
 …
 
