@@ -188,27 +188,39 @@ Defaults to 0°.
 
 <a href="#geoEckert1" name="geoEckert1">#</a> d3.<b>geoEckert1</b>()
 
-[Eckert I](http://bl.ocks.org/mbostock/3734322)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/eckert1.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734322)
+
+The Eckert I projection.
 
 <a href="#geoEckert2" name="geoEckert2">#</a> d3.<b>geoEckert2</b>()
 
-[Eckert II](http://bl.ocks.org/mbostock/3734324)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/eckert2.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734324)
+
+The Eckert II projection.
 
 <a href="#geoEckert3" name="geoEckert3">#</a> d3.<b>geoEckert3</b>()
 
-[Eckert III](http://bl.ocks.org/mbostock/3734325)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/eckert3.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734325)
+
+The Eckert III projection.
 
 <a href="#geoEckert4" name="geoEckert4">#</a> d3.<b>geoEckert4</b>()
 
-[Eckert IV](http://bl.ocks.org/mbostock/3734327)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/eckert4.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734327)
+
+The Eckert IV projection.
 
 <a href="#geoEckert5" name="geoEckert5">#</a> d3.<b>geoEckert5</b>()
 
-[Eckert V](http://bl.ocks.org/mbostock/3734328)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/eckert5.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734328)
+
+The Eckert V projection.
 
 <a href="#geoEckert6" name="geoEckert6">#</a> d3.<b>geoEckert6</b>()
 
-[Eckert VI](http://bl.ocks.org/mbostock/3734329)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/eckert6.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734329)
+
+The Eckert VI projection.
 
 <a href="#geoEisenlohr" name="geoEisenlohr">#</a> d3.<b>geoEisenlohr</b>()
 
@@ -529,6 +541,30 @@ Raw projections are typically passed to the [d3.geoProjection](#geoProjection) c
 …
 
 <a href="#geoCylindricalStereographicRaw" name="geoCylindricalStereographicRaw">#</a> d3.<b>geoCylindricalStereographicRaw</b>
+
+…
+
+<a href="#geoEckert1Raw" name="geoEckert1Raw">#</a> d3.<b>geoEckert1Raw</b>
+
+…
+
+<a href="#geoEckert2Raw" name="geoEckert2Raw">#</a> d3.<b>geoEckert2Raw</b>
+
+…
+
+<a href="#geoEckert3Raw" name="geoEckert3Raw">#</a> d3.<b>geoEckert3Raw</b>
+
+…
+
+<a href="#geoEckert4Raw" name="geoEckert4Raw">#</a> d3.<b>geoEckert4Raw</b>
+
+…
+
+<a href="#geoEckert5Raw" name="geoEckert5Raw">#</a> d3.<b>geoEckert5Raw</b>
+
+…
+
+<a href="#geoEckert6Raw" name="geoEckert6Raw">#</a> d3.<b>geoEckert6Raw</b>
 
 …
 

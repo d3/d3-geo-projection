@@ -1,8 +1,8 @@
 #!/bin/bash
 
 for i in \
-    aitoff \
     airy \
+    aitoff \
     armadillo \
     august \
     baker \
@@ -17,6 +17,12 @@ for i in \
     craster \
     cylindricalEqualArea \
     cylindricalStereographic \
+    eckert1 \
+    eckert2 \
+    eckert3 \
+    eckert4 \
+    eckert5 \
+    eckert6 \
     mollweide \
     sinusoidal \
     winkel3 \
