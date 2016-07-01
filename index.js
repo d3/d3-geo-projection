@@ -23,6 +23,7 @@ export {default as geoEckert6, eckert6Raw as geoEckert6Raw} from "./src/eckert6.
 export {default as geoEisenlohr, eisenlohrRaw as geoEisenlohrRaw} from "./src/eisenlohr.js";
 export {default as geoFahey, faheyRaw as geoFaheyRaw} from "./src/fahey.js";
 export {default as geoFoucaut, foucautRaw as geoFoucautRaw} from "./src/foucaut.js";
+export {default as geoGilbert} from "./src/gilbert.js";
 export {default as geoGingery, gingeryRaw as geoGingeryRaw} from "./src/gingery.js";
 export {default as geoGinzburg4, ginzburg4Raw as geoGinzburg4Raw} from "./src/ginzburg4.js";
 export {default as geoGinzburg5, ginzburg5Raw as geoGinzburg5Raw} from "./src/ginzburg5.js";

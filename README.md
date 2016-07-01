@@ -246,9 +246,11 @@ The Fahey pseudocylindrical projection.
 
 Foucaut’s stereographic equivalent projection.
 
-<a href="#geoGilbert" name="geoGilbert">#</a> d3.<b>geoGilbert</b>(<i>projection</i>)
+<a href="#geoGilbert" name="geoGilbert">#</a> d3.<b>geoGilbert</b>([<i>type</i>])
 
-[Gilbert’s two-world perspective](http://www.jasondavies.com/maps/gilbert/) Wraps the specified *projection*, such as d3.geoOrthographic.
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/gilbert.png" width="480" height="250">](https://www.jasondavies.com/maps/gilbert/)
+
+Gilbert’s two-world perspective projection. Wraps an instance of the specified projection *type*; if not specified, defaults to [d3.geoOrthographic](https://github.com/d3/d3-geo#geoOrthographic).
 
 <a href="#geoGingery" name="geoGingery">#</a> d3.<b>geoGingery</b>()
 
