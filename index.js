@@ -21,6 +21,11 @@ export {default as geoEckert4, eckert4Raw as geoEckert4Raw} from "./src/eckert4.
 export {default as geoEckert5, eckert5Raw as geoEckert5Raw} from "./src/eckert5.js";
 export {default as geoEckert6, eckert6Raw as geoEckert6Raw} from "./src/eckert6.js";
 export {default as geoEisenlohr, eisenlohrRaw as geoEisenlohrRaw} from "./src/eisenlohr.js";
+export {default as geoGinzburg4, ginzburg4Raw as geoGinzburg4Raw} from "./src/ginzburg4.js";
+export {default as geoGinzburg5, ginzburg5Raw as geoGinzburg5Raw} from "./src/ginzburg5.js";
+export {default as geoGinzburg6, ginzburg6Raw as geoGinzburg6Raw} from "./src/ginzburg6.js";
+export {default as geoGinzburg8, ginzburg8Raw as geoGinzburg8Raw} from "./src/ginzburg8.js";
+export {default as geoGinzburg9, ginzburg9Raw as geoGinzburg9Raw} from "./src/ginzburg9.js";
 export {default as geoMollweide, mollweideRaw as geoMollweideRaw} from "./src/mollweide";
 export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./src/sinusoidal";
 export {default as geoWinkel3, winkel3Raw as geoWinkel3Raw} from "./src/winkel3";
