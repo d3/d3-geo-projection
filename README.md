@@ -252,7 +252,17 @@ Foucaut’s stereographic equivalent projection.
 
 <a href="#geoGingery" name="geoGingery">#</a> d3.<b>geoGingery</b>()
 
-[Gingery](http://www.jasondavies.com/maps/gingery/)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/gingery.png" width="480" height="250">](http://www.jasondavies.com/maps/gingery/)
+
+The U.S.-centric Gingery world projection, as inspired by Cram’s Air Age. Note: requires clipping to the sphere.
+
+<a href="#gingery_radius" name="gingery_radius">#</a> <i>gingery</i>.<b>radius</b>([<i>radius</i>])
+
+Defaults to 30°.
+
+<a href="#gingery_lobes" name="gingery_lobes">#</a> <i>gingery</i>.<b>lobes</b>([<i>lobes</i>])
+
+Defaults to 6.
 
 <a href="#geoGinzburg4" name="geoGinzburg4">#</a> d3.<b>geoGinzburg4</b>()
 
@@ -585,6 +595,10 @@ Raw projections are typically passed to the [d3.geoProjection](#geoProjection) c
 …
 
 <a href="#geoFaheyRaw" name="geoFaheyRaw">#</a> d3.<b>geoFaheyRaw</b>
+
+…
+
+<a href="#geoGingeryRaw" name="geoGingeryRaw">#</a> d3.<b>geoGingeryRaw</b>(<i>rho</i>, <i>lobes</i>)
 
 …
 

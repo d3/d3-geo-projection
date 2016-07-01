@@ -4,7 +4,7 @@ var width = 960,
     height = 500,
     projectionName = process.argv[2],
     projectionSymbol = "geo" + projectionName[0].toUpperCase() + projectionName.slice(1),
-    projectionClips = ["armadillo", "berghaus"];
+    projectionClips = ["armadillo", "berghaus", "gingery"];
 
 if (!/^[a-z0-9]+$/i.test(projectionName)) throw new Error;
 
