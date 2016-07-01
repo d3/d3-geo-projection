@@ -242,7 +242,9 @@ The Fahey pseudocylindrical projection.
 
 <a href="#geoFoucaut" name="geoFoucaut">#</a> d3.<b>geoFoucaut</b>()
 
-Foucaut
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/foucaut.png" width="480" height="250">](https://www.jasondavies.com/maps/foucaut/)
+
+Foucaut’s stereographic equivalent projection.
 
 <a href="#geoGilbert" name="geoGilbert">#</a> d3.<b>geoGilbert</b>(<i>projection</i>)
 
