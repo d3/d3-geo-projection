@@ -1,4 +1,4 @@
-import {geoProjection} from "d3-geo";
+import {geoProjection as projection} from "d3-geo";
 import {augustRaw} from "./august";
 import {abs, atan, cos, epsilon, halfPi, log, max, min, sin, sqrt, sqrt1_2, sqrt2} from "./math";
 
@@ -65,5 +65,5 @@ eisenlohrRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return geoProjection(eisenlohrRaw).scale(60);
+  return projection(eisenlohrRaw).scale(60);
 }

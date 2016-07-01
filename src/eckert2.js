@@ -1,4 +1,4 @@
-import {geoProjection} from "d3-geo";
+import {geoProjection as projection} from "d3-geo";
 import {abs, asin, pi, sign, sin, sqrt} from "./math";
 
 export function eckert2Raw(lambda, phi) {
@@ -18,5 +18,5 @@ eckert2Raw.invert = function(x, y) {
 };
 
 export default function() {
-  return geoProjection(eckert2Raw).scale(160);
+  return projection(eckert2Raw).scale(160);
 }

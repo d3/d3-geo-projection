@@ -1,4 +1,4 @@
-import {geoProjection} from "d3-geo";
+import {geoProjection as projection} from "d3-geo";
 import {cos} from "./math";
 
 export function sinusoidalRaw(lambda, phi) {
@@ -10,5 +10,5 @@ sinusoidalRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return geoProjection(sinusoidalRaw);
+  return projection(sinusoidalRaw);
 }

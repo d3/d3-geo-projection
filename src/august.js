@@ -1,4 +1,4 @@
-import {geoProjection} from "d3-geo";
+import {geoProjection as projection} from "d3-geo";
 import {abs, arcosh, arsinh, asin, atan2, cos, cosh, sign, sin, sinh, sqrt, tan} from "./math";
 
 export function augustRaw(lambda, phi) {
@@ -34,5 +34,5 @@ augustRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return geoProjection(augustRaw).scale(63);
+  return projection(augustRaw).scale(63);
 }

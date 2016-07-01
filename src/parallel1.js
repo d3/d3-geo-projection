@@ -1,9 +1,9 @@
-import {geoProjectionMutator} from "d3-geo";
+import {geoProjectionMutator as projectionMutator} from "d3-geo";
 import {degrees, radians} from "./math";
 
 export default function(projectAt) {
   var phi0 = 0,
-      m = geoProjectionMutator(projectAt),
+      m = projectionMutator(projectAt),
       p = m(phi0);
 
   p.parallel = function(_) {

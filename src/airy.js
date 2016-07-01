@@ -1,4 +1,4 @@
-import {geoProjectionMutator} from "d3-geo";
+import {geoProjectionMutator as projectionMutator} from "d3-geo";
 import {abs, asin, atan2, cos, degrees, epsilon, halfPi, log, radians, sin, sqrt, tan} from "./math";
 
 export function airyRaw(beta) {
@@ -36,7 +36,7 @@ export function airyRaw(beta) {
 
 export default function() {
   var beta = halfPi,
-      m = geoProjectionMutator(airyRaw),
+      m = projectionMutator(airyRaw),
       p = m(beta);
 
   p.radius = function(_) {

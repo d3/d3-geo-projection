@@ -1,4 +1,4 @@
-import {geoProjection} from "d3-geo";
+import {geoProjection as projection} from "d3-geo";
 import {asin, pi, sin, sqrt, sqrtPi} from "./math";
 
 export function collignonRaw(lambda, phi) {
@@ -12,5 +12,5 @@ collignonRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return geoProjection(collignonRaw).scale(92);
+  return projection(collignonRaw).scale(92);
 }

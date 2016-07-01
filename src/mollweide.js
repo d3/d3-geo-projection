@@ -1,4 +1,4 @@
-import {geoProjection} from "d3-geo";
+import {geoProjection as projection} from "d3-geo";
 import {abs, asin, cos, epsilon, halfPi, pi, sin, sqrt2} from "./math";
 
 export function mollweideBromleyTheta(cp, phi) {
@@ -24,5 +24,5 @@ export function mollweideBromleyRaw(cx, cy, cp) {
 export var mollweideRaw = mollweideBromleyRaw(sqrt2 / halfPi, sqrt2, pi);
 
 export default function() {
-  return geoProjection(mollweideRaw).scale(165);
+  return projection(mollweideRaw).scale(165);
 }

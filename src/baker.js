@@ -1,4 +1,4 @@
-import {geoProjection} from "d3-geo";
+import {geoProjection as projection} from "d3-geo";
 import {abs, atan, cos, epsilon2, exp, halfPi, log, quarterPi, sign, sin, sqrt, sqrt2, tan} from "./math";
 
 var sqrt8 = sqrt(8),
@@ -22,5 +22,5 @@ bakerRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return geoProjection(bakerRaw).scale(110);
+  return projection(bakerRaw).scale(110);
 }

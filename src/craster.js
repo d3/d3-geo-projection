@@ -1,4 +1,4 @@
-import {geoProjection} from "d3-geo";
+import {geoProjection as projection} from "d3-geo";
 import {asin, cos, sin, sqrt, sqrtPi} from "./math";
 
 var sqrt3 = sqrt(3);
@@ -13,5 +13,5 @@ crasterRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return geoProjection(crasterRaw);
+  return projection(crasterRaw);
 }

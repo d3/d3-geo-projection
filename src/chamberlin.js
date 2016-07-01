@@ -1,4 +1,4 @@
-import {geoCentroid, geoProjectionMutator, geoRotation} from "d3-geo";
+import {geoCentroid as centroid, geoProjectionMutator as projectionMutator, geoRotation as rotation} from "d3-geo";
 import {abs, acos, asin, atan2, cos, epsilon, floor, pi, radians, sin, sqrt} from "./math";
 
 // Azimuthal distance.
@@ -93,9 +93,9 @@ export default function() {
   var x0, y0,
       x1, y1,
       x2, y2,
-      m = geoProjectionMutator(chamberlinRaw),
+      m = projectionMutator(chamberlinRaw),
       p = m(),
-      r = geoRotation(0, 0),
+      r = rotation(0, 0),
       rotate = p.rotate,
       center = p.center;
 
@@ -107,9 +107,9 @@ export default function() {
     var p0 = [x0 = +_[0][0], y0 = +_[0][1]],
         p1 = [x1 = +_[1][0], y1 = +_[1][1]],
         p2 = [x2 = +_[2][0], y2 = +_[2][1]],
-        c = geoCentroid({type: "MultiPoint", coordinates: [p0, p1, p2]}),
+        c = centroid({type: "MultiPoint", coordinates: [p0, p1, p2]}),
         c0 = r.invert(center());
-    rotate(r = [-c[0], -c[1]]), r = geoRotation(r), p0 = r(p0), p1 = r(p1), p2 = r(p2), center(r(c0));
+    rotate(r = [-c[0], -c[1]]), r = rotation(r), p0 = r(p0), p1 = r(p1), p2 = r(p2), center(r(c0));
     return m(p0[0] * radians, p0[1] * radians, p1[0] * radians, p1[1] * radians, p2[0] * radians, p2[1] * radians);
   };
 

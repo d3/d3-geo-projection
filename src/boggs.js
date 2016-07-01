@@ -1,4 +1,4 @@
-import {geoProjection} from "d3-geo";
+import {geoProjection as projection} from "d3-geo";
 import {mollweideBromleyTheta} from "./mollweide";
 import {abs, cos, epsilon, pi, quarterPi, sin, sqrt2} from "./math";
 
@@ -21,5 +21,5 @@ boggsRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return geoProjection(boggsRaw);
+  return projection(boggsRaw);
 }

@@ -1,4 +1,4 @@
-import {geoProjection} from "d3-geo";
+import {geoProjection as projection} from "d3-geo";
 import {aitoffRaw} from "./aitoff";
 import {halfPi, epsilon, sin, cos, sqrt, abs, acos} from "./math";
 
@@ -42,5 +42,5 @@ winkel3.invert = function(x, y) {
 export var winkel3Raw = winkel3;
 
 export default function() {
-  return geoProjection(winkel3Raw).scale(150);
+  return projection(winkel3Raw).scale(150);
 }

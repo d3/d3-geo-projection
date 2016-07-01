@@ -1,4 +1,4 @@
-import {geoProjection} from "d3-geo";
+import {geoProjection as projection} from "d3-geo";
 import {abs, acos, cos, epsilon, pi, sin, sinci, sqrt} from "./math";
 
 export function aitoffRaw(x, y) {
@@ -40,5 +40,5 @@ aitoffRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return geoProjection(aitoffRaw);
+  return projection(aitoffRaw);
 }
