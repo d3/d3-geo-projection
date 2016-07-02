@@ -2,7 +2,7 @@ import {geoProjection as projection} from "d3-geo";
 import {aitoffRaw} from "./aitoff";
 import {halfPi, epsilon, sin, cos, sqrt, abs, acos} from "./math";
 
-function winkel3(lambda, phi) {
+export function winkel3Raw(lambda, phi) {
   var coordinates = aitoffRaw(lambda, phi);
   return [
     (coordinates[0] + lambda / halfPi) / 2,
@@ -10,7 +10,7 @@ function winkel3(lambda, phi) {
   ];
 }
 
-winkel3.invert = function(x, y) {
+winkel3Raw.invert = function(x, y) {
   var lambda = x, phi = y, i = 25;
   do {
     var cosphi = cos(phi),
@@ -38,8 +38,6 @@ winkel3.invert = function(x, y) {
   } while ((abs(dlambda) > epsilon || abs(dphi) > epsilon) && --i > 0);
   return [lambda, phi];
 };
-
-export var winkel3Raw = winkel3;
 
 export default function() {
   return projection(winkel3Raw).scale(150);
