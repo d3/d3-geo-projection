@@ -430,7 +430,9 @@ The Pierce quincuncial projection is the quincuncial form of [d3.geoGuyou](#geoG
 
 <a href="#geoRobinson" name="geoRobinson">#</a> d3.<b>geoRobinson</b>()
 
-[Robinson](http://bl.ocks.org/mbostock/3710566)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/robinson.png" width="480" height="250">](http://bl.ocks.org/mbostock/3710566)
+
+The Robinson projection.
 
 <a href="#geoSatellite" name="geoSatellite">#</a> d3.<b>geoSatellite</b>()
 
