@@ -472,7 +472,9 @@ The transverse spherical Mercator projection; see [d3-geo](https://github.com/d3
 
 <a href="#geoVanDerGrinten" name="geoVanDerGrinten">#</a> d3.<b>geoVanDerGrinten</b>()
 
-[Van der Grinten](http://bl.ocks.org/mbostock/3796831)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/vanDerGrinten.png" width="480" height="250">](http://bl.ocks.org/mbostock/3796831)
+
+Van der Grinten projection.
 
 <a href="#geoVanDerGrinten2" name="geoVanDerGrinten2">#</a> d3.<b>geoVanDerGrinten2</b>()
 
@@ -643,6 +645,8 @@ Raw projections are typically passed to the [d3.geoProjection](#geoProjection) c
 <a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
 
 …
+
+<a href="#geoVanDerGrintenRaw" name="geoVanDerGrintenRaw">#</a> d3.<b>geoVanDerGrintenRaw</b>
 
 <a href="#geoWinkel3Raw" name="geoWinkel3Raw">#</a> d3.<b>geoWinkel3Raw</b>
 
