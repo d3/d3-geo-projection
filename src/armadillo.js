@@ -75,6 +75,6 @@ export default function() {
   };
 
   return p
-      .scale(210)
-      .translate([480, 353]);
+      .scale(218.695)
+      .center([0, 28.0974]);
 }

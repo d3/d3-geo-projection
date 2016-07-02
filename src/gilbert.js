@@ -53,5 +53,7 @@ export default function(projectionType) {
   property("scale");
   property("translate");
   property("precision");
-  return gilbert;
+
+  return gilbert
+      .scale(249.5);
 }

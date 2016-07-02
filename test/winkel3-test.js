@@ -4,7 +4,7 @@ var tape = require("tape"),
 require("./projectionEqual");
 
 tape("geoWinkel3(point) returns the expected values", function(test) {
-  var winkel3 = d3.geoWinkel3();
+  var winkel3 = d3.geoWinkel3().scale(150);
   test.projectionEqual(winkel3, [   0,   0], [480.000000, 250.000000]);
   test.projectionEqual(winkel3, [   0, -90], [480.000000, 485.619449]);
   test.projectionEqual(winkel3, [   0,  90], [480.000000,  14.380550]);

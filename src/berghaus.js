@@ -71,7 +71,7 @@ export default function() {
   };
 
   return p
-      .scale(85)
-      .clipAngle(180 - 1e-3)
-      .translate([480, 275]);
+      .scale(87.8076)
+      .center([0, 17.1875])
+      .clipAngle(180 - 1e-3);
 }

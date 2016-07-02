@@ -42,5 +42,6 @@ winkel3.invert = function(x, y) {
 export var winkel3Raw = winkel3;
 
 export default function() {
-  return projection(winkel3Raw).scale(150);
+  return projection(winkel3Raw)
+      .scale(158.837);
 }

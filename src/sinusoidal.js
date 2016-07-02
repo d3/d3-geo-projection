@@ -10,5 +10,6 @@ sinusoidalRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return projection(sinusoidalRaw);
+  return projection(sinusoidalRaw)
+      .scale(152.63);
 }

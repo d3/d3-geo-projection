@@ -141,6 +141,6 @@ export default function() {
 
   return p
       .rotate([90, -40])
-      .scale(90)
+      .scale(91.7095)
       .clipAngle(180 - 1e-3);
 }

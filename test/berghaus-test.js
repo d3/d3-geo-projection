@@ -4,7 +4,7 @@ var tape = require("tape"),
 require("./projectionEqual");
 
 tape("geoBerghaus(point) returns the expected values", function(test) {
-  var berghaus = d3.geoBerghaus().scale(150).translate([480, 250]);
+  var berghaus = d3.geoBerghaus().scale(150).translate([480, 250]).center([0, 0]);
   test.projectionEqual(berghaus, [  0,   0], [480.000000, 250.000000]);
   test.projectionEqual(berghaus, [  0, -45], [480.000000, 367.809724]);
   test.projectionEqual(berghaus, [  0,  45], [480.000000, 132.190275]);

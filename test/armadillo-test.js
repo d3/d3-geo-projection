@@ -7,7 +7,7 @@ require("./projectionEqual");
 // test.equal(armadillo([0, -90]), undefined);
 
 tape("geoArmadillo(point) returns the expected value", function(test) {
-  var armadillo = d3.geoArmadillo().scale(150).translate([480, 250]);
+  var armadillo = d3.geoArmadillo().scale(150).translate([480, 250]).center([0, 0]);
   test.projectionEqual(armadillo, [   0,   0], [480.000000, 250.000000]);
   test.projectionEqual(armadillo, [   0,  90], [480.000000,  57.743085]);
   test.projectionEqual(armadillo, [   0, -45], [480.000000, 334.643146]);

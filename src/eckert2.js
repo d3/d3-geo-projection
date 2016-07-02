@@ -18,5 +18,6 @@ eckert2Raw.invert = function(x, y) {
 };
 
 export default function() {
-  return projection(eckert2Raw).scale(160);
+  return projection(eckert2Raw)
+      .scale(165.664);
 }

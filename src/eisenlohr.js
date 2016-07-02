@@ -65,5 +65,6 @@ eisenlohrRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return projection(eisenlohrRaw).scale(60);
+  return projection(eisenlohrRaw)
+      .scale(62.5271);
 }

@@ -4,7 +4,7 @@ var tape = require("tape"),
 require("./projectionEqual");
 
 tape("geoBoggs(point) returns the expected values", function(test) {
-  var boggs = d3.geoBoggs();
+  var boggs = d3.geoBoggs().scale(150);
   test.projectionEqual(boggs, [   0,   0], [480.000000, 250.000000]);
   test.projectionEqual(boggs, [   0, -90], [480.000000, 473.567218]);
   test.projectionEqual(boggs, [   0,  90], [480.000000,  26.432781]);

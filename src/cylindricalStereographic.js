@@ -16,5 +16,6 @@ export function cylindricalStereographicRaw(phi0) {
 }
 
 export default function() {
-  return parallel1Projection(cylindricalStereographicRaw).scale(120);
+  return parallel1Projection(cylindricalStereographicRaw)
+      .scale(124.75);
 }

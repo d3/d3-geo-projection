@@ -118,8 +118,7 @@ export default function() {
   };
 
   return p
-      .points([[0, 22], [45, 22], [22.5, -22]])
-      .center([22.5, 0])
-      .scale(450)
+      .points([[-20, 20], [20, 20], [0, -43.16]]) // TODO order matters!
+      .scale(160.631)
       .clipAngle(90);
 }

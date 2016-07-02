@@ -44,6 +44,6 @@ export default function() {
   };
 
   return p
-      .scale(173)
-      .clipAngle(148);
+      .scale(179.976)
+      .clipAngle(147);
 }

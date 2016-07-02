@@ -12,5 +12,6 @@ foucautRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return projection(foucautRaw).scale(130);
+  return projection(foucautRaw)
+      .scale(135.264);
 }

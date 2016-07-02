@@ -4,7 +4,7 @@ var tape = require("tape"),
 require("./projectionEqual");
 
 tape("geoAitoff(point) returns the expected values", function(test) {
-  var aitoff = d3.geoAitoff();
+  var aitoff = d3.geoAitoff().scale(150);
   test.projectionEqual(aitoff, [   0,   0], [480.000000, 250.000000]);
   test.projectionEqual(aitoff, [   0, -90], [480.000000, 485.619449]);
   test.projectionEqual(aitoff, [   0,  90], [480.000000,  14.380550]);
@@ -19,7 +19,7 @@ tape("geoAitoff(point) returns the expected values", function(test) {
 });
 
 tape("geoAitoff.invert(point) returns undefined for points outside the target region", function(test) {
-  var aitoff = d3.geoAitoff();
+  var aitoff = d3.geoAitoff().scale(150);
   test.equal(aitoff.invert([0, 0]), undefined);
   test.end();
 });

@@ -12,5 +12,7 @@ collignonRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return projection(collignonRaw).scale(92);
+  return projection(collignonRaw)
+      .scale(95.6464)
+      .center([0, 30]);
 }

@@ -18,5 +18,5 @@ export function cylindricalEqualAreaRaw(phi0) {
 export default function() {
   return parallel1Projection(cylindricalEqualAreaRaw)
       .parallel(38.58) // acos(sqrt(width / height / pi)) * radians
-      .scale(196); // width / (sqrt(width / height / pi) * 2 * pi)
+      .scale(195.044); // width / (sqrt(width / height / pi) * 2 * pi)
 }

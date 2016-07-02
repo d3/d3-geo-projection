@@ -28,5 +28,6 @@ ginzburg8Raw.invert = function(x, y) {
 };
 
 export default function() {
-  return projection(ginzburg8Raw).scale(120);
+  return projection(ginzburg8Raw)
+      .scale(131.747);
 }

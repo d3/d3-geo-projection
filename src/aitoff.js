@@ -40,5 +40,6 @@ aitoffRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return projection(aitoffRaw);
+  return projection(aitoffRaw)
+      .scale(152.63);
 }

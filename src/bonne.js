@@ -23,7 +23,7 @@ export function bonneRaw(phi0) {
 
 export default function() {
   return parallel1Projection(bonneRaw)
-      .scale(120)
-      .translate([450, 305])
+      .scale(123.082)
+      .center([0, 26.1441])
       .parallel(45);
 }

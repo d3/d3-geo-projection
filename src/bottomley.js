@@ -29,5 +29,6 @@ export default function() {
     return arguments.length ? m(sinPsi = +_) : sinPsi;
   };
 
-  return p;
+  return p
+      .scale(158.837);
 }

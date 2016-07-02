@@ -4,7 +4,7 @@ var tape = require("tape"),
 require("./projectionEqual");
 
 tape("geoBottomley(point) returns the expected values", function(test) {
-  var bottomley = d3.geoBottomley();
+  var bottomley = d3.geoBottomley().scale(150);
   test.projectionEqual(bottomley, [   0,   0], [480.0000000, 250.000000]);
   test.projectionEqual(bottomley, [   0, -90], [480.0000000, 485.619449]);
   test.projectionEqual(bottomley, [   0,  89], [480.0000000,  16.998544]);

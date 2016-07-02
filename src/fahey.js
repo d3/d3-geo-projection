@@ -14,5 +14,6 @@ faheyRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return projection(faheyRaw).scale(130);
+  return projection(faheyRaw)
+      .scale(137.152);
 }

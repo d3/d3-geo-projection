@@ -140,5 +140,6 @@ function gringortenHexadecantInvert(x, y) {
 }
 
 export default function() {
-  return projection(squareRaw(gringortenRaw)).scale(240);
+  return projection(squareRaw(gringortenRaw))
+      .scale(239.75);
 }

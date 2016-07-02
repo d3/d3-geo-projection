@@ -21,6 +21,6 @@ export function craigRaw(phi0) {
 
 export default function() {
   return parallel1Projection(craigRaw)
-      .scale(240)
+      .scale(249.828)
       .clipAngle(90);
 }

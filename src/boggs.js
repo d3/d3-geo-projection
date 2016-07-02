@@ -21,5 +21,6 @@ boggsRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return projection(boggsRaw);
+  return projection(boggsRaw)
+      .scale(160.857);
 }

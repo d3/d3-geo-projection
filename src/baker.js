@@ -22,5 +22,6 @@ bakerRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return projection(bakerRaw).scale(110);
+  return projection(bakerRaw)
+      .scale(112.314);
 }

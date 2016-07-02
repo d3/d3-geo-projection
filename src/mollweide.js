@@ -24,5 +24,6 @@ export function mollweideBromleyRaw(cx, cy, cp) {
 export var mollweideRaw = mollweideBromleyRaw(sqrt2 / halfPi, sqrt2, pi);
 
 export default function() {
-  return projection(mollweideRaw).scale(165);
+  return projection(mollweideRaw)
+      .scale(169.529);
 }

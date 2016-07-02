@@ -34,5 +34,6 @@ augustRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return projection(augustRaw).scale(63);
+  return projection(augustRaw)
+      .scale(66.1603);
 }

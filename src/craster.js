@@ -13,5 +13,6 @@ crasterRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return projection(crasterRaw);
+  return projection(crasterRaw)
+      .scale(156.19);
 }

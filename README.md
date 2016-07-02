@@ -48,7 +48,11 @@ Alber’s [equal-area conic projection](#geoConicEqualArea); see [d3-geo](https:
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/armadillo.png" width="480" height="250">](http://bl.ocks.org/mbostock/4463127)
 
-The armadillo projection. Note: requires clipping to the sphere.
+The armadillo projection. The default center assumes the default [parallel](#armadillo_parallel) of 20° and should be changed if a different parallel is used. Note: requires clipping to the sphere.
+
+<a href="#armadillo_parallel" name="armadillo_parallel">#</a> <i>armadillo</i>.<b>parallel</b>([<i>parallel</i>])
+
+Defaults to 20°.
 
 <a href="#geoAugust" name="geoAugust">#</a> d3.<b>geoAugust</b>()
 
@@ -78,7 +82,7 @@ The Baker Dinomic projection.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/berghaus.png" width="480" height="250">](http://bl.ocks.org/mbostock/4463049)
 
-Berghaus’ star projection. Note: requires clipping to the sphere.
+Berghaus’ star projection. The default center assumes the default [lobe number](#berghaus_lobes) of 5 and should be changed if a different number of lobes is used. Note: requires clipping to the sphere.
 
 <a href="#berghaus_lobes" name="berghaus_lobes">#</a> <i>berghaus</i>.<b>lobes</b>([<i>lobes</i>])
 
@@ -94,7 +98,7 @@ The Boggs eumorphic projection. More commonly used in [interrupted form](http://
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/bonne.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734313)
 
-The Bonne pseudoconical equal-area projection. The [Werner projection](http://bl.ocks.org/mbostock/a7ae83252305ed4d54d4) is a limiting form of the Bonne projection with a standard parallel at ±90°.
+The Bonne pseudoconical equal-area projection. The [Werner projection](http://bl.ocks.org/mbostock/a7ae83252305ed4d54d4) is a limiting form of the Bonne projection with a standard parallel at ±90°. The default center assumes the default [parallel](#bonne_parallel) of 45° and should be changed if a different parallel is used.
 
 <a href="#bonne_parallel" name="bonne_parallel">#</a> <i>bonne</i>.<b>parallel</b>([<i>parallel</i>])
 
@@ -124,7 +128,7 @@ The Chamberlin trimetric projection. This method does not support *projection*.r
 
 <a href="#chamberlin_points" name="chamberlin_points">#</a> <i>chamberlin</i>.<b>points</b>([<i>points</i>])
 
-Defaults to [[0, 22], [45, 22], [22.5, -22]].
+Defaults to [[-20, 20], [20, 20], [0, -43.16]].
 
 <a href="#geoCollignon" name="geoCollignon">#</a> d3.<b>geoCollignon</b>()
 

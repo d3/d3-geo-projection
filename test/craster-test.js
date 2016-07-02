@@ -4,7 +4,7 @@ var tape = require("tape"),
 require("./projectionEqual");
 
 tape("geoCraster(point) returns the expected values", function(test) {
-  var craster = d3.geoCraster();
+  var craster = d3.geoCraster().scale(150);
   test.projectionEqual(craster, [   0,   0], [480.000000, 250.000000]);
   test.projectionEqual(craster, [   0, -90], [480.000000, 480.248509]);
   test.projectionEqual(craster, [   0,  90], [480.000000,  19.751490]);
