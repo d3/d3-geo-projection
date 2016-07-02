@@ -36,12 +36,11 @@ for i in \
     gringortenQuincuncial \
     guyou \
     mollweide \
-    robinson \
     pierceQuincuncial \
     sinusoidal \
     winkel3 \
     wiechel \
-; do
+    ; do
   test/render-world $i \
       && [ "$(compare -metric rmse img/$i.png test/output/$i.png null: 2>&1)" = "0 (0)" ] \
       || echo "✗ test/output/$i.png and img/$i.png differ"
