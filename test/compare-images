@@ -38,6 +38,9 @@ for i in \
     mollweide \
     pierceQuincuncial \
     sinusoidal \
+    wagner4 \
+    wagner6 \
+    wagner7 \
     winkel3 \
     ; do
   test/render-world $i \

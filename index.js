@@ -36,4 +36,7 @@ export {default as geoGuyou, guyouRaw as geoGuyouRaw} from "./src/guyou.js";
 export {default as geoMollweide, mollweideRaw as geoMollweideRaw} from "./src/mollweide";
 export {default as geoPierceQuincuncial} from "./src/pierceQuincuncial.js";
 export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./src/sinusoidal";
+export {default as geoWagner4, wagner4Raw as geoWagner4Raw} from "./src/wagner4.js";
+export {default as geoWagner6, wagner6Raw as geoWagner6Raw} from "./src/wagner6.js";
+export {default as geoWagner7, wagner7Raw as geoWagner7Raw} from "./src/wagner7.js";
 export {default as geoWinkel3, winkel3Raw as geoWinkel3Raw} from "./src/winkel3";
