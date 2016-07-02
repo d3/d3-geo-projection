@@ -478,7 +478,9 @@ Van der Grinten projection.
 
 <a href="#geoVanDerGrinten2" name="geoVanDerGrinten2">#</a> d3.<b>geoVanDerGrinten2</b>()
 
-[Van der Grinten II](http://bl.ocks.org/mbostock/5230571)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/vanDerGrinten2.png" width="480" height="250">](http://bl.ocks.org/mbostock/5230571)
+
+Van der Grinten II projection.
 
 <a href="#geoVanDerGrinten3" name="geoVanDerGrinten3">#</a> d3.<b>geoVanDerGrinten3</b>()
 
