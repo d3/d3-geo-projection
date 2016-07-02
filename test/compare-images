@@ -38,6 +38,10 @@ for i in \
     mollweide \
     pierceQuincuncial \
     sinusoidal \
+    vanDerGrinten \
+    vanDerGrinten2 \
+    vanDerGrinten3 \
+    vanDerGrinten4 \
     winkel3 \
     ; do
   test/render-world $i \
