@@ -33,7 +33,10 @@ for i in \
     ginzburg8 \
     ginzburg9 \
     gringorten \
+    gringortenQuincuncial \
+    guyou \
     mollweide \
+    pierceQuincuncial \
     sinusoidal \
     winkel3 \
     ; do

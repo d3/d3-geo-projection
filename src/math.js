@@ -8,6 +8,7 @@ export var floor = Math.floor;
 export var log = Math.log;
 export var max = Math.max;
 export var min = Math.min;
+export var pow = Math.pow;
 export var round = Math.round;
 export var sign = Math.sign || function(x) { return x > 0 ? 1 : x < 0 ? -1 : 0; };
 export var sin = Math.sin;

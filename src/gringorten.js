@@ -1,5 +1,6 @@
-import quincuncialProjection from "./quincuncial";
+import {geoProjection as projection} from "d3-geo";
 import {abs, asin, atan2, cos, sign, epsilon, epsilon2, halfPi, pi, sin, sqrt} from "./math";
+import squareRaw from "./square";
 
 export function gringortenRaw(lambda, phi) {
   var sLambda = sign(lambda),
@@ -139,8 +140,5 @@ function gringortenHexadecantInvert(x, y) {
 }
 
 export default function() {
-  return quincuncialProjection(gringortenRaw)
-      .scale(170)
-      .rotate([65, -90])
-      .clipAngle(180 - 1e-3);
+  return projection(squareRaw(gringortenRaw)).scale(232);
 }

@@ -306,15 +306,19 @@ The gnomonic projection; see [d3-geo](https://github.com/d3/d3-geo#geoGnomonic).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/gringorten.png" width="480" height="250">](http://bl.ocks.org/mbostock/4362031)
 
+The Gringorten square equal-area projection, rearranged to give each hemisphere an entire square.
+
+<a href="#geoGringortenQuincuncial" name="geoGringortenQuincuncial">#</a> d3.<b>geoGringortenQuincuncial</b>()
+
+<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/gringortenQuincuncial.png" width="480" height="250">
+
 The Gringorten square equal-area projection.
-
-<a href="#gringorten_quincuncial" name="gringorten_quincuncial">#</a> <i>gringorten</i>.<b>quincuncial</b>([<i>quincuncial</i>])
-
-Defaults to true. When false, the quadrants are rearranged to give each hemisphere an entire square.
 
 <a href="#geoGuyou" name="geoGuyou">#</a> d3.<b>geoGuyou</b>()
 
-[Guyou hemisphere-in-a-square](http://bl.ocks.org/mbostock/3763867)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/guyou.png" width="480" height="250">](http://bl.ocks.org/mbostock/3763867)
+
+The Guyou hemisphere-in-a-square projection. See also [d3.geoPierceQuincuncial](#geoPierceQuincuncial).
 
 <a href="#geoHammer" name="geoHammer">#</a> d3.<b>geoHammer</b>()
 
@@ -410,9 +414,11 @@ The orthographic projection; see [d3-geo](https://github.com/d3/d3-geo#geoOrthog
 
 [patterson](http://bl.ocks.org/mbostock/d4021aa4dccfd65edffd)
 
-<a href="#geoPeirceQuincuncial" name="geoPeirceQuincuncial">#</a> d3.<b>geoPeirceQuincuncial</b>()
+<a href="#geoPierceQuincuncial" name="geoPierceQuincuncial">#</a> d3.<b>geoPierceQuincuncial</b>()
 
-[Pierce quincuncial](http://bl.ocks.org/mbostock/4310087)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/pierceQuincuncial.png" width="480" height="250">](http://bl.ocks.org/mbostock/4310087)
+
+The Pierce quincuncial projection is the quincuncial form of [d3.geoGuyou](#geoGuyou).
 
 <a href="#geoPolyconic" name="geoPolyconic">#</a> d3.<b>geoPolyconic</b>()
 
