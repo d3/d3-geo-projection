@@ -4,7 +4,7 @@ import quincuncialRaw from "./quincuncial";
 
 export default function() {
   return projection(quincuncialRaw(gringortenRaw))
-      .scale(170)
-      .rotate([65, -90])
+      .scale(176.5)
+      .rotate([-90, -90, 45])
       .clipAngle(180 - 1e-3);
 }

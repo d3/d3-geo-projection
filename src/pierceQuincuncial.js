@@ -4,7 +4,7 @@ import quincuncialRaw from "./quincuncial";
 
 export default function() {
   return projection(quincuncialRaw(guyouRaw))
-      .scale(110)
+      .scale(111.5)
       .rotate([-90, -90, 45])
       .clipAngle(180 - 1e-3);
 }

@@ -48,5 +48,5 @@ guyouRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return projection(squareRaw(guyouRaw)).scale(150);
+  return projection(squareRaw(guyouRaw)).scale(151.5);
 }
