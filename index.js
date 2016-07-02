@@ -38,4 +38,5 @@ export {default as geoPierceQuincuncial} from "./src/pierceQuincuncial.js";
 export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./src/sinusoidal";
 export {default as geoVanDerGrinten, vanDerGrintenRaw as geoVanDerGrintenRaw} from "./src/vanDerGrinten";
 export {default as geoVanDerGrinten2, vanDerGrinten2Raw as geoVanDerGrinten2Raw} from "./src/vanDerGrinten2";
+export {default as geoVanDerGrinten3, vanDerGrinten3Raw as geoVanDerGrinten3Raw} from "./src/vanDerGrinten3";
 export {default as geoWinkel3, winkel3Raw as geoWinkel3Raw} from "./src/winkel3";
