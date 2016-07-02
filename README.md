@@ -636,6 +636,8 @@ Raw projections are typically passed to the [d3.geoProjection](#geoProjection) c
 
 …
 
+<a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
+
 <a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
 
 …
