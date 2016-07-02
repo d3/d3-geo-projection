@@ -454,7 +454,9 @@ The stereographic projection; see [d3-geo](https://github.com/d3/d3-geo#geoStere
 
 <a href="#geoTimes" name="geoTimes">#</a> d3.<b>geoTimes</b>()
 
-[Times](http://bl.ocks.org/mbostock/5230564)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/times.png" width="480" height="250">](http://bl.ocks.org/mbostock/5230564)
+
+John Moir’s Times projection.
 
 <a href="#geoTransverseMercator" name="geoTransverseMercator">#</a> d3.<b>geoTransverseMercator</b>()
 

@@ -38,6 +38,7 @@ for i in \
     mollweide \
     pierceQuincuncial \
     sinusoidal \
+    times \
     winkel3 \
     ; do
   test/render-world $i \
