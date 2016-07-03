@@ -520,8 +520,14 @@ The Winkel tripel projection.
 
 Raw projections are typically passed to the [d3.geoProjection](#geoProjection) constructor. They are exposed here to facilitate the derivation of related projections.
 
-<a href="#project" name="project">#</a> <i>project</i>(<i>lambda</i>, <i>phi</i>)
+<a href="#_project" name="_project">#</a> <i>project</i>(<i>lambda</i>, <i>phi</i>)
+
+Projects the specified point [<i>lambda</i>, <i>phi</i>] in radians, returning a new point [*x*, *y*] in unitless coordinates.
+
 <br><a href="#project_invert" name="project_invert">#</a> <i>project</i>.<b>invert</b>(<i>x</i>, <i>y</i>)
+
+The inverse of [*project*](#_project).
+
 <br><a href="#geoAiryRaw" name="geoAiryRaw">#</a> d3.<b>geoAiryRaw</b>(<i>beta</i>)
 <br><a href="#geoAitoffRaw" name="geoAitoffRaw">#</a> d3.<b>geoAitoffRaw</b>
 <br><a href="#geoArmadilloRaw" name="geoArmadilloRaw">#</a> d3.<b>geoArmadilloRaw</b>(<i>phi0</i>)
