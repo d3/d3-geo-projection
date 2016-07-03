@@ -40,8 +40,8 @@ export {default as geoPolyconic, polyconicRaw as geoPolyconicRaw} from "./src/po
 export {default as geoRectangularPolyconic, rectangularPolyconicRaw as geoRectangularPolyconicRaw} from "./src/rectangularPolyconic";
 export {default as geoRobinson, robinsonRaw as geoRobinsonRaw} from "./src/robinson";
 export {default as geoSatellite, satelliteRaw as geoSatelliteRaw, satelliteVerticalRaw as geoSatelliteVerticalRaw} from "./src/satellite";
-export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./src/sinusoidal";
 export {default as geoSinuMollweide, sinuMollweideRaw as geoSinuMollweideRaw} from "./src/sinuMollweide";
+export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./src/sinusoidal";
 export {default as geoTimes, timesRaw as geoTimesRaw} from "./src/times";
 export {default as geoVanDerGrinten, vanDerGrintenRaw as geoVanDerGrintenRaw} from "./src/vanDerGrinten";
 export {default as geoVanDerGrinten2, vanDerGrinten2Raw as geoVanDerGrinten2Raw} from "./src/vanDerGrinten2";
