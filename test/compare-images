@@ -39,6 +39,8 @@ for i in \
     kavrayskiy7 \
     mollweide \
     pierceQuincuncial \
+    polyconic \
+    rectangularPolyconic \
     robinson \
     satellite \
     sinuMollweide \

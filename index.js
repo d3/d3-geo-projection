@@ -36,6 +36,8 @@ export {default as geoGuyou, guyouRaw as geoGuyouRaw} from "./src/guyou.js";
 export {default as geoKavrayskiy7, kavrayskiy7Raw as geoKavrayskiy7Raw} from "./src/kavrayskiy7.js";
 export {default as geoMollweide, mollweideRaw as geoMollweideRaw} from "./src/mollweide";
 export {default as geoPierceQuincuncial} from "./src/pierceQuincuncial.js";
+export {default as geoPolyconic, polyconicRaw as geoPolyconicRaw} from "./src/polyconic";
+export {default as geoRectangularPolyconic, rectangularPolyconicRaw as geoRectangularPolyconicRaw} from "./src/rectangularPolyconic";
 export {default as geoRobinson, robinsonRaw as geoRobinsonRaw} from "./src/robinson";
 export {default as geoSatellite, satelliteRaw as geoSatelliteRaw, satelliteVerticalRaw as geoSatelliteVerticalRaw} from "./src/satellite";
 export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./src/sinusoidal";

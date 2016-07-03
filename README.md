@@ -428,11 +428,15 @@ The Pierce quincuncial projection is the quincuncial form of the [Guyou projecti
 
 <a href="#geoPolyconic" name="geoPolyconic">#</a> d3.<b>geoPolyconic</b>()
 
-[polyconic](http://bl.ocks.org/mbostock/3734343)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/polyconic.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734343)
+
+The American polyconic projection.
 
 <a href="#geoRectangularPolyconic" name="geoRectangularPolyconic">#</a> d3.<b>geoRectangularPolyconic</b>()
 
-[rectangular polyconic](http://bl.ocks.org/mbostock/5230202)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/rectangularPolyconic.png" width="480" height="250">](http://bl.ocks.org/mbostock/5230202)
+
+The rectangular (War Office) polyconic projection.
 
 <a href="#geoRobinson" name="geoRobinson">#</a> d3.<b>geoRobinson</b>()
 
@@ -589,16 +593,18 @@ The inverse of [*project*](#_project).
 <br><a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
 <br><a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
+<br><a href="#geoPolyconicRaw" name="geoPolyconicRaw">#</a> d3.<b>geoPolyconicRaw</b>
+<br><a href="#geoRectangularPolyconicRaw" name="geoRectangularPolyconicRaw">#</a> d3.<b>geoRectangularPolyconicRaw</b>
 <br><a href="#geoSatelliteRaw" name="geoSatelliteRaw">#</a> d3.<b>geoSatelliteRaw</b>
 <br><a href="#geoSatelliteVerticalRaw" name="geoSatelliteVerticalRaw">#</a> d3.<b>geoSatelliteVerticalRaw</b>
-<br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
-<br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
 <br><a href="#geoSinuMollweideRaw" name="geoSinuMollweideRaw">#</a> d3.<b>geoSinuMollweideRaw</b>
+<br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
+<br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
 <br><a href="#geoTimesRaw" name="geoTimesRaw">#</a> d3.<b>geoTimesRaw</b>
-<br><a href="#geoVanDerGrintenRaw" name="geoVanDerGrintenRaw">#</a> d3.<b>geoVanDerGrintenRaw</b>
 <br><a href="#geoVanDerGrinten2Raw" name="geoVanDerGrinten2Raw">#</a> d3.<b>geoVanDerGrinten2Raw</b>
 <br><a href="#geoVanDerGrinten3Raw" name="geoVanDerGrinten3Raw">#</a> d3.<b>geoVanDerGrinten3Raw</b>
 <br><a href="#geoVanDerGrinten4Raw" name="geoVanDerGrinten4Raw">#</a> d3.<b>geoVanDerGrinten4Raw</b>
+<br><a href="#geoVanDerGrintenRaw" name="geoVanDerGrintenRaw">#</a> d3.<b>geoVanDerGrintenRaw</b>
 <br><a href="#geoWagner4Raw" name="geoWagner4Raw">#</a> d3.<b>geoWagner4Raw</b>
 <br><a href="#geoWagner6Raw" name="geoWagner6Raw">#</a> d3.<b>geoWagner6Raw</b>
 <br><a href="#geoWagner7Raw" name="geoWagner7Raw">#</a> d3.<b>geoWagner7Raw</b>
