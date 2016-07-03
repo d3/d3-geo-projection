@@ -494,15 +494,21 @@ The transverse spherical Mercator projection; see [d3-geo](https://github.com/d3
 
 <a href="#geoWagner4" name="geoWagner4">#</a> d3.<b>geoWagner4</b>()
 
-[Wagner IV, Putniṇš P2´](http://bl.ocks.org/mbostock/4487674)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/wagner4.png" width="480" height="250">](http://bl.ocks.org/mbostock/4487674)
+
+The Wagner IV projection, also known as Putniṇš P2´.
 
 <a href="#geoWagner6" name="geoWagner6">#</a> d3.<b>geoWagner6</b>()
 
-[Wagner VI](http://bl.ocks.org/mbostock/3710148)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/wagner6.png" width="480" height="250">](http://bl.ocks.org/mbostock/3710148)
+
+The Wagner VI projection.
 
 <a href="#geoWagner7" name="geoWagner7">#</a> d3.<b>geoWagner7</b>()
 
-[Wagner VII](http://bl.ocks.org/mbostock/4465109)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/wagner7.png" width="480" height="250">](http://bl.ocks.org/mbostock/4465109)
+
+The Wagner VII projection.
 
 <a href="#geoWiechel" name="geoWiechel">#</a> d3.<b>geoWiechel</b>()
 
@@ -560,5 +566,8 @@ The inverse of [*project*](#_project).
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
 <br><a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
 <br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
+<br><a href="#geoWagner4Raw" name="geoWagner4Raw">#</a> d3.<b>geoWagner4Raw</b>
+<br><a href="#geoWagner6Raw" name="geoWagner6Raw">#</a> d3.<b>geoWagner6Raw</b>
+<br><a href="#geoWagner7Raw" name="geoWagner7Raw">#</a> d3.<b>geoWagner7Raw</b>
 <br><a href="#geoWiechelRaw" name="geoWiechelRaw">#</a> d3.<b>geoWiechelRaw</b>
 <br><a href="#geoWinkel3Raw" name="geoWinkel3Raw">#</a> d3.<b>geoWinkel3Raw</b>

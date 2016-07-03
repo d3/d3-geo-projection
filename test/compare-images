@@ -41,6 +41,9 @@ for i in \
     robinson \
     pierceQuincuncial \
     sinusoidal \
+    wagner4 \
+    wagner6 \
+    wagner7 \
     winkel3 \
     wiechel \
     ; do
