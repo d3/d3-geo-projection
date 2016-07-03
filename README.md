@@ -328,7 +328,7 @@ The Guyou hemisphere-in-a-square projection. Pierce is credited with its [quincu
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/hammer.png" width="480" height="250">](http://bl.ocks.org/mbostock/3712397)
 
-The Hammer projection. Depending the chosen coefficient, also known as [Eckert–Greifendorff](http://bl.ocks.org/mbostock/4496212), [quartic authalic](http://bl.ocks.org/mbostock/4463175), and [Briesemeister](http://bl.ocks.org/mbostock/4519926).
+The Hammer projection. Depending the chosen coefficient and aspect, also known as [Eckert–Greifendorff](http://bl.ocks.org/mbostock/4496212), [quartic authalic](http://bl.ocks.org/mbostock/4463175), and [Briesemeister](http://bl.ocks.org/mbostock/4519926).
 
 <a href="#hammer_coefficient" name="hammer_coefficient">#</a> <i>hammer</i>.<b>coefficient</b>([<i>coefficient</i>])
 
