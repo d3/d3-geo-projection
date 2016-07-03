@@ -386,31 +386,31 @@ The family of [modified stereographic projections](http://www.jasondavies.com/ma
 
 <a href="#geoModifiedStereographicAlaska" name="geoModifiedStereographicAlaska">#</a> d3.<b>geoModifiedStereographicAlaska</b>()
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/geoModifiedStereographicAlaska.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/alaska/)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/modifiedStereographicAlaska.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/alaska/)
 
 A [modified stereographic](#geoModifiedStereographic) projection for Alaska.
 
 <a href="#geoModifiedStereographicGs48" name="geoModifiedStereographicGs48">#</a> d3.<b>geoModifiedStereographicGs48</b>()
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/geoModifiedStereographicGs48.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/gs48/)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/modifiedStereographicGs48.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/gs48/)
 
 A [modified stereographic](#geoModifiedStereographic) projection for the conterminous United States.
 
 <a href="#geoModifiedStereographicGs50" name="geoModifiedStereographicGs50">#</a> d3.<b>geoModifiedStereographicGs50</b>()
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/geoModifiedStereographicGs50.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/gs50/)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/modifiedStereographicGs50.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/gs50/)
 
 A [modified stereographic](#geoModifiedStereographic) projection for the United States including Alaska and Hawaii.
 
 <a href="#geoModifiedStereographicMiller" name="geoModifiedStereographicMiller">#</a> d3.<b>geoModifiedStereographicMiller</b>()
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/geoModifiedStereographicMiller.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/miller/)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/modifiedStereographicMiller.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/miller/)
 
 A [modified stereographic](#geoModifiedStereographic) projection for Europe and Africa. Typically clipped to the geographic extent [[-40°, -40°], [80°, 80°]].
 
 <a href="#geoModifiedStereographicLee" name="geoModifiedStereographicLee">#</a> d3.<b>geoModifiedStereographicLee</b>()
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/geoModifiedStereographicLee.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/miller/)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/modifiedStereographicLee.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/miller/)
 
 A [modified stereographic](#geoModifiedStereographic) projection for the Pacific ocean.
 
