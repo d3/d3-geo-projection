@@ -322,7 +322,7 @@ The Gringorten square equal-area projection.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/guyou.png" width="480" height="250">](http://bl.ocks.org/mbostock/3763867)
 
-The Guyou hemisphere-in-a-square projection. See also [d3.geoPierceQuincuncial](#geoPierceQuincuncial).
+The Guyou hemisphere-in-a-square projection. Pierce is credited with its [quincuncial form](#geoPierceQuincuncial).
 
 <a href="#geoHammer" name="geoHammer">#</a> d3.<b>geoHammer</b>()
 
@@ -347,6 +347,8 @@ The Guyou hemisphere-in-a-square projection. See also [d3.geoPierceQuincuncial](
 <a href="#geoKavrayskiy7" name="geoKavrayskiy7">#</a> d3.<b>geoKavrayskiy7</b>()
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/kavrayskiy7.png" width="480" height="250">](http://bl.ocks.org/mbostock/3710082)
+
+The Kavrayskiy VII pseudocylindrical projection.
 
 <a href="#geoLagrange" name="geoLagrange">#</a> d3.<b>geoLagrange</b>()
 
@@ -422,7 +424,7 @@ The orthographic projection; see [d3-geo](https://github.com/d3/d3-geo#geoOrthog
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/pierceQuincuncial.png" width="480" height="250">](http://bl.ocks.org/mbostock/4310087)
 
-The Pierce quincuncial projection is the quincuncial form of [d3.geoGuyou](#geoGuyou).
+The Pierce quincuncial projection is the quincuncial form of the [Guyou projection](#geoGuyou).
 
 <a href="#geoPolyconic" name="geoPolyconic">#</a> d3.<b>geoPolyconic</b>()
 
@@ -540,11 +542,11 @@ Raw projections are typically passed to the [d3.geoProjection](#geoProjection) c
 
 Projects the specified point [<i>lambda</i>, <i>phi</i>] in radians, returning a new point [*x*, *y*] in unitless coordinates.
 
-<br><a href="#project_invert" name="project_invert">#</a> <i>project</i>.<b>invert</b>(<i>x</i>, <i>y</i>)
+<a href="#project_invert" name="project_invert">#</a> <i>project</i>.<b>invert</b>(<i>x</i>, <i>y</i>)
 
 The inverse of [*project*](#_project).
 
-<br><a href="#geoAiryRaw" name="geoAiryRaw">#</a> d3.<b>geoAiryRaw</b>(<i>beta</i>)
+<a href="#geoAiryRaw" name="geoAiryRaw">#</a> d3.<b>geoAiryRaw</b>(<i>beta</i>)
 <br><a href="#geoAitoffRaw" name="geoAitoffRaw">#</a> d3.<b>geoAitoffRaw</b>
 <br><a href="#geoArmadilloRaw" name="geoArmadilloRaw">#</a> d3.<b>geoArmadilloRaw</b>(<i>phi0</i>)
 <br><a href="#geoAugustRaw" name="geoAugustRaw">#</a> d3.<b>geoAugustRaw</b>
