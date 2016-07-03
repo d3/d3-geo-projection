@@ -356,7 +356,9 @@ The Kavrayskiy VII pseudocylindrical projection.
 
 <a href="#geoLarrivee" name="geoLarrivee">#</a> d3.<b>geoLarrivee</b>()
 
-[Larrivée](http://bl.ocks.org/mbostock/3719042)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/larrivee.png" width="480" height="250">](http://bl.ocks.org/mbostock/3719042)
+
+The Larrivée projection.
 
 <a href="#geoLaskowski" name="geoLaskowski">#</a> d3.<b>geoLaskowski</b>()
 
@@ -642,6 +644,7 @@ The inverse of [*project*](#_project).
 <br><a href="#geoGinzburg8Raw" name="geoGinzburg8Raw">#</a> d3.<b>geoGinzburg8Raw</b>
 <br><a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
+<br><a href="#geoLarriveeRaw" name="geoLarriveeRaw">#</a> d3.<b>geoLarriveeRaw</b>
 <br><a href="#geoLaskowskiRaw" name="geoLaskowskiRaw">#</a> d3.<b>geoLaskowskiRaw</b>
 <br><a href="#geoLittrowRaw" name="geoLittrowRaw">#</a> d3.<b>geoLittrowRaw</b>
 <br><a href="#geoLoximuthalRaw" name="geoLoximuthalRaw">#</a> d3.<b>geoLoximuthalRaw</b>
