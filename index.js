@@ -34,6 +34,7 @@ export {default as geoGringorten, gringortenRaw as geoGringortenRaw} from "./src
 export {default as geoGringortenQuincuncial} from "./src/gringortenQuincuncial.js";
 export {default as geoGuyou, guyouRaw as geoGuyouRaw} from "./src/guyou.js";
 export {default as geoKavrayskiy7, kavrayskiy7Raw as geoKavrayskiy7Raw} from "./src/kavrayskiy7.js";
+export {default as geoModifiedStereographic, modifiedStereographicRaw as geoModifiedStereographicRaw, modifiedStereographicAlaska as geoModifiedStereographicAlaska, modifiedStereographicGs48 as geoModifiedStereographicGs48, modifiedStereographicGs50 as geoModifiedStereographicGs50, modifiedStereographicMiller as geoModifiedStereographicMiller, modifiedStereographicLee as geoModifiedStereographicLee} from "./src/modifiedStereographic";
 export {default as geoMollweide, mollweideRaw as geoMollweideRaw} from "./src/mollweide";
 export {default as geoNaturalEarth, naturalEarthRaw as geoNaturalEarthRaw} from "./src/naturalEarth";
 export {default as geoNellHammer, nellHammerRaw as geoNellHammerRaw} from "./src/nellHammer";

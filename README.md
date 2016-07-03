@@ -380,9 +380,39 @@ The spherical Mercator projection; see [d3-geo](https://github.com/d3/d3-geo#geo
 
 [Miller](http://bl.ocks.org/mbostock/3734333)
 
-<a href="#geoModifiedStereographic" name="geoModifiedStereographic">#</a> d3.<b>geoModifiedStereographic</b>()
+<a href="#geoModifiedStereographic" name="geoModifiedStereographic">#</a> d3.<b>geoModifiedStereographic</b>(<i>coefficients</i>)
 
-[modified stereographic](http://www.jasondavies.com/maps/modified-stereographic/)
+The family of [modified stereographic projections](http://www.jasondavies.com/maps/modified-stereographic/). The default [clip angle](https://github.com/d3/d3-geo#projection_clipAngle) for these projections is 90°.
+
+<a href="#geoModifiedStereographicAlaska" name="geoModifiedStereographicAlaska">#</a> d3.<b>geoModifiedStereographicAlaska</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/geoModifiedStereographicAlaska.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/alaska/)
+
+A [modified stereographic](#geoModifiedStereographic) projection for Alaska.
+
+<a href="#geoModifiedStereographicGs48" name="geoModifiedStereographicGs48">#</a> d3.<b>geoModifiedStereographicGs48</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/geoModifiedStereographicGs48.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/gs48/)
+
+A [modified stereographic](#geoModifiedStereographic) projection for the conterminous United States.
+
+<a href="#geoModifiedStereographicGs50" name="geoModifiedStereographicGs50">#</a> d3.<b>geoModifiedStereographicGs50</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/geoModifiedStereographicGs50.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/gs50/)
+
+A [modified stereographic](#geoModifiedStereographic) projection for the United States including Alaska and Hawaii.
+
+<a href="#geoModifiedStereographicMiller" name="geoModifiedStereographicMiller">#</a> d3.<b>geoModifiedStereographicMiller</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/geoModifiedStereographicMiller.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/miller/)
+
+A [modified stereographic](#geoModifiedStereographic) projection for Europe and Africa. Typically clipped to the geographic extent [[-40°, -40°], [80°, 80°]].
+
+<a href="#geoModifiedStereographicLee" name="geoModifiedStereographicLee">#</a> d3.<b>geoModifiedStereographicLee</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/geoModifiedStereographicLee.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/miller/)
+
+A [modified stereographic](#geoModifiedStereographic) projection for the Pacific ocean.
 
 <a href="#geoMollweide" name="geoMollweide">#</a> d3.<b>geoMollweide</b>()
 
@@ -598,6 +628,7 @@ The inverse of [*project*](#_project).
 <br><a href="#geoGinzburg8Raw" name="geoGinzburg8Raw">#</a> d3.<b>geoGinzburg8Raw</b>
 <br><a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
+<br><a href="#geoModifiedStereographicRaw" name="geoModifiedStereographicRaw">#</a> d3.<b>geoModifiedStereographicRaw</b>
 <br><a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
 <br><a href="#geoNaturalEarthRaw" name="geoNaturalEarthRaw">#</a> d3.<b>geoNaturalEarthRaw</b>
 <br><a href="#geoNellHammerRaw" name="geoNellHammerRaw">#</a> d3.<b>geoNellHammerRaw</b>

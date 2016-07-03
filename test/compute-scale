@@ -8,7 +8,8 @@ var width = 960 - 1,
 
 if (!/^[a-z0-9]+$/i.test(projectionName)) throw new Error;
 
-var d3_format = require("d3-format"),
+var topojson = require("topojson"),
+    d3_format = require("d3-format"),
     d3_geo = require("d3-geo"),
     d3_geo_projection = require("../");
 
@@ -24,10 +25,30 @@ if (projection.rotate) projection.rotate([0, 0]);
 
 if (projectionHalves.indexOf(projectionName) >= 0) projection.clipAngle(90);
 
+var land = {type: "Sphere"};
+
+switch (projectionName) {
+  case "modifiedStereographicAlaska": {
+    var us = require("./data/us-10m.json");
+    land = topojson.feature(us, us.objects.states.geometries.filter(function(d) { return d.id === 2; })[0]);
+    break;
+  }
+  case "modifiedStereographicGs48": {
+    var us = require("./data/us-10m.json");
+    land = topojson.feature(us, {type: "GeometryCollection", geometries: us.objects.states.geometries.filter(function(d) { return d.id !== 2 && d.id !== 15 && d.id <= 56; })});
+    break;
+  }
+  case "modifiedStereographicGs50": {
+    var us = require("./data/us-10m.json");
+    land = topojson.feature(us, us.objects.land);
+    break;
+  }
+}
+
 var path = d3_geo.geoPath()
     .projection(projection);
 
-var bounds = path.bounds({type: "Sphere"}),
+var bounds = path.bounds(land),
     dx = bounds[1][0] - bounds[0][0],
     dy = bounds[1][1] - bounds[0][1],
     cx = (bounds[1][0] + bounds[0][0]) / 2,

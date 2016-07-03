@@ -4,7 +4,7 @@ var width = 960,
     height = 500,
     projectionName = process.argv[2],
     projectionSymbol = "geo" + projectionName[0].toUpperCase() + projectionName.slice(1),
-    projectionClips = ["armadillo", "berghaus", "gingery"];
+    projectionClips = ["armadillo", "berghaus", "gingery", "modifiedStereographicGs50"];
 
 if (!/^[a-z0-9]+$/i.test(projectionName)) throw new Error;
 
@@ -18,13 +18,20 @@ var fs = require("fs"),
 var canvas = new Canvas(width, height),
     context = canvas.getContext("2d");
 
-var world = require("./data/world-50m.json");
-
-var graticule = d3_geo.geoGraticule();
+var world = require("./data/world-50m.json"),
+    land = topojson.feature(world, world.objects.land),
+    graticule = d3_geo.geoGraticule(),
+    outline = {type: "Sphere"};
 
 var path = d3_geo.geoPath()
     .projection(d3_geo_projection[projectionSymbol]().precision(0.1))
     .context(context);
+
+if (projectionName === "modifiedStereographicGs50") {
+  outline = graticule
+      .extent([[-180, 15], [-50, 75]])
+    .outline();
+}
 
 context.fillStyle = "#fff";
 context.fillRect(0, 0, width, height);
@@ -33,12 +40,12 @@ context.save();
 
 if (projectionClips.indexOf(projectionName) >= 0) {
   context.beginPath();
-  path({type: "Sphere"});
+  path(outline);
   context.clip();
 }
 
 context.beginPath();
-path(topojson.feature(world, world.objects.land));
+path(land);
 context.fillStyle = "#000";
 context.fill();
 
@@ -50,7 +57,7 @@ context.stroke();
 context.restore();
 
 context.beginPath();
-path({type: "Sphere"});
+path(outline);
 context.strokeStyle = "#000";
 context.stroke();
 
