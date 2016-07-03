@@ -408,7 +408,9 @@ The equal-area, pseudocylindrical Mollweide projection. The oblique aspect is kn
 
 <a href="#geoNellHammer" name="geoNellHammer">#</a> d3.<b>geoNellHammer</b>()
 
-[Nell–Hammer](http://bl.ocks.org/mbostock/3734342)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/nellHammer.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734342)
+
+The Nell–Hammer projection.
 
 <a href="#geoOrthographic" name="geoOrthographic">#</a> d3.<b>geoOrthographic</b>()
 
@@ -595,6 +597,7 @@ The inverse of [*project*](#_project).
 <br><a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
 <br><a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
+<br><a href="#geoNellHammerRaw" name="geoNellHammerRaw">#</a> d3.<b>geoNellHammerRaw</b>
 <br><a href="#geoPattersonRaw" name="geoPattersonRaw">#</a> d3.<b>geoPattersonRaw</b>
 <br><a href="#geoPolyconicRaw" name="geoPolyconicRaw">#</a> d3.<b>geoPolyconicRaw</b>
 <br><a href="#geoRectangularPolyconicRaw" name="geoRectangularPolyconicRaw">#</a> d3.<b>geoRectangularPolyconicRaw</b>
