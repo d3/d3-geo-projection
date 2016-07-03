@@ -478,19 +478,27 @@ The transverse spherical Mercator projection; see [d3-geo](https://github.com/d3
 
 <a href="#geoVanDerGrinten" name="geoVanDerGrinten">#</a> d3.<b>geoVanDerGrinten</b>()
 
-[Van der Grinten](http://bl.ocks.org/mbostock/3796831)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/vanDerGrinten.png" width="480" height="250">](http://bl.ocks.org/mbostock/3796831)
+
+The Van der Grinten projection.
 
 <a href="#geoVanDerGrinten2" name="geoVanDerGrinten2">#</a> d3.<b>geoVanDerGrinten2</b>()
 
-[Van der Grinten II](http://bl.ocks.org/mbostock/5230571)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/vanDerGrinten2.png" width="480" height="250">](http://bl.ocks.org/mbostock/5230571)
+
+The Van der Grinten II projection.
 
 <a href="#geoVanDerGrinten3" name="geoVanDerGrinten3">#</a> d3.<b>geoVanDerGrinten3</b>()
 
-[Van der Grinten III](http://bl.ocks.org/mbostock/5230580)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/vanDerGrinten3.png" width="480" height="250">](http://bl.ocks.org/mbostock/5230580)
+
+The Van der Grinten III projection.
 
 <a href="#geoVanDerGrinten4" name="geoVanDerGrinten4">#</a> d3.<b>geoVanDerGrinten4</b>()
 
-[Van der Grinten IV](http://bl.ocks.org/mbostock/4489365)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/vanDerGrinten4.png" width="480" height="250">](http://bl.ocks.org/mbostock/4489365)
+
+The Van der Grinten IV projection.
 
 <a href="#geoWagner4" name="geoWagner4">#</a> d3.<b>geoWagner4</b>()
 
@@ -566,6 +574,10 @@ The inverse of [*project*](#_project).
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
 <br><a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
 <br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
+<br><a href="#geoVanDerGrintenRaw" name="geoVanDerGrintenRaw">#</a> d3.<b>geoVanDerGrintenRaw</b>
+<br><a href="#geoVanDerGrinten2Raw" name="geoVanDerGrinten2Raw">#</a> d3.<b>geoVanDerGrinten2Raw</b>
+<br><a href="#geoVanDerGrinten3Raw" name="geoVanDerGrinten3Raw">#</a> d3.<b>geoVanDerGrinten3Raw</b>
+<br><a href="#geoVanDerGrinten4Raw" name="geoVanDerGrinten4Raw">#</a> d3.<b>geoVanDerGrinten4Raw</b>
 <br><a href="#geoWagner4Raw" name="geoWagner4Raw">#</a> d3.<b>geoWagner4Raw</b>
 <br><a href="#geoWagner6Raw" name="geoWagner6Raw">#</a> d3.<b>geoWagner6Raw</b>
 <br><a href="#geoWagner7Raw" name="geoWagner7Raw">#</a> d3.<b>geoWagner7Raw</b>

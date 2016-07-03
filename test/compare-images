@@ -38,14 +38,18 @@ for i in \
     guyou \
     kavrayskiy7 \
     mollweide \
-    robinson \
     pierceQuincuncial \
+    robinson \
     sinusoidal \
+    vanDerGrinten \
+    vanDerGrinten2 \
+    vanDerGrinten3 \
+    vanDerGrinten4 \
     wagner4 \
     wagner6 \
     wagner7 \
-    winkel3 \
     wiechel \
+    winkel3 \
     ; do
   test/render-world $i \
       && [ "$(compare -metric rmse img/$i.png test/output/$i.png null: 2>&1)" = "0 (0)" ] \

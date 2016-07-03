@@ -38,6 +38,10 @@ export {default as geoMollweide, mollweideRaw as geoMollweideRaw} from "./src/mo
 export {default as geoPierceQuincuncial} from "./src/pierceQuincuncial.js";
 export {default as geoRobinson, robinsonRaw as geoRobinsonRaw} from "./src/robinson";
 export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./src/sinusoidal";
+export {default as geoVanDerGrinten, vanDerGrintenRaw as geoVanDerGrintenRaw} from "./src/vanDerGrinten";
+export {default as geoVanDerGrinten2, vanDerGrinten2Raw as geoVanDerGrinten2Raw} from "./src/vanDerGrinten2";
+export {default as geoVanDerGrinten3, vanDerGrinten3Raw as geoVanDerGrinten3Raw} from "./src/vanDerGrinten3";
+export {default as geoVanDerGrinten4, vanDerGrinten4Raw as geoVanDerGrinten4Raw} from "./src/vanDerGrinten4";
 export {default as geoWagner4, wagner4Raw as geoWagner4Raw} from "./src/wagner4.js";
 export {default as geoWagner6, wagner6Raw as geoWagner6Raw} from "./src/wagner6.js";
 export {default as geoWagner7, wagner7Raw as geoWagner7Raw} from "./src/wagner7.js";
