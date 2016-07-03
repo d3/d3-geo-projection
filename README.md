@@ -364,7 +364,9 @@ The Kavrayskiy VII pseudocylindrical projection.
 
 <a href="#geoLittrow" name="geoLittrow">#</a> d3.<b>geoLittrow</b>()
 
-[Littrow](http://bl.ocks.org/mbostock/4459071)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/littrow.png" width="480" height="250">](http://bl.ocks.org/mbostock/4459071)
+
+The Littrow projection is the only conformal retroazimuthal map projection. Typically clipped to the geographic extent [[-90°, -60°], [90°, 60°]].
 
 <a href="#geoLoximuthal" name="geoLoximuthal">#</a> d3.<b>geoLoximuthal</b>()
 
@@ -404,7 +406,7 @@ A [modified stereographic](#geoModifiedStereographic) projection for the conterm
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/modifiedStereographicGs50.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/gs50/)
 
-A [modified stereographic](#geoModifiedStereographic) projection for the United States including Alaska and Hawaii.
+A [modified stereographic](#geoModifiedStereographic) projection for the United States including Alaska and Hawaii. Typically clipped to the geographic extent [[-180°, 15°], [-50°, 75°]].
 
 <a href="#geoModifiedStereographicMiller" name="geoModifiedStereographicMiller">#</a> d3.<b>geoModifiedStereographicMiller</b>()
 
@@ -638,6 +640,7 @@ The inverse of [*project*](#_project).
 <br><a href="#geoGinzburg8Raw" name="geoGinzburg8Raw">#</a> d3.<b>geoGinzburg8Raw</b>
 <br><a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
+<br><a href="#geoLittrowRaw" name="geoLittrowRaw">#</a> d3.<b>geoLittrowRaw</b>
 <br><a href="#geoLoximuthalRaw" name="geoLoximuthalRaw">#</a> d3.<b>geoLoximuthalRaw</b>
 <br><a href="#geoMillerRaw" name="geoMillerRaw">#</a> d3.<b>geoMillerRaw</b>
 <br><a href="#geoModifiedStereographicRaw" name="geoModifiedStereographicRaw">#</a> d3.<b>geoModifiedStereographicRaw</b>(<i>coefficients</i>)

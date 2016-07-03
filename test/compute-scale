@@ -28,6 +28,10 @@ if (projectionHalves.indexOf(projectionName) >= 0) projection.clipAngle(90);
 var land = {type: "Sphere"};
 
 switch (projectionName) {
+  case "littrow": {
+    land = d3_geo.geoGraticule().extent([[-90, -60], [90, 60]]).outline();
+    break;
+  }
   case "modifiedStereographicAlaska": {
     var us = require("./data/us-10m.json");
     land = topojson.feature(us, us.objects.states.geometries.filter(function(d) { return d.id === 2; })[0]);
