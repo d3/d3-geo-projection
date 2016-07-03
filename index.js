@@ -38,4 +38,5 @@ export {default as geoMollweide, mollweideRaw as geoMollweideRaw} from "./src/mo
 export {default as geoPierceQuincuncial} from "./src/pierceQuincuncial.js";
 export {default as geoRobinson, robinsonRaw as geoRobinsonRaw} from "./src/robinson";
 export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./src/sinusoidal";
+export {default as geoWiechel, wiechelRaw as geoWiechelRaw} from "./src/wiechel.js";
 export {default as geoWinkel3, winkel3Raw as geoWinkel3Raw} from "./src/winkel3";

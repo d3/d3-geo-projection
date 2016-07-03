@@ -346,7 +346,7 @@ The Guyou hemisphere-in-a-square projection. See also [d3.geoPierceQuincuncial](
 
 <a href="#geoKavrayskiy7" name="geoKavrayskiy7">#</a> d3.<b>geoKavrayskiy7</b>()
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/kavrayskiy7.png" width="480" height="250">](http://bl.ocks.org/mbostock/3710082)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/kavrayskiy7.png" width="480" height="250">](http://bl.ocks.org/mbostock/3710082)
 
 <a href="#geoLagrange" name="geoLagrange">#</a> d3.<b>geoLagrange</b>()
 
@@ -506,7 +506,9 @@ The transverse spherical Mercator projection; see [d3-geo](https://github.com/d3
 
 <a href="#geoWiechel" name="geoWiechel">#</a> d3.<b>geoWiechel</b>()
 
-[Wiechel](http://bl.ocks.org/mbostock/4463155)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/wiechel.png" width="480" height="250">](http://bl.ocks.org/mbostock/4463155)
+
+The Wiechel projection.
 
 <a href="#geoWinkel3" name="geoWinkel3">#</a> d3.<b>geoWinkel3</b>()
 
@@ -552,4 +554,5 @@ Raw projections are typically passed to the [d3.geoProjection](#geoProjection) c
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
 <br><a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
 <br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
+<br><a href="#geoWiechelRaw" name="geoWiechelRaw">#</a> d3.<b>geoWiechelRaw</b>
 <br><a href="#geoWinkel3Raw" name="geoWinkel3Raw">#</a> d3.<b>geoWinkel3Raw</b>

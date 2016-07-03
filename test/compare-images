@@ -42,6 +42,7 @@ for i in \
     pierceQuincuncial \
     sinusoidal \
     winkel3 \
+    wiechel \
     ; do
   test/render-world $i \
       && [ "$(compare -metric rmse img/$i.png test/output/$i.png null: 2>&1)" = "0 (0)" ] \
