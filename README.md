@@ -426,7 +426,9 @@ The Pierce quincuncial projection is the quincuncial form of [d3.geoGuyou](#geoG
 
 <a href="#geoPolyconic" name="geoPolyconic">#</a> d3.<b>geoPolyconic</b>()
 
-[polyconic](http://bl.ocks.org/mbostock/3734343)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/polyconic.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734343)
+
+The polyconic projection.
 
 <a href="#geoRectangularPolyconic" name="geoRectangularPolyconic">#</a> d3.<b>geoRectangularPolyconic</b>()
 
