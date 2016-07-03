@@ -40,6 +40,7 @@ switch (projectionName) {
   case "armadillo":
   case "berghaus":
   case "gingery":
+  case "hammerRetroazimuthal":
   case "littrow":
   case "modifiedStereographicGs50": {
     context.beginPath();

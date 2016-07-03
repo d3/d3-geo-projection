@@ -326,11 +326,23 @@ The Guyou hemisphere-in-a-square projection. Pierce is credited with its [quincu
 
 <a href="#geoHammer" name="geoHammer">#</a> d3.<b>geoHammer</b>()
 
-[Hammer](http://bl.ocks.org/mbostock/3712397), [Eckert–Greifendorff](http://bl.ocks.org/mbostock/4496212), [quartic authalic](http://bl.ocks.org/mbostock/4463175), [Briesemeister](http://bl.ocks.org/mbostock/4519926)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/hammer.png" width="480" height="250">](http://bl.ocks.org/mbostock/3712397)
+
+The Hammer projection. Depending the chosen coefficient, also known as [Eckert–Greifendorff](http://bl.ocks.org/mbostock/4496212), [quartic authalic](http://bl.ocks.org/mbostock/4463175), and [Briesemeister](http://bl.ocks.org/mbostock/4519926).
+
+<a href="#hammer_coefficient" name="hammer_coefficient">#</a> <i>hammer</i>.<b>coefficient</b>([<i>coefficient</i>])
+
+Defaults to 2.
 
 <a href="#geoHammerRetroazimuthal" name="geoHammerRetroazimuthal">#</a> d3.<b>geoHammerRetroazimuthal</b>()
 
-[Hammer retroazimuthal](http://bl.ocks.org/mbostock/4459130)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/hammerRetroazimuthal.png" width="480" height="250">](http://bl.ocks.org/mbostock/4459130)
+
+The Hammer retroazimuthal projection. Note: requires clipping to the sphere.
+
+<a href="#hammerRetroazimuthal_parallel" name="hammerRetroazimuthal_parallel">#</a> <i>hammerRetroazimuthal</i>.<b>parallel</b>([<i>parallel</i>])
+
+Defaults to 45°.
 
 <a href="#geoHealpix" name="geoHealpix">#</a> d3.<b>geoHealpix</b>()
 
@@ -654,6 +666,9 @@ The inverse of [*project*](#_project).
 <br><a href="#geoGinzburg5Raw" name="geoGinzburg5Raw">#</a> d3.<b>geoGinzburg5Raw</b>
 <br><a href="#geoGinzburg6Raw" name="geoGinzburg6Raw">#</a> d3.<b>geoGinzburg6Raw</b>
 <br><a href="#geoGinzburg8Raw" name="geoGinzburg8Raw">#</a> d3.<b>geoGinzburg8Raw</b>
+<br><a href="#geoHammerRaw" name="geoHammerRaw">#</a> d3.<b>geoHammerRaw</b>(<i>A</i>, <i>B</i>)
+<br><a href="#geoHammerQuarticAuthalicRaw" name="geoHammerQuarticAuthalicRaw">#</a> d3.<b>geoHammerQuarticAuthalicRaw</b>(<i>A</i>, <i>B</i>)
+<br><a href="#geoHammerRetroazimuthalRaw" name="geoHammerRetroazimuthalRaw">#</a> d3.<b>geoHammerRetroazimuthalRaw</b>(<i>phi0</i>)
 <br><a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
 <br><a href="#geoHillRaw" name="geoHillRaw">#</a> d3.<b>geoHillRaw</b>([<i>ratio</i>])
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
