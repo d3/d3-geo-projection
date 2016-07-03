@@ -378,7 +378,9 @@ The spherical Mercator projection; see [d3-geo](https://github.com/d3/d3-geo#geo
 
 <a href="#geoMiller" name="geoMiller">#</a> d3.<b>geoMiller</b>()
 
-[Miller](http://bl.ocks.org/mbostock/3734333)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/miller.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734333)
+
+The Miller cylindrical projection is a modified [Mercator](#geoMercator) projection.
 
 <a href="#geoModifiedStereographic" name="geoModifiedStereographic">#</a> d3.<b>geoModifiedStereographic</b>(<i>coefficients</i>)
 
@@ -634,6 +636,7 @@ The inverse of [*project*](#_project).
 <br><a href="#geoGinzburg8Raw" name="geoGinzburg8Raw">#</a> d3.<b>geoGinzburg8Raw</b>
 <br><a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
+<br><a href="#geoMillerRaw" name="geoMillerRaw">#</a> d3.<b>geoMillerRaw</b>
 <br><a href="#geoModifiedStereographicRaw" name="geoModifiedStereographicRaw">#</a> d3.<b>geoModifiedStereographicRaw</b>(<i>coefficients</i>)
 <br><a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
 <br><a href="#geoMtFlatPolarParabolicRaw" name="geoMtFlatPolarParabolicRaw">#</a> d3.<b>geoMtFlatPolarParabolicRaw</b>
