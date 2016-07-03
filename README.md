@@ -380,7 +380,15 @@ The spherical Mercator projection; see [d3-geo](https://github.com/d3/d3-geo#geo
 
 <a href="#geoModifiedStereographic" name="geoModifiedStereographic">#</a> d3.<b>geoModifiedStereographic</b>()
 
-[modified stereographic](http://www.jasondavies.com/maps/modified-stereographic/)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/modifiedStereographic.png" width="480" height="250">](http://www.jasondavies.com/maps/modified-stereographic/)
+
+The modified stereographic projections.
+
+<a href="#modifiedStereographic_coefficients" name="modifiedStereographic_coefficients">#</a> <i>modifiedStereographic</i>.<b>coefficients</b>([<i>coefficients</i>])
+
+<i>coefficients</i> can be one of `"alaska"`, `"gs48"`, `"gs50"`, `"miller"`, `"lee"`, or a coefficients matrix. Defaults to `"miller"`.
+
+Default clipAngle is 120°.
 
 <a href="#geoMollweide" name="geoMollweide">#</a> d3.<b>geoMollweide</b>()
 
@@ -574,6 +582,7 @@ The inverse of [*project*](#_project).
 <br><a href="#geoGinzburg8Raw" name="geoGinzburg8Raw">#</a> d3.<b>geoGinzburg8Raw</b>
 <br><a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
+<br><a href="#geoModifiedStereographicRaw" name="geoModifiedStereographicRaw">#</a> d3.<b>geoModifiedStereographicRaw</b>
 <br><a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
 <br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
 <br><a href="#geoTimesRaw" name="geoTimesRaw">#</a> d3.<b>geoTimesRaw</b>
