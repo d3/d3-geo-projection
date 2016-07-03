@@ -440,7 +440,18 @@ The Robinson projection.
 
 <a href="#geoSatellite" name="geoSatellite">#</a> d3.<b>geoSatellite</b>()
 
-[satellite (tilted perpsective)](http://bl.ocks.org/mbostock/3790444)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/satellite.png" width="480" height="250">](http://bl.ocks.org/mbostock/3790444)
+
+The satellite (tilted perspective) projection.
+
+<a href="#satellite_tilt" name="satellite_tilt">#</a> <i>satellite</i>.<b>tilt</b>([<i>tilt</i>])
+
+Defaults to 25°.
+
+<a href="#satellite_distance" name="satellite_distance">#</a> <i>satellite</i>.<b>distance</b>([<i>distance</i>])
+
+Distance from the center of the sphere to the point of view, as a proportion of the sphere’s radius (default 1.4).
+
 
 <a href="#geoSinusoidal" name="geoSinusoidal">#</a> d3.<b>geoSinusoidal</b>()
 
