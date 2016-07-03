@@ -352,7 +352,13 @@ The Kavrayskiy VII pseudocylindrical projection.
 
 <a href="#geoLagrange" name="geoLagrange">#</a> d3.<b>geoLagrange</b>()
 
-[Lagrange conformal](http://bl.ocks.org/mbostock/3797591)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/lagrange.png" width="480" height="250">](http://bl.ocks.org/mbostock/3797591)
+
+The Lagrange conformal projection.
+
+<a href="#lagrange_spacing" name="lagrange_spacing">#</a> <i>lagrange</i>.<b>spacing</b>([<i>spacing</i>])
+
+Defaults to 0.5.
 
 <a href="#geoLarrivee" name="geoLarrivee">#</a> d3.<b>geoLarrivee</b>()
 
@@ -644,6 +650,7 @@ The inverse of [*project*](#_project).
 <br><a href="#geoGinzburg8Raw" name="geoGinzburg8Raw">#</a> d3.<b>geoGinzburg8Raw</b>
 <br><a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
+<br><a href="#geoLagrangeRaw" name="geoLagrangeRaw">#</a> d3.<b>geoLagrangeRaw</b>
 <br><a href="#geoLarriveeRaw" name="geoLarriveeRaw">#</a> d3.<b>geoLarriveeRaw</b>
 <br><a href="#geoLaskowskiRaw" name="geoLaskowskiRaw">#</a> d3.<b>geoLaskowskiRaw</b>
 <br><a href="#geoLittrowRaw" name="geoLittrowRaw">#</a> d3.<b>geoLittrowRaw</b>
