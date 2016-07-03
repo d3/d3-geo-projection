@@ -338,7 +338,13 @@ The Guyou hemisphere-in-a-square projection. Pierce is credited with its [quincu
 
 <a href="#geoHill" name="geoHill">#</a> d3.<b>geoHill</b>()
 
-[Hill eucyclic](http://bl.ocks.org/mbostock/4479513), [Maurer No. 73](http://bl.ocks.org/mbostock/4479547)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/hill.png" width="480" height="250">](http://bl.ocks.org/mbostock/4479513)
+
+Hill eucyclic projection is psuedoconic and equal-area.
+
+<a href="hill_ratio" name="hill_ratio">#</a> <i>hill</i>.<b>ratio</b>([<i>ratio</i>])
+
+Defaults to 1. With a ratio of 0, this projection becomes the [Maurer No. 73](http://bl.ocks.org/mbostock/4479547). As it approaches ∞, the projection converges to the [Eckert IV](#geoEckert4).
 
 <a href="#geoHomolosine" name="geoHomolosine">#</a> d3.<b>geoHomolosine</b>()
 
@@ -649,6 +655,7 @@ The inverse of [*project*](#_project).
 <br><a href="#geoGinzburg6Raw" name="geoGinzburg6Raw">#</a> d3.<b>geoGinzburg6Raw</b>
 <br><a href="#geoGinzburg8Raw" name="geoGinzburg8Raw">#</a> d3.<b>geoGinzburg8Raw</b>
 <br><a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
+<br><a href="#geoHillRaw" name="geoHillRaw">#</a> d3.<b>geoHillRaw</b>([<i>ratio</i>])
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
 <br><a href="#geoLagrangeRaw" name="geoLagrangeRaw">#</a> d3.<b>geoLagrangeRaw</b>
 <br><a href="#geoLarriveeRaw" name="geoLarriveeRaw">#</a> d3.<b>geoLarriveeRaw</b>

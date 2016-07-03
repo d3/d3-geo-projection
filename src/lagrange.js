@@ -1,5 +1,5 @@
-import {geoProjection, geoProjectionMutator as projectionMutator} from "d3-geo";
-import {abs, asin, atan2, cos, epsilon, halfPi, pow, sin} from "./math";
+import {geoProjectionMutator as projectionMutator} from "d3-geo";
+import {abs, asin, atan2, cos, epsilon, halfPi, pow, sign, sin} from "./math";
 
 export function lagrangeRaw(n) {
 

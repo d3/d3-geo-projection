@@ -33,6 +33,7 @@ export {default as geoGinzburg9, ginzburg9Raw as geoGinzburg9Raw} from "./src/gi
 export {default as geoGringorten, gringortenRaw as geoGringortenRaw} from "./src/gringorten.js";
 export {default as geoGringortenQuincuncial} from "./src/gringortenQuincuncial.js";
 export {default as geoGuyou, guyouRaw as geoGuyouRaw} from "./src/guyou.js";
+export {default as geoHill, hillRaw as geoHillRaw} from "./src/hill.js";
 export {default as geoKavrayskiy7, kavrayskiy7Raw as geoKavrayskiy7Raw} from "./src/kavrayskiy7.js";
 export {default as geoLagrange, lagrangeRaw as geoLagrangeRaw} from "./src/lagrange.js";
 export {default as geoLarrivee, larriveeRaw as geoLarriveeRaw} from "./src/larrivee";
