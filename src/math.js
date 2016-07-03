@@ -22,6 +22,7 @@ export var quarterPi = pi / 4;
 export var sqrt1_2 = Math.SQRT1_2;
 export var sqrt2 = sqrt(2);
 export var sqrtPi = sqrt(pi);
+export var tau = pi * 2;
 export var degrees = 180 / pi;
 export var radians = pi / 180;
 

@@ -1,4 +1,4 @@
-import {geoProjection} from "d3-geo";
+import {geoProjection as projection} from "d3-geo";
 import {abs, degrees, epsilon2, floor, halfPi, max, min, pi, radians} from "./math";
 
 var K = [
@@ -84,6 +84,6 @@ robinsonRaw.invert = function(x, y) {
 };
 
 export default function() {
-  return geoProjection(robinsonRaw)
+  return projection(robinsonRaw)
       .scale(152.63);
 }
