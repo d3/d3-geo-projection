@@ -25,6 +25,7 @@ export function vanDerGrinten4Raw(lambda, phi) {
 }
 
 vanDerGrinten4Raw.invert = function(x, y) {
+  var delta;
   if (!x || !y) return [x, y];
   y /= pi;
   var x1 = sign(x) * x / halfPi,
