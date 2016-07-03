@@ -416,7 +416,9 @@ The orthographic projection; see [d3-geo](https://github.com/d3/d3-geo#geoOrthog
 
 <a href="#geoPatterson" name="geoPatterson">#</a> d3.<b>geoPatterson</b>()
 
-[patterson](http://bl.ocks.org/mbostock/d4021aa4dccfd65edffd)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/patterson.png" width="480" height="250">](http://bl.ocks.org/mbostock/d4021aa4dccfd65edffd)
+
+The Patterson cylindrical projection.
 
 <a href="#geoPierceQuincuncial" name="geoPierceQuincuncial">#</a> d3.<b>geoPierceQuincuncial</b>()
 
