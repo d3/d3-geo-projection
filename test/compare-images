@@ -40,6 +40,7 @@ for i in \
     mollweide \
     pierceQuincuncial \
     polyconic \
+    rectangularPolyconic \
     robinson \
     sinusoidal \
     times \
