@@ -338,7 +338,9 @@ The Guyou hemisphere-in-a-square projection. See also [d3.geoPierceQuincuncial](
 
 <a href="#geoHill" name="geoHill">#</a> d3.<b>geoHill</b>()
 
-[Hill eucyclic](http://bl.ocks.org/mbostock/4479513), [Maurer No. 73](http://bl.ocks.org/mbostock/4479547)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/hill.png" width="480" height="250">](http://bl.ocks.org/mbostock/4479513), [Maurer No. 73](http://bl.ocks.org/mbostock/4479547)
+
+Hill eucyclic projection.
 
 <a href="#geoHomolosine" name="geoHomolosine">#</a> d3.<b>geoHomolosine</b>()
 
