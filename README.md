@@ -422,15 +422,21 @@ The equal-area, pseudocylindrical Mollweide projection. The oblique aspect is kn
 
 <a href="#geoMtFlatPolarParabolic" name="geoMtFlatPolarParabolic">#</a> d3.<b>geoMtFlatPolarParabolic</b>()
 
-[McBryde–Thomas flat-polar parabolic](http://bl.ocks.org/mbostock/4465130)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/mtFlatPolarParabolic.png" width="480" height="250">](http://bl.ocks.org/mbostock/4465130)
+
+The McBryde–Thomas flat-polar parabolic pseudocylindrical equal-area projection.
 
 <a href="#geoMtFlatPolarQuartic" name="geoMtFlatPolarQuartic">#</a> d3.<b>geoMtFlatPolarQuartic</b>()
 
-[McBryde–Thomas flat-polar quartic](http://bl.ocks.org/mbostock/4465137)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/mtFlatPolarQuartic.png" width="480" height="250">](http://bl.ocks.org/mbostock/4465137)
+
+The McBryde–Thomas flat-polar quartic pseudocylindrical equal-area projection.
 
 <a href="#geoMtFlatPolarSinusoidal" name="geoMtFlatPolarSinusoidal">#</a> d3.<b>geoMtFlatPolarSinusoidal</b>()
 
-[McBryde–Thomas flat-polar sinusoidal](http://bl.ocks.org/mbostock/4465140)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/mtFlatPolarSinusoidal.png" width="480" height="250">](http://bl.ocks.org/mbostock/4465140)
+
+The McBryde–Thomas flat-polar sinusoidal equal-area projection.
 
 <a href="#geoNaturalEarth" name="geoNaturalEarth">#</a> d3.<b>geoNaturalEarth</b>()
 
@@ -630,6 +636,9 @@ The inverse of [*project*](#_project).
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
 <br><a href="#geoModifiedStereographicRaw" name="geoModifiedStereographicRaw">#</a> d3.<b>geoModifiedStereographicRaw</b>(<i>coefficients</i>)
 <br><a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
+<br><a href="#geoMtFlatPolarParabolicRaw" name="geoMtFlatPolarParabolicRaw">#</a> d3.<b>geoMtFlatPolarParabolicRaw</b>
+<br><a href="#geoMtFlatPolarQuarticRaw" name="geoMtFlatPolarQuarticRaw">#</a> d3.<b>geoMtFlatPolarQuarticRaw</b>
+<br><a href="#geoMtFlatPolarSinusoidalRaw" name="geoMtFlatPolarSinusoidalRaw">#</a> d3.<b>geoMtFlatPolarSinusoidalRaw</b>
 <br><a href="#geoNaturalEarthRaw" name="geoNaturalEarthRaw">#</a> d3.<b>geoNaturalEarthRaw</b>
 <br><a href="#geoNellHammerRaw" name="geoNellHammerRaw">#</a> d3.<b>geoNellHammerRaw</b>
 <br><a href="#geoPattersonRaw" name="geoPattersonRaw">#</a> d3.<b>geoPattersonRaw</b>
@@ -638,7 +647,6 @@ The inverse of [*project*](#_project).
 <br><a href="#geoSatelliteRaw" name="geoSatelliteRaw">#</a> d3.<b>geoSatelliteRaw</b>
 <br><a href="#geoSatelliteVerticalRaw" name="geoSatelliteVerticalRaw">#</a> d3.<b>geoSatelliteVerticalRaw</b>
 <br><a href="#geoSinuMollweideRaw" name="geoSinuMollweideRaw">#</a> d3.<b>geoSinuMollweideRaw</b>
-<br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
 <br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
 <br><a href="#geoTimesRaw" name="geoTimesRaw">#</a> d3.<b>geoTimesRaw</b>
 <br><a href="#geoVanDerGrinten2Raw" name="geoVanDerGrinten2Raw">#</a> d3.<b>geoVanDerGrinten2Raw</b>

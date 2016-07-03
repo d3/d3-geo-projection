@@ -43,6 +43,9 @@ for i in \
     modifiedStereographicMiller \
     modifiedStereographicLee \
     mollweide \
+    mtFlatPolarParabolic \
+    mtFlatPolarQuartic \
+    mtFlatPolarSinusoidal \
     naturalEarth \
     nellHammer \
     patterson \
