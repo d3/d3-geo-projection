@@ -450,7 +450,9 @@ The sinusoidal projection.
 
 <a href="#geoSinuMollweide" name="geoSinuMollweide">#</a> d3.<b>geoSinuMollweide</b>()
 
-[Sinu-Mollweide](http://bl.ocks.org/mbostock/4319903)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/sinuMollweide.png" width="480" height="250">](http://bl.ocks.org/mbostock/4319903)
+
+Allen K. Philbrick’s Sinu-Mollweide projection.
 
 <a href="#geoStereographic" name="geoStereographic">#</a> d3.<b>geoStereographic</b>()
 
@@ -576,6 +578,7 @@ The inverse of [*project*](#_project).
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
 <br><a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
 <br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
+<br><a href="#geoSinuMollweideRaw" name="geoSinuMollweideRaw">#</a> d3.<b>geoSinuMollweideRaw</b>
 <br><a href="#geoTimesRaw" name="geoTimesRaw">#</a> d3.<b>geoTimesRaw</b>
 <br><a href="#geoVanDerGrintenRaw" name="geoVanDerGrintenRaw">#</a> d3.<b>geoVanDerGrintenRaw</b>
 <br><a href="#geoVanDerGrinten2Raw" name="geoVanDerGrinten2Raw">#</a> d3.<b>geoVanDerGrinten2Raw</b>
