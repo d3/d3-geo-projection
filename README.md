@@ -350,7 +350,11 @@ The Guyou hemisphere-in-a-square projection. See also [d3.geoPierceQuincuncial](
 
 <a href="#geoLagrange" name="geoLagrange">#</a> d3.<b>geoLagrange</b>()
 
-[Lagrange conformal](http://bl.ocks.org/mbostock/3797591)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/lagrange.png" width="480" height="250">](http://bl.ocks.org/mbostock/3797591)
+
+The Lagrange conformal projection.
+
+spacing()
 
 <a href="#geoLarrivee" name="geoLarrivee">#</a> d3.<b>geoLarrivee</b>()
 
