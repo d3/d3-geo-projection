@@ -35,5 +35,6 @@ export {default as geoGringortenQuincuncial} from "./src/gringortenQuincuncial.j
 export {default as geoGuyou, guyouRaw as geoGuyouRaw} from "./src/guyou.js";
 export {default as geoMollweide, mollweideRaw as geoMollweideRaw} from "./src/mollweide";
 export {default as geoPierceQuincuncial} from "./src/pierceQuincuncial.js";
+export {default as geoRobinson, robinsonRaw as geoRobinsonRaw} from "./src/robinson";
 export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./src/sinusoidal";
 export {default as geoWinkel3, winkel3Raw as geoWinkel3Raw} from "./src/winkel3";
