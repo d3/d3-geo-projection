@@ -588,6 +588,7 @@ The inverse of [*project*](#_project).
 <br><a href="#geoGinzburg8Raw" name="geoGinzburg8Raw">#</a> d3.<b>geoGinzburg8Raw</b>
 <br><a href="#geoHammerRaw" name="geoHammerRaw">#</a> d3.<b>geoHammerRaw</b>(<i>A</i>, <i>B</i>)
 <br><a href="#geoHammerQuarticAuthalicRaw" name="geoHammerQuarticAuthalicRaw">#</a> d3.<b>geoHammerQuarticAuthalicRaw</b>(<i>A</i>, <i>B</i>)
+<br><a href="#geoHammerRetroazimuthalRaw" name="geoHammerRetroazimuthalRaw">#</a> d3.<b>geoHammerRetroazimuthalRaw</b>(<i>phi0</i>)
 <br><a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
 <br><a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
