@@ -354,7 +354,9 @@ The Guyou hemisphere-in-a-square projection. See also [d3.geoPierceQuincuncial](
 
 <a href="#geoLarrivee" name="geoLarrivee">#</a> d3.<b>geoLarrivee</b>()
 
-[Larrivée](http://bl.ocks.org/mbostock/3719042)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/larrivee.png" width="480" height="250">](http://bl.ocks.org/mbostock/3719042)
+
+The Larrivée projection.
 
 <a href="#geoLaskowski" name="geoLaskowski">#</a> d3.<b>geoLaskowski</b>()
 
@@ -574,6 +576,7 @@ The inverse of [*project*](#_project).
 <br><a href="#geoGinzburg8Raw" name="geoGinzburg8Raw">#</a> d3.<b>geoGinzburg8Raw</b>
 <br><a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
+<br><a href="#geoLarriveeRaw" name="geoLarriveeRaw">#</a> d3.<b>geoLarriveeRaw</b>
 <br><a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
 <br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
 <br><a href="#geoTimesRaw" name="geoTimesRaw">#</a> d3.<b>geoTimesRaw</b>
