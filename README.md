@@ -460,7 +460,9 @@ The stereographic projection; see [d3-geo](https://github.com/d3/d3-geo#geoStere
 
 <a href="#geoTimes" name="geoTimes">#</a> d3.<b>geoTimes</b>()
 
-[Times](http://bl.ocks.org/mbostock/5230564)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/times.png" width="480" height="250">](http://bl.ocks.org/mbostock/5230564)
+
+John Muir’s Times projection.
 
 <a href="#geoTransverseMercator" name="geoTransverseMercator">#</a> d3.<b>geoTransverseMercator</b>()
 
@@ -574,6 +576,7 @@ The inverse of [*project*](#_project).
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
 <br><a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
 <br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
+<br><a href="#geoTimesRaw" name="geoTimesRaw">#</a> d3.<b>geoTimesRaw</b>
 <br><a href="#geoVanDerGrintenRaw" name="geoVanDerGrintenRaw">#</a> d3.<b>geoVanDerGrintenRaw</b>
 <br><a href="#geoVanDerGrinten2Raw" name="geoVanDerGrinten2Raw">#</a> d3.<b>geoVanDerGrinten2Raw</b>
 <br><a href="#geoVanDerGrinten3Raw" name="geoVanDerGrinten3Raw">#</a> d3.<b>geoVanDerGrinten3Raw</b>

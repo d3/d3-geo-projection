@@ -41,6 +41,7 @@ for i in \
     pierceQuincuncial \
     robinson \
     sinusoidal \
+<<<<<<< HEAD
     vanDerGrinten \
     vanDerGrinten2 \
     vanDerGrinten3 \
@@ -49,6 +50,9 @@ for i in \
     wagner6 \
     wagner7 \
     wiechel \
+=======
+    times \
+>>>>>>> e8af1620666372c61aaa7f5ede2bad19392126b3
     winkel3 \
     ; do
   test/render-world $i \
