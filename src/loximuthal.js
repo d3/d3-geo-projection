@@ -33,5 +33,3 @@ export default function() {
     .parallel(40)
     .scale(158.837);
 }
-
-// (d3.geo.loximuthal = function() { return parallel1Projection(loximuthal).parallel(40); }).raw = loximuthal;
