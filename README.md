@@ -358,7 +358,9 @@ The Guyou hemisphere-in-a-square projection. See also [d3.geoPierceQuincuncial](
 
 <a href="#geoLaskowski" name="geoLaskowski">#</a> d3.<b>geoLaskowski</b>()
 
-[Laskowski tri-optimal](http://bl.ocks.org/mbostock/4489342)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/laskowski.png" width="480" height="250">](http://bl.ocks.org/mbostock/4489342)
+
+The Laskowski tri-optimal projection.
 
 <a href="#geoLittrow" name="geoLittrow">#</a> d3.<b>geoLittrow</b>()
 
@@ -574,6 +576,7 @@ The inverse of [*project*](#_project).
 <br><a href="#geoGinzburg8Raw" name="geoGinzburg8Raw">#</a> d3.<b>geoGinzburg8Raw</b>
 <br><a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
+<br><a href="#geoMollgeoLaskowskiRawweideRaw" name="geoLaskowskiRaw">#</a> d3.<b>geoLaskowskiRaw</b>
 <br><a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
 <br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
 <br><a href="#geoTimesRaw" name="geoTimesRaw">#</a> d3.<b>geoTimesRaw</b>
