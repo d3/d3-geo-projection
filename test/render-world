@@ -20,12 +20,11 @@ var canvas = new Canvas(width, height),
 var world = require("./data/world-50m.json"),
     land = topojson.feature(world, world.objects.land),
     graticule = d3_geo.geoGraticule(),
-    outline;
+    outline = {type: "Sphere"};
 
 switch (projectionName) {
   case "littrow": outline = graticule.extent([[-90, -60], [90, 60]]).outline(); break;
   case "modifiedStereographicGs50": outline = graticule.extent([[-180, 15], [-50, 75]]).outline(); break;
-  default: outline = {type: "Sphere"}; break;
 }
 
 var path = d3_geo.geoPath()
@@ -41,6 +40,7 @@ switch (projectionName) {
   case "berghaus":
   case "gingery":
   case "hammerRetroazimuthal":
+  case "healpix":
   case "littrow":
   case "modifiedStereographicGs50": {
     context.beginPath();

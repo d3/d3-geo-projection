@@ -7,6 +7,7 @@ Extended geographic projections for D3.
 If you use NPM, `npm install d3-geo-projection`. Otherwise, download the [latest release](https://github.com/d3/d3-geo-projection/releases/latest). You can also load directly from [d3js.org](https://d3js.org) as a [standalone library](https://d3js.org/d3-geo-projection.v1.min.js). AMD, CommonJS, and vanilla environments are supported. In vanilla, a `d3` global is exported:
 
 ```html
+<script src="https://d3js.org/d3-array.v1.min.js"></script>
 <script src="https://d3js.org/d3-geo.v1.min.js"></script>
 <script src="https://d3js.org/d3-geo-projection.v1.min.js"></script>
 <script>
@@ -346,7 +347,13 @@ Defaults to 45°.
 
 <a href="#geoHealpix" name="geoHealpix">#</a> d3.<b>geoHealpix</b>()
 
-[HEALPix](http://bl.ocks.org/mbostock/4463237)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/healpix.png" width="480" height="250">](http://bl.ocks.org/mbostock/4463237)
+
+The HEALPix projection: a <b>H</b>ierarchical <b>E</b>qual <b>A</b>rea iso<b>L</b>atitude <b>Pix</b>elisation of a 2-sphere. In this implementation, the parameter *K* is fixed at 3. Note: requires clipping to the sphere.
+
+<a href="#healpix_lobes" name="healpix_lobes">#</a> <i>healpix</i>.<b>lobes</b>([<i>lobes</i>])
+
+If *lobes* is specified, sets the number of lobes (the parameter *H* in the literature) and returns this projection. If *lobes* is not specified, returns the current lobe number, which defaults to 4.
 
 <a href="#geoHill" name="geoHill">#</a> d3.<b>geoHill</b>()
 

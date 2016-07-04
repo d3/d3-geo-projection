@@ -36,6 +36,7 @@ export {default as geoGuyou, guyouRaw as geoGuyouRaw} from "./src/guyou.js";
 export {default as geoHammer, hammerRaw as geoHammerRaw} from "./src/hammer.js";
 export {default as geoHammerRetroazimuthal, hammerRetroazimuthalRaw as geoHammerRetroazimuthalRaw} from "./src/hammerRetroazimuthal.js";
 export {default as geoHill, hillRaw as geoHillRaw} from "./src/hill.js";
+export {default as geoHealpix, healpixRaw as geoHealpixRaw} from "./src/healpix.js";
 export {default as geoHomolosine, homolosineRaw as geoHomolosineRaw} from "./src/homolosine.js";
 export {default as geoKavrayskiy7, kavrayskiy7Raw as geoKavrayskiy7Raw} from "./src/kavrayskiy7.js";
 export {default as geoLagrange, lagrangeRaw as geoLagrangeRaw} from "./src/lagrange.js";
