@@ -423,9 +423,9 @@ The spherical Mercator projection; see [d3-geo](https://github.com/d3/d3-geo#geo
 
 The Miller cylindrical projection is a modified [Mercator](#geoMercator) projection.
 
-<a href="#geoModifiedStereographic" name="geoModifiedStereographic">#</a> d3.<b>geoModifiedStereographic</b>(<i>coefficients</i>)
+<a href="#geoModifiedStereographic" name="geoModifiedStereographic">#</a> d3.<b>geoModifiedStereographic</b>(<i>coefficients</i>, <i>rotate</i>)
 
-The family of [modified stereographic projections](http://www.jasondavies.com/maps/modified-stereographic/). The default [clip angle](https://github.com/d3/d3-geo#projection_clipAngle) for these projections is 90°.
+The family of [modified stereographic projections](http://www.jasondavies.com/maps/modified-stereographic/). The default [clip angle](https://github.com/d3/d3-geo#projection_clipAngle) for these projections is 90°. These projections do not support [*projection*.rotate](https://github.com/d3/d3-geo#projection_rotate): a fixed rotation is applied that is specific to the given *coefficients*.
 
 <a href="#geoModifiedStereographicAlaska" name="geoModifiedStereographicAlaska">#</a> d3.<b>geoModifiedStereographicAlaska</b>()
 

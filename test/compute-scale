@@ -43,8 +43,7 @@ switch (projectionName) {
     break;
   }
   case "modifiedStereographicGs50": {
-    var us = require("./data/us-10m.json");
-    land = topojson.feature(us, us.objects.land);
+    land = d3_geo.geoGraticule().extent([[-180, 15], [-50, 75]]).outline();
     break;
   }
   case "modifiedStereographicMiller": {

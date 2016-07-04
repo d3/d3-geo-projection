@@ -1,4 +1,4 @@
-import {geoProjection as projection} from "d3-geo";
+import {geoProjection as projection, geoRotation as rotation} from "d3-geo";
 import {abs, asin, atan, atan2, cos, epsilon, sin, sqrt} from "./math";
 
 export function modifiedStereographicRaw(C) {
@@ -72,45 +72,50 @@ var alaska = [[0.9972523, 0], [0.0052513, -0.0041175], [0.0074606, 0.0048125], [
     lee = [[0.721316, 0], [0, 0], [-0.00881625, -0.00617325]];
 
 export function modifiedStereographicAlaska() {
-  return modifiedStereographic(alaska)
-      .rotate([152, -64])
+  return modifiedStereographic(alaska, [152, -64])
       .scale(1500)
-      .center([-4.1, -1.2])
+      .center([-160.908, 62.4864])
       .clipAngle(25);
 }
 
 export function modifiedStereographicGs48() {
-  return modifiedStereographic(gs48)
-      .rotate([95, -38])
+  return modifiedStereographic(gs48, [95, -38])
       .scale(1000)
       .clipAngle(55)
-      .center([-1.2, 0.88]);
+      .center([-96.5563, 38.8675]);
 }
 
 export function modifiedStereographicGs50() {
-  return modifiedStereographic(gs50)
-      .rotate([120, -45])
-      .scale(500)
+  return modifiedStereographic(gs50, [120, -45])
+      .scale(359.513)
       .clipAngle(55)
-      .center([8.37, 5.64]);
+      .center([-117.474, 53.0628]);
 }
 
 export function modifiedStereographicMiller() {
-  return modifiedStereographic(miller)
-      .rotate([-20, -18])
+  return modifiedStereographic(miller, [-20, -18])
       .scale(209.091)
-      .center([0, -1.28])
+      .center([20, 16.7214])
       .clipAngle(82);
 }
 
 export function modifiedStereographicLee() {
-  return modifiedStereographic(lee)
-      .rotate([165, 10])
+  return modifiedStereographic(lee, [165, 10])
       .scale(250)
-      .clipAngle(130);
+      .clipAngle(130)
+      .center([-165, -10]);
 }
 
-export default function modifiedStereographic(coefficients) {
-  return projection(modifiedStereographicRaw(coefficients))
-      .clipAngle(90);
+export default function modifiedStereographic(coefficients, rotate) {
+  var p = projection(modifiedStereographicRaw(coefficients)).rotate(rotate).clipAngle(90),
+      r = rotation(rotate),
+      c = p.center;
+
+  p.center = function(_) {
+    return arguments.length ? c(r(_)) : r.invert(c());
+  };
+
+  delete p.rotate;
+
+  return p;
 }
