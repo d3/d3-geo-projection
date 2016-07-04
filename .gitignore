@@ -4,5 +4,3 @@ build/
 test/output/
 node_modules
 npm-debug.log
-src-disabled/
-test-disabled/
