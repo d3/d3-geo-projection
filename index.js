@@ -61,6 +61,7 @@ export {default as geoSatellite, satelliteRaw as geoSatelliteRaw} from "./src/sa
 export {default as geoSinuMollweide, sinuMollweideRaw as geoSinuMollweideRaw} from "./src/sinuMollweide";
 export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./src/sinusoidal";
 export {default as geoTimes, timesRaw as geoTimesRaw} from "./src/times";
+export {default as geoTwoPointAzimuthal, twoPointAzimuthalRaw as geoTwoPointAzimuthalRaw} from "./src/twoPointAzimuthal";
 export {default as geoVanDerGrinten, vanDerGrintenRaw as geoVanDerGrintenRaw} from "./src/vanDerGrinten";
 export {default as geoVanDerGrinten2, vanDerGrinten2Raw as geoVanDerGrinten2Raw} from "./src/vanDerGrinten2";
 export {default as geoVanDerGrinten3, vanDerGrinten3Raw as geoVanDerGrinten3Raw} from "./src/vanDerGrinten3";

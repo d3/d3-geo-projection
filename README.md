@@ -583,7 +583,13 @@ The transverse spherical Mercator projection; see [d3-geo](https://github.com/d3
 
 <a href="#geoTwoPointAzimuthal" name="geoTwoPointAzimuthal">#</a> d3.<b>geoTwoPointAzimuthal</b>()
 
-[two-point azimuthal](https://www.jasondavies.com/maps/two-point-azimuthal/)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/twoPointAzimuthal.png" width="480" height="250">](https://www.jasondavies.com/maps/two-point-azimuthal/)
+
+The two-point azimuthal projection “shows correct azimuths (but not distances) from either of two points to any other point. [It can] be used to locate a ship at sea, given the exact location of two radio transmitters and the direction of the ship to the transmitters.” This projection does not support [*projection*.rotate](https://github.com/d3/d3-geo#projection_rotate), as the rotation is fixed by the [two points](#twoPointAzimuthal_points).
+
+<a href="#twoPointAzimuthal_points" name="twoPointAzimuthal_points">#</a> <i>twoPointAzimuthal</i>.<b>points</b>([<i>points</i>])
+
+Defaults to [[-158°, 21.5°], [-77°, 39°]], approximately representing Honolulu, HI and Washington, D.C.
 
 <a href="#geoTwoPointEquidistant" name="geoTwoPointEquidistant">#</a> d3.<b>geoTwoPointEquidistant</b>()
 
@@ -709,6 +715,7 @@ The inverse of [*project*](#_project).
 <br><a href="#geoSinuMollweideRaw" name="geoSinuMollweideRaw">#</a> d3.<b>geoSinuMollweideRaw</b>
 <br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
 <br><a href="#geoTimesRaw" name="geoTimesRaw">#</a> d3.<b>geoTimesRaw</b>
+<br><a href="#geoTwoPointAzimuthalRaw" name="geoTwoPointAzimuthalRaw">#</a> d3.<b>geoTwoPointAzimuthalRaw</b>
 <br><a href="#geoVanDerGrinten2Raw" name="geoVanDerGrinten2Raw">#</a> d3.<b>geoVanDerGrinten2Raw</b>
 <br><a href="#geoVanDerGrinten3Raw" name="geoVanDerGrinten3Raw">#</a> d3.<b>geoVanDerGrinten3Raw</b>
 <br><a href="#geoVanDerGrinten4Raw" name="geoVanDerGrinten4Raw">#</a> d3.<b>geoVanDerGrinten4Raw</b>
