@@ -1,27 +1,18 @@
-var vows = require("vows"),
-    assert = require("./assert"),
-    load = require("./load");
+var tape = require("tape"),
+    d3 = require("../");
 
-var suite = vows.describe("d3.geo.craster");
+require("./projectionEqual");
 
-suite.addBatch({
-  "craster": {
-    topic: load("craster"),
-    "default": {
-      topic: function(geo) { return geo.craster(); },
-      "projections and inverse projections": function(craster) {
-        assert.equalInverse(craster, [   0,   0], [480,        250]);
-        assert.equalInverse(craster, [   0, -90], [480,        480.248509]);
-        assert.equalInverse(craster, [   0,  90], [480,         19.751490]);
-        assert.equalInverse(craster, [   0, -45], [480,        369.185398]);
-        assert.equalInverse(craster, [   0,  45], [480,        130.814601]);
-        assert.equalInverse(craster, [-180,   0], [ 19.502981, 250]);
-        assert.equalInverse(craster, [ 180,   0], [940.497018, 250]);
-        assert.equalInverse(craster, [-179,  15], [ 35.975533, 209.865040]);
-        assert.equalInverse(craster, [   1,   1], [482.557970, 247.320952]);
-      }
-    }
-  }
+tape("geoCraster(point) returns the expected values", function(test) {
+  var craster = d3.geoCraster().scale(150);
+  test.projectionEqual(craster, [   0,   0], [480.000000, 250.000000]);
+  test.projectionEqual(craster, [   0, -90], [480.000000, 480.248509]);
+  test.projectionEqual(craster, [   0,  90], [480.000000,  19.751490]);
+  test.projectionEqual(craster, [   0, -45], [480.000000, 369.185398]);
+  test.projectionEqual(craster, [   0,  45], [480.000000, 130.814601]);
+  test.projectionEqual(craster, [-180,   0], [ 19.502981, 250.000000]);
+  test.projectionEqual(craster, [ 180,   0], [940.497018, 250.000000]);
+  test.projectionEqual(craster, [-179,  15], [ 35.975533, 209.865040]);
+  test.projectionEqual(craster, [   1,   1], [482.557970, 247.320952]);
+  test.end();
 });
-
-suite.export(module);

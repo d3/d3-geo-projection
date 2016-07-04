@@ -1,46 +1,45 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {abs, acos, cos, epsilon, pi, sin, sinci, sqrt} from "./math";
 
-function aitoff(λ, φ) {
-  var cosφ = Math.cos(φ),
-      sinciα = sinci(acos(cosφ * Math.cos(λ /= 2)));
-  return [
-    2 * cosφ * Math.sin(λ) * sinciα,
-    Math.sin(φ) * sinciα
-  ];
+export function aitoffRaw(x, y) {
+  var cosy = cos(y), sincia = sinci(acos(cosy * cos(x /= 2)));
+  return [2 * cosy * sin(x) * sincia, sin(y) * sincia];
 }
 
-aitoff.invert = function(x, y) {
-  // Abort if [x, y] is not within an ellipse centered at [0, 0] with
-  // semi-major axis π and semi-minor axis π/2.
-  if (x * x + 4 * y * y > π * π + ε) return;
-
-  var λ = x, φ = y, i = 25;
+// Abort if [x, y] is not within an ellipse centered at [0, 0] with
+// semi-major axis pi and semi-minor axis pi/2.
+aitoffRaw.invert = function(x, y) {
+  if (x * x + 4 * y * y > pi * pi + epsilon) return;
+  var x1 = x, y1 = y, i = 25;
   do {
-    var sinλ = Math.sin(λ),
-        sinλ_2 = Math.sin(λ / 2),
-        cosλ_2 = Math.cos(λ / 2),
-        sinφ = Math.sin(φ),
-        cosφ = Math.cos(φ),
-        sin_2φ = Math.sin(2 * φ),
-        sin2φ = sinφ * sinφ,
-        cos2φ = cosφ * cosφ,
-        sin2λ_2 = sinλ_2 * sinλ_2,
-        C = 1 - cos2φ * cosλ_2 * cosλ_2,
-        E = C ? acos(cosφ * cosλ_2) * Math.sqrt(F = 1 / C) : F = 0,
-        F,
-        fx = 2 * E * cosφ * sinλ_2 - x,
-        fy = E * sinφ - y,
-        δxδλ = F * (cos2φ * sin2λ_2 + E * cosφ * cosλ_2 * sin2φ),
-        δxδφ = F * (.5 * sinλ * sin_2φ - E * 2 * sinφ * sinλ_2),
-        δyδλ = F * .25 * (sin_2φ * sinλ_2 - E * sinφ * cos2φ * sinλ),
-        δyδφ = F * (sin2φ * cosλ_2 + E * sin2λ_2 * cosφ),
-        denominator = δxδφ * δyδλ - δyδφ * δxδλ;
-    if (!denominator) break;
-    var δλ = (fy * δxδφ - fx * δyδφ) / denominator,
-        δφ = (fx * δyδλ - fy * δxδλ) / denominator;
-    λ -= δλ, φ -= δφ;
-  } while ((Math.abs(δλ) > ε || Math.abs(δφ) > ε) && --i > 0);
-  return [λ, φ];
+    var sinx = sin(x1),
+        sinx_2 = sin(x1 / 2),
+        cosx_2 = cos(x1 / 2),
+        siny = sin(y1),
+        cosy = cos(y1),
+        sin_2y = sin(2 * y1),
+        sin2y = siny * siny,
+        cos2y = cosy * cosy,
+        sin2x_2 = sinx_2 * sinx_2,
+        c = 1 - cos2y * cosx_2 * cosx_2,
+        e = c ? acos(cosy * cosx_2) * sqrt(f = 1 / c) : f = 0,
+        f,
+        fx = 2 * e * cosy * sinx_2 - x,
+        fy = e * siny - y,
+        dxdx = f * (cos2y * sin2x_2 + e * cosy * cosx_2 * sin2y),
+        dxdy = f * (0.5 * sinx * sin_2y - e * 2 * siny * sinx_2),
+        dydx = f * 0.25 * (sin_2y * sinx_2 - e * siny * cos2y * sinx),
+        dydy = f * (sin2y * cosx_2 + e * sin2x_2 * cosy),
+        z = dxdy * dydx - dydy * dxdx;
+    if (!z) break;
+    var dx = (fy * dxdy - fx * dydy) / z,
+        dy = (fx * dydx - fy * dxdx) / z;
+    x1 -= dx, y1 -= dy;
+  } while ((abs(dx) > epsilon || abs(dy) > epsilon) && --i > 0);
+  return [x1, y1];
 };
 
-(d3.geo.aitoff = function() { return projection(aitoff); }).raw = aitoff;
+export default function() {
+  return projection(aitoffRaw)
+      .scale(152.63);
+}

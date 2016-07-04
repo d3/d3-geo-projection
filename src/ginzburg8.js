@@ -1,29 +1,33 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {abs, epsilon} from "./math";
 
-function ginzburg8(λ, φ) {
-  var λ2 = λ * λ,
-      φ2 = φ * φ;
+export function ginzburg8Raw(lambda, phi) {
+  var lambda2 = lambda * lambda,
+      phi2 = phi * phi;
   return [
-    λ * (1 - .162388 * φ2) * (.87 - .000952426 * λ2 * λ2),
-    φ * (1 + φ2 / 12)
+    lambda * (1 - 0.162388 * phi2) * (0.87 - 0.000952426 * lambda2 * lambda2),
+    phi * (1 + phi2 / 12)
   ];
 }
 
-ginzburg8.invert = function(x, y) {
-  var λ = x,
-      φ = y,
-      i = 50, δ;
+ginzburg8Raw.invert = function(x, y) {
+  var lambda = x,
+      phi = y,
+      i = 50, delta;
   do {
-    var φ2 = φ * φ;
-    φ -= δ = (φ * (1 + φ2 / 12) - y) / (1 + φ2 / 4);
-  } while (Math.abs(δ) > ε && --i > 0);
+    var phi2 = phi * phi;
+    phi -= delta = (phi * (1 + phi2 / 12) - y) / (1 + phi2 / 4);
+  } while (abs(delta) > epsilon && --i > 0);
   i = 50;
-  x /= 1 - .162388 * φ2;
+  x /= 1 -0.162388 * phi2;
   do {
-    var λ4 = (λ4 = λ * λ) * λ4;
-    λ -= δ = (λ * (.87 - .000952426 * λ4) - x) / (.87 - .00476213 * λ4);
-  } while (Math.abs(δ) > ε && --i > 0);
-  return [λ, φ];
+    var lambda4 = (lambda4 = lambda * lambda) * lambda4;
+    lambda -= delta = (lambda * (0.87 - 0.000952426 * lambda4) - x) / (0.87 - 0.00476213 * lambda4);
+  } while (abs(delta) > epsilon && --i > 0);
+  return [lambda, phi];
 };
 
-(d3.geo.ginzburg8 = function() { return projection(ginzburg8); }).raw = ginzburg8;
+export default function() {
+  return projection(ginzburg8Raw)
+      .scale(131.747);
+}

@@ -1,10 +1,13 @@
-import "projection";
-import "mollweide";
+import {geoProjection} from "d3-geo";
+import {sqrt, pi} from "./math";
+import {mollweideBromleyRaw} from "./mollweide";
 
-var wagner4 = (function() {
-  var A = 4 * π + 3 * Math.sqrt(3),
-      B = 2 * Math.sqrt(2 * π * Math.sqrt(3) / A);
-  return mollweideBromley(B * Math.sqrt(3) / π, B, A / 6);
-})();
+var A = 4 * pi + 3 * sqrt(3),
+    B = 2 * sqrt(2 * pi * sqrt(3) / A);
 
-(d3.geo.wagner4 = function() { return projection(wagner4); }).raw = wagner4;
+export var wagner4Raw = mollweideBromleyRaw(B * sqrt(3) / pi, B, A / 6);
+
+export default function() {
+  return geoProjection(wagner4Raw)
+      .scale(176.84);
+}

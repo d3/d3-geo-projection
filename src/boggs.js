@@ -1,28 +1,26 @@
-import "projection";
-import "mollweide";
+import {geoProjection as projection} from "d3-geo";
+import {mollweideBromleyTheta} from "./mollweide";
+import {abs, cos, epsilon, pi, quarterPi, sin, sqrt2} from "./math";
 
-function boggs(λ, φ) {
-  var k = 2.00276,
-      θ = mollweideθ(φ);
-  return [
-    k * λ / (1 / Math.cos(φ) + 1.11072 / Math.cos(θ)),
-    (φ + Math.SQRT2 * Math.sin(θ)) / k
-  ];
+var k = 2.00276,
+    w = 1.11072;
+
+export function boggsRaw(lambda, phi) {
+  var theta = mollweideBromleyTheta(pi, phi);
+  return [k * lambda / (1 / cos(phi) + w / cos(theta)), (phi + sqrt2 * sin(theta)) / k];
 }
 
-boggs.invert = function(x, y) {
-  var k = 2.00276,
-      ky = k * y,
-      θ = y < 0 ? -π / 4 : π / 4, i = 25, δ, φ;
+boggsRaw.invert = function(x, y) {
+  var ky = k * y, theta = y < 0 ? -quarterPi : quarterPi, i = 25, delta, phi;
   do {
-    φ = ky - Math.SQRT2 * Math.sin(θ);
-    θ -= δ = (Math.sin(2 * θ) + 2 * θ - π * Math.sin(φ)) / (2 * Math.cos(2 * θ) + 2 + π * Math.cos(φ) * Math.SQRT2 * Math.cos(θ));
-  } while (Math.abs(δ) > ε && --i > 0);
-  φ = ky - Math.SQRT2 * Math.sin(θ);
-  return [
-    x * (1 / Math.cos(φ) + 1.11072 / Math.cos(θ)) / k,
-    φ
-  ];
+    phi = ky - sqrt2 * sin(theta);
+    theta -= delta = (sin(2 * theta) + 2 * theta - pi * sin(phi)) / (2 * cos(2 * theta) + 2 + pi * cos(phi) * sqrt2 * cos(theta));
+  } while (abs(delta) > epsilon && --i > 0);
+  phi = ky - sqrt2 * sin(theta);
+  return [x * (1 / cos(phi) + w / cos(theta)) / k, phi];
 };
 
-(d3.geo.boggs = function() { return projection(boggs); }).raw = boggs;
+export default function() {
+  return projection(boggsRaw)
+      .scale(160.857);
+}

@@ -1,19 +1,18 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {asin, pi, sin, sqrt, sqrtPi} from "./math";
 
-function collignon(λ, φ) {
-  var α = asqrt(1 - Math.sin(φ));
-  return [
-    (2 / sqrtπ) * λ * α,
-    sqrtπ * (1 - α)
-  ];
+export function collignonRaw(lambda, phi) {
+  var alpha = sqrt(1 - sin(phi));
+  return [(2 / sqrtPi) * lambda * alpha, sqrtPi * (1 - alpha)];
 }
 
-collignon.invert = function(x, y) {
-  var λ = (λ = y / sqrtπ - 1) * λ;
-  return [
-    λ > 0 ? x * Math.sqrt(π / λ) / 2 : 0,
-    asin(1 - λ)
-  ];
+collignonRaw.invert = function(x, y) {
+  var lambda = (lambda = y / sqrtPi - 1) * lambda;
+  return [lambda > 0 ? x * sqrt(pi / lambda) / 2 : 0, asin(1 - lambda)];
 };
 
-(d3.geo.collignon = function() { return projection(collignon); }).raw = collignon;
+export default function() {
+  return projection(collignonRaw)
+      .scale(95.6464)
+      .center([0, 30]);
+}

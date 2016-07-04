@@ -1,26 +1,30 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {abs, asin, cos, epsilon, halfPi, pi, sin, sqrt} from "./math";
 
-function eckert4(λ, φ) {
-  var k = (2 + halfπ) * Math.sin(φ);
-  φ /= 2;
-  for (var i = 0, δ = Infinity; i < 10 && Math.abs(δ) > ε; i++) {
-    var cosφ = Math.cos(φ);
-    φ -= δ = (φ + Math.sin(φ) * (cosφ + 2) - k) / (2 * cosφ * (1 + cosφ));
+export function eckert4Raw(lambda, phi) {
+  var k = (2 + halfPi) * sin(phi);
+  phi /= 2;
+  for (var i = 0, delta = Infinity; i < 10 && abs(delta) > epsilon; i++) {
+    var cosPhi = cos(phi);
+    phi -= delta = (phi + sin(phi) * (cosPhi + 2) - k) / (2 * cosPhi * (1 + cosPhi));
   }
   return [
-    2 / Math.sqrt(π * (4 + π)) * λ * (1 + Math.cos(φ)),
-    2 * Math.sqrt(π / (4 + π)) * Math.sin(φ)
+    2 / sqrt(pi * (4 + pi)) * lambda * (1 + cos(phi)),
+    2 * sqrt(pi / (4 + pi)) * sin(phi)
   ];
 }
 
-eckert4.invert = function(x, y) {
-  var A = .5 * y * Math.sqrt((4 + π) / π),
+eckert4Raw.invert = function(x, y) {
+  var A = y * sqrt((4 + pi) / pi) / 2,
       k = asin(A),
-      c = Math.cos(k);
+      c = cos(k);
   return [
-    x / (2 / Math.sqrt(π * (4 + π)) * (1 + c)),
-    asin((k + A * (c + 2)) / (2 + halfπ))
+    x / (2 / sqrt(pi * (4 + pi)) * (1 + c)),
+    asin((k + A * (c + 2)) / (2 + halfPi))
   ];
 };
 
-(d3.geo.eckert4 = function() { return projection(eckert4); }).raw = eckert4;
+export default function() {
+  return projection(eckert4Raw)
+      .scale(180.739);
+}

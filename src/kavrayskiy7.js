@@ -1,17 +1,15 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {pi, sqrt, tau} from "./math";
 
-function kavrayskiy7(λ, φ) {
-  return [
-    3 * λ / (2 * π) * Math.sqrt(π * π / 3 - φ * φ),
-    φ
-  ];
+export function kavrayskiy7Raw(lambda, phi) {
+  return [3 / tau * lambda * sqrt(pi * pi / 3 - phi * phi), phi];
 }
 
-kavrayskiy7.invert = function(x, y) {
-  return [
-    2 / 3 * π * x / Math.sqrt(π * π / 3 - y * y),
-    y
-  ];
+kavrayskiy7Raw.invert = function(x, y) {
+  return [tau / 3 * x / sqrt(pi * pi / 3 - y * y), y];
 };
 
-(d3.geo.kavrayskiy7 = function() { return projection(kavrayskiy7); }).raw = kavrayskiy7;
+export default function() {
+  return projection(kavrayskiy7Raw)
+      .scale(158.837);
+}

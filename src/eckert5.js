@@ -1,19 +1,23 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {cos, pi, sqrt} from "./math";
 
-function eckert5(λ, φ) {
+export function eckert5Raw(lambda, phi) {
   return [
-    λ * (1 + Math.cos(φ)) / Math.sqrt(2 + π),
-    2 * φ / Math.sqrt(2 + π)
+    lambda * (1 + cos(phi)) / sqrt(2 + pi),
+    2 * phi / sqrt(2 + pi)
   ];
 }
 
-eckert5.invert = function(x, y) {
-  var k = Math.sqrt(2 + π),
-      φ = y * k / 2;
+eckert5Raw.invert = function(x, y) {
+  var k = sqrt(2 + pi),
+      phi = y * k / 2;
   return [
-    k * x / (1 + Math.cos(φ)),
-    φ
+    k * x / (1 + cos(phi)),
+    phi
   ];
 };
 
-(d3.geo.eckert5 = function() { return projection(eckert5); }).raw = eckert5;
+export default function() {
+  return projection(eckert5Raw)
+      .scale(173.044);
+}

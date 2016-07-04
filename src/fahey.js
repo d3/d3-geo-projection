@@ -1,21 +1,19 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {atan, cos, radians, sqrt, tan} from "./math";
 
-function fahey(λ, φ) {
-  var t = Math.tan(φ / 2);
-  return [
-    λ * faheyK * asqrt(1 - t * t),
-    (1 + faheyK) * t
-  ];
+var faheyK = cos(35 * radians);
+
+export function faheyRaw(lambda, phi) {
+  var t = tan(phi / 2);
+  return [lambda * faheyK * sqrt(1 - t * t), (1 + faheyK) * t];
 }
 
-fahey.invert = function(x, y) {
+faheyRaw.invert = function(x, y) {
   var t = y / (1 + faheyK);
-  return [
-    x ? x / (faheyK * asqrt(1 - t * t)) : 0,
-    2 * Math.atan(t)
-  ];
+  return [x && x / (faheyK * sqrt(1 - t * t)), 2 * atan(t)];
 };
 
-var faheyK = Math.cos(35 * radians);
-
-(d3.geo.fahey = function() { return projection(fahey); }).raw = fahey;
+export default function() {
+  return projection(faheyRaw)
+      .scale(137.152);
+}

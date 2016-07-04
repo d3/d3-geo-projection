@@ -1,31 +1,35 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {abs, acos, asin, cos, epsilon, halfPi, sign, sin, tan} from "./math";
 
-function polyconic(λ, φ) {
-  if (Math.abs(φ) < ε) return [λ, 0];
-  var tanφ = Math.tan(φ),
-      k = λ * Math.sin(φ);
+export function polyconicRaw(lambda, phi) {
+  if (abs(phi) < epsilon) return [lambda, 0];
+  var tanPhi = tan(phi),
+      k = lambda * sin(phi);
   return [
-    Math.sin(k) / tanφ,
-    φ + (1 - Math.cos(k)) / tanφ
+    sin(k) / tanPhi,
+    phi + (1 - cos(k)) / tanPhi
   ];
 }
 
-polyconic.invert = function(x, y) {
-  if (Math.abs(y) < ε) return [x, 0];
+polyconicRaw.invert = function(x, y) {
+  if (abs(y) < epsilon) return [x, 0];
   var k = x * x + y * y,
-      φ = y * .5,
-      i = 10, δ;
+      phi = y * 0.5,
+      i = 10, delta;
   do {
-    var tanφ = Math.tan(φ),
-        secφ = 1 / Math.cos(φ),
-        j = k - 2 * y * φ + φ * φ;
-    φ -= δ = (tanφ * j + 2 * (φ - y)) / (2 + j * secφ * secφ + 2 * (φ - y) * tanφ);
-  } while (Math.abs(δ) > ε && --i > 0);
-  tanφ = Math.tan(φ);
+    var tanPhi = tan(phi),
+        secPhi = 1 / cos(phi),
+        j = k - 2 * y * phi + phi * phi;
+    phi -= delta = (tanPhi * j + 2 * (phi - y)) / (2 + j * secPhi * secPhi + 2 * (phi - y) * tanPhi);
+  } while (abs(delta) > epsilon && --i > 0);
+  tanPhi = tan(phi);
   return [
-    (Math.abs(y) < Math.abs(φ + 1 / tanφ) ? asin(x * tanφ) : sgn(x) * (acos(Math.abs(x * tanφ)) + halfπ)) / Math.sin(φ),
-    φ
+    (abs(y) < abs(phi + 1 / tanPhi) ? asin(x * tanPhi) : sign(x) * (acos(abs(x * tanPhi)) + halfPi)) / sin(phi),
+    phi
   ];
 };
 
-(d3.geo.polyconic = function() { return projection(polyconic); }).raw = polyconic;
+export default function() {
+  return projection(polyconicRaw)
+      .scale(103.74);
+}

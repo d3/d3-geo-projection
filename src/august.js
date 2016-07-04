@@ -1,12 +1,12 @@
-import "projection";
-import "hyperbolic";
+import {geoProjection as projection} from "d3-geo";
+import {abs, arcosh, arsinh, asin, atan2, cos, cosh, sign, sin, sinh, sqrt, tan} from "./math";
 
-function august(λ, φ) {
-  var tanφ = Math.tan(φ / 2),
-      k = asqrt(1 - tanφ * tanφ),
-      c = 1 + k * Math.cos(λ /= 2),
-      x = Math.sin(λ) * k / c,
-      y = tanφ / c,
+export function augustRaw(lambda, phi) {
+  var tanPhi = tan(phi / 2),
+      k = sqrt(1 - tanPhi * tanPhi),
+      c = 1 + k * cos(lambda /= 2),
+      x = sin(lambda) * k / c,
+      y = tanPhi / c,
       x2 = x * x,
       y2 = y * y;
   return [
@@ -15,22 +15,25 @@ function august(λ, φ) {
   ];
 }
 
-august.invert = function(x, y) {
+augustRaw.invert = function(x, y) {
   x *= 3 / 8, y *= 3 / 8;
-  if (!x && Math.abs(y) > 1) return null;
+  if (!x && abs(y) > 1) return null;
   var x2 = x * x,
       y2 = y * y,
       s = 1 + x2 + y2,
-      sin3η = Math.sqrt(.5 * (s - Math.sqrt(s * s - 4 * y * y))),
-      η = asin(sin3η) / 3,
-      ξ = sin3η ? arcosh(Math.abs(y / sin3η)) / 3 : arsinh(Math.abs(x)) / 3,
-      cosη = Math.cos(η),
-      coshξ = cosh(ξ),
-      d = coshξ * coshξ - cosη * cosη;
+      sin3Eta = sqrt((s - sqrt(s * s - 4 * y * y)) / 2),
+      eta = asin(sin3Eta) / 3,
+      xi = sin3Eta ? arcosh(abs(y / sin3Eta)) / 3 : arsinh(abs(x)) / 3,
+      cosEta = cos(eta),
+      coshXi = cosh(xi),
+      d = coshXi * coshXi - cosEta * cosEta;
   return [
-    sgn(x) * 2 * Math.atan2(sinh(ξ) * cosη, .25 - d),
-    sgn(y) * 2 * Math.atan2(coshξ * Math.sin(η), .25 + d)
+    sign(x) * 2 * atan2(sinh(xi) * cosEta, 0.25 - d),
+    sign(y) * 2 * atan2(coshXi * sin(eta), 0.25 + d)
   ];
 };
 
-(d3.geo.august = function() { return projection(august); }).raw = august;
+export default function() {
+  return projection(augustRaw)
+      .scale(66.1603);
+}

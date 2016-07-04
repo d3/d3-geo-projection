@@ -1,17 +1,15 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {pi, sqrt} from "./math";
 
-function wagner6(λ, φ) {
-  return [
-    λ * Math.sqrt(1 - 3 * φ * φ / (π * π)),
-    φ
-  ];
+export function wagner6Raw(lambda, phi) {
+  return [lambda * sqrt(1 - 3 * phi * phi / (pi * pi)), phi];
 }
 
-wagner6.invert = function(x, y) {
-  return [
-    x / Math.sqrt(1 - 3 * y * y / (π * π)),
-    y
-  ];
+wagner6Raw.invert = function(x, y) {
+  return [x / sqrt(1 - 3 * y * y / (pi * pi)), y];
 };
 
-(d3.geo.wagner6 = function() { return projection(wagner6); }).raw = wagner6;
+export default function() {
+  return projection(wagner6Raw)
+      .scale(152.63);
+}

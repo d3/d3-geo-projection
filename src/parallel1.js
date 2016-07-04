@@ -1,13 +1,13 @@
-import "projection";
+import {geoProjectionMutator as projectionMutator} from "d3-geo";
+import {degrees, radians} from "./math";
 
-function parallel1Projection(projectAt) {
-  var φ0 = 0,
+export default function(projectAt) {
+  var phi0 = 0,
       m = projectionMutator(projectAt),
-      p = m(φ0);
+      p = m(phi0);
 
   p.parallel = function(_) {
-    if (!arguments.length) return φ0 / π * 180;
-    return m(φ0 = _ * π / 180);
+    return arguments.length ? m(phi0 = _ * radians) : phi0 * degrees;
   };
 
   return p;

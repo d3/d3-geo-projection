@@ -1,6 +1,10 @@
-import "projection";
-import "mollweide";
+import {geoProjection as projection} from "d3-geo";
+import {pi} from "./math";
+import {mollweideBromleyRaw} from "./mollweide";
 
-var bromley = mollweideBromley(1, 4 / π, π);
+export var bromleyRaw = mollweideBromleyRaw(1, 4 / pi, pi);
 
-(d3.geo.bromley = function() { return projection(bromley); }).raw = bromley;
+export default function() {
+  return projection(bromleyRaw)
+      .scale(152.63);
+}

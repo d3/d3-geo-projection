@@ -1,24 +1,28 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {asin, atan2, cos, sin, sqrt, tan} from "./math";
 
-function wagner7(λ, φ) {
-  var s = .90631 * Math.sin(φ),
-      c0 = Math.sqrt(1 - s * s),
-      c1 = Math.sqrt(2 / (1 + c0 * Math.cos(λ /= 3)));
+export function wagner7Raw(lambda, phi) {
+  var s = 0.90631 * sin(phi),
+      c0 = sqrt(1 - s * s),
+      c1 = sqrt(2 / (1 + c0 * cos(lambda /= 3)));
   return [
-    2.66723 * c0 * c1 * Math.sin(λ),
+    2.66723 * c0 * c1 * sin(lambda),
     1.24104 * s * c1
   ];
 }
 
-wagner7.invert = function(x, y) {
+wagner7Raw.invert = function(x, y) {
   var t1 = x / 2.66723,
       t2 = y / 1.24104,
-      p = Math.sqrt(t1 * t1 + t2 * t2),
+      p = sqrt(t1 * t1 + t2 * t2),
       c = 2 * asin(p / 2);
   return [
-    3 * Math.atan2(x * Math.tan(c), 2.66723 * p),
-    p && asin(y * Math.sin(c) / (1.24104 * 0.90631 * p))
+    3 * atan2(x * tan(c), 2.66723 * p),
+    p && asin(y * sin(c) / (1.24104 * 0.90631 * p))
   ];
 };
 
-(d3.geo.wagner7 = function() { return projection(wagner7); }).raw = wagner7;
+export default function() {
+  return projection(wagner7Raw)
+      .scale(172.632);
+}

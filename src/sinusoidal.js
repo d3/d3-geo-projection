@@ -1,17 +1,15 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {cos} from "./math";
 
-function sinusoidal(λ, φ) {
-  return [
-    λ * Math.cos(φ),
-    φ
-  ];
+export function sinusoidalRaw(lambda, phi) {
+  return [lambda * cos(phi), phi];
 }
 
-sinusoidal.invert = function(x, y) {
-  return [
-    x / Math.cos(y),
-    y
-  ];
+sinusoidalRaw.invert = function(x, y) {
+  return [x / cos(y), y];
 };
 
-(d3.geo.sinusoidal = function() { return projection(sinusoidal); }).raw = sinusoidal;
+export default function() {
+  return projection(sinusoidalRaw)
+      .scale(152.63);
+}

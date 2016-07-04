@@ -1,70 +1,68 @@
-import "projection";
+import {geoProjectionMutator as projectionMutator, geoAzimuthalEquidistantRaw as azimuthalEquidistantRaw} from "d3-geo";
+import {abs, acos, asin, atan, atan2, cos, degrees, halfPi, pi, radians, round, sin, sqrt, tan} from "./math";
 
-var berghausAzimuthalEquidistant = d3.geo.azimuthalEquidistant.raw;
+export function berghausRaw(lobes) {
+  var k = 2 * pi / lobes;
 
-function berghaus(n) {
-  var k = 2 * π / n;
-
-  function forward(λ, φ) {
-    var p = berghausAzimuthalEquidistant(λ, φ);
-    if (Math.abs(λ) > halfπ) { // back hemisphere
-      var θ = Math.atan2(p[1], p[0]),
-          r = Math.sqrt(p[0] * p[0] + p[1] * p[1]),
-          θ0 = k * Math.round((θ - halfπ) / k) + halfπ,
-          α = Math.atan2(Math.sin(θ -= θ0), 2 - Math.cos(θ)); // angle relative to lobe end
-      θ = θ0 + asin(π / r * Math.sin(α)) - α;
-      p[0] = r * Math.cos(θ);
-      p[1] = r * Math.sin(θ);
+  function forward(lambda, phi) {
+    var p = azimuthalEquidistantRaw(lambda, phi);
+    if (abs(lambda) > halfPi) { // back hemisphere
+      var theta = atan2(p[1], p[0]),
+          r = sqrt(p[0] * p[0] + p[1] * p[1]),
+          theta0 = k * round((theta - halfPi) / k) + halfPi,
+          α = atan2(sin(theta -= theta0), 2 - cos(theta)); // angle relative to lobe end
+      theta = theta0 + asin(pi / r * sin(α)) - α;
+      p[0] = r * cos(theta);
+      p[1] = r * sin(theta);
     }
     return p;
   }
 
   forward.invert = function(x, y) {
-    var r = Math.sqrt(x * x + y * y);
-    if (r > halfπ) {
-      var θ = Math.atan2(y, x),
-          θ0 = k * Math.round((θ - halfπ) / k) + halfπ,
-          s = θ > θ0 ? -1 : 1,
-          A = r * Math.cos(θ0 - θ),
-          cotα = 1 / Math.tan(s * Math.acos((A - π) / Math.sqrt(π * (π - 2 * A) + r * r)));
-      θ = θ0 + 2 * Math.atan((cotα + s * Math.sqrt(cotα * cotα - 3)) / 3);
-      x = r * Math.cos(θ), y = r * Math.sin(θ);
+    var r = sqrt(x * x + y * y);
+    if (r > halfPi) {
+      var theta = atan2(y, x),
+          theta0 = k * round((theta - halfPi) / k) + halfPi,
+          s = theta > theta0 ? -1 : 1,
+          A = r * cos(theta0 - theta),
+          cotα = 1 / tan(s * acos((A - pi) / sqrt(pi * (pi - 2 * A) + r * r)));
+      theta = theta0 + 2 * atan((cotα + s * sqrt(cotα * cotα - 3)) / 3);
+      x = r * cos(theta), y = r * sin(theta);
     }
-    return berghausAzimuthalEquidistant.invert(x, y);
+    return azimuthalEquidistantRaw.invert(x, y);
   };
 
   return forward;
 }
 
-function berghausProjection() {
-  var n = 5,
-      m = projectionMutator(berghaus),
-      p = m(n),
-      stream_ = p.stream,
-      ε = 1e-2,
-      cr = -Math.cos(ε * radians),
-      sr = Math.sin(ε * radians);
+export default function() {
+  var lobes = 5,
+      m = projectionMutator(berghausRaw),
+      p = m(lobes),
+      projectionStream = p.stream,
+      epsilon = 1e-2,
+      cr = -cos(epsilon * radians),
+      sr = sin(epsilon * radians);
 
   p.lobes = function(_) {
-    if (!arguments.length) return n;
-    return m(n = +_);
+    return arguments.length ? m(lobes = +_) : lobes;
   };
 
   p.stream = function(stream) {
     var rotate = p.rotate(),
-        rotateStream = stream_(stream),
-        sphereStream = (p.rotate([0, 0]), stream_(stream));
+        rotateStream = projectionStream(stream),
+        sphereStream = (p.rotate([0, 0]), projectionStream(stream));
     p.rotate(rotate);
     rotateStream.sphere = function() {
       sphereStream.polygonStart(), sphereStream.lineStart();
-      for (var i = 0, δ = 360 / n, δ0 = 2 * π / n, φ = 90 - 180 / n, φ0 = halfπ ; i < n; ++i, φ -= δ, φ0 -= δ0) {
-        sphereStream.point(Math.atan2(sr * Math.cos(φ0), cr) * degrees, asin(sr * Math.sin(φ0)) * degrees);
-        if (φ < -90) {
-          sphereStream.point(-90, -180 - φ - ε);
-          sphereStream.point(-90, -180 - φ + ε);
+      for (var i = 0, delta = 360 / lobes, delta0 = 2 * pi / lobes, phi = 90 - 180 / lobes, phi0 = halfPi; i < lobes; ++i, phi -= delta, phi0 -= delta0) {
+        sphereStream.point(atan2(sr * cos(phi0), cr) * degrees, asin(sr * sin(phi0)) * degrees);
+        if (phi < -90) {
+          sphereStream.point(-90, -180 - phi - epsilon);
+          sphereStream.point(-90, -180 - phi + epsilon);
         } else {
-          sphereStream.point(90, φ + ε);
-          sphereStream.point(90, φ - ε);
+          sphereStream.point(90, phi + epsilon);
+          sphereStream.point(90, phi - epsilon);
         }
       }
       sphereStream.lineEnd(), sphereStream.polygonEnd();
@@ -72,7 +70,8 @@ function berghausProjection() {
     return rotateStream;
   };
 
-  return p;
+  return p
+      .scale(87.8076)
+      .center([0, 17.1875])
+      .clipAngle(180 - 1e-3);
 }
-
-(d3.geo.berghaus = berghausProjection).raw = berghaus;

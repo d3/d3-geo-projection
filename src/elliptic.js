@@ -1,118 +1,118 @@
-import "math";
-import "hyperbolic";
+import {abs, asin, atan, cos, cosh, epsilon, exp, halfPi, log, pi, pow, quarterPi, sign, sin, sinh, sqrt, tan, tanh} from "./math";
 
 // Returns [sn, cn, dn](u + iv|m).
-function ellipticJi(u, v, m) {
+export function ellipticJi(u, v, m) {
+  var a, b, c;
   if (!u) {
-    var b = ellipticJ(v, 1 - m);
+    b = ellipticJ(v, 1 - m);
     return [
       [0, b[0] / b[1]],
       [1 / b[1], 0],
       [b[2] / b[1], 0]
     ];
   }
-  var a = ellipticJ(u, m);
+  a = ellipticJ(u, m);
   if (!v) return [[a[0], 0], [a[1], 0], [a[2], 0]];
-  var b = ellipticJ(v, 1 - m),
-      denominator = b[1] * b[1] + m * a[0] * a[0] * b[0] * b[0];
+  b = ellipticJ(v, 1 - m);
+  c = b[1] * b[1] + m * a[0] * a[0] * b[0] * b[0];
   return [
-    [a[0] * b[2] / denominator, a[1] * a[2] * b[0] * b[1] / denominator],
-    [a[1] * b[1] / denominator, -a[0] * a[2] * b[0] * b[2] / denominator],
-    [a[2] * b[1] * b[2] / denominator, -m * a[0] * a[1] * b[0] / denominator]
+    [a[0] * b[2] / c, a[1] * a[2] * b[0] * b[1] / c],
+    [a[1] * b[1] / c, -a[0] * a[2] * b[0] * b[2] / c],
+    [a[2] * b[1] * b[2] / c, -m * a[0] * a[1] * b[0] / c]
   ];
 }
 
 // Returns [sn, cn, dn, ph](u|m).
-function ellipticJ(u, m) {
-  var ai, b, φ, t, twon;
-  if (m < ε) {
-    t = Math.sin(u);
-    b = Math.cos(u);
-    ai = .25 * m * (u - t * b);
+export function ellipticJ(u, m) {
+  var ai, b, phi, t, twon;
+  if (m < epsilon) {
+    t = sin(u);
+    b = cos(u);
+    ai = m * (u - t * b) / 4;
     return [
       t - ai * b,
       b + ai * t,
-      1 - .5 * m * t * t,
+      1 - m * t * t / 2,
       u - ai
     ];
   }
-  if (m >= 1 - ε) {
-    ai = .25 * (1 - m);
+  if (m >= 1 - epsilon) {
+    ai = (1 - m) / 4;
     b = cosh(u);
     t = tanh(u);
-    φ = 1 / b;
+    phi = 1 / b;
     twon = b * sinh(u);
     return [
       t + ai * (twon - u) / (b * b),
-      φ - ai * t * φ * (twon - u),
-      φ + ai * t * φ * (twon + u),
-      2 * Math.atan(Math.exp(u)) - halfπ + ai * (twon - u) / b
+      phi - ai * t * phi * (twon - u),
+      phi + ai * t * phi * (twon + u),
+      2 * atan(exp(u)) - halfPi + ai * (twon - u) / b
     ];
   }
 
   var a = [1, 0, 0, 0, 0, 0, 0, 0, 0],
-      c = [Math.sqrt(m), 0, 0, 0, 0, 0, 0, 0, 0],
+      c = [sqrt(m), 0, 0, 0, 0, 0, 0, 0, 0],
       i = 0;
-  b = Math.sqrt(1 - m);
+  b = sqrt(1 - m);
   twon = 1;
 
-  while (Math.abs(c[i] / a[i]) > ε && i < 8) {
+  while (abs(c[i] / a[i]) > epsilon && i < 8) {
     ai = a[i++];
-    c[i] = .5 * (ai - b);
-    a[i] = .5 * (ai + b);
-    b = asqrt(ai * b);
+    c[i] = (ai - b) / 2;
+    a[i] = (ai + b) / 2;
+    b = sqrt(ai * b);
     twon *= 2;
   }
 
-  φ = twon * a[i] * u;
+  phi = twon * a[i] * u;
   do {
-    t = c[i] * Math.sin(b = φ) / a[i];
-    φ = .5 * (asin(t) + φ);
+    t = c[i] * sin(b = phi) / a[i];
+    phi = (asin(t) + phi) / 2;
   } while (--i);
 
-  return [Math.sin(φ), t = Math.cos(φ), t / Math.cos(φ - b), φ];
+  return [sin(phi), t = cos(phi), t / cos(phi - b), phi];
 }
 
-// Calculate F(φ+iψ|m).
+// Calculate F(phi+iPsi|m).
 // See Abramowitz and Stegun, 17.4.11.
-function ellipticFi(φ, ψ, m) {
-  var r = Math.abs(φ),
-      i = Math.abs(ψ),
-      sinhψ = sinh(i);
+export function ellipticFi(phi, psi, m) {
+  var r = abs(phi),
+      i = abs(psi),
+      sinhPsi = sinh(i);
   if (r) {
-    var cscφ = 1 / Math.sin(r),
-        cotφ2 = 1 / (Math.tan(r) * Math.tan(r)),
-        b = -(cotφ2 + m * (sinhψ * sinhψ * cscφ * cscφ) - 1 + m),
-        c = (m - 1) * cotφ2,
-        cotλ2 = .5 * (-b + Math.sqrt(b * b - 4 * c));
+    var cscPhi = 1 / sin(r),
+        cotPhi2 = 1 / (tan(r) * tan(r)),
+        b = -(cotPhi2 + m * (sinhPsi * sinhPsi * cscPhi * cscPhi) - 1 + m),
+        c = (m - 1) * cotPhi2,
+        cotLambda2 = (-b + sqrt(b * b - 4 * c)) / 2;
     return [
-      ellipticF(Math.atan(1 / Math.sqrt(cotλ2)), m) * sgn(φ),
-      ellipticF(Math.atan(asqrt((cotλ2 / cotφ2 - 1) / m)), 1 - m) * sgn(ψ)
+      ellipticF(atan(1 / sqrt(cotLambda2)), m) * sign(phi),
+      ellipticF(atan(sqrt((cotLambda2 / cotPhi2 - 1) / m)), 1 - m) * sign(psi)
     ];
   }
   return [
     0,
-    ellipticF(Math.atan(sinhψ), 1 - m) * sgn(ψ)
+    ellipticF(atan(sinhPsi), 1 - m) * sign(psi)
   ];
 }
 
-// Calculate F(φ|m) where m = k² = sin²α.
+// Calculate F(phi|m) where m = k² = sin²α.
 // See Abramowitz and Stegun, 17.6.7.
-function ellipticF(φ, m) {
-  if (!m) return φ;
-  if (m === 1) return Math.log(Math.tan(φ / 2 + π / 4));
+export function ellipticF(phi, m) {
+  if (!m) return phi;
+  if (m === 1) return log(tan(phi / 2 + quarterPi));
   var a = 1,
-      b = Math.sqrt(1 - m),
-      c = Math.sqrt(m);
-  for (var i = 0; Math.abs(c) > ε; i++) {
-    if (φ % π) {
-      var dφ = Math.atan(b * Math.tan(φ) / a);
-      if (dφ < 0) dφ += π;
-      φ += dφ + ~~(φ / π) * π;
-    } else φ += φ;
+      b = sqrt(1 - m),
+      c = sqrt(m);
+  for (var i = 0; abs(c) > epsilon; i++) {
+    if (phi % pi) {
+      var dPhi = atan(b * tan(phi) / a);
+      if (dPhi < 0) dPhi += pi;
+      phi += dPhi + ~~(phi / pi) * pi;
+    } else phi += phi;
     c = (a + b) / 2;
-    b = Math.sqrt(a * b);
+    b = sqrt(a * b);
     c = ((a = c) - b) / 2;
   }
-  return φ / (Math.pow(2, i) * a);
+  return phi / (pow(2, i) * a);
 }

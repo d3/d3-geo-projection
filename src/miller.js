@@ -1,17 +1,15 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {atan, exp, log, quarterPi, pi, tan} from "./math";
 
-function miller(λ, φ) {
-  return [
-    λ,
-    1.25 * Math.log(Math.tan(π / 4 + .4 * φ))
-  ];
+export function millerRaw(lambda, phi) {
+  return [lambda, 1.25 * log(tan(quarterPi + 0.4 * phi))];
 }
 
-miller.invert = function(x, y) {
-  return [
-    x,
-    2.5 * Math.atan(Math.exp(.8 * y)) - .625 * π
-  ];
+millerRaw.invert = function(x, y) {
+  return [x, 2.5 * atan(exp(0.8 * y)) - 0.625 * pi];
 };
 
-(d3.geo.miller = function() { return projection(miller); }).raw = miller;
+export default function() {
+  return projection(millerRaw)
+      .scale(108.318);
+}

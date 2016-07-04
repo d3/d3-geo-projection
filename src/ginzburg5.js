@@ -1,6 +1,9 @@
-import "projection";
-import "ginzburg-polyconic";
+import {geoProjection as projection} from "d3-geo";
+import ginzburgPolyconicRaw from "./ginzburgPolyconic";
 
-var ginzburg5 = ginzburgPolyconic(2.583819, -.835827, .170354, -.038094, 1.543313, -.411435, .082742);
+export var ginzburg5Raw = ginzburgPolyconicRaw(2.583819, -0.835827, 0.170354, -0.038094, 1.543313, -0.411435,0.082742);
 
-(d3.geo.ginzburg5 = function() { return projection(ginzburg5); }).raw = ginzburg5;
+export default function() {
+  return projection(ginzburg5Raw)
+      .scale(153.93);
+}

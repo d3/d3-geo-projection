@@ -1,28 +1,34 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {asin, atan2, cos, sin, sqrt} from "./math";
 
-function wiechel(λ, φ) {
-  var cosφ = Math.cos(φ),
-      sinφ = Math.cos(λ) * cosφ,
-      sin1_φ = 1 - sinφ,
-      cosλ = Math.cos(λ = Math.atan2(Math.sin(λ) * cosφ, -Math.sin(φ))),
-      sinλ = Math.sin(λ);
-  cosφ = asqrt(1 - sinφ * sinφ);
+export function wiechelRaw(lambda, phi) {
+  var cosPhi = cos(phi),
+      sinPhi = cos(lambda) * cosPhi,
+      sin1_Phi = 1 - sinPhi,
+      cosLambda = cos(lambda = atan2(sin(lambda) * cosPhi, -sin(phi))),
+      sinLambda = sin(lambda);
+  cosPhi = sqrt(1 - sinPhi * sinPhi);
   return [
-    sinλ * cosφ - cosλ * sin1_φ,
-    -cosλ * cosφ - sinλ * sin1_φ
+    sinLambda * cosPhi - cosLambda * sin1_Phi,
+    -cosLambda * cosPhi - sinLambda * sin1_Phi
   ];
 }
 
-wiechel.invert = function(x, y) {
-  var w = -.5 * (x * x + y * y),
-      k = Math.sqrt(-w * (2 + w)),
+wiechelRaw.invert = function(x, y) {
+  var w = (x * x + y * y) / -2,
+      k = sqrt(-w * (2 + w)),
       b = y * w + x * k,
       a = x * w - y * k,
-      D = Math.sqrt(a * a + b * b);
+      D = sqrt(a * a + b * b);
   return [
-    Math.atan2(k * b, D * (1 + w)),
+    atan2(k * b, D * (1 + w)),
     D ? -asin(k * a / D) : 0
   ];
 };
 
-(d3.geo.wiechel = function() { return projection(wiechel); }).raw = wiechel;
+export default function() {
+  return projection(wiechelRaw)
+      .rotate([0, -90, 45])
+      .scale(124.75)
+      .clipAngle(180 - 1e-3);
+}

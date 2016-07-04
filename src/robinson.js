@@ -1,6 +1,7 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {abs, degrees, epsilon2, floor, halfPi, max, min, pi, radians} from "./math";
 
-var robinsonConstants = [
+var K = [
   [0.9986, -0.062],
   [1.0000, 0.0000],
   [0.9986, 0.0620],
@@ -23,63 +24,66 @@ var robinsonConstants = [
   [0.5322, 1.0000]
 ];
 
-robinsonConstants.forEach(function(d) {
+K.forEach(function(d) {
   d[1] *= 1.0144;
 });
 
-function robinson(λ, φ) {
-  var i = Math.min(18, Math.abs(φ) * 36 / π),
-      i0 = Math.floor(i),
+export function robinsonRaw(lambda, phi) {
+  var i = min(18, abs(phi) * 36 / pi),
+      i0 = floor(i),
       di = i - i0,
-      ax = (k = robinsonConstants[i0])[0],
+      ax = (k = K[i0])[0],
       ay = k[1],
-      bx = (k = robinsonConstants[++i0])[0],
+      bx = (k = K[++i0])[0],
       by = k[1],
-      cx = (k = robinsonConstants[Math.min(19, ++i0)])[0],
+      cx = (k = K[min(19, ++i0)])[0],
       cy = k[1],
       k;
   return [
-    λ * (bx + di * (cx - ax) / 2 + di * di * (cx - 2 * bx + ax) / 2),
-    (φ > 0 ? halfπ : -halfπ) * (by + di * (cy - ay) / 2 + di * di * (cy - 2 * by + ay) / 2)
+    lambda * (bx + di * (cx - ax) / 2 + di * di * (cx - 2 * bx + ax) / 2),
+    (phi > 0 ? halfPi : -halfPi) * (by + di * (cy - ay) / 2 + di * di * (cy - 2 * by + ay) / 2)
   ];
 }
 
-robinson.invert = function(x, y) {
-  var yy = y / halfπ,
-      φ = yy * 90,
-      i = Math.min(18, Math.abs(φ / 5)),
-      i0 = Math.max(0, Math.floor(i));
+robinsonRaw.invert = function(x, y) {
+  var yy = y / halfPi,
+      phi = yy * 90,
+      i = min(18, abs(phi / 5)),
+      i0 = max(0, floor(i));
   do {
-    var ay = robinsonConstants[i0][1],
-        by = robinsonConstants[i0 + 1][1],
-        cy = robinsonConstants[Math.min(19, i0 + 2)][1],
+    var ay = K[i0][1],
+        by = K[i0 + 1][1],
+        cy = K[min(19, i0 + 2)][1],
         u = cy - ay,
         v = cy - 2 * by + ay,
-        t = 2 * (Math.abs(yy) - by) / u,
+        t = 2 * (abs(yy) - by) / u,
         c = v / u,
         di = t * (1 - c * t * (1 - 2 * c * t));
     if (di >= 0 || i0 === 1) {
-      φ = (y >= 0 ? 5 : -5) * (di + i);
-      var j = 50, δ;
+      phi = (y >= 0 ? 5 : -5) * (di + i);
+      var j = 50, delta;
       do {
-        i = Math.min(18, Math.abs(φ) / 5);
-        i0 = Math.floor(i);
+        i = min(18, abs(phi) / 5);
+        i0 = floor(i);
         di = i - i0;
-        ay = robinsonConstants[i0][1];
-        by = robinsonConstants[i0 + 1][1];
-        cy = robinsonConstants[Math.min(19, i0 + 2)][1];
-        φ -= (δ = (y >= 0 ? halfπ : -halfπ) * (by + di * (cy - ay) / 2 + di * di * (cy - 2 * by + ay) / 2) - y) * degrees;
-      } while (Math.abs(δ) > ε2 && --j > 0);
+        ay = K[i0][1];
+        by = K[i0 + 1][1];
+        cy = K[min(19, i0 + 2)][1];
+        phi -= (delta = (y >= 0 ? halfPi : -halfPi) * (by + di * (cy - ay) / 2 + di * di * (cy - 2 * by + ay) / 2) - y) * degrees;
+      } while (abs(delta) > epsilon2 && --j > 0);
       break;
     }
   } while (--i0 >= 0);
-  var ax = robinsonConstants[i0][0],
-      bx = robinsonConstants[i0 + 1][0],
-      cx = robinsonConstants[Math.min(19, i0 + 2)][0];
+  var ax = K[i0][0],
+      bx = K[i0 + 1][0],
+      cx = K[min(19, i0 + 2)][0];
   return [
     x / (bx + di * (cx - ax) / 2 + di * di * (cx - 2 * bx + ax) / 2),
-    φ * radians
+    phi * radians
   ];
 };
 
-(d3.geo.robinson = function() { return projection(robinson); }).raw = robinson;
+export default function() {
+  return projection(robinsonRaw)
+      .scale(152.63);
+}

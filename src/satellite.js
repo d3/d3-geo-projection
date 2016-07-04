@@ -1,70 +1,71 @@
-import "projection";
+import {geoProjectionMutator as projectionMutator} from "d3-geo";
+import {acos, asin, atan2, cos, degrees, radians, sin, sqrt} from "./math";
 
-function satelliteVertical(P) {
-  function forward(λ, φ) {
-    var cosφ = Math.cos(φ),
-        k = (P - 1) / (P - cosφ * Math.cos(λ));
+export function satelliteVerticalRaw(P) {
+  function forward(lambda, phi) {
+    var cosPhi = cos(phi),
+        k = (P - 1) / (P - cosPhi * cos(lambda));
     return [
-      k * cosφ * Math.sin(λ),
-      k * Math.sin(φ)
+      k * cosPhi * sin(lambda),
+      k * sin(phi)
     ];
   }
 
   forward.invert = function(x, y) {
-    var ρ2 = x * x + y * y,
-        ρ = Math.sqrt(ρ2),
-        sinc = (P - Math.sqrt(1 - ρ2 * (P + 1) / (P - 1))) / ((P - 1) / ρ + ρ / (P - 1));
+    var rho2 = x * x + y * y,
+        rho = sqrt(rho2),
+        sinc = (P - sqrt(1 - rho2 * (P + 1) / (P - 1))) / ((P - 1) / rho + rho / (P - 1));
     return [
-      Math.atan2(x * sinc, ρ * Math.sqrt(1 - sinc * sinc)),
-      ρ ? asin(y * sinc / ρ) : 0
+      atan2(x * sinc, rho * sqrt(1 - sinc * sinc)),
+      rho ? asin(y * sinc / rho) : 0
     ];
   };
 
   return forward;
 }
 
-function satellite(P, ω) {
-  var vertical = satelliteVertical(P);
-  if (!ω) return vertical;
-  var cosω = Math.cos(ω),
-      sinω = Math.sin(ω);
+export function satelliteRaw(P, omega) {
+  var vertical = satelliteVerticalRaw(P);
+  if (!omega) return vertical;
+  var cosOmega = cos(omega),
+      sinOmega = sin(omega);
 
-  function forward(λ, φ) {
-    var coordinates = vertical(λ, φ),
+  function forward(lambda, phi) {
+    var coordinates = vertical(lambda, phi),
         y = coordinates[1],
-        A = y * sinω / (P - 1) + cosω;
+        A = y * sinOmega / (P - 1) + cosOmega;
     return [
-      coordinates[0] * cosω / A,
+      coordinates[0] * cosOmega / A,
       y / A
     ];
   }
 
   forward.invert = function(x, y) {
-    var k = (P - 1) / (P - 1 - y * sinω);
-    return vertical.invert(k * x, k * y * cosω);
+    var k = (P - 1) / (P - 1 - y * sinOmega);
+    return vertical.invert(k * x, k * y * cosOmega);
   };
 
   return forward;
 }
 
-function satelliteProjection() {
-  var P = 1.4,
-      ω = 0,
-      m = projectionMutator(satellite),
-      p = m(P, ω);
+export default function() {
+  var distance = 2,
+      omega = 0,
+      m = projectionMutator(satelliteRaw),
+      p = m(distance, omega);
 
   // As a multiple of radius.
   p.distance = function(_) {
-    if (!arguments.length) return P;
-    return m(P = +_, ω);
+    if (!arguments.length) return distance;
+    return m(distance = +_, omega);
   };
 
   p.tilt = function(_) {
-    if (!arguments.length) return ω * 180 / π;
-    return m(P, ω = _ * π / 180);
+    if (!arguments.length) return omega * degrees;
+    return m(distance, omega = _ * radians);
   };
 
-  return p;
+  return p
+      .scale(432.147)
+      .clipAngle(acos(1 / distance) * degrees - 1e-6);
 }
-
-(d3.geo.satellite = satelliteProjection).raw = satellite;

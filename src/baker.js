@@ -1,30 +1,27 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {abs, atan, cos, epsilon2, exp, halfPi, log, quarterPi, sign, sin, sqrt, sqrt2, tan} from "./math";
 
-var bakerφ = Math.log(1 + Math.SQRT2);
+var sqrt8 = sqrt(8),
+    phi0 = log(1 + sqrt2);
 
-function baker(λ, φ) {
-  var φ0 = Math.abs(φ);
-  return φ0 < π / 4
-      ? [λ, Math.log(Math.tan(π / 4 + φ / 2))]
-      : [
-        λ * Math.cos(φ0) * (2 * Math.SQRT2 - 1 / Math.sin(φ0)),
-        sgn(φ) * (2 * Math.SQRT2 * (φ0 - π / 4) - Math.log(Math.tan(φ0 / 2)))
-      ];
+export function bakerRaw(lambda, phi) {
+  var phi0 = abs(phi);
+  return phi0 < quarterPi
+      ? [lambda, log(tan(quarterPi + phi / 2))]
+      : [lambda * cos(phi0) * (2 * sqrt2 - 1 / sin(phi0)), sign(phi) * (2 * sqrt2 * (phi0 - quarterPi) - log(tan(phi0 / 2)))];
 }
 
-baker.invert = function(x, y) {
-  if ((y0 = Math.abs(y)) < bakerφ) return [x, 2 * Math.atan(Math.exp(y)) - halfπ];
-  var sqrt8 = Math.sqrt(8),
-      φ = π / 4, i = 25, δ, y0;
+bakerRaw.invert = function(x, y) {
+  if ((y0 = abs(y)) < phi0) return [x, 2 * atan(exp(y)) - halfPi];
+  var phi = quarterPi, i = 25, delta, y0;
   do {
-    var cosφ_2 = Math.cos(φ / 2),
-        tanφ_2 = Math.tan(φ / 2);
-    φ -= δ = (sqrt8 * (φ - π / 4) - Math.log(tanφ_2) - y0) / (sqrt8 - .5 * cosφ_2 * cosφ_2 / tanφ_2);
-  } while (Math.abs(δ) > ε2 && --i > 0);
-  return [
-    x / (Math.cos(φ) * (sqrt8 - 1 / Math.sin(φ))),
-    sgn(y) * φ
-  ];
+    var cosPhi_2 = cos(phi / 2), tanPhi_2 = tan(phi / 2);
+    phi -= delta = (sqrt8 * (phi - quarterPi) - log(tanPhi_2) - y0) / (sqrt8 - cosPhi_2 * cosPhi_2 / (2 * tanPhi_2));
+  } while (abs(delta) > epsilon2 && --i > 0);
+  return [x / (cos(phi) * (sqrt8 - 1 / sin(phi))), sign(y) * phi];
 };
 
-(d3.geo.baker = function() { return projection(baker); }).raw = baker;
+export default function() {
+  return projection(bakerRaw)
+      .scale(112.314);
+}

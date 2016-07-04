@@ -1,40 +1,29 @@
-var vows = require("vows"),
-    assert = require("./assert"),
-    load = require("./load");
+var tape = require("tape"),
+    d3 = require("../");
 
-var suite = vows.describe("d3.geo.craig");
+require("./projectionEqual");
 
-suite.addBatch({
-  "craig": {
-    topic: load("craig"),
-    "0° parallel": {
-      topic: function(geo) { return geo.craig(); },
-      "projections and inverse projections": function(craig) {
-        assert.equalInverse(craig, [   0,   0], [480,          250]);
-        assert.equalInverse(craig, [   0, -90], [480,          400]);
-        assert.equalInverse(craig, [   0,  90], [480,          100]);
-        assert.equalInverse(craig, [   0, -45], [480,          356.066017]);
-        assert.equalInverse(craig, [   0,  45], [480,          143.933982]);
-        assert.equalInverse(craig, [-180,   0], [  8.761101,   250]);
-        assert.equalInverse(craig, [ 180,   0], [951.238898,   250]);
-        assert.equalInverse(craig, [-179,  15], [ 11.3790958, 7198.585721]);
-        assert.equalInverse(craig, [   1,   1], [482.617993,   247.382404]);
-      }
-    },
-    "30° parallel": {
-      topic: function(geo) {
-        return geo.craig().parallel(30);
-      },
-      "projections and inverse projections": function(craig) {
-        assert.equalInverse(craig, [   0,   0], [480,        250]);
-        assert.equalInverse(craig, [   0, -30], [480,        313.397459]);
-        assert.equalInverse(craig, [   0,  30], [480,        163.397459]);
-        assert.equalInverse(craig, [   0, -45], [480,        330.700720]);
-        assert.equalInverse(craig, [   0,  45], [480,        118.568686]);
-        assert.equalInverse(craig, [   1,   1], [482.617993, 247.373611]);
-      }
-    }
-  }
+tape("geoCraig(point) returns the expected values", function(test) {
+  var craig = d3.geoCraig().scale(150);
+  test.projectionEqual(craig, [   0,   0], [480.0000000,  250.000000]);
+  test.projectionEqual(craig, [   0, -90], [480.0000000,  400.000000]);
+  test.projectionEqual(craig, [   0,  90], [480.0000000,  100.000000]);
+  test.projectionEqual(craig, [   0, -45], [480.0000000,  356.066017]);
+  test.projectionEqual(craig, [   0,  45], [480.0000000,  143.933982]);
+  test.projectionEqual(craig, [-180,   0], [  8.7611010,  250.000000]);
+  test.projectionEqual(craig, [ 180,   0], [951.2388980,  250.000000]);
+  test.projectionEqual(craig, [-179,  15], [ 11.3790958, 7198.585721]);
+  test.projectionEqual(craig, [   1,   1], [482.6179930,  247.382404]);
+  test.end();
 });
 
-suite.export(module);
+tape("craig.parallel(parallel) sets the standard parallel", function(test) {
+  var craig = d3.geoCraig().scale(150).parallel(30);
+  test.projectionEqual(craig, [   0,   0], [480.000000, 250.000000]);
+  test.projectionEqual(craig, [   0, -30], [480.000000, 313.397459]);
+  test.projectionEqual(craig, [   0,  30], [480.000000, 163.397459]);
+  test.projectionEqual(craig, [   0, -45], [480.000000, 330.700720]);
+  test.projectionEqual(craig, [   0,  45], [480.000000, 118.568686]);
+  test.projectionEqual(craig, [   1,   1], [482.617993, 247.373611]);
+  test.end();
+});

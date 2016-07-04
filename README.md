@@ -1,271 +1,714 @@
-# Extended Geographic Projections
+# d3-geo-projection
 
-<table class="highlight">
-  <tr height="146" valign="top">
-    <td>airy<br><a href="http://bl.ocks.org/mbostock/5620807"><img src="http://bl.ocks.org/mbostock/raw/5620807/thumbnail.png" width="202"></a></td>
-    <td>aitoff<br><a href="http://bl.ocks.org/mbostock/3682698"><img src="http://bl.ocks.org/mbostock/raw/3682698/thumbnail.png" width="202"></a></td>
-    <td class="gi">albers *<br><a href="http://bl.ocks.org/mbostock/3734308"><img src="http://bl.ocks.org/mbostock/raw/3734308/thumbnail.png" width="202"></a></td>
-    <td class="gi">albersUsa *<br><a href="http://bl.ocks.org/mbostock/4090848"><img src="http://bl.ocks.org/mbostock/raw/4090848/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td>armadillo<br><a href="http://bl.ocks.org/mbostock/4463127"><img src="http://bl.ocks.org/mbostock/raw/4463127/thumbnail.png" width="202"></a></td>
-    <td>august<br><a href="http://bl.ocks.org/mbostock/3797581"><img src="http://bl.ocks.org/mbostock/raw/3797581/thumbnail.png" width="202"></a></td>
-    <td class="gi">azimuthalEqualArea *<br><a href="http://bl.ocks.org/mbostock/3757101"><img src="http://bl.ocks.org/mbostock/raw/3757101/thumbnail.png" width="202"></a></td>
-    <td class="gi">azimuthalEquidistant *<br><a href="http://bl.ocks.org/mbostock/3757110"><img src="http://bl.ocks.org/mbostock/raw/3757110/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td>baker<br><a href="http://bl.ocks.org/mbostock/4476279"><img src="http://bl.ocks.org/mbostock/raw/4476279/thumbnail.png" width="202"></a></td>
-    <td>berghaus<br><a href="http://bl.ocks.org/mbostock/4463049"><img src="http://bl.ocks.org/mbostock/raw/4463049/thumbnail.png" width="202"></a></td>
-    <td>boggs<br><a href="http://bl.ocks.org/mbostock/4481220"><img src="http://bl.ocks.org/mbostock/raw/4481220/thumbnail.png" width="202"></a></td>
-    <td>bonne<br><a href="http://bl.ocks.org/mbostock/3734313"><img src="http://bl.ocks.org/mbostock/raw/3734313/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td>bromley<br><a href="http://bl.ocks.org/mbostock/4487695"><img src="http://bl.ocks.org/mbostock/raw/4487695/thumbnail.png" width="202"></a></td>
-    <td>chamberlin<br><a href="http://bl.ocks.org/mbostock/5625053"><img src="http://bl.ocks.org/mbostock/raw/5625053/thumbnail.png" width="202"></a></td>
-    <td>collignon<br><a href="http://bl.ocks.org/mbostock/3734316"><img src="http://bl.ocks.org/mbostock/raw/3734316/thumbnail.png" width="202"></a></td>
-    <td class="gi">conicEqualArea *<br><a href="http://bl.ocks.org/mbostock/3734308"><img src="http://bl.ocks.org/mbostock/raw/3734308/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td class="gi">conicConformal *<br><a href="http://bl.ocks.org/mbostock/3734321"><img src="http://bl.ocks.org/mbostock/raw/3734321/thumbnail.png" width="202"></a></td>
-    <td class="gi">conicEquidistant *<br><a href="http://bl.ocks.org/mbostock/3734317"><img src="http://bl.ocks.org/mbostock/raw/3734317/thumbnail.png" width="202"></a></td>
-    <td>craig<br><a href="http://bl.ocks.org/mbostock/4459466"><img src="http://bl.ocks.org/mbostock/raw/4459466/thumbnail.png" width="202"></a></td>
-    <td>craster<br><a href="http://bl.ocks.org/mbostock/4465118"><img src="http://bl.ocks.org/mbostock/raw/4465118/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td>cylindricalEqualArea<br><a href="http://bl.ocks.org/mbostock/3712408"><img src="http://bl.ocks.org/mbostock/raw/3712408/thumbnail.png" width="202"></a></td>
-    <td>cylindricalStereographic<br><a href="http://bl.ocks.org/mbostock/5234763"><img src="http://bl.ocks.org/mbostock/raw/5234763/thumbnail.png" width="202"></a></td>
-    <td>eckert1<br><a href="http://bl.ocks.org/mbostock/3734322"><img src="http://bl.ocks.org/mbostock/raw/3734322/thumbnail.png" width="202"></a></td>
-    <td>eckert2<br><a href="http://bl.ocks.org/mbostock/3734324"><img src="http://bl.ocks.org/mbostock/raw/3734324/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td>eckert3<br><a href="http://bl.ocks.org/mbostock/3734325"><img src="http://bl.ocks.org/mbostock/raw/3734325/thumbnail.png" width="202"></a></td>
-    <td>eckert4<br><a href="http://bl.ocks.org/mbostock/3734327"><img src="http://bl.ocks.org/mbostock/raw/3734327/thumbnail.png" width="202"></a></td>
-    <td>eckert5<br><a href="http://bl.ocks.org/mbostock/3734328"><img src="http://bl.ocks.org/mbostock/raw/3734328/thumbnail.png" width="202"></a></td>
-    <td>eckert6<br><a href="http://bl.ocks.org/mbostock/3734329"><img src="http://bl.ocks.org/mbostock/raw/3734329/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td>eisenlohr<br><a href="http://bl.ocks.org/mbostock/3797585"><img src="http://bl.ocks.org/mbostock/raw/3797585/thumbnail.png" width="202"></a></td>
-    <td class="gi">equirectangular *<br><a href="http://bl.ocks.org/mbostock/3757119"><img src="http://bl.ocks.org/mbostock/raw/3757119/thumbnail.png" width="202"></a></td>
-    <td>fahey<br><a href="http://bl.ocks.org/mbostock/4731228"><img src="http://bl.ocks.org/mbostock/raw/4731228/thumbnail.png" width="202"></a></td>
-    <td>gilbert<br><a href="http://www.jasondavies.com/maps/gilbert/"><img src="http://www.jasondavies.com/maps/gilbert/thumb.d3.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td>gingery<br><a href="http://www.jasondavies.com/maps/gingery/"><img src="http://www.jasondavies.com/maps/gingery/thumb.d3.png" width="202"></a></td>
-    <td>ginzburg4<br><a href="http://bl.ocks.org/mbostock/5288565"><img src="http://bl.ocks.org/mbostock/raw/5288565/thumbnail.png" width="202"></a></td>
-    <td>ginzburg5<br><a href="http://bl.ocks.org/mbostock/5288571"><img src="http://bl.ocks.org/mbostock/raw/5288571/thumbnail.png" width="202"></a></td>
-    <td>ginzburg6<br><a href="http://bl.ocks.org/mbostock/5288577"><img src="http://bl.ocks.org/mbostock/raw/5288577/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td>ginzburg8<br><a href="http://bl.ocks.org/mbostock/5288583"><img src="http://bl.ocks.org/mbostock/raw/5288583/thumbnail.png" width="202"></a></td>
-    <td>ginzburg9<br><a href="http://bl.ocks.org/mbostock/5288590"><img src="http://bl.ocks.org/mbostock/raw/5288590/thumbnail.png" width="202"></a></td>
-    <td class="gi">gnomonic *<br><a href="http://bl.ocks.org/mbostock/3757349"><img src="http://bl.ocks.org/mbostock/raw/3757349/thumbnail.png" width="202"></a></td>
-    <td>gringorten<br><a href="http://bl.ocks.org/mbostock/4362031"><img src="http://bl.ocks.org/mbostock/raw/4362031/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td>guyou<br><a href="http://bl.ocks.org/mbostock/3763867"><img src="http://bl.ocks.org/mbostock/raw/3763867/thumbnail.png" width="202"></a></td>
-    <td>hammer<br><a href="http://bl.ocks.org/mbostock/3712397"><img src="http://bl.ocks.org/mbostock/raw/3712397/thumbnail.png" width="202"></a></td>
-    <td>hammerRetroazimuthal<br><a href="http://bl.ocks.org/mbostock/4459130"><img src="http://bl.ocks.org/mbostock/raw/4459130/thumbnail.png" width="202"></a></td>
-    <td>healpix<br><a href="http://bl.ocks.org/mbostock/4463237"><img src="http://bl.ocks.org/mbostock/raw/4463237/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td>hill<br><a href="http://bl.ocks.org/mbostock/4479513"><img src="http://bl.ocks.org/mbostock/raw/4479513/thumbnail.png" width="202"></a></td>
-    <td>homolosine<br><a href="http://bl.ocks.org/mbostock/3734330"><img src="http://bl.ocks.org/mbostock/raw/3734330/thumbnail.png" width="202"></a></td>
-    <td>kavrayskiy7<br><a href="http://bl.ocks.org/mbostock/3710082"><img src="http://bl.ocks.org/mbostock/raw/3710082/thumbnail.png" width="202"></a></td>
-    <td>lagrange<br><a href="http://bl.ocks.org/mbostock/3797591"><img src="http://bl.ocks.org/mbostock/raw/3797591/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td>larrivee<br><a href="http://bl.ocks.org/mbostock/3719042"><img src="http://bl.ocks.org/mbostock/raw/3719042/thumbnail.png" width="202"></a></td>
-    <td>laskowski<br><a href="http://bl.ocks.org/mbostock/4489342"><img src="http://bl.ocks.org/mbostock/raw/4489342/thumbnail.png" width="202"></a></td>
-    <td>littrow<br><a href="http://bl.ocks.org/mbostock/4459071"><img src="http://bl.ocks.org/mbostock/raw/4459071/thumbnail.png" width="202"></a></td>
-    <td>loximuthal<br><a href="http://bl.ocks.org/mbostock/3867220"><img src="http://bl.ocks.org/mbostock/raw/3867220/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td class="gi">mercator *<br><a href="http://bl.ocks.org/mbostock/3757132"><img src="http://bl.ocks.org/mbostock/raw/3757132/thumbnail.png" width="202"></a></td>
-    <td>miller<br><a href="http://bl.ocks.org/mbostock/3734333"><img src="http://bl.ocks.org/mbostock/raw/3734333/thumbnail.png" width="202"></a></td>
-    <td>modifiedStereographic<br><a href="http://www.jasondavies.com/maps/modified-stereographic/"><img src="http://www.jasondavies.com/maps/modified-stereographic/gs50/thumb.d3.png" width="202"></a></td>
-    <td>mollweide<br><a href="http://bl.ocks.org/mbostock/3734336"><img src="http://bl.ocks.org/mbostock/raw/3734336/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td>mtFlatPolarParabolic<br><a href="http://bl.ocks.org/mbostock/4465130"><img src="http://bl.ocks.org/mbostock/raw/4465130/thumbnail.png" width="202"></a></td>
-    <td>mtFlatPolarQuartic<br><a href="http://bl.ocks.org/mbostock/4465137"><img src="http://bl.ocks.org/mbostock/raw/4465137/thumbnail.png" width="202"></a></td>
-    <td>mtFlatPolarSinusoidal<br><a href="http://bl.ocks.org/mbostock/4465140"><img src="http://bl.ocks.org/mbostock/raw/4465140/thumbnail.png" width="202"></a></td>
-    <td>naturalEarth<br><a href="http://bl.ocks.org/mbostock/4479477"><img src="http://bl.ocks.org/mbostock/raw/4479477/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td>nellHammer<br><a href="http://bl.ocks.org/mbostock/3734342"><img src="http://bl.ocks.org/mbostock/raw/3734342/thumbnail.png" width="202"></a></td>
-    <td class="gi">orthographic *<br><a href="http://bl.ocks.org/mbostock/3757125"><img src="http://bl.ocks.org/mbostock/raw/3757125/thumbnail.png" width="202"></a></td>
-    <td>patterson<br><a href="http://bl.ocks.org/mbostock/d4021aa4dccfd65edffd"><img src="http://bl.ocks.org/mbostock/raw/d4021aa4dccfd65edffd/thumbnail.png" width="202"></a></td>
-    <td>peirceQuincuncial<br><a href="http://bl.ocks.org/mbostock/4310087"><img src="http://bl.ocks.org/mbostock/raw/4310087/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td>polyconic<br><a href="http://bl.ocks.org/mbostock/3734343"><img src="http://bl.ocks.org/mbostock/raw/3734343/thumbnail.png" width="202"></a></td>
-    <td>polyhedron.butterfly<br><a href="http://bl.ocks.org/mbostock/4458680"><img src="http://bl.ocks.org/mbostock/raw/4458680/thumbnail.png" width="202"></a></td>
-    <td>polyhedron.waterman<br><a href="http://bl.ocks.org/mbostock/4458497"><img src="http://bl.ocks.org/mbostock/raw/4458497/thumbnail.png" width="202"></a></td>
-    <td>rectangularPolyconic<br><a href="http://bl.ocks.org/mbostock/5230202"><img src="http://bl.ocks.org/mbostock/raw/5230202/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td>robinson<br><a href="http://bl.ocks.org/mbostock/3710566"><img src="http://bl.ocks.org/mbostock/raw/3710566/thumbnail.png" width="202"></a></td>
-    <td>satellite<br><a href="http://bl.ocks.org/mbostock/3790444"><img src="http://bl.ocks.org/mbostock/raw/3790444/thumbnail.png" width="202"></a></td>
-    <td>sinuMollweide<br><a href="http://bl.ocks.org/mbostock/4319903"><img src="http://bl.ocks.org/mbostock/raw/4319903/thumbnail.png" width="202"></a></td>
-    <td>sinusoidal<br><a href="http://bl.ocks.org/mbostock/3712399"><img src="http://bl.ocks.org/mbostock/raw/3712399/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td class="gi">stereographic *<br><a href="http://bl.ocks.org/mbostock/3757137"><img src="http://bl.ocks.org/mbostock/raw/3757137/thumbnail.png" width="202"></a></td>
-    <td>times<br><a href="http://bl.ocks.org/mbostock/5230564"><img src="http://bl.ocks.org/mbostock/raw/5230564/thumbnail.png" width="202"></a></td>
-    <td>twoPointAzimuthal<br><a href="http://www.jasondavies.com/maps/two-point-azimuthal/"><img src="http://www.jasondavies.com/maps/two-point-azimuthal/thumb.d3.png" width="202"></a></td>
-    <td>twoPointEquidistant<br><a href="http://www.jasondavies.com/maps/two-point-equidistant/"><img src="http://www.jasondavies.com/maps/two-point-equidistant/thumb.d3.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td class="gi">transverseMercator *<br><a href="http://bl.ocks.org/mbostock/5126418"><img src="http://bl.ocks.org/mbostock/raw/5126418/thumbnail.png" width="202"></a></td>
-    <td>vanDerGrinten<br><a href="http://bl.ocks.org/mbostock/3796831"><img src="http://bl.ocks.org/mbostock/raw/3796831/thumbnail.png" width="202"></a></td>
-    <td>vanDerGrinten2<br><a href="http://bl.ocks.org/mbostock/5230571"><img src="http://bl.ocks.org/mbostock/raw/5230571/thumbnail.png" width="202"></a></td>
-    <td>vanDerGrinten3<br><a href="http://bl.ocks.org/mbostock/5230580"><img src="http://bl.ocks.org/mbostock/raw/5230580/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td>vanDerGrinten4<br><a href="http://bl.ocks.org/mbostock/4489365"><img src="http://bl.ocks.org/mbostock/raw/4489365/thumbnail.png" width="202"></a></td>
-    <td>wagner4<br><a href="http://bl.ocks.org/mbostock/4487674"><img src="http://bl.ocks.org/mbostock/raw/4487674/thumbnail.png" width="202"></a></td>
-    <td>wagner6<br><a href="http://bl.ocks.org/mbostock/3710148"><img src="http://bl.ocks.org/mbostock/raw/3710148/thumbnail.png" width="202"></a></td>
-    <td>wagner7<br><a href="http://bl.ocks.org/mbostock/4465109"><img src="http://bl.ocks.org/mbostock/raw/4465109/thumbnail.png" width="202"></a></td>
-  </tr>
-  <tr height="146" valign="top">
-    <td>wiechel<br><a href="http://bl.ocks.org/mbostock/4463155"><img src="http://bl.ocks.org/mbostock/raw/4463155/thumbnail.png" width="202"></a></td>
-    <td>winkel3<br><a href="http://bl.ocks.org/mbostock/3682676"><img src="http://bl.ocks.org/mbostock/raw/3682676/thumbnail.png" width="202"></a></td>
-  </tr>
-</table>
+Extended geographic projections for D3.
 
-Projections:
+## Installing
 
-* aitoff - [Aitoff](http://bl.ocks.org/mbostock/3682698)
-* airy - [Airy’s minimum-error azimuthal](http://bl.ocks.org/mbostock/5620807)
-* albers - [Albers equal-area conic](http://bl.ocks.org/mbostock/3734308)
-* armadillo - [Armadillo](http://bl.ocks.org/mbostock/4463127)
-* august - [August conformal](http://bl.ocks.org/mbostock/3797581)
-* azimuthalEqualArea - [Lambert azimuthal equal-area](http://bl.ocks.org/mbostock/3757101)
-* azimuthalEquidistant - [azimuthal equidistant](http://bl.ocks.org/mbostock/3757110)
-* baker - [Baker Dinomic](http://bl.ocks.org/mbostock/4476279)
-* berghaus - [Berghaus Star](http://bl.ocks.org/mbostock/4463049)
-* boggs - [Boggs eumorphic](http://bl.ocks.org/mbostock/4481220)
-* bonne - [Bonne](http://bl.ocks.org/mbostock/3734313)
-* bromley - [Bromley](http://bl.ocks.org/mbostock/4487695)
-* chamberlin - [Chamberlin trimetric](http://bl.ocks.org/mbostock/5625053)
-* collignon - [Collignon](http://bl.ocks.org/mbostock/3734316)
-* conicConformal - [Lambert conformal conic](http://bl.ocks.org/mbostock/3734321)
-* conicEquidistant - [conic equidistant](http://bl.ocks.org/mbostock/3734317)
-* craig - [Craig retroazimuthal](http://bl.ocks.org/mbostock/4459466)
-* craster - [Craster parabolic](http://bl.ocks.org/mbostock/4465118)
-* cylindricalEqualArea - [cylindrical equal-area](http://bl.ocks.org/mbostock/3712408), [Gall–Peters](http://bl.ocks.org/mbostock/3946824), [Hobo–Dyer](http://bl.ocks.org/mbostock/4476487), [Tobler world-in-a-square](http://bl.ocks.org/mbostock/4476496)
-* cylindricalStereographic - cylindrical stereographic, [Gall’s stereographic](http://bl.ocks.org/mbostock/5234763)
-* eckert1 - [Eckert I](http://bl.ocks.org/mbostock/3734322)
-* eckert2 - [Eckert II](http://bl.ocks.org/mbostock/3734324)
-* eckert3 - [Eckert III](http://bl.ocks.org/mbostock/3734325)
-* eckert4 - [Eckert IV](http://bl.ocks.org/mbostock/3734327)
-* eckert5 - [Eckert V](http://bl.ocks.org/mbostock/3734328)
-* eckert6 - [Eckert VI](http://bl.ocks.org/mbostock/3734329)
-* eisenlohr - [Eisenlohr conformal](http://bl.ocks.org/mbostock/3797585)
-* equirectangular - [Equirectangular (Plate Carrée)](http://bl.ocks.org/mbostock/3757119), [Cassini](http://bl.ocks.org/mbostock/5695142)
-* fahey - [Fahey](http://bl.ocks.org/mbostock/4731228)
-* foucaut - Foucaut
-* gilbert - [Gilbert’s two-world perspective](http://www.jasondavies.com/maps/gilbert/) (Note: this wraps a projection such as d3.geo.orthographic.)
-* gingery - [Gingery](http://www.jasondavies.com/maps/gingery/)
-* ginzburg4 - [Ginzburg IV](http://bl.ocks.org/mbostock/5288565)
-* ginzburg5 - [Ginzburg V](http://bl.ocks.org/mbostock/5288571)
-* ginzburg6 - [Ginzburg VI](http://bl.ocks.org/mbostock/5288577)
-* ginzburg8 - [Ginzburg VIII](http://bl.ocks.org/mbostock/5288583)
-* ginzburg9 - [Ginzburg IX](http://bl.ocks.org/mbostock/5288590)
-* gnomonic - [gnomonic](http://bl.ocks.org/mbostock/3757349)
-* gringorten - [Gringorten](http://bl.ocks.org/mbostock/4362031)
-* guyou - [Guyou hemisphere-in-a-square](http://bl.ocks.org/mbostock/3763867)
-* hammer - [Hammer](http://bl.ocks.org/mbostock/3712397), [Eckert–Greifendorff](http://bl.ocks.org/mbostock/4496212), [quartic authalic](http://bl.ocks.org/mbostock/4463175), [Briesemeister](http://bl.ocks.org/mbostock/4519926)
-* hammerRetroazimuthal - [Hammer retroazimuthal](http://bl.ocks.org/mbostock/4459130)
-* healpix - [HEALPix](http://bl.ocks.org/mbostock/4463237)
-* hill - [Hill eucyclic](http://bl.ocks.org/mbostock/4479513), [Maurer No. 73](http://bl.ocks.org/mbostock/4479547)
-* homolosine - [Goode homolosine](http://bl.ocks.org/mbostock/3734330)
-* kavrayskiy7 - [Kavrayskiy VII](http://bl.ocks.org/mbostock/3710082)
-* lagrange - [Lagrange conformal](http://bl.ocks.org/mbostock/3797591)
-* larrivee - [Larrivée](http://bl.ocks.org/mbostock/3719042)
-* laskowski - [Laskowski tri-optimal](http://bl.ocks.org/mbostock/4489342)
-* littrow - [Littrow](http://bl.ocks.org/mbostock/4459071)
-* loximuthal - [loximuthal](http://bl.ocks.org/mbostock/3867220)
-* mercator - [Mercator](http://bl.ocks.org/mbostock/3757132)
-* miller - [Miller](http://bl.ocks.org/mbostock/3734333)
-* modifiedStereographic - [modified stereographic](http://www.jasondavies.com/maps/modified-stereographic/)
-* mollweide - [Mollweide](http://bl.ocks.org/mbostock/3734336), [Atlantis](http://bl.ocks.org/mbostock/4519975)
-* mtFlatPolarParabolic - [McBryde–Thomas flat-polar parabolic](http://bl.ocks.org/mbostock/4465130)
-* mtFlatPolarQuartic - [McBryde–Thomas flat-polar quartic](http://bl.ocks.org/mbostock/4465137)
-* mtFlatPolarSinusoidal - [McBryde–Thomas flat-polar sinusoidal](http://bl.ocks.org/mbostock/4465140)
-* naturalEarth - [Natural Earth](http://bl.ocks.org/mbostock/4479477)
-* nellHammer - [Nell–Hammer](http://bl.ocks.org/mbostock/3734342)
-* orthographic - [orthographic](http://bl.ocks.org/mbostock/3757125)
-* patterson - [patterson](http://bl.ocks.org/mbostock/d4021aa4dccfd65edffd)
-* peirceQuincuncial - [Pierce quincuncial](http://bl.ocks.org/mbostock/4310087)
-* polyconic - [polyconic](http://bl.ocks.org/mbostock/3734343)
-* rectangularPolyconic - [rectangular polyconic](http://bl.ocks.org/mbostock/5230202)
-* robinson - [Robinson](http://bl.ocks.org/mbostock/3710566)
-* satellite - [satellite (tilted perpsective)](http://bl.ocks.org/mbostock/3790444)
-* sinusoidal - [sinusoidal](http://bl.ocks.org/mbostock/3712399)
-* sinuMollweide - [Sinu-Mollweide](http://bl.ocks.org/mbostock/4319903)
-* stereographic - [stereographic](http://bl.ocks.org/mbostock/3757137)
-* times - [Times](http://bl.ocks.org/mbostock/5230564)
-* transverseMercator - [transverse Mercator](http://bl.ocks.org/mbostock/5126418)
-* twoPointAzimuthal - [two-point azimuthal](https://www.jasondavies.com/maps/two-point-azimuthal/)
-* twoPointEquidistant - [two-point equidistant](https://www.jasondavies.com/maps/two-point-equidistant/)
-* vanDerGrinten - [Van der Grinten](http://bl.ocks.org/mbostock/3796831)
-* vanDerGrinten2 - [Van der Grinten II](http://bl.ocks.org/mbostock/5230571)
-* vanDerGrinten3 - [Van der Grinten III](http://bl.ocks.org/mbostock/5230580)
-* vanDerGrinten4 - [Van der Grinten IV](http://bl.ocks.org/mbostock/4489365)
-* wagner4 - [Wagner IV, Putniṇš P2´](http://bl.ocks.org/mbostock/4487674)
-* wagner6 - [Wagner VI](http://bl.ocks.org/mbostock/3710148)
-* wagner7 - [Wagner VII](http://bl.ocks.org/mbostock/4465109)
-* wiechel - [Wiechel](http://bl.ocks.org/mbostock/4463155)
-* winkel3 - [Winkel tripel](http://bl.ocks.org/mbostock/3682676)
-
-This plugin also provides d3.geo.interrupt, which can be used to create arbitrary interrupted projections from a given raw projection. For example, see [Philbrick’s interrupted Sinu-Mollweide](http://bl.ocks.org/4481520).
-
-This plugin requires [D3 3.0](https://github.com/mbostock/d3/wiki/Upgrading-to-3.0) or greater. To use the official hosted version, include the projection plugin after including D3:
+If you use NPM, `npm install d3-geo-projection`. Otherwise, download the [latest release](https://github.com/d3/d3-geo-projection/releases/latest). You can also load directly from [d3js.org](https://d3js.org) as a [standalone library](https://d3js.org/d3-geo-projection.v1.min.js). AMD, CommonJS, and vanilla environments are supported. In vanilla, a `d3` global is exported:
 
 ```html
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>
+<script src="https://d3js.org/d3-array.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v1.min.js"></script>
+<script>
+
+var aitoff = d3.geoAitoff();
+
+</script>
 ```
 
-Alternatively, you can clone this repo, [download the zipball](http://github.com/d3/d3-plugins/zipball/master), or right-click [d3.geo.projection.v0.min.js](http://d3js.org/d3.geo.projection.v0.min.js) and save.
+[Try d3-geo-projection in your browser.](https://tonicdev.com/npm/d3-geo-projection)
 
-To use this plugin within a Node.js context, you can `npm install d3 d3-geo-projection` and then say:
+## API Reference
 
-```js
-var d3 = require("d3");
+### Projections
 
-require("d3-geo-projection")(d3);
-```
+<a href="#geoAitoff" name="geoAitoff">#</a> d3.<b>geoAitoff</b>()
 
-Subsequently, `d3.geo` will contain all the extended projections.
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/aitoff.png" width="480" height="250">](http://bl.ocks.org/mbostock/3682698)
 
-## Defining a New Projection
+The Aitoff projection.
 
-First define your raw projection function:
+<a href="#geoAiry" name="geoAiry">#</a> d3.<b>geoAiry</b>()
 
-```js
-function cosinusoidal(λ, φ) {
-  return [λ * Math.sin(φ), φ];
-}
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/airy.png" width="480" height="250">](http://bl.ocks.org/mbostock/5620807)
 
-cosinusoidal.invert = function(x, y) {
-  return [x / Math.sin(y), y];
-};
-```
+Airy’s minimum-error azimuthal projection.
 
-Then create a constructor using d3.geo.projection:
+<a href="airy_radius" name="airy_raidus">#</a> <i>airy</i>.<b>radius</b>([<i>radius</i>])
 
-```js
-d3.geo.cosinusoidal = function() {
-  return d3.geo.projection(cosinusoidal);
-};
-```
+Defaults to 90°.
 
-You can optionally expose the raw projection to facilitate composite projections:
+<a href="#geoAlbers" name="geoAlbers">#</a> d3.<b>geoAlbers</b>()
 
-```js
-(d3.geo.cosinusoidal = function() {
-  return d3.geo.projection(cosinusoidal);
-}).raw = cosinusoidal;
-```
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/albers.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734308)
+
+Alber’s [equal-area conic projection](#geoConicEqualArea); see [d3-geo](https://github.com/d3/d3-geo#geoAlbers).
+
+<a href="#geoArmadillo" name="geoArmadillo">#</a> d3.<b>geoArmadillo</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/armadillo.png" width="480" height="250">](http://bl.ocks.org/mbostock/4463127)
+
+The armadillo projection. The default center assumes the default [parallel](#armadillo_parallel) of 20° and should be changed if a different parallel is used. Note: requires clipping to the sphere.
+
+<a href="#armadillo_parallel" name="armadillo_parallel">#</a> <i>armadillo</i>.<b>parallel</b>([<i>parallel</i>])
+
+Defaults to 20°.
+
+<a href="#geoAugust" name="geoAugust">#</a> d3.<b>geoAugust</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/august.png" width="480" height="250">](http://bl.ocks.org/mbostock/3797581)
+
+August’s epicycloidal conformal projection.
+
+<a href="#geoAzimuthalEqualArea" name="geoAzimuthalEqualArea">#</a> d3.<b>geoAzimuthalEqualArea</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/azimuthalEqualArea.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757101)
+
+The Lambert azimuthal equal-area projection; see [d3-geo](https://github.com/d3/d3-geo#geoAzimuthalEqualArea).
+
+<a href="#geoAzimuthalEquidistant" name="geoAzimuthalEquidistant">#</a> d3.<b>geoAzimuthalEquidistant</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/azimuthalEquidistant.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757110)
+
+The azimuthal equidistant projection; see [d3-geo](https://github.com/d3/d3-geo#geoAzimuthalEquidistant).
+
+<a href="#geoBaker" name="geoBaker">#</a> d3.<b>geoBaker</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/baker.png" width="480" height="250">](http://bl.ocks.org/mbostock/4476279)
+
+The Baker Dinomic projection.
+
+<a href="#geoBerghaus" name="geoBerghaus">#</a> d3.<b>geoBerghaus</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/berghaus.png" width="480" height="250">](http://bl.ocks.org/mbostock/4463049)
+
+Berghaus’ star projection. The default center assumes the default [lobe number](#berghaus_lobes) of 5 and should be changed if a different number of lobes is used. Note: requires clipping to the sphere.
+
+<a href="#berghaus_lobes" name="berghaus_lobes">#</a> <i>berghaus</i>.<b>lobes</b>([<i>lobes</i>])
+
+If *lobes* is specified, sets the number of lobes in the resulting star, and returns this projection. If *lobes* is not specified, returns the current lobe number, which defaults to 5.
+
+<a href="#geoBoggs" name="geoBoggs">#</a> d3.<b>geoBoggs</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/boggs.png" width="480" height="250">](http://bl.ocks.org/mbostock/4481220)
+
+The Boggs eumorphic projection. More commonly used in [interrupted form](http://bl.ocks.org/mbostock/4481265).
+
+<a href="#geoBonne" name="geoBonne">#</a> d3.<b>geoBonne</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/bonne.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734313)
+
+The Bonne pseudoconical equal-area projection. The [Werner projection](http://bl.ocks.org/mbostock/a7ae83252305ed4d54d4) is a limiting form of the Bonne projection with a standard parallel at ±90°. The default center assumes the default [parallel](#bonne_parallel) of 45° and should be changed if a different parallel is used.
+
+<a href="#bonne_parallel" name="bonne_parallel">#</a> <i>bonne</i>.<b>parallel</b>([<i>parallel</i>])
+
+Defaults to 45°.
+
+<a href="#geoBottomley" name="geoBottomley">#</a> d3.<b>geoBottomley</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/bottomley.png" width="480" height="250">](http://bl.ocks.org/mbostock/ad2d520dd26dcc5af13b)
+
+The [Bottomley projection](http://cybergeo.revues.org/3977) “draws lines of latitude as concentric circular arcs, with arc lengths equal to their lengths on the globe, and placed symmetrically and equally spaced across the vertical central meridian.”
+
+<a href="#bottomley_fraction" name="bottomley_fraction">#</a> <i>bottomley</i>.<b>fraction</b>([<i>fraction</i>])
+
+Defaults to 0.5, corresponding to a sin(ψ) where ψ = π/6.
+
+<a href="#geoBromley" name="geoBromley">#</a> d3.<b>geoBromley</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/bromley.png" width="480" height="250">](http://bl.ocks.org/mbostock/4487695)
+
+The Bromley projection is a rescaled [Mollweide projection](#geoMollweide).
+
+<a href="#geoChamberlin" name="geoChamberlin">#</a> d3.<b>geoChamberlin</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/chamberlin.png" width="480" height="250">](http://bl.ocks.org/mbostock/5625053)
+
+The Chamberlin trimetric projection. This method does not support *projection*.rotate: the [three reference points](#chamberlin_points) implicitly determine a fixed rotation.
+
+<a href="#chamberlin_points" name="chamberlin_points">#</a> <i>chamberlin</i>.<b>points</b>([<i>points</i>])
+
+Defaults to [[-20, 20], [20, 20], [0, -43.16]].
+
+<a href="#geoCollignon" name="geoCollignon">#</a> d3.<b>geoCollignon</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/collignon.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734316)
+
+The Collignon equal-area pseudocylindrical projection. This projection is used in the polar areas of the [HEALPix projection](#geoHealpix).
+
+<a href="#geoConicConformal" name="geoConicConformal">#</a> d3.<b>geoConicConformal</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/conicConformal.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734321)
+
+The Lambert conformal conic projection; see [d3-geo](https://github.com/d3/d3-geo#geoConicConformal).
+
+<a href="#geoConicEqualArea" name="geoConicEqualArea">#</a> d3.<b>geoConicEqualArea</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/conicEqualArea.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734308)
+
+Alber’s conic equal-area projection; see [d3-geo](https://github.com/d3/d3-geo#geoConicEqualArea).
+
+<a href="#geoConicEquidistant" name="geoConicEquidistant">#</a> d3.<b>geoConicEquidistant</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/conicEquidistant.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734317)
+
+The conic equidistant projection; see [d3-geo](https://github.com/d3/d3-geo#geoConicEquidistant).
+
+<a href="#geoCraig" name="geoCraig">#</a> d3.<b>geoCraig</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/craig.png" width="480" height="250">](http://bl.ocks.org/mbostock/4459466)
+
+The Craig retroazimuthal projection. Note: this projection tends to [fold over itself](http://bl.ocks.org/mbostock/4459716) if the [standard parallel](#craig_parallel) is non-zero; we have not yet implemented the necessary advanced clipping to avoid overlap.
+
+<a href="#craig_parallel" name="craig_parallel">#</a> <i>craig</i>.<b>parallel</b>([<i>parallel</i>])
+
+Defaults to 0°.
+
+<a href="#geoCraster" name="geoCraster">#</a> d3.<b>geoCraster</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/craster.png" width="480" height="250">](http://bl.ocks.org/mbostock/4465118)
+
+The Craster parabolic projection; also known as Putniņš P4.
+
+<a href="#geoCylindricalEqualArea" name="geoCylindricalEqualArea">#</a> d3.<b>geoCylindricalEqualArea</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/cylindricalEqualArea.png" width="480" height="250">](http://bl.ocks.org/mbostock/3712408)
+
+The cylindrical equal-area projection. Depending on the chosen [parallel](#cylindricalEqualArea_parallel), this projection is also known as the Lambert cylindrical equal-area (0°), [Gall–Peters](http://bl.ocks.org/mbostock/3946824) (45°), [Hobo–Dyer](http://bl.ocks.org/mbostock/4476487) (37.5°), and [Tobler world-in-a-square](http://bl.ocks.org/mbostock/4476496) (~55.654°).
+
+<a href="#cylindricalEqualArea_parallel" name="cylindricalEqualArea_parallel">#</a> <i>cylindricalEqualArea</i>.<b>parallel</b>([<i>parallel</i>])
+
+Defaults to approximately 38.58°, fitting the world in a 960×500 rectangle.
+
+<a href="#geoCylindricalStereographic" name="geoCylindricalStereographic">#</a> d3.<b>geoCylindricalStereographic</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/cylindricalStereographic.png" width="480" height="250">](http://bl.ocks.org/mbostock/5234763)
+
+The cylindrical stereographic projection. Depending on the chosen [parallel](#cylindricalStereographic_parallel), this projection is also known as Braun’s stereographic (0°) and Gall’s stereographic (45°).
+
+<a href="#cylindricalStereographic_parallel" name="cylindricalStereographic_parallel">#</a> <i>cylindricalStereographic</i>.<b>parallel</b>([<i>parallel</i>])
+
+Defaults to 0°.
+
+<a href="#geoEckert1" name="geoEckert1">#</a> d3.<b>geoEckert1</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/eckert1.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734322)
+
+The Eckert I projection.
+
+<a href="#geoEckert2" name="geoEckert2">#</a> d3.<b>geoEckert2</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/eckert2.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734324)
+
+The Eckert II projection.
+
+<a href="#geoEckert3" name="geoEckert3">#</a> d3.<b>geoEckert3</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/eckert3.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734325)
+
+The Eckert III projection.
+
+<a href="#geoEckert4" name="geoEckert4">#</a> d3.<b>geoEckert4</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/eckert4.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734327)
+
+The Eckert IV projection.
+
+<a href="#geoEckert5" name="geoEckert5">#</a> d3.<b>geoEckert5</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/eckert5.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734328)
+
+The Eckert V projection.
+
+<a href="#geoEckert6" name="geoEckert6">#</a> d3.<b>geoEckert6</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/eckert6.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734329)
+
+The Eckert VI projection.
+
+<a href="#geoEisenlohr" name="geoEisenlohr">#</a> d3.<b>geoEisenlohr</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/eisenlohr.png" width="480" height="250">](http://bl.ocks.org/mbostock/3797585)
+
+The Eisenlohr conformal projection.
+
+<a href="#geoEquirectangular" name="geoEquirectangular">#</a> d3.<b>geoEquirectangular</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/equirectangular.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757119)
+
+The equirectangular (plate carrée) projection; see [d3-geo](https://github.com/d3/d3-geo#geoEquirectangular). The [Cassini projection](http://bl.ocks.org/mbostock/5695142) is the transverse aspect of the equirectangular projection.
+
+<a href="#geoFahey" name="geoFahey">#</a> d3.<b>geoFahey</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/fahey.png" width="480" height="250">](http://bl.ocks.org/mbostock/4731228)
+
+The Fahey pseudocylindrical projection.
+
+<a href="#geoFoucaut" name="geoFoucaut">#</a> d3.<b>geoFoucaut</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/foucaut.png" width="480" height="250">](https://www.jasondavies.com/maps/foucaut/)
+
+Foucaut’s stereographic equivalent projection.
+
+<a href="#geoGilbert" name="geoGilbert">#</a> d3.<b>geoGilbert</b>([<i>type</i>])
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/gilbert.png" width="480" height="250">](https://www.jasondavies.com/maps/gilbert/)
+
+Gilbert’s two-world perspective projection. Wraps an instance of the specified projection *type*; if not specified, defaults to [d3.geoOrthographic](https://github.com/d3/d3-geo#geoOrthographic).
+
+<a href="#geoGingery" name="geoGingery">#</a> d3.<b>geoGingery</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/gingery.png" width="480" height="250">](http://www.jasondavies.com/maps/gingery/)
+
+The U.S.-centric Gingery world projection, as inspired by Cram’s Air Age. Note: requires clipping to the sphere.
+
+<a href="#gingery_radius" name="gingery_radius">#</a> <i>gingery</i>.<b>radius</b>([<i>radius</i>])
+
+Defaults to 30°.
+
+<a href="#gingery_lobes" name="gingery_lobes">#</a> <i>gingery</i>.<b>lobes</b>([<i>lobes</i>])
+
+Defaults to 6.
+
+<a href="#geoGinzburg4" name="geoGinzburg4">#</a> d3.<b>geoGinzburg4</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/ginzburg4.png" width="480" height="250">](http://bl.ocks.org/mbostock/5288565)
+
+The Ginzburg IV projection.
+
+<a href="#geoGinzburg5" name="geoGinzburg5">#</a> d3.<b>geoGinzburg5</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/ginzburg5.png" width="480" height="250">](http://bl.ocks.org/mbostock/5288571)
+
+The Ginzburg V projection.
+
+<a href="#geoGinzburg6" name="geoGinzburg6">#</a> d3.<b>geoGinzburg6</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/ginzburg6.png" width="480" height="250">](http://bl.ocks.org/mbostock/5288577)
+
+The Ginzburg VI projection.
+
+<a href="#geoGinzburg8" name="geoGinzburg8">#</a> d3.<b>geoGinzburg8</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/ginzburg8.png" width="480" height="250">](http://bl.ocks.org/mbostock/5288583)
+
+The Ginzburg VIII projection.
+
+<a href="#geoGinzburg9" name="geoGinzburg9">#</a> d3.<b>geoGinzburg9</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/ginzburg9.png" width="480" height="250">](http://bl.ocks.org/mbostock/5288590)
+
+The Ginzburg IX projection.
+
+<a href="#geoGnomonic" name="geoGnomonic">#</a> d3.<b>geoGnomonic</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/gnomonic.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757349)
+
+The gnomonic projection; see [d3-geo](https://github.com/d3/d3-geo#geoGnomonic).
+
+<a href="#geoGringorten" name="geoGringorten">#</a> d3.<b>geoGringorten</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/gringorten.png" width="480" height="250">](http://bl.ocks.org/mbostock/4362031)
+
+The Gringorten square equal-area projection, rearranged to give each hemisphere an entire square.
+
+<a href="#geoGringortenQuincuncial" name="geoGringortenQuincuncial">#</a> d3.<b>geoGringortenQuincuncial</b>()
+
+<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/gringortenQuincuncial.png" width="480" height="250">
+
+The Gringorten square equal-area projection.
+
+<a href="#geoGuyou" name="geoGuyou">#</a> d3.<b>geoGuyou</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/guyou.png" width="480" height="250">](http://bl.ocks.org/mbostock/3763867)
+
+The Guyou hemisphere-in-a-square projection. Pierce is credited with its [quincuncial form](#geoPierceQuincuncial).
+
+<a href="#geoHammer" name="geoHammer">#</a> d3.<b>geoHammer</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/hammer.png" width="480" height="250">](http://bl.ocks.org/mbostock/3712397)
+
+The Hammer projection. Depending the chosen coefficient and aspect, also known as [Eckert–Greifendorff](http://bl.ocks.org/mbostock/4496212), [quartic authalic](http://bl.ocks.org/mbostock/4463175), and [Briesemeister](http://bl.ocks.org/mbostock/4519926).
+
+<a href="#hammer_coefficient" name="hammer_coefficient">#</a> <i>hammer</i>.<b>coefficient</b>([<i>coefficient</i>])
+
+Defaults to 2.
+
+<a href="#geoHammerRetroazimuthal" name="geoHammerRetroazimuthal">#</a> d3.<b>geoHammerRetroazimuthal</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/hammerRetroazimuthal.png" width="480" height="250">](http://bl.ocks.org/mbostock/4459130)
+
+The Hammer retroazimuthal projection. Note: requires clipping to the sphere.
+
+<a href="#hammerRetroazimuthal_parallel" name="hammerRetroazimuthal_parallel">#</a> <i>hammerRetroazimuthal</i>.<b>parallel</b>([<i>parallel</i>])
+
+Defaults to 45°.
+
+<a href="#geoHealpix" name="geoHealpix">#</a> d3.<b>geoHealpix</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/healpix.png" width="480" height="250">](http://bl.ocks.org/mbostock/4463237)
+
+The HEALPix projection: a <b>H</b>ierarchical <b>E</b>qual <b>A</b>rea iso<b>L</b>atitude <b>Pix</b>elisation of a 2-sphere. In this implementation, the parameter *K* is fixed at 3. Note: requires clipping to the sphere.
+
+<a href="#healpix_lobes" name="healpix_lobes">#</a> <i>healpix</i>.<b>lobes</b>([<i>lobes</i>])
+
+If *lobes* is specified, sets the number of lobes (the parameter *H* in the literature) and returns this projection. If *lobes* is not specified, returns the current lobe number, which defaults to 4.
+
+<a href="#geoHill" name="geoHill">#</a> d3.<b>geoHill</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/hill.png" width="480" height="250">](http://bl.ocks.org/mbostock/4479513)
+
+Hill eucyclic projection is psuedoconic and equal-area.
+
+<a href="hill_ratio" name="hill_ratio">#</a> <i>hill</i>.<b>ratio</b>([<i>ratio</i>])
+
+Defaults to 1. With a ratio of 0, this projection becomes the [Maurer No. 73](http://bl.ocks.org/mbostock/4479547). As it approaches ∞, the projection converges to the [Eckert IV](#geoEckert4).
+
+<a href="#geoHomolosine" name="geoHomolosine">#</a> d3.<b>geoHomolosine</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/homolosine.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734330)
+
+The pseudocylindrical, equal-area Goode homolosine projection is normally presented in [interrupted form](http://bl.ocks.org/mbostock/4448587).
+
+<a href="#geoKavrayskiy7" name="geoKavrayskiy7">#</a> d3.<b>geoKavrayskiy7</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/kavrayskiy7.png" width="480" height="250">](http://bl.ocks.org/mbostock/3710082)
+
+The Kavrayskiy VII pseudocylindrical projection.
+
+<a href="#geoLagrange" name="geoLagrange">#</a> d3.<b>geoLagrange</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/lagrange.png" width="480" height="250">](http://bl.ocks.org/mbostock/3797591)
+
+The Lagrange conformal projection.
+
+<a href="#lagrange_spacing" name="lagrange_spacing">#</a> <i>lagrange</i>.<b>spacing</b>([<i>spacing</i>])
+
+Defaults to 0.5.
+
+<a href="#geoLarrivee" name="geoLarrivee">#</a> d3.<b>geoLarrivee</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/larrivee.png" width="480" height="250">](http://bl.ocks.org/mbostock/3719042)
+
+The Larrivée projection.
+
+<a href="#geoLaskowski" name="geoLaskowski">#</a> d3.<b>geoLaskowski</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/laskowski.png" width="480" height="250">](http://bl.ocks.org/mbostock/4489342)
+
+The Laskowski tri-optimal projection simultaneously minimizes distance, angular, and areal distortion.
+
+<a href="#geoLittrow" name="geoLittrow">#</a> d3.<b>geoLittrow</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/littrow.png" width="480" height="250">](http://bl.ocks.org/mbostock/4459071)
+
+The Littrow projection is the only conformal retroazimuthal map projection. Typically clipped to the geographic extent [[-90°, -60°], [90°, 60°]].
+
+<a href="#geoLoximuthal" name="geoLoximuthal">#</a> d3.<b>geoLoximuthal</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/loximuthal.png" width="480" height="250">](http://bl.ocks.org/mbostock/3867220)
+
+The [loximuthal projection](https://en.wikipedia.org/wiki/Loximuthal_projection) is “characterized by the fact that loxodromes (rhumb lines) from one chosen central point (the intersection of the central meridian and central latitude) are shown as straight lines, correct in azimuth from the center, and are ‘true to scale’… It is neither an equal-area projection nor conformal.”
+
+<a href="#geoMercator" name="geoMercator">#</a> d3.<b>geoMercator</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/mercator.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757132)
+
+The spherical Mercator projection; see [d3-geo](https://github.com/d3/d3-geo#geoMercator).
+
+<a href="#geoMiller" name="geoMiller">#</a> d3.<b>geoMiller</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/miller.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734333)
+
+The Miller cylindrical projection is a modified [Mercator](#geoMercator) projection.
+
+<a href="#geoModifiedStereographic" name="geoModifiedStereographic">#</a> d3.<b>geoModifiedStereographic</b>(<i>coefficients</i>)
+
+The family of [modified stereographic projections](http://www.jasondavies.com/maps/modified-stereographic/). The default [clip angle](https://github.com/d3/d3-geo#projection_clipAngle) for these projections is 90°.
+
+<a href="#geoModifiedStereographicAlaska" name="geoModifiedStereographicAlaska">#</a> d3.<b>geoModifiedStereographicAlaska</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/modifiedStereographicAlaska.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/alaska/)
+
+A [modified stereographic](#geoModifiedStereographic) projection for Alaska.
+
+<a href="#geoModifiedStereographicGs48" name="geoModifiedStereographicGs48">#</a> d3.<b>geoModifiedStereographicGs48</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/modifiedStereographicGs48.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/gs48/)
+
+A [modified stereographic](#geoModifiedStereographic) projection for the conterminous United States.
+
+<a href="#geoModifiedStereographicGs50" name="geoModifiedStereographicGs50">#</a> d3.<b>geoModifiedStereographicGs50</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/modifiedStereographicGs50.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/gs50/)
+
+A [modified stereographic](#geoModifiedStereographic) projection for the United States including Alaska and Hawaii. Typically clipped to the geographic extent [[-180°, 15°], [-50°, 75°]].
+
+<a href="#geoModifiedStereographicMiller" name="geoModifiedStereographicMiller">#</a> d3.<b>geoModifiedStereographicMiller</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/modifiedStereographicMiller.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/miller/)
+
+A [modified stereographic](#geoModifiedStereographic) projection for Europe and Africa. Typically clipped to the geographic extent [[-40°, -40°], [80°, 80°]].
+
+<a href="#geoModifiedStereographicLee" name="geoModifiedStereographicLee">#</a> d3.<b>geoModifiedStereographicLee</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/modifiedStereographicLee.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/miller/)
+
+A [modified stereographic](#geoModifiedStereographic) projection for the Pacific ocean.
+
+<a href="#geoMollweide" name="geoMollweide">#</a> d3.<b>geoMollweide</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/mollweide.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734336)
+
+The equal-area, pseudocylindrical Mollweide projection. The oblique aspect is known as the [Atlantis projection](http://bl.ocks.org/mbostock/4519975). [Goode’s interrupted Mollweide](http://bl.ocks.org/mbostock/4498187) is also widely known.
+
+<a href="#geoMtFlatPolarParabolic" name="geoMtFlatPolarParabolic">#</a> d3.<b>geoMtFlatPolarParabolic</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/mtFlatPolarParabolic.png" width="480" height="250">](http://bl.ocks.org/mbostock/4465130)
+
+The McBryde–Thomas flat-polar parabolic pseudocylindrical equal-area projection.
+
+<a href="#geoMtFlatPolarQuartic" name="geoMtFlatPolarQuartic">#</a> d3.<b>geoMtFlatPolarQuartic</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/mtFlatPolarQuartic.png" width="480" height="250">](http://bl.ocks.org/mbostock/4465137)
+
+The McBryde–Thomas flat-polar quartic pseudocylindrical equal-area projection.
+
+<a href="#geoMtFlatPolarSinusoidal" name="geoMtFlatPolarSinusoidal">#</a> d3.<b>geoMtFlatPolarSinusoidal</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/mtFlatPolarSinusoidal.png" width="480" height="250">](http://bl.ocks.org/mbostock/4465140)
+
+The McBryde–Thomas flat-polar sinusoidal equal-area projection.
+
+<a href="#geoNaturalEarth" name="geoNaturalEarth">#</a> d3.<b>geoNaturalEarth</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/naturalEarth.png" width="480" height="250">](http://bl.ocks.org/mbostock/4479477)
+
+The Natural Earth projection.
+
+<a href="#geoNellHammer" name="geoNellHammer">#</a> d3.<b>geoNellHammer</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/nellHammer.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734342)
+
+The Nell–Hammer projection.
+
+<a href="#geoOrthographic" name="geoOrthographic">#</a> d3.<b>geoOrthographic</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/orthographic.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757125)
+
+The orthographic projection; see [d3-geo](https://github.com/d3/d3-geo#geoOrthographic).
+
+<a href="#geoPatterson" name="geoPatterson">#</a> d3.<b>geoPatterson</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/patterson.png" width="480" height="250">](http://bl.ocks.org/mbostock/d4021aa4dccfd65edffd)
+
+The Patterson cylindrical projection.
+
+<a href="#geoPierceQuincuncial" name="geoPierceQuincuncial">#</a> d3.<b>geoPierceQuincuncial</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/pierceQuincuncial.png" width="480" height="250">](http://bl.ocks.org/mbostock/4310087)
+
+The Pierce quincuncial projection is the quincuncial form of the [Guyou projection](#geoGuyou).
+
+<a href="#geoPolyconic" name="geoPolyconic">#</a> d3.<b>geoPolyconic</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/polyconic.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734343)
+
+The American polyconic projection.
+
+<a href="#geoRectangularPolyconic" name="geoRectangularPolyconic">#</a> d3.<b>geoRectangularPolyconic</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/rectangularPolyconic.png" width="480" height="250">](http://bl.ocks.org/mbostock/5230202)
+
+The rectangular (War Office) polyconic projection.
+
+<a href="#geoRobinson" name="geoRobinson">#</a> d3.<b>geoRobinson</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/robinson.png" width="480" height="250">](http://bl.ocks.org/mbostock/3710566)
+
+The Robinson projection.
+
+<a href="#geoSatellite" name="geoSatellite">#</a> d3.<b>geoSatellite</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/satellite.png" width="480" height="250">](http://bl.ocks.org/mbostock/3790444)
+
+The satellite (tilted perspective) projection.
+
+<a href="#satellite_tilt" name="satellite_tilt">#</a> <i>satellite</i>.<b>tilt</b>([<i>tilt</i>])
+
+Defaults to 0°.
+
+<a href="#satellite_distance" name="satellite_distance">#</a> <i>satellite</i>.<b>distance</b>([<i>distance</i>])
+
+Distance from the center of the sphere to the point of view, as a proportion of the sphere’s radius; defaults to 2.0. The recommended maximum [clip angle](https://github.com/d3/d3-geo#projection_clipAngle) for a given *distance* is acos(1 / *distance*) converted to degrees. If [tilt](#satellite_tilt) is also applied, then more conservative clipping may be necessary. For exact clipping, the in-development geographic projection pipeline is needed; see the [satellite example](https://bl.ocks.org/mbostock/e48a00d4db5c3b042145).
+
+<a href="#geoSinusoidal" name="geoSinusoidal">#</a> d3.<b>geoSinusoidal</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/sinusoidal.png" width="480" height="250">](http://bl.ocks.org/mbostock/3712399)
+
+The sinusoidal projection.
+
+<a href="#geoSinuMollweide" name="geoSinuMollweide">#</a> d3.<b>geoSinuMollweide</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/sinuMollweide.png" width="480" height="250">](http://bl.ocks.org/mbostock/4319903)
+
+Allen K. Philbrick’s Sinu-Mollweide projection. See also the [interrupted form](http://bl.ocks.org/mbostock/4481520).
+
+<a href="#geoStereographic" name="geoStereographic">#</a> d3.<b>geoStereographic</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/stereographic.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757137)
+
+The stereographic projection; see [d3-geo](https://github.com/d3/d3-geo#geoStereographic).
+
+<a href="#geoTimes" name="geoTimes">#</a> d3.<b>geoTimes</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/times.png" width="480" height="250">](http://bl.ocks.org/mbostock/5230564)
+
+John Muir’s Times projection.
+
+<a href="#geoTransverseMercator" name="geoTransverseMercator">#</a> d3.<b>geoTransverseMercator</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/transverseMercator.png" width="480" height="250">](http://bl.ocks.org/mbostock/5126418)
+
+The transverse spherical Mercator projection; see [d3-geo](https://github.com/d3/d3-geo#geoTransverseMercator).
+
+<a href="#geoTwoPointAzimuthal" name="geoTwoPointAzimuthal">#</a> d3.<b>geoTwoPointAzimuthal</b>()
+
+[two-point azimuthal](https://www.jasondavies.com/maps/two-point-azimuthal/)
+
+<a href="#geoTwoPointEquidistant" name="geoTwoPointEquidistant">#</a> d3.<b>geoTwoPointEquidistant</b>()
+
+[two-point equidistant](https://www.jasondavies.com/maps/two-point-equidistant/)
+
+<a href="#geoVanDerGrinten" name="geoVanDerGrinten">#</a> d3.<b>geoVanDerGrinten</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/vanDerGrinten.png" width="480" height="250">](http://bl.ocks.org/mbostock/3796831)
+
+The Van der Grinten projection.
+
+<a href="#geoVanDerGrinten2" name="geoVanDerGrinten2">#</a> d3.<b>geoVanDerGrinten2</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/vanDerGrinten2.png" width="480" height="250">](http://bl.ocks.org/mbostock/5230571)
+
+The Van der Grinten II projection.
+
+<a href="#geoVanDerGrinten3" name="geoVanDerGrinten3">#</a> d3.<b>geoVanDerGrinten3</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/vanDerGrinten3.png" width="480" height="250">](http://bl.ocks.org/mbostock/5230580)
+
+The Van der Grinten III projection.
+
+<a href="#geoVanDerGrinten4" name="geoVanDerGrinten4">#</a> d3.<b>geoVanDerGrinten4</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/vanDerGrinten4.png" width="480" height="250">](http://bl.ocks.org/mbostock/4489365)
+
+The Van der Grinten IV projection.
+
+<a href="#geoWagner4" name="geoWagner4">#</a> d3.<b>geoWagner4</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/wagner4.png" width="480" height="250">](http://bl.ocks.org/mbostock/4487674)
+
+The Wagner IV projection, also known as Putniṇš P2´.
+
+<a href="#geoWagner6" name="geoWagner6">#</a> d3.<b>geoWagner6</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/wagner6.png" width="480" height="250">](http://bl.ocks.org/mbostock/3710148)
+
+The Wagner VI projection.
+
+<a href="#geoWagner7" name="geoWagner7">#</a> d3.<b>geoWagner7</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/wagner7.png" width="480" height="250">](http://bl.ocks.org/mbostock/4465109)
+
+The Wagner VII projection.
+
+<a href="#geoWiechel" name="geoWiechel">#</a> d3.<b>geoWiechel</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/wiechel.png" width="480" height="250">](http://bl.ocks.org/mbostock/4463155)
+
+The Wiechel projection.
+
+<a href="#geoWinkel3" name="geoWinkel3">#</a> d3.<b>geoWinkel3</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/winkel3.png" width="480" height="250">](http://bl.ocks.org/mbostock/3682676)
+
+The Winkel tripel projection.
+
+### Raw Projections
+
+Raw projections are typically passed to the [d3.geoProjection](#geoProjection) constructor. They are exposed here to facilitate the derivation of related projections.
+
+<a href="#_project" name="_project">#</a> <i>project</i>(<i>lambda</i>, <i>phi</i>)
+
+Projects the specified point [<i>lambda</i>, <i>phi</i>] in radians, returning a new point [*x*, *y*] in unitless coordinates.
+
+<a href="#project_invert" name="project_invert">#</a> <i>project</i>.<b>invert</b>(<i>x</i>, <i>y</i>)
+
+The inverse of [*project*](#_project).
+
+<a href="#geoAiryRaw" name="geoAiryRaw">#</a> d3.<b>geoAiryRaw</b>(<i>beta</i>)
+<br><a href="#geoAitoffRaw" name="geoAitoffRaw">#</a> d3.<b>geoAitoffRaw</b>
+<br><a href="#geoArmadilloRaw" name="geoArmadilloRaw">#</a> d3.<b>geoArmadilloRaw</b>(<i>phi0</i>)
+<br><a href="#geoAugustRaw" name="geoAugustRaw">#</a> d3.<b>geoAugustRaw</b>
+<br><a href="#geoBakerRaw" name="geoBakerRaw">#</a> d3.<b>geoBakerRaw</b>
+<br><a href="#geoBerghausRaw" name="geoBerghausRaw">#</a> d3.<b>geoBerghausRaw</b>(<i>lobes</i>)
+<br><a href="#geoBoggsRaw" name="geoBoggsRaw">#</a> d3.<b>geoBoggsRaw</b>
+<br><a href="#geoBonneRaw" name="geoBonneRaw">#</a> d3.<b>geoBonneRaw</b>
+<br><a href="#geoBottomleyRaw" name="geoBottomleyRaw">#</a> d3.<b>geoBottomleyRaw</b>(<i>psi</i>)
+<br><a href="#geoBromleyRaw" name="geoBromleyRaw">#</a> d3.<b>geoBromleyRaw</b>
+<br><a href="#geoChamberlinRaw" name="geoChamberlinRaw">#</a> d3.<b>geoChamberlinRaw</b>
+<br><a href="#geoCollignonRaw" name="geoCollignonRaw">#</a> d3.<b>geoCollignonRaw</b>
+<br><a href="#geoCraigRaw" name="geoCraigRaw">#</a> d3.<b>geoCraigRaw</b>(<i>phi</i>)
+<br><a href="#geoCrasterRaw" name="geoCrasterRaw">#</a> d3.<b>geoCrasterRaw</b>
+<br><a href="#geoCylindricalEqualAreaRaw" name="geoCylindricalEqualAreaRaw">#</a> d3.<b>geoCylindricalEqualAreaRaw</b>
+<br><a href="#geoCylindricalStereographicRaw" name="geoCylindricalStereographicRaw">#</a> d3.<b>geoCylindricalStereographicRaw</b>
+<br><a href="#geoEckert1Raw" name="geoEckert1Raw">#</a> d3.<b>geoEckert1Raw</b>
+<br><a href="#geoEckert2Raw" name="geoEckert2Raw">#</a> d3.<b>geoEckert2Raw</b>
+<br><a href="#geoEckert3Raw" name="geoEckert3Raw">#</a> d3.<b>geoEckert3Raw</b>
+<br><a href="#geoEckert4Raw" name="geoEckert4Raw">#</a> d3.<b>geoEckert4Raw</b>
+<br><a href="#geoEckert5Raw" name="geoEckert5Raw">#</a> d3.<b>geoEckert5Raw</b>
+<br><a href="#geoEckert6Raw" name="geoEckert6Raw">#</a> d3.<b>geoEckert6Raw</b>
+<br><a href="#geoFaheyRaw" name="geoFaheyRaw">#</a> d3.<b>geoFaheyRaw</b>
+<br><a href="#geoGingeryRaw" name="geoGingeryRaw">#</a> d3.<b>geoGingeryRaw</b>(<i>rho</i>, <i>lobes</i>)
+<br><a href="#geoGinzburg4Raw" name="geoGinzburg4Raw">#</a> d3.<b>geoGinzburg4Raw</b>
+<br><a href="#geoGinzburg5Raw" name="geoGinzburg5Raw">#</a> d3.<b>geoGinzburg5Raw</b>
+<br><a href="#geoGinzburg6Raw" name="geoGinzburg6Raw">#</a> d3.<b>geoGinzburg6Raw</b>
+<br><a href="#geoGinzburg8Raw" name="geoGinzburg8Raw">#</a> d3.<b>geoGinzburg8Raw</b>
+<br><a href="#geoHammerRaw" name="geoHammerRaw">#</a> d3.<b>geoHammerRaw</b>(<i>A</i>, <i>B</i>)
+<br><a href="#geoHammerQuarticAuthalicRaw" name="geoHammerQuarticAuthalicRaw">#</a> d3.<b>geoHammerQuarticAuthalicRaw</b>(<i>A</i>, <i>B</i>)
+<br><a href="#geoHammerRetroazimuthalRaw" name="geoHammerRetroazimuthalRaw">#</a> d3.<b>geoHammerRetroazimuthalRaw</b>(<i>phi0</i>)
+<br><a href="#geoHomolosineRaw" name="geoHomolosineRaw">#</a> d3.<b>geoHomolosineRaw</b>
+<br><a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
+<br><a href="#geoHillRaw" name="geoHillRaw">#</a> d3.<b>geoHillRaw</b>([<i>ratio</i>])
+<br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
+<br><a href="#geoLagrangeRaw" name="geoLagrangeRaw">#</a> d3.<b>geoLagrangeRaw</b>
+<br><a href="#geoLarriveeRaw" name="geoLarriveeRaw">#</a> d3.<b>geoLarriveeRaw</b>
+<br><a href="#geoLaskowskiRaw" name="geoLaskowskiRaw">#</a> d3.<b>geoLaskowskiRaw</b>
+<br><a href="#geoLittrowRaw" name="geoLittrowRaw">#</a> d3.<b>geoLittrowRaw</b>
+<br><a href="#geoLoximuthalRaw" name="geoLoximuthalRaw">#</a> d3.<b>geoLoximuthalRaw</b>
+<br><a href="#geoMillerRaw" name="geoMillerRaw">#</a> d3.<b>geoMillerRaw</b>
+<br><a href="#geoModifiedStereographicRaw" name="geoModifiedStereographicRaw">#</a> d3.<b>geoModifiedStereographicRaw</b>(<i>coefficients</i>)
+<br><a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
+<br><a href="#geoMtFlatPolarParabolicRaw" name="geoMtFlatPolarParabolicRaw">#</a> d3.<b>geoMtFlatPolarParabolicRaw</b>
+<br><a href="#geoMtFlatPolarQuarticRaw" name="geoMtFlatPolarQuarticRaw">#</a> d3.<b>geoMtFlatPolarQuarticRaw</b>
+<br><a href="#geoMtFlatPolarSinusoidalRaw" name="geoMtFlatPolarSinusoidalRaw">#</a> d3.<b>geoMtFlatPolarSinusoidalRaw</b>
+<br><a href="#geoNaturalEarthRaw" name="geoNaturalEarthRaw">#</a> d3.<b>geoNaturalEarthRaw</b>
+<br><a href="#geoNellHammerRaw" name="geoNellHammerRaw">#</a> d3.<b>geoNellHammerRaw</b>
+<br><a href="#geoPattersonRaw" name="geoPattersonRaw">#</a> d3.<b>geoPattersonRaw</b>
+<br><a href="#geoPolyconicRaw" name="geoPolyconicRaw">#</a> d3.<b>geoPolyconicRaw</b>
+<br><a href="#geoRectangularPolyconicRaw" name="geoRectangularPolyconicRaw">#</a> d3.<b>geoRectangularPolyconicRaw</b>
+<br><a href="#geoSatelliteRaw" name="geoSatelliteRaw">#</a> d3.<b>geoSatelliteRaw</b>
+<br><a href="#geoSatelliteVerticalRaw" name="geoSatelliteVerticalRaw">#</a> d3.<b>geoSatelliteVerticalRaw</b>
+<br><a href="#geoSinuMollweideRaw" name="geoSinuMollweideRaw">#</a> d3.<b>geoSinuMollweideRaw</b>
+<br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
+<br><a href="#geoTimesRaw" name="geoTimesRaw">#</a> d3.<b>geoTimesRaw</b>
+<br><a href="#geoVanDerGrinten2Raw" name="geoVanDerGrinten2Raw">#</a> d3.<b>geoVanDerGrinten2Raw</b>
+<br><a href="#geoVanDerGrinten3Raw" name="geoVanDerGrinten3Raw">#</a> d3.<b>geoVanDerGrinten3Raw</b>
+<br><a href="#geoVanDerGrinten4Raw" name="geoVanDerGrinten4Raw">#</a> d3.<b>geoVanDerGrinten4Raw</b>
+<br><a href="#geoVanDerGrintenRaw" name="geoVanDerGrintenRaw">#</a> d3.<b>geoVanDerGrintenRaw</b>
+<br><a href="#geoWagner4Raw" name="geoWagner4Raw">#</a> d3.<b>geoWagner4Raw</b>
+<br><a href="#geoWagner6Raw" name="geoWagner6Raw">#</a> d3.<b>geoWagner6Raw</b>
+<br><a href="#geoWagner7Raw" name="geoWagner7Raw">#</a> d3.<b>geoWagner7Raw</b>
+<br><a href="#geoWiechelRaw" name="geoWiechelRaw">#</a> d3.<b>geoWiechelRaw</b>
+<br><a href="#geoWinkel3Raw" name="geoWinkel3Raw">#</a> d3.<b>geoWinkel3Raw</b>

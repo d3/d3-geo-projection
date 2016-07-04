@@ -1,20 +1,18 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {asin, cos, sin, sqrt, sqrtPi} from "./math";
 
-function craster(λ, φ) {
-  var sqrt3 = Math.sqrt(3);
-  return [
-    sqrt3 * λ * (2 * Math.cos(2 * φ / 3) - 1) / sqrtπ,
-    sqrt3 * sqrtπ * Math.sin(φ / 3)
-  ];
+var sqrt3 = sqrt(3);
+
+export function crasterRaw(lambda, phi) {
+  return [sqrt3 * lambda * (2 * cos(2 * phi / 3) - 1) / sqrtPi, sqrt3 * sqrtPi * sin(phi / 3)];
 }
 
-craster.invert = function(x, y) {
-  var sqrt3 = Math.sqrt(3),
-      φ = 3 * asin(y / (sqrt3 * sqrtπ));
-  return [
-    sqrtπ * x / (sqrt3 * (2 * Math.cos(2 * φ / 3) - 1)),
-    φ
-  ];
+crasterRaw.invert = function(x, y) {
+  var phi = 3 * asin(y / (sqrt3 * sqrtPi));
+  return [sqrtPi * x / (sqrt3 * (2 * cos(2 * phi / 3) - 1)), phi];
 };
 
-(d3.geo.craster = function() { return projection(craster); }).raw = craster;
+export default function() {
+  return projection(crasterRaw)
+      .scale(156.19);
+}

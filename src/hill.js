@@ -1,66 +1,66 @@
-import "projection";
+import {geoProjectionMutator as projectionMutator} from "d3-geo";
+import {abs, acos, asin, atan2, cos, epsilon2, halfPi, pi, sin, sqrt} from "./math";
 
-function hill(K) {
+export function hillRaw(K) {
   var L = 1 + K,
-      sinβ = Math.sin(1 / L),
-      β = asin(sinβ),
-      A = 2 * Math.sqrt(π / (B = π + 4 * β * L)),
+      sinBt = sin(1 / L),
+      Bt = asin(sinBt),
+      A = 2 * sqrt(pi / (B = pi + 4 * Bt * L)),
       B,
-      ρ0 = .5 * A * (L + Math.sqrt(K * (2 + K))),
+      rho0 = 0.5 * A * (L + sqrt(K * (2 + K))),
       K2 = K * K,
       L2 = L * L;
 
-  function forward(λ, φ) {
-    var t = 1 - Math.sin(φ),
-        ρ,
-        ω;
+  function forward(lambda, phi) {
+    var t = 1 - sin(phi),
+        rho,
+        omega;
     if (t && t < 2) {
-      var θ = halfπ - φ, i = 25, δ;
+      var theta = halfPi - phi, i = 25, delta;
       do {
-        var sinθ = Math.sin(θ),
-            cosθ = Math.cos(θ),
-            β_β1 = β + Math.atan2(sinθ, L - cosθ),
-            C = 1 + L2 - 2 * L * cosθ;
-        θ -= δ = (θ - K2 * β - L * sinθ + C * β_β1 - .5 * t * B) / (2 * L * sinθ * β_β1);
-      } while (Math.abs(δ) > ε2 && --i > 0);
-      ρ = A * Math.sqrt(C);
-      ω = λ * β_β1 / π;
+        var sinTheta = sin(theta),
+            cosTheta = cos(theta),
+            Bt_Bt1 = Bt + atan2(sinTheta, L - cosTheta),
+            C = 1 + L2 - 2 * L * cosTheta;
+        theta -= delta = (theta - K2 * Bt - L * sinTheta + C * Bt_Bt1 -0.5 * t * B) / (2 * L * sinTheta * Bt_Bt1);
+      } while (abs(delta) > epsilon2 && --i > 0);
+      rho = A * sqrt(C);
+      omega = lambda * Bt_Bt1 / pi;
     } else {
-      ρ = A * (K + t);
-      ω = λ * β / π;
+      rho = A * (K + t);
+      omega = lambda * Bt / pi;
     }
     return [
-      ρ * Math.sin(ω),
-      ρ0 - ρ * Math.cos(ω)
+      rho * sin(omega),
+      rho0 - rho * cos(omega)
     ];
-  };
+  }
 
   forward.invert = function(x, y) {
-    var ρ2 = x * x + (y -= ρ0) * y,
-        cosθ = (1 + L2 - ρ2 / (A * A)) / (2 * L),
-        θ = acos(cosθ),
-        sinθ = Math.sin(θ),
-        β_β1 = β + Math.atan2(sinθ, L - cosθ);
+    var rho2 = x * x + (y -= rho0) * y,
+        cosTheta = (1 + L2 - rho2 / (A * A)) / (2 * L),
+        theta = acos(cosTheta),
+        sinTheta = sin(theta),
+        Bt_Bt1 = Bt + atan2(sinTheta, L - cosTheta);
     return [
-      asin(x / Math.sqrt(ρ2)) * π / β_β1,
-      asin(1 - 2 * (θ - K2 * β - L * sinθ + (1 + L2 - 2 * L * cosθ) * β_β1) / B)
+      asin(x / sqrt(rho2)) * pi / Bt_Bt1,
+      asin(1 - 2 * (theta - K2 * Bt - L * sinTheta + (1 + L2 - 2 * L * cosTheta) * Bt_Bt1) / B)
     ];
   };
 
   return forward;
 }
 
-function hillProjection() {
+export default function() {
   var K = 1,
-      m = projectionMutator(hill),
+      m = projectionMutator(hillRaw),
       p = m(K);
 
   p.ratio = function(_) {
-    if (!arguments.length) return K;
-    return m(K = +_);
+    return arguments.length ? m(K = +_) : K;
   };
 
-  return p;
+  return p
+      .scale(167.774)
+      .center([0, 18.67]);
 }
-
-(d3.geo.hill = hillProjection).raw = hill;

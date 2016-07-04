@@ -1,62 +1,75 @@
-import "projection";
-import "collignon";
-import "cylindrical-equal-area";
+import {range} from "d3-array";
+import {geoStream, geoProjectionMutator as projectionMutator} from "d3-geo";
+import {collignonRaw} from "./collignon";
+import {cylindricalEqualAreaRaw} from "./cylindricalEqualArea";
+import {abs, floor, max, min, pi, radians, sqrtPi, tau} from "./math";
 
-var healpixParallel = 41 + 48 / 36 + 37 / 3600; // TODO automate
+var healpixParallel = 41 + 48 / 36 + 37 / 3600, // for K=3; TODO automate
+    healpixLambert = cylindricalEqualAreaRaw(0);
 
-function healpix(h) {
-  var lambert = d3.geo.cylindricalEqualArea.raw(0),
-      φ0 = healpixParallel * π / 180,
-      dx0 = 2 * π,
-      dx1 = d3.geo.collignon.raw(π, φ0)[0] - d3.geo.collignon.raw(-π, φ0)[0],
-      y0 = lambert(0, φ0)[1],
-      y1 = d3.geo.collignon.raw(0, φ0)[1],
-      dy1 = d3.geo.collignon.raw(0, halfπ)[1] - y1,
-      k = 2 * π / h;
+export function healpixRaw(H) {
+  var phi0 = healpixParallel * radians,
+      dx = collignonRaw(pi, phi0)[0] - collignonRaw(-pi, phi0)[0],
+      y0 = healpixLambert(0, phi0)[1],
+      y1 = collignonRaw(0, phi0)[1],
+      dy1 = sqrtPi - y1,
+      k = 2 * pi / H,
+      w = H / tau,
+      h = y0 + (dy1 * dy1 * 4) / tau;
 
-  function forward(λ, φ) {
+  function forward(lambda, phi) {
     var point,
-        φ2 = Math.abs(φ);
-    if (φ2 > φ0) {
-      var i = Math.min(h - 1, Math.max(0, Math.floor((λ + π) / k)));
-      λ += π * (h - 1) / h - i * k;
-      point = d3.geo.collignon.raw(λ, φ2);
-      point[0] = point[0] * dx0 / dx1 - dx0 * (h - 1) / (2 * h) + i * dx0 / h;
-      point[1] = y0 + (point[1] - y1) * 4 * dy1 / dx0;
-      if (φ < 0) point[1] = -point[1];
+        phi2 = abs(phi);
+    if (phi2 > phi0) {
+      var i = min(H - 1, max(0, floor((lambda + pi) / k)));
+      lambda += pi * (H - 1) / H - i * k;
+      point = collignonRaw(lambda, phi2);
+      point[0] = point[0] * tau / dx - tau * (H - 1) / (2 * H) + i * tau / H;
+      point[1] = y0 + (point[1] - y1) * 4 * dy1 / tau;
+      if (phi < 0) point[1] = -point[1];
     } else {
-      point = lambert(λ, φ);
+      point = healpixLambert(lambda, phi);
     }
-    point[0] /= 2;
+    point[0] *= w;
+    point[1] /= h;
     return point;
   }
 
   forward.invert = function(x, y) {
     x *= 2;
-    var y2 = Math.abs(y);
+    var y2 = abs(y);
     if (y2 > y0) {
-      var i = Math.min(h - 1, Math.max(0, Math.floor((x + π) / k)));
-      x = (x + π * (h - 1) / h - i * k) * dx1 / dx0;
-      var point = d3.geo.collignon.raw.invert(x, .25 * (y2 - y0) * dx0 / dy1 + y1);
-      point[0] -= π * (h - 1) / h - i * k;
+      var i = min(H - 1, max(0, floor((x + pi) / k)));
+      x = (x + pi * (H - 1) / H - i * k) * dx / tau;
+      var point = collignonRaw.invert(x, 0.25 * (y2 - y0) * tau / dy1 + y1);
+      point[0] -= pi * (H - 1) / H - i * k;
       if (y < 0) point[1] = -point[1];
       return point;
     }
-    return lambert.invert(x, y);
+    return healpixLambert.invert(x, y);
   };
 
   return forward;
 }
 
-function healpixProjection() {
-  var n = 2,
-      m = projectionMutator(healpix),
-      p = m(n),
+function sphere(step) {
+  return {
+    type: "Polygon",
+    coordinates: [
+      range(-180, 180 + step / 2, step).map(function(x, i) { return [x, i & 1 ? 90 - 1e-6 : healpixParallel]; })
+      .concat(range(180, -180 - step / 2, -step).map(function(x, i) { return [x, i & 1 ? -90 + 1e-6 : -healpixParallel]; }))
+    ]
+  };
+}
+
+export default function() {
+  var H = 4,
+      m = projectionMutator(healpixRaw),
+      p = m(H),
       stream_ = p.stream;
 
   p.lobes = function(_) {
-    if (!arguments.length) return n;
-    return m(n = +_);
+    return arguments.length ? m(H = +_) : H;
   };
 
   p.stream = function(stream) {
@@ -64,22 +77,10 @@ function healpixProjection() {
         rotateStream = stream_(stream),
         sphereStream = (p.rotate([0, 0]), stream_(stream));
     p.rotate(rotate);
-    rotateStream.sphere = function() { d3.geo.stream(sphere(), sphereStream); };
+    rotateStream.sphere = function() { geoStream(sphere(180 / H), sphereStream); };
     return rotateStream;
   };
 
-  function sphere() {
-    var step = 180 / n;
-    return {
-      type: "Polygon",
-      coordinates: [
-        d3.range(-180, 180 + step / 2, step).map(function(x, i) { return [x, i & 1 ? 90 - 1e-6 : healpixParallel]; })
-        .concat(d3.range(180, -180 - step / 2, -step).map(function(x, i) { return [x, i & 1 ? -90 + 1e-6 : -healpixParallel]; }))
-      ]
-    };
-  }
-
-  return p;
+  return p
+      .scale(239.75);
 }
-
-(d3.geo.healpix = healpixProjection).raw = healpix;

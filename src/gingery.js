@@ -1,38 +1,37 @@
-import "projection";
+import {geoAzimuthalEquidistantRaw as azimuthalEquidistantRaw, geoProjectionMutator as projectionMutator} from "d3-geo";
+import {abs, asin, atan2, cos, degrees, epsilon, epsilon2, halfPi, pi, radians, round, sin, sqrt} from "./math";
 
-var gingeryAzimuthalEquidistant = d3.geo.azimuthalEquidistant.raw;
+export function gingeryRaw(rho, n) {
+  var k = 2 * pi / n,
+      rho2 = rho * rho;
 
-function gingery(ρ, n) {
-  var k = 2 * π / n,
-      ρ2 = ρ * ρ;
-
-  function forward(λ, φ) {
-    var p = gingeryAzimuthalEquidistant(λ, φ),
+  function forward(lambda, phi) {
+    var p = azimuthalEquidistantRaw(lambda, phi),
         x = p[0],
         y = p[1],
         r2 = x * x + y * y;
 
-    if (r2 > ρ2) {
-      var r = Math.sqrt(r2),
-          θ = Math.atan2(y, x),
-          θ0 = k * Math.round(θ / k),
-          α = θ - θ0,
-          ρcosα = ρ * Math.cos(α),
-          k_ = (ρ * Math.sin(α) - α * Math.sin(ρcosα)) / (halfπ - ρcosα),
-          s_ = arcLength_(α, k_),
-          e = (π - ρ) / gingeryIntegrate(s_, ρcosα, π);
+    if (r2 > rho2) {
+      var r = sqrt(r2),
+          theta = atan2(y, x),
+          theta0 = k * round(theta / k),
+          alpha = theta - theta0,
+          rhoCosAlpha = rho * cos(alpha),
+          k_ = (rho * sin(alpha) - alpha * sin(rhoCosAlpha)) / (halfPi - rhoCosAlpha),
+          s_ = gingeryLength(alpha, k_),
+          e = (pi - rho) / gingeryIntegrate(s_, rhoCosAlpha, pi);
 
       x = r;
-      var i = 50, δ;
+      var i = 50, delta;
       do {
-        x -= δ = (ρ + gingeryIntegrate(s_, ρcosα, x) * e - r) / (s_(x) * e);
-      } while (Math.abs(δ) > ε && --i > 0);
+        x -= delta = (rho + gingeryIntegrate(s_, rhoCosAlpha, x) * e - r) / (s_(x) * e);
+      } while (abs(delta) > epsilon && --i > 0);
 
-      y = α * Math.sin(x);
-      if (x < halfπ) y -= k_ * (x - halfπ);
+      y = alpha * sin(x);
+      if (x < halfPi) y -= k_ * (x - halfPi);
 
-      var s = Math.sin(θ0),
-          c = Math.cos(θ0);
+      var s = sin(theta0),
+          c = cos(theta0);
       p[0] = x * c - y * s;
       p[1] = x * s + y * c;
     }
@@ -41,78 +40,87 @@ function gingery(ρ, n) {
 
   forward.invert = function(x, y) {
     var r2 = x * x + y * y;
-    if (r2 > ρ2) {
-      var r = Math.sqrt(r2),
-          θ = Math.atan2(y, x),
-          θ0 = k * Math.round(θ / k),
-          dθ = θ - θ0,
+    if (r2 > rho2) {
+      var r = sqrt(r2),
+          theta = atan2(y, x),
+          theta0 = k * round(theta / k),
+          dTheta = theta - theta0;
 
-      x = r * Math.cos(dθ);
-      y = r * Math.sin(dθ);
+      x = r * cos(dTheta);
+      y = r * sin(dTheta);
 
-      var x_halfπ = x - halfπ,
-          sinx = Math.sin(x),
-          α = y / sinx,
-          δ = x < halfπ ? Infinity : 0,
+      var x_halfPi = x - halfPi,
+          sinx = sin(x),
+          alpha = y / sinx,
+          delta = x < halfPi ? Infinity : 0,
           i = 10;
 
       while (true) {
-        var ρsinα = ρ * Math.sin(α),
-            ρcosα = ρ * Math.cos(α),
-            sinρcosα = Math.sin(ρcosα),
-            halfπ_ρcosα = halfπ - ρcosα,
-            k_ = (ρsinα - α * sinρcosα) / halfπ_ρcosα,
-            s_ = arcLength_(α, k_);
+        var rhosinAlpha = rho * sin(alpha),
+            rhoCosAlpha = rho * cos(alpha),
+            sinRhoCosAlpha = sin(rhoCosAlpha),
+            halfPi_RhoCosAlpha = halfPi - rhoCosAlpha,
+            k_ = (rhosinAlpha - alpha * sinRhoCosAlpha) / halfPi_RhoCosAlpha,
+            s_ = gingeryLength(alpha, k_);
 
-        if (Math.abs(δ) < ε2 || !--i) break;
+        if (abs(delta) < epsilon2 || !--i) break;
 
-        α -= δ = (α * sinx - k_ * x_halfπ - y) / (
-          sinx - x_halfπ * 2 * (
-            halfπ_ρcosα * (ρcosα + α * ρsinα * Math.cos(ρcosα) - sinρcosα) -
-            ρsinα * (ρsinα - α * sinρcosα)
-          ) / (halfπ_ρcosα * halfπ_ρcosα));
+        alpha -= delta = (alpha * sinx - k_ * x_halfPi - y) / (
+          sinx - x_halfPi * 2 * (
+            halfPi_RhoCosAlpha * (rhoCosAlpha + alpha * rhosinAlpha * cos(rhoCosAlpha) - sinRhoCosAlpha) -
+            rhosinAlpha * (rhosinAlpha - alpha * sinRhoCosAlpha)
+          ) / (halfPi_RhoCosAlpha * halfPi_RhoCosAlpha));
       }
-      r = ρ + gingeryIntegrate(s_, ρcosα, x) * (π - ρ) / gingeryIntegrate(s_, ρcosα, π);
-      θ = θ0 + α;
-      x = r * Math.cos(θ);
-      y = r * Math.sin(θ);
+      r = rho + gingeryIntegrate(s_, rhoCosAlpha, x) * (pi - rho) / gingeryIntegrate(s_, rhoCosAlpha, pi);
+      theta = theta0 + alpha;
+      x = r * cos(theta);
+      y = r * sin(theta);
     }
-    return gingeryAzimuthalEquidistant.invert(x, y);
+    return azimuthalEquidistantRaw.invert(x, y);
   };
 
   return forward;
 }
 
-function arcLength_(α, k) {
+function gingeryLength(alpha, k) {
   return function(x) {
-    var y_ = α * Math.cos(x);
-    if (x < halfπ) y_ -= k;
-    return Math.sqrt(1 + y_ * y_);
+    var y_ = alpha * cos(x);
+    if (x < halfPi) y_ -= k;
+    return sqrt(1 + y_ * y_);
   };
 }
 
-function gingeryProjection() {
+// Numerical integration: trapezoidal rule.
+function gingeryIntegrate(f, a, b) {
+  var n = 50,
+      h = (b - a) / n,
+      s = f(a) + f(b);
+  for (var i = 1, x = a; i < n; ++i) s += 2 * f(x += h);
+  return s * 0.5 * h;
+}
+
+export default function() {
   var n = 6,
-      ρ = 30 * radians,
-      cρ = Math.cos(ρ),
-      sρ = Math.sin(ρ),
-      m = projectionMutator(gingery),
-      p = m(ρ, n),
+      rho = 30 * radians,
+      cRho = cos(rho),
+      sRho = sin(rho),
+      m = projectionMutator(gingeryRaw),
+      p = m(rho, n),
       stream_ = p.stream,
-      ε = 1e-2,
-      cr = -Math.cos(ε * radians),
-      sr = Math.sin(ε * radians);
+      epsilon = 1e-2,
+      cr = -cos(epsilon * radians),
+      sr = sin(epsilon * radians);
 
   p.radius = function(_) {
-    if (!arguments.length) return ρ * degrees;
-    cρ = Math.cos(ρ = _ * radians);
-    sρ = Math.sin(ρ);
-    return m(ρ, n);
+    if (!arguments.length) return rho * degrees;
+    cRho = cos(rho = _ * radians);
+    sRho = sin(rho);
+    return m(rho, n);
   };
 
   p.lobes = function(_) {
     if (!arguments.length) return n;
-    return m(ρ, n = +_);
+    return m(rho, n = +_);
   };
 
   p.stream = function(stream) {
@@ -122,25 +130,17 @@ function gingeryProjection() {
     p.rotate(rotate);
     rotateStream.sphere = function() {
       sphereStream.polygonStart(), sphereStream.lineStart();
-      for (var i = 0, δ = 2 * π / n, φ = 0; i < n; ++i, φ -= δ) {
-        sphereStream.point(Math.atan2(sr * Math.cos(φ), cr) * degrees, Math.asin(sr * Math.sin(φ)) * degrees);
-        sphereStream.point(Math.atan2(sρ * Math.cos(φ - δ / 2), cρ) * degrees, Math.asin(sρ * Math.sin(φ - δ / 2)) * degrees);
+      for (var i = 0, delta = 2 * pi / n, phi = 0; i < n; ++i, phi -= delta) {
+        sphereStream.point(atan2(sr * cos(phi), cr) * degrees, asin(sr * sin(phi)) * degrees);
+        sphereStream.point(atan2(sRho * cos(phi - delta / 2), cRho) * degrees, asin(sRho * sin(phi - delta / 2)) * degrees);
       }
       sphereStream.lineEnd(), sphereStream.polygonEnd();
     };
     return rotateStream;
   };
 
-  return p;
+  return p
+      .rotate([90, -40])
+      .scale(91.7095)
+      .clipAngle(180 - 1e-3);
 }
-
-// Numerical integration: trapezoidal rule.
-function gingeryIntegrate(f, a, b) {
-  var n = 50,
-      h = (b - a) / n,
-      s = f(a) + f(b);
-  for (var i = 1, x = a; i < n; ++i) s += 2 * f(x += h);
-  return s * .5 * h;
-}
-
-(d3.geo.gingery = gingeryProjection).raw = gingery;

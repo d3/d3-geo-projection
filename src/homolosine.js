@@ -1,18 +1,22 @@
-import "projection";
-import "mollweide";
-import "sinusoidal";
-import "sinu-mollweide";
+import {geoProjection as projection} from "d3-geo";
+import {abs} from "./math";
+import {mollweideRaw} from "./mollweide";
+import {sinusoidalRaw} from "./sinusoidal";
+import {sinuMollweidePhi, sinuMollweideY} from "./sinuMollweide";
 
-function homolosine(λ, φ) {
-  return Math.abs(φ) > sinuMollweideφ
-      ? (λ = mollweide(λ, φ), λ[1] -= φ > 0 ? sinuMollweideY : -sinuMollweideY, λ)
-      : sinusoidal(λ, φ);
+export function homolosineRaw(lambda, phi) {
+  return abs(phi) > sinuMollweidePhi
+      ? (lambda = mollweideRaw(lambda, phi), lambda[1] -= phi > 0 ? sinuMollweideY : -sinuMollweideY, lambda)
+      : sinusoidalRaw(lambda, phi);
 }
 
-homolosine.invert = function(x, y) {
-  return Math.abs(y) > sinuMollweideφ
-      ? mollweide.invert(x, y + (y > 0 ? sinuMollweideY : -sinuMollweideY))
-      : sinusoidal.invert(x, y);
+homolosineRaw.invert = function(x, y) {
+  return abs(y) > sinuMollweidePhi
+      ? mollweideRaw.invert(x, y + (y > 0 ? sinuMollweideY : -sinuMollweideY))
+      : sinusoidalRaw.invert(x, y);
 };
 
-(d3.geo.homolosine = function() { return projection(homolosine); }).raw = homolosine;
+export default function() {
+  return projection(homolosineRaw)
+      .scale(152.63);
+}

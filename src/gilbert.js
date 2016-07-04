@@ -1,34 +1,59 @@
-import "math";
+import {geoEquirectangular, geoOrthographic} from "d3-geo";
+import {asin, atan, degrees, radians, sin, tan} from "./math";
 
-d3.geo.gilbert = function(projection) {
-  var e = d3.geo.equirectangular().scale(degrees).translate([0, 0]);
+function gilbertForward(point) {
+  return [point[0] / 2, asin(tan(point[1] / 2 * radians)) * degrees];
+}
 
-  function gilbert(coordinates) {
-    return projection([coordinates[0] * .5, asin(Math.tan(coordinates[1] * .5 * radians)) * degrees]);
+function gilbertInvert(point) {
+  return [point[0] * 2, 2 * atan(sin(point[1] * radians)) * degrees];
+}
+
+export default function(projectionType) {
+  if (projectionType == null) projectionType = geoOrthographic;
+  var projection = projectionType(),
+      equirectangular = geoEquirectangular().scale(degrees).precision(0).clipAngle(null).translate([0, 0]); // antimeridian cutting
+
+  function gilbert(point) {
+    return projection(gilbertForward(point));
   }
 
-  if (projection.invert) gilbert.invert = function(coordinates) {
-    coordinates = projection.invert(coordinates);
-    coordinates[0] *= 2;
-    coordinates[1] = 2 * Math.atan(Math.sin(coordinates[1] * radians)) * degrees;
-    return coordinates;
+  if (projection.invert) gilbert.invert = function(point) {
+    return gilbertInvert(projection.invert(point));
   };
 
   gilbert.stream = function(stream) {
-    stream = projection.stream(stream);
-    var s = e.stream({
-      point: function(λ, φ) {
-        stream.point(λ * .5, asin(Math.tan(-φ * .5 * radians)) * degrees);
-      },
-      lineStart: function() { stream.lineStart(); },
-      lineEnd: function() { stream.lineEnd(); },
-      polygonStart: function() { stream.polygonStart(); },
-      polygonEnd: function() { stream.polygonEnd(); }
+    var s1 = projection.stream(stream), s0 = equirectangular.stream({
+      point: function(lambda, phi) { s1.point(lambda / 2, asin(tan(-phi / 2 * radians)) * degrees); },
+      lineStart: function() { s1.lineStart(); },
+      lineEnd: function() { s1.lineEnd(); },
+      polygonStart: function() { s1.polygonStart(); },
+      polygonEnd: function() { s1.polygonEnd(); }
     });
-    s.sphere = function() { stream.sphere(); };
-    s.valid = false;
-    return s;
+    s0.sphere = s1.sphere;
+    return s0;
   };
 
-  return gilbert;
-};
+  function property(name) {
+    gilbert[name] = function(_) {
+      return arguments.length ? (projection[name](_), gilbert) : projection[name]();
+    };
+  }
+
+  gilbert.rotate = function(_) {
+    return arguments.length ? (equirectangular.rotate(_), gilbert) : equirectangular.rotate();
+  };
+
+  gilbert.center = function(_) {
+    return arguments.length ? (projection.center(gilbertForward(_)), gilbert) : gilbertInvert(projection.center());
+  };
+
+  property("clipAngle");
+  property("clipExtent");
+  property("scale");
+  property("translate");
+  property("precision");
+
+  return gilbert
+      .scale(249.5);
+}

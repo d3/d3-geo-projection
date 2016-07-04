@@ -1,19 +1,18 @@
 {
   "name": "d3-geo-projection",
-  "version": "0.2.16",
-  "description": "Extended geographic projections for D3.js.",
+  "version": "1.0.0",
+  "description": "Visualize relationships or network flow with an aesthetically-pleasing circular layout.",
   "keywords": [
+    "d3",
+    "d3-module",
     "cartography",
-    "map projections",
-    "visualization"
+    "projection"
   ],
-  "homepage": "https://github.com/d3/d3-geo-projection",
+  "homepage": "https://d3js.org/d3-geo-projection/",
+  "license": "BSD-3-Clause",
   "author": {
     "name": "Mike Bostock",
     "url": "http://bost.ocks.org/mike"
-  },
-  "browserify": {
-    "transform": ["brfs"]
   },
   "contributors": [
     {
@@ -21,28 +20,29 @@
       "url": "http://www.jasondavies.com"
     }
   ],
+  "main": "build/d3-geo-projection.js",
+  "jsnext:main": "index",
   "repository": {
     "type": "git",
     "url": "https://github.com/d3/d3-geo-projection.git"
   },
-  "main": "index.js",
-  "devDependencies": {
-    "d3": "3",
-    "smash": "0.0",
-    "uglify-js": "2.3",
-    "vows": "0.7"
-  },
   "scripts": {
-    "prepublish": "make",
-    "test": "node_modules/.bin/vows"
+    "pretest": "rm -rf build && mkdir build && rollup --banner \"$(preamble)\" -g d3-array:d3,d3-geo:d3 -f umd -n d3 -o build/d3-geo-projection.js -- index.js",
+    "test": "tape 'test/**/*-test.js' && mkdir -p test/output && test/compare-images && eslint index.js src",
+    "prepublish": "npm run test && uglifyjs --preamble \"$(preamble)\" build/d3-geo-projection.js -c -m -o build/d3-geo-projection.min.js",
+    "postpublish": "VERSION=`node -e 'console.log(require(\"./package.json\").version)'`; git push && git push --tags && cp build/d3-geo-projection.js ../d3.github.com/d3-geo-projection.v1.js && cp build/d3-geo-projection.min.js ../d3.github.com/d3-geo-projection.v1.min.js && cd ../d3.github.com && git add d3-geo-projection.v1.js d3-geo-projection.v1.min.js && git commit -m \"d3-geo-projection ${VERSION}\" && git push && cd - && zip -j build/d3-geo-projection.zip -- LICENSE README.md build/d3-geo-projection.js build/d3-geo-projection.min.js"
   },
-  "licenses": [
-    {
-      "type": "BSD",
-      "url": "https://github.com/d3/d3-geo-projection/blob/master/LICENSE"
-    }
-  ],
   "dependencies": {
-    "brfs": "^1.3.0"
+    "d3-array": "1",
+    "d3-geo": "^1.1.0"
+  },
+  "devDependencies": {
+    "canvas": "1",
+    "eslint": "2",
+    "package-preamble": "0.0",
+    "rollup": "0.33",
+    "tape": "4",
+    "topojson": "1",
+    "uglify-js": "2"
   }
 }

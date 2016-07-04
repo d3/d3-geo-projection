@@ -1,19 +1,23 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {abs, asin, pi, sign, sin, sqrt} from "./math";
 
-function eckert2(λ, φ) {
-  var α = Math.sqrt(4 - 3 * Math.sin(Math.abs(φ)));
+export function eckert2Raw(lambda, phi) {
+  var alpha = sqrt(4 - 3 * sin(abs(phi)));
   return [
-    2 / Math.sqrt(6 * π) * λ * α,
-    sgn(φ) * Math.sqrt(2 * π / 3) * (2 - α)
+    2 / sqrt(6 * pi) * lambda * alpha,
+    sign(phi) * sqrt(2 * pi / 3) * (2 - alpha)
   ];
 }
 
-eckert2.invert = function(x, y) {
-  var α = 2 - Math.abs(y) / Math.sqrt(2 * π / 3);
+eckert2Raw.invert = function(x, y) {
+  var alpha = 2 - abs(y) / sqrt(2 * pi / 3);
   return [
-    x * Math.sqrt(6 * π) / (2 * α),
-    sgn(y) * asin((4 - α * α) / 3)
+    x * sqrt(6 * pi) / (2 * alpha),
+    sign(y) * asin((4 - alpha * alpha) / 3)
   ];
 };
 
-(d3.geo.eckert2 = function() { return projection(eckert2); }).raw = eckert2;
+export default function() {
+  return projection(eckert2Raw)
+      .scale(165.664);
+}

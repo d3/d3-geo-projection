@@ -1,39 +1,34 @@
-import "projection";
+import {geoProjectionMutator as projectionMutator} from "d3-geo";
+import {atan2, cos, halfPi, sin, sqrt} from "./math";
 
-function bottomleyRaw(ψ) {
-  var sinψ = Math.sin(ψ);
+export function bottomleyRaw(sinPsi) {
 
-  function forward(λ, φ) {
-    var ρ = halfπ - φ,
-        η = ρ ? λ * sinψ * Math.sin(ρ) / ρ : ρ;
-    return [
-      ρ * Math.sin(η) / sinψ,
-      halfπ - ρ * Math.cos(η)
-    ];
+  function forward(lambda, phi) {
+    var rho = halfPi - phi,
+        eta = rho ? lambda * sinPsi * sin(rho) / rho : rho;
+    return [rho * sin(eta) / sinPsi, halfPi - rho * cos(eta)];
   }
 
   forward.invert = function(x, y) {
-    var x1 = x * sinψ,
-        y1 = halfπ - y,
-        ρ = Math.sqrt(x1 * x1 + y1 * y1),
-        η = Math.atan2(x1, y1);
-    return [
-      (ρ ? ρ / Math.sin(ρ) : 1) * η / sinψ,
-      halfπ - ρ
-    ];
+    var x1 = x * sinPsi,
+        y1 = halfPi - y,
+        rho = sqrt(x1 * x1 + y1 * y1),
+        eta = atan2(x1, y1);
+    return [(rho ? rho / sin(rho) : 1) * eta / sinPsi, halfPi - rho];
   };
 
   return forward;
 }
 
-(d3.geo.bottomley = function() {
-  var ψ = π / 6,
-      mutate = d3.geo.projectionMutator(bottomleyRaw),
-      projection = mutate(ψ);
+export default function() {
+  var sinPsi = 0.5,
+      m = projectionMutator(bottomleyRaw),
+      p = m(sinPsi);
 
-  projection.variant = function(_) {
-    return arguments.length ? mutate(ψ = +_) : ψ;
+  p.fraction = function(_) {
+    return arguments.length ? m(sinPsi = +_) : sinPsi;
   };
 
-  return projection;
-}).raw = bottomleyRaw;
+  return p
+      .scale(158.837);
+}

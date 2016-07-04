@@ -1,22 +1,17 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {atan, cos, sqrtPi, tan} from "./math";
 
-function foucaut(λ, φ) {
-  var k = φ / 2,
-      cosk = Math.cos(k);
-  return [
-    2 * λ / sqrtπ * Math.cos(φ) * cosk * cosk,
-    sqrtπ * Math.tan(k)
-  ];
+export function foucautRaw(lambda, phi) {
+  var k = phi / 2, cosk = cos(k);
+  return [ 2 * lambda / sqrtPi * cos(phi) * cosk * cosk, sqrtPi * tan(k)];
 }
 
-foucaut.invert = function(x, y) {
-  var k = Math.atan(y / sqrtπ),
-      cosk = Math.cos(k),
-      φ = 2 * k;
-  return [
-    x * sqrtπ * .5 / (Math.cos(φ) * cosk * cosk),
-    φ
-  ];
+foucautRaw.invert = function(x, y) {
+  var k = atan(y / sqrtPi), cosk = cos(k), phi = 2 * k;
+  return [x * sqrtPi / 2 / (cos(phi) * cosk * cosk), phi];
 };
 
-(d3.geo.foucaut = function() { return projection(foucaut); }).raw = foucaut;
+export default function() {
+  return projection(foucautRaw)
+      .scale(135.264);
+}

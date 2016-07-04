@@ -1,29 +1,18 @@
-var vows = require("vows"),
-    assert = require("./assert"),
-    load = require("./load");
+var tape = require("tape"),
+    d3 = require("../");
 
-var suite = vows.describe("d3.geo.bottomley");
+require("./projectionEqual");
 
-suite.addBatch({
-  "bottomley": {
-    topic: load("bottomley"),
-    "1/2 fraction": {
-      topic: function(geo) {
-        return geo.bottomley();
-      },
-      "projections and inverse projections": function(bottomley) {
-        assert.equalInverse(bottomley, [   0,   0], [480.0000000, 250.000000]);
-        assert.equalInverse(bottomley, [   0, -90], [480.0000000, 485.619449]);
-        assert.equalInverse(bottomley, [   0,  89], [480.0000000,  16.998544]);
-        assert.equalInverse(bottomley, [   0, -45], [480.0000000, 367.809724]);
-        assert.equalInverse(bottomley, [   0,  45], [480.0000000, 132.190275]);
-        assert.equalInverse(bottomley, [-160,   0], [114.1433513, 162.885611]);
-        assert.equalInverse(bottomley, [ 150,   0], [828.8001246, 172.813953]);
-        assert.equalInverse(bottomley, [-179,  15], [121.1311782,  94.107801]);
-        assert.equalInverse(bottomley, [   1,   1], [482.6175813, 247.378330]);
-      }
-    }
-  }
+tape("geoBottomley(point) returns the expected values", function(test) {
+  var bottomley = d3.geoBottomley().scale(150);
+  test.projectionEqual(bottomley, [   0,   0], [480.0000000, 250.000000]);
+  test.projectionEqual(bottomley, [   0, -90], [480.0000000, 485.619449]);
+  test.projectionEqual(bottomley, [   0,  89], [480.0000000,  16.998544]);
+  test.projectionEqual(bottomley, [   0, -45], [480.0000000, 367.809724]);
+  test.projectionEqual(bottomley, [   0,  45], [480.0000000, 132.190275]);
+  test.projectionEqual(bottomley, [-160,   0], [114.1433513, 162.885611]);
+  test.projectionEqual(bottomley, [ 150,   0], [828.8001246, 172.813953]);
+  test.projectionEqual(bottomley, [-179,  15], [121.1311782,  94.107801]);
+  test.projectionEqual(bottomley, [   1,   1], [482.6175813, 247.378330]);
+  test.end();
 });
-
-suite.export(module);

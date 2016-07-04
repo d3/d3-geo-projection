@@ -1,23 +1,28 @@
-import "projection";
+import {geoProjection as projection} from "d3-geo";
+import {acos, asin, cos, sign, sin, tan, sqrt, sqrt1_2} from "./math";
 
-function littrow(λ, φ) {
+export function littrowRaw(lambda, phi) {
   return [
-    Math.sin(λ) / Math.cos(φ),
-    Math.tan(φ) * Math.cos(λ)
+    sin(lambda) / cos(phi),
+    tan(phi) * cos(lambda)
   ];
 }
 
-littrow.invert = function(x, y) {
+littrowRaw.invert = function(x, y) {
   var x2 = x * x,
       y2 = y * y,
       y2_1 = y2 + 1,
-      cosφ = x
-        ? Math.SQRT1_2 * Math.sqrt((y2_1 - Math.sqrt(x2 * x2 + 2 * x2 * (y2 - 1) + y2_1 * y2_1)) / x2 + 1)
-        : 1 / Math.sqrt(y2_1);
+      cosPhi = x
+          ? sqrt1_2 * sqrt((y2_1 - sqrt(x2 * x2 + 2 * x2 * (y2 - 1) + y2_1 * y2_1)) / x2 + 1)
+          : 1 / sqrt(y2_1);
   return [
-    asin(x * cosφ),
-    sgn(y) * acos(cosφ)
+    asin(x * cosPhi),
+    sign(y) * acos(cosPhi)
   ];
 };
 
-(d3.geo.littrow = function() { return projection(littrow); }).raw = littrow;
+export default function() {
+  return projection(littrowRaw)
+      .scale(144.049)
+      .clipAngle(90 - 1e-3);
+}
