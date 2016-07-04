@@ -360,7 +360,9 @@ Defaults to 1. With a ratio of 0, this projection becomes the [Maurer No. 73](ht
 
 <a href="#geoHomolosine" name="geoHomolosine">#</a> d3.<b>geoHomolosine</b>()
 
-[Goode homolosine](http://bl.ocks.org/mbostock/3734330)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/4/img/homolosine.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734330)
+
+The pseudocylindrical, equal-area Goode homolosine projection is normally presented in [interrupted form](http://bl.ocks.org/mbostock/4448587).
 
 <a href="#geoKavrayskiy7" name="geoKavrayskiy7">#</a> d3.<b>geoKavrayskiy7</b>()
 
@@ -669,6 +671,7 @@ The inverse of [*project*](#_project).
 <br><a href="#geoHammerRaw" name="geoHammerRaw">#</a> d3.<b>geoHammerRaw</b>(<i>A</i>, <i>B</i>)
 <br><a href="#geoHammerQuarticAuthalicRaw" name="geoHammerQuarticAuthalicRaw">#</a> d3.<b>geoHammerQuarticAuthalicRaw</b>(<i>A</i>, <i>B</i>)
 <br><a href="#geoHammerRetroazimuthalRaw" name="geoHammerRetroazimuthalRaw">#</a> d3.<b>geoHammerRetroazimuthalRaw</b>(<i>phi0</i>)
+<br><a href="#geoHomolosineRaw" name="geoHomolosineRaw">#</a> d3.<b>geoHomolosineRaw</b>
 <br><a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
 <br><a href="#geoHillRaw" name="geoHillRaw">#</a> d3.<b>geoHillRaw</b>([<i>ratio</i>])
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>

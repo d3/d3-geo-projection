@@ -2,8 +2,9 @@ import {geoProjection as projection} from "d3-geo";
 import {mollweideRaw} from "./mollweide";
 import {sinusoidalRaw} from "./sinusoidal";
 
-var sinuMollweidePhi = 0.7109889596207567,
-    sinuMollweideY = 0.0528035274542;
+export var sinuMollweidePhi = 0.7109889596207567;
+
+export var sinuMollweideY = 0.0528035274542;
 
 export function sinuMollweideRaw(lambda, phi) {
   return phi > -sinuMollweidePhi
