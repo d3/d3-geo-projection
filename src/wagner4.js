@@ -1,4 +1,4 @@
-import {geoProjection} from "d3-geo";
+import {geoProjection as projection} from "d3-geo";
 import {sqrt, pi} from "./math";
 import {mollweideBromleyRaw} from "./mollweide";
 
@@ -8,6 +8,6 @@ var A = 4 * pi + 3 * sqrt(3),
 export var wagner4Raw = mollweideBromleyRaw(B * sqrt(3) / pi, B, A / 6);
 
 export default function() {
-  return geoProjection(wagner4Raw)
+  return projection(wagner4Raw)
       .scale(176.84);
 }

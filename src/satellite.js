@@ -1,7 +1,7 @@
 import {geoProjectionMutator as projectionMutator} from "d3-geo";
 import {acos, asin, atan2, cos, degrees, radians, sin, sqrt} from "./math";
 
-export function satelliteVerticalRaw(P) {
+function satelliteVerticalRaw(P) {
   function forward(lambda, phi) {
     var cosPhi = cos(phi),
         k = (P - 1) / (P - cosPhi * cos(lambda));

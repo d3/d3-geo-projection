@@ -57,7 +57,7 @@ export {default as geoPierceQuincuncial} from "./src/pierceQuincuncial.js";
 export {default as geoPolyconic, polyconicRaw as geoPolyconicRaw} from "./src/polyconic";
 export {default as geoRectangularPolyconic, rectangularPolyconicRaw as geoRectangularPolyconicRaw} from "./src/rectangularPolyconic";
 export {default as geoRobinson, robinsonRaw as geoRobinsonRaw} from "./src/robinson";
-export {default as geoSatellite, satelliteRaw as geoSatelliteRaw, satelliteVerticalRaw as geoSatelliteVerticalRaw} from "./src/satellite";
+export {default as geoSatellite, satelliteRaw as geoSatelliteRaw} from "./src/satellite";
 export {default as geoSinuMollweide, sinuMollweideRaw as geoSinuMollweideRaw} from "./src/sinuMollweide";
 export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./src/sinusoidal";
 export {default as geoTimes, timesRaw as geoTimesRaw} from "./src/times";
