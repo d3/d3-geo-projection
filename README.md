@@ -637,11 +637,11 @@ The Winkel tripel projection.
 
 ### Raw Projections
 
-Raw projections are typically passed to the [d3.geoProjection](#geoProjection) constructor. They are exposed here to facilitate the derivation of related projections.
+Raw projections are typically passed to the [d3.geoProjection](#geoProjection) constructor. They are exposed here to facilitate the derivation of related projections. In raw projections all angles are expressed in radians.
 
 <a href="#_project" name="_project">#</a> <i>project</i>(<i>lambda</i>, <i>phi</i>)
 
-Projects the specified point [<i>lambda</i>, <i>phi</i>] in radians, returning a new point [*x*, *y*] in unitless coordinates.
+Projects the specified point [<i>lambda</i>, <i>phi</i>], returning a new point [*x*, *y*] in unitless coordinates.
 
 <a href="#project_invert" name="project_invert">#</a> <i>project</i>.<b>invert</b>(<i>x</i>, <i>y</i>)
 
