@@ -411,6 +411,8 @@ The Littrow projection is the only conformal retroazimuthal map projection. Typi
 
 The [loximuthal projection](https://en.wikipedia.org/wiki/Loximuthal_projection) is “characterized by the fact that loxodromes (rhumb lines) from one chosen central point (the intersection of the central meridian and central latitude) are shown as straight lines, correct in azimuth from the center, and are ‘true to scale’… It is neither an equal-area projection nor conformal.”
 
+<a href="#loximuthal_parallel" name="loximuthal_parallel">#</a> <i>loximuthal</i>.<b>parallel</b>([<i>parallel</i>])
+
 <a href="#geoMercator" name="geoMercator">#</a> d3.<b>geoMercator</b>()
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/mercator.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757132)
@@ -522,6 +524,8 @@ The American polyconic projection.
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/rectangularPolyconic.png" width="480" height="250">](http://bl.ocks.org/mbostock/5230202)
 
 The rectangular (War Office) polyconic projection.
+
+<a href="#rectangularPolyconic_parallel" name="rectangularPolyconic_parallel">#</a> <i>rectangularPolyconic</i>.<b>parallel</b>([<i>parallel</i>])
 
 <a href="#geoRobinson" name="geoRobinson">#</a> d3.<b>geoRobinson</b>()
 
