@@ -98,8 +98,9 @@ export function modifiedStereographicGs50() {
 export function modifiedStereographicMiller() {
   return modifiedStereographic(miller)
       .rotate([-20, -18])
-      .scale(265.289)
-      .clipAngle(55);
+      .scale(209.091)
+      .center([0, -1.28])
+      .clipAngle(82);
 }
 
 export function modifiedStereographicLee() {

@@ -47,6 +47,10 @@ switch (projectionName) {
     land = topojson.feature(us, us.objects.land);
     break;
   }
+  case "modifiedStereographicMiller": {
+    land = d3_geo.geoGraticule().extent([[-40, -40], [80, 80]]).outline();
+    break;
+  }
 }
 
 var path = d3_geo.geoPath()

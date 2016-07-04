@@ -25,6 +25,7 @@ var world = require("./data/world-50m.json"),
 switch (projectionName) {
   case "littrow": outline = graticule.extent([[-90, -60], [90, 60]]).outline(); break;
   case "modifiedStereographicGs50": outline = graticule.extent([[-180, 15], [-50, 75]]).outline(); break;
+  case "modifiedStereographicMiller": outline = graticule.extent([[-40, -40], [80, 80]]).outline(); break;
 }
 
 var path = d3_geo.geoPath()
@@ -42,7 +43,8 @@ switch (projectionName) {
   case "hammerRetroazimuthal":
   case "healpix":
   case "littrow":
-  case "modifiedStereographicGs50": {
+  case "modifiedStereographicGs50":
+  case "modifiedStereographicMiller": {
     context.beginPath();
     path(outline);
     context.clip();
