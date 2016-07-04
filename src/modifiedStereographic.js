@@ -109,13 +109,13 @@ export function modifiedStereographicLee() {
 export default function modifiedStereographic(coefficients, rotate) {
   var p = projection(modifiedStereographicRaw(coefficients)).rotate(rotate).clipAngle(90),
       r = rotation(rotate),
-      c = p.center;
-
-  p.center = function(_) {
-    return arguments.length ? c(r(_)) : r.invert(c());
-  };
+      center = p.center;
 
   delete p.rotate;
+
+  p.center = function(_) {
+    return arguments.length ? center(r(_)) : r.invert(center());
+  };
 
   return p;
 }

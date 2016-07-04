@@ -593,7 +593,13 @@ Defaults to [[-158°, 21.5°], [-77°, 39°]], approximately representing Honolu
 
 <a href="#geoTwoPointEquidistant" name="geoTwoPointEquidistant">#</a> d3.<b>geoTwoPointEquidistant</b>()
 
-[two-point equidistant](https://www.jasondavies.com/maps/two-point-equidistant/)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/twoPointEquidistant.png" width="480" height="250">](https://www.jasondavies.com/maps/two-point-equidistant/)
+
+The two-point equidistant projection.
+
+<a href="#twoPointEquidistant_points" name="twoPointEquidistant_points">#</a> <i>twoPointEquidistant</i>.<b>points</b>([<i>points</i>])
+
+Defaults to [[-158°, 21.5°], [-77°, 39°]], approximately representing Honolulu, HI and Washington, D.C.
 
 <a href="#geoVanDerGrinten" name="geoVanDerGrinten">#</a> d3.<b>geoVanDerGrinten</b>()
 
@@ -716,6 +722,7 @@ The inverse of [*project*](#_project).
 <br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
 <br><a href="#geoTimesRaw" name="geoTimesRaw">#</a> d3.<b>geoTimesRaw</b>
 <br><a href="#geoTwoPointAzimuthalRaw" name="geoTwoPointAzimuthalRaw">#</a> d3.<b>geoTwoPointAzimuthalRaw</b>
+<br><a href="#geoTwoPointEquidistantRaw" name="geoTwoPointEquidistantRaw">#</a> d3.<b>geoTwoPointEquidistantRaw</b>
 <br><a href="#geoVanDerGrinten2Raw" name="geoVanDerGrinten2Raw">#</a> d3.<b>geoVanDerGrinten2Raw</b>
 <br><a href="#geoVanDerGrinten3Raw" name="geoVanDerGrinten3Raw">#</a> d3.<b>geoVanDerGrinten3Raw</b>
 <br><a href="#geoVanDerGrinten4Raw" name="geoVanDerGrinten4Raw">#</a> d3.<b>geoVanDerGrinten4Raw</b>

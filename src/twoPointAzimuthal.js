@@ -21,6 +21,8 @@ export default function() {
   var x0, y0, x1, y1,
       m = projectionMutator(twoPointAzimuthalRaw),
       p = m(0),
+      r,
+      center = p.center,
       rotate = p.rotate;
 
   delete p.rotate;
@@ -34,7 +36,12 @@ export default function() {
         gamma = -asin(sin(p[1] * radians) / sin(b));
     if (p[0] > 0) gamma = pi - gamma;
     rotate.call(p, [-o[0], -o[1], -gamma * degrees]);
+    r = rotation([-o[0], -o[1], -gamma * degrees]);
     return m(b);
+  };
+
+  p.center = function(_) {
+    return arguments.length ? center(r(_)) : r.invert(center());
   };
 
   return p

@@ -69,6 +69,7 @@ for i in \
     sinusoidal \
     times \
     twoPointAzimuthal \
+    twoPointEquidistant \
     vanDerGrinten \
     vanDerGrinten2 \
     vanDerGrinten3 \
