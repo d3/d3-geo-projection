@@ -1,5 +1,5 @@
 import {asin, atan2, cos, sin, sqrt, tan} from "./math";
-import parallel1Projection from "./parallel1";
+import parallel1 from "./parallel1";
 
 export function craigRaw(phi0) {
   var tanPhi0 = tan(phi0);
@@ -20,7 +20,7 @@ export function craigRaw(phi0) {
 }
 
 export default function() {
-  return parallel1Projection(craigRaw)
+  return parallel1(craigRaw)
       .scale(249.828)
       .clipAngle(90);
 }

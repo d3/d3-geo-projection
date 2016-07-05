@@ -1,4 +1,4 @@
-import parallel1Projection from "./parallel1";
+import parallel1 from "./parallel1";
 import {abs, cos, epsilon, halfPi, log, quarterPi, tan} from "./math";
 
 export function loximuthalRaw(phi0) {
@@ -28,7 +28,7 @@ export function loximuthalRaw(phi0) {
 }
 
 export default function() {
-  return parallel1Projection(loximuthalRaw)
+  return parallel1(loximuthalRaw)
       .parallel(40)
       .scale(158.837);
 }

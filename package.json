@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "canvas": "1",
+    "d3-format": "^1.0.0",
     "eslint": "2",
     "package-preamble": "0.0",
     "rollup": "0.33",

@@ -1,5 +1,5 @@
 import {atan, cos, tan} from "./math";
-import parallel1Projection from "./parallel1";
+import parallel1 from "./parallel1";
 
 export function cylindricalStereographicRaw(phi0) {
   var cosPhi0 = cos(phi0);
@@ -16,6 +16,6 @@ export function cylindricalStereographicRaw(phi0) {
 }
 
 export default function() {
-  return parallel1Projection(cylindricalStereographicRaw)
+  return parallel1(cylindricalStereographicRaw)
       .scale(124.75);
 }

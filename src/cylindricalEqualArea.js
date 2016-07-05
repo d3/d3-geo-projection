@@ -1,5 +1,5 @@
 import {asin, cos, sin} from "./math";
-import parallel1Projection from "./parallel1";
+import parallel1 from "./parallel1";
 
 export function cylindricalEqualAreaRaw(phi0) {
   var cosPhi0 = cos(phi0);
@@ -16,7 +16,7 @@ export function cylindricalEqualAreaRaw(phi0) {
 }
 
 export default function() {
-  return parallel1Projection(cylindricalEqualAreaRaw)
+  return parallel1(cylindricalEqualAreaRaw)
       .parallel(38.58) // acos(sqrt(width / height / pi)) * radians
       .scale(195.044); // width / (sqrt(width / height / pi) * 2 * pi)
 }

@@ -93,7 +93,7 @@ If *lobes* is specified, sets the number of lobes in the resulting star, and ret
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/boggs.png" width="480" height="250">](http://bl.ocks.org/mbostock/4481220)
 
-The Boggs eumorphic projection. More commonly used in [interrupted form](http://bl.ocks.org/mbostock/4481265).
+The Boggs eumorphic projection. More commonly used in [interrupted form](#geoInterruptedBoggs).
 
 <a href="#geoBonne" name="geoBonne">#</a> d3.<b>geoBonne</b>()
 
@@ -369,7 +369,7 @@ Defaults to 1. With a ratio of 0, this projection becomes the [Maurer No. 73](ht
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/homolosine.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734330)
 
-The pseudocylindrical, equal-area Goode homolosine projection is normally presented in [interrupted form](http://bl.ocks.org/mbostock/4448587).
+The pseudocylindrical, equal-area Goode homolosine projection is normally presented in [interrupted form](#geoInterruptedHomolosine).
 
 <a href="#geoKavrayskiy7" name="geoKavrayskiy7">#</a> d3.<b>geoKavrayskiy7</b>()
 
@@ -465,7 +465,7 @@ A [modified stereographic](#geoModifiedStereographic) projection for the Pacific
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/mollweide.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734336)
 
-The equal-area, pseudocylindrical Mollweide projection. The oblique aspect is known as the [Atlantis projection](http://bl.ocks.org/mbostock/4519975). [Goode’s interrupted Mollweide](http://bl.ocks.org/mbostock/4498187) is also widely known.
+The equal-area, pseudocylindrical Mollweide projection. The oblique aspect is known as the [Atlantis projection](http://bl.ocks.org/mbostock/4519975). [Goode’s interrupted Mollweide](#interruptedMollweide) is also widely known.
 
 <a href="#geoMtFlatPolarParabolic" name="geoMtFlatPolarParabolic">#</a> d3.<b>geoMtFlatPolarParabolic</b>()
 
@@ -561,7 +561,7 @@ The sinusoidal projection.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/sinuMollweide.png" width="480" height="250">](http://bl.ocks.org/mbostock/4319903)
 
-Allen K. Philbrick’s Sinu-Mollweide projection. See also the [interrupted form](http://bl.ocks.org/mbostock/4481520).
+Allen K. Philbrick’s Sinu-Mollweide projection. See also the [interrupted form](#interruptedSinuMollweide).
 
 <a href="#geoStereographic" name="geoStereographic">#</a> d3.<b>geoStereographic</b>()
 
@@ -657,17 +657,30 @@ The Winkel tripel projection.
 
 ### Interrupted Projections
 
-<a href="#geoInterrupt" name="geoInterrupt">#</a> d3.<b>geoInterrupt</b>(<i>project</i>)
+<a href="#geoInterrupt" name="geoInterrupt">#</a> d3.<b>geoInterrupt</b>(<i>project</i>, <i>lobes</i>)
 
-…
+Defines a new interrupted projection for the specified [raw projection](#raw-projections) function *project* and the specified array of *lobes*. The array *lobes* contains two elements representing the hemilobes for the northern hemisphere and the southern hemisphere, respectively. Each hemilobe is an array of triangles, with each triangle represented as three points (in degrees): the start, midpoint, and end. For example, the lobes in [Goode’s interrupted homolosine](#geoInterruptedHomolosine) projection are defined as:
 
-<a href="#interrupt_lobes" name="interrupt_lobes">#</a> <i>interrupt</i>.<b>lobes</b>([<i>lobes</i>])
-
-…
+```json
+[
+  [
+    [[-180,   0], [-100,  90], [ -40,   0]],
+    [[ -40,   0], [  30,  90], [ 180,   0]]
+  ],
+  [
+    [[-180,   0], [-160, -90], [-100,   0]],
+    [[-100,   0], [ -60, -90], [ -20,   0]],
+    [[ -20,   0], [  20, -90], [  80,   0]],
+    [[  80,   0], [ 140, -90], [ 180,   0]]
+  ]
+]
+```
 
 <a href="#geoInterruptedHomolosine" name="geoInterruptedHomolosine">#</a> d3.<b>geoInterruptedHomolosine</b>()
 
-…
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/interruptedHomolosine.png" width="480" height="250">](http://bl.ocks.org/mbostock/4448587)
+
+Goode’s interrupted [homolosine projection](#geoHomolosine).
 
 <a href="#geoInterruptedSinusoidal" name="geoInterruptedSinusoidal">#</a> d3.<b>geoInterruptedSinusoidal</b>()
 
@@ -675,15 +688,15 @@ The Winkel tripel projection.
 
 <a href="#geoInterruptedBoggs" name="geoInterruptedBoggs">#</a> d3.<b>geoInterruptedBoggs</b>()
 
-…
+… http://bl.ocks.org/mbostock/4481265
 
 <a href="#geoInterruptedSinuMollweide" name="geoInterruptedSinuMollweide">#</a> d3.<b>geoInterruptedSinuMollweide</b>()
 
-…
+… http://bl.ocks.org/mbostock/4481520
 
 <a href="#geoInterruptedMollweide" name="geoInterruptedMollweide">#</a> d3.<b>geoInterruptedMollweide</b>()
 
-…
+… http://bl.ocks.org/mbostock/4498187
 
 <a href="#geoInterruptedMollweideHemispheres" name="geoInterruptedMollweideHemispheres">#</a> d3.<b>geoInterruptedMollweideHemispheres</b>()
 

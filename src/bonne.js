@@ -1,4 +1,4 @@
-import parallel1Projection from "./parallel1";
+import parallel1 from "./parallel1";
 import {atan2, cos, sin, sqrt, tan} from "./math";
 import {sinusoidalRaw} from "./sinusoidal";
 
@@ -22,7 +22,7 @@ export function bonneRaw(phi0) {
 }
 
 export default function() {
-  return parallel1Projection(bonneRaw)
+  return parallel1(bonneRaw)
       .scale(123.082)
       .center([0, 26.1441])
       .parallel(45);
