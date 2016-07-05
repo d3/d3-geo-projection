@@ -1,6 +1,6 @@
 {
   "name": "d3-geo-projection",
-  "version": "1.0.0",
+  "version": "0.2.16",
   "description": "Visualize relationships or network flow with an aesthetically-pleasing circular layout.",
   "keywords": [
     "d3",
@@ -30,7 +30,7 @@
     "pretest": "rm -rf build && mkdir build && rollup --banner \"$(preamble)\" -g d3-array:d3,d3-geo:d3 -f umd -n d3 -o build/d3-geo-projection.js -- index.js",
     "test": "tape 'test/**/*-test.js' && mkdir -p test/output && test/compare-images && eslint index.js src",
     "prepublish": "npm run test && uglifyjs --preamble \"$(preamble)\" build/d3-geo-projection.js -c -m -o build/d3-geo-projection.min.js",
-    "postpublish": "VERSION=`node -e 'console.log(require(\"./package.json\").version)'`; git push && git push --tags && cp build/d3-geo-projection.js ../d3.github.com/d3-geo-projection.v1.js && cp build/d3-geo-projection.min.js ../d3.github.com/d3-geo-projection.v1.min.js && cd ../d3.github.com && git add d3-geo-projection.v1.js d3-geo-projection.v1.min.js && git commit -m \"d3-geo-projection ${VERSION}\" && git push && cd - && zip -j build/d3-geo-projection.zip -- LICENSE README.md build/d3-geo-projection.js build/d3-geo-projection.min.js"
+    "postpublish": "VERSION=`node -e 'console.log(require(\"./package.json\").version)'`; git push && git push --tags && cd ../d3.github.com && git pull && cp ../d3-geo-projection/build/d3-geo-projection.js d3-geo-projection.v1.js && cp ../d3-geo-projection/build/d3-geo-projection.min.js d3-geo-projection.v1.min.js && git add d3-geo-projection.v1.js d3-geo-projection.v1.min.js && git commit -m \"d3-geo-projection ${VERSION}\" && git push && cd - && zip -j build/d3-geo-projection.zip -- LICENSE README.md build/d3-geo-projection.js build/d3-geo-projection.min.js"
   },
   "dependencies": {
     "d3-array": "1",
@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "canvas": "1",
-    "d3-format": "^1.0.0",
+    "d3-format": "1",
     "eslint": "2",
     "package-preamble": "0.0",
     "rollup": "0.33",
