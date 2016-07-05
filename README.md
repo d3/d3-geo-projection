@@ -684,7 +684,9 @@ Goode’s interrupted [homolosine projection](#geoHomolosine).
 
 <a href="#geoInterruptedSinusoidal" name="geoInterruptedSinusoidal">#</a> d3.<b>geoInterruptedSinusoidal</b>()
 
-…
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/interruptedSinusoidal.png" width="480" height="250">](http://bl.ocks.org/mbostock/4458991)
+
+An interrupted [sinusoidal projection](#geoSinusoidal).
 
 <a href="#geoInterruptedBoggs" name="geoInterruptedBoggs">#</a> d3.<b>geoInterruptedBoggs</b>()
 
@@ -700,7 +702,7 @@ Goode’s interrupted [homolosine projection](#geoHomolosine).
 
 <a href="#geoInterruptedMollweideHemispheres" name="geoInterruptedMollweideHemispheres">#</a> d3.<b>geoInterruptedMollweideHemispheres</b>()
 
-…
+… http://bl.ocks.org/mbostock/4498292
 
 ### Raw Projections
 

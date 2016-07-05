@@ -42,6 +42,7 @@ for i in \
     hill \
     homolosine \
     interruptedHomolosine \
+    interruptedSinusoidal \
     kavrayskiy7 \
     lagrange \
     larrivee \

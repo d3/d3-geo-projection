@@ -43,6 +43,7 @@ switch (projectionName) {
   case "hammerRetroazimuthal":
   case "healpix":
   case "interruptedHomolosine":
+  case "interruptedSinusoidal":
   case "littrow":
   case "modifiedStereographicGs50":
   case "modifiedStereographicMiller": {
