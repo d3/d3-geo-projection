@@ -655,6 +655,40 @@ The Wiechel projection.
 
 The Winkel tripel projection.
 
+### Interrupted Projections
+
+<a href="#geoInterrupt" name="geoInterrupt">#</a> d3.<b>geoInterrupt</b>(<i>project</i>)
+
+…
+
+<a href="#interrupt_lobes" name="interrupt_lobes">#</a> <i>interrupt</i>.<b>lobes</b>([<i>lobes</i>])
+
+…
+
+<a href="#geoInterruptedHomolosine" name="geoInterruptedHomolosine">#</a> d3.<b>geoInterruptedHomolosine</b>()
+
+…
+
+<a href="#geoInterruptedSinusoidal" name="geoInterruptedSinusoidal">#</a> d3.<b>geoInterruptedSinusoidal</b>()
+
+…
+
+<a href="#geoInterruptedBoggs" name="geoInterruptedBoggs">#</a> d3.<b>geoInterruptedBoggs</b>()
+
+…
+
+<a href="#geoInterruptedSinuMollweide" name="geoInterruptedSinuMollweide">#</a> d3.<b>geoInterruptedSinuMollweide</b>()
+
+…
+
+<a href="#geoInterruptedMollweide" name="geoInterruptedMollweide">#</a> d3.<b>geoInterruptedMollweide</b>()
+
+…
+
+<a href="#geoInterruptedMollweideHemispheres" name="geoInterruptedMollweideHemispheres">#</a> d3.<b>geoInterruptedMollweideHemispheres</b>()
+
+…
+
 ### Raw Projections
 
 Raw projections are used to implement projections; they typically passed to [d3.geoProjection](https://github.com/d3/d3-geo#geoProjection) or [d3.geoProjectionMutator](https://github.com/d3/d3-geo#geoProjectionMutator). They are exposed here to facilitate the derivation of related projections. Raw projections define simple point transformations: they take spherical coordinates [*lambda*, *phi*] in radians and return a point [*x*, *y*], typically in the unit square centered around the origin.
