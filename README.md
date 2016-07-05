@@ -1,6 +1,6 @@
 # d3-geo-projection
 
-Extended geographic projections for D3.
+Extended geographic projections for D3. See [d3-geo](https://github.com/d3/d3-geo) for an introduction to D3’s geographic projection system.
 
 ## Installing
 
