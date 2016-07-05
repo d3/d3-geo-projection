@@ -11,7 +11,7 @@ for i in \
     bonne \
     bottomley \
     bromley \
-    chamberlin \
+    chamberlinAfrica \
     collignon \
     craig \
     craster \
@@ -68,8 +68,8 @@ for i in \
     sinuMollweide \
     sinusoidal \
     times \
-    twoPointAzimuthal \
-    twoPointEquidistant \
+    twoPointAzimuthalUsa \
+    twoPointEquidistantUsa \
     vanDerGrinten \
     vanDerGrinten2 \
     vanDerGrinten3 \

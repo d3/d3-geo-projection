@@ -1,5 +1,6 @@
-import {geoGnomonicRaw as gnomonicRaw, geoInterpolate as interpolate, geoProjectionMutator as projectionMutator, geoRotation as rotation} from "d3-geo";
-import {asin, cos, degrees, pi, sin, radians} from "./math";
+import {geoGnomonicRaw as gnomonicRaw} from "d3-geo";
+import {cos} from "./math";
+import twoPoint from "./twoPoint";
 
 export function twoPointAzimuthalRaw(d) {
   var cosd = cos(d);
@@ -17,35 +18,12 @@ export function twoPointAzimuthalRaw(d) {
   return forward;
 }
 
-export default function() {
-  var x0, y0, x1, y1,
-      m = projectionMutator(twoPointAzimuthalRaw),
-      p = m(0),
-      r,
-      center = p.center,
-      rotate = p.rotate;
-
-  delete p.rotate;
-
-  p.points = function(_) {
-    if (!arguments.length) return [[x0, y0], [x1, y1]];
-    var i = interpolate([x0 = +_[0][0], y0 = +_[0][1]], [x1 = +_[1][0], y1 = +_[1][1]]),
-        o = i(0.5),
-        p = rotation([-o[0], -o[1]])(_[0]),
-        b = i.distance / 2,
-        gamma = -asin(sin(p[1] * radians) / sin(b));
-    if (p[0] > 0) gamma = pi - gamma;
-    rotate.call(p, [-o[0], -o[1], -gamma * degrees]);
-    r = rotation([-o[0], -o[1], -gamma * degrees]);
-    return m(b);
-  };
-
-  p.center = function(_) {
-    return arguments.length ? center(r(_)) : r.invert(center());
-  };
-
-  return p
-      .points([[-158, 21.5], [-77, 39]]) // Honolulu, HI and Washington, DC
+export function twoPointAzimuthalUsa() {
+  return twoPointAzimuthal([-158, 21.5], [-77, 39])
       .clipAngle(60)
       .scale(400);
+}
+
+export default function twoPointAzimuthal(p0, p1) {
+  return twoPoint(twoPointAzimuthalRaw, p0, p1);
 }

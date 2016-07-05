@@ -121,15 +121,15 @@ Defaults to 0.5, corresponding to a sin(ψ) where ψ = π/6.
 
 The Bromley projection is a rescaled [Mollweide projection](#geoMollweide).
 
-<a href="#geoChamberlin" name="geoChamberlin">#</a> d3.<b>geoChamberlin</b>()
+<a href="#geoChamberlin" name="geoChamberlin">#</a> d3.<b>geoChamberlin</b>(<i>point0</i>, <i>point1</i>, <i>point2</i>)
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/chamberlin.png" width="480" height="250">](http://bl.ocks.org/mbostock/5625053)
+The Chamberlin trimetric projection. This method does not support [*projection*.rotate](https://github.com/d3/d3-geo#projection_rotate): the three reference points implicitly determine a fixed rotation.
 
-The Chamberlin trimetric projection. This method does not support *projection*.rotate: the [three reference points](#chamberlin_points) implicitly determine a fixed rotation.
+<a href="#geoChamberlinAfrica" name="geoChamberlinAfrica">#</a> d3.<b>geoChamberlinAfrica</b>()
 
-<a href="#chamberlin_points" name="chamberlin_points">#</a> <i>chamberlin</i>.<b>points</b>([<i>points</i>])
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/chamberlinAfrica.png" width="480" height="250">](http://bl.ocks.org/mbostock/5625053)
 
-Defaults to [[-20, 20], [20, 20], [0, -43.16]].
+The Chamberlin projection for Africa using points [0°, 22°], [45°, 22°], [22.5°, -22°].
 
 <a href="#geoCollignon" name="geoCollignon">#</a> d3.<b>geoCollignon</b>()
 
@@ -581,25 +581,25 @@ John Muir’s Times projection.
 
 The transverse spherical Mercator projection; see [d3-geo](https://github.com/d3/d3-geo#geoTransverseMercator).
 
-<a href="#geoTwoPointAzimuthal" name="geoTwoPointAzimuthal">#</a> d3.<b>geoTwoPointAzimuthal</b>()
+<a href="#geoTwoPointAzimuthal" name="geoTwoPointAzimuthal">#</a> d3.<b>geoTwoPointAzimuthal</b>(<i>point0</i>, <i>point1</i>)
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/twoPointAzimuthal.png" width="480" height="250">](https://www.jasondavies.com/maps/two-point-azimuthal/)
+The two-point azimuthal projection “shows correct azimuths (but not distances) from either of two points to any other point. [It can] be used to locate a ship at sea, given the exact location of two radio transmitters and the direction of the ship to the transmitters.” This projection does not support [*projection*.rotate](https://github.com/d3/d3-geo#projection_rotate), as the rotation is fixed by the two given points.
 
-The two-point azimuthal projection “shows correct azimuths (but not distances) from either of two points to any other point. [It can] be used to locate a ship at sea, given the exact location of two radio transmitters and the direction of the ship to the transmitters.” This projection does not support [*projection*.rotate](https://github.com/d3/d3-geo#projection_rotate), as the rotation is fixed by the [two points](#twoPointAzimuthal_points).
+<a href="#geoTwoPointAzimuthalUsa" name="geoTwoPointAzimuthalUsa">#</a> d3.<b>geoTwoPointAzimuthalUsa</b>()
 
-<a href="#twoPointAzimuthal_points" name="twoPointAzimuthal_points">#</a> <i>twoPointAzimuthal</i>.<b>points</b>([<i>points</i>])
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/twoPointAzimuthalUsa.png" width="480" height="250">](https://www.jasondavies.com/maps/two-point-azimuthal/)
 
-Defaults to [[-158°, 21.5°], [-77°, 39°]], approximately representing Honolulu, HI and Washington, D.C.
+The two-point azimuthal projection with points [-158°, 21.5°] and [-77°, 39°], approximately representing Honolulu, HI and Washington, D.C.
 
-<a href="#geoTwoPointEquidistant" name="geoTwoPointEquidistant">#</a> d3.<b>geoTwoPointEquidistant</b>()
+<a href="#geoTwoPointEquidistant" name="geoTwoPointEquidistant">#</a> d3.<b>geoTwoPointEquidistant</b>(<i>point0</i>, <i>point1</i>)
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/twoPointEquidistant.png" width="480" height="250">](https://www.jasondavies.com/maps/two-point-equidistant/)
+The two-point equidistant projection. This projection does not support [*projection*.rotate](https://github.com/d3/d3-geo#projection_rotate), as the rotation is fixed by the two given points.
 
-The two-point equidistant projection.
+<a href="#geoTwoPointEquidistantUsa" name="geoTwoPointEquidistantUsa">#</a> d3.<i>geoTwoPointEquidistantUsa</i>()
 
-<a href="#twoPointEquidistant_points" name="twoPointEquidistant_points">#</a> <i>twoPointEquidistant</i>.<b>points</b>([<i>points</i>])
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/twoPointEquidistantUsa.png" width="480" height="250">](https://www.jasondavies.com/maps/two-point-equidistant/)
 
-Defaults to [[-158°, 21.5°], [-77°, 39°]], approximately representing Honolulu, HI and Washington, D.C.
+The two-point equidistant projection with points [-158°, 21.5°] and [-77°, 39°], approximately representing Honolulu, HI and Washington, D.C.
 
 <a href="#geoVanDerGrinten" name="geoVanDerGrinten">#</a> d3.<b>geoVanDerGrinten</b>()
 
@@ -677,7 +677,7 @@ The inverse of [*project*](#_project).
 <br><a href="#geoBonneRaw" name="geoBonneRaw">#</a> d3.<b>geoBonneRaw</b>(<i>phi0</i>)
 <br><a href="#geoBottomleyRaw" name="geoBottomleyRaw">#</a> d3.<b>geoBottomleyRaw</b>(<i>sinPsi</i>)
 <br><a href="#geoBromleyRaw" name="geoBromleyRaw">#</a> d3.<b>geoBromleyRaw</b>
-<br><a href="#geoChamberlinRaw" name="geoChamberlinRaw">#</a> d3.<b>geoChamberlinRaw</b>(<i>lambda0</i>, <i>phi0</i>, <i>lambda1</i>, <i>phi1</i>, <i>lambda2</i>, <i>phi2</i>)
+<br><a href="#geoChamberlinRaw" name="geoChamberlinRaw">#</a> d3.<b>geoChamberlinRaw</b>(<i>p0</i>, <i>p1</i>, <i>p2</i>)
 <br><a href="#geoCollignonRaw" name="geoCollignonRaw">#</a> d3.<b>geoCollignonRaw</b>
 <br><a href="#geoCraigRaw" name="geoCraigRaw">#</a> d3.<b>geoCraigRaw</b>(<i>phi</i>)
 <br><a href="#geoCrasterRaw" name="geoCrasterRaw">#</a> d3.<b>geoCrasterRaw</b>
@@ -721,8 +721,8 @@ The inverse of [*project*](#_project).
 <br><a href="#geoSinuMollweideRaw" name="geoSinuMollweideRaw">#</a> d3.<b>geoSinuMollweideRaw</b>
 <br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
 <br><a href="#geoTimesRaw" name="geoTimesRaw">#</a> d3.<b>geoTimesRaw</b>
-<br><a href="#geoTwoPointAzimuthalRaw" name="geoTwoPointAzimuthalRaw">#</a> d3.<b>geoTwoPointAzimuthalRaw</b>
-<br><a href="#geoTwoPointEquidistantRaw" name="geoTwoPointEquidistantRaw">#</a> d3.<b>geoTwoPointEquidistantRaw</b>
+<br><a href="#geoTwoPointAzimuthalRaw" name="geoTwoPointAzimuthalRaw">#</a> d3.<b>geoTwoPointAzimuthalRaw</b>(<i>d</i>)
+<br><a href="#geoTwoPointEquidistantRaw" name="geoTwoPointEquidistantRaw">#</a> d3.<b>geoTwoPointEquidistantRaw</b>(<i>z0</i>)
 <br><a href="#geoVanDerGrinten2Raw" name="geoVanDerGrinten2Raw">#</a> d3.<b>geoVanDerGrinten2Raw</b>
 <br><a href="#geoVanDerGrinten3Raw" name="geoVanDerGrinten3Raw">#</a> d3.<b>geoVanDerGrinten3Raw</b>
 <br><a href="#geoVanDerGrinten4Raw" name="geoVanDerGrinten4Raw">#</a> d3.<b>geoVanDerGrinten4Raw</b>

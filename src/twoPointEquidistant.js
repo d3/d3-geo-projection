@@ -1,9 +1,10 @@
-import {geoAzimuthalEquidistantRaw as azimuthalEquidistantRaw, geoInterpolate as interpolate, geoProjectionMutator as projectionMutator, geoRotation as rotation} from "d3-geo";
-import {acos, asin, atan2, cos, degrees, pi, radians, sin, sqrt, tan} from "./math";
+import {geoAzimuthalEquidistantRaw as azimuthalEquidistantRaw} from "d3-geo";
+import {acos, atan2, cos, sin, sqrt, tan} from "./math";
+import twoPoint from "./twoPoint";
 
 // TODO clip to ellipse
 export function twoPointEquidistantRaw(z0) {
-  if (!z0) return azimuthalEquidistantRaw;
+  if (!(z0 *= 2)) return azimuthalEquidistantRaw;
   var lambdaa = -z0 / 2,
       lambdab = -lambdaa,
       z02 = z0 * z0,
@@ -36,39 +37,12 @@ export function twoPointEquidistantRaw(z0) {
   return forward;
 }
 
-export default function() {
-  var x0, y0, x1, y1,
-      m = projectionMutator(twoPointEquidistantRaw),
-      p = m(0),
-      r,
-      rotate = p.rotate,
-      center = p.center;
-
-  delete p.rotate;
-
-  // Compute the origin as the midpoint of the two reference points.
-  // Rotate one of the reference points by the origin.
-  // Apply the spherical law of sines to compute gamma rotation.
-  p.points = function(_) {
-    if (!arguments.length) return [[x0, y0], [x1, y1]];
-    var i = interpolate([x0 = +_[0][0], y0 = +_[0][1]], [x1 = +_[1][0], y1 = +_[1][1]]),
-        o = i(0.5),
-        p = rotation([-o[0], -o[1]])(_[0]),
-        b = i.distance * 0.5,
-        gamma = -asin(sin(p[1] * radians) / sin(b));
-    if (p[0] > 0) gamma = pi - gamma;
-    rotate.call(p, [-o[0], -o[1], -gamma * degrees]);
-    r = rotation([-o[0], -o[1], -gamma * degrees]);
-    return m(b * 2);
-  };
-
-  p.center = function(_) {
-    return arguments.length ? center(r(_)) : r.invert(center());
-  };
-
-  return p
-      .points([[-158, 21.5], [-77, 39]]) // Honolulu, HI and Washington, DC
+export function twoPointEquidistantUsa() {
+  return twoPointEquidistant([-158, 21.5], [-77, 39])
       .clipAngle(130)
-      .scale(122.571)
-      .center([-121.884, 37.4049]);
+      .scale(122.571);
+}
+
+export default function twoPointEquidistant(p0, p1) {
+  return twoPoint(twoPointEquidistantRaw, p0, p1);
 }

@@ -1,4 +1,4 @@
-import {geoCentroid as centroid, geoProjectionMutator as projectionMutator, geoRotation as rotation} from "d3-geo";
+import {geoCentroid as centroid, geoProjection as projection, geoRotation as rotation} from "d3-geo";
 import {abs, acos, asin, atan2, cos, epsilon, floor, pi, radians, sin, sqrt} from "./math";
 
 // Azimuthal distance.
@@ -23,11 +23,11 @@ function longitude(lambda) {
   return lambda - 2 * pi * floor((lambda + pi) / (2 * pi));
 }
 
-export function chamberlinRaw(lambda0, phi0, lambda1, phi1, lambda2, phi2) {
+export function chamberlinRaw(p0, p1, p2) {
   var points = [
-    [lambda0, phi0, sin(phi0), cos(phi0)],
-    [lambda1, phi1, sin(phi1), cos(phi1)],
-    [lambda2, phi2, sin(phi2), cos(phi2)]
+    [p0[0], p0[1], sin(p0[1]), cos(p0[1])],
+    [p1[0], p1[1], sin(p1[1]), cos(p1[1])],
+    [p2[0], p2[1], sin(p2[1]), cos(p2[1])]
   ];
 
   for (var a = points[2], b, i = 0; i < 3; ++i, a = b) {
@@ -89,36 +89,29 @@ export function chamberlinRaw(lambda0, phi0, lambda1, phi1, lambda2, phi2) {
   return forward;
 }
 
-export default function() {
-  var x0, y0,
-      x1, y1,
-      x2, y2,
-      m = projectionMutator(chamberlinRaw),
-      p = m(),
-      r = rotation(0, 0),
-      rotate = p.rotate,
+function pointRadians(p) {
+  return p[0] *= radians, p[1] *= radians, p;
+}
+
+export function chamberlinAfrica() {
+  return chamberlin([0, 22], [45, 22], [22.5, -22])
+      .scale(380)
+      .center([22.5, 2]);
+}
+
+export default function chamberlin(p0, p1, p2) { // TODO order matters!
+  var c = centroid({type: "MultiPoint", coordinates: [p0, p1, p2]}),
+      R = [-c[0], -c[1]],
+      r = rotation(R),
+      p = projection(chamberlinRaw(pointRadians(r(p0)), pointRadians(r(p1)), pointRadians(r(p2)))).rotate(R),
       center = p.center;
 
   delete p.rotate;
-  delete p.center;
-
-  p.points = function(_) {
-    if (!arguments.length) return [[x0, y0], [x1, y1], [x2, y2]];
-    var p0 = [x0 = +_[0][0], y0 = +_[0][1]],
-        p1 = [x1 = +_[1][0], y1 = +_[1][1]],
-        p2 = [x2 = +_[2][0], y2 = +_[2][1]],
-        c = centroid({type: "MultiPoint", coordinates: [p0, p1, p2]}),
-        c0 = r.invert(center());
-    rotate(r = [-c[0], -c[1]]), r = rotation(r), p0 = r(p0), p1 = r(p1), p2 = r(p2), center(r(c0));
-    return m(p0[0] * radians, p0[1] * radians, p1[0] * radians, p1[1] * radians, p2[0] * radians, p2[1] * radians);
-  };
 
   p.center = function(_) {
     return arguments.length ? center(r(_)) : r.invert(center());
   };
 
   return p
-      .points([[-20, 20], [20, 20], [0, -43.16]]) // TODO order matters!
-      .scale(160.631)
       .clipAngle(90);
 }
