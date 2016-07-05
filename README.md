@@ -676,6 +676,8 @@ Defines a new interrupted projection for the specified [raw projection](#raw-pro
 ]
 ```
 
+Note: interrupted projections typically require clipping to the sphere.
+
 <a href="#geoInterruptedHomolosine" name="geoInterruptedHomolosine">#</a> d3.<b>geoInterruptedHomolosine</b>()
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/interruptedHomolosine.png" width="480" height="250">](http://bl.ocks.org/mbostock/4448587)
@@ -690,19 +692,27 @@ An interrupted [sinusoidal projection](#geoSinusoidal).
 
 <a href="#geoInterruptedBoggs" name="geoInterruptedBoggs">#</a> d3.<b>geoInterruptedBoggs</b>()
 
-… http://bl.ocks.org/mbostock/4481265
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/interruptedBoggs.png" width="480" height="250">](http://bl.ocks.org/mbostock/4481265)
+
+Bogg’s interrupted [eumorphic projection](#geoBoggs).
 
 <a href="#geoInterruptedSinuMollweide" name="geoInterruptedSinuMollweide">#</a> d3.<b>geoInterruptedSinuMollweide</b>()
 
-… http://bl.ocks.org/mbostock/4481520
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/interruptedSinuMollweide.png" width="480" height="250">](http://bl.ocks.org/mbostock/4481520)
+
+Alan K. Philbrick’s interrupted [sinu-Mollweide projection](#geoSinuMollweide).
 
 <a href="#geoInterruptedMollweide" name="geoInterruptedMollweide">#</a> d3.<b>geoInterruptedMollweide</b>()
 
-… http://bl.ocks.org/mbostock/4498187
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/interruptedMollweide.png" width="480" height="250">](http://bl.ocks.org/mbostock/4498187)
+
+Goode’s interrupted [Mollweide projection](#geoMollweide).
 
 <a href="#geoInterruptedMollweideHemispheres" name="geoInterruptedMollweideHemispheres">#</a> d3.<b>geoInterruptedMollweideHemispheres</b>()
 
-… http://bl.ocks.org/mbostock/4498292
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/interruptedMollweideHemispheres.png" width="480" height="250">](http://bl.ocks.org/mbostock/4498292)
+
+The [Mollweide projection](#geoMollweide) interrupted into two (equal-area) hemispheres.
 
 ### Raw Projections
 

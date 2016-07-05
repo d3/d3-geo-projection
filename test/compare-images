@@ -41,8 +41,12 @@ for i in \
     healpix \
     hill \
     homolosine \
+    interruptedBoggs \
     interruptedHomolosine \
+    interruptedMollweide \
+    interruptedMollweideHemispheres \
     interruptedSinusoidal \
+    interruptedSinuMollweide \
     kavrayskiy7 \
     lagrange \
     larrivee \

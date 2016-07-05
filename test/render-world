@@ -42,8 +42,12 @@ switch (projectionName) {
   case "gingery":
   case "hammerRetroazimuthal":
   case "healpix":
+  case "interruptedBoggs":
   case "interruptedHomolosine":
   case "interruptedSinusoidal":
+  case "interruptedSinuMollweide":
+  case "interruptedMollweide":
+  case "interruptedMollweideHemispheres":
   case "littrow":
   case "modifiedStereographicGs50":
   case "modifiedStereographicMiller": {
