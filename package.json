@@ -1,6 +1,6 @@
 {
   "name": "d3-geo-projection",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Visualize relationships or network flow with an aesthetically-pleasing circular layout.",
   "keywords": [
     "d3",
