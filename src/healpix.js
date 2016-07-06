@@ -13,8 +13,8 @@ export function healpixRaw(H) {
       y0 = healpixLambert(0, phi0)[1],
       y1 = collignonRaw(0, phi0)[1],
       dy1 = sqrtPi - y1,
-      k = 2 * pi / H,
-      w = H / tau,
+      k = tau / H,
+      w = 4 / tau,
       h = y0 + (dy1 * dy1 * 4) / tau;
 
   function forward(lambda, phi) {
