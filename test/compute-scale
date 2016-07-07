@@ -27,7 +27,6 @@ var land = {type: "Sphere"};
 switch (projectionName) {
   case "airy":
   case "chamberlin": {
-    ++width, ++height;
     projection.clipAngle(90);
     break;
   }
