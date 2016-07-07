@@ -60,7 +60,8 @@ export {default as geoMtFlatPolarSinusoidal, mtFlatPolarSinusoidalRaw as geoMtFl
 export {default as geoNaturalEarth, naturalEarthRaw as geoNaturalEarthRaw} from "./src/naturalEarth";
 export {default as geoNellHammer, nellHammerRaw as geoNellHammerRaw} from "./src/nellHammer";
 export {default as geoPatterson, pattersonRaw as geoPattersonRaw} from "./src/patterson";
-export {default as geoPierceQuincuncial} from "./src/pierceQuincuncial.js";
+export {default as geoPeirceQuincuncial} from "./src/peirceQuincuncial.js";
+export {default as geoPierceQuincuncial} from "./src/peirceQuincuncial.js"; // DEPRECATED misspelling
 export {default as geoPolyconic, polyconicRaw as geoPolyconicRaw} from "./src/polyconic";
 export {default as geoRectangularPolyconic, rectangularPolyconicRaw as geoRectangularPolyconicRaw} from "./src/rectangularPolyconic";
 export {default as geoRobinson, robinsonRaw as geoRobinsonRaw} from "./src/robinson";

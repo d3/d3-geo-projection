@@ -323,7 +323,7 @@ The Gringorten square equal-area projection.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/guyou.png" width="480" height="250">](http://bl.ocks.org/mbostock/3763867)
 
-The Guyou hemisphere-in-a-square projection. Pierce is credited with its [quincuncial form](#geoPierceQuincuncial).
+The Guyou hemisphere-in-a-square projection. Peirce is credited with its [quincuncial form](#geoPeirceQuincuncial).
 
 <a href="#geoHammer" name="geoHammer">#</a> d3.<b>geoHammer</b>()
 
@@ -509,11 +509,11 @@ The orthographic projection; see [d3-geo](https://github.com/d3/d3-geo#geoOrthog
 
 The Patterson cylindrical projection.
 
-<a href="#geoPierceQuincuncial" name="geoPierceQuincuncial">#</a> d3.<b>geoPierceQuincuncial</b>()
+<a href="#geoPeirceQuincuncial" name="geoPeirceQuincuncial">#</a> d3.<b>geoPeirceQuincuncial</b>()
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/pierceQuincuncial.png" width="480" height="250">](http://bl.ocks.org/mbostock/4310087)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/peirceQuincuncial.png" width="480" height="250">](http://bl.ocks.org/mbostock/4310087)
 
-The Pierce quincuncial projection is the quincuncial form of the [Guyou projection](#geoGuyou).
+The Peirce quincuncial projection is the quincuncial form of the [Guyou projection](#geoGuyou).
 
 <a href="#geoPolyconic" name="geoPolyconic">#</a> d3.<b>geoPolyconic</b>()
 
