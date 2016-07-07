@@ -3,8 +3,7 @@
 var width = 960 - 1,
     height = 500 - 1,
     projectionName = process.argv[2],
-    projectionSymbol = "geo" + projectionName[0].toUpperCase() + projectionName.slice(1),
-    projectionHalves = ["airy", "chamberlin"];
+    projectionSymbol = "geo" + projectionName[0].toUpperCase() + projectionName.slice(1);
 
 if (!/^[a-z0-9]+$/i.test(projectionName)) throw new Error;
 
@@ -23,11 +22,14 @@ var projection = d3_geo_projection[projectionSymbol]()
 
 if (projection.rotate) projection.rotate([0, 0]);
 
-if (projectionHalves.indexOf(projectionName) >= 0) projection.clipAngle(90);
-
 var land = {type: "Sphere"};
 
 switch (projectionName) {
+  case "airy":
+  case "chamberlin": {
+    projection.clipAngle(90);
+    break;
+  }
   case "littrow": {
     land = d3_geo.geoGraticule().extent([[-90, -60], [90, 60]]).outline();
     break;

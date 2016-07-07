@@ -10,7 +10,6 @@ if (!/^[a-z0-9]+$/i.test(projectionName)) throw new Error;
 var fs = require("fs"),
     topojson = require("topojson"),
     Canvas = require("canvas"),
-    d3 = require("d3"),
     d3_geo = require("d3-geo"),
     d3_geo_projection = require("../");
 
