@@ -688,7 +688,7 @@ Goode’s interrupted [homolosine projection](#geoHomolosine).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/interruptedSinusoidal.png" width="480" height="250">](http://bl.ocks.org/mbostock/4458991)
 
-An interrupted [sinusoidal projection](#geoSinusoidal).
+An interrupted [sinusoidal projection](#geoSinusoidal) with asymmetrical lobe boundaries that emphasize land masses over oceans, after the Swedish <i>Nordisk Världs Atlas</i> as reproduced by [C.A. Furuti](http://www.progonos.com/furuti/MapProj/Normal/ProjInt/projInt.html#InterruptedSansonFlamsteed).
 
 <a href="#geoInterruptedBoggs" name="geoInterruptedBoggs">#</a> d3.<b>geoInterruptedBoggs</b>()
 
