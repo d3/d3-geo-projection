@@ -21,6 +21,7 @@
     }
   ],
   "main": "build/d3-geo-projection.js",
+  "module": "index",
   "jsnext:main": "index",
   "repository": {
     "type": "git",
@@ -41,7 +42,7 @@
     "d3-format": "1",
     "eslint": "2",
     "package-preamble": "0.0",
-    "rollup": "0.33",
+    "rollup": "0.34",
     "tape": "4",
     "topojson": "1",
     "uglify-js": "2"
