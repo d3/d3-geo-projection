@@ -1,4 +1,4 @@
-import {geoBounds as bounds, geoCentroid as centroid, geoGnomonic as gnomonic, geoInterpolate as interpolate, geoProjection as projection, geoTransform as transform} from "d3-geo";
+import {geoBounds as bounds, geoCentroid as centroid, geoGnomonic as gnomonic, geoInterpolate as interpolate, geoProjection as projection} from "d3-geo";
 import { collignonRaw } from "./collignon";
 import {abs, asin, atan, atan2, cos, degrees, epsilon, max, min, pi, radians, sin, sqrt, sqrt1_2} from "./math";
 
@@ -32,8 +32,8 @@ export default function polyhedron (root, face, r) {
           if (pointEqual(shared[0], edges[i][1]) && pointEqual(shared[1], edges[i][0])) edges[i] = node;
           if (pointEqual(shared[0], edges[i][0]) && pointEqual(shared[1], edges[i][1])) edges[i] = node;
         }
-        var edges = node.edges;
-        for (var i = 0, n = edges.length; i < n; ++i) {
+        edges = node.edges;
+        for (i = 0, n = edges.length; i < n; ++i) {
           if (pointEqual(shared[0], edges[i][0]) && pointEqual(shared[1], edges[i][1])) edges[i] = parent;
           if (pointEqual(shared[0], edges[i][1]) && pointEqual(shared[1], edges[i][0])) edges[i] = parent;
         }
@@ -112,7 +112,7 @@ export default function polyhedron (root, face, r) {
   };
 
   return proj;
-};
+}
 
 export function polyhedronButterfly(faceProjection) {
 
@@ -139,7 +139,7 @@ export function polyhedronButterfly(faceProjection) {
   })
   .scale(101.858)
   .center([0,45]);
-};
+}
 
 
 
@@ -181,7 +181,7 @@ export function polyhedronCollignon(faceProjection) {
   })
   .scale(121.906)
   .center([0, 48.5904]);
-};
+}
 
 
 export function polyhedronWaterman(faceProjection) {
@@ -270,7 +270,7 @@ export function polyhedronWaterman(faceProjection) {
       : dot(n[2], p) < 0 ? 8 + 3 * hexagon + 2
       : hexagon];
   }
-};
+}
 
 function outline(stream, node, parent) {
   var point,
