@@ -136,7 +136,7 @@ export function polyhedronButterfly(faceProjection) {
         : lambda < pi / 2 ? phi < 0 ? 3 : 1
         : phi < 0 ? 7 : 5];
   })
-  .scale(110) // TODO ??
+  .scale(101.858)
   .center([0,45]);
 };
 
@@ -207,7 +207,7 @@ export function polyhedronWaterman(faceProjection) {
   });
 
   return polyhedron(faces[0], face)
-      .scale(102)
+      .scale(110.625)
       .center([0,45]);
 
   function face(lambda, phi) {
