@@ -1,5 +1,5 @@
 import {geoBounds as bounds, geoCentroid as centroid, geoGnomonic as gnomonic, geoInterpolate as interpolate, geoProjection as projection, geoTransform as transform} from "d3-geo";
-import { default as collignon } from "./collignon";
+import { collignonRaw } from "./collignon";
 import {abs, asin, atan, atan2, cos, degrees, epsilon, max, min, pi, radians, sin, sqrt, sqrt1_2} from "./math";
 
 // Creates a polyhedral projection.
@@ -145,15 +145,22 @@ export function polyhedronButterfly(faceProjection) {
 
 export function polyhedronCollignon(faceProjection) {
 
+    var scalex = 2/sqrt(3),
+    collignonScaled = function(a,b) {
+      var p = collignonRaw(a,b);
+      return [p[0] * scalex, p[1]];
+    };
+    collignonScaled.invert = function(x,y) {
+      return collignonRaw.invert(x / scalex, y);
+    }
+
   faceProjection = faceProjection || function(face) {
     var c = centroid({type: "MultiPoint", coordinates: face});
 
-    var pr = collignon().scale(1).translate([0, 0]).distort(2/sqrt(3));
+    return projection(collignonScaled)
+      .translate([0, 0]).scale(1)
+      .rotate(c[1] > 0 ? [-c[0], 0] : [180-c[0], 180]);
 
-    if (c[1] > 0)
-        return pr.rotate([-c[0], 0]);
-    else
-        return pr.rotate([180-c[0], 180]);
   };
 
   var faces = polyhedronOctahedron.map(function(face) {
@@ -173,7 +180,7 @@ export function polyhedronCollignon(faceProjection) {
         : phi < 0 ? 7 : 5];
   })
   .scale(121.906)
-  .center([0, 48.7]);
+  .center([0, 48.5904]);
 };
 
 
