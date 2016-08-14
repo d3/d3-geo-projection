@@ -541,7 +541,7 @@ The Collignon butterfly projection.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/polyhedronWaterman.png" width="480" height="250">](https://www.jasondavies.com/maps/waterman-butterfly/)
 
-The Waterman butterfly projection.
+Steve Waterman’s butterfly projection.
 
 <a href="#geoRectangularPolyconic" name="geoRectangularPolyconic">#</a> d3.<b>geoRectangularPolyconic</b>()
 
