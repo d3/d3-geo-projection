@@ -1,0 +1,137 @@
+var tape = require("tape"),
+    d3 = require("../");
+
+require("./projectionEqual");
+
+tape("projection.invert(projection(point)) returns the point", function(test) {
+  [
+  'geoAiry',
+  'geoAitoff',
+  'geoArmadillo',
+  'geoAugust',
+  'geoBaker',
+  'geoBerghaus',
+  'geoBoggs',
+  'geoBonne',
+  'geoBottomley',
+  'geoBromley',
+  //d3.geoChamberlin(),
+  //d3.geoChamberlinAfrica',
+  'geoCollignon',
+  'geoCraig',
+  'geoCraster',
+  'geoCylindricalEqualArea',
+  'geoCylindricalStereographic',
+  'geoEckert1',
+  'geoEckert2',
+  'geoEckert3',
+  'geoEckert4',
+  'geoEckert5',
+  'geoEckert6',
+  'geoEisenlohr',
+  'geoFahey',
+  'geoFoucaut',
+  'geoGilbert',
+  'geoGingery',
+  'geoGinzburg4',
+  'geoGinzburg5',
+  'geoGinzburg6',
+  'geoGinzburg8',
+  'geoGinzburg9',
+  'geoGringorten',
+  //'geoGringortenQuincuncial',
+  'geoGuyou',
+  'geoHammer',
+  'geoHammerRetroazimuthal',
+  //'geoHealpix',
+  'geoHill',
+  'geoHomolosine',
+  /*
+  'geoInterrupt',
+  'geoInterruptedBoggs',
+  'geoInterruptedHomolosine',
+  'geoInterruptedMollweide',
+  'geoInterruptedMollweideHemispheres',
+  'geoInterruptedSinuMollweide',
+  'geoInterruptedSinusoidal',
+  */
+  'geoKavrayskiy7',
+  'geoLagrange',
+  'geoLarrivee',
+  'geoLaskowski',
+  'geoLittrow',
+  'geoLoximuthal',
+  'geoMiller',
+  /*
+  'geoModifiedStereographic',
+  'geoModifiedStereographicAlaska',
+  'geoModifiedStereographicGs48',
+  'geoModifiedStereographicGs50',
+  'geoModifiedStereographicMiller',
+  'geoModifiedStereographicLee',
+  */
+  'geoMollweide',
+  'geoMtFlatPolarParabolic',
+  'geoMtFlatPolarQuartic',
+  'geoMtFlatPolarSinusoidal',
+  'geoNaturalEarth',
+  'geoNellHammer',
+  'geoPatterson',
+  'geoPeirceQuincuncial',
+  'geoPierceQuincuncial',
+  'geoPolyconic',
+  'geoRectangularPolyconic',
+  'geoRobinson',
+  'geoSatellite',
+  'geoSinuMollweide',
+  'geoSinusoidal',
+  'geoTimes',
+  //'geoTwoPointAzimuthal',
+  //'geoTwoPointAzimuthalUsa',
+  //'geoTwoPointEquidistant',
+  'geoTwoPointEquidistantUsa',
+  'geoVanDerGrinten',
+  'geoVanDerGrinten2',
+  'geoVanDerGrinten3',
+  'geoVanDerGrinten4',
+  'geoWagner4',
+  'geoWagner6',
+  'geoWagner7',
+  'geoWiechel',
+  'geoWinkel3',
+    
+/* Shouldn't we re-check all the projections from d3-geo?
+    d3.geogeoAlbers(),
+    / * d3.geoAlbersUsa(), * /
+    d3.geogeoAzimuthalEqualArea(),
+    d3.geogeoAzimuthalEquidistant(),
+    d3.geogeoConicConformal(),
+    d3.geogeoConicConformal().parallels([20,30]),
+    d3.geogeoConicConformal().parallels([30,30]),
+    d3.geogeoConicConformal().parallels([-35,-50]),
+    d3.geogeoConicEqualArea(),
+    d3.geogeoConicEqualArea().parallels([20,30]),
+    d3.geogeoConicEqualArea().parallels([-30,30]),
+    d3.geogeoConicEqualArea().parallels([-35,-50]), // https://github.com/d3/d3/issues/2707
+    d3.geogeoConicEquidistant(),
+    d3.geogeoConicEquidistant().parallels([20,30]),
+    d3.geogeoConicEquidistant().parallels([30,30]),
+    d3.geogeoConicEquidistant().parallels([-35,-50]),
+    d3.geogeoEquirectangular(),
+    d3.geogeoGnomonic(),
+    d3.geogeoMercator(),
+    d3.geogeoOrthographic(),
+    d3.geogeoStereographic(),
+    d3.geogeoTransverseMercator(),
+ */
+  ]
+  .forEach(function(name) {
+  console.log('projection', name);
+     var projection = d3[name]();
+     [ [0, 0], [30, 24], [ -10, 42 ] ]
+     .forEach(function(point) {
+         test.projectionEqual(projection, point, projection(point));
+     });
+  });
+  test.end();
+});
