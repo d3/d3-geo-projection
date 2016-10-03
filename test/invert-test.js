@@ -126,9 +126,8 @@ tape("projection.invert(projection(point)) returns the point", function(test) {
  */
   ]
   .forEach(function(name) {
-  console.log('projection', name);
      var projection = d3[name]();
-     [ [0, 0], [30, 24], [ -10, 42 ] ]
+     [ [0, 0], [30.3, 24.1], [-10, 42], [-2, -5] ]
      .forEach(function(point) {
          test.projectionEqual(projection, point, projection(point));
      });
