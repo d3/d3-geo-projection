@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+var readline = require("readline"),
+    d3GeoProjection = require("../");
+
+process.stdout.on("error", function(error) {
+  if (error.code === "EPIPE" || error.errno === "EPIPE") {
+    process.exit(0);
+  }
+});
+
+var i = -1;
+
+readline.createInterface({
+  input: process.stdin,
+  output: null
+}).on("line", function(line) {
+  ++i;
+  try {
+    process.stdout.write(JSON.stringify(d3GeoProjection.geoStitch(JSON.parse(line))) + "\n");
+  } catch (error) {
+    console.error("stdin:" + (i + 1));
+    console.error(line);
+    console.error("^");
+    console.error("Error: " + error.message);
+    process.exit(1);
+  }
+});

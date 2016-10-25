@@ -791,3 +791,13 @@ The inverse of [*project*](#_project).
 <br><a href="#geoWagner7Raw" name="geoWagner7Raw">#</a> d3.<b>geoWagner7Raw</b>
 <br><a href="#geoWiechelRaw" name="geoWiechelRaw">#</a> d3.<b>geoWiechelRaw</b>
 <br><a href="#geoWinkel3Raw" name="geoWinkel3Raw">#</a> d3.<b>geoWinkel3Raw</b>
+
+### Serializing Projections
+
+<a href="#geoProject" name="geoProject">#</a> d3.<b>geoProject</b>(<i>object</i>, <i>projection</i>)
+
+…
+
+<a href="#geoStitch" name="geoStitch">#</a> d3.<b>geoStitch</b>(<i>object</i>)
+
+…

@@ -63,11 +63,13 @@ export {default as geoPatterson, pattersonRaw as geoPattersonRaw} from "./src/pa
 export {default as geoPeirceQuincuncial} from "./src/peirceQuincuncial.js";
 export {default as geoPierceQuincuncial} from "./src/peirceQuincuncial.js"; // DEPRECATED misspelling
 export {default as geoPolyconic, polyconicRaw as geoPolyconicRaw} from "./src/polyconic";
+export {default as geoProject} from "./src/project/index";
 export {default as geoRectangularPolyconic, rectangularPolyconicRaw as geoRectangularPolyconicRaw} from "./src/rectangularPolyconic";
 export {default as geoRobinson, robinsonRaw as geoRobinsonRaw} from "./src/robinson";
 export {default as geoSatellite, satelliteRaw as geoSatelliteRaw} from "./src/satellite";
 export {default as geoSinuMollweide, sinuMollweideRaw as geoSinuMollweideRaw} from "./src/sinuMollweide";
 export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./src/sinusoidal";
+export {default as geoStitch} from "./src/stitch";
 export {default as geoTimes, timesRaw as geoTimesRaw} from "./src/times";
 export {default as geoTwoPointAzimuthal, twoPointAzimuthalRaw as geoTwoPointAzimuthalRaw, twoPointAzimuthalUsa as geoTwoPointAzimuthalUsa} from "./src/twoPointAzimuthal";
 export {default as geoTwoPointEquidistant, twoPointEquidistantRaw as geoTwoPointEquidistantRaw, twoPointEquidistantUsa as geoTwoPointEquidistantUsa} from "./src/twoPointEquidistant";

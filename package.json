@@ -27,6 +27,10 @@
     "type": "git",
     "url": "https://github.com/d3/d3-geo-projection.git"
   },
+  "bin": {
+    "geoproject": "geoproject",
+    "geostitch": "geostitch"
+  },
   "scripts": {
     "pretest": "rm -rf build && mkdir build && rollup --banner \"$(preamble)\" -g d3-array:d3,d3-geo:d3 -f umd -n d3 -o build/d3-geo-projection.js -- index.js",
     "test": "tape 'test/**/*-test.js' && mkdir -p test/output && test/compare-images && eslint index.js src",
