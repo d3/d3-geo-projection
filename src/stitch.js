@@ -1,14 +1,20 @@
-import Visitor from "./visitor";
+import visitor from "./visitor";
 
-var epsilon = 1e-2,
+var epsilon = 1e-6,
+    epsilonInverse = 1e6,
     x0 = -180, x0e = x0 + epsilon,
     x1 = 180, x1e = x1 - epsilon,
     y0 = -90, y0e = y0 + epsilon,
     y1 = 90, y1e = y1 - epsilon;
 
+function quantize(x) {
+  return Math.floor(x * epsilonInverse) / epsilonInverse;
+}
+
 function normalizePoint(y) {
-  return y <= y0e ? [0, y0] // south pole
-      : y >= y1e ? [0, y1] // north pole
+  y = quantize(y);
+  return y <= y0 ? [0, y0] // south pole
+      : y >= y1 ? [0, y1] // north pole
       : [x0, y]; // antimeridian
 }
 
@@ -155,7 +161,7 @@ function stitchFragments(fragments) {
   }
 }
 
-var stitch = new Visitor({
+var stitch = visitor({
   Polygon: function(polygon) {
     var fragments = [];
     extractFragments(polygon.coordinates, fragments);

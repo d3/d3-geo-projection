@@ -1,10 +1,14 @@
-export default function Visitor(methods) {
+export default function visitor(methods) {
+  return new Visitor(methods);
+}
+
+function Visitor(methods) {
   for (var type in methods) {
     this[type] = methods[type];
   }
 }
 
-Visitor.prototype = {
+Visitor.prototype = visitor.prototype = {
   constructor: Visitor,
   Feature: function(feature) {
     if (feature.geometry) this.geometry(feature.geometry);
