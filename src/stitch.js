@@ -1,5 +1,3 @@
-import visitor from "./visitor";
-
 var epsilon = 1e-6,
     epsilonInverse = 1e6,
     x0 = -180, x0e = x0 + epsilon,
@@ -161,20 +159,29 @@ function stitchFragments(fragments) {
   }
 }
 
-var stitch = visitor({
-  Polygon: function(polygon) {
-    var fragments = [];
-    extractFragments(polygon.coordinates, fragments);
-    stitchFragments(fragments);
-  },
-  MultiPolygon: function(multiPolygon) {
-    var fragments = [], i, n = multiPolygon.coordinates.length;
-    for (i = 0; i < n; ++i) extractFragments(multiPolygon.coordinates[i], fragments);
-    stitchFragments(fragments);
-  }
-});
+function stitchFeature(o) {
+  stitchGeometry(o.geometry);
+}
 
-export default function(object) {
-  stitch.object(object);
-  return object;
+function stitchGeometry(o) {
+  var fragments, i, n;
+  if (o) switch (o.type) {
+    case "GeometryCollection": return o.geometries.forEach(stitchGeometry);
+    case "Polygon": extractFragments(o.coordinates, fragments = []); break;
+    case "MultiPolygon": {
+      fragments = [], i = -1, n = o.coordinates.length;
+      while (++i < n) extractFragments(o.coordinates[i], fragments);
+      break;
+    }
+    default: return;
+  }
+  stitchFragments(fragments);
+}
+
+export default function(o) {
+  if (o) switch (o.type) {
+    case "Feature": return stitchFeature(o);
+    case "FeatureCollection": return o.features.forEach(stitchFeature);
+    default: return stitchGeometry(o);
+  }
 }
