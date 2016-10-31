@@ -1,5 +1,5 @@
-var epsilon = 1e-6,
-    epsilonInverse = 1e6,
+var epsilon = 1e-4,
+    epsilonInverse = 1e4,
     x0 = -180, x0e = x0 + epsilon,
     x1 = 180, x1e = x1 - epsilon,
     y0 = -90, y0e = y0 + epsilon,
