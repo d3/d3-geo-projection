@@ -180,8 +180,9 @@ function stitchGeometry(o) {
 
 export default function(o) {
   if (o) switch (o.type) {
-    case "Feature": return stitchFeature(o);
-    case "FeatureCollection": return o.features.forEach(stitchFeature);
-    default: return stitchGeometry(o);
+    case "Feature": stitchFeature(o); break;
+    case "FeatureCollection": o.features.forEach(stitchFeature); break;
+    default: stitchGeometry(o); break;
   }
+  return o;
 }

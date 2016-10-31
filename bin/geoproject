@@ -1,35 +1,31 @@
 #!/usr/bin/env node
 
-var readline = require("readline"),
+var commander = require("commander"),
     vm = require("vm"),
     d3Geo = require("d3-geo"),
-    d3GeoProjection = require("../");
+    d3GeoProjection = require("../"),
+    geotransform = require("./geotransform");
 
-var projection = vm.runInNewContext("(" + process.argv[2] + ")", {
+commander
+    .version(require("../package.json").version)
+    .usage("[options] <projection>")
+    .description("Transform GeoJSON, such as to project from spherical to planar coordinates.")
+    .option("-i, --in <file>", "input file name; defaults to “-” for stdin", "-")
+    .option("-o, --out <file>", "output file name; defaults to “-” for stdout", "-")
+    .option("-n, --newline-delimited", "use newline-delimited JSON")
+    .parse(process.argv);
+
+if (commander.args.length !== 1) {
+  console.error();
+  console.error("  error: invalid or missing projection");
+  console.error();
+  process.exit(1);
+}
+
+var projection = vm.runInNewContext("(" + commander.args[0] + ")", {
   d3: Object.assign({}, d3Geo, d3GeoProjection)
 });
 
-process.stdout.on("error", function(error) {
-  if (error.code === "EPIPE" || error.errno === "EPIPE") {
-    process.exit(0);
-  }
-});
-
-var i = -1;
-
-readline.createInterface({
-  input: process.stdin,
-  output: null
-}).on("line", function(line) {
-  ++i;
-  try {
-    process.stdout.write(JSON.stringify(d3GeoProjection.geoProject(JSON.parse(line), projection)) + "\n");
-  } catch (error) {
-    throw error;
-    console.error("stdin:" + (i + 1));
-    console.error(line);
-    console.error("^");
-    console.error("Error: " + error.message);
-    process.exit(1);
-  }
+geotransform(function(object) {
+  return d3GeoProjection.geoProject(object, projection);
 });

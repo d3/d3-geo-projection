@@ -38,6 +38,7 @@
     "postpublish": "VERSION=`node -e 'console.log(require(\"./package.json\").version)'`; git push && git push --tags && cd ../d3.github.com && git pull && cp ../d3-geo-projection/build/d3-geo-projection.js d3-geo-projection.v1.js && cp ../d3-geo-projection/build/d3-geo-projection.min.js d3-geo-projection.v1.min.js && git add d3-geo-projection.v1.js d3-geo-projection.v1.min.js && git commit -m \"d3-geo-projection ${VERSION}\" && git push && cd - && zip -j build/d3-geo-projection.zip -- LICENSE README.md build/d3-geo-projection.js build/d3-geo-projection.min.js"
   },
   "dependencies": {
+    "commander": "2",
     "d3-array": "1",
     "d3-geo": "^1.1.0"
   },
