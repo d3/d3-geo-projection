@@ -41,6 +41,7 @@ writer.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>" + os.EOL
     + " width=\"" + +commander.width + "\""
     + " height=\"" + +commander.height + "\""
     + " viewBox=\"0 0 " + +commander.width + " " + +commander.height + "\""
+    + " fill=\"none\" stroke=\"black\""
     + ">" + os.EOL);
 
 function transform(d) {
