@@ -7,7 +7,7 @@ import {default as matrix, multiply, inverse} from "./matrix";
 //    augmented with a transform matrix.
 //  * face: a function that returns the appropriate node for a given {lambda, phi}
 //    point (radians).
-//  * r: rotation angle for final polyhedron net.  Defaults to -pi / 6 (for
+//  * r: rotation angle for final polyhedral net.  Defaults to -pi / 6 (for
 //    butterflies).
 export default function(root, face, r) {
 

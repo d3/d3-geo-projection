@@ -1,6 +1,6 @@
 import {geoCentroid as centroid, geoGnomonic as gnomonic} from "d3-geo";
 import {asin, atan2, cos, degrees, max, min, pi, radians, sin} from "../math";
-import polyhedron from "./index";
+import polyhedral from "./index";
 import octahedron from "./octahedron";
 
 export default function(faceProjection) {
@@ -83,7 +83,7 @@ export default function(faceProjection) {
         : hexagon];
   }
 
-  return polyhedron(faces[0], face)
+  return polyhedral(faces[0], face)
       .scale(110.625)
       .center([0,45]);
 }

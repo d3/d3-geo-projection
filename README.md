@@ -21,15 +21,15 @@ var aitoff = d3.geoAitoff();
 
 ## API Reference
 
+* [Projections](#projections)
+* [Interrupted Projections](#interrupted-projections)
+* [Polyhedral Projections](#polyhedral-projections)
+* [Transformations](#transformations)
+
 ### Projections
 
-<a href="#geoAitoff" name="geoAitoff">#</a> d3.<b>geoAitoff</b>()
-
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/aitoff.png" width="480" height="250">](http://bl.ocks.org/mbostock/3682698)
-
-The Aitoff projection.
-
 <a href="#geoAiry" name="geoAiry">#</a> d3.<b>geoAiry</b>()
+<br><a href="#geoAiryRaw" name="geoAiryRaw">#</a> d3.<b>geoAiryRaw</b>(<i>beta</i>)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/airy.png" width="480" height="250">](http://bl.ocks.org/mbostock/5620807)
 
@@ -39,6 +39,13 @@ Airy’s minimum-error azimuthal projection.
 
 Defaults to 90°.
 
+<a href="#geoAitoff" name="geoAitoff">#</a> d3.<b>geoAitoff</b>()
+<br><a href="#geoAitoffRaw" name="geoAitoffRaw">#</a> d3.<b>geoAitoffRaw</b>
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/aitoff.png" width="480" height="250">](http://bl.ocks.org/mbostock/3682698)
+
+The Aitoff projection.
+
 <a href="#geoAlbers" name="geoAlbers">#</a> d3.<b>geoAlbers</b>()
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/albers.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734308)
@@ -46,6 +53,7 @@ Defaults to 90°.
 Alber’s [equal-area conic projection](#geoConicEqualArea); see [d3-geo](https://github.com/d3/d3-geo#geoAlbers).
 
 <a href="#geoArmadillo" name="geoArmadillo">#</a> d3.<b>geoArmadillo</b>()
+<br><a href="#geoArmadilloRaw" name="geoArmadilloRaw">#</a> d3.<b>geoArmadilloRaw</b>(<i>phi0</i>)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/armadillo.png" width="480" height="250">](http://bl.ocks.org/mbostock/4463127)
 
@@ -56,6 +64,7 @@ The armadillo projection. The default center assumes the default [parallel](#arm
 Defaults to 20°.
 
 <a href="#geoAugust" name="geoAugust">#</a> d3.<b>geoAugust</b>()
+<br><a href="#geoAugustRaw" name="geoAugustRaw">#</a> d3.<b>geoAugustRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/august.png" width="480" height="250">](http://bl.ocks.org/mbostock/3797581)
 
@@ -74,12 +83,14 @@ The Lambert azimuthal equal-area projection; see [d3-geo](https://github.com/d3/
 The azimuthal equidistant projection; see [d3-geo](https://github.com/d3/d3-geo#geoAzimuthalEquidistant).
 
 <a href="#geoBaker" name="geoBaker">#</a> d3.<b>geoBaker</b>()
+<br><a href="#geoBakerRaw" name="geoBakerRaw">#</a> d3.<b>geoBakerRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/baker.png" width="480" height="250">](http://bl.ocks.org/mbostock/4476279)
 
 The Baker Dinomic projection.
 
 <a href="#geoBerghaus" name="geoBerghaus">#</a> d3.<b>geoBerghaus</b>()
+<br><a href="#geoBerghausRaw" name="geoBerghausRaw">#</a> d3.<b>geoBerghausRaw</b>(<i>lobes</i>)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/berghaus.png" width="480" height="250">](http://bl.ocks.org/mbostock/4463049)
 
@@ -90,12 +101,14 @@ Berghaus’ star projection. The default center assumes the default [lobe number
 If *lobes* is specified, sets the number of lobes in the resulting star, and returns this projection. If *lobes* is not specified, returns the current lobe number, which defaults to 5.
 
 <a href="#geoBoggs" name="geoBoggs">#</a> d3.<b>geoBoggs</b>()
+<br><a href="#geoBoggsRaw" name="geoBoggsRaw">#</a> d3.<b>geoBoggsRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/boggs.png" width="480" height="250">](http://bl.ocks.org/mbostock/4481220)
 
 The Boggs eumorphic projection. More commonly used in [interrupted form](#geoInterruptedBoggs).
 
 <a href="#geoBonne" name="geoBonne">#</a> d3.<b>geoBonne</b>()
+<br><a href="#geoBonneRaw" name="geoBonneRaw">#</a> d3.<b>geoBonneRaw</b>(<i>phi0</i>)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/bonne.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734313)
 
@@ -106,6 +119,7 @@ The Bonne pseudoconical equal-area projection. The [Werner projection](http://bl
 Defaults to 45°.
 
 <a href="#geoBottomley" name="geoBottomley">#</a> d3.<b>geoBottomley</b>()
+<br><a href="#geoBottomleyRaw" name="geoBottomleyRaw">#</a> d3.<b>geoBottomleyRaw</b>(<i>sinPsi</i>)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/bottomley.png" width="480" height="250">](http://bl.ocks.org/mbostock/ad2d520dd26dcc5af13b)
 
@@ -116,12 +130,14 @@ The [Bottomley projection](http://cybergeo.revues.org/3977) “draws lines of la
 Defaults to 0.5, corresponding to a sin(ψ) where ψ = π/6.
 
 <a href="#geoBromley" name="geoBromley">#</a> d3.<b>geoBromley</b>()
+<br><a href="#geoBromleyRaw" name="geoBromleyRaw">#</a> d3.<b>geoBromleyRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/bromley.png" width="480" height="250">](http://bl.ocks.org/mbostock/4487695)
 
 The Bromley projection is a rescaled [Mollweide projection](#geoMollweide).
 
 <a href="#geoChamberlin" name="geoChamberlin">#</a> d3.<b>geoChamberlin</b>(<i>point0</i>, <i>point1</i>, <i>point2</i>)
+<br><a href="#geoChamberlinRaw" name="geoChamberlinRaw">#</a> d3.<b>geoChamberlinRaw</b>(<i>p0</i>, <i>p1</i>, <i>p2</i>)
 
 The Chamberlin trimetric projection. This method does not support [*projection*.rotate](https://github.com/d3/d3-geo#projection_rotate): the three reference points implicitly determine a fixed rotation.
 
@@ -132,6 +148,7 @@ The Chamberlin trimetric projection. This method does not support [*projection*.
 The Chamberlin projection for Africa using points [0°, 22°], [45°, 22°], [22.5°, -22°].
 
 <a href="#geoCollignon" name="geoCollignon">#</a> d3.<b>geoCollignon</b>()
+<br><a href="#geoCollignonRaw" name="geoCollignonRaw">#</a> d3.<b>geoCollignonRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/collignon.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734316)
 
@@ -156,6 +173,7 @@ Alber’s conic equal-area projection; see [d3-geo](https://github.com/d3/d3-geo
 The conic equidistant projection; see [d3-geo](https://github.com/d3/d3-geo#geoConicEquidistant).
 
 <a href="#geoCraig" name="geoCraig">#</a> d3.<b>geoCraig</b>()
+<br><a href="#geoCraigRaw" name="geoCraigRaw">#</a> d3.<b>geoCraigRaw</b>(<i>phi</i>)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/craig.png" width="480" height="250">](http://bl.ocks.org/mbostock/4459466)
 
@@ -166,12 +184,14 @@ The Craig retroazimuthal projection. Note: this projection tends to [fold over i
 Defaults to 0°.
 
 <a href="#geoCraster" name="geoCraster">#</a> d3.<b>geoCraster</b>()
+<br><a href="#geoCrasterRaw" name="geoCrasterRaw">#</a> d3.<b>geoCrasterRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/craster.png" width="480" height="250">](http://bl.ocks.org/mbostock/4465118)
 
 The Craster parabolic projection; also known as Putniņš P4.
 
 <a href="#geoCylindricalEqualArea" name="geoCylindricalEqualArea">#</a> d3.<b>geoCylindricalEqualArea</b>()
+<br><a href="#geoCylindricalEqualAreaRaw" name="geoCylindricalEqualAreaRaw">#</a> d3.<b>geoCylindricalEqualAreaRaw</b>(<i>phi0</i>)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/cylindricalEqualArea.png" width="480" height="250">](http://bl.ocks.org/mbostock/3712408)
 
@@ -182,6 +202,7 @@ The cylindrical equal-area projection. Depending on the chosen [parallel](#cylin
 Defaults to approximately 38.58°, fitting the world in a 960×500 rectangle.
 
 <a href="#geoCylindricalStereographic" name="geoCylindricalStereographic">#</a> d3.<b>geoCylindricalStereographic</b>()
+<br><a href="#geoCylindricalStereographicRaw" name="geoCylindricalStereographicRaw">#</a> d3.<b>geoCylindricalStereographicRaw</b>(<i>phi0</i>)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/cylindricalStereographic.png" width="480" height="250">](http://bl.ocks.org/mbostock/5234763)
 
@@ -192,36 +213,42 @@ The cylindrical stereographic projection. Depending on the chosen [parallel](#cy
 Defaults to 0°.
 
 <a href="#geoEckert1" name="geoEckert1">#</a> d3.<b>geoEckert1</b>()
+<br><a href="#geoEckert1Raw" name="geoEckert1Raw">#</a> d3.<b>geoEckert1Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/eckert1.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734322)
 
 The Eckert I projection.
 
 <a href="#geoEckert2" name="geoEckert2">#</a> d3.<b>geoEckert2</b>()
+<br><a href="#geoEckert2Raw" name="geoEckert2Raw">#</a> d3.<b>geoEckert2Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/eckert2.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734324)
 
 The Eckert II projection.
 
 <a href="#geoEckert3" name="geoEckert3">#</a> d3.<b>geoEckert3</b>()
+<br><a href="#geoEckert3Raw" name="geoEckert3Raw">#</a> d3.<b>geoEckert3Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/eckert3.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734325)
 
 The Eckert III projection.
 
 <a href="#geoEckert4" name="geoEckert4">#</a> d3.<b>geoEckert4</b>()
+<br><a href="#geoEckert4Raw" name="geoEckert4Raw">#</a> d3.<b>geoEckert4Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/eckert4.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734327)
 
 The Eckert IV projection.
 
 <a href="#geoEckert5" name="geoEckert5">#</a> d3.<b>geoEckert5</b>()
+<br><a href="#geoEckert5Raw" name="geoEckert5Raw">#</a> d3.<b>geoEckert5Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/eckert5.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734328)
 
 The Eckert V projection.
 
 <a href="#geoEckert6" name="geoEckert6">#</a> d3.<b>geoEckert6</b>()
+<br><a href="#geoEckert6Raw" name="geoEckert6Raw">#</a> d3.<b>geoEckert6Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/eckert6.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734329)
 
@@ -240,6 +267,7 @@ The Eisenlohr conformal projection.
 The equirectangular (plate carrée) projection; see [d3-geo](https://github.com/d3/d3-geo#geoEquirectangular). The [Cassini projection](http://bl.ocks.org/mbostock/5695142) is the transverse aspect of the equirectangular projection.
 
 <a href="#geoFahey" name="geoFahey">#</a> d3.<b>geoFahey</b>()
+<br><a href="#geoFaheyRaw" name="geoFaheyRaw">#</a> d3.<b>geoFaheyRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/fahey.png" width="480" height="250">](http://bl.ocks.org/mbostock/4731228)
 
@@ -258,6 +286,7 @@ Foucaut’s stereographic equivalent projection.
 Gilbert’s two-world perspective projection. Wraps an instance of the specified projection *type*; if not specified, defaults to [d3.geoOrthographic](https://github.com/d3/d3-geo#geoOrthographic).
 
 <a href="#geoGingery" name="geoGingery">#</a> d3.<b>geoGingery</b>()
+<br><a href="#geoGingeryRaw" name="geoGingeryRaw">#</a> d3.<b>geoGingeryRaw</b>(<i>rho</i>, <i>lobes</i>)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/gingery.png" width="480" height="250">](http://www.jasondavies.com/maps/gingery/)
 
@@ -272,30 +301,35 @@ Defaults to 30°.
 Defaults to 6.
 
 <a href="#geoGinzburg4" name="geoGinzburg4">#</a> d3.<b>geoGinzburg4</b>()
+<br><a href="#geoGinzburg4Raw" name="geoGinzburg4Raw">#</a> d3.<b>geoGinzburg4Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/ginzburg4.png" width="480" height="250">](http://bl.ocks.org/mbostock/5288565)
 
 The Ginzburg IV projection.
 
 <a href="#geoGinzburg5" name="geoGinzburg5">#</a> d3.<b>geoGinzburg5</b>()
+<br><a href="#geoGinzburg5Raw" name="geoGinzburg5Raw">#</a> d3.<b>geoGinzburg5Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/ginzburg5.png" width="480" height="250">](http://bl.ocks.org/mbostock/5288571)
 
 The Ginzburg V projection.
 
 <a href="#geoGinzburg6" name="geoGinzburg6">#</a> d3.<b>geoGinzburg6</b>()
+<br><a href="#geoGinzburg6Raw" name="geoGinzburg6Raw">#</a> d3.<b>geoGinzburg6Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/ginzburg6.png" width="480" height="250">](http://bl.ocks.org/mbostock/5288577)
 
 The Ginzburg VI projection.
 
 <a href="#geoGinzburg8" name="geoGinzburg8">#</a> d3.<b>geoGinzburg8</b>()
+<br><a href="#geoGinzburg8Raw" name="geoGinzburg8Raw">#</a> d3.<b>geoGinzburg8Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/ginzburg8.png" width="480" height="250">](http://bl.ocks.org/mbostock/5288583)
 
 The Ginzburg VIII projection.
 
 <a href="#geoGinzburg9" name="geoGinzburg9">#</a> d3.<b>geoGinzburg9</b>()
+<br><a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/ginzburg9.png" width="480" height="250">](http://bl.ocks.org/mbostock/5288590)
 
@@ -326,6 +360,7 @@ The Gringorten square equal-area projection.
 The Guyou hemisphere-in-a-square projection. Peirce is credited with its [quincuncial form](#geoPeirceQuincuncial).
 
 <a href="#geoHammer" name="geoHammer">#</a> d3.<b>geoHammer</b>()
+<br><a href="#geoHammerRaw" name="geoHammerRaw">#</a> d3.<b>geoHammerRaw</b>(<i>A</i>, <i>B</i>)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/hammer.png" width="480" height="250">](http://bl.ocks.org/mbostock/3712397)
 
@@ -336,6 +371,7 @@ The Hammer projection. Depending the chosen coefficient and aspect, also known a
 Defaults to 2.
 
 <a href="#geoHammerRetroazimuthal" name="geoHammerRetroazimuthal">#</a> d3.<b>geoHammerRetroazimuthal</b>()
+<br><a href="#geoHammerRetroazimuthalRaw" name="geoHammerRetroazimuthalRaw">#</a> d3.<b>geoHammerRetroazimuthalRaw</b>(<i>phi0</i>)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/hammerRetroazimuthal.png" width="480" height="250">](http://bl.ocks.org/mbostock/4459130)
 
@@ -356,6 +392,7 @@ The HEALPix projection: a <b>H</b>ierarchical <b>E</b>qual <b>A</b>rea iso<b>L</
 If *lobes* is specified, sets the number of lobes (the parameter *H* in the literature) and returns this projection. If *lobes* is not specified, returns the current lobe number, which defaults to 4.
 
 <a href="#geoHill" name="geoHill">#</a> d3.<b>geoHill</b>()
+<br><a href="#geoHillRaw" name="geoHillRaw">#</a> d3.<b>geoHillRaw</b>(<i>K</i>)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/hill.png" width="480" height="250">](http://bl.ocks.org/mbostock/4479513)
 
@@ -366,18 +403,21 @@ Hill eucyclic projection is psuedoconic and equal-area.
 Defaults to 1. With a ratio of 0, this projection becomes the [Maurer No. 73](http://bl.ocks.org/mbostock/4479547). As it approaches ∞, the projection converges to the [Eckert IV](#geoEckert4).
 
 <a href="#geoHomolosine" name="geoHomolosine">#</a> d3.<b>geoHomolosine</b>()
+<br><a href="#geoHomolosineRaw" name="geoHomolosineRaw">#</a> d3.<b>geoHomolosineRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/homolosine.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734330)
 
 The pseudocylindrical, equal-area Goode homolosine projection is normally presented in [interrupted form](#geoInterruptedHomolosine).
 
 <a href="#geoKavrayskiy7" name="geoKavrayskiy7">#</a> d3.<b>geoKavrayskiy7</b>()
+<br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/kavrayskiy7.png" width="480" height="250">](http://bl.ocks.org/mbostock/3710082)
 
 The Kavrayskiy VII pseudocylindrical projection.
 
 <a href="#geoLagrange" name="geoLagrange">#</a> d3.<b>geoLagrange</b>()
+<br><a href="#geoLagrangeRaw" name="geoLagrangeRaw">#</a> d3.<b>geoLagrangeRaw</b>(<i>n</i>)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/lagrange.png" width="480" height="250">](http://bl.ocks.org/mbostock/3797591)
 
@@ -388,24 +428,28 @@ The Lagrange conformal projection.
 Defaults to 0.5.
 
 <a href="#geoLarrivee" name="geoLarrivee">#</a> d3.<b>geoLarrivee</b>()
+<br><a href="#geoLarriveeRaw" name="geoLarriveeRaw">#</a> d3.<b>geoLarriveeRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/larrivee.png" width="480" height="250">](http://bl.ocks.org/mbostock/3719042)
 
 The Larrivée projection.
 
 <a href="#geoLaskowski" name="geoLaskowski">#</a> d3.<b>geoLaskowski</b>()
+<br><a href="#geoLaskowskiRaw" name="geoLaskowskiRaw">#</a> d3.<b>geoLaskowskiRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/laskowski.png" width="480" height="250">](http://bl.ocks.org/mbostock/4489342)
 
 The Laskowski tri-optimal projection simultaneously minimizes distance, angular, and areal distortion.
 
 <a href="#geoLittrow" name="geoLittrow">#</a> d3.<b>geoLittrow</b>()
+<br><a href="#geoLittrowRaw" name="geoLittrowRaw">#</a> d3.<b>geoLittrowRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/littrow.png" width="480" height="250">](http://bl.ocks.org/mbostock/4459071)
 
 The Littrow projection is the only conformal retroazimuthal map projection. Typically clipped to the geographic extent [[-90°, -60°], [90°, 60°]].
 
 <a href="#geoLoximuthal" name="geoLoximuthal">#</a> d3.<b>geoLoximuthal</b>()
+<br><a href="#geoLoximuthalRaw" name="geoLoximuthalRaw">#</a> d3.<b>geoLoximuthalRaw</b>(<i>phi0</i>)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/loximuthal.png" width="480" height="250">](http://bl.ocks.org/mbostock/3867220)
 
@@ -422,12 +466,14 @@ Defaults to 40°.
 The spherical Mercator projection; see [d3-geo](https://github.com/d3/d3-geo#geoMercator).
 
 <a href="#geoMiller" name="geoMiller">#</a> d3.<b>geoMiller</b>()
+<br><a href="#geoMillerRaw" name="geoMillerRaw">#</a> d3.<b>geoMillerRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/miller.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734333)
 
 The Miller cylindrical projection is a modified [Mercator](#geoMercator) projection.
 
 <a href="#geoModifiedStereographic" name="geoModifiedStereographic">#</a> d3.<b>geoModifiedStereographic</b>(<i>coefficients</i>, <i>rotate</i>)
+<br><a href="#geoModifiedStereographicRaw" name="geoModifiedStereographicRaw">#</a> d3.<b>geoModifiedStereographicRaw</b>(<i>coefficients</i>)
 
 The family of [modified stereographic projections](http://www.jasondavies.com/maps/modified-stereographic/). The default [clip angle](https://github.com/d3/d3-geo#projection_clipAngle) for these projections is 90°. These projections do not support [*projection*.rotate](https://github.com/d3/d3-geo#projection_rotate): a fixed rotation is applied that is specific to the given *coefficients*.
 
@@ -462,36 +508,42 @@ A [modified stereographic](#geoModifiedStereographic) projection for Europe and 
 A [modified stereographic](#geoModifiedStereographic) projection for the Pacific ocean.
 
 <a href="#geoMollweide" name="geoMollweide">#</a> d3.<b>geoMollweide</b>()
+<br><a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/mollweide.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734336)
 
 The equal-area, pseudocylindrical Mollweide projection. The oblique aspect is known as the [Atlantis projection](http://bl.ocks.org/mbostock/4519975). [Goode’s interrupted Mollweide](#interruptedMollweide) is also widely known.
 
 <a href="#geoMtFlatPolarParabolic" name="geoMtFlatPolarParabolic">#</a> d3.<b>geoMtFlatPolarParabolic</b>()
+<br><a href="#geoMtFlatPolarParabolicRaw" name="geoMtFlatPolarParabolicRaw">#</a> d3.<b>geoMtFlatPolarParabolicRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/mtFlatPolarParabolic.png" width="480" height="250">](http://bl.ocks.org/mbostock/4465130)
 
 The McBryde–Thomas flat-polar parabolic pseudocylindrical equal-area projection.
 
 <a href="#geoMtFlatPolarQuartic" name="geoMtFlatPolarQuartic">#</a> d3.<b>geoMtFlatPolarQuartic</b>()
+<br><a href="#geoMtFlatPolarQuarticRaw" name="geoMtFlatPolarQuarticRaw">#</a> d3.<b>geoMtFlatPolarQuarticRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/mtFlatPolarQuartic.png" width="480" height="250">](http://bl.ocks.org/mbostock/4465137)
 
 The McBryde–Thomas flat-polar quartic pseudocylindrical equal-area projection.
 
 <a href="#geoMtFlatPolarSinusoidal" name="geoMtFlatPolarSinusoidal">#</a> d3.<b>geoMtFlatPolarSinusoidal</b>()
+<br><a href="#geoMtFlatPolarSinusoidalRaw" name="geoMtFlatPolarSinusoidalRaw">#</a> d3.<b>geoMtFlatPolarSinusoidalRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/mtFlatPolarSinusoidal.png" width="480" height="250">](http://bl.ocks.org/mbostock/4465140)
 
 The McBryde–Thomas flat-polar sinusoidal equal-area projection.
 
 <a href="#geoNaturalEarth" name="geoNaturalEarth">#</a> d3.<b>geoNaturalEarth</b>()
+<br><a href="#geoNaturalEarthRaw" name="geoNaturalEarthRaw">#</a> d3.<b>geoNaturalEarthRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/naturalEarth.png" width="480" height="250">](http://bl.ocks.org/mbostock/4479477)
 
 The Natural Earth projection.
 
 <a href="#geoNellHammer" name="geoNellHammer">#</a> d3.<b>geoNellHammer</b>()
+<br><a href="#geoNellHammerRaw" name="geoNellHammerRaw">#</a> d3.<b>geoNellHammerRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/nellHammer.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734342)
 
@@ -504,6 +556,7 @@ The Nell–Hammer projection.
 The orthographic projection; see [d3-geo](https://github.com/d3/d3-geo#geoOrthographic).
 
 <a href="#geoPatterson" name="geoPatterson">#</a> d3.<b>geoPatterson</b>()
+<br><a href="#geoPattersonRaw" name="geoPattersonRaw">#</a> d3.<b>geoPattersonRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/patterson.png" width="480" height="250">](http://bl.ocks.org/mbostock/d4021aa4dccfd65edffd)
 
@@ -516,30 +569,14 @@ The Patterson cylindrical projection.
 The Peirce quincuncial projection is the quincuncial form of the [Guyou projection](#geoGuyou).
 
 <a href="#geoPolyconic" name="geoPolyconic">#</a> d3.<b>geoPolyconic</b>()
+<br><a href="#geoPolyconicRaw" name="geoPolyconicRaw">#</a> d3.<b>geoPolyconicRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/polyconic.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734343)
 
 The American polyconic projection.
 
-<a href="#geoPolyhedronButterfly" name="geoPolyhedronButterfly">#</a> d3.<b>geoPolyhedronButterfly</b>()
-
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/polyhedronButterfly.png" width="480" height="250">](http://bl.ocks.org/mbostock/4458680)
-
-The gnomonic butterfly projection.
-
-<a href="#geoPolyhedronCollignon" name="geoPolyhedronCollignon">#</a> d3.<b>geoPolyhedronCollignon</b>()
-
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/polyhedronCollignon.png" width="480" height="250">](https://www.jasondavies.com/maps/collignon-butterfly/)
-
-The Collignon butterfly projection.
-
-<a href="#geoPolyhedronWaterman" name="geoPolyhedronWaterman">#</a> d3.<b>geoPolyhedronWaterman</b>()
-
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/polyhedronWaterman.png" width="480" height="250">](https://www.jasondavies.com/maps/waterman-butterfly/)
-
-Steve Waterman’s butterfly projection.
-
 <a href="#geoRectangularPolyconic" name="geoRectangularPolyconic">#</a> d3.<b>geoRectangularPolyconic</b>()
+<br><a href="#geoRectangularPolyconicRaw" name="geoRectangularPolyconicRaw">#</a> d3.<b>geoRectangularPolyconicRaw</b>(<i>phi0</i>)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/rectangularPolyconic.png" width="480" height="250">](http://bl.ocks.org/mbostock/5230202)
 
@@ -556,6 +593,7 @@ Defaults to 0°.
 The Robinson projection.
 
 <a href="#geoSatellite" name="geoSatellite">#</a> d3.<b>geoSatellite</b>()
+<br><a href="#geoSatelliteRaw" name="geoSatelliteRaw">#</a> d3.<b>geoSatelliteRaw</b>(<i>P</i>, <i>omega</i>)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/satellite.png" width="480" height="250">](http://bl.ocks.org/mbostock/3790444)
 
@@ -570,12 +608,14 @@ Defaults to 0°.
 Distance from the center of the sphere to the point of view, as a proportion of the sphere’s radius; defaults to 2.0. The recommended maximum [clip angle](https://github.com/d3/d3-geo#projection_clipAngle) for a given *distance* is acos(1 / *distance*) converted to degrees. If [tilt](#satellite_tilt) is also applied, then more conservative clipping may be necessary. For exact clipping, the in-development geographic projection pipeline is needed; see the [satellite example](https://bl.ocks.org/mbostock/e48a00d4db5c3b042145).
 
 <a href="#geoSinusoidal" name="geoSinusoidal">#</a> d3.<b>geoSinusoidal</b>()
+<br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/sinusoidal.png" width="480" height="250">](http://bl.ocks.org/mbostock/3712399)
 
 The sinusoidal projection.
 
 <a href="#geoSinuMollweide" name="geoSinuMollweide">#</a> d3.<b>geoSinuMollweide</b>()
+<br><a href="#geoSinuMollweideRaw" name="geoSinuMollweideRaw">#</a> d3.<b>geoSinuMollweideRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/sinuMollweide.png" width="480" height="250">](http://bl.ocks.org/mbostock/4319903)
 
@@ -588,6 +628,7 @@ Allen K. Philbrick’s Sinu-Mollweide projection. See also the [interrupted form
 The stereographic projection; see [d3-geo](https://github.com/d3/d3-geo#geoStereographic).
 
 <a href="#geoTimes" name="geoTimes">#</a> d3.<b>geoTimes</b>()
+<br><a href="#geoTimesRaw" name="geoTimesRaw">#</a> d3.<b>geoTimesRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/times.png" width="480" height="250">](http://bl.ocks.org/mbostock/5230564)
 
@@ -600,6 +641,7 @@ John Muir’s Times projection.
 The transverse spherical Mercator projection; see [d3-geo](https://github.com/d3/d3-geo#geoTransverseMercator).
 
 <a href="#geoTwoPointAzimuthal" name="geoTwoPointAzimuthal">#</a> d3.<b>geoTwoPointAzimuthal</b>(<i>point0</i>, <i>point1</i>)
+<br><a href="#geoTwoPointAzimuthalRaw" name="geoTwoPointAzimuthalRaw">#</a> d3.<b>geoTwoPointAzimuthalRaw</b>(<i>d</i>)
 
 The two-point azimuthal projection “shows correct azimuths (but not distances) from either of two points to any other point. [It can] be used to locate a ship at sea, given the exact location of two radio transmitters and the direction of the ship to the transmitters.” This projection does not support [*projection*.rotate](https://github.com/d3/d3-geo#projection_rotate), as the rotation is fixed by the two given points.
 
@@ -610,6 +652,7 @@ The two-point azimuthal projection “shows correct azimuths (but not distances)
 The two-point azimuthal projection with points [-158°, 21.5°] and [-77°, 39°], approximately representing Honolulu, HI and Washington, D.C.
 
 <a href="#geoTwoPointEquidistant" name="geoTwoPointEquidistant">#</a> d3.<b>geoTwoPointEquidistant</b>(<i>point0</i>, <i>point1</i>)
+<br><a href="#geoTwoPointEquidistantRaw" name="geoTwoPointEquidistantRaw">#</a> d3.<b>geoTwoPointEquidistantRaw</b>(<i>z0</i>)
 
 The two-point equidistant projection. This projection does not support [*projection*.rotate](https://github.com/d3/d3-geo#projection_rotate), as the rotation is fixed by the two given points. Note: to show the whole Earth, this projection requires clipping to spherical polygons, which is not yet supported in D3. However, you can typically show most of the Earth by using D3’s great-circle clipping.
 
@@ -620,54 +663,63 @@ The two-point equidistant projection. This projection does not support [*project
 The two-point equidistant projection with points [-158°, 21.5°] and [-77°, 39°], approximately representing Honolulu, HI and Washington, D.C.
 
 <a href="#geoVanDerGrinten" name="geoVanDerGrinten">#</a> d3.<b>geoVanDerGrinten</b>()
+<br><a href="#geoVanDerGrintenRaw" name="geoVanDerGrintenRaw">#</a> d3.<b>geoVanDerGrintenRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/vanDerGrinten.png" width="480" height="250">](http://bl.ocks.org/mbostock/3796831)
 
 The Van der Grinten projection.
 
 <a href="#geoVanDerGrinten2" name="geoVanDerGrinten2">#</a> d3.<b>geoVanDerGrinten2</b>()
+<br><a href="#geoVanDerGrinten2Raw" name="geoVanDerGrinten2Raw">#</a> d3.<b>geoVanDerGrinten2Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/vanDerGrinten2.png" width="480" height="250">](http://bl.ocks.org/mbostock/5230571)
 
 The Van der Grinten II projection.
 
 <a href="#geoVanDerGrinten3" name="geoVanDerGrinten3">#</a> d3.<b>geoVanDerGrinten3</b>()
+<br><a href="#geoVanDerGrinten3Raw" name="geoVanDerGrinten3Raw">#</a> d3.<b>geoVanDerGrinten3Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/vanDerGrinten3.png" width="480" height="250">](http://bl.ocks.org/mbostock/5230580)
 
 The Van der Grinten III projection.
 
 <a href="#geoVanDerGrinten4" name="geoVanDerGrinten4">#</a> d3.<b>geoVanDerGrinten4</b>()
+<br><a href="#geoVanDerGrinten4Raw" name="geoVanDerGrinten4Raw">#</a> d3.<b>geoVanDerGrinten4Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/vanDerGrinten4.png" width="480" height="250">](http://bl.ocks.org/mbostock/4489365)
 
 The Van der Grinten IV projection.
 
 <a href="#geoWagner4" name="geoWagner4">#</a> d3.<b>geoWagner4</b>()
+<br><a href="#geoWagner4Raw" name="geoWagner4Raw">#</a> d3.<b>geoWagner4Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/wagner4.png" width="480" height="250">](http://bl.ocks.org/mbostock/4487674)
 
 The Wagner IV projection, also known as Putniṇš P2´.
 
 <a href="#geoWagner6" name="geoWagner6">#</a> d3.<b>geoWagner6</b>()
+<br><a href="#geoWagner6Raw" name="geoWagner6Raw">#</a> d3.<b>geoWagner6Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/wagner6.png" width="480" height="250">](http://bl.ocks.org/mbostock/3710148)
 
 The Wagner VI projection.
 
 <a href="#geoWagner7" name="geoWagner7">#</a> d3.<b>geoWagner7</b>()
+<br><a href="#geoWagner7Raw" name="geoWagner7Raw">#</a> d3.<b>geoWagner7Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/wagner7.png" width="480" height="250">](http://bl.ocks.org/mbostock/4465109)
 
 The Wagner VII projection.
 
 <a href="#geoWiechel" name="geoWiechel">#</a> d3.<b>geoWiechel</b>()
+<br><a href="#geoWiechelRaw" name="geoWiechelRaw">#</a> d3.<b>geoWiechelRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/wiechel.png" width="480" height="250">](http://bl.ocks.org/mbostock/4463155)
 
 The Wiechel projection.
 
 <a href="#geoWinkel3" name="geoWinkel3">#</a> d3.<b>geoWinkel3</b>()
+<br><a href="#geoWinkel3Raw" name="geoWinkel3Raw">#</a> d3.<b>geoWinkel3Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/winkel3.png" width="480" height="250">](http://bl.ocks.org/mbostock/3682676)
 
@@ -732,90 +784,40 @@ Goode’s interrupted [Mollweide projection](#geoMollweide).
 
 The [Mollweide projection](#geoMollweide) interrupted into two (equal-area) hemispheres.
 
-### Raw Projections
+### Polyhedral Projections
 
-Raw projections are used to implement projections; they typically passed to [d3.geoProjection](https://github.com/d3/d3-geo#geoProjection) or [d3.geoProjectionMutator](https://github.com/d3/d3-geo#geoProjectionMutator). They are exposed here to facilitate the derivation of related projections. Raw projections define simple point transformations: they take spherical coordinates [*lambda*, *phi*] in radians and return a point [*x*, *y*], typically in the unit square centered around the origin.
+<a href="#geoPolyhedral" name="geoPolyhedral">#</a> d3.<b>geoPolyhedral</b>(<i>root</i>, <i>face</i>[, <i>angle</i>])
 
-<a href="#_project" name="_project">#</a> <i>project</i>(<i>lambda</i>, <i>phi</i>)
+…
 
-Projects the specified point [<i>lambda</i>, <i>phi</i>] in radians, returning a new point [*x*, *y*] in unitless coordinates.
+<a href="#geoPolyhedralButterfly" name="geoPolyhedralButterfly">#</a> d3.<b>geoPolyhedralButterfly</b>()
 
-<a href="#project_invert" name="project_invert">#</a> <i>project</i>.<b>invert</b>(<i>x</i>, <i>y</i>)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/polyhedralButterfly.png" width="480" height="250">](http://bl.ocks.org/mbostock/4458680)
 
-The inverse of [*project*](#_project).
+The gnomonic butterfly projection.
 
-<a href="#geoAiryRaw" name="geoAiryRaw">#</a> d3.<b>geoAiryRaw</b>(<i>beta</i>)
-<br><a href="#geoAitoffRaw" name="geoAitoffRaw">#</a> d3.<b>geoAitoffRaw</b>
-<br><a href="#geoArmadilloRaw" name="geoArmadilloRaw">#</a> d3.<b>geoArmadilloRaw</b>(<i>phi0</i>)
-<br><a href="#geoAugustRaw" name="geoAugustRaw">#</a> d3.<b>geoAugustRaw</b>
-<br><a href="#geoBakerRaw" name="geoBakerRaw">#</a> d3.<b>geoBakerRaw</b>
-<br><a href="#geoBerghausRaw" name="geoBerghausRaw">#</a> d3.<b>geoBerghausRaw</b>(<i>lobes</i>)
-<br><a href="#geoBoggsRaw" name="geoBoggsRaw">#</a> d3.<b>geoBoggsRaw</b>
-<br><a href="#geoBonneRaw" name="geoBonneRaw">#</a> d3.<b>geoBonneRaw</b>(<i>phi0</i>)
-<br><a href="#geoBottomleyRaw" name="geoBottomleyRaw">#</a> d3.<b>geoBottomleyRaw</b>(<i>sinPsi</i>)
-<br><a href="#geoBromleyRaw" name="geoBromleyRaw">#</a> d3.<b>geoBromleyRaw</b>
-<br><a href="#geoChamberlinRaw" name="geoChamberlinRaw">#</a> d3.<b>geoChamberlinRaw</b>(<i>p0</i>, <i>p1</i>, <i>p2</i>)
-<br><a href="#geoCollignonRaw" name="geoCollignonRaw">#</a> d3.<b>geoCollignonRaw</b>
-<br><a href="#geoCraigRaw" name="geoCraigRaw">#</a> d3.<b>geoCraigRaw</b>(<i>phi</i>)
-<br><a href="#geoCrasterRaw" name="geoCrasterRaw">#</a> d3.<b>geoCrasterRaw</b>
-<br><a href="#geoCylindricalEqualAreaRaw" name="geoCylindricalEqualAreaRaw">#</a> d3.<b>geoCylindricalEqualAreaRaw</b>(<i>phi0</i>)
-<br><a href="#geoCylindricalStereographicRaw" name="geoCylindricalStereographicRaw">#</a> d3.<b>geoCylindricalStereographicRaw</b>(<i>phi0</i>)
-<br><a href="#geoEckert1Raw" name="geoEckert1Raw">#</a> d3.<b>geoEckert1Raw</b>
-<br><a href="#geoEckert2Raw" name="geoEckert2Raw">#</a> d3.<b>geoEckert2Raw</b>
-<br><a href="#geoEckert3Raw" name="geoEckert3Raw">#</a> d3.<b>geoEckert3Raw</b>
-<br><a href="#geoEckert4Raw" name="geoEckert4Raw">#</a> d3.<b>geoEckert4Raw</b>
-<br><a href="#geoEckert5Raw" name="geoEckert5Raw">#</a> d3.<b>geoEckert5Raw</b>
-<br><a href="#geoEckert6Raw" name="geoEckert6Raw">#</a> d3.<b>geoEckert6Raw</b>
-<br><a href="#geoFaheyRaw" name="geoFaheyRaw">#</a> d3.<b>geoFaheyRaw</b>
-<br><a href="#geoGingeryRaw" name="geoGingeryRaw">#</a> d3.<b>geoGingeryRaw</b>(<i>rho</i>, <i>lobes</i>)
-<br><a href="#geoGinzburg4Raw" name="geoGinzburg4Raw">#</a> d3.<b>geoGinzburg4Raw</b>
-<br><a href="#geoGinzburg5Raw" name="geoGinzburg5Raw">#</a> d3.<b>geoGinzburg5Raw</b>
-<br><a href="#geoGinzburg6Raw" name="geoGinzburg6Raw">#</a> d3.<b>geoGinzburg6Raw</b>
-<br><a href="#geoGinzburg8Raw" name="geoGinzburg8Raw">#</a> d3.<b>geoGinzburg8Raw</b>
-<br><a href="#geoGinzburg9Raw" name="geoGinzburg9Raw">#</a> d3.<b>geoGinzburg9Raw</b>
-<br><a href="#geoHammerRaw" name="geoHammerRaw">#</a> d3.<b>geoHammerRaw</b>(<i>A</i>, <i>B</i>)
-<br><a href="#geoHammerRetroazimuthalRaw" name="geoHammerRetroazimuthalRaw">#</a> d3.<b>geoHammerRetroazimuthalRaw</b>(<i>phi0</i>)
-<br><a href="#geoHillRaw" name="geoHillRaw">#</a> d3.<b>geoHillRaw</b>(<i>K</i>)
-<br><a href="#geoHomolosineRaw" name="geoHomolosineRaw">#</a> d3.<b>geoHomolosineRaw</b>
-<br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
-<br><a href="#geoLagrangeRaw" name="geoLagrangeRaw">#</a> d3.<b>geoLagrangeRaw</b>(<i>n</i>)
-<br><a href="#geoLarriveeRaw" name="geoLarriveeRaw">#</a> d3.<b>geoLarriveeRaw</b>
-<br><a href="#geoLaskowskiRaw" name="geoLaskowskiRaw">#</a> d3.<b>geoLaskowskiRaw</b>
-<br><a href="#geoLittrowRaw" name="geoLittrowRaw">#</a> d3.<b>geoLittrowRaw</b>
-<br><a href="#geoLoximuthalRaw" name="geoLoximuthalRaw">#</a> d3.<b>geoLoximuthalRaw</b>(<i>phi0</i>)
-<br><a href="#geoMillerRaw" name="geoMillerRaw">#</a> d3.<b>geoMillerRaw</b>
-<br><a href="#geoModifiedStereographicRaw" name="geoModifiedStereographicRaw">#</a> d3.<b>geoModifiedStereographicRaw</b>(<i>coefficients</i>)
-<br><a href="#geoMollweideRaw" name="geoMollweideRaw">#</a> d3.<b>geoMollweideRaw</b>
-<br><a href="#geoMtFlatPolarParabolicRaw" name="geoMtFlatPolarParabolicRaw">#</a> d3.<b>geoMtFlatPolarParabolicRaw</b>
-<br><a href="#geoMtFlatPolarQuarticRaw" name="geoMtFlatPolarQuarticRaw">#</a> d3.<b>geoMtFlatPolarQuarticRaw</b>
-<br><a href="#geoMtFlatPolarSinusoidalRaw" name="geoMtFlatPolarSinusoidalRaw">#</a> d3.<b>geoMtFlatPolarSinusoidalRaw</b>
-<br><a href="#geoNaturalEarthRaw" name="geoNaturalEarthRaw">#</a> d3.<b>geoNaturalEarthRaw</b>
-<br><a href="#geoNellHammerRaw" name="geoNellHammerRaw">#</a> d3.<b>geoNellHammerRaw</b>
-<br><a href="#geoPattersonRaw" name="geoPattersonRaw">#</a> d3.<b>geoPattersonRaw</b>
-<br><a href="#geoPolyconicRaw" name="geoPolyconicRaw">#</a> d3.<b>geoPolyconicRaw</b>
-<br><a href="#geoRectangularPolyconicRaw" name="geoRectangularPolyconicRaw">#</a> d3.<b>geoRectangularPolyconicRaw</b>(<i>phi0</i>)
-<br><a href="#geoSatelliteRaw" name="geoSatelliteRaw">#</a> d3.<b>geoSatelliteRaw</b>(<i>P</i>, <i>omega</i>)
-<br><a href="#geoSinuMollweideRaw" name="geoSinuMollweideRaw">#</a> d3.<b>geoSinuMollweideRaw</b>
-<br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
-<br><a href="#geoTimesRaw" name="geoTimesRaw">#</a> d3.<b>geoTimesRaw</b>
-<br><a href="#geoTwoPointAzimuthalRaw" name="geoTwoPointAzimuthalRaw">#</a> d3.<b>geoTwoPointAzimuthalRaw</b>(<i>d</i>)
-<br><a href="#geoTwoPointEquidistantRaw" name="geoTwoPointEquidistantRaw">#</a> d3.<b>geoTwoPointEquidistantRaw</b>(<i>z0</i>)
-<br><a href="#geoVanDerGrinten2Raw" name="geoVanDerGrinten2Raw">#</a> d3.<b>geoVanDerGrinten2Raw</b>
-<br><a href="#geoVanDerGrinten3Raw" name="geoVanDerGrinten3Raw">#</a> d3.<b>geoVanDerGrinten3Raw</b>
-<br><a href="#geoVanDerGrinten4Raw" name="geoVanDerGrinten4Raw">#</a> d3.<b>geoVanDerGrinten4Raw</b>
-<br><a href="#geoVanDerGrintenRaw" name="geoVanDerGrintenRaw">#</a> d3.<b>geoVanDerGrintenRaw</b>
-<br><a href="#geoWagner4Raw" name="geoWagner4Raw">#</a> d3.<b>geoWagner4Raw</b>
-<br><a href="#geoWagner6Raw" name="geoWagner6Raw">#</a> d3.<b>geoWagner6Raw</b>
-<br><a href="#geoWagner7Raw" name="geoWagner7Raw">#</a> d3.<b>geoWagner7Raw</b>
-<br><a href="#geoWiechelRaw" name="geoWiechelRaw">#</a> d3.<b>geoWiechelRaw</b>
-<br><a href="#geoWinkel3Raw" name="geoWinkel3Raw">#</a> d3.<b>geoWinkel3Raw</b>
+<a href="#geoPolyhedralCollignon" name="geoPolyhedralCollignon">#</a> d3.<b>geoPolyhedralCollignon</b>()
 
-### Serializing Projections
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/polyhedralCollignon.png" width="480" height="250">](https://www.jasondavies.com/maps/collignon-butterfly/)
+
+The Collignon butterfly projection.
+
+<a href="#geoPolyhedralWaterman" name="geoPolyhedralWaterman">#</a> d3.<b>geoPolyhedralWaterman</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/polyhedralWaterman.png" width="480" height="250">](https://www.jasondavies.com/maps/waterman-butterfly/)
+
+Steve Waterman’s butterfly projection.
+
+### Transformations
 
 <a href="#geoProject" name="geoProject">#</a> d3.<b>geoProject</b>(<i>object</i>, <i>projection</i>)
 
 …
 
 <a href="#geoStitch" name="geoStitch">#</a> d3.<b>geoStitch</b>(<i>object</i>)
+
+…
+
+## Command-Line Reference
 
 …

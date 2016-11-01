@@ -1,7 +1,7 @@
 import {geoCentroid as centroid, geoProjection as projection} from "d3-geo";
 import {collignonRaw} from "../collignon";
 import {pi, sqrt} from "../math";
-import polyhedron from "./index";
+import polyhedral from "./index";
 import octahedron from "./octahedron";
 
 var kx = 2 / sqrt(3);
@@ -31,7 +31,7 @@ export default function(faceProjection) {
     node && (node.children || (node.children = [])).push(faces[i]);
   });
 
-  return polyhedron(faces[0], function(lambda, phi) {
+  return polyhedral(faces[0], function(lambda, phi) {
         return faces[lambda < -pi / 2 ? phi < 0 ? 6 : 4
             : lambda < 0 ? phi < 0 ? 2 : 0
             : lambda < pi / 2 ? phi < 0 ? 3 : 1

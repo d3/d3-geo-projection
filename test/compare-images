@@ -68,9 +68,9 @@ for i in \
     patterson \
     peirceQuincuncial \
     polyconic \
-    polyhedronButterfly \
-    polyhedronCollignon \
-    polyhedronWaterman \
+    polyhedralButterfly \
+    polyhedralCollignon \
+    polyhedralWaterman \
     rectangularPolyconic \
     robinson \
     satellite \

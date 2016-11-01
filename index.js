@@ -63,10 +63,10 @@ export {default as geoPatterson, pattersonRaw as geoPattersonRaw} from "./src/pa
 export {default as geoPeirceQuincuncial} from "./src/peirceQuincuncial.js";
 export {default as geoPierceQuincuncial} from "./src/peirceQuincuncial.js"; // DEPRECATED misspelling
 export {default as geoPolyconic, polyconicRaw as geoPolyconicRaw} from "./src/polyconic";
-export {default as geoPolyhedron} from "./src/polyhedron/index.js";
-export {default as geoPolyhedronButterfly} from "./src/polyhedron/butterfly.js";
-export {default as geoPolyhedronCollignon} from "./src/polyhedron/collignon.js";
-export {default as geoPolyhedronWaterman} from "./src/polyhedron/waterman.js";
+export {default as geoPolyhedral} from "./src/polyhedral/index.js";
+export {default as geoPolyhedralButterfly} from "./src/polyhedral/butterfly.js";
+export {default as geoPolyhedralCollignon} from "./src/polyhedral/collignon.js";
+export {default as geoPolyhedralWaterman} from "./src/polyhedral/waterman.js";
 export {default as geoProject} from "./src/project/index";
 export {default as geoRectangularPolyconic, rectangularPolyconicRaw as geoRectangularPolyconicRaw} from "./src/rectangularPolyconic";
 export {default as geoRobinson, robinsonRaw as geoRobinsonRaw} from "./src/robinson";
