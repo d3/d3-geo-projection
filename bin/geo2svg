@@ -27,7 +27,7 @@ if (commander.args.length !== 0) {
 
 var path = d3Geo.geoPath(),
     input = commander.in === "-" ? process.stdin : fs.createReadStream(commander.in),
-    output = commander.out === "-" ? process.stdout : fs.createWriteStream(commander.out);
+    output = (commander.out === "-" ? process.stdout : fs.createWriteStream(commander.out)).on("error", handleEpipe);
 
 output.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>" + os.EOL
     + "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">" + os.EOL
@@ -74,6 +74,12 @@ function end() {
 
 function quote(string) {
   return string.replace(/"/g, "&quot;");
+}
+
+function handleEpipe(error) {
+  if (error.code === "EPIPE" || error.errno === "EPIPE") {
+    process.exit(0);
+  }
 }
 
 commander.newlineDelimited
