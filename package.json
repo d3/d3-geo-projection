@@ -29,6 +29,7 @@
   },
   "bin": {
     "geo2svg": "bin/geo2svg",
+    "geograticule": "bin/geograticule",
     "geoproject": "bin/geoproject",
     "geostitch": "bin/geostitch"
   },
