@@ -521,6 +521,24 @@ The Peirce quincuncial projection is the quincuncial form of the [Guyou projecti
 
 The American polyconic projection.
 
+<a href="#geoPolyhedronButterfly" name="geoPolyhedronButterfly">#</a> d3.<b>geoPolyhedronButterfly</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/polyhedronButterfly.png" width="480" height="250">](http://bl.ocks.org/mbostock/4458680)
+
+The gnomonic butterfly projection.
+
+<a href="#geoPolyhedronCollignon" name="geoPolyhedronCollignon">#</a> d3.<b>geoPolyhedronCollignon</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/polyhedronCollignon.png" width="480" height="250">](https://www.jasondavies.com/maps/collignon-butterfly/)
+
+The Collignon butterfly projection.
+
+<a href="#geoPolyhedronWaterman" name="geoPolyhedronWaterman">#</a> d3.<b>geoPolyhedronWaterman</b>()
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/polyhedronWaterman.png" width="480" height="250">](https://www.jasondavies.com/maps/waterman-butterfly/)
+
+Steve Waterman’s butterfly projection.
+
 <a href="#geoRectangularPolyconic" name="geoRectangularPolyconic">#</a> d3.<b>geoRectangularPolyconic</b>()
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/rectangularPolyconic.png" width="480" height="250">](http://bl.ocks.org/mbostock/5230202)
