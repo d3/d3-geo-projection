@@ -63,7 +63,7 @@ function readWriteNewlineDelimitedObjects() {
 
 function writeObject(object) {
   output.write("  <path");
-  if (object.id != null) output.write(" id=\"feature-" + quote(object.id + "") + "\"");
+  if (object.id != null) output.write(" id=\"" + quote(object.id + "") + "\"");
   var d = path(object);
   output.write((d == null ? "" : " d=\"" + d + "\"") + "></path>" + os.EOL);
 }
