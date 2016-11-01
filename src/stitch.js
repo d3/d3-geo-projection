@@ -164,8 +164,9 @@ function stitchFeature(o) {
 }
 
 function stitchGeometry(o) {
+  if (!o) return;
   var fragments, i, n;
-  if (o) switch (o.type) {
+  switch (o.type) {
     case "GeometryCollection": return o.geometries.forEach(stitchGeometry);
     case "Polygon": extractFragments(o.coordinates, fragments = []); break;
     case "MultiPolygon": {
