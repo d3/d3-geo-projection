@@ -30,13 +30,12 @@ export function healpixRaw(H) {
     } else {
       point = healpixLambert(lambda, phi);
     }
-    point[0] *= w;
-    point[1] /= h;
+    point[0] *= w, point[1] /= h;
     return point;
   }
 
   forward.invert = function(x, y) {
-    x *= 2;
+    x /= w, y *= h;
     var y2 = abs(y);
     if (y2 > y0) {
       var i = min(H - 1, max(0, floor((x + pi) / k)));
