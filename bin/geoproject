@@ -2,9 +2,9 @@
 
 var commander = require("commander"),
     vm = require("vm"),
-    d3Geo = require("d3-geo"),
-    d3GeoProjection = require("../"),
-    geotransform = require("./geotransform");
+    d3 = Object.assign({}, require("d3-geo"), require("../")),
+    read = require("./read"),
+    write = require("./write");
 
 commander
     .version(require("../package.json").version)
@@ -22,10 +22,17 @@ if (commander.args.length !== 1) {
   process.exit(1);
 }
 
-var projection = vm.runInNewContext("(" + commander.args[0] + ")", {
-  d3: Object.assign({}, d3Geo, d3GeoProjection)
-});
+var sandbox = {d3: d3, d: undefined, i: -1},
+    context = new vm.createContext(sandbox),
+    projection = new vm.Script("(" + commander.args[0] + ")"),
+    reader = read(commander, project).then(end),
+    writer = write(commander);
 
-geotransform(function(object) {
-  return d3GeoProjection.geoProject(object, projection);
-});
+function project(d, i) {
+  sandbox.d = d, sandbox.i = i;
+  return writer.write(JSON.stringify(d3.geoProject(d, projection.runInContext(context))) + "\n");
+}
+
+function end() {
+  return writer.end();
+}

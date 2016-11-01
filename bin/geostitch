@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 var commander = require("commander"),
-    d3GeoProjection = require("../"),
-    geotransform = require("./geotransform");
+    d3 = require("../"),
+    read = require("./read"),
+    write = require("./write");
 
 commander
     .version(require("../package.json").version)
@@ -20,4 +21,13 @@ if (commander.args.length !== 0) {
   process.exit(1);
 }
 
-geotransform(d3GeoProjection.geoStitch);
+var reader = read(commander, stitch).then(end),
+    writer = write(commander);
+
+function stitch(d) {
+  return writer.write(JSON.stringify(d3.geoStitch(d)) + "\n");
+}
+
+function end() {
+  return writer.end();
+}

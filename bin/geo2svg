@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 
-var fs = require("fs"),
-    os = require("os"),
+var os = require("os"),
     commander = require("commander"),
-    readline = require("readline"),
-    d3Geo = require("d3-geo"),
-    geotransform = require("./geotransform");
+    d3 = require("d3-geo"),
+    read = require("./read"),
+    write = require("./write");
 
 commander
     .version(require("../package.json").version)
@@ -15,6 +14,7 @@ commander
     .option("-o, --out <file>", "output file name; defaults to “-” for stdout", "-")
     .option("-w, --width <value>", "output width", 960)
     .option("-h, --height <value>", "output height", 500)
+    .option("-p, --precision <value>", "output precision", 6)
     .option("-n, --newline-delimited", "accept newline-delimited JSON")
     .parse(process.argv);
 
@@ -25,11 +25,17 @@ if (commander.args.length !== 0) {
   process.exit(1);
 }
 
-var path = d3Geo.geoPath(),
-    input = commander.in === "-" ? process.stdin : fs.createReadStream(commander.in),
-    output = (commander.out === "-" ? process.stdout : fs.createWriteStream(commander.out)).on("error", handleEpipe);
+var string,
+    precision = +commander.precision,
+    reader = read(commander, transform).then(end),
+    writer = write(commander),
+    path = d3.geoPath().context({
+      moveTo: function(x, y) { string += "M" + format(x) + "," + format(y); },
+      closePath: function() { string += "Z"; },
+      lineTo: function(x, y) { string += "L" + format(x) + "," + format(y); }
+    });
 
-output.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>" + os.EOL
+writer.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>" + os.EOL
     + "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">" + os.EOL
     + "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\""
     + " width=\"" + +commander.width + "\""
@@ -37,51 +43,32 @@ output.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>" + os.EOL
     + " viewBox=\"0 0 " + +commander.width + " " + +commander.height + "\""
     + ">" + os.EOL);
 
-function readObject() {
-  return new Promise(function(resolve, reject) {
-    var data = [];
-    input
-        .on("data", function(d) { data.push(d); })
-        .on("end", function() { resolve(JSON.parse(Buffer.concat(data))); })
-        .on("error", reject);
-  });
-}
-
-function readWriteNewlineDelimitedObjects() {
-  return new Promise(function(resolve, reject) {
-    var write = Promise.resolve();
-    readline.createInterface({
-      input: input,
-      output: null
-    }).on("line", function(line) {
-      write = write.then(function() { return writeObject(JSON.parse(line)); });
-    }).on("close", function() {
-      write.then(resolve, reject);
-    }).on("error", reject);
-  });
-}
-
-function writeObject(object) {
-  output.write("  <path");
-  if (object.id != null) output.write(" id=\"" + quote(object.id + "") + "\"");
-  var d = path(object);
-  output.write((d == null ? "" : " d=\"" + d + "\"") + "></path>" + os.EOL);
+function transform(d) {
+  return writer.write("  <path"
+      + (d.id == null ? "" : " id=\"" + quote(d.id + "") + "\"")
+      + (string = "", path(d), string ? " d=\"" + string + "\"" : "")
+      + "></path>" + os.EOL);
 }
 
 function end() {
-  output.write("</svg>" + os.EOL);
+  return writer.write("</svg>" + os.EOL);
 }
 
 function quote(string) {
   return string.replace(/"/g, "&quot;");
 }
 
-function handleEpipe(error) {
-  if (error.code === "EPIPE" || error.errno === "EPIPE") {
-    process.exit(0);
-  }
-}
+function format(x) {
+  x = x.toFixed(precision);
 
-commander.newlineDelimited
-    ? readWriteNewlineDelimitedObjects().then(end)
-    : readObject().then(writeObject).then(end);
+  out: for (var n = x.length, i = 1, i0 = -1, i1; i < n; ++i) {
+    switch (x[i]) {
+      case ".": i0 = i1 = i; break;
+      case "0": if (i0 === 0) i0 = i; i1 = i; break;
+      case "e": break out;
+      default: if (i0 > 0) i0 = 0; break;
+    }
+  }
+
+  return i0 > 0 ? x.slice(0, i0) + x.slice(i1 + 1) : x;
+}
