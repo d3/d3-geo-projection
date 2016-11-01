@@ -27,7 +27,7 @@ if (commander.args.length !== 0) {
 
 var string,
     precision = +commander.precision,
-    reader = read(commander, transform).then(end),
+    reader = read(commander, transform).then(end).catch(abort),
     writer = write(commander),
     path = d3.geoPath().context({
       moveTo: function(x, y) { string += "M" + format(x) + "," + format(y); },
@@ -53,6 +53,10 @@ function transform(d) {
 
 function end() {
   return writer.write("</svg>" + os.EOL);
+}
+
+function abort(error) {
+  console.error(error.stack);
 }
 
 function quote(string) {

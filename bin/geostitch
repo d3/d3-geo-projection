@@ -21,7 +21,7 @@ if (commander.args.length !== 0) {
   process.exit(1);
 }
 
-var reader = read(commander, stitch).then(end),
+var reader = read(commander, stitch).then(end).catch(abort),
     writer = write(commander);
 
 function stitch(d) {
@@ -30,4 +30,8 @@ function stitch(d) {
 
 function end() {
   return writer.end();
+}
+
+function abort(error) {
+  console.error(error.stack);
 }

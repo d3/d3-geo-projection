@@ -25,7 +25,7 @@ if (commander.args.length !== 1) {
 var sandbox = {d3: d3, d: undefined, i: -1},
     context = new vm.createContext(sandbox),
     projection = new vm.Script("(" + commander.args[0] + ")"),
-    reader = read(commander, project).then(end),
+    reader = read(commander, project).then(end).catch(abort),
     writer = write(commander);
 
 function project(d, i) {
@@ -35,4 +35,8 @@ function project(d, i) {
 
 function end() {
   return writer.end();
+}
+
+function abort(error) {
+  console.error(error.stack);
 }

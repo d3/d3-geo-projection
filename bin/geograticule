@@ -41,7 +41,7 @@ if (commander.precision != null) graticule.precision(commander.precision);
 
 var writer = write(commander);
 writer.write(JSON.stringify(graticule()) + "\n");
-writer.end();
+writer.end().catch(abort);
 
 function parseStep(x) {
   return x = x.split(","), x.length === 1 ? [+x[0], +x[0]] : [+x[0], +x[1]];
@@ -49,4 +49,8 @@ function parseStep(x) {
 
 function parseExtent(x) {
   return x = x.split(","), [[+x[0], +x[1]], [+x[2], +x[3]]];
+}
+
+function abort(error) {
+  console.error(error.stack);
 }
