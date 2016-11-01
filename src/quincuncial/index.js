@@ -1,4 +1,4 @@
-import {abs, halfPi, pi, sign, sqrt1_2} from "./math";
+import {abs, halfPi, pi, sign, sqrt1_2} from "../math";
 
 export default function(project) {
   var dx = project(halfPi, 0)[0] - project(-halfPi, 0)[0];

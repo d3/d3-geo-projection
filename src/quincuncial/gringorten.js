@@ -1,6 +1,6 @@
 import {geoProjection as projection} from "d3-geo";
-import {gringortenRaw} from "./gringorten";
-import quincuncialRaw from "./quincuncial";
+import {gringortenRaw} from "../gringorten";
+import quincuncialRaw from "./index";
 
 export default function() {
   return projection(quincuncialRaw(gringortenRaw))

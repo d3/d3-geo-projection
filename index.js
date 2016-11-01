@@ -31,7 +31,6 @@ export {default as geoGinzburg6, ginzburg6Raw as geoGinzburg6Raw} from "./src/gi
 export {default as geoGinzburg8, ginzburg8Raw as geoGinzburg8Raw} from "./src/ginzburg8.js";
 export {default as geoGinzburg9, ginzburg9Raw as geoGinzburg9Raw} from "./src/ginzburg9.js";
 export {default as geoGringorten, gringortenRaw as geoGringortenRaw} from "./src/gringorten.js";
-export {default as geoGringortenQuincuncial} from "./src/gringortenQuincuncial.js";
 export {default as geoGuyou, guyouRaw as geoGuyouRaw} from "./src/guyou.js";
 export {default as geoHammer, hammerRaw as geoHammerRaw} from "./src/hammer.js";
 export {default as geoHammerRetroazimuthal, hammerRetroazimuthalRaw as geoHammerRetroazimuthalRaw} from "./src/hammerRetroazimuthal.js";
@@ -60,14 +59,15 @@ export {default as geoMtFlatPolarSinusoidal, mtFlatPolarSinusoidalRaw as geoMtFl
 export {default as geoNaturalEarth, naturalEarthRaw as geoNaturalEarthRaw} from "./src/naturalEarth";
 export {default as geoNellHammer, nellHammerRaw as geoNellHammerRaw} from "./src/nellHammer";
 export {default as geoPatterson, pattersonRaw as geoPattersonRaw} from "./src/patterson";
-export {default as geoPeirceQuincuncial} from "./src/peirceQuincuncial.js";
-export {default as geoPierceQuincuncial} from "./src/peirceQuincuncial.js"; // DEPRECATED misspelling
 export {default as geoPolyconic, polyconicRaw as geoPolyconicRaw} from "./src/polyconic";
 export {default as geoPolyhedral} from "./src/polyhedral/index.js";
 export {default as geoPolyhedralButterfly} from "./src/polyhedral/butterfly.js";
 export {default as geoPolyhedralCollignon} from "./src/polyhedral/collignon.js";
 export {default as geoPolyhedralWaterman} from "./src/polyhedral/waterman.js";
 export {default as geoProject} from "./src/project/index";
+export {default as geoGringortenQuincuncial} from "./src/quincuncial/gringorten.js";
+export {default as geoPeirceQuincuncial} from "./src/quincuncial/peirce.js";
+export {default as geoPierceQuincuncial} from "./src/quincuncial/peirce.js"; // DEPRECATED misspelling
 export {default as geoRectangularPolyconic, rectangularPolyconicRaw as geoRectangularPolyconicRaw} from "./src/rectangularPolyconic";
 export {default as geoRobinson, robinsonRaw as geoRobinsonRaw} from "./src/robinson";
 export {default as geoSatellite, satelliteRaw as geoSatelliteRaw} from "./src/satellite";
