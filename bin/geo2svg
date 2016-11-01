@@ -1,0 +1,81 @@
+#!/usr/bin/env node
+
+var fs = require("fs"),
+    os = require("os"),
+    commander = require("commander"),
+    readline = require("readline"),
+    d3Geo = require("d3-geo"),
+    geotransform = require("./geotransform");
+
+commander
+    .version(require("../package.json").version)
+    .usage("[options]")
+    .description("Convert GeoJSON to SVG.")
+    .option("-i, --in <file>", "input file name; defaults to “-” for stdin", "-")
+    .option("-o, --out <file>", "output file name; defaults to “-” for stdout", "-")
+    .option("-w, --width <value>", "output width", 960)
+    .option("-h, --height <value>", "output height", 500)
+    .option("-n, --newline-delimited", "accept newline-delimited JSON")
+    .parse(process.argv);
+
+if (commander.args.length !== 0) {
+  console.error();
+  console.error("  error: unexpected arguments");
+  console.error();
+  process.exit(1);
+}
+
+var path = d3Geo.geoPath(),
+    input = commander.in === "-" ? process.stdin : fs.createReadStream(commander.in),
+    output = commander.out === "-" ? process.stdout : fs.createWriteStream(commander.out);
+
+output.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>" + os.EOL
+    + "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">" + os.EOL
+    + "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\""
+    + " width=\"" + +commander.width + "\""
+    + " height=\"" + +commander.height + "\""
+    + " viewBox=\"0 0 " + +commander.width + " " + +commander.height + "\""
+    + ">" + os.EOL);
+
+function readObject() {
+  return new Promise(function(resolve, reject) {
+    var data = [];
+    input
+        .on("data", function(d) { data.push(d); })
+        .on("end", function() { resolve(JSON.parse(Buffer.concat(data))); })
+        .on("error", reject);
+  });
+}
+
+function readWriteNewlineDelimitedObjects() {
+  return new Promise(function(resolve, reject) {
+    var write = Promise.resolve();
+    readline.createInterface({
+      input: input,
+      output: null
+    }).on("line", function(line) {
+      write = write.then(function() { return writeObject(JSON.parse(line)); });
+    }).on("close", function() {
+      write.then(resolve, reject);
+    }).on("error", reject);
+  });
+}
+
+function writeObject(object) {
+  output.write("  <path");
+  if (object.id != null) output.write(" id=\"feature-" + quote(object.id + "") + "\"");
+  var d = path(object);
+  output.write((d == null ? "" : " d=\"" + d + "\"") + "></path>" + os.EOL);
+}
+
+function end() {
+  output.write("</svg>" + os.EOL);
+}
+
+function quote(string) {
+  return string.replace(/"/g, "&quot;");
+}
+
+commander.newlineDelimited
+    ? readWriteNewlineDelimitedObjects().then(end)
+    : readObject().then(writeObject).then(end);

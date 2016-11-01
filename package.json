@@ -28,6 +28,7 @@
     "url": "https://github.com/d3/d3-geo-projection.git"
   },
   "bin": {
+    "geo2svg": "bin/geo2svg",
     "geoproject": "bin/geoproject",
     "geostitch": "bin/geostitch"
   },

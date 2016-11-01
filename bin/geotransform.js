@@ -2,18 +2,15 @@ var fs = require("fs"),
     readline = require("readline"),
     commander = require("commander");
 
+function handleEpipe(error) {
+  if (error.code === "EPIPE" || error.errno === "EPIPE") {
+    process.exit(0);
+  }
+}
+
 module.exports = function(transform) {
   var input = commander.in === "-" ? process.stdin : fs.createReadStream(commander.in),
-      output = commander.out === "-" ? process.stdout : fs.createWriteStream(commander.out);
-
-  output.on("error", function(error) {
-    if (error.code === "EPIPE" || error.errno === "EPIPE") {
-      process.exit(0);
-    }
-  });
-
-  if (commander.newlineDelimited) readWriteNewlineDelimitedObjects().then(end);
-  else readObject().then(writeObject).then(end);
+      output = (commander.out === "-" ? process.stdout : fs.createWriteStream(commander.out)).on("error", handleEpipe);
 
   function readObject() {
     return new Promise(function(resolve, reject) {
@@ -53,4 +50,8 @@ module.exports = function(transform) {
       output.end();
     }
   }
+
+  return commander.newlineDelimited
+      ? readWriteNewlineDelimitedObjects().then(end)
+      : readObject().then(writeObject).then(end);
 };
