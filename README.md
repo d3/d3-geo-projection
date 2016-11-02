@@ -882,7 +882,7 @@ Specify the output height. Defaults to 500.
 <a name="geo2svg_precision" href="geo2svg_precision">#</a> geo2svg <b>-p</b> <i>value</i>
 <br><a href="geo2svg_precision">#</a> geo2svg <b>--precision</b> <i>value</i>
 
-Specify the output precision. Defaults to 6 decimal places.
+Reduce the precision for smaller output files. Defaults to 6 decimal places.
 
 <a name="geo2svg_newline_delimited" href="geo2svg_newline_delimited">#</a> geo2svg <b>-n</b>
 <br><a href="geo2svg_newline_delimited">#</a> geo2svg <b>--newline-delimited</b>
