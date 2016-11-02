@@ -852,7 +852,7 @@ See also [geostitch](#geostitch).
 
 <a href="#geo2svg" name="geo2svg">#</a> <b>geo2svg</b> [<i>options…</i>] [<i>file</i>] [<>](https://github.com/d3/d3-geo-projection/blob/master/bin/geo2svg "Source")
 
-Converts the specified GeoJSON *file* to SVG. If [--newline-delimited](#geo2svg_newline_delimited), each input feature is rendered as a separate [path element](https://www.w3.org/TR/SVG/paths.html); otherwise, a single path element is generated. If the [GeoJSON feature](http://geojson.org/geojson-spec.html#feature-objects) associated with the path has an id, the path element will have a corresponding id attribute. The SVG’s fill is set to “none” and the stroke is set to “black”.
+Converts the specified GeoJSON *file* to SVG. With [--newline-delimited](#geo2svg_newline_delimited), each input feature is rendered as a separate [path element](https://www.w3.org/TR/SVG/paths.html); otherwise, a single path element is generated. If the [GeoJSON feature](http://geojson.org/geojson-spec.html#feature-objects) associated with the path has an id, the path element will have a corresponding id attribute. The SVG’s fill is set to “none” and the stroke is set to “black”.
 
 <a name="geo2svg_help" href="geo2svg_help">#</a> geo2svg <b>-h</b>
 <br><a href="geo2svg_help">#</a> geo2svg <b>--help</b>
