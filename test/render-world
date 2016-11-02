@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var width = 960,
-    height = 960,
+    height = 500,
     projectionName = process.argv[2],
     projectionSymbol = "geo" + projectionName[0].toUpperCase() + projectionName.slice(1);
 
