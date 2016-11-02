@@ -8,9 +8,8 @@ var os = require("os"),
 
 commander
     .version(require("../package.json").version)
-    .usage("[options]")
+    .usage("[options] [file]")
     .description("Convert GeoJSON to SVG.")
-    .option("-i, --in <file>", "input file name; defaults to “-” for stdin", "-")
     .option("-o, --out <file>", "output file name; defaults to “-” for stdout", "-")
     .option("-w, --width <value>", "output width", 960)
     .option("-h, --height <value>", "output height", 500)
@@ -18,17 +17,18 @@ commander
     .option("-n, --newline-delimited", "accept newline-delimited JSON")
     .parse(process.argv);
 
-if (commander.args.length !== 0) {
+if (commander.args.length === 0) commander.args[0] = "-";
+else if (commander.args.length !== 1) {
   console.error();
-  console.error("  error: unexpected arguments");
+  console.error("  error: multiple input files");
   console.error();
   process.exit(1);
 }
 
 var string,
     precision = +commander.precision,
-    reader = read(commander, transform).then(end).catch(abort),
-    writer = write(commander),
+    reader = read(commander.args[0], commander.newlineDelimited, transform).then(end).catch(abort),
+    writer = write(commander.out),
     path = d3.geoPath().context({
       moveTo: function(x, y) { string += "M" + format(x) + "," + format(y); },
       closePath: function() { string += "Z"; },
