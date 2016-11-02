@@ -1,10 +1,7 @@
-import {geoProjection as projection} from "d3-geo";
 import {guyouRaw} from "../guyou";
-import quincuncialRaw from "./index";
+import quincuncial from "./index";
 
 export default function() {
-  return projection(quincuncialRaw(guyouRaw))
-      .scale(111.48)
-      .rotate([-90, -90, 45])
-      .clipAngle(180 - 1e-3);
+  return quincuncial(guyouRaw)
+      .scale(111.48);
 }

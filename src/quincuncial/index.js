@@ -1,3 +1,4 @@
+import {geoProjection as projection} from "d3-geo";
 import {abs, halfPi, pi, sign, sqrt1_2} from "../math";
 
 export default function(project) {
@@ -33,5 +34,7 @@ export default function(project) {
     return p;
   };
 
-  return projectQuincuncial;
+  return projection(projectQuincuncial)
+      .rotate([-90, -90, 45])
+      .clipAngle(180 - 1e-3);
 }

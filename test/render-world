@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var width = 960,
-    height = 500,
+    height = 960,
     projectionName = process.argv[2],
     projectionSymbol = "geo" + projectionName[0].toUpperCase() + projectionName.slice(1);
 
@@ -10,15 +10,14 @@ if (!/^[a-z0-9]+$/i.test(projectionName)) throw new Error;
 var fs = require("fs"),
     topojson = require("topojson"),
     Canvas = require("canvas"),
-    d3_geo = require("d3-geo"),
-    d3_geo_projection = require("../");
+    d3 = Object.assign({}, require("d3-geo"), require("../"));
 
 var canvas = new Canvas(width, height),
     context = canvas.getContext("2d");
 
 var world = require("./data/world-50m.json"),
     land = topojson.feature(world, world.objects.land),
-    graticule = d3_geo.geoGraticule(),
+    graticule = d3.geoGraticule(),
     outline = {type: "Sphere"};
 
 switch (projectionName) {
@@ -27,8 +26,8 @@ switch (projectionName) {
   case "modifiedStereographicMiller": outline = graticule.extent([[-40, -40], [80, 80]]).outline(); break;
 }
 
-var path = d3_geo.geoPath()
-    .projection(d3_geo_projection[projectionSymbol]().precision(0.1))
+var path = d3.geoPath()
+    .projection(d3[projectionSymbol]().precision(0.1))
     .context(context);
 
 context.fillStyle = "#fff";

@@ -68,6 +68,7 @@ export {default as geoProject} from "./src/project/index";
 export {default as geoGringortenQuincuncial} from "./src/quincuncial/gringorten.js";
 export {default as geoPeirceQuincuncial} from "./src/quincuncial/peirce.js";
 export {default as geoPierceQuincuncial} from "./src/quincuncial/peirce.js"; // DEPRECATED misspelling
+export {default as geoQuincuncial} from "./src/quincuncial/index.js";
 export {default as geoRectangularPolyconic, rectangularPolyconicRaw as geoRectangularPolyconicRaw} from "./src/rectangularPolyconic";
 export {default as geoRobinson, robinsonRaw as geoRobinsonRaw} from "./src/robinson";
 export {default as geoSatellite, satelliteRaw as geoSatelliteRaw} from "./src/satellite";

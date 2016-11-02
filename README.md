@@ -816,13 +816,17 @@ Steve Waterman’s butterfly projection.
 
 ### Quincuncial Projections
 
-<a href="#geoGringortenQuincuncial" name="geoGringortenQuincuncial">#</a> d3.<b>geoGringortenQuincuncial</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/gringortenQuincuncial.js "Source")
+<a href="#geoQuincuncial" name="geoQuincuncial">#</a> d3.<b>geoQuincuncial</b>(<i>project</i>) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/quincuncial/index.js "Source")
+
+…
+
+<a href="#geoGringortenQuincuncial" name="geoGringortenQuincuncial">#</a> d3.<b>geoGringortenQuincuncial</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/quincuncial/gringorten.js "Source")
 
 <img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/gringortenQuincuncial.png" width="480" height="250">
 
 The Gringorten square equal-area projection.
 
-<a href="#geoPeirceQuincuncial" name="geoPeirceQuincuncial">#</a> d3.<b>geoPeirceQuincuncial</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/peirceQuincuncial.js "Source")
+<a href="#geoPeirceQuincuncial" name="geoPeirceQuincuncial">#</a> d3.<b>geoPeirceQuincuncial</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/quincuncial/peirce.js "Source")
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/peirceQuincuncial.png" width="480" height="250">](http://bl.ocks.org/mbostock/4310087)
 
