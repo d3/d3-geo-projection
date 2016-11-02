@@ -794,7 +794,7 @@ The [Mollweide projection](#geoMollweide) interrupted into two (equal-area) hemi
 
 <a href="#geoPolyhedral" name="geoPolyhedral">#</a> d3.<b>geoPolyhedral</b>(<i>root</i>, <i>face</i>[, <i>angle</i>]) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/polyhedral/index.js "Source")
 
-…
+Defines a new polyhedral projection. The *root* is a spanning tree of polygon face *node*s; each *node* is assigned a *node*.transform matrix. The *face* function returns the appropriate *node* for a given *lambda* and *phi* in radians. Lastly, the specified rotation *angle* is applied to the polyhedral net. If *angle* is not specified, it defaults to -π / 6 (for butterflies).
 
 <a href="#geoPolyhedralButterfly" name="geoPolyhedralButterfly">#</a> d3.<b>geoPolyhedralButterfly</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/polyhedral/butterfly.js "Source")
 
@@ -818,7 +818,7 @@ Steve Waterman’s butterfly projection.
 
 <a href="#geoQuincuncial" name="geoQuincuncial">#</a> d3.<b>geoQuincuncial</b>(<i>project</i>) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/quincuncial/index.js "Source")
 
-…
+Defines a new quincuncial projection for the specified [raw projection](#raw-projections) function *project*. The default rotation is [-90°, -90°, 45°] and the default clip angle is 180° - ε.
 
 <a href="#geoGringortenQuincuncial" name="geoGringortenQuincuncial">#</a> d3.<b>geoGringortenQuincuncial</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/quincuncial/gringorten.js "Source")
 
@@ -836,11 +836,11 @@ The Peirce quincuncial projection is the quincuncial form of the [Guyou projecti
 
 <a href="#geoProject" name="geoProject">#</a> d3.<b>geoProject</b>(<i>object</i>, <i>projection</i>) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/project/index.js "Source")
 
-…
+Projects the specified GeoJSON *object* using the specified *projection*, returning a new GeoJSON *object* with projected coordinates. Typically, the input coordinates are spherical and the outut coordinates are planar, but the *projection* can also be an [arbitrary geometric transformation](https://github.com/d3/d3-geo#transforms).
 
 <a href="#geoStitch" name="geoStitch">#</a> d3.<b>geoStitch</b>(<i>object</i>) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/stitch.js "Source")
 
-…
+Stitches the specified GeoJSON *object*, removing antimeridian and polar cuts, and replacing straight Cartesian line segments with geodesic segments. The input *object* must have coordinates in longitude and latitude in decimal degrees per [RFC 7946](https://tools.ietf.org/html/rfc7946). [Antimeridian cutting](https://bl.ocks.org/mbostock/3788999), if needed, can then be re-applied after rotating to the desired projection aspect.
 
 ## Command-Line Reference
 
