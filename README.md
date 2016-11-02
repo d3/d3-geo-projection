@@ -893,7 +893,7 @@ Accept [newline-delimited JSON](http://ndjson.org/) as input, with one feature p
 
 <a href="#geograticule" name="geograticule">#</a> <b>geograticule</b> [<i>options</i>…] [<>](https://github.com/d3/d3-geo-projection/blob/master/bin/geograticule "Source")
 
-Generates a GeoJSON graticule using [d3.geoGraticule](https://github.com/d3/d3-geo/blob/master/README.md#geoGraticule).
+Generates a GeoJSON graticule. See also [d3.geoGraticule](https://github.com/d3/d3-geo/blob/master/README.md#geoGraticule).
 
 <a name="geograticule_help" href="geograticule_help">#</a> geograticule <b>-h</b>
 <br><a href="geograticule_help">#</a> geograticule <b>--help</b>
