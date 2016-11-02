@@ -838,24 +838,152 @@ The Peirce quincuncial projection is the quincuncial form of the [Guyou projecti
 
 Projects the specified GeoJSON *object* using the specified *projection*, returning a new GeoJSON *object* with projected coordinates. Typically, the input coordinates are spherical and the outut coordinates are planar, but the *projection* can also be an [arbitrary geometric transformation](https://github.com/d3/d3-geo#transforms).
 
+See also [geoproject](#geoproject).
+
 <a href="#geoStitch" name="geoStitch">#</a> d3.<b>geoStitch</b>(<i>object</i>) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/stitch.js "Source")
 
-Stitches the specified GeoJSON *object*, removing antimeridian and polar cuts, and replacing straight Cartesian line segments with geodesic segments. The input *object* must have coordinates in longitude and latitude in decimal degrees per [RFC 7946](https://tools.ietf.org/html/rfc7946). [Antimeridian cutting](https://bl.ocks.org/mbostock/3788999), if needed, can then be re-applied after rotating to the desired projection aspect.
+Stitches the specified GeoJSON *object*, modifying it **in-place**, removing antimeridian and polar cuts, and replacing straight Cartesian line segments with geodesic segments. The input *object* must have coordinates in longitude and latitude in decimal degrees per [RFC 7946](https://tools.ietf.org/html/rfc7946). [Antimeridian cutting](https://bl.ocks.org/mbostock/3788999), if needed, can then be re-applied after rotating to the desired projection aspect.
+
+See also [geostitch](#geostitch).
 
 ## Command-Line Reference
 
-<a href="#geo2svg" name="geo2svg">#</a> <b>geo2svg</b> [<>](https://github.com/d3/d3-geo-projection/blob/master/bin/geo2svg "Source")
+### geo2svg
 
-…
+<a href="#geo2svg" name="geo2svg">#</a> <b>geo2svg</b> [<i>options…</i>] [<i>file</i>] [<>](https://github.com/d3/d3-geo-projection/blob/master/bin/geo2svg "Source")
 
-<a href="#geograticule" name="geograticule">#</a> <b>geograticule</b> [<>](https://github.com/d3/d3-geo-projection/blob/master/bin/geograticule "Source")
+Converts the specified GeoJSON *file* to SVG. If [--newline-delimited](#geo2svg_newline_delimited), each input feature is rendered as a separate [path element](https://www.w3.org/TR/SVG/paths.html); otherwise, a single path element is generated. If the [GeoJSON feature](http://geojson.org/geojson-spec.html#feature-objects) associated with the path has an id, the path element will have a corresponding id attribute. The SVG’s fill is set to “none” and the stroke is set to “black”.
 
-…
+<a name="geo2svg_help" href="geo2svg_help">#</a> geo2svg <b>-h</b>
+<br><a href="geo2svg_help">#</a> geo2svg <b>--help</b>
 
-<a href="#geoproject" name="geoproject">#</a> <b>geoproject</b> [<>](https://github.com/d3/d3-geo-projection/blob/master/bin/geoproject "Source")
+Output usage information.
 
-…
+<a name="geo2svg_version" href="geo2svg_version">#</a> geo2svg <b>-V</b>
+<br><a href="geo2svg_version">#</a> geo2svg <b>--version</b>
 
-<a href="#geostitch" name="geostitch">#</a> <b>geostitch</b> [<>](https://github.com/d3/d3-geo-projection/blob/master/bin/geostitch "Source")
+Output the version number.
 
-…
+<a name="geo2svg_out" href="geo2svg_out">#</a> geo2svg <b>-o</b> <i>file</i>
+<br><a href="geo2svg_out">#</a> geo2svg <b>--out</b> <i>file</i>
+
+Specify the output file name. Defaults to “-” for stdout.
+
+<a name="geo2svg_width" href="geo2svg_width">#</a> geo2svg <b>-w</b> <i>value</i>
+<br><a href="geo2svg_width">#</a> geo2svg <b>--width</b> <i>value</i>
+
+Specify the output width. Defaults to 960.
+
+<a name="geo2svg_height" href="geo2svg_height">#</a> geo2svg <b>-h</b> <i>value</i>
+<br><a href="geo2svg_height">#</a> geo2svg <b>--height</b> <i>value</i>
+
+Specify the output height. Defaults to 500.
+
+<a name="geo2svg_precision" href="geo2svg_precision">#</a> geo2svg <b>-p</b> <i>value</i>
+<br><a href="geo2svg_precision">#</a> geo2svg <b>--precision</b> <i>value</i>
+
+Specify the output precision. Defaults to 6 decimal places.
+
+<a name="geo2svg_newline_delimited" href="geo2svg_newline_delimited">#</a> geo2svg <b>-n</b>
+<br><a href="geo2svg_newline_delimited">#</a> geo2svg <b>--newline-delimited</b>
+
+Accept [newline-delimited JSON](http://ndjson.org/) as input, with one feature per line.
+
+### geograticule
+
+<a href="#geograticule" name="geograticule">#</a> <b>geograticule</b> [<i>options</i>…] [<>](https://github.com/d3/d3-geo-projection/blob/master/bin/geograticule "Source")
+
+Generates a GeoJSON graticule using [d3.geoGraticule](https://github.com/d3/d3-geo/blob/master/README.md#geoGraticule).
+
+<a name="geograticule_help" href="geograticule_help">#</a> geograticule <b>-h</b>
+<br><a href="geograticule_help">#</a> geograticule <b>--help</b>
+
+Output usage information.
+
+<a name="geograticule_version" href="geograticule_version">#</a> geograticule <b>-V</b>
+<br><a href="geograticule_version">#</a> geograticule <b>--version</b>
+
+Output the version number.
+
+<a name="geograticule_out" href="geograticule_out">#</a> geograticule <b>-o</b> <i>file</i>
+<br><a href="geograticule_out">#</a> geograticule <b>--out</b> <i>file</i>
+
+Specify the output file name. Defaults to “-” for stdout.
+
+<a name="geograticule_extent" href="#geograticule_extent">#</a> geograticule <b>--extent</b> <i>value</i>
+
+Sets the graticule’s [extent](https://github.com/d3/d3-geo/blob/master/README.md#graticule_extent).
+
+<a name="geograticule_extent_minor" href="#geograticule_extent_minor">#</a> geograticule <b>--extent-minor</b> <i>value</i>
+
+Sets the graticule’s [minor extent](https://github.com/d3/d3-geo/blob/master/README.md#graticule_extentMinor).
+
+<a name="geograticule_extent_major" href="#geograticule_extent_major">#</a> geograticule <b>--extent-major</b> <i>value</i>
+
+Sets the graticule’s [major extent](https://github.com/d3/d3-geo/blob/master/README.md#graticule_extentMajor).
+
+<a name="geograticule_step" href="#geograticule_step">#</a> geograticule <b>--step</b> <i>value</i>
+
+Sets the graticule’s [step](https://github.com/d3/d3-geo/blob/master/README.md#graticule_step).
+
+<a name="geograticule_step_minor" href="#geograticule_step_minor">#</a> geograticule <b>--step-minor</b> <i>value</i>
+
+Sets the graticule’s [minor step](https://github.com/d3/d3-geo/blob/master/README.md#graticule_stepMinor).
+
+<a name="geograticule_step_major" href="#geograticule_step_major">#</a> geograticule <b>--step-major</b> <i>value</i>
+
+Sets the graticule’s [major setp](https://github.com/d3/d3-geo/blob/master/README.md#graticule_stepMajor).
+
+<a name="geograticule_precision" href="#geograticule_precision">#</a> geograticule <b>--precision</b> <i>value</i>
+
+Sets the graticule’s [precision](https://github.com/d3/d3-geo/blob/master/README.md#graticule_precision).
+
+### geoproject
+
+<a href="#geoproject" name="geoproject">#</a> <b>geoproject</b> [<i>options</i>…] <i>projection</i> [<i>file</i>] [<>](https://github.com/d3/d3-geo-projection/blob/master/bin/geoproject "Source")
+
+Projects the GeoJSON object in the specified input *file* using the specified *projection*, outputting a new GeoJSON *object* with projected coordinates. Typically, the input coordinates are spherical and the outut coordinates are planar, but the *projection* can also be an [arbitrary geometric transformation](https://github.com/d3/d3-geo#transforms).
+
+```bash
+geoproject 'd3.geoAlbersUsa()' < us.json > us-albers.json
+```
+
+See also [d3.geoProject](#geoProject).
+
+<a name="geoproject_help" href="geoproject_help">#</a> geoproject <b>-h</b>
+<br><a href="geoproject_help">#</a> geoproject <b>--help</b>
+
+Output usage information.
+
+<a name="geoproject_version" href="geoproject_version">#</a> geoproject <b>-V</b>
+<br><a href="geoproject_version">#</a> geoproject <b>--version</b>
+
+Output the version number.
+
+<a name="geoproject_out" href="geoproject_out">#</a> geoproject <b>-o</b> <i>file</i>
+<br><a href="geoproject_out">#</a> geoproject <b>--out</b> <i>file</i>
+
+Specify the output file name. Defaults to “-” for stdout.
+
+### geostitch
+
+<a href="#geostitch" name="geostitch">#</a> <b>geostitch</b> [<i>options</i>…] [<i>file</i>] [<>](https://github.com/d3/d3-geo-projection/blob/master/bin/geostitch "Source")
+
+Stitches the GeoJSON object in the specified input *file*, removing antimeridian and polar cuts, and replacing straight Cartesian line segments with geodesic segments. The input *object* must have coordinates in longitude and latitude in decimal degrees per [RFC 7946](https://tools.ietf.org/html/rfc7946). [Antimeridian cutting](https://bl.ocks.org/mbostock/3788999), if needed, can then be re-applied after rotating to the desired projection aspect.
+
+See also [d3.geoStitch](#geoStitch).
+
+<a name="geostitch_help" href="geostitch_help">#</a> geostitch <b>-h</b>
+<br><a href="geostitch_help">#</a> geostitch <b>--help</b>
+
+Output usage information.
+
+<a name="geostitch_version" href="geostitch_version">#</a> geostitch <b>-V</b>
+<br><a href="geostitch_version">#</a> geostitch <b>--version</b>
+
+Output the version number.
+
+<a name="geostitch_out" href="geostitch_out">#</a> geostitch <b>-o</b> <i>file</i>
+<br><a href="geostitch_out">#</a> geostitch <b>--out</b> <i>file</i>
+
+Specify the output file name. Defaults to “-” for stdout.
