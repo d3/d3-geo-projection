@@ -33,6 +33,12 @@ function extractFragments(polygon, fragments) {
       // If this is an antimeridian or polar point…
       if (x <= x0e || x >= x1e || y <= y0e || y >= y1e) {
 
+        // Clamp coordinates.
+        if (x < x0) point[0] = x = x0;
+        else if (x > x1) point[0] = x = x1;
+        if (y < y0) point[1] = y = y0;
+        else if (y > y1) point[1] = y = y1;
+
         // Advance through any antimeridian or polar points…
         for (var k = i + 1; k < n; ++k) {
           var pointk = ring[k],
@@ -58,9 +64,7 @@ function extractFragments(polygon, fragments) {
 
         // If the ring started with an antimeridian fragment,
         // we can ignore that fragment entirely.
-        else {
-          fragments.pop();
-        }
+        else fragments.pop();
 
         // If the remainder of the ring is an antimeridian fragment,
         // move on to the next ring.
@@ -166,9 +170,16 @@ function stitchFeature(o) {
 function stitchGeometry(o) {
   if (!o) return;
   var fragments, i, n;
+
   switch (o.type) {
-    case "GeometryCollection": return o.geometries.forEach(stitchGeometry);
-    case "Polygon": extractFragments(o.coordinates, fragments = []); break;
+    case "GeometryCollection": {
+      o.geometries.forEach(stitchGeometry);
+      return;
+    }
+    case "Polygon": {
+      extractFragments(o.coordinates, fragments = []);
+      break;
+    }
     case "MultiPolygon": {
       fragments = [], i = -1, n = o.coordinates.length;
       while (++i < n) extractFragments(o.coordinates[i], fragments);
@@ -176,6 +187,7 @@ function stitchGeometry(o) {
     }
     default: return;
   }
+
   stitchFragments(fragments);
 }
 
