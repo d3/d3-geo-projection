@@ -10,10 +10,20 @@ function quantize(x) {
 }
 
 function normalizePoint(y) {
-  y = quantize(y);
-  return y <= y0 ? [0, y0] // south pole
-      : y >= y1 ? [0, y1] // north pole
-      : [x0, y]; // antimeridian
+  return y === y0 || y === y1
+      ? [0, y] // pole
+      : [x0, quantize(y)]; // antimeridian
+}
+
+function clampPoint(p) {
+  if (p[0] <= x0e) p[0] = x0;
+  else if (p[0] >= x1e) p[0] = x1;
+  if (p[1] <= y0e) p[1] = y0;
+  else if (p[1] >= y1e) p[1] = y1;
+}
+
+function clampPoints(points) {
+  points.forEach(clampPoint);
 }
 
 // For each ring, detect where it crosses the antimeridian or pole.
@@ -32,12 +42,7 @@ function extractFragments(polygon, fragments) {
 
       // If this is an antimeridian or polar point…
       if (x <= x0e || x >= x1e || y <= y0e || y >= y1e) {
-
-        // Clamp coordinates.
-        if (x < x0) point[0] = x = x0;
-        else if (x > x1) point[0] = x = x1;
-        if (y < y0) point[1] = y = y0;
-        else if (y > y1) point[1] = y = y1;
+        clampPoint(point);
 
         // Advance through any antimeridian or polar points…
         for (var k = i + 1; k < n; ++k) {
@@ -175,6 +180,19 @@ function stitchGeometry(o) {
     case "GeometryCollection": {
       o.geometries.forEach(stitchGeometry);
       return;
+    }
+    case "Point": {
+      clampPoint(o.coordinates);
+      break;
+    }
+    case "MultiPoint":
+    case "LineString": {
+      clampPoints(o.coordinates);
+      break;
+    }
+    case "MultiLineString": {
+      o.coordinates.forEach(clampPoints);
+      break;
     }
     case "Polygon": {
       extractFragments(o.coordinates, fragments = []);
