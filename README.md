@@ -794,7 +794,7 @@ The [Mollweide projection](#geoMollweide) interrupted into two (equal-area) hemi
 
 <a href="#geoPolyhedral" name="geoPolyhedral">#</a> d3.<b>geoPolyhedral</b>(<i>root</i>, <i>face</i>[, <i>angle</i>]) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/polyhedral/index.js "Source")
 
-Defines a new polyhedral projection. The *root* is a spanning tree of polygon face *node*s; each *node* is assigned a *node*.transform matrix. The *face* function returns the appropriate *node* for a given *lambda* and *phi* in radians. Lastly, the specified rotation *angle* is applied to the polyhedral net. If *angle* is not specified, it defaults to -π / 6 (for butterflies).
+Defines a new polyhedral projection. The *root* is a spanning tree of polygon face *node*s; each *node* is assigned a *node*.transform matrix. The *face* function returns the appropriate *node* for a given *lambda* and *phi* in radians. The specified rotation *angle* is applied to the polyhedron; if an *angle* is not specified, it defaults to -π / 6 (for butterflies).
 
 <a href="#geoPolyhedralButterfly" name="geoPolyhedralButterfly">#</a> d3.<b>geoPolyhedralButterfly</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/polyhedral/butterfly.js "Source")
 
