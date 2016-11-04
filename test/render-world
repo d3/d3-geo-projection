@@ -8,14 +8,14 @@ var width = 960,
 if (!/^[a-z0-9]+$/i.test(projectionName)) throw new Error;
 
 var fs = require("fs"),
-    topojson = require("topojson"),
+    topojson = require("topojson-client"),
     Canvas = require("canvas"),
     d3 = Object.assign({}, require("d3-geo"), require("../"));
 
 var canvas = new Canvas(width, height),
     context = canvas.getContext("2d");
 
-var world = require("./data/world-50m.json"),
+var world = require("world-atlas/world/50m.json"),
     land = topojson.feature(world, world.objects.land),
     graticule = d3.geoGraticule(),
     outline = {type: "Sphere"};

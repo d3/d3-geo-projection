@@ -7,7 +7,7 @@ var width = 960 - 1,
 
 if (!/^[a-z0-9]+$/i.test(projectionName)) throw new Error;
 
-var topojson = require("topojson"),
+var topojson = require("topojson-client"),
     d3 = Object.assign({}, require("d3-format"), require("d3-geo"), require("../"));
 
 var formatNumber = d3.format(".6");
@@ -33,12 +33,12 @@ switch (projectionName) {
     break;
   }
   case "modifiedStereographicAlaska": {
-    var us = require("./data/us-10m.json");
+    var us = require("us-atlas/us/10m.json");
     land = topojson.feature(us, us.objects.states.geometries.filter(function(d) { return d.id === 2; })[0]);
     break;
   }
   case "modifiedStereographicGs48": {
-    var us = require("./data/us-10m.json");
+    var us = require("us-atlas/us/10m.json");
     land = topojson.feature(us, {type: "GeometryCollection", geometries: us.objects.states.geometries.filter(function(d) { return d.id !== 2 && d.id !== 15 && d.id <= 56; })});
     break;
   }
