@@ -2,7 +2,7 @@
 
 var os = require("os"),
     commander = require("commander"),
-    d3 = require("d3-geo"),
+    d3 = Object.assign({}, require("d3-geo"), require("../")),
     read = require("./read"),
     write = require("./write");
 
@@ -13,7 +13,7 @@ commander
     .option("-o, --out <file>", "output file name; defaults to “-” for stdout", "-")
     .option("-w, --width <value>", "output width", 960)
     .option("-h, --height <value>", "output height", 500)
-    .option("-p, --precision <value>", "output precision", 6)
+    .option("-p, --precision <value>", "number of output digits after the decimal point", 6)
     .option("-n, --newline-delimited", "accept newline-delimited JSON")
     .parse(process.argv);
 
@@ -26,14 +26,14 @@ else if (commander.args.length !== 1) {
 }
 
 var string,
-    precision = +commander.precision,
     reader = read(commander.args[0], commander.newlineDelimited, transform).then(end).catch(abort),
     writer = write(commander.out),
     path = d3.geoPath().context({
-      moveTo: function(x, y) { string += "M" + format(x) + "," + format(y); },
+      moveTo: function(x, y) { string += "M" + x + "," + y; },
       closePath: function() { string += "Z"; },
-      lineTo: function(x, y) { string += "L" + format(x) + "," + format(y); }
-    });
+      lineTo: function(x, y) { string += "L" + x + "," + y; }
+    }),
+    render = commander.precision == null ? path : function(d) { return path(d3.geoQuantize(d, commander.precision)); };
 
 writer.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>" + os.EOL
     + "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">" + os.EOL
@@ -47,7 +47,7 @@ writer.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>" + os.EOL
 function transform(d) {
   return writer.write("  <path"
       + (d.id == null ? "" : " id=\"" + quote(d.id + "") + "\"")
-      + (string = "", path(d), string ? " d=\"" + string + "\"" : "")
+      + (string = "", render(d), string ? " d=\"" + string + "\"" : "")
       + "></path>" + os.EOL);
 }
 
@@ -61,19 +61,4 @@ function abort(error) {
 
 function quote(string) {
   return string.replace(/"/g, "&quot;");
-}
-
-function format(x) {
-  x = x.toFixed(precision);
-
-  out: for (var n = x.length, i = 1, i0 = -1, i1; i < n; ++i) {
-    switch (x[i]) {
-      case ".": i0 = i1 = i; break;
-      case "0": if (i0 === 0) i0 = i; i1 = i; break;
-      case "e": break out;
-      default: if (i0 > 0) i0 = 0; break;
-    }
-  }
-
-  return i0 > 0 ? x.slice(0, i0) + x.slice(i1 + 1) : x;
 }

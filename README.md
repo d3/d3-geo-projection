@@ -846,6 +846,12 @@ Stitches the specified GeoJSON *object*, modifying it **in-place**, removing ant
 
 See also [geostitch](#geostitch).
 
+<a href="#geoQuantize" name="geoQuantize">#</a> d3.<b>geoQuantize</b>(<i>object</i>, <i>digits</i>) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/quantize.js "Source")
+
+Quantizes the specified GeoJSON *object*, modifying it **in-place**, rounding *x* and *y* coordinates according to [*number*.toFixed](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed). Typically this is done *after* [projecting](#geoProject).
+
+See also [geoproject --precision](#geoproject_precision) and [geo2svg --precision](#geo2svg_precision).
+
 ## Command-Line Reference
 
 ### geo2svg
@@ -882,7 +888,7 @@ Specify the output height. Defaults to 500.
 <a name="geo2svg_precision" href="geo2svg_precision">#</a> geo2svg <b>-p</b> <i>value</i>
 <br><a href="geo2svg_precision">#</a> geo2svg <b>--precision</b> <i>value</i>
 
-Reduce the precision for smaller output files. Defaults to 6 decimal places.
+Reduce the precision for smaller output files. Defaults to six digits after the decimal point. See also [d3.geoQuantize](#geoQuantize).
 
 <a name="geo2svg_newline_delimited" href="geo2svg_newline_delimited">#</a> geo2svg <b>-n</b>
 <br><a href="geo2svg_newline_delimited">#</a> geo2svg <b>--newline-delimited</b>
@@ -964,6 +970,11 @@ Output the version number.
 <br><a href="geoproject_out">#</a> geoproject <b>--out</b> <i>file</i>
 
 Specify the output file name. Defaults to “-” for stdout.
+
+<a name="geoproject_precision" href="geoproject_precision">#</a> geoproject <b>-p</b> <i>value</i>
+<br><a href="geoproject_precision">#</a> geoproject <b>--precision</b> <i>value</i>
+
+Reduce the precision for smaller output files. See also [d3.geoQuantize](#geoQuantize).
 
 ### geostitch
 

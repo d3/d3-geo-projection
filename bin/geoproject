@@ -11,6 +11,7 @@ commander
     .usage("[options] <projection> [file]")
     .description("Transform GeoJSON, such as to project from spherical to planar coordinates.")
     .option("-o, --out <file>", "output file name; defaults to “-” for stdout", "-")
+    .option("-p, --precision <value>", "number of output digits after the decimal point")
     .option("-n, --newline-delimited", "use newline-delimited JSON")
     .parse(process.argv);
 
@@ -36,7 +37,9 @@ var sandbox = {d3: d3, d: undefined, i: -1},
 
 function project(d, i) {
   sandbox.d = d, sandbox.i = i;
-  return writer.write(JSON.stringify(d3.geoProject(d, projection.runInContext(context))) + "\n");
+  d = d3.geoProject(d, projection.runInContext(context));
+  if (commander.precision != null) d3.geoQuantize(d, commander.precision);
+  return writer.write(JSON.stringify(d) + "\n");
 }
 
 function end() {
