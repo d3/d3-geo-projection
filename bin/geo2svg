@@ -15,6 +15,8 @@ commander
     .option("-h, --height <value>", "output height", 500)
     .option("-p, --precision <value>", "number of output digits after the decimal point", 6)
     .option("-n, --newline-delimited", "accept newline-delimited JSON")
+    .option("--fill <value>", "default fill", "none")
+    .option("--stroke <value>", "default stroke", "black")
     .parse(process.argv);
 
 if (commander.args.length === 0) commander.args[0] = "-";
@@ -41,14 +43,30 @@ writer.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>" + os.EOL
     + " width=\"" + +commander.width + "\""
     + " height=\"" + +commander.height + "\""
     + " viewBox=\"0 0 " + +commander.width + " " + +commander.height + "\""
-    + " fill=\"none\" stroke=\"black\""
+    + (commander.fill != "black" ? " fill=\"" + attr(commander.fill) + "\"" : "")
+    + (commander.stroke != "none" ? " stroke=\"" + attr(commander.stroke) + "\"" : "")
     + ">" + os.EOL);
 
 function transform(d) {
+  var p = d.properties, v;
   return writer.write("  <path"
-      + (d.id == null ? "" : " id=\"" + quote(d.id + "") + "\"")
+      + ((v = d.id) != null ? " id=\"" + attr(v + "") + "\"" : "")
+      + (p ? ((v = p["fill"]) != null ? " fill=\"" + attr(v + "") + "\"" : "")
+        + ((v = p["fill-rule"] || p.fillRule) != null ? " fill-rule=\"" + attr(v + "") + "\"" : "")
+        + ((v = p["fill-opacity"] || p.fillOpacity) != null ? " fill-opacity=\"" + attr(v + "") + "\"" : "")
+        + ((v = p["stroke"]) != null ? " stroke=\"" + attr(v + "") + "\"" : "")
+        + ((v = p["stroke-width"] || p.strokeWidth) != null ? " stroke-width=\"" + attr(v + "") + "\"" : "")
+        + ((v = p["stroke-linecap"] || p.strokeLinecap) != null ? " stroke-linecap=\"" + attr(v + "") + "\"" : "")
+        + ((v = p["stroke-linejoin"] || p.strokeLinejoin) != null ? " stroke-linejoin=\"" + attr(v + "") + "\"" : "")
+        + ((v = p["stroke-miterlimit"] || p.strokeMiterlimit) != null ? " stroke-miterlimit=\"" + attr(v + "") + "\"" : "")
+        + ((v = p["stroke-dasharray"] || p.strokeDasharray) != null ? " stroke-dasharray=\"" + attr(v + "") + "\"" : "")
+        + ((v = p["stroke-dashoffset"] || p.strokeDashoffset) != null ? " stroke-dashoffset=\"" + attr(v + "") + "\"" : "")
+        + ((v = p["stroke-opacity"] || p.strokeOpacity) != null ? " stroke-opacity=\"" + attr(v + "") + "\"" : "")
+      : "")
       + (string = "", render(d), string ? " d=\"" + string + "\"" : "")
-      + "></path>" + os.EOL);
+      + ">"
+      + ((v = p && p["title"]) != null ? "<title>" + text(v + "") + "</title>" : "")
+      + "</path>" + os.EOL);
 }
 
 function end() {
@@ -59,6 +77,16 @@ function abort(error) {
   console.error(error.stack);
 }
 
-function quote(string) {
+function text(string) {
+  return string.replace(/[&<>]/g, function(character) {
+    switch (character) {
+      case "&": return "&amp;";
+      case "<": return "&lt;";
+      case ">": return "&gt;";
+    }
+  });
+}
+
+function attr(string) {
   return string.replace(/"/g, "&quot;");
 }

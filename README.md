@@ -858,7 +858,25 @@ See also [geoproject --precision](#geoproject_precision) and [geo2svg --precisio
 
 <a href="#geo2svg" name="geo2svg">#</a> <b>geo2svg</b> [<i>options…</i>] [<i>file</i>] [<>](https://github.com/d3/d3-geo-projection/blob/master/bin/geo2svg "Source")
 
-Converts the specified GeoJSON *file* to SVG. With [--newline-delimited](#geo2svg_newline_delimited), each input feature is rendered as a separate [path element](https://www.w3.org/TR/SVG/paths.html); otherwise, a single path element is generated. If the associated [GeoJSON feature](http://geojson.org/geojson-spec.html#feature-objects) has an id, the path element will have a corresponding id attribute. The SVG’s fill is set to none and the stroke is set to black.
+Converts the specified GeoJSON *file* to SVG. With [--newline-delimited](#geo2svg_newline_delimited), each input feature is rendered as a separate [path element](https://www.w3.org/TR/SVG/paths.html); otherwise, a single path element is generated.
+
+By default, the SVG’s [fill](#geo2svg_fill) is set to none and the [stroke](#geo2svg_stroke) is set to black. To override these values on a per-feature basis, the following [GeoJSON feature](http://geojson.org/geojson-spec.html#feature-objects) properties will be propagated to attributes:
+
+* fill
+* fill-rule or fillRule
+* fill-opacity or fillOpacity
+* stroke
+* stroke-width or strokeWidth
+* stroke-linecap or strokeLinecap
+* stroke-linejoin or strokeLinejoin
+* stroke-miterlimit or strokeMiterlimit
+* stroke-dasharray or strokeDasharray
+* stroke-dashoffset or strokeDashoffset
+* stroke-opacity or strokeOpacity
+
+If the feature has an id, the path element will have a corresponding id attribute. If the feature has a *title* property, the path element will have a title element with the corresponding value.
+
+Note: per-feature attributes are most useful in conjunction with [newline-delimited](#geo2svg_newline_delimited) input, as otherwise the generated SVG only has a single path element. To set these properties dynamically, pass the input through [ndjson-map](https://github.com/mbostock/ndjson-map/blob/master/README#map).
 
 <a name="geo2svg_help" href="geo2svg_help">#</a> geo2svg <b>-h</b>
 <br><a href="geo2svg_help">#</a> geo2svg <b>--help</b>
@@ -889,6 +907,14 @@ Specify the output height. Defaults to 500.
 <br><a href="geo2svg_precision">#</a> geo2svg <b>--precision</b> <i>value</i>
 
 Reduce the precision for smaller output files. Defaults to six digits after the decimal point. See also [d3.geoQuantize](#geoQuantize).
+
+<a name="geo2svg_fill" href="geo2svg_fill">#</a> geo2svg <b>--fill</b> <i>value</i>
+
+Specify the default output fill color. Defaults to none.
+
+<a name="geo2svg_stroke" href="geo2svg_stroke">#</a> geo2svg <b>--stroke</b> <i>value</i>
+
+Specify the default output stroke color. Defaults to black.
 
 <a name="geo2svg_newline_delimited" href="geo2svg_newline_delimited">#</a> geo2svg <b>-n</b>
 <br><a href="geo2svg_newline_delimited">#</a> geo2svg <b>--newline-delimited</b>
