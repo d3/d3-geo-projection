@@ -874,7 +874,7 @@ By default, the SVG’s [fill](#geo2svg_fill) is set to none and the [stroke](#g
 * stroke-dashoffset or strokeDashoffset
 * stroke-opacity or strokeOpacity
 
-If the feature has an id, the path element will have a corresponding id attribute. If the feature has a *title* property, the path element will have a title element with the corresponding value.
+If the feature has an id, the path element will have a corresponding id attribute. If the feature has a *title* property, the path element will have a title element with the corresponding value. For an example of per-feature attributes, see this [California population density map](https://bl.ocks.org/mbostock/fb6c1e5ff700f9713a9dc2f0fd392c35).
 
 Note: per-feature attributes are most useful in conjunction with [newline-delimited](#geo2svg_newline_delimited) input, as otherwise the generated SVG only has a single path element. To set these properties dynamically, pass the input through [ndjson-map](https://github.com/mbostock/ndjson-map/blob/master/README#map).
 
