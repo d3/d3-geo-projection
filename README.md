@@ -863,16 +863,16 @@ Converts the specified GeoJSON *file* to SVG. With [--newline-delimited](#geo2sv
 By default, the SVG’s [fill](#geo2svg_fill) is set to none and the [stroke](#geo2svg_stroke) is set to black. To override these values on a per-feature basis, the following [GeoJSON feature](http://geojson.org/geojson-spec.html#feature-objects) properties will be propagated to attributes:
 
 * fill
-* fill-rule or fillRule
-* fill-opacity or fillOpacity
+* fill-rule (or fillRule)
+* fill-opacity (or fillOpacity)
 * stroke
-* stroke-width or strokeWidth
-* stroke-linecap or strokeLinecap
-* stroke-linejoin or strokeLinejoin
-* stroke-miterlimit or strokeMiterlimit
-* stroke-dasharray or strokeDasharray
-* stroke-dashoffset or strokeDashoffset
-* stroke-opacity or strokeOpacity
+* stroke-width (or strokeWidth)
+* stroke-linecap (or strokeLinecap)
+* stroke-linejoin (or strokeLinejoin)
+* stroke-miterlimit (or strokeMiterlimit)
+* stroke-dasharray (or strokeDasharray)
+* stroke-dashoffset (or strokeDashoffset)
+* stroke-opacity (or strokeOpacity)
 
 If the feature has an id, the path element will have a corresponding id attribute. If the feature has a *title* property, the path element will have a title element with the corresponding value. For an example of per-feature attributes, see this [California population density map](https://bl.ocks.org/mbostock/fb6c1e5ff700f9713a9dc2f0fd392c35).
 
