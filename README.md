@@ -993,12 +993,11 @@ Typically, the input coordinates are spherical and the outut coordinates are pla
 
 ```bash
 shp2json planar.shp \
-  | geoproject 'd3.geoTransform({point: function(x, y) { this.stream.point(x, -y); }})' \
-  | geoproject 'd3.geoIdentity().fitSize([960, 500], d)' \
+  | geoproject 'd3.geoIdentity().reflectY(true).fitSize([960, 500], d)' \
   > planar.json
 ```
 
-See also [d3.geoProject](#geoProject).
+See also [d3.geoProject](#geoProject) and [d3.geoIdentity](https://github.com/d3/d3-geo/blob/master/README.md#geoIdentity).
 
 <a name="geoproject_help" href="geoproject_help">#</a> geoproject <b>-h</b>
 <br><a href="geoproject_help">#</a> geoproject <b>--help</b>
