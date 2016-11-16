@@ -989,7 +989,7 @@ geostitch world.json \
   > world-mercator.json
 ```
 
-Typically, the input coordinates are spherical and the outut coordinates are planar, but the *projection* can also be an [arbitrary geometric transformation](https://github.com/d3/d3-geo/blob/master/README.md#transforms). For example, to invert the *y*-axis typical of [California Albers (EPSG:3310)](http://spatialreference.org/ref/epsg/nad83-california-albers/) and fit it to a 960×500 viewport:
+Typically, the input coordinates are spherical and the outut coordinates are planar, but the *projection* can also be an [arbitrary geometric transformation](https://github.com/d3/d3-geo/blob/master/README.md#transforms). For example, to invert the *y*-axis of [California Albers (EPSG:3310)](http://spatialreference.org/ref/epsg/nad83-california-albers/) and fit it to a 960×500 viewport:
 
 ```bash
 shp2json planar.shp \
