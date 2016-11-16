@@ -51,7 +51,7 @@ The Aitoff projection.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/albers.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734308)
 
-Alber’s [equal-area conic projection](#geoConicEqualArea); see [d3-geo](https://github.com/d3/d3-geo#geoAlbers).
+Alber’s [equal-area conic projection](#geoConicEqualArea); see [d3-geo](https://github.com/d3/d3-geo/blob/master/README.md#geoAlbers).
 
 <a href="#geoArmadillo" name="geoArmadillo">#</a> d3.<b>geoArmadillo</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/armadillo.js "Source")
 <br><a href="#geoArmadilloRaw" name="geoArmadilloRaw">#</a> d3.<b>geoArmadilloRaw</b>(<i>phi0</i>)
@@ -76,14 +76,14 @@ August’s epicycloidal conformal projection.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/azimuthalEqualArea.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757101)
 
-The Lambert azimuthal equal-area projection; see [d3-geo](https://github.com/d3/d3-geo#geoAzimuthalEqualArea).
+The Lambert azimuthal equal-area projection; see [d3-geo](https://github.com/d3/d3-geo/blob/master/README.md#geoAzimuthalEqualArea).
 
 <a href="#geoAzimuthalEquidistant" name="geoAzimuthalEquidistant">#</a> d3.<b>geoAzimuthalEquidistant</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/azimuthalEquidistant.js "Source")
 <br><a href="#geoAzimuthalEquidistantRaw" name="geoAzimuthalEquidistantRaw">#</a> d3.<b>geoAzimuthalEquidistantRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/azimuthalEquidistant.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757110)
 
-The azimuthal equidistant projection; see [d3-geo](https://github.com/d3/d3-geo#geoAzimuthalEquidistant).
+The azimuthal equidistant projection; see [d3-geo](https://github.com/d3/d3-geo/blob/master/README.md#geoAzimuthalEquidistant).
 
 <a href="#geoBaker" name="geoBaker">#</a> d3.<b>geoBaker</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/baker.js "Source")
 <br><a href="#geoBakerRaw" name="geoBakerRaw">#</a> d3.<b>geoBakerRaw</b>
@@ -142,7 +142,7 @@ The Bromley projection is a rescaled [Mollweide projection](#geoMollweide).
 <a href="#geoChamberlin" name="geoChamberlin">#</a> d3.<b>geoChamberlin</b>(<i>point0</i>, <i>point1</i>, <i>point2</i>) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/chamberlin.js "Source")
 <br><a href="#geoChamberlinRaw" name="geoChamberlinRaw">#</a> d3.<b>geoChamberlinRaw</b>(<i>p0</i>, <i>p1</i>, <i>p2</i>)
 
-The Chamberlin trimetric projection. This method does not support [*projection*.rotate](https://github.com/d3/d3-geo#projection_rotate): the three reference points implicitly determine a fixed rotation.
+The Chamberlin trimetric projection. This method does not support [*projection*.rotate](https://github.com/d3/d3-geo/blob/master/README.md#projection_rotate): the three reference points implicitly determine a fixed rotation.
 
 <a href="#geoChamberlinAfrica" name="geoChamberlinAfrica">#</a> d3.<b>geoChamberlinAfrica</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/chamberlin.js#L96 "Source")
 
@@ -162,21 +162,21 @@ The Collignon equal-area pseudocylindrical projection. This projection is used i
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/conicConformal.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734321)
 
-The Lambert conformal conic projection; see [d3-geo](https://github.com/d3/d3-geo#geoConicConformal).
+The Lambert conformal conic projection; see [d3-geo](https://github.com/d3/d3-geo/blob/master/README.md#geoConicConformal).
 
 <a href="#geoConicEqualArea" name="geoConicEqualArea">#</a> d3.<b>geoConicEqualArea</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/conicEqualArea.js "Source")
 <br><a href="#geoConicEqualAreaRaw" name="geoConicEqualAreaRaw">#</a> d3.<b>geoConicEqualAreaRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/conicEqualArea.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734308)
 
-Alber’s conic equal-area projection; see [d3-geo](https://github.com/d3/d3-geo#geoConicEqualArea).
+Alber’s conic equal-area projection; see [d3-geo](https://github.com/d3/d3-geo/blob/master/README.md#geoConicEqualArea).
 
 <a href="#geoConicEquidistant" name="geoConicEquidistant">#</a> d3.<b>geoConicEquidistant</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/conicEquidistant.js "Source")
 <br><a href="#geoConicEquidistantRaw" name="geoConicEquidistantRaw">#</a> d3.<b>geoConicEquidistantRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/conicEquidistant.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734317)
 
-The conic equidistant projection; see [d3-geo](https://github.com/d3/d3-geo#geoConicEquidistant).
+The conic equidistant projection; see [d3-geo](https://github.com/d3/d3-geo/blob/master/README.md#geoConicEquidistant).
 
 <a href="#geoCraig" name="geoCraig">#</a> d3.<b>geoCraig</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/craig.js "Source")
 <br><a href="#geoCraigRaw" name="geoCraigRaw">#</a> d3.<b>geoCraigRaw</b>(<i>phi</i>)
@@ -272,7 +272,7 @@ The Eisenlohr conformal projection.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/equirectangular.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757119)
 
-The equirectangular (plate carrée) projection; see [d3-geo](https://github.com/d3/d3-geo#geoEquirectangular). The [Cassini projection](http://bl.ocks.org/mbostock/5695142) is the transverse aspect of the equirectangular projection.
+The equirectangular (plate carrée) projection; see [d3-geo](https://github.com/d3/d3-geo/blob/master/README.md#geoEquirectangular). The [Cassini projection](http://bl.ocks.org/mbostock/5695142) is the transverse aspect of the equirectangular projection.
 
 <a href="#geoFahey" name="geoFahey">#</a> d3.<b>geoFahey</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/fahey.js "Source")
 <br><a href="#geoFaheyRaw" name="geoFaheyRaw">#</a> d3.<b>geoFaheyRaw</b>
@@ -292,7 +292,7 @@ Foucaut’s stereographic equivalent projection.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/gilbert.png" width="480" height="250">](https://www.jasondavies.com/maps/gilbert/)
 
-Gilbert’s two-world perspective projection. Wraps an instance of the specified projection *type*; if not specified, defaults to [d3.geoOrthographic](https://github.com/d3/d3-geo#geoOrthographic).
+Gilbert’s two-world perspective projection. Wraps an instance of the specified projection *type*; if not specified, defaults to [d3.geoOrthographic](https://github.com/d3/d3-geo/blob/master/README.md#geoOrthographic).
 
 <a href="#geoGingery" name="geoGingery">#</a> d3.<b>geoGingery</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/gingery.js "Source")
 <br><a href="#geoGingeryRaw" name="geoGingeryRaw">#</a> d3.<b>geoGingeryRaw</b>(<i>rho</i>, <i>lobes</i>)
@@ -349,7 +349,7 @@ The Ginzburg IX projection.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/gnomonic.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757349)
 
-The gnomonic projection; see [d3-geo](https://github.com/d3/d3-geo#geoGnomonic).
+The gnomonic projection; see [d3-geo](https://github.com/d3/d3-geo/blob/master/README.md#geoGnomonic).
 
 <a href="#geoGringorten" name="geoGringorten">#</a> d3.<b>geoGringorten</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/gringorten.js "Source")
 <br><a href="#geoGringortenRaw" name="geoGringortenRaw">#</a> d3.<b>geoGringortenRaw</b>
@@ -471,7 +471,7 @@ Defaults to 40°.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/mercator.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757132)
 
-The spherical Mercator projection; see [d3-geo](https://github.com/d3/d3-geo#geoMercator).
+The spherical Mercator projection; see [d3-geo](https://github.com/d3/d3-geo/blob/master/README.md#geoMercator).
 
 <a href="#geoMiller" name="geoMiller">#</a> d3.<b>geoMiller</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/miller.js "Source")
 <br><a href="#geoMillerRaw" name="geoMillerRaw">#</a> d3.<b>geoMillerRaw</b>
@@ -483,7 +483,7 @@ The Miller cylindrical projection is a modified [Mercator](#geoMercator) project
 <a href="#geoModifiedStereographic" name="geoModifiedStereographic">#</a> d3.<b>geoModifiedStereographic</b>(<i>coefficients</i>, <i>rotate</i>) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/modifiedStereographic.js "Source")
 <br><a href="#geoModifiedStereographicRaw" name="geoModifiedStereographicRaw">#</a> d3.<b>geoModifiedStereographicRaw</b>(<i>coefficients</i>)
 
-The family of [modified stereographic projections](http://www.jasondavies.com/maps/modified-stereographic/). The default [clip angle](https://github.com/d3/d3-geo#projection_clipAngle) for these projections is 90°. These projections do not support [*projection*.rotate](https://github.com/d3/d3-geo#projection_rotate): a fixed rotation is applied that is specific to the given *coefficients*.
+The family of [modified stereographic projections](http://www.jasondavies.com/maps/modified-stereographic/). The default [clip angle](https://github.com/d3/d3-geo/blob/master/README.md#projection_clipAngle) for these projections is 90°. These projections do not support [*projection*.rotate](https://github.com/d3/d3-geo/blob/master/README.md#projection_rotate): a fixed rotation is applied that is specific to the given *coefficients*.
 
 <a href="#geoModifiedStereographicAlaska" name="geoModifiedStereographicAlaska">#</a> d3.<b>geoModifiedStereographicAlaska</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/modifiedStereographic.js#L74 "Source")
 
@@ -562,7 +562,7 @@ The Nell–Hammer projection.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/orthographic.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757125)
 
-The orthographic projection; see [d3-geo](https://github.com/d3/d3-geo#geoOrthographic).
+The orthographic projection; see [d3-geo](https://github.com/d3/d3-geo/blob/master/README.md#geoOrthographic).
 
 <a href="#geoPatterson" name="geoPatterson">#</a> d3.<b>geoPatterson</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/patterson.js "Source")
 <br><a href="#geoPattersonRaw" name="geoPattersonRaw">#</a> d3.<b>geoPattersonRaw</b>
@@ -609,7 +609,7 @@ Defaults to 0°.
 
 <a href="#satellite_distance" name="satellite_distance">#</a> <i>satellite</i>.<b>distance</b>([<i>distance</i>])
 
-Distance from the center of the sphere to the point of view, as a proportion of the sphere’s radius; defaults to 2.0. The recommended maximum [clip angle](https://github.com/d3/d3-geo#projection_clipAngle) for a given *distance* is acos(1 / *distance*) converted to degrees. If [tilt](#satellite_tilt) is also applied, then more conservative clipping may be necessary. For exact clipping, the in-development geographic projection pipeline is needed; see the [satellite example](https://bl.ocks.org/mbostock/e48a00d4db5c3b042145).
+Distance from the center of the sphere to the point of view, as a proportion of the sphere’s radius; defaults to 2.0. The recommended maximum [clip angle](https://github.com/d3/d3-geo/blob/master/README.md#projection_clipAngle) for a given *distance* is acos(1 / *distance*) converted to degrees. If [tilt](#satellite_tilt) is also applied, then more conservative clipping may be necessary. For exact clipping, the in-development geographic projection pipeline is needed; see the [satellite example](https://bl.ocks.org/mbostock/e48a00d4db5c3b042145).
 
 <a href="#geoSinusoidal" name="geoSinusoidal">#</a> d3.<b>geoSinusoidal</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/sinusoidal.js "Source")
 <br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
@@ -630,7 +630,7 @@ Allen K. Philbrick’s Sinu-Mollweide projection. See also the [interrupted form
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/stereographic.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757137)
 
-The stereographic projection; see [d3-geo](https://github.com/d3/d3-geo#geoStereographic).
+The stereographic projection; see [d3-geo](https://github.com/d3/d3-geo/blob/master/README.md#geoStereographic).
 
 <a href="#geoTimes" name="geoTimes">#</a> d3.<b>geoTimes</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/times.js "Source")
 <br><a href="#geoTimesRaw" name="geoTimesRaw">#</a> d3.<b>geoTimesRaw</b>
@@ -644,12 +644,12 @@ John Muir’s Times projection.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/transverseMercator.png" width="480" height="250">](http://bl.ocks.org/mbostock/5126418)
 
-The transverse spherical Mercator projection; see [d3-geo](https://github.com/d3/d3-geo#geoTransverseMercator).
+The transverse spherical Mercator projection; see [d3-geo](https://github.com/d3/d3-geo/blob/master/README.md#geoTransverseMercator).
 
 <a href="#geoTwoPointAzimuthal" name="geoTwoPointAzimuthal">#</a> d3.<b>geoTwoPointAzimuthal</b>(<i>point0</i>, <i>point1</i>) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/twoPointAzimuthal.js "Source")
 <br><a href="#geoTwoPointAzimuthalRaw" name="geoTwoPointAzimuthalRaw">#</a> d3.<b>geoTwoPointAzimuthalRaw</b>(<i>d</i>)
 
-The two-point azimuthal projection “shows correct azimuths (but not distances) from either of two points to any other point. [It can] be used to locate a ship at sea, given the exact location of two radio transmitters and the direction of the ship to the transmitters.” This projection does not support [*projection*.rotate](https://github.com/d3/d3-geo#projection_rotate), as the rotation is fixed by the two given points.
+The two-point azimuthal projection “shows correct azimuths (but not distances) from either of two points to any other point. [It can] be used to locate a ship at sea, given the exact location of two radio transmitters and the direction of the ship to the transmitters.” This projection does not support [*projection*.rotate](https://github.com/d3/d3-geo/blob/master/README.md#projection_rotate), as the rotation is fixed by the two given points.
 
 <a href="#geoTwoPointAzimuthalUsa" name="geoTwoPointAzimuthalUsa">#</a> d3.<b>geoTwoPointAzimuthalUsa</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/twoPointAzimuthal.js#L21 "Source")
 
@@ -660,7 +660,7 @@ The two-point azimuthal projection with points [-158°, 21.5°] and [-77°, 39°
 <a href="#geoTwoPointEquidistant" name="geoTwoPointEquidistant">#</a> d3.<b>geoTwoPointEquidistant</b>(<i>point0</i>, <i>point1</i>) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/twoPointEquidistant.js "Source")
 <br><a href="#geoTwoPointEquidistantRaw" name="geoTwoPointEquidistantRaw">#</a> d3.<b>geoTwoPointEquidistantRaw</b>(<i>z0</i>)
 
-The two-point equidistant projection. This projection does not support [*projection*.rotate](https://github.com/d3/d3-geo#projection_rotate), as the rotation is fixed by the two given points. Note: to show the whole Earth, this projection requires clipping to spherical polygons, which is not yet supported in D3. However, you can typically show most of the Earth by using D3’s great-circle clipping.
+The two-point equidistant projection. This projection does not support [*projection*.rotate](https://github.com/d3/d3-geo/blob/master/README.md#projection_rotate), as the rotation is fixed by the two given points. Note: to show the whole Earth, this projection requires clipping to spherical polygons, which is not yet supported in D3. However, you can typically show most of the Earth by using D3’s great-circle clipping.
 
 <a href="#geoTwoPointEquidistantUsa" name="geoTwoPointEquidistantUsa">#</a> d3.<b>geoTwoPointEquidistantUsa</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/twoPointEquidistant.js#L40 "Source")
 
@@ -836,7 +836,7 @@ The Peirce quincuncial projection is the quincuncial form of the [Guyou projecti
 
 <a href="#geoProject" name="geoProject">#</a> d3.<b>geoProject</b>(<i>object</i>, <i>projection</i>) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/project/index.js "Source")
 
-Projects the specified GeoJSON *object* using the specified *projection*, returning a new GeoJSON *object* with projected coordinates. Typically, the input coordinates are spherical and the outut coordinates are planar, but the *projection* can also be an [arbitrary geometric transformation](https://github.com/d3/d3-geo#transforms).
+Projects the specified GeoJSON *object* using the specified *projection*, returning a new GeoJSON *object* with projected coordinates. Typically, the input coordinates are spherical and the outut coordinates are planar, but the *projection* can also be an [arbitrary geometric transformation](https://github.com/d3/d3-geo/blob/master/README.md#transforms).
 
 See also [geoproject](#geoproject).
 
@@ -974,10 +974,28 @@ Sets the graticule’s [precision](https://github.com/d3/d3-geo/blob/master/READ
 
 <a href="#geoproject" name="geoproject">#</a> <b>geoproject</b> [<i>options</i>…] <i>projection</i> [<i>file</i>] [<>](https://github.com/d3/d3-geo-projection/blob/master/bin/geoproject "Source")
 
-Projects the GeoJSON object in the specified input *file* using the specified *projection*, outputting a new GeoJSON *object* with projected coordinates. Typically, the input coordinates are spherical and the outut coordinates are planar, but the *projection* can also be an [arbitrary geometric transformation](https://github.com/d3/d3-geo#transforms).
+Projects the GeoJSON object in the specified input *file* using the specified *projection*, outputting a new GeoJSON *object* with projected coordinates. For example, to project standard [WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System#A_new_World_Geodetic_System:_WGS_84) input using [d3.geoAlbersUsa](https://github.com/d3/d3-geo/blob/master/README.md#geoAlbersUsa):
 
 ```bash
-geoproject 'd3.geoAlbersUsa()' < us.json > us-albers.json
+geoproject 'd3.geoAlbersUsa()' us.json \
+  > us-albers.json
+```
+
+For geometry that crosses the antimeridian or surrounds a pole, you will want to pass input through [geostitch](#geostitch) first:
+
+```bash
+geostitch world.json \
+  | geoproject 'd3.geoMercator()' \
+  > world-mercator.json
+```
+
+Typically, the input coordinates are spherical and the outut coordinates are planar, but the *projection* can also be an [arbitrary geometric transformation](https://github.com/d3/d3-geo/blob/master/README.md#transforms). For example, to invert the *y*-axis typical of GIS projections and fit it to a 960×500 viewport:
+
+```bash
+shp2json planar.shp \
+  | geoproject 'd3.geoTransform({point: function(x, y) { this.stream.point(x, -y); }})' \
+  | geoproject 'd3.geoIdentity().fitSize([960, 500], d)' \
+  > planar.json
 ```
 
 See also [d3.geoProject](#geoProject).
@@ -1008,7 +1026,7 @@ Reduce the precision for smaller output files. See also [d3.geoQuantize](#geoQua
 
 Stitches the GeoJSON object in the specified input *file*, removing antimeridian and polar cuts, and replacing straight Cartesian line segments with geodesic segments. The input *object* must have coordinates in longitude and latitude in decimal degrees per [RFC 7946](https://tools.ietf.org/html/rfc7946). [Antimeridian cutting](https://bl.ocks.org/mbostock/3788999), if needed, can then be re-applied after rotating to the desired projection aspect.
 
-See also [d3.geoStitch](#geoStitch).
+See [geoproject](#geoproject) for an example. See also [d3.geoStitch](#geoStitch).
 
 <a name="geostitch_help" href="geostitch_help">#</a> geostitch <b>-h</b>
 <br><a href="geostitch_help">#</a> geostitch <b>--help</b>
