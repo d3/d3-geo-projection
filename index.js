@@ -63,6 +63,7 @@ export {default as geoPolyconic, polyconicRaw as geoPolyconicRaw} from "./src/po
 export {default as geoPolyhedral} from "./src/polyhedral/index.js";
 export {default as geoPolyhedralButterfly} from "./src/polyhedral/butterfly.js";
 export {default as geoPolyhedralCollignon} from "./src/polyhedral/collignon.js";
+export {default as geoPolyhedralReichard} from "./src/polyhedral/reichard.js";
 export {default as geoPolyhedralWaterman} from "./src/polyhedral/waterman.js";
 export {default as geoProject} from "./src/project/index";
 export {default as geoGringortenQuincuncial} from "./src/quincuncial/gringorten.js";
