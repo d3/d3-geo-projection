@@ -50,6 +50,7 @@ switch (projectionName) {
   case "modifiedStereographicGs50":
   case "modifiedStereographicMiller":
   case "polyhedralButterfly":
+  case "polyhedralReichard":
   case "polyhedralWaterman":
   case "polyhedralCollignon": {
     context.beginPath();

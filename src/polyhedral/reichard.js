@@ -22,13 +22,12 @@ export default function (faceProjection) {
 
   return polyhedral(faces[0], function (lambda, phi) {
     return faces[
-      lambda <= -pi / 2 ? (phi >= phi1 ? 0 : (phi <= -phi1 ? 5 : 3)) :
-      lambda <=       0 ? (phi >=  phi1 ? 0 : (phi <= -phi1 ? 5 : 4)) :
-      lambda <=  pi / 2 ? (phi >= phi1 ? 0 : (phi <=  -phi1 ? 5 : 1)) :
-                         (phi >= phi1 ? 0 : (phi <=  -phi1 ? 5 : 2))
+      phi >= phi1 ? 0 : phi <= -phi1 ? 5 :
+      lambda <= -pi / 2 ? 3 :
+      lambda <=       0 ? 4 :
+      lambda <=  pi / 2 ? 1 : 2
     ];
   })
     .scale(63.4368)
-    .center([0, -45])
-    .rotate(-50);
+    .center([45, -45]);
 }
