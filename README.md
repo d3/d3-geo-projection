@@ -403,7 +403,7 @@ If *lobes* is specified, sets the number of lobes (the parameter *H* in the lite
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/hill.png" width="480" height="250">](http://bl.ocks.org/mbostock/4479513)
 
-Hill eucyclic projection is psuedoconic and equal-area.
+Hill eucyclic projection is pseudoconic and equal-area.
 
 <a href="hill_ratio" name="hill_ratio">#</a> <i>hill</i>.<b>ratio</b>([<i>ratio</i>])
 
