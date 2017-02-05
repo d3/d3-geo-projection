@@ -49,7 +49,7 @@ Defaults to 90°.
 
 The Aitoff projection.
 
-<a href="#geoAlbers" name="geoAlbers">#</a> d3.<b>geoAlbers</b>() [†](https://github.com/d3/d3-geo/blob/master/README.md#geoAlbers) [<>](https://github.com/d3/d3-geo/blob/master/src/projection/albers.js "Source")
+<a href="#geoAlbers" name="geoAlbers">#</a> d3.<b>geoAlbers</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/albers.js "Source") [†](https://github.com/d3/d3-geo/blob/master/README.md#geoAlbers)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/albers.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734308)
 
@@ -73,14 +73,14 @@ Defaults to 20°.
 
 August’s epicycloidal conformal projection.
 
-<a href="#geoAzimuthalEqualArea" name="geoAzimuthalEqualArea">#</a> d3.<b>geoAzimuthalEqualArea</b>() [†](https://github.com/d3/d3-geo/blob/master/README.md#geoAzimuthalEqualArea) [<>](https://github.com/d3/d3-geo/blob/master/src/projection/azimuthalEqualArea.js "Source")
+<a href="#geoAzimuthalEqualArea" name="geoAzimuthalEqualArea">#</a> d3.<b>geoAzimuthalEqualArea</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/azimuthalEqualArea.js "Source") [†](https://github.com/d3/d3-geo/blob/master/README.md#geoAzimuthalEqualArea)
 <br><a href="#geoAzimuthalEqualAreaRaw" name="geoAzimuthalEqualAreaRaw">#</a> d3.<b>geoAzimuthalEqualAreaRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/azimuthalEqualArea.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757101)
 
 The Lambert azimuthal equal-area projection; exported by [d3-geo](https://github.com/d3/d3-geo/blob/master/README.md#geoAzimuthalEqualArea).
 
-<a href="#geoAzimuthalEquidistant" name="geoAzimuthalEquidistant">#</a> d3.<b>geoAzimuthalEquidistant</b>() [†](https://github.com/d3/d3-geo/blob/master/README.md#geoAzimuthalEquidistant) [<>](https://github.com/d3/d3-geo/blob/master/src/projection/azimuthalEquidistant.js "Source")
+<a href="#geoAzimuthalEquidistant" name="geoAzimuthalEquidistant">#</a> d3.<b>geoAzimuthalEquidistant</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/azimuthalEquidistant.js "Source") [†](https://github.com/d3/d3-geo/blob/master/README.md#geoAzimuthalEquidistant)
 <br><a href="#geoAzimuthalEquidistantRaw" name="geoAzimuthalEquidistantRaw">#</a> d3.<b>geoAzimuthalEquidistantRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/azimuthalEquidistant.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757110)
@@ -159,21 +159,21 @@ The Chamberlin projection for Africa using points [0°, 22°], [45°, 22°], [22
 
 The Collignon equal-area pseudocylindrical projection. This projection is used in the polar areas of the [HEALPix projection](#geoHealpix).
 
-<a href="#geoConicConformal" name="geoConicConformal">#</a> d3.<b>geoConicConformal</b>() [†](https://github.com/d3/d3-geo/blob/master/README.md#geoConicConformal) [<>](https://github.com/d3/d3-geo/blob/master/src/projection/conicConformal.js "Source")
+<a href="#geoConicConformal" name="geoConicConformal">#</a> d3.<b>geoConicConformal</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/conicConformal.js "Source") [†](https://github.com/d3/d3-geo/blob/master/README.md#geoConicConformal)
 <br><a href="#geoConicConformalRaw" name="geoConicConformalRaw">#</a> d3.<b>geoConicConformalRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/conicConformal.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734321)
 
 The Lambert conformal conic projection; exported by [d3-geo](https://github.com/d3/d3-geo/blob/master/README.md#geoConicConformal).
 
-<a href="#geoConicEqualArea" name="geoConicEqualArea">#</a> d3.<b>geoConicEqualArea</b>() [†](https://github.com/d3/d3-geo/blob/master/README.md#geoConicEqualArea) [<>](https://github.com/d3/d3-geo/blob/master/src/projection/conicEqualArea.js "Source")
+<a href="#geoConicEqualArea" name="geoConicEqualArea">#</a> d3.<b>geoConicEqualArea</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/conicEqualArea.js "Source") [†](https://github.com/d3/d3-geo/blob/master/README.md#geoConicEqualArea)
 <br><a href="#geoConicEqualAreaRaw" name="geoConicEqualAreaRaw">#</a> d3.<b>geoConicEqualAreaRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/conicEqualArea.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734308)
 
 Alber’s conic equal-area projection; exported by [d3-geo](https://github.com/d3/d3-geo/blob/master/README.md#geoConicEqualArea).
 
-<a href="#geoConicEquidistant" name="geoConicEquidistant">#</a> d3.<b>geoConicEquidistant</b>() [†](https://github.com/d3/d3-geo/blob/master/README.md#geoConicEquidistant) [<>](https://github.com/d3/d3-geo/blob/master/src/projection/conicEquidistant.js "Source")
+<a href="#geoConicEquidistant" name="geoConicEquidistant">#</a> d3.<b>geoConicEquidistant</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/conicEquidistant.js "Source") [†](https://github.com/d3/d3-geo/blob/master/README.md#geoConicEquidistant)
 <br><a href="#geoConicEquidistantRaw" name="geoConicEquidistantRaw">#</a> d3.<b>geoConicEquidistantRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/conicEquidistant.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734317)
@@ -269,7 +269,7 @@ The Eckert VI projection.
 
 The Eisenlohr conformal projection.
 
-<a href="#geoEquirectangular" name="geoEquirectangular">#</a> d3.<b>geoEquirectangular</b>() [†](https://github.com/d3/d3-geo/blob/master/README.md#geoEquirectangular) [<>](https://github.com/d3/d3-geo/blob/master/src/projection/equirectangular.js "Source")
+<a href="#geoEquirectangular" name="geoEquirectangular">#</a> d3.<b>geoEquirectangular</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/equirectangular.js "Source") [†](https://github.com/d3/d3-geo/blob/master/README.md#geoEquirectangular)
 <br><a href="#geoEquirectangularRaw" name="geoEquirectangularRaw">#</a> d3.<b>geoEquirectangularRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/equirectangular.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757119)
@@ -346,7 +346,7 @@ The Ginzburg VIII projection.
 
 The Ginzburg IX projection.
 
-<a href="#geoGnomonic" name="geoGnomonic">#</a> d3.<b>geoGnomonic</b>() [†](https://github.com/d3/d3-geo/blob/master/README.md#geoGnomonic) [<>](https://github.com/d3/d3-geo/blob/master/src/projection/gnomonic.js "Source")
+<a href="#geoGnomonic" name="geoGnomonic">#</a> d3.<b>geoGnomonic</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/gnomonic.js "Source") [†](https://github.com/d3/d3-geo/blob/master/README.md#geoGnomonic)
 <br><a href="#geoGnomonicRaw" name="geoGnomonicRaw">#</a> d3.<b>geoGnomonicRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/gnomonic.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757349)
@@ -468,7 +468,7 @@ The [loximuthal projection](https://en.wikipedia.org/wiki/Loximuthal_projection)
 
 Defaults to 40°.
 
-<a href="#geoMercator" name="geoMercator">#</a> d3.<b>geoMercator</b>() [†](https://github.com/d3/d3-geo/blob/master/README.md#geoMercator) [<>](https://github.com/d3/d3-geo/blob/master/src/projection/mercator.js "Source")
+<a href="#geoMercator" name="geoMercator">#</a> d3.<b>geoMercator</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/mercator.js "Source") [†](https://github.com/d3/d3-geo/blob/master/README.md#geoMercator)
 <br><a href="#geoMercatorRaw" name="geoMercatorRaw">#</a> d3.<b>geoMercatorRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/mercator.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757132)
@@ -559,7 +559,7 @@ The Natural Earth projection.
 
 The Nell–Hammer projection.
 
-<a href="#geoOrthographic" name="geoOrthographic">#</a> d3.<b>geoOrthographic</b>() [†](https://github.com/d3/d3-geo/blob/master/README.md#geoOrthographic) [<>](https://github.com/d3/d3-geo/blob/master/src/projection/orthographic.js "Source")
+<a href="#geoOrthographic" name="geoOrthographic">#</a> d3.<b>geoOrthographic</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/orthographic.js "Source") [†](https://github.com/d3/d3-geo/blob/master/README.md#geoOrthographic)
 <br><a href="#geoOrthographicRaw" name="geoOrthographicRaw">#</a> d3.<b>geoOrthographicRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/orthographic.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757125)
@@ -627,7 +627,7 @@ The sinusoidal projection.
 
 Allen K. Philbrick’s Sinu-Mollweide projection. See also the [interrupted form](#interruptedSinuMollweide).
 
-<a href="#geoStereographic" name="geoStereographic">#</a> d3.<b>geoStereographic</b>() [†](https://github.com/d3/d3-geo/blob/master/README.md#geoStereographic) [<>](https://github.com/d3/d3-geo/blob/master/src/projection/stereographic.js "Source")
+<a href="#geoStereographic" name="geoStereographic">#</a> d3.<b>geoStereographic</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/stereographic.js "Source") [†](https://github.com/d3/d3-geo/blob/master/README.md#geoStereographic)
 <br><a href="#geoStereographicRaw" name="geoStereographicRaw">#</a> d3.<b>geoStereographicRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/stereographic.png" width="480" height="250">](http://bl.ocks.org/mbostock/3757137)
@@ -641,7 +641,7 @@ The stereographic projection; exported by [d3-geo](https://github.com/d3/d3-geo/
 
 John Muir’s Times projection.
 
-<a href="#geoTransverseMercator" name="geoTransverseMercator">#</a> d3.<b>geoTransverseMercator</b>() [†](https://github.com/d3/d3-geo/blob/master/README.md#geoTransverseMercator) [<>](https://github.com/d3/d3-geo/blob/master/src/projection/transverseMercator.js "Source")
+<a href="#geoTransverseMercator" name="geoTransverseMercator">#</a> d3.<b>geoTransverseMercator</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/transverseMercator.js "Source") [†](https://github.com/d3/d3-geo/blob/master/README.md#geoTransverseMercator)
 <br><a href="#geoTransverseMercatorRaw" name="geoTransverseMercatorRaw">#</a> d3.<b>geoTransverseMercatorRaw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/transverseMercator.png" width="480" height="250">](http://bl.ocks.org/mbostock/5126418)
