@@ -1021,6 +1021,11 @@ Specify the output file name. Defaults to “-” for stdout.
 
 Reduce the precision for smaller output files. See also [d3.geoQuantize](#geoQuantize).
 
+<a name="geoproject_newline_delimited" href="geoproject_newline_delimited">#</a> geoproject <b>-n</b>
+<br><a href="geoproject_newline_delimited">#</a> geoproject <b>--newline-delimited</b>
+
+Accept [newline-delimited JSON](http://ndjson.org/) as input, with one feature per line, and generate newline-delimited JSON as output.
+
 ### geostitch
 
 <a href="#geostitch" name="geostitch">#</a> <b>geostitch</b> [<i>options</i>…] [<i>file</i>] [<>](https://github.com/d3/d3-geo-projection/blob/master/bin/geostitch "Source")
@@ -1043,3 +1048,8 @@ Output the version number.
 <br><a href="geostitch_out">#</a> geostitch <b>--out</b> <i>file</i>
 
 Specify the output file name. Defaults to “-” for stdout.
+
+<a name="geostitch_newline_delimited" href="geostitch_newline_delimited">#</a> geostitch <b>-n</b>
+<br><a href="geostitch_newline_delimited">#</a> geostitch <b>--newline-delimited</b>
+
+Accept [newline-delimited JSON](http://ndjson.org/) as input, with one feature per line, and generate newline-delimited JSON as output.
