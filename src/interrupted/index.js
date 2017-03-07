@@ -89,9 +89,6 @@ export default function(project, lobes) {
     });
   });
 
-  var p = projection(forward),
-      stream_ = p.stream;
-
   function forward(lambda, phi) {
     var sign = phi < 0 ? -1 : +1, lobe = lobes[+(phi < 0)];
     for (var i = 0, n = lobe.length - 1; i < n && lambda > lobe[i][2][0]; ++i);
@@ -112,6 +109,9 @@ export default function(project, lobes) {
       }
     }
   };
+
+  var p = projection(forward),
+      stream_ = p.stream;
 
   p.stream = function(stream) {
     var rotate = p.rotate(),
