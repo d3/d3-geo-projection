@@ -89,7 +89,15 @@ for i in \
     wiechel \
     winkel3 \
     ; do
-  test/render-world $i \
-      && [ "$(compare -metric rmse img/$i.png test/output/$i.png null: 2>&1)" = "0 (0)" ] \
-      || echo "✗ test/output/$i.png and img/$i.png differ"
+  test/render-world $i > test/output/$i.png \
+      && [ "$(gm compare -metric rmse img/$i.png test/output/$i.png 2>&1)" = "Image Difference (RootMeanSquaredError):
+           Normalized    Absolute
+          ============  ==========
+     Red: 0.0000000000        0.0
+   Green: 0.0000000000        0.0
+    Blue: 0.0000000000        0.0
+   Total: 0.0000000000        0.0" ] \
+      && echo -e "\x1B[1;32m✓ $2\x1B[0mtest/output/$i.png" \
+      || (gm compare -type TrueColor -highlight-style assign -highlight-color red -file test/output/$i-difference.png test/output/$i.png img/$i.png; \
+          echo -e "\x1B[1;31m✗ $2\x1B[0mtest/output/$i.png\n  test/output/$i-difference.png")
 done
