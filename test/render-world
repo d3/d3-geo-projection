@@ -76,5 +76,4 @@ path(outline);
 context.strokeStyle = "#000";
 context.stroke();
 
-console.warn("↳ test/output/" + projectionName + ".png");
-canvas.pngStream().pipe(fs.createWriteStream("test/output/" + projectionName + ".png"));
+canvas.pngStream().pipe(process.stdout);
