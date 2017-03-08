@@ -20,26 +20,24 @@ export default function(root, face, r) {
 
   function recurse(node, parent) {
     node.edges = faceEdges(node.face);
-    if (parent) {
-      // Find shared edge.
-      if (parent.face) {
-        var shared = node.shared = sharedEdge(node.face, parent.face),
-            m = matrix(shared.map(parent.project), shared.map(node.project));
-        node.transform = parent.transform ? multiply(parent.transform, m) : m;
-        // Replace shared edge in parent edges array.
-        var edges = parent.edges;
-        for (var i = 0, n = edges.length; i < n; ++i) {
-          if (pointEqual(shared[0], edges[i][1]) && pointEqual(shared[1], edges[i][0])) edges[i] = node;
-          if (pointEqual(shared[0], edges[i][0]) && pointEqual(shared[1], edges[i][1])) edges[i] = node;
-        }
-        edges = node.edges;
-        for (i = 0, n = edges.length; i < n; ++i) {
-          if (pointEqual(shared[0], edges[i][0]) && pointEqual(shared[1], edges[i][1])) edges[i] = parent;
-          if (pointEqual(shared[0], edges[i][1]) && pointEqual(shared[1], edges[i][0])) edges[i] = parent;
-        }
-      } else {
-        node.transform = parent.transform;
+    // Find shared edge.
+    if (parent.face) {
+      var shared = node.shared = sharedEdge(node.face, parent.face),
+          m = matrix(shared.map(parent.project), shared.map(node.project));
+      node.transform = parent.transform ? multiply(parent.transform, m) : m;
+      // Replace shared edge in parent edges array.
+      var edges = parent.edges;
+      for (var i = 0, n = edges.length; i < n; ++i) {
+        if (pointEqual(shared[0], edges[i][1]) && pointEqual(shared[1], edges[i][0])) edges[i] = node;
+        if (pointEqual(shared[0], edges[i][0]) && pointEqual(shared[1], edges[i][1])) edges[i] = node;
       }
+      edges = node.edges;
+      for (i = 0, n = edges.length; i < n; ++i) {
+        if (pointEqual(shared[0], edges[i][0]) && pointEqual(shared[1], edges[i][1])) edges[i] = parent;
+        if (pointEqual(shared[0], edges[i][1]) && pointEqual(shared[1], edges[i][0])) edges[i] = parent;
+      }
+    } else {
+      node.transform = parent.transform;
     }
     if (node.children) {
       node.children.forEach(function(child) {
