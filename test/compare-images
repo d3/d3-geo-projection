@@ -98,6 +98,7 @@ for i in \
     Blue: 0.0000000000        0.0
    Total: 0.0000000000        0.0" ] \
       && echo -e "\x1B[1;32m✓ $2\x1B[0mtest/output/$i.png" \
+      && rm -f -- test/output/$i-difference.png \
       || (gm compare -type TrueColor -highlight-style assign -highlight-color red -file test/output/$i-difference.png test/output/$i.png img/$i.png; \
           echo -e "\x1B[1;31m✗ $2\x1B[0mtest/output/$i.png\n  test/output/$i-difference.png")
 done
