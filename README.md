@@ -29,7 +29,7 @@ var aitoff = d3.geoAitoff();
 
 ### Projections
 
-Note: projections tagged \[d3-geo\] are included in [d3](https://github.com/d3/d3) by default, and exported by [d3-geo](https://github.com/d3/d3-geo) rather than [d3-geo-projection](https://github.com/d3/d3-geo-projection).
+Note: projections tagged \[d3-geo\] are exported by [d3-geo](https://github.com/d3/d3-geo), not d3-geo-projection, and are included in the [d3](https://github.com/d3/d3) default bundle.
 
 <a href="#geoAiry" name="geoAiry">#</a> d3.<b>geoAiry</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/airy.js "Source")
 <br><a href="#geoAiryRaw" name="geoAiryRaw">#</a> d3.<b>geoAiryRaw</b>(<i>beta</i>)
