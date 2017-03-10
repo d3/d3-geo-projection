@@ -1,6 +1,6 @@
 {
   "name": "d3-geo-projection",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Extended geographic projections for d3-geo.",
   "keywords": [
     "d3",
