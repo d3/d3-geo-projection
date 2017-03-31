@@ -151,7 +151,7 @@ function stitchFragments(fragments) {
         delete fragmentByStart[end];
         delete fragmentByEnd[endFragment.ring[endFragment.ring.length - 1]];
         fragment.ring.pop(); // drop the shared coordinate
-        fragment = {index: n++, polygon: endFragment.polygon, rang: fragment.ring.concat(endFragment.ring)};
+        fragment = {index: n++, polygon: endFragment.polygon, ring: fragment.ring.concat(endFragment.ring)};
         fragments[endFragment.index] = null;
         fragments.push(fragmentByStart[fragment.ring[0]] = fragmentByEnd[fragment.ring[fragment.ring.length - 1]] = fragment);
       } else {
