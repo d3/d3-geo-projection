@@ -1,11 +1,94 @@
 var tape = require("tape"),
     d3 = require("../");
 
+tape("stitch(Geometry) preserves the bbox of the input geometry", function(test) {
+  test.deepEqual(fix(d3.geoStitch({
+    type: "Polygon",
+    bbox: [-180, -90, 180, 90],
+    coordinates: [
+      [[-180, -80], [-90, -80], [0, -80], [90, -80], [180, -80], [180, -90], [90, -90], [0, -90], [-90, -90], [-180, -90], [-180, -80]]
+    ]
+  })), {
+    type: "Polygon",
+    bbox: [-180, -90, 180, 90],
+    coordinates: [
+      [[-180, -80], [-90, -80], [0, -80], [90, -80], [-180, -80]]
+    ]
+  });
+  test.end();
+});
+
+tape("stitch(Feature) preserves the id, bbox and properties of the input feature", function(test) {
+  test.deepEqual(fix(d3.geoStitch({
+    type: "Feature",
+    id: "polygon",
+    bbox: [-180, -90, 180, 90],
+    properties: {foo: 42},
+    geometry: {
+      type: "Polygon",
+      coordinates: [
+        [[-180, -80], [-90, -80], [0, -80], [90, -80], [180, -80], [180, -90], [90, -90], [0, -90], [-90, -90], [-180, -90], [-180, -80]]
+      ]
+    }
+  })), {
+    type: "Feature",
+    id: "polygon",
+    bbox: [-180, -90, 180, 90],
+    properties: {foo: 42},
+    geometry: {
+      type: "Polygon",
+      coordinates: [
+        [[-180, -80], [-90, -80], [0, -80], [90, -80], [-180, -80]]
+      ]
+    }
+  });
+  test.end();
+});
+
+tape("stitch(FeatureCollection) preserves bbox of the input feature collection", function(test) {
+  test.deepEqual(fix(d3.geoStitch({
+    type: "FeatureCollection",
+    bbox: [-180, -90, 180, 90],
+    features: [
+      {
+        type: "Feature",
+        id: "polygon",
+        bbox: [-180, -90, 180, 90],
+        properties: {foo: 42},
+        geometry: {
+          type: "Polygon",
+          coordinates: [
+            [[-180, -80], [-90, -80], [0, -80], [90, -80], [180, -80], [180, -90], [90, -90], [0, -90], [-90, -90], [-180, -90], [-180, -80]]
+          ]
+        }
+      }
+    ]
+  })), {
+    type: "FeatureCollection",
+    bbox: [-180, -90, 180, 90],
+    features: [
+      {
+        type: "Feature",
+        id: "polygon",
+        bbox: [-180, -90, 180, 90],
+        properties: {foo: 42},
+        geometry: {
+          type: "Polygon",
+          coordinates: [
+            [[-180, -80], [-90, -80], [0, -80], [90, -80], [-180, -80]]
+          ]
+        }
+      }
+    ]
+  });
+  test.end();
+});
+
 // A-----B-----C-----D-----E
 // |                       |
 // |                       |
 // J-----I-----H-----G-----F
-tape("stitch(object) - a polygon surrounding the South pole with a cut along the antimeridian", function(test) {
+tape("stitch(Polygon) surrounding the South pole with a cut along the antimeridian", function(test) {
   test.deepEqual(fix(d3.geoStitch({
     type: "Polygon",
     coordinates: [
@@ -27,7 +110,7 @@ tape("stitch(object) - a polygon surrounding the South pole with a cut along the
 // |                       |
 // |                       |
 // L-----K-----J-----I-----H
-tape("stitch(object) - a large polygon surrounding the South pole with a cut along the antimeridian", function(test) {
+tape("stitch(Polygon) surrounding the South pole with a cut along the antimeridian", function(test) {
   test.deepEqual(fix(d3.geoStitch({
     type: "Polygon",
     coordinates: [
@@ -51,7 +134,7 @@ tape("stitch(object) - a large polygon surrounding the South pole with a cut alo
 // L                 G
 // |                 |
 // K-----J-----I-----H
-tape("topology a large polygon with a hole across the antimeridian and cut along the antimeridian", function(test) {
+tape("stitch(Polygon) with a hole across the antimeridian and cut along the antimeridian", function(test) {
   test.deepEqual(fix(d3.geoStitch({
     type: "Polygon",
     coordinates: [

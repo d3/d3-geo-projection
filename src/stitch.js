@@ -14,27 +14,27 @@ function quantize(x) {
 }
 
 function normalizePoint(y) {
-  return y === y0 || y === y1
-      ? [0, y] // pole
-      : [x0, quantize(y)]; // antimeridian
+  return y === y0 || y === y1 ? [0, y] : [x0, quantize(y)]; // pole or antimeridian?
 }
 
 function clampPoint(p) {
-  if (p[0] <= x0e) p[0] = x0;
-  else if (p[0] >= x1e) p[0] = x1;
-  if (p[1] <= y0e) p[1] = y0;
-  else if (p[1] >= y1e) p[1] = y1;
+  var x = p[0], y = p[1], clamped = false;
+  if (x <= x0e) x = x0, clamped = true;
+  else if (x >= x1e) x = x1, clamped = true;
+  if (y <= y0e) y = y0, clamped = true;
+  else if (y >= y1e) y = y1, clamped = true;
+  return clamped ? [x, y] : p;
 }
 
 function clampPoints(points) {
-  points.forEach(clampPoint);
+  return points.map(clampPoint);
 }
 
 // For each ring, detect where it crosses the antimeridian or pole.
-function extractFragments(polygon, fragments) {
-  for (var j = 0, m = polygon.length; j < m; ++j) {
-    var ring = polygon[j];
-    ring.polygon = polygon;
+function extractFragments(rings, fragments) {
+  for (var j = 0, m = rings.length; j < m; ++j) {
+    var ring = rings[j];
+    ring.polygon = rings;
 
     // By default, assume that this ring doesn’t need any stitching.
     fragments.push(ring);
@@ -66,7 +66,7 @@ function extractFragments(polygon, fragments) {
         // The current point is also normalized for later joining.
         if (i) {
           var fragmentBefore = ring.slice(0, i + 1);
-          fragmentBefore.polygon = polygon;
+          fragmentBefore.polygon = rings;
           fragmentBefore[fragmentBefore.length - 1] = normalizePoint(y);
           fragments[fragments.length - 1] = fragmentBefore;
         }
@@ -82,13 +82,13 @@ function extractFragments(polygon, fragments) {
         // Otherwise, add the remaining ring fragment and continue.
         fragments.push(ring = ring.slice(k - 1));
         ring[0] = normalizePoint(ring[0][1]);
-        ring.polygon = polygon;
+        ring.polygon = rings;
         i = -1;
         n = ring.length;
       }
     }
   }
-  polygon.length = 0;
+  rings.length = 0;
 }
 
 // Now stitch the fragments back together into rings.
@@ -171,38 +171,49 @@ function stitchFragments(fragments) {
   }
 }
 
-function stitchFeature(o) {
-  stitchGeometry(o.geometry);
+function stitchFeature(input) {
+  var output = {type: "Feature", geometry: stitchGeometry(input.geometry)};
+  if (input.id != null) output.id = input.id;
+  if (input.bbox != null) output.bbox = input.bbox;
+  if (input.properties != null) output.properties = input.properties;
+  return output;
 }
 
-function stitchGeometry(o) {
-  if (!o) return;
-  var fragments, i, n;
-  switch (o.type) {
-    case "GeometryCollection": o.geometries.forEach(stitchGeometry); break;
-    case "Point": clampPoint(o.coordinates); break;
-    case "MultiPoint": case "LineString": clampPoints(o.coordinates); break;
-    case "MultiLineString": o.coordinates.forEach(clampPoints); break;
+function stitchGeometry(input) {
+  if (input == null) return input;
+  var output, fragments, i, n;
+  switch (input.type) {
+    case "GeometryCollection": output = {type: "GeometryCollection", geometries: input.geometries.map(stitchGeometry)}; break;
+    case "Point": output = {type: "Point", coordinates: clampPoint(input.coordinates)}; break;
+    case "MultiPoint": case "LineString": output = {type: input.type, coordinates: clampPoints(input.coordinates)}; break;
+    case "MultiLineString": output = {type: "MultiLineString", coordinates: input.coordinates.map(clampPoints)}; break;
     case "Polygon": {
-      extractFragments(o.coordinates, fragments = []);
+      extractFragments(input.coordinates, fragments = []);
       stitchFragments(fragments);
-      break;
+      return input; // TODO
     }
     case "MultiPolygon": {
-      fragments = [], i = -1, n = o.coordinates.length;
-      while (++i < n) extractFragments(o.coordinates[i], fragments);
+      fragments = [], i = -1, n = input.coordinates.length;
+      while (++i < n) extractFragments(input.coordinates[i], fragments);
       stitchFragments(fragments);
-      o.coordinates = o.coordinates.filter(nonempty);
-      break;
+      input.coordinates = input.coordinates.filter(nonempty);
+      return input; // TODO
     }
+    default: return input;
   }
+  if (input.bbox != null) output.bbox = input.bbox;
+  return output;
 }
 
-export default function(o) {
-  if (o) switch (o.type) {
-    case "Feature": stitchFeature(o); break;
-    case "FeatureCollection": o.features.forEach(stitchFeature); break;
-    default: stitchGeometry(o); break;
+export default function(input) {
+  if (input == null) return input;
+  switch (input.type) {
+    case "Feature": return stitchFeature(input);
+    case "FeatureCollection": {
+      var output = {type: "FeatureCollection", features: input.features.map(stitchFeature)};
+      if (input.bbox != null) output.bbox = input.bbox;
+      return output;
+    }
+    default: return stitchGeometry(input);
   }
-  return o;
 }
