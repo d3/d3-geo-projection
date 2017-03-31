@@ -1,39 +1,53 @@
-export default function(o, digits) {
+export default function(input, digits) {
   if (!(0 <= (digits = +digits) && digits <= 20)) throw new Error("invalid digits");
 
-  function quantizePoint(coordinates) {
-    coordinates[0] = +coordinates[0].toFixed(digits);
-    coordinates[1] = +coordinates[1].toFixed(digits);
+  function quantizePoint(input) {
+    var n = input.length, i = 2, output = new Array(n);
+    output[0] = +input[0].toFixed(digits);
+    output[1] = +input[1].toFixed(digits);
+    while (i < n) output[i] = input[i], ++i;
+    return output;
   }
 
-  function quantizePoints(coordinates) {
-    coordinates.forEach(quantizePoint);
+  function quantizePoints(input) {
+    return input.map(quantizePoint);
   }
 
-  function quantizePolygon(coordinates) {
-    coordinates.forEach(quantizePoints);
+  function quantizePolygon(input) {
+    return input.map(quantizePoints);
   }
 
-  function quantizeGeometry(o) {
-    if (o) switch (o.type) {
-      case "GeometryCollection": o.geometries.forEach(quantizeGeometry); break;
-      case "Point": quantizePoint(o.coordinates); break;
-      case "MultiPoint": case "LineString": quantizePoints(o.coordinates); break;
-      case "MultiLineString": case "Polygon": quantizePolygon(o.coordinates); break;
-      case "MultiPolygon": o.coordinates.forEach(quantizePolygon); break;
-      default: return;
+  function quantizeGeometry(input) {
+    if (input == null) return input;
+    var output;
+    switch (input.type) {
+      case "GeometryCollection": output = {type: "GeometryCollection", geometries: input.geometries.map(quantizeGeometry)}; break;
+      case "Point": output = {type: "Point", coordinates: quantizePoint(input.coordinates)}; break;
+      case "MultiPoint": case "LineString": output = {type: input.type, coordinates: quantizePoints(input.coordinates)}; break;
+      case "MultiLineString": case "Polygon": output = {type: input.type, coordinates: quantizePolygon(input.coordinates)}; break;
+      case "MultiPolygon": output = {type: "MultiPolygon", coordinates: input.coordinates.map(quantizePolygon)}; break;
+      default: return input;
     }
+    if (input.bbox != null) output.bbox = input.bbox;
+    return output;
   }
 
-  function quantizeFeature(o) {
-    quantizeGeometry(o.geometry);
+  function quantizeFeature(input) {
+    var output = {type: "Feature", properties: input.properties, geometry: quantizeGeometry(input.geometry)};
+    if (input.id != null) output.id = input.id;
+    if (input.bbox != null) output.bbox = input.bbox;
+    return output;
   }
 
-  if (o) switch (o.type) {
-    case "Feature": quantizeFeature(o); break;
-    case "FeatureCollection": o.features.forEach(quantizeFeature); break;
-    default: quantizeGeometry(o); break;
+  if (input != null) switch (input.type) {
+    case "Feature": return quantizeFeature(input);
+    case "FeatureCollection": {
+      var output = {type: "FeatureCollection", features: input.features.map(quantizeFeature)};
+      if (input.bbox != null) output.bbox = input.bbox;
+      return output;
+    }
+    default: return quantizeGeometry(input);
   }
 
-  return o;
+  return input;
 }

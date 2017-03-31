@@ -844,13 +844,13 @@ See also [geoproject](#geoproject).
 
 <a href="#geoStitch" name="geoStitch">#</a> d3.<b>geoStitch</b>(<i>object</i>) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/stitch.js "Source")
 
-Stitches the specified GeoJSON *object*, modifying it **in-place**, removing antimeridian and polar cuts, and replacing straight Cartesian line segments with geodesic segments. The input *object* must have coordinates in longitude and latitude in decimal degrees per [RFC 7946](https://tools.ietf.org/html/rfc7946). [Antimeridian cutting](https://bl.ocks.org/mbostock/3788999), if needed, can then be re-applied after rotating to the desired projection aspect.
+Returns a shallow copy of the specified GeoJSON *object*, removing antimeridian and polar cuts, and replacing straight Cartesian line segments with geodesic segments. The input *object* must have coordinates in longitude and latitude in decimal degrees per [RFC 7946](https://tools.ietf.org/html/rfc7946). [Antimeridian cutting](https://bl.ocks.org/mbostock/3788999), if needed, can then be re-applied after rotating to the desired projection aspect.
 
 See also [geostitch](#geostitch).
 
 <a href="#geoQuantize" name="geoQuantize">#</a> d3.<b>geoQuantize</b>(<i>object</i>, <i>digits</i>) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/quantize.js "Source")
 
-Quantizes the specified GeoJSON *object*, modifying it **in-place**, rounding *x* and *y* coordinates according to [*number*.toFixed](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed). Typically this is done *after* [projecting](#geoProject).
+Returns a shallow copy of the specified GeoJSON *object*, rounding *x* and *y* coordinates according to [*number*.toFixed](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed). Typically this is done *after* [projecting](#geoProject).
 
 See also [geoproject --precision](#geoproject_precision) and [geo2svg --precision](#geo2svg_precision).
 
