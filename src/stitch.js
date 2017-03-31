@@ -5,10 +5,6 @@ var epsilon = 1e-4,
     y0 = -90, y0e = y0 + epsilon,
     y1 = 90, y1e = y1 - epsilon;
 
-function nonempty(coordinates) {
-  return coordinates.length > 0;
-}
-
 function quantize(x) {
   return Math.floor(x * epsilonInverse) / epsilonInverse;
 }
@@ -32,12 +28,11 @@ function clampPoints(points) {
 
 // For each ring, detect where it crosses the antimeridian or pole.
 function extractFragments(rings, fragments) {
-  for (var j = 0, m = rings.length; j < m; ++j) {
-    var ring = rings[j];
-    ring.polygon = rings;
+  for (var j = 0, m = rings.length, polygon = []; j < m; ++j) {
+    var ring = rings[j].slice();
 
     // By default, assume that this ring doesn’t need any stitching.
-    fragments.push(ring);
+    fragments.push({index: -1, polygon: polygon, ring: ring});
 
     for (var i = 0, n = ring.length; i < n; ++i) {
       var point = ring[i],
@@ -65,9 +60,8 @@ function extractFragments(rings, fragments) {
         // cut the current fragment so that it ends at the current point.
         // The current point is also normalized for later joining.
         if (i) {
-          var fragmentBefore = ring.slice(0, i + 1);
-          fragmentBefore.polygon = rings;
-          fragmentBefore[fragmentBefore.length - 1] = normalizePoint(y);
+          var fragmentBefore = {index: -1, polygon: polygon, ring: ring.slice(0, i + 1)};
+          fragmentBefore.ring[fragmentBefore.ring.length - 1] = normalizePoint(y);
           fragments[fragments.length - 1] = fragmentBefore;
         }
 
@@ -80,20 +74,18 @@ function extractFragments(rings, fragments) {
         if (k >= n) break;
 
         // Otherwise, add the remaining ring fragment and continue.
-        fragments.push(ring = ring.slice(k - 1));
+        fragments.push({index: -1, polygon: polygon, ring: ring = ring.slice(k - 1)});
         ring[0] = normalizePoint(ring[0][1]);
-        ring.polygon = rings;
         i = -1;
         n = ring.length;
       }
     }
   }
-  rings.length = 0;
 }
 
 // Now stitch the fragments back together into rings.
 function stitchFragments(fragments) {
-  var i, n = fragments.length;
+  var i, n = fragments.length, m = 0;
 
   // To connect the fragments start-to-end, create a simple index by end.
   var fragmentByStart = {},
@@ -102,17 +94,19 @@ function stitchFragments(fragments) {
       start,
       startFragment,
       end,
-      endFragment;
+      endFragment,
+      polygons = new Array(n);
 
   // For each fragment…
   for (i = 0; i < n; ++i) {
     fragment = fragments[i];
-    start = fragment[0];
-    end = fragment[fragment.length - 1];
+    start = fragment.ring[0];
+    end = fragment.ring[fragment.ring.length - 1];
 
     // If this fragment is closed, add it as a standalone ring.
     if (start[0] === end[0] && start[1] === end[1]) {
-      fragment.polygon.push(fragment);
+      fragment.polygon.push(fragment.ring);
+      polygons[m++] = fragment.polygon;
       fragments[i] = null;
       continue;
     }
@@ -125,8 +119,8 @@ function stitchFragments(fragments) {
   for (i = 0; i < n; ++i) {
     fragment = fragments[i];
     if (fragment) {
-      start = fragment[0];
-      end = fragment[fragment.length - 1];
+      start = fragment.ring[0];
+      end = fragment.ring[fragment.ring.length - 1];
       startFragment = fragmentByEnd[start];
       endFragment = fragmentByStart[end];
 
@@ -135,40 +129,48 @@ function stitchFragments(fragments) {
 
       // If this fragment is closed, add it as a standalone ring.
       if (start[0] === end[0] && start[1] === end[1]) {
-        fragment.polygon.push(fragment);
+        fragment.polygon.push(fragment.ring);
         continue;
       }
 
       if (startFragment) {
         delete fragmentByEnd[start];
-        delete fragmentByStart[startFragment[0]];
-        startFragment.pop(); // drop the shared coordinate
+        delete fragmentByStart[startFragment.ring[0]];
+        startFragment.ring.pop(); // drop the shared coordinate
         fragments[startFragment.index] = null;
-        fragment = startFragment.concat(fragment);
-        fragment.polygon = startFragment.polygon;
+        fragment = {index: -1, polygon: startFragment.polygon, ring: startFragment.ring.concat(fragment.ring)};
 
         if (startFragment === endFragment) {
           // Connect both ends to this single fragment to create a ring.
-          fragment.polygon.push(fragment);
+          fragment.polygon.push(fragment.ring);
         } else {
           fragment.index = n++;
-          fragments.push(fragmentByStart[fragment[0]] = fragmentByEnd[fragment[fragment.length - 1]] = fragment);
+          fragments.push(fragmentByStart[fragment.ring[0]] = fragmentByEnd[fragment.ring[fragment.ring.length - 1]] = fragment);
         }
       } else if (endFragment) {
         delete fragmentByStart[end];
-        delete fragmentByEnd[endFragment[endFragment.length - 1]];
-        fragment.pop(); // drop the shared coordinate
-        fragment = fragment.concat(endFragment);
-        fragment.polygon = endFragment.polygon;
-        fragment.index = n++;
+        delete fragmentByEnd[endFragment.ring[endFragment.ring.length - 1]];
+        fragment.ring.pop(); // drop the shared coordinate
+        fragment = {index: n++, polygon: endFragment.polygon, rang: fragment.ring.concat(endFragment.ring)};
         fragments[endFragment.index] = null;
-        fragments.push(fragmentByStart[fragment[0]] = fragmentByEnd[fragment[fragment.length - 1]] = fragment);
+        fragments.push(fragmentByStart[fragment.ring[0]] = fragmentByEnd[fragment.ring[fragment.ring.length - 1]] = fragment);
       } else {
-        fragment.push(fragment[0]); // close ring
-        fragment.polygon.push(fragment);
+        fragment.ring.push(fragment.ring[0]); // close ring
+        fragment.polygon.push(fragment.ring);
       }
     }
   }
+
+  // For each fragment…
+  for (i = 0; i < n; ++i) {
+    fragment = fragments[i];
+    if (fragment && fragment.polygon.length) {
+      polygons[m++] = fragment.polygon;
+    }
+  }
+
+  polygons.length = m;
+  return polygons;
 }
 
 function stitchFeature(input) {
@@ -189,15 +191,14 @@ function stitchGeometry(input) {
     case "MultiLineString": output = {type: "MultiLineString", coordinates: input.coordinates.map(clampPoints)}; break;
     case "Polygon": {
       extractFragments(input.coordinates, fragments = []);
-      stitchFragments(fragments);
-      return input; // TODO
+      output = {type: "Polygon", coordinates: stitchFragments(fragments)[0]};
+      break;
     }
     case "MultiPolygon": {
       fragments = [], i = -1, n = input.coordinates.length;
       while (++i < n) extractFragments(input.coordinates[i], fragments);
-      stitchFragments(fragments);
-      input.coordinates = input.coordinates.filter(nonempty);
-      return input; // TODO
+      output = {type: "MultiPolygon", coordinates: stitchFragments(fragments)};
+      break;
     }
     default: return input;
   }
