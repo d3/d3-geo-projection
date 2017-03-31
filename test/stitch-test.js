@@ -1,6 +1,8 @@
 var tape = require("tape"),
     d3 = require("../");
 
+var epsilon = 1e-6;
+
 tape("stitch(Geometry) preserves the bbox of the input geometry", function(test) {
   test.deepEqual(fix(d3.geoStitch({
     type: "Polygon",
@@ -79,6 +81,32 @@ tape("stitch(FeatureCollection) preserves bbox of the input feature collection",
           ]
         }
       }
+    ]
+  });
+  test.end();
+});
+
+tape("stitch(Polygon) applies an epsilon threshold to the poles and antimeridian", function(test) {
+  test.deepEqual(fix(d3.geoStitch({
+    type: "Polygon",
+    coordinates: [
+      [[-180 + epsilon, -80], [-90, -80], [0, -80], [90, -80], [180 - epsilon, -80], [180 - epsilon, -90 + epsilon], [90, -90 + epsilon], [0, -90 + epsilon], [-90, -90 + epsilon], [-180 - epsilon, -90 + epsilon], [-180 - epsilon, -80]]
+    ]
+  })), {
+    type: "Polygon",
+    coordinates: [
+      [[-180, -80], [-90, -80], [0, -80], [90, -80], [-180, -80]]
+    ]
+  });
+  test.deepEqual(fix(d3.geoStitch({
+    type: "Polygon",
+    coordinates: [
+      [[-180 - epsilon, -80], [-90, -80], [0, -80], [90, -80], [180 + epsilon, -80], [180 + epsilon, -90 - epsilon], [90, -90 - epsilon], [0, -90 - epsilon], [-90, -90 - epsilon], [-180 + epsilon, -90 - epsilon], [-180 + epsilon, -80]]
+    ]
+  })), {
+    type: "Polygon",
+    coordinates: [
+      [[-180, -80], [-90, -80], [0, -80], [90, -80], [-180, -80]]
     ]
   });
   test.end();

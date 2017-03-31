@@ -46,7 +46,7 @@ function extractFragments(rings, fragments) {
 
       // If this is an antimeridian or polar point…
       if (x <= x0e || x >= x1e || y <= y0e || y >= y1e) {
-        clampPoint(point);
+        ring[i] = clampPoint(point);
 
         // Advance through any antimeridian or polar points…
         for (var k = i + 1; k < n; ++k) {
