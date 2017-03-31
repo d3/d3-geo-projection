@@ -555,7 +555,7 @@ The Natural Earth projection.
 <a href="#geoNaturalEarth2" name="geoNaturalEarth2">#</a> d3.<b>geoNaturalEarth2</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/naturalEarth2.js "Source")
 <br><a href="#geoNaturalEarth2Raw" name="geoNaturalEarth2Raw">#</a> d3.<b>geoNaturalEarth2Raw</b>
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/naturalEarth2.png" width="480" height="250">]()
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/naturalEarth2.png" width="480" height="250">](https://bl.ocks.org/mthh/a4ed1eb3e3c7c5114967a244cb6fded3)
 
 The Natural Earth II projection. Compared to Natural Earth projection, it has a larger height-to-width ratio and a more rounder appearance.
 
