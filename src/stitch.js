@@ -5,6 +5,10 @@ var epsilon = 1e-4,
     y0 = -90, y0e = y0 + epsilon,
     y1 = 90, y1e = y1 - epsilon;
 
+function nonempty(coordinates) {
+  return coordinates.length > 0;
+}
+
 function quantize(x) {
   return Math.floor(x * epsilonInverse) / epsilonInverse;
 }
@@ -88,7 +92,6 @@ function extractFragments(polygon, fragments) {
 }
 
 // Now stitch the fragments back together into rings.
-// TODO remove empty polygons.
 function stitchFragments(fragments) {
   var i, n = fragments.length;
 
@@ -175,38 +178,24 @@ function stitchFeature(o) {
 function stitchGeometry(o) {
   if (!o) return;
   var fragments, i, n;
-
   switch (o.type) {
-    case "GeometryCollection": {
-      o.geometries.forEach(stitchGeometry);
-      return;
-    }
-    case "Point": {
-      clampPoint(o.coordinates);
-      break;
-    }
-    case "MultiPoint":
-    case "LineString": {
-      clampPoints(o.coordinates);
-      break;
-    }
-    case "MultiLineString": {
-      o.coordinates.forEach(clampPoints);
-      break;
-    }
+    case "GeometryCollection": o.geometries.forEach(stitchGeometry); break;
+    case "Point": clampPoint(o.coordinates); break;
+    case "MultiPoint": case "LineString": clampPoints(o.coordinates); break;
+    case "MultiLineString": o.coordinates.forEach(clampPoints); break;
     case "Polygon": {
       extractFragments(o.coordinates, fragments = []);
+      stitchFragments(fragments);
       break;
     }
     case "MultiPolygon": {
       fragments = [], i = -1, n = o.coordinates.length;
       while (++i < n) extractFragments(o.coordinates[i], fragments);
+      stitchFragments(fragments);
+      o.coordinates = o.coordinates.filter(nonempty);
       break;
     }
-    default: return;
   }
-
-  stitchFragments(fragments);
 }
 
 export default function(o) {
