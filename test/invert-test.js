@@ -70,6 +70,7 @@ require("./projectionEqual");
   d3.geoMtFlatPolarQuartic,
   d3.geoMtFlatPolarSinusoidal,
   d3.geoNaturalEarth,
+  d3.geoNaturalEarth2,
   d3.geoNellHammer,
   d3.geoPatterson,
   d3.geoPeirceQuincuncial,

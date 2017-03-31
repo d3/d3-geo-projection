@@ -57,6 +57,7 @@ export {default as geoMtFlatPolarParabolic, mtFlatPolarParabolicRaw as geoMtFlat
 export {default as geoMtFlatPolarQuartic, mtFlatPolarQuarticRaw as geoMtFlatPolarQuarticRaw} from "./src/mtFlatPolarQuartic";
 export {default as geoMtFlatPolarSinusoidal, mtFlatPolarSinusoidalRaw as geoMtFlatPolarSinusoidalRaw} from "./src/mtFlatPolarSinusoidal";
 export {default as geoNaturalEarth, naturalEarthRaw as geoNaturalEarthRaw} from "./src/naturalEarth";
+export {default as geoNaturalEarth2, naturalEarth2Raw as geoNaturalEarth2Raw} from "./src/naturalEarth2";
 export {default as geoNellHammer, nellHammerRaw as geoNellHammerRaw} from "./src/nellHammer";
 export {default as geoPatterson, pattersonRaw as geoPattersonRaw} from "./src/patterson";
 export {default as geoPolyconic, polyconicRaw as geoPolyconicRaw} from "./src/polyconic";
