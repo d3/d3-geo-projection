@@ -557,7 +557,7 @@ The Natural Earth projection.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/naturalEarth2.png" width="480" height="250">](https://bl.ocks.org/mthh/a4ed1eb3e3c7c5114967a244cb6fded3)
 
-The Natural Earth II projection. Compared to [Natural Earth](#geoNaturalEarth), it is slightly taller and rounder.
+The [Natural Earth II](http://www.shadedrelief.com/NE2_proj/) projection. Compared to [Natural Earth](#geoNaturalEarth), it is slightly taller and rounder.
 
 <a href="#geoNellHammer" name="geoNellHammer">#</a> d3.<b>geoNellHammer</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/nellHammer.js "Source")
 <br><a href="#geoNellHammerRaw" name="geoNellHammerRaw">#</a> d3.<b>geoNellHammerRaw</b>
