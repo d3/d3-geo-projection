@@ -178,3 +178,14 @@ tape("stitch(Polygon) with a hole across the antimeridian and cut along the anti
   });
   test.end();
 });
+
+["fiji", "antarctica", "russia"].forEach(function(name) {
+  tape("stitch(" + name + ")", function(test) {
+    var unstitched = require("./data/unstitched-" + name + ".json"),
+        stitched = require("./data/stitched-" + name + ".json"),
+        original = JSON.parse(JSON.stringify(unstitched));
+    test.deepEqual(d3.geoStitch(unstitched), stitched);
+    test.deepEqual(unstitched, original);
+    test.end();
+  });
+});
