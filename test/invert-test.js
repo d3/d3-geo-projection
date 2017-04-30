@@ -38,7 +38,7 @@ require("./projectionEqual");
   d3.geoGinzburg8,
   d3.geoGinzburg9,
   d3.geoGringorten,
-  // d3.geoGringortenQuincuncial,
+  d3.geoGringortenQuincuncial,
   d3.geoGuyou,
   d3.geoHammer,
   d3.geoHammerRetroazimuthal,
@@ -74,7 +74,7 @@ require("./projectionEqual");
   d3.geoNellHammer,
   d3.geoPatterson,
   d3.geoPeirceQuincuncial,
-  d3.geoPierceQuincuncial,
+  // d3.geoPierceQuincuncial, // Alias of Peirce (typo)
   d3.geoPolyconic,
   d3.geoRectangularPolyconic,
   d3.geoRobinson,

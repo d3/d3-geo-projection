@@ -18,6 +18,8 @@ export function gringortenRaw(lambda, phi) {
 }
 
 gringortenRaw.invert = function(x, y) {
+  if (abs(x) > 1) x = sign(x) * 2 - x;
+  if (abs(y) > 1) y = sign(y) * 2 - y;
   var sx = sign(x),
       sy = sign(y),
       x0 = -sx * x,
