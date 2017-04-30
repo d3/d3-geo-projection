@@ -3,6 +3,8 @@ var tape = require("tape"),
 
 require("./projectionEqual");
 
+var points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
+
 [
   d3.geoAiry,
   d3.geoAitoff,
@@ -45,13 +47,13 @@ require("./projectionEqual");
   d3.geoHealpix,
   d3.geoHill,
   d3.geoHomolosine,
-  // d3.geoInterrupt,
-  // d3.geoInterruptedBoggs,
-  // d3.geoInterruptedHomolosine,
-  // d3.geoInterruptedMollweide,
-  // d3.geoInterruptedMollweideHemispheres,
+  // d3.geoInterrupt, // factory of factory
+  d3.geoInterruptedBoggs,
+  d3.geoInterruptedHomolosine,
+  d3.geoInterruptedMollweide,
+  d3.geoInterruptedMollweideHemispheres,
   // d3.geoInterruptedSinuMollweide,
-  // d3.geoInterruptedSinusoidal,
+  d3.geoInterruptedSinusoidal,
   d3.geoKavrayskiy7,
   d3.geoLagrange,
   d3.geoLarrivee,
@@ -59,7 +61,7 @@ require("./projectionEqual");
   d3.geoLittrow,
   d3.geoLoximuthal,
   d3.geoMiller,
-  // d3.geoModifiedStereographic,
+  // d3.geoModifiedStereographic, // factory of factory
   // d3.geoModifiedStereographicAlaska,
   // d3.geoModifiedStereographicGs48,
   // d3.geoModifiedStereographicGs50,
@@ -98,7 +100,7 @@ require("./projectionEqual");
 ].forEach(function(factory) {
   var name = factory.name, projection = factory();
   tape(name + "(point) and " + name + ".invert(point) are symmetric", function(test) {
-    [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5]].forEach(function(point) {
+    points.forEach(function(point) {
       test.projectionEqual(projection, point, projection(point));
     });
     test.end();
