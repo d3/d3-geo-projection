@@ -35,7 +35,7 @@ function extractFragments(rings, polygon, fragments) {
   for (var j = 0, m = rings.length; j < m; ++j) {
     var ring = rings[j].slice();
 
-    // By default, assume that this ring doesn’t need any stitching.
+    // By default, assume that this ring doesn't need any stitching.
     fragments.push({index: -1, polygon: polygon, ring: ring});
 
     for (var i = 0, n = ring.length; i < n; ++i) {
@@ -43,11 +43,11 @@ function extractFragments(rings, polygon, fragments) {
           x = point[0],
           y = point[1];
 
-      // If this is an antimeridian or polar point…
+      // If this is an antimeridian or polar point...
       if (x <= x0e || x >= x1e || y <= y0e || y >= y1e) {
         ring[i] = clampPoint(point);
 
-        // Advance through any antimeridian or polar points…
+        // Advance through any antimeridian or polar points...
         for (var k = i + 1; k < n; ++k) {
           var pointk = ring[k],
               xk = pointk[0],
@@ -56,7 +56,7 @@ function extractFragments(rings, polygon, fragments) {
         }
 
         // If this was just a single antimeridian or polar point,
-        // we don’t need to cut this ring into a fragment;
+        // we don't need to cut this ring into a fragment;
         // we can just leave it as-is.
         if (k === i + 1) continue;
 
@@ -100,7 +100,7 @@ function stitchFragments(fragments) {
       end,
       endFragment;
 
-  // For each fragment…
+  // For each fragment...
   for (i = 0; i < n; ++i) {
     fragment = fragments[i];
     start = fragment.ring[0];
@@ -117,7 +117,7 @@ function stitchFragments(fragments) {
     fragmentByStart[start] = fragmentByEnd[end] = fragment;
   }
 
-  // For each open fragment…
+  // For each open fragment...
   for (i = 0; i < n; ++i) {
     fragment = fragments[i];
     if (fragment) {

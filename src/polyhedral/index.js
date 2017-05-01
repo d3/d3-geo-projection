@@ -127,7 +127,7 @@ function outline(stream, node, parent) {
   var c = dx === 180 || dx === 360
       ? [(b[0][0] + b[1][0]) / 2, (b[0][1] + b[1][1]) / 2]
       : centroid(multiPoint);
-  // First find the shared edge…
+  // First find the shared edge...
   if (parent) while (++j < n) {
     if (edges[j] === parent) break;
   }
