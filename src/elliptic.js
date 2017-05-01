@@ -96,7 +96,7 @@ export function ellipticFi(phi, psi, m) {
   ];
 }
 
-// Calculate F(phi|m) where m = k² = sin²α.
+// Calculate F(phi|m) where m = k^2 = sin^2(alpha).
 // See Abramowitz and Stegun, 17.6.7.
 export function ellipticF(phi, m) {
   if (!m) return phi;
