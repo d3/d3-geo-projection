@@ -10,8 +10,8 @@ export function craigRaw(phi0) {
 
   forward.invert = tanPhi0 ? function(x, y) {
     if (x) y *= sin(x) / x;
-    var cosλ = cos(x);
-    return [x, 2 * atan2(sqrt(cosλ * cosλ + tanPhi0 * tanPhi0 - y * y) - cosλ, tanPhi0 - y)];
+    var cosLambda = cos(x);
+    return [x, 2 * atan2(sqrt(cosLambda * cosLambda + tanPhi0 * tanPhi0 - y * y) - cosLambda, tanPhi0 - y)];
   } : function(x, y) {
     return [x, asin(x ? y * tan(x) / x : y)];
   };
