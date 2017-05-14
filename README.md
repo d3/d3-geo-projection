@@ -53,7 +53,7 @@ The Aitoff projection.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/albers.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734308)
 
-Alber’s [equal-area conic projection](#geoConicEqualArea).
+Albers’ [equal-area conic projection](#geoConicEqualArea).
 
 <a href="#geoArmadillo" name="geoArmadillo">#</a> d3.<b>geoArmadillo</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/armadillo.js "Source")
 <br><a href="#geoArmadilloRaw" name="geoArmadilloRaw">#</a> d3.<b>geoArmadilloRaw</b>(<i>phi0</i>)
@@ -171,7 +171,7 @@ The Lambert conformal conic projection.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/conicEqualArea.png" width="480" height="250">](http://bl.ocks.org/mbostock/3734308)
 
-Alber’s conic equal-area projection.
+Albers’ conic equal-area projection.
 
 <a href="#geoConicEquidistant" name="geoConicEquidistant">#</a> d3.<b>geoConicEquidistant</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/conicEquidistant.js "Source") [\[d3-geo\]](https://github.com/d3/d3-geo/blob/master/README.md#geoConicEquidistant)
 <br><a href="#geoConicEquidistantRaw" name="geoConicEquidistantRaw">#</a> d3.<b>geoConicEquidistantRaw</b>
