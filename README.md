@@ -845,7 +845,7 @@ The Peirce quincuncial projection is the quincuncial form of the [Guyou projecti
 
 <a href="#geoProject" name="geoProject">#</a> d3.<b>geoProject</b>(<i>object</i>, <i>projection</i>) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/project/index.js "Source")
 
-Projects the specified GeoJSON *object* using the specified *projection*, returning a shallow copy of the specified GeoJSON *object* with projected coordinates. Typically, the input coordinates are spherical and the outut coordinates are planar, but the *projection* can also be an [arbitrary geometric transformation](https://github.com/d3/d3-geo/blob/master/README.md#transforms).
+Projects the specified GeoJSON *object* using the specified *projection*, returning a shallow copy of the specified GeoJSON *object* with projected coordinates. Typically, the input coordinates are spherical and the output coordinates are planar, but the *projection* can also be an [arbitrary geometric transformation](https://github.com/d3/d3-geo/blob/master/README.md#transforms).
 
 See also [geoproject](#geoproject).
 
