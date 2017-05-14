@@ -767,7 +767,7 @@ Note: interrupted projections typically require clipping to the sphere.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/interruptedHomolosine.png" width="480" height="250">](http://bl.ocks.org/mbostock/4448587)
 
-Goode’s interrupted [homolosine projection](#geoHomolosine). Its [Ocean-centric aspect](http://bl.ocks.org/Fil/d90a94d7333bfef753e92a4abb7611b4) is also well-known.
+Goode’s interrupted [homolosine projection](#geoHomolosine). Its [ocean-centric aspect](https://bl.ocks.org/Fil/d90a94d7333bfef753e92a4abb7611b4) is also well-known.
 
 <a href="#geoInterruptedSinusoidal" name="geoInterruptedSinusoidal">#</a> d3.<b>geoInterruptedSinusoidal</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/interrupted/sinusoidal.js "Source")
 
