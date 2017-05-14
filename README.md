@@ -513,7 +513,7 @@ A [modified stereographic](#geoModifiedStereographic) projection for Europe and 
 
 <a href="#geoModifiedStereographicLee" name="geoModifiedStereographicLee">#</a> d3.<b>geoModifiedStereographicLee</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/modifiedStereographic.js#L102 "Source")
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/modifiedStereographicLee.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/miller/)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/modifiedStereographicLee.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/lee/)
 
 A [modified stereographic](#geoModifiedStereographic) projection for the Pacific ocean.
 
