@@ -869,7 +869,7 @@ See also [geoproject --precision](#geoproject_precision) and [geo2svg --precisio
 
 Converts the specified GeoJSON *file* to SVG. With [--newline-delimited](#geo2svg_newline_delimited), each input feature is rendered as a separate [path element](https://www.w3.org/TR/SVG/paths.html); otherwise, a single path element is generated.
 
-By default, the SVG’s [fill](#geo2svg_fill) is set to none and the [stroke](#geo2svg_stroke) is set to black. To override these values on a per-feature basis, the following [GeoJSON feature](http://geojson.org/geojson-spec.html#feature-objects) properties will be propagated to attributes:
+By default, the SVG’s [fill](#geo2svg_fill) is set to none and the [stroke](#geo2svg_stroke) is set to black. The default [point radius](https://github.com/d3/d3-geo/blob/master/README.md#path_pointRadius) is 4.5. To override these values on a per-feature basis, the following [GeoJSON feature](http://geojson.org/geojson-spec.html#feature-objects) properties will be propagated to attributes:
 
 * fill
 * fill-rule (or fillRule)
@@ -882,6 +882,7 @@ By default, the SVG’s [fill](#geo2svg_fill) is set to none and the [stroke](#g
 * stroke-dasharray (or strokeDasharray)
 * stroke-dashoffset (or strokeDashoffset)
 * stroke-opacity (or strokeOpacity)
+* point-radius (or pointRadius)
 
 If the feature has an id, the path element will have a corresponding id attribute. If the feature has a *title* property, the path element will have a title element with the corresponding value. For an example of per-feature attributes, see this [California population density map](https://bl.ocks.org/mbostock/fb6c1e5ff700f9713a9dc2f0fd392c35).
 
@@ -924,6 +925,11 @@ Specify the default output fill color. Defaults to none.
 <a name="geo2svg_stroke" href="geo2svg_stroke">#</a> geo2svg <b>--stroke</b> <i>value</i>
 
 Specify the default output stroke color. Defaults to black.
+
+<a name="geo2svg_radius" href="geo2svg_radius">#</a> geo2svg <b>--r</b> <i>value</i>
+<br><a name="geo2svg_radius" href="geo2svg_radius">#</a> geo2svg <b>--radius</b> <i>value</i>
+
+Specify the default output point radius. Defaults to 4.5.
 
 <a name="geo2svg_newline_delimited" href="geo2svg_newline_delimited">#</a> geo2svg <b>-n</b>
 <br><a href="geo2svg_newline_delimited">#</a> geo2svg <b>--newline-delimited</b>
