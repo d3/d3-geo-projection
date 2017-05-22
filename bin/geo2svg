@@ -30,7 +30,7 @@ else if (commander.args.length !== 1) {
 
 var reader = read(commander.args[0], commander.newlineDelimited, transform).then(end).catch(abort),
     writer = write(commander.out),
-    path = d3.geoPath(),
+    path = d3.geoPath().pointRadius(function(d) { var p = d.properties, v; return p && (v = p["point-radius"] || p.pointRadius) != null ? v : commander.radius; }),
     render = commander.precision == null ? path : function(d) { return path(d3.geoQuantize(d, commander.precision)); };
 
 writer.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>" + os.EOL
@@ -46,7 +46,6 @@ writer.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>" + os.EOL
 
 function transform(d) {
   var p = d.properties, v;
-  path.pointRadius((v = p["point-radius"] || p.pointRadius) != null ? v : commander.radius);
   return writer.write("  <path"
       + ((v = d.id) != null ? " id=\"" + attr(v + "") + "\"" : "")
       + (p ? ((v = p["fill"]) != null ? " fill=\"" + attr(v + "") + "\"" : "")
