@@ -1,6 +1,6 @@
 import {merge} from "d3-array";
 import {geoStream, geoProjection as projection} from "d3-geo";
-import {abs, epsilon, radians} from "../math";
+import {abs, degrees, epsilon, radians} from "../math";
 
 function pointEqual(a, b) {
   return abs(a[0] - b[0]) < epsilon && abs(a[1] - b[1]) < epsilon;
@@ -65,29 +65,7 @@ function interpolateSphere(lobes) {
 }
 
 export default function(project, lobes) {
-  var sphere = interpolateSphere(lobes);
-
-  lobes = lobes.map(function(lobe) {
-    return lobe.map(function(l) {
-      return [
-        [l[0][0] * radians, l[0][1] * radians],
-        [l[1][0] * radians, l[1][1] * radians],
-        [l[2][0] * radians, l[2][1] * radians]
-      ];
-    });
-  });
-
-  var bounds = lobes.map(function(lobe) {
-    return lobe.map(function(l) {
-      var x0 = project(l[0][0], l[0][1])[0],
-          x1 = project(l[2][0], l[2][1])[0],
-          y0 = project(l[1][0], l[0][1])[1],
-          y1 = project(l[1][0], l[1][1])[1],
-          t;
-      if (y0 > y1) t = y0, y0 = y1, y1 = t;
-      return [[x0, y0], [x1, y1]];
-    });
-  });
+  var sphere, bounds;
 
   function forward(lambda, phi) {
     var sign = phi < 0 ? -1 : +1, lobe = lobes[+(phi < 0)];
@@ -121,6 +99,46 @@ export default function(project, lobes) {
     rotateStream.sphere = function() { geoStream(sphere, sphereStream); };
     return rotateStream;
   };
+  
+  p.lobes = function(_) {
+    if (arguments.length) {
+      lobes = _;
+      sphere = interpolateSphere(lobes);
+      lobes = lobes.map(function(lobe) {
+        return lobe.map(function(l) {
+          return [
+            [l[0][0] * radians, l[0][1] * radians],
+            [l[1][0] * radians, l[1][1] * radians],
+            [l[2][0] * radians, l[2][1] * radians]
+          ];
+        });
+      });
+      bounds = lobes.map(function(lobe) {
+        return lobe.map(function(l) {
+          var x0 = project(l[0][0], l[0][1])[0],
+              x1 = project(l[2][0], l[2][1])[0],
+              y0 = project(l[1][0], l[0][1])[1],
+              y1 = project(l[1][0], l[1][1])[1],
+              t;
+          if (y0 > y1) t = y0, y0 = y1, y1 = t;
+          return [[x0, y0], [x1, y1]];
+        });
+      });
+      return p;
+    } else {
+      return lobes.map(function(lobe) {
+        return lobe.map(function(l) {
+          return [
+            [l[0][0] * degrees, l[0][1] * degrees],
+            [l[1][0] * degrees, l[1][1] * degrees],
+            [l[2][0] * degrees, l[2][1] * degrees]
+          ];
+        });
+      });
+    }
+  }
+
+  if (lobes) p.lobes(lobes);
 
   return p;
 }
