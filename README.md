@@ -763,6 +763,10 @@ Defines a new interrupted projection for the specified [raw projection](#raw-pro
 
 Note: interrupted projections typically require clipping to the sphere.
 
+<a href="#interrupted_lobes" name="interrupted_lobes">#</a> <i>interrupted</i>.<b>lobes</b>([<i>lobes</i>]) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/interrupted/index.js#L103 "Source")
+
+If *lobes* is specified, sets the new array of hemilobes and returns this projection; see [d3.geoInterrupt](#geoInterrupt) for details on the format of the hemilobes array. If *lobes* is not specified, returns the current array of hemilobes.
+
 <a href="#geoInterruptedHomolosine" name="geoInterruptedHomolosine">#</a> d3.<b>geoInterruptedHomolosine</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/interrupted/homolosine.js "Source")
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/interruptedHomolosine.png" width="480" height="250">](http://bl.ocks.org/mbostock/4448587)
