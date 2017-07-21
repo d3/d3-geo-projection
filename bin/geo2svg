@@ -18,6 +18,7 @@ commander
     .option("--fill <value>", "default fill", "none")
     .option("--stroke <value>", "default stroke", "black")
     .option("-r, --radius <value>", "default point radius", 4.5)
+    .option("--font-family <value>", "default font", "Arial")
     .parse(process.argv);
 
 if (commander.args.length === 0) commander.args[0] = "-";
@@ -31,7 +32,8 @@ else if (commander.args.length !== 1) {
 var reader = read(commander.args[0], commander.newlineDelimited, transform).then(end).catch(abort),
     writer = write(commander.out),
     path = d3.geoPath().pointRadius(function(d) { var p = d.properties, v; return p && (v = p["point-radius"] || p.pointRadius) != null ? v : commander.radius; }),
-    render = commander.precision == null ? path : function(d) { return path(d3.geoQuantize(d, commander.precision)); };
+    render = commander.precision == null ? path : function(d) { return path(d3.geoQuantize(d, commander.precision)); },
+    translation = function(d) { var p = d.geometry.coordinates, v; return "translate(" + p.join(",") + ")"};
 
 writer.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>" + os.EOL
     + "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">" + os.EOL
@@ -42,6 +44,7 @@ writer.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>" + os.EOL
     + " viewBox=\"0 0 " + +commander.width + " " + +commander.height + "\""
     + (commander.fill != "black" ? " fill=\"" + attr(commander.fill) + "\"" : "")
     + (commander.stroke != "none" ? " stroke=\"" + attr(commander.stroke) + "\"" : "")
+    + (commander.fontFamily != "none" ? " font-family=\"" + attr(commander.fontFamily) + "\"" : "")
     + ">" + os.EOL);
 
 function transform(d) {
@@ -63,7 +66,9 @@ function transform(d) {
       + (v = render(d), v ? " d=\"" + v + "\"" : "")
       + ">"
       + ((v = p && p["title"]) != null ? "<title>" + text(v + "") + "</title>" : "")
-      + "</path>" + os.EOL);
+      + ("</path>" + os.EOL)
+      + ((v = p && p["label"]) != null ? ("  <text transform=\"" + translation(d) + "\" stroke-width=\"3\"" + ((v = p["stroke"]) != null ? " stroke=\"" + attr(v + "") + "\"" : "") + ((v = p["fontSize"]) != null ? " font-size=\"" + attr(v + "") + "\"" : "") + ">" + text(v = p["label"]) + "</text>" + os.EOL) : "")
+      + ((v = p && p["label"]) != null ? ("  <text transform=\"" + translation(d) + "\"" + ((v = p["fill"]) != null ? " fill=\"" + attr(v + "") + "\"" : "") + ((v = p["fontSize"]) != null ? " font-size=\"" + attr(v + "") + "\"" : "") + ">" + text(v = p["label"]) + "</text>" + os.EOL) : ""));
 }
 
 function end() {
