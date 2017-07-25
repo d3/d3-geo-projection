@@ -38,7 +38,7 @@ var sandbox = {d3: d3, d: undefined, i: -1},
 function project(d, i) {
   sandbox.d = d, sandbox.i = i;
   d = d3.geoProject(d, projection.runInContext(context));
-  if (commander.precision != null) d3.geoQuantize(d, commander.precision);
+  if (commander.precision != null) d = d3.geoQuantize(d, commander.precision);
   return writer.write(JSON.stringify(d) + "\n");
 }
 
