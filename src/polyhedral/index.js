@@ -94,6 +94,14 @@ export default function(root, face, r) {
   var proj = projection(forward),
       stream_ = proj.stream;
 
+  if (proj.clipPolygon) {
+    // run around the mesh of faces and stream all vertices in order to create the clip polygon
+    var polygon = [];
+    outline({point: function(lambda, phi) { polygon.push([lambda, phi]); }}, root);
+    polygon.push(polygon[0]);
+    proj.clipPolygon([polygon]);
+  }
+
   proj.stream = function(stream) {
     var rotate = proj.rotate(),
         rotateStream = stream_(stream),
