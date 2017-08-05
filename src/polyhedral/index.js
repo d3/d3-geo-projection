@@ -104,9 +104,11 @@ export default function(root, face, r) {
 
   proj.stream = function(stream) {
     var rotate = proj.rotate(),
+        clipPolygon = proj.clipPolygon ? proj.clipPolygon() : null,
         rotateStream = stream_(stream),
-        sphereStream = (proj.rotate([0, 0]), stream_(stream));
+        sphereStream = (proj.rotate([0, 0]).clipAngle(180), stream_(stream));
     proj.rotate(rotate);
+    if (clipPolygon) proj.clipPolygon(clipPolygon);
     rotateStream.sphere = function() {
       sphereStream.polygonStart();
       sphereStream.lineStart();
