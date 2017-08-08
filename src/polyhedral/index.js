@@ -106,10 +106,10 @@ export default function(root, face, r) {
     var rotate = proj.rotate(),
         clipPolygon = proj.clipPolygon ? proj.clipPolygon() : null,
         angle = proj.clipAngle(),
+        precision = proj.precision(),
         rotateStream = stream_(stream),
-        sphereStream = (proj.rotate([0, 0]).clipAngle(angle ? 180 : 0), stream_(stream));
-    proj.rotate(rotate);
-    proj.clipAngle(angle);
+        sphereStream = (proj.rotate([0, 0]).clipAngle(angle ? 180 : 0).precision(1), stream_(stream));
+    proj.rotate(rotate).clipAngle(angle).precision(precision);
     if (clipPolygon) proj.clipPolygon(clipPolygon);
     rotateStream.sphere = function() {
       sphereStream.polygonStart();
