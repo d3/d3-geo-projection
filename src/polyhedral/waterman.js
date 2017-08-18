@@ -84,6 +84,7 @@ export default function(faceProjection) {
   }
 
   return polyhedral(faces[0], face)
+      .clipPolygon([])
       .scale(110.625)
       .center([0,45]);
 }

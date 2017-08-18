@@ -25,6 +25,7 @@ export default function(faceProjection) {
             : lambda < pi / 2 ? phi < 0 ? 3 : 1
             : phi < 0 ? 7 : 5];
       })
+      .clipPolygon([])
       .scale(101.858)
       .center([0, 45]);
 }
