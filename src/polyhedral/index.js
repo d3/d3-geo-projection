@@ -1,5 +1,5 @@
 import {geoBounds as bounds, geoCentroid as centroid, geoInterpolate as interpolate, geoProjection as projection} from "d3-geo";
-import {abs, cos, degrees, epsilon, pi, radians, sin} from "../math";
+import {abs, cos, degrees, epsilon, pi, radians, sign, sin} from "../math";
 import {default as matrix, multiply, inverse} from "./matrix";
 
 // Creates a polyhedral projection.
@@ -108,7 +108,7 @@ export default function(root, face, r) {
         angle = proj.clipAngle(),
         precision = proj.precision(),
         rotateStream = stream_(stream),
-        sphereStream = (proj.rotate([0, 0]).clipAngle(angle ? 180 : 0).precision(1), stream_(stream));
+        sphereStream = ((clipPolygon ? proj.clipPolygon([]) : proj).rotate([0, 0]).clipAngle(sign(angle) * 180).precision(1), stream_(stream));
     proj.rotate(rotate).clipAngle(angle).precision(precision);
     if (clipPolygon) proj.clipPolygon(clipPolygon);
     rotateStream.sphere = function() {
