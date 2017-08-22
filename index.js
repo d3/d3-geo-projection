@@ -4,6 +4,7 @@ export {default as geoArmadillo, armadilloRaw as geoArmadilloRaw} from "./src/ar
 export {default as geoAugust, augustRaw as geoAugustRaw} from "./src/august";
 export {default as geoBaker, bakerRaw as geoBakerRaw} from "./src/baker";
 export {default as geoBerghaus, berghausRaw as geoBerghausRaw} from "./src/berghaus";
+export {default as geoBertin1953, bertin1953Raw as geoBertin1953Raw} from "./src/bertin";
 export {default as geoBoggs, boggsRaw as geoBoggsRaw} from "./src/boggs";
 export {default as geoBonne, bonneRaw as geoBonneRaw} from "./src/bonne";
 export {default as geoBottomley, bottomleyRaw as geoBottomleyRaw} from "./src/bottomley";

@@ -105,6 +105,13 @@ Berghaus’ star projection. The default center assumes the default [lobe number
 
 If *lobes* is specified, sets the number of lobes in the resulting star, and returns this projection. If *lobes* is not specified, returns the current lobe number, which defaults to 5.
 
+<a href="#geoBertin1953" name="geoBertin1953">#</a> d3.<b>geoBertin1953</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/bertin1953.js "Source")
+<br><a href="#geoBertin1953Raw" name="geoBertin1953Raw">#</a> d3.<b>geoBertin1953Raw</b>
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/bertin1953.png" width="480" height="250">](https://visionscarto.net/projection-bertin-1953)
+
+Jacques Bertin’s 1953 projection.
+
 <a href="#geoBoggs" name="geoBoggs">#</a> d3.<b>geoBoggs</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/boggs.js "Source")
 <br><a href="#geoBoggsRaw" name="geoBoggsRaw">#</a> d3.<b>geoBoggsRaw</b>
 
