@@ -1,5 +1,5 @@
 import {geoBounds as bounds, geoCentroid as centroid, geoInterpolate as interpolate, geoProjection as projection} from "d3-geo";
-import {abs, cos, degrees, epsilon, pi, radians, sign, sin} from "../math";
+import {abs, cos, degrees, pi, radians, sin} from "../math";
 import {default as matrix, multiply, inverse} from "./matrix";
 
 // Creates a polyhedral projection.
@@ -94,27 +94,23 @@ export default function(root, face, r) {
   var proj = projection(forward),
       stream_ = proj.stream;
 
-  if (proj.clipPolygon) {
-    // run around the mesh of faces and stream all vertices in order to create the clip polygon
-    var polygon = [];
-    outline({point: function(lambda, phi) { polygon.push([lambda, phi]); }}, root);
-    polygon.push(polygon[0]);
-    proj.clipPolygon([polygon]);
-  }
+  // run around the mesh of faces and stream all vertices in order to create the clip polygon
+  var polygon = [];
+  outline(1e-3, {point: function(lambda, phi) { polygon.push([lambda, phi]); }}, root);
+  polygon.push(polygon[0]);
+  if (proj.clipPolygon) proj.clipPolygon([ polygon ]);
 
   proj.stream = function(stream) {
     var rotate = proj.rotate(),
         clipPolygon = proj.clipPolygon ? proj.clipPolygon() : null,
-        angle = proj.clipAngle(),
-        precision = proj.precision(),
         rotateStream = stream_(stream),
-        sphereStream = ((clipPolygon ? proj.clipPolygon([]) : proj).rotate([0, 0]).clipAngle(sign(angle) * 180).precision(1), stream_(stream));
-    proj.rotate(rotate).clipAngle(angle).precision(precision);
+        sphereStream = ((clipPolygon ? proj.clipPolygon([]) : proj).rotate([0, 0]), stream_(stream));
+    proj.rotate(rotate)
     if (clipPolygon) proj.clipPolygon(clipPolygon);
     rotateStream.sphere = function() {
       sphereStream.polygonStart();
       sphereStream.lineStart();
-      outline(sphereStream, root);
+      outline(1e-5, sphereStream, root);
       sphereStream.lineEnd();
       sphereStream.polygonEnd();
     };
@@ -124,7 +120,8 @@ export default function(root, face, r) {
   return proj;
 }
 
-function outline(stream, node, parent) {
+function outline(eps, stream, node, parent) {
+
   var point,
       edges = node.edges,
       n = edges.length,
@@ -148,13 +145,13 @@ function outline(stream, node, parent) {
     edge = edges[(i + j) % n];
     if (Array.isArray(edge)) {
       if (!inside) {
-        stream.point((point = interpolate(edge[0], c)(epsilon))[0], point[1]);
+        stream.point((point = interpolate(edge[0], c)(eps))[0], point[1]);
         inside = true;
       }
-      stream.point((point = interpolate(edge[1], c)(epsilon))[0], point[1]);
+      stream.point((point = interpolate(edge[1], c)(eps))[0], point[1]);
     } else {
       inside = false;
-      if (edge !== parent) outline(stream, edge, node);
+      if (edge !== parent) outline(eps, stream, edge, node);
     }
   }
 }
