@@ -98,15 +98,15 @@ export default function(root, face, r) {
   var polygon = [];
   outline(1e-3, {point: function(lambda, phi) { polygon.push([lambda, phi]); }}, root);
   polygon.push(polygon[0]);
-  if (proj.clipPolygon) proj.clipPolygon([ polygon ]);
+  if (proj.clipPolygon) proj.clipPolygon({ type: "Polygon", coordinates: [ polygon ] });
 
   proj.stream = function(stream) {
     var rotate = proj.rotate(),
         clipPolygon = proj.clipPolygon ? proj.clipPolygon() : null,
         rotateStream = stream_(stream),
-        sphereStream = ((clipPolygon ? proj.clipPolygon([]) : proj).rotate([0, 0]), stream_(stream));
+        sphereStream = ((clipPolygon ? proj.clipPolygon(null) : proj).rotate([0, 0]), stream_(stream));
     proj.rotate(rotate)
-    if (clipPolygon) proj.clipPolygon(clipPolygon);
+    if (clipPolygon) proj.clipPolygon({ type: "Polygon", coordinates: [ polygon ] });
     rotateStream.sphere = function() {
       sphereStream.polygonStart();
       sphereStream.lineStart();
