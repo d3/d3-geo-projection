@@ -899,51 +899,51 @@ If the feature has an id, the path element will have a corresponding id attribut
 
 Note: per-feature attributes are most useful in conjunction with [newline-delimited](#geo2svg_newline_delimited) input, as otherwise the generated SVG only has a single path element. To set these properties dynamically, pass the input through [ndjson-map](https://github.com/mbostock/ndjson-cli/blob/master/README.md#map).
 
-<a name="geo2svg_help" href="geo2svg_help">#</a> geo2svg <b>-h</b>
-<br><a href="geo2svg_help">#</a> geo2svg <b>--help</b>
+<a name="geo2svg_help" href="#geo2svg_help">#</a> geo2svg <b>-h</b>
+<br><a href="#geo2svg_help">#</a> geo2svg <b>--help</b>
 
 Output usage information.
 
-<a name="geo2svg_version" href="geo2svg_version">#</a> geo2svg <b>-V</b>
-<br><a href="geo2svg_version">#</a> geo2svg <b>--version</b>
+<a name="geo2svg_version" href="#geo2svg_version">#</a> geo2svg <b>-V</b>
+<br><a href="#geo2svg_version">#</a> geo2svg <b>--version</b>
 
 Output the version number.
 
-<a name="geo2svg_out" href="geo2svg_out">#</a> geo2svg <b>-o</b> <i>file</i>
-<br><a href="geo2svg_out">#</a> geo2svg <b>--out</b> <i>file</i>
+<a name="geo2svg_out" href="#geo2svg_out">#</a> geo2svg <b>-o</b> <i>file</i>
+<br><a href="#geo2svg_out">#</a> geo2svg <b>--out</b> <i>file</i>
 
 Specify the output file name. Defaults to “-” for stdout.
 
-<a name="geo2svg_width" href="geo2svg_width">#</a> geo2svg <b>-w</b> <i>value</i>
-<br><a href="geo2svg_width">#</a> geo2svg <b>--width</b> <i>value</i>
+<a name="geo2svg_width" href="#geo2svg_width">#</a> geo2svg <b>-w</b> <i>value</i>
+<br><a href="#geo2svg_width">#</a> geo2svg <b>--width</b> <i>value</i>
 
 Specify the output width. Defaults to 960.
 
-<a name="geo2svg_height" href="geo2svg_height">#</a> geo2svg <b>-h</b> <i>value</i>
-<br><a href="geo2svg_height">#</a> geo2svg <b>--height</b> <i>value</i>
+<a name="geo2svg_height" href="#geo2svg_height">#</a> geo2svg <b>-h</b> <i>value</i>
+<br><a href="#geo2svg_height">#</a> geo2svg <b>--height</b> <i>value</i>
 
 Specify the output height. Defaults to 500.
 
-<a name="geo2svg_precision" href="geo2svg_precision">#</a> geo2svg <b>-p</b> <i>value</i>
-<br><a href="geo2svg_precision">#</a> geo2svg <b>--precision</b> <i>value</i>
+<a name="geo2svg_precision" href="#geo2svg_precision">#</a> geo2svg <b>-p</b> <i>value</i>
+<br><a href="#geo2svg_precision">#</a> geo2svg <b>--precision</b> <i>value</i>
 
 Reduce the precision for smaller output files. Defaults to six digits after the decimal point. See also [d3.geoQuantize](#geoQuantize).
 
-<a name="geo2svg_fill" href="geo2svg_fill">#</a> geo2svg <b>--fill</b> <i>value</i>
+<a name="geo2svg_fill" href="#geo2svg_fill">#</a> geo2svg <b>--fill</b> <i>value</i>
 
 Specify the default output fill color. Defaults to none.
 
-<a name="geo2svg_stroke" href="geo2svg_stroke">#</a> geo2svg <b>--stroke</b> <i>value</i>
+<a name="geo2svg_stroke" href="#geo2svg_stroke">#</a> geo2svg <b>--stroke</b> <i>value</i>
 
 Specify the default output stroke color. Defaults to black.
 
-<a name="geo2svg_radius" href="geo2svg_radius">#</a> geo2svg <b>--r</b> <i>value</i>
-<br><a name="geo2svg_radius" href="geo2svg_radius">#</a> geo2svg <b>--radius</b> <i>value</i>
+<a name="geo2svg_radius" href="#geo2svg_radius">#</a> geo2svg <b>--r</b> <i>value</i>
+<br><a name="geo2svg_radius" href="#geo2svg_radius">#</a> geo2svg <b>--radius</b> <i>value</i>
 
 Specify the default output point radius. Defaults to 4.5.
 
-<a name="geo2svg_newline_delimited" href="geo2svg_newline_delimited">#</a> geo2svg <b>-n</b>
-<br><a href="geo2svg_newline_delimited">#</a> geo2svg <b>--newline-delimited</b>
+<a name="geo2svg_newline_delimited" href="#geo2svg_newline_delimited">#</a> geo2svg <b>-n</b>
+<br><a href="#geo2svg_newline_delimited">#</a> geo2svg <b>--newline-delimited</b>
 
 Accept [newline-delimited JSON](http://ndjson.org/) as input, with one feature per line.
 
@@ -953,18 +953,18 @@ Accept [newline-delimited JSON](http://ndjson.org/) as input, with one feature p
 
 Generates a GeoJSON graticule. See also [d3.geoGraticule](https://github.com/d3/d3-geo/blob/master/README.md#geoGraticule).
 
-<a name="geograticule_help" href="geograticule_help">#</a> geograticule <b>-h</b>
-<br><a href="geograticule_help">#</a> geograticule <b>--help</b>
+<a name="geograticule_help" href="#geograticule_help">#</a> geograticule <b>-h</b>
+<br><a href="#geograticule_help">#</a> geograticule <b>--help</b>
 
 Output usage information.
 
-<a name="geograticule_version" href="geograticule_version">#</a> geograticule <b>-V</b>
-<br><a href="geograticule_version">#</a> geograticule <b>--version</b>
+<a name="geograticule_version" href="#geograticule_version">#</a> geograticule <b>-V</b>
+<br><a href="#geograticule_version">#</a> geograticule <b>--version</b>
 
 Output the version number.
 
-<a name="geograticule_out" href="geograticule_out">#</a> geograticule <b>-o</b> <i>file</i>
-<br><a href="geograticule_out">#</a> geograticule <b>--out</b> <i>file</i>
+<a name="geograticule_out" href="#geograticule_out">#</a> geograticule <b>-o</b> <i>file</i>
+<br><a href="#geograticule_out">#</a> geograticule <b>--out</b> <i>file</i>
 
 Specify the output file name. Defaults to “-” for stdout.
 
@@ -1025,28 +1025,28 @@ shp2json planar.shp \
 
 See also [d3.geoProject](#geoProject) and [d3.geoIdentity](https://github.com/d3/d3-geo/blob/master/README.md#geoIdentity).
 
-<a name="geoproject_help" href="geoproject_help">#</a> geoproject <b>-h</b>
-<br><a href="geoproject_help">#</a> geoproject <b>--help</b>
+<a name="geoproject_help" href="#geoproject_help">#</a> geoproject <b>-h</b>
+<br><a href="#geoproject_help">#</a> geoproject <b>--help</b>
 
 Output usage information.
 
-<a name="geoproject_version" href="geoproject_version">#</a> geoproject <b>-V</b>
-<br><a href="geoproject_version">#</a> geoproject <b>--version</b>
+<a name="geoproject_version" href="#geoproject_version">#</a> geoproject <b>-V</b>
+<br><a href="#geoproject_version">#</a> geoproject <b>--version</b>
 
 Output the version number.
 
-<a name="geoproject_out" href="geoproject_out">#</a> geoproject <b>-o</b> <i>file</i>
-<br><a href="geoproject_out">#</a> geoproject <b>--out</b> <i>file</i>
+<a name="geoproject_out" href="#geoproject_out">#</a> geoproject <b>-o</b> <i>file</i>
+<br><a href="#geoproject_out">#</a> geoproject <b>--out</b> <i>file</i>
 
 Specify the output file name. Defaults to “-” for stdout.
 
-<a name="geoproject_precision" href="geoproject_precision">#</a> geoproject <b>-p</b> <i>value</i>
-<br><a href="geoproject_precision">#</a> geoproject <b>--precision</b> <i>value</i>
+<a name="geoproject_precision" href="#geoproject_precision">#</a> geoproject <b>-p</b> <i>value</i>
+<br><a href="#geoproject_precision">#</a> geoproject <b>--precision</b> <i>value</i>
 
 Reduce the precision for smaller output files. See also [d3.geoQuantize](#geoQuantize).
 
-<a name="geoproject_newline_delimited" href="geoproject_newline_delimited">#</a> geoproject <b>-n</b>
-<br><a href="geoproject_newline_delimited">#</a> geoproject <b>--newline-delimited</b>
+<a name="geoproject_newline_delimited" href="#geoproject_newline_delimited">#</a> geoproject <b>-n</b>
+<br><a href="#geoproject_newline_delimited">#</a> geoproject <b>--newline-delimited</b>
 
 Accept [newline-delimited JSON](http://ndjson.org/) as input, with one feature per line, and generate newline-delimited JSON as output.
 
@@ -1058,22 +1058,22 @@ Stitches the GeoJSON object in the specified input *file*, removing antimeridian
 
 See [geoproject](#geoproject) for an example. See also [d3.geoStitch](#geoStitch).
 
-<a name="geostitch_help" href="geostitch_help">#</a> geostitch <b>-h</b>
-<br><a href="geostitch_help">#</a> geostitch <b>--help</b>
+<a name="geostitch_help" href="#geostitch_help">#</a> geostitch <b>-h</b>
+<br><a href="#geostitch_help">#</a> geostitch <b>--help</b>
 
 Output usage information.
 
-<a name="geostitch_version" href="geostitch_version">#</a> geostitch <b>-V</b>
-<br><a href="geostitch_version">#</a> geostitch <b>--version</b>
+<a name="geostitch_version" href="#geostitch_version">#</a> geostitch <b>-V</b>
+<br><a href="#geostitch_version">#</a> geostitch <b>--version</b>
 
 Output the version number.
 
-<a name="geostitch_out" href="geostitch_out">#</a> geostitch <b>-o</b> <i>file</i>
-<br><a href="geostitch_out">#</a> geostitch <b>--out</b> <i>file</i>
+<a name="geostitch_out" href="#geostitch_out">#</a> geostitch <b>-o</b> <i>file</i>
+<br><a href="#geostitch_out">#</a> geostitch <b>--out</b> <i>file</i>
 
 Specify the output file name. Defaults to “-” for stdout.
 
-<a name="geostitch_newline_delimited" href="geostitch_newline_delimited">#</a> geostitch <b>-n</b>
-<br><a href="geostitch_newline_delimited">#</a> geostitch <b>--newline-delimited</b>
+<a name="geostitch_newline_delimited" href="#geostitch_newline_delimited">#</a> geostitch <b>-n</b>
+<br><a href="#geostitch_newline_delimited">#</a> geostitch <b>--newline-delimited</b>
 
 Accept [newline-delimited JSON](http://ndjson.org/) as input, with one feature per line, and generate newline-delimited JSON as output.
