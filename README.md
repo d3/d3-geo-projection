@@ -552,10 +552,10 @@ The McBryde–Thomas flat-polar quartic pseudocylindrical equal-area projection.
 
 The McBryde–Thomas flat-polar sinusoidal equal-area projection.
 
-<a href="#geoNaturalEarth" name="geoNaturalEarth">#</a> d3.<b>geoNaturalEarth</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/naturalEarth.js "Source")
-<br><a href="#geoNaturalEarthRaw" name="geoNaturalEarthRaw">#</a> d3.<b>geoNaturalEarthRaw</b>
+<a href="#geoNaturalEarth1" name="geoNaturalEarth1">#</a> d3.<b>geoNaturalEarth1</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/naturalEarth1.js "Source") [\[d3-geo\]](https://github.com/d3/d3-geo/blob/master/README.md#geoNaturalEarth1)
+<br><a href="#geoNaturalEarth1Raw" name="geoNaturalEarth1Raw">#</a> d3.<b>geoNaturalEarth1Raw</b>
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/naturalEarth.png" width="480" height="250">](http://bl.ocks.org/mbostock/4479477)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/naturalEarth1.png" width="480" height="250">](http://bl.ocks.org/mbostock/4479477)
 
 The Natural Earth projection.
 
