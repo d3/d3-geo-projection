@@ -57,7 +57,7 @@ export {default as geoMollweide, mollweideRaw as geoMollweideRaw} from "./src/mo
 export {default as geoMtFlatPolarParabolic, mtFlatPolarParabolicRaw as geoMtFlatPolarParabolicRaw} from "./src/mtFlatPolarParabolic";
 export {default as geoMtFlatPolarQuartic, mtFlatPolarQuarticRaw as geoMtFlatPolarQuarticRaw} from "./src/mtFlatPolarQuartic";
 export {default as geoMtFlatPolarSinusoidal, mtFlatPolarSinusoidalRaw as geoMtFlatPolarSinusoidalRaw} from "./src/mtFlatPolarSinusoidal";
-export {geoNaturalEarth1 as geoNaturalEarth, geoNaturalEarthRaw1 as geoNaturalEarthRaw} from "d3-geo"; // DEPRECATED moved to d3-geo
+export {geoNaturalEarth1 as geoNaturalEarth, geoNaturalEarth1Raw as geoNaturalEarthRaw} from "d3-geo"; // DEPRECATED moved to d3-geo
 export {default as geoNaturalEarth2, naturalEarth2Raw as geoNaturalEarth2Raw} from "./src/naturalEarth2";
 export {default as geoNellHammer, nellHammerRaw as geoNellHammerRaw} from "./src/nellHammer";
 export {default as geoPatterson, pattersonRaw as geoPattersonRaw} from "./src/patterson";
