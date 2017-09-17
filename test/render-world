@@ -49,9 +49,10 @@ switch (projectionName) {
   case "littrow":
   case "modifiedStereographicGs50":
   case "modifiedStereographicMiller":
-  case "polyhedralButterfly":
-  case "polyhedralWaterman":
-  case "polyhedralCollignon": {
+  // case "polyhedralButterfly":
+  // case "polyhedralWaterman":
+  // case "polyhedralCollignon":
+  {
     context.beginPath();
     path(outline);
     context.clip();
