@@ -14,7 +14,7 @@ littrowRaw.invert = function(x, y) {
       y2_1 = y2 + 1,
       x2_y2_1 = x2 + y2_1,
       cosPhi = x
-          ? sqrt1_2 * sqrt((x2_y2_1 - sqrt(x2_y2_1 * x2_y2_1 - 4 * x2) / x2)
+          ? sqrt1_2 * sqrt((x2_y2_1 - sqrt(x2_y2_1 * x2_y2_1 - 4 * x2)) / x2)
           : 1 / sqrt(y2_1);
   return [
     asin(x * cosPhi),
