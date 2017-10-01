@@ -26,13 +26,24 @@ switch (projectionName) {
   case "modifiedStereographicMiller": outline = graticule.extent([[-40, -40], [80, 80]]).outline(); break;
 }
 
-var path = d3.geoPath()
-    .projection(d3[projectionSymbol]().precision(0.1))
-    .context(context);
+var projection = d3[projectionSymbol]().precision(0.1),
+    path = d3.geoPath()
+      .projection(projection)
+      .context(context);
 
 context.fillStyle = "#fff";
 context.fillRect(0, 0, width, height);
 context.save();
+
+// don't switch to polygon clipping yet for the historical polyhedral projections
+switch (projectionName) {
+  case "polyhedralButterfly":
+  case "polyhedralWaterman":
+  case "polyhedralCollignon": {
+    projection.preclip(d3.geoClipAntimeridian);
+    break;
+  }
+}
 
 switch (projectionName) {
   case "armadillo":
