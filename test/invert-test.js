@@ -12,6 +12,7 @@ var points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
   d3.geoAugust,
   d3.geoBaker,
   d3.geoBerghaus,
+  // d3.geoBertin1953,
   d3.geoBoggs,
   d3.geoBonne,
   d3.geoBottomley,
