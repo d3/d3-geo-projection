@@ -1,5 +1,5 @@
-import {sinusoidalRaw} from "./sinusoidal";
-import interrupt from "./interrupt";
+import {sinusoidalRaw} from "../sinusoidal";
+import interrupt from "./index";
 
 var lobes = [[ // northern hemisphere
   [[-180,   0], [-110,  90], [ -40,   0]],

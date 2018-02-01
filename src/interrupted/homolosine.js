@@ -1,5 +1,5 @@
-import {boggsRaw} from "./boggs";
-import interrupt from "./interrupt";
+import {homolosineRaw} from "../homolosine";
+import interrupt from "./index";
 
 var lobes = [[ // northern hemisphere
   [[-180,   0], [-100,  90], [ -40,   0]],
@@ -12,6 +12,6 @@ var lobes = [[ // northern hemisphere
 ]];
 
 export default function() {
-  return interrupt(boggsRaw, lobes)
-      .scale(160.857);
+  return interrupt(homolosineRaw, lobes)
+      .scale(152.63);
 }

@@ -1,9 +1,9 @@
 var fs = require("fs"),
     readline = require("readline");
 
-module.exports = function(options, callback) {
+module.exports = function(file, newlineDelimited, callback) {
   var index = -1,
-      input = options.in === "-" ? process.stdin : fs.createReadStream(options.in);
+      input = file === "-" ? process.stdin : fs.createReadStream(file);
 
   function readObject() {
     return new Promise(function(resolve, reject) {
@@ -33,7 +33,7 @@ module.exports = function(options, callback) {
     return callback(object, ++index);
   }
 
-  return options.newlineDelimited
+  return newlineDelimited
       ? readNewlineDelimitedObjects()
       : readObject().then(callbackObject);
 };

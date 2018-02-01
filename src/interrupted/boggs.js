@@ -1,5 +1,5 @@
-import {mollweideRaw} from "./mollweide";
-import interrupt from "./interrupt";
+import {boggsRaw} from "../boggs";
+import interrupt from "./index";
 
 var lobes = [[ // northern hemisphere
   [[-180,   0], [-100,  90], [ -40,   0]],
@@ -12,6 +12,6 @@ var lobes = [[ // northern hemisphere
 ]];
 
 export default function() {
-  return interrupt(mollweideRaw, lobes)
-      .scale(169.529);
+  return interrupt(boggsRaw, lobes)
+      .scale(160.857);
 }

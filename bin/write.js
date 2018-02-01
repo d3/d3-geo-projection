@@ -6,8 +6,8 @@ function handleEpipe(error) {
   }
 }
 
-module.exports = function(options) {
-  var output = (options.out === "-" ? process.stdout : fs.createWriteStream(options.out)).on("error", handleEpipe),
+module.exports = function(file) {
+  var output = (file === "-" ? process.stdout : fs.createWriteStream(file)).on("error", handleEpipe),
       queue = Promise.resolve();
   return {
     write: function(data) {

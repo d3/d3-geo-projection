@@ -7,14 +7,12 @@ var width = 960 - 1,
 
 if (!/^[a-z0-9]+$/i.test(projectionName)) throw new Error;
 
-var topojson = require("topojson"),
-    d3_format = require("d3-format"),
-    d3_geo = require("d3-geo"),
-    d3_geo_projection = require("../");
+var topojson = require("topojson-client"),
+    d3 = Object.assign({}, require("d3-format"), require("d3-geo"), require("../"));
 
-var formatNumber = d3_format.format(".6");
+var formatNumber = d3.format(".6");
 
-var projection = d3_geo_projection[projectionSymbol]()
+var projection = d3[projectionSymbol]()
     .precision(0.01)
     .scale(1)
     .translate([0, 0])
@@ -31,30 +29,30 @@ switch (projectionName) {
     break;
   }
   case "littrow": {
-    land = d3_geo.geoGraticule().extent([[-90, -60], [90, 60]]).outline();
+    land = d3.geoGraticule().extent([[-90, -60], [90, 60]]).outline();
     break;
   }
   case "modifiedStereographicAlaska": {
-    var us = require("./data/us-10m.json");
+    var us = require("us-atlas/us/10m.json");
     land = topojson.feature(us, us.objects.states.geometries.filter(function(d) { return d.id === 2; })[0]);
     break;
   }
   case "modifiedStereographicGs48": {
-    var us = require("./data/us-10m.json");
+    var us = require("us-atlas/us/10m.json");
     land = topojson.feature(us, {type: "GeometryCollection", geometries: us.objects.states.geometries.filter(function(d) { return d.id !== 2 && d.id !== 15 && d.id <= 56; })});
     break;
   }
   case "modifiedStereographicGs50": {
-    land = d3_geo.geoGraticule().extent([[-180, 15], [-50, 75]]).outline();
+    land = d3.geoGraticule().extent([[-180, 15], [-50, 75]]).outline();
     break;
   }
   case "modifiedStereographicMiller": {
-    land = d3_geo.geoGraticule().extent([[-40, -40], [80, 80]]).outline();
+    land = d3.geoGraticule().extent([[-40, -40], [80, 80]]).outline();
     break;
   }
 }
 
-var path = d3_geo.geoPath()
+var path = d3.geoPath()
     .projection(projection);
 
 var bounds = path.bounds(land),

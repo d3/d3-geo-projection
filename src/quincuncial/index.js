@@ -1,4 +1,5 @@
-import {abs, halfPi, pi, sign, sqrt1_2} from "./math";
+import {geoProjection as projection} from "d3-geo";
+import {abs, halfPi, pi, sign, sqrt1_2} from "../math";
 
 export default function(project) {
   var dx = project(halfPi, 0)[0] - project(-halfPi, 0)[0];
@@ -22,8 +23,8 @@ export default function(project) {
     if (!t) {
       var d = dx * sqrt1_2,
           s = x > 0 ^ y > 0 ? -1 : 1,
-          x1 = -s * (x0 + (y > 0 ? 1 : -1) * d),
-          y1 = -s * (y0 + (x > 0 ? 1 : -1) * d);
+          x1 = -s * x0 + (y > 0 ? 1 : -1) * d,
+          y1 = -s * y0 + (x > 0 ? 1 : -1) * d;
       x = (-x1 - y1) * sqrt1_2;
       y = (x1 - y1) * sqrt1_2;
     }
@@ -33,5 +34,7 @@ export default function(project) {
     return p;
   };
 
-  return projectQuincuncial;
+  return projection(projectQuincuncial)
+      .rotate([-90, -90, 45])
+      .clipAngle(180 - 1e-3);
 }

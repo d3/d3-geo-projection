@@ -4,6 +4,7 @@ export {default as geoArmadillo, armadilloRaw as geoArmadilloRaw} from "./src/ar
 export {default as geoAugust, augustRaw as geoAugustRaw} from "./src/august";
 export {default as geoBaker, bakerRaw as geoBakerRaw} from "./src/baker";
 export {default as geoBerghaus, berghausRaw as geoBerghausRaw} from "./src/berghaus";
+export {default as geoBertin1953, bertin1953Raw as geoBertin1953Raw} from "./src/bertin";
 export {default as geoBoggs, boggsRaw as geoBoggsRaw} from "./src/boggs";
 export {default as geoBonne, bonneRaw as geoBonneRaw} from "./src/bonne";
 export {default as geoBottomley, bottomleyRaw as geoBottomleyRaw} from "./src/bottomley";
@@ -31,20 +32,19 @@ export {default as geoGinzburg6, ginzburg6Raw as geoGinzburg6Raw} from "./src/gi
 export {default as geoGinzburg8, ginzburg8Raw as geoGinzburg8Raw} from "./src/ginzburg8.js";
 export {default as geoGinzburg9, ginzburg9Raw as geoGinzburg9Raw} from "./src/ginzburg9.js";
 export {default as geoGringorten, gringortenRaw as geoGringortenRaw} from "./src/gringorten.js";
-export {default as geoGringortenQuincuncial} from "./src/gringortenQuincuncial.js";
 export {default as geoGuyou, guyouRaw as geoGuyouRaw} from "./src/guyou.js";
 export {default as geoHammer, hammerRaw as geoHammerRaw} from "./src/hammer.js";
 export {default as geoHammerRetroazimuthal, hammerRetroazimuthalRaw as geoHammerRetroazimuthalRaw} from "./src/hammerRetroazimuthal.js";
 export {default as geoHealpix, healpixRaw as geoHealpixRaw} from "./src/healpix.js";
 export {default as geoHill, hillRaw as geoHillRaw} from "./src/hill.js";
 export {default as geoHomolosine, homolosineRaw as geoHomolosineRaw} from "./src/homolosine.js";
-export {default as geoInterrupt} from "./src/interrupt";
-export {default as geoInterruptedBoggs} from "./src/interruptedBoggs";
-export {default as geoInterruptedHomolosine} from "./src/interruptedHomolosine";
-export {default as geoInterruptedMollweide} from "./src/interruptedMollweide";
-export {default as geoInterruptedMollweideHemispheres} from "./src/interruptedMollweideHemispheres";
-export {default as geoInterruptedSinuMollweide} from "./src/interruptedSinuMollweide";
-export {default as geoInterruptedSinusoidal} from "./src/interruptedSinusoidal";
+export {default as geoInterrupt} from "./src/interrupted/index";
+export {default as geoInterruptedBoggs} from "./src/interrupted/boggs";
+export {default as geoInterruptedHomolosine} from "./src/interrupted/homolosine";
+export {default as geoInterruptedMollweide} from "./src/interrupted/mollweide";
+export {default as geoInterruptedMollweideHemispheres} from "./src/interrupted/mollweideHemispheres";
+export {default as geoInterruptedSinuMollweide} from "./src/interrupted/sinuMollweide";
+export {default as geoInterruptedSinusoidal} from "./src/interrupted/sinusoidal";
 export {default as geoKavrayskiy7, kavrayskiy7Raw as geoKavrayskiy7Raw} from "./src/kavrayskiy7.js";
 export {default as geoLagrange, lagrangeRaw as geoLagrangeRaw} from "./src/lagrange.js";
 export {default as geoLarrivee, larriveeRaw as geoLarriveeRaw} from "./src/larrivee";
@@ -57,13 +57,21 @@ export {default as geoMollweide, mollweideRaw as geoMollweideRaw} from "./src/mo
 export {default as geoMtFlatPolarParabolic, mtFlatPolarParabolicRaw as geoMtFlatPolarParabolicRaw} from "./src/mtFlatPolarParabolic";
 export {default as geoMtFlatPolarQuartic, mtFlatPolarQuarticRaw as geoMtFlatPolarQuarticRaw} from "./src/mtFlatPolarQuartic";
 export {default as geoMtFlatPolarSinusoidal, mtFlatPolarSinusoidalRaw as geoMtFlatPolarSinusoidalRaw} from "./src/mtFlatPolarSinusoidal";
-export {default as geoNaturalEarth, naturalEarthRaw as geoNaturalEarthRaw} from "./src/naturalEarth";
+export {geoNaturalEarth1 as geoNaturalEarth, geoNaturalEarth1Raw as geoNaturalEarthRaw} from "d3-geo"; // DEPRECATED moved to d3-geo
+export {default as geoNaturalEarth2, naturalEarth2Raw as geoNaturalEarth2Raw} from "./src/naturalEarth2";
 export {default as geoNellHammer, nellHammerRaw as geoNellHammerRaw} from "./src/nellHammer";
 export {default as geoPatterson, pattersonRaw as geoPattersonRaw} from "./src/patterson";
-export {default as geoPeirceQuincuncial} from "./src/peirceQuincuncial.js";
-export {default as geoPierceQuincuncial} from "./src/peirceQuincuncial.js"; // DEPRECATED misspelling
 export {default as geoPolyconic, polyconicRaw as geoPolyconicRaw} from "./src/polyconic";
+export {default as geoPolyhedral} from "./src/polyhedral/index.js";
+export {default as geoPolyhedralButterfly} from "./src/polyhedral/butterfly.js";
+export {default as geoPolyhedralCollignon} from "./src/polyhedral/collignon.js";
+export {default as geoPolyhedralWaterman} from "./src/polyhedral/waterman.js";
 export {default as geoProject} from "./src/project/index";
+export {default as geoGringortenQuincuncial} from "./src/quincuncial/gringorten.js";
+export {default as geoPeirceQuincuncial} from "./src/quincuncial/peirce.js";
+export {default as geoPierceQuincuncial} from "./src/quincuncial/peirce.js"; // DEPRECATED misspelling
+export {default as geoQuantize} from "./src/quantize";
+export {default as geoQuincuncial} from "./src/quincuncial/index.js";
 export {default as geoRectangularPolyconic, rectangularPolyconicRaw as geoRectangularPolyconicRaw} from "./src/rectangularPolyconic";
 export {default as geoRobinson, robinsonRaw as geoRobinsonRaw} from "./src/robinson";
 export {default as geoSatellite, satelliteRaw as geoSatelliteRaw} from "./src/satellite";

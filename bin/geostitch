@@ -7,22 +7,22 @@ var commander = require("commander"),
 
 commander
     .version(require("../package.json").version)
-    .usage("[options]")
-    .description("Stitch equirectangular GeoJSON in degrees, removing antimeridian cuts.")
-    .option("-i, --in <file>", "input file name; defaults to “-” for stdin", "-")
+    .usage("[options] [file]")
+    .description("Stitch equirectangular GeoJSON in degrees, removing antimeridian and polar cuts.")
     .option("-o, --out <file>", "output file name; defaults to “-” for stdout", "-")
     .option("-n, --newline-delimited", "use newline-delimited JSON")
     .parse(process.argv);
 
-if (commander.args.length !== 0) {
+if (commander.args.length === 0) commander.args[0] = "-";
+else if (commander.args.length !== 1) {
   console.error();
-  console.error("  error: unexpected arguments");
+  console.error("  error: multiple input files");
   console.error();
   process.exit(1);
 }
 
-var reader = read(commander, stitch).then(end),
-    writer = write(commander);
+var reader = read(commander.args[0], commander.newlineDelimited, stitch).then(end).catch(abort),
+    writer = write(commander.out);
 
 function stitch(d) {
   return writer.write(JSON.stringify(d3.geoStitch(d)) + "\n");
@@ -30,4 +30,8 @@ function stitch(d) {
 
 function end() {
   return writer.end();
+}
+
+function abort(error) {
+  console.error(error.stack);
 }

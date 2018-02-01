@@ -8,17 +8,16 @@ var width = 960,
 if (!/^[a-z0-9]+$/i.test(projectionName)) throw new Error;
 
 var fs = require("fs"),
-    topojson = require("topojson"),
+    topojson = require("topojson-client"),
     Canvas = require("canvas"),
-    d3_geo = require("d3-geo"),
-    d3_geo_projection = require("../");
+    d3 = Object.assign({}, require("d3-geo"), require("../"));
 
 var canvas = new Canvas(width, height),
     context = canvas.getContext("2d");
 
-var world = require("./data/world-50m.json"),
+var world = require("world-atlas/world/50m.json"),
     land = topojson.feature(world, world.objects.land),
-    graticule = d3_geo.geoGraticule(),
+    graticule = d3.geoGraticule(),
     outline = {type: "Sphere"};
 
 switch (projectionName) {
@@ -27,8 +26,8 @@ switch (projectionName) {
   case "modifiedStereographicMiller": outline = graticule.extent([[-40, -40], [80, 80]]).outline(); break;
 }
 
-var path = d3_geo.geoPath()
-    .projection(d3_geo_projection[projectionSymbol]().precision(0.1))
+var path = d3.geoPath()
+    .projection(d3[projectionSymbol]().precision(0.1))
     .context(context);
 
 context.fillStyle = "#fff";
@@ -49,7 +48,10 @@ switch (projectionName) {
   case "interruptedMollweideHemispheres":
   case "littrow":
   case "modifiedStereographicGs50":
-  case "modifiedStereographicMiller": {
+  case "modifiedStereographicMiller":
+  case "polyhedralButterfly":
+  case "polyhedralWaterman":
+  case "polyhedralCollignon": {
     context.beginPath();
     path(outline);
     context.clip();
@@ -74,5 +76,4 @@ path(outline);
 context.strokeStyle = "#000";
 context.stroke();
 
-console.warn("↳ test/output/" + projectionName + ".png");
-canvas.pngStream().pipe(fs.createWriteStream("test/output/" + projectionName + ".png"));
+canvas.pngStream().pipe(process.stdout);
