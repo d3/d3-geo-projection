@@ -1,6 +1,6 @@
 {
   "name": "d3-geo-projection",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "description": "Extended geographic projections for d3-geo.",
   "keywords": [
     "d3",
@@ -42,7 +42,8 @@
   "dependencies": {
     "commander": "2",
     "d3-array": "1",
-    "d3-geo": "^1.7.1"
+    "d3-geo": "^1.9.0",
+    "d3-geo-polygon": "1"
   },
   "devDependencies": {
     "canvas": "1",

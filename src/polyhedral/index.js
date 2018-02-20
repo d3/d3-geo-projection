@@ -1,4 +1,5 @@
 import {geoBounds as bounds, geoCentroid as centroid, geoInterpolate as interpolate, geoProjection as projection} from "d3-geo";
+import {geoClipPolygon as clipPolygon} from "d3-geo-polygon";
 import {abs, cos, degrees, epsilon, pi, radians, sin} from "../math";
 import {default as matrix, multiply, inverse} from "./matrix";
 
@@ -94,15 +95,28 @@ export default function(root, face, r) {
   var proj = projection(forward),
       stream_ = proj.stream;
 
+  // if d3-geo-polygon and proj.preclip are available:
+  // run around the mesh of faces and stream all vertices to create the clipping polygon
+  if (clipPolygon && proj.preclip) {
+    var polygon = [];
+    outline({point: function(lambda, phi) { polygon.push([lambda, phi]); }}, 1e-4, root);
+    polygon.push(polygon[0]);
+    proj.preclip(clipPolygon({ type: "Polygon", coordinates: [ polygon ] }));
+  }
+
+  function noClip(s) { return s; }
+
   proj.stream = function(stream) {
     var rotate = proj.rotate(),
+        preclip = proj.preclip ? proj.preclip() : null,
         rotateStream = stream_(stream),
-        sphereStream = (proj.rotate([0, 0]), stream_(stream));
+        sphereStream = ((preclip ? proj.preclip(noClip) : proj).rotate([0, 0]), stream_(stream));
     proj.rotate(rotate);
+    if (preclip) proj.preclip(preclip);
     rotateStream.sphere = function() {
       sphereStream.polygonStart();
       sphereStream.lineStart();
-      outline(sphereStream, root);
+      outline(sphereStream, epsilon, root);
       sphereStream.lineEnd();
       sphereStream.polygonEnd();
     };
@@ -112,7 +126,7 @@ export default function(root, face, r) {
   return proj;
 }
 
-function outline(stream, node, parent) {
+function outline(stream, epsilon, node, parent) {
   var point,
       edges = node.edges,
       n = edges.length,
@@ -142,7 +156,7 @@ function outline(stream, node, parent) {
       stream.point((point = interpolate(edge[1], c)(epsilon))[0], point[1]);
     } else {
       inside = false;
-      if (edge !== parent) outline(stream, edge, node);
+      if (edge !== parent) outline(stream, epsilon, edge, node);
     }
   }
 }
