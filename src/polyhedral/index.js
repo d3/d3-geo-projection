@@ -100,6 +100,7 @@ export default function(root, face, r) {
   if (clipPolygon && proj.preclip) {
     var polygon = [];
     outline({point: function(lambda, phi) { polygon.push([lambda, phi]); }}, 1e-4, root);
+    polygon.push(polygon[0]);
     proj.preclip(clipPolygon({ type: "Polygon", coordinates: [ polygon ] }));
   }
 
