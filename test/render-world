@@ -35,16 +35,6 @@ context.fillStyle = "#fff";
 context.fillRect(0, 0, width, height);
 context.save();
 
-// don't switch to polygon clipping yet for the historical polyhedral projections
-switch (projectionName) {
-  case "polyhedralButterfly":
-  case "polyhedralWaterman":
-  case "polyhedralCollignon": {
-    projection.preclip(d3.geoClipAntimeridian);
-    break;
-  }
-}
-
 switch (projectionName) {
   case "armadillo":
   case "berghaus":
