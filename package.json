@@ -42,7 +42,7 @@
   "dependencies": {
     "commander": "2",
     "d3-array": "1",
-    "d3-geo": "^1.8.1",
+    "d3-geo": "^1.9.0",
     "d3-geo-polygon": "1"
   },
   "devDependencies": {
