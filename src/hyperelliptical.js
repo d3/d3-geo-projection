@@ -1,8 +1,8 @@
 import {geoProjectionMutator as projectionMutator} from "d3-geo";
-import {abs, asin, pow, sign, sin} from "./math";
+import {abs, asin, pi, pow, sign, sin} from "./math";
 import {integrate} from "./integrate";
 
-export function hyperellipticalRaw(alpha, k, affine) {
+export function hyperellipticalRaw(alpha, k, gamma) {
 
   function elliptic (f) {
     return alpha + (1 - alpha) * pow(1 - pow(f, k), 1 / k);
@@ -12,9 +12,9 @@ export function hyperellipticalRaw(alpha, k, affine) {
     return integrate(elliptic, 0, f, 1e-4);
   }
 
-  var gamma = z(1),
+  var G = 1 / z(1),
       n = 1000,
-      m = (1 + 1e-8) / gamma,
+      m = (1 + 1e-8) * G,
       approx = [];
   for (var i = 0; i <= n; i++)
       approx.push(z(i / n) * m);
@@ -26,18 +26,20 @@ export function hyperellipticalRaw(alpha, k, affine) {
     return (r + (sinphi - approx[r]) / (approx[r] - approx[r - 1])) / n;
   }
 
+  var ratio = 2 * Y(1) / pi * G / gamma;
+
   var forward = function(lambda, phi) {
     var y = Y(abs(sin(phi))),
         x = elliptic(y) * lambda;
-    y /= affine;
-    return [ affine * x, (phi >= 0) ? y : -y ];
+    y /= ratio;
+    return [ x, (phi >= 0) ? y : -y ];
   };
 
   forward.invert = function(x, y) {
     var phi;
-    y *= affine;
+    y *= ratio;
     if (abs(y) < 1) phi = sign(y) * asin(z(abs(y)) / gamma);
-    return [ x / elliptic(abs(y)) / affine, phi ];
+    return [ x / elliptic(abs(y)), phi ];
   };
     
   return forward;
@@ -46,22 +48,22 @@ export function hyperellipticalRaw(alpha, k, affine) {
 export default function() {
   var alpha = 0,
       k = 2.5,
-      affine = 0.8679, // gamma = 1.183136, affine = sqrt(2 * gamma / pi)
+      gamma = 1.183136, // affine = sqrt(2 * gamma / pi) affine = 0.8679
       m = projectionMutator(hyperellipticalRaw),
-      p = m(alpha, k, affine);
+      p = m(alpha, k, gamma);
 
   p.alpha = function(_) {
-    return arguments.length ? m(alpha = +_, k, affine) : alpha;
+    return arguments.length ? m(alpha = +_, k, gamma) : alpha;
   };
 
   p.k = function(_) {
-    return arguments.length ? m(alpha, k = +_, affine) : k;
+    return arguments.length ? m(alpha, k = +_, gamma) : k;
   };
 
-  p.affine = function(_) {
-    return arguments.length ? m(alpha, k, affine = +_) : affine;
+  p.gamma = function(_) {
+    return arguments.length ? m(alpha, k, gamma = +_) : gamma;
   };
 
   return p
-      .scale(175.861);
+      .scale(152.63);
 }
