@@ -38,7 +38,7 @@ export function hyperellipticalRaw(alpha, k, gamma) {
   forward.invert = function(x, y) {
     var phi;
     y *= ratio;
-    if (abs(y) < 1) phi = sign(y) * asin(z(abs(y)) / gamma);
+    if (abs(y) < 1) phi = sign(y) * asin(z(abs(y)) * G);
     return [ x / elliptic(abs(y)), phi ];
   };
     
