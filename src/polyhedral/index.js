@@ -99,7 +99,7 @@ export default function(root, face, r) {
   // run around the mesh of faces and stream all vertices to create the clipping polygon
   if (clipPolygon && proj.preclip) {
     var polygon = [];
-    outline({point: function(lambda, phi) { polygon.push([lambda, phi]); }}, 1e-4, root);
+    outline({point: function(lambda, phi) { polygon.push([lambda, phi]); }}, root);
     polygon.push(polygon[0]);
     proj.preclip(clipPolygon({ type: "Polygon", coordinates: [ polygon ] }));
   }
@@ -116,7 +116,7 @@ export default function(root, face, r) {
     rotateStream.sphere = function() {
       sphereStream.polygonStart();
       sphereStream.lineStart();
-      outline(sphereStream, epsilon, root);
+      outline(sphereStream, root);
       sphereStream.lineEnd();
       sphereStream.polygonEnd();
     };
@@ -126,7 +126,7 @@ export default function(root, face, r) {
   return proj;
 }
 
-function outline(stream, epsilon, node, parent) {
+function outline(stream, node, parent) {
   var point,
       edges = node.edges,
       n = edges.length,
@@ -138,7 +138,7 @@ function outline(stream, epsilon, node, parent) {
       j = -1,
       dx = b[1][0] - b[0][0];
   // TODO
-  var c = dx === 180 || dx === 360
+  node.centroid = dx === 180 || dx === 360
       ? [(b[0][0] + b[1][0]) / 2, (b[0][1] + b[1][1]) / 2]
       : centroid(multiPoint);
   // First find the shared edge…
@@ -150,13 +150,13 @@ function outline(stream, epsilon, node, parent) {
     edge = edges[(i + j) % n];
     if (Array.isArray(edge)) {
       if (!inside) {
-        stream.point((point = interpolate(edge[0], c)(epsilon))[0], point[1]);
+        stream.point((point = interpolate(edge[0], node.centroid)(epsilon))[0], point[1]);
         inside = true;
       }
-      stream.point((point = interpolate(edge[1], c)(epsilon))[0], point[1]);
+      stream.point((point = interpolate(edge[1], node.centroid)(epsilon))[0], point[1]);
     } else {
       inside = false;
-      if (edge !== parent) outline(stream, epsilon, edge, node);
+      if (edge !== parent) outline(stream, edge, node);
     }
   }
 }
