@@ -20,10 +20,14 @@ export function hyperellipticalRaw(alpha, k, gamma) {
       approx.push(z(i / n) * m);
 
   function Y(sinphi) {
-    var r = 0;
-    for (r = 0; r < n; r++) if (approx[r] > sinphi) break;
-    if (r === 0 || approx[r] === approx[r - 1]) return r / n;
-    return (r + (sinphi - approx[r]) / (approx[r] - approx[r - 1])) / n;
+    var rmin = 0, rmax = n, r = n >> 1;
+    do {
+      if (approx[r] > sinphi) rmax = r; else rmin = r;
+      r = (rmin + rmax) >> 1;
+    } while (r > rmin);
+    var u = approx[r + 1] - approx[r];
+    if (u) u = (sinphi - approx[r + 1]) / u;
+    return (r + 1 + u) / n;
   }
 
   var ratio = 2 * Y(1) / pi * G / gamma;
@@ -41,14 +45,14 @@ export function hyperellipticalRaw(alpha, k, gamma) {
     if (abs(y) < 1) phi = sign(y) * asin(z(abs(y)) * G);
     return [ x / elliptic(abs(y)), phi ];
   };
-    
+
   return forward;
 }
 
 export default function() {
   var alpha = 0,
       k = 2.5,
-      gamma = 1.183136, // affine = sqrt(2 * gamma / pi) affine = 0.8679
+      gamma = 1.183136, // affine = sqrt(2 * gamma / pi) = 0.8679
       m = projectionMutator(hyperellipticalRaw),
       p = m(alpha, k, gamma);
 
