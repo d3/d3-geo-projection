@@ -430,7 +430,7 @@ The pseudocylindrical, equal-area Goode homolosine projection is normally presen
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/hyperelliptical.png" width="480" height="250">](https://bl.ocks.org/Fil/fb522a732986461e77296db01abd161e)
 
-Waldo R. Tobler’s hyperelliptical is a family of equal-area pseudocylindrical projections. Parameters include _k_, the exponent of the superellipse (or Lamé curve) that defines the shape of the meridians (default _k_ = 2.5); _alpha_, which governs the weight of the cylindrical projection that is averaged with the superellipse (default _alpha_ = 0); and _gamma_, a coefficient that shapes the aspect ratio (default: _gamma_ = 1.183136).
+Waldo R. Tobler’s hyperelliptical is a family of equal-area pseudocylindrical projections. Parameters include _k_, the exponent of the superellipse (or Lamé curve) that defines the shape of the meridians (default _k_ = 2.5); _alpha_, which governs the weight of the cylindrical projection that is averaged with the superellipse (default _alpha_ = 0); and _gamma_, that shapes the aspect ratio (default: _gamma_ = 1.183136).
 
 <a href="#geoKavrayskiy7" name="geoKavrayskiy7">#</a> d3.<b>geoKavrayskiy7</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/kavrayskiy7.js "Source")
 <br><a href="#geoKavrayskiy7Raw" name="geoKavrayskiy7Raw">#</a> d3.<b>geoKavrayskiy7Raw</b>
