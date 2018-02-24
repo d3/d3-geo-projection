@@ -43,7 +43,7 @@
     "commander": "2",
     "d3-array": "1",
     "d3-geo": "^1.9",
-    "d3-geo-polygon": "1"
+    "d3-geo-polygon": "1.1.1"
   },
   "devDependencies": {
     "canvas": "1",
