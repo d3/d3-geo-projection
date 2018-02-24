@@ -1,4 +1,5 @@
 import {geoBounds as bounds, geoCentroid as centroid, geoInterpolate as interpolate, geoProjection as projection} from "d3-geo";
+import {geoClipPolygon as clipPolygon} from "d3-geo-polygon";
 import {abs, cos, degrees, epsilon, pi, radians, sin} from "../math";
 import {default as matrix, multiply, inverse} from "./matrix";
 
@@ -94,11 +95,24 @@ export default function(root, face, r) {
   var proj = projection(forward),
       stream_ = proj.stream;
 
+  // if d3-geo-polygon and proj.preclip are available:
+  // run around the mesh of faces and stream all vertices to create the clipping polygon
+  if (clipPolygon && proj.preclip) {
+    var polygon = [];
+    outline({point: function(lambda, phi) { polygon.push([lambda, phi]); }}, root);
+    polygon.push(polygon[0]);
+    proj.preclip(clipPolygon({ type: "Polygon", coordinates: [ polygon ] }));
+  }
+
+  function noClip(s) { return s; }
+
   proj.stream = function(stream) {
     var rotate = proj.rotate(),
+        preclip = proj.preclip ? proj.preclip() : null,
         rotateStream = stream_(stream),
-        sphereStream = (proj.rotate([0, 0]), stream_(stream));
+        sphereStream = ((preclip ? proj.preclip(noClip) : proj).rotate([0, 0]), stream_(stream));
     proj.rotate(rotate);
+    if (preclip) proj.preclip(preclip);
     rotateStream.sphere = function() {
       sphereStream.polygonStart();
       sphereStream.lineStart();
@@ -124,7 +138,7 @@ function outline(stream, node, parent) {
       j = -1,
       dx = b[1][0] - b[0][0];
   // TODO
-  var c = dx === 180 || dx === 360
+  node.centroid = dx === 180 || dx === 360
       ? [(b[0][0] + b[1][0]) / 2, (b[0][1] + b[1][1]) / 2]
       : centroid(multiPoint);
   // First find the shared edge…
@@ -136,10 +150,10 @@ function outline(stream, node, parent) {
     edge = edges[(i + j) % n];
     if (Array.isArray(edge)) {
       if (!inside) {
-        stream.point((point = interpolate(edge[0], c)(epsilon))[0], point[1]);
+        stream.point((point = interpolate(edge[0], node.centroid)(epsilon))[0], point[1]);
         inside = true;
       }
-      stream.point((point = interpolate(edge[1], c)(epsilon))[0], point[1]);
+      stream.point((point = interpolate(edge[1], node.centroid)(epsilon))[0], point[1]);
     } else {
       inside = false;
       if (edge !== parent) outline(stream, edge, node);
