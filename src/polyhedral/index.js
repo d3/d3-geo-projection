@@ -1,5 +1,5 @@
 import {geoBounds as bounds, geoCentroid as centroid, geoInterpolate as interpolate, geoProjection as projection} from "d3-geo";
-import {abs, cos, degrees, epsilon, pi, radians, sin} from "../math";
+import {abs, degrees, epsilon, radians} from "../math";
 import {default as matrix, multiply, inverse} from "./matrix";
 
 // Creates a polyhedral projection.
@@ -7,15 +7,11 @@ import {default as matrix, multiply, inverse} from "./matrix";
 //    augmented with a transform matrix.
 //  * face: a function that returns the appropriate node for a given {lambda, phi}
 //    point (radians).
-//  * r: rotation angle for final polyhedral net.  Defaults to -pi / 6 (for
-//    butterflies).
-export default function(root, face, r) {
-
-  r = r == null ? -pi / 6 : r; // TODO automate
+export default function(root, face) {
 
   recurse(root, {transform: [
-    cos(r), sin(r), 0,
-    -sin(r), cos(r), 0
+    1, 0, 0,
+    0, 1, 0
   ]});
 
   function recurse(node, parent) {

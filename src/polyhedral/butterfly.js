@@ -26,5 +26,6 @@ export default function(faceProjection) {
             : phi < 0 ? 7 : 5];
       })
       .scale(101.858)
-      .center([0, 45]);
+      .angle(30)
+      .center([-4.10661, 28.1255]);
 }
