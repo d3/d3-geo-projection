@@ -64,5 +64,5 @@ var bounds = path.bounds(land),
 
 console.log(`d3.${projectionSymbol}()
     .scale(${formatNumber(scale)})
-    .center([${(projection.invert ? projection.invert([cx, cy]) : [0, 0]).map(formatNumber).join(", ")}]);
+    .center([${(projection.invert ? projection.angle(0).invert([cx, cy]) : [0, 0]).map(formatNumber).join(", ")}]);
 `);
