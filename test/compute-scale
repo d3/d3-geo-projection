@@ -18,13 +18,28 @@ var projection = d3[projectionSymbol]()
     .translate([0, 0])
     .center([0, 0]);
 
-if (projection.rotate) projection.rotate([0, 0]);
+var rotate = "";
+if (projection.rotate) {
+  rotate = projection.rotate();
+  if (""+rotate === "0,0,0")
+    rotate = "";
+  else {
+    if (rotate[2] === 0)
+      rotate = [rotate[0], rotate[1]];
+    rotate = `
+    .rotate(${rotate.map(formatNumber)})`;
+  }
+  
+  projection.rotate([0, 0]);
+}
 
 var land = {type: "Sphere"};
 
 switch (projectionName) {
   case "airy":
-  case "chamberlin": {
+  case "chamberlin":
+  case "conicConformal":
+  case "stereographic": {
     projection.clipAngle(90);
     break;
   }
@@ -55,6 +70,7 @@ switch (projectionName) {
 var path = d3.geoPath()
     .projection(projection);
 
+
 var bounds = path.bounds(land),
     dx = bounds[1][0] - bounds[0][0],
     dy = bounds[1][1] - bounds[0][1],
@@ -62,7 +78,21 @@ var bounds = path.bounds(land),
     cy = (bounds[1][1] + bounds[0][1]) / 2,
     scale = Math.min(width / dx, height / dy);
 
-console.log(`d3.${projectionSymbol}()
+var angle = projection.angle() ? `
+    .angle(${formatNumber(projection.angle())})` : "";
+
+if (projection.invert) {
+  var center = projection.invert([cx, cy]);
+  console.log(`d3.${projectionSymbol}()${angle}${rotate}
     .scale(${formatNumber(scale)})
-    .center([${(projection.invert ? projection.angle(0).invert([cx, cy]) : [0, 0]).map(formatNumber).join(", ")}]);
-`);
+    .center([${center.map(formatNumber).join(", ")}]);
+`
+  );
+} else {
+  var translate = [ 480 - cx * scale, 250 - cy * scale ]; 
+  console.log(`d3.${projectionSymbol}()${angle}${rotate}
+    .scale(${formatNumber(scale)})
+    .translate([${translate.map(formatNumber).join(", ")}]);
+`
+  );
+}
