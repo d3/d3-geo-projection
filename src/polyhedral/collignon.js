@@ -37,7 +37,7 @@ export default function(faceProjection) {
             : lambda < pi / 2 ? phi < 0 ? 3 : 1
             : phi < 0 ? 7 : 5];
       })
-      .scale(121.906)
-      .angle(30)
-      .center([8.82686, 22.2093]);
+    .angle(30)
+    .scale(121.906)
+    .center([0, 48.5904]);
 }
