@@ -7,7 +7,8 @@ import {default as matrix, multiply, inverse} from "./matrix";
 //    augmented with a transform matrix.
 //  * face: a function that returns the appropriate node for a given {lambda, phi}
 //    point (radians).
-export default function(root, face) {
+//  * r: rotation angle for root face [deprecated by .angle()].
+export default function(root, face, r) {
 
   recurse(root, {transform: [
     1, 0, 0,
@@ -104,6 +105,8 @@ export default function(root, face) {
     };
     return rotateStream;
   };
+
+  if (r !== null) proj.angle(r * degrees);
 
   return proj;
 }
