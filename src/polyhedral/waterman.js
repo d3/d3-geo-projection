@@ -86,7 +86,7 @@ export default function(faceProjection) {
   return polyhedral(faces[0], face)
       .angle(-30)
       .scale(110.625)
-      .center([0, 45]);
+      .center([0,45]);
 }
 
 function dot(a, b) {
