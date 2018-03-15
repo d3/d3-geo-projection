@@ -20,12 +20,12 @@ export default function(faceProjection) {
   });
 
   return polyhedral(faces[0], function(lambda, phi) {
-        return faces[lambda < -pi / 2 ? phi < 0 ? 6 : 4
-            : lambda < 0 ? phi < 0 ? 2 : 0
-            : lambda < pi / 2 ? phi < 0 ? 3 : 1
-            : phi < 0 ? 7 : 5];
+      return faces[lambda < -pi / 2 ? phi < 0 ? 6 : 4
+          : lambda < 0 ? phi < 0 ? 2 : 0
+          : lambda < pi / 2 ? phi < 0 ? 3 : 1
+          : phi < 0 ? 7 : 5];
       })
-    .angle(-30)
-    .scale(101.858)
-    .center([0, 45]);
+      .angle(-30)
+      .scale(101.858)
+      .center([0, 45]);
 }

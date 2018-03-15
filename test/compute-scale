@@ -70,7 +70,6 @@ switch (projectionName) {
 var path = d3.geoPath()
     .projection(projection);
 
-
 var bounds = path.bounds(land),
     dx = bounds[1][0] - bounds[0][0],
     dy = bounds[1][1] - bounds[0][1],

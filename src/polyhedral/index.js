@@ -10,10 +10,7 @@ import {default as matrix, multiply, inverse} from "./matrix";
 //  * r: rotation angle for root face [deprecated by .angle()].
 export default function(root, face, r) {
 
-  recurse(root, {transform: [
-    1, 0, 0,
-    0, 1, 0
-  ]});
+  recurse(root, {transform: null});
 
   function recurse(node, parent) {
     node.edges = faceEdges(node.face);
