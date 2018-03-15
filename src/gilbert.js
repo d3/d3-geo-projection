@@ -48,6 +48,7 @@ export default function(projectionType) {
     return arguments.length ? (projection.center(gilbertForward(_)), gilbert) : gilbertInvert(projection.center());
   };
 
+  property("angle");
   property("clipAngle");
   property("clipExtent");
   property("scale");
