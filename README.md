@@ -814,7 +814,7 @@ The [Mollweide projection](#geoMollweide) interrupted into two (equal-area) hemi
 
 <a href="#geoPolyhedral" name="geoPolyhedral">#</a> d3.<b>geoPolyhedral</b>(<i>root</i>, <i>face</i>) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/polyhedral/index.js "Source")
 
-Defines a new polyhedral projection. The *root* is a spanning tree of polygon face nodes; each *node* is assigned a *node*.transform matrix. The *face* function returns the appropriate *node* for a given *lambda* and *phi* in radians. Use [*projection*.angle](https://github.com/d3/d3-geo/blob/master/README.md#projection_angle) to change the orientation of the map.
+Defines a new polyhedral projection. The *root* is a spanning tree of polygon face nodes; each *node* is assigned a *node*.transform matrix. The *face* function returns the appropriate *node* for a given *lambda* and *phi* in radians. Use [*projection*.angle](https://github.com/d3/d3-geo/blob/master/README.md#projection_angle) to set the orientation of the map (the default *angle*, -30°, might change in the next major version).
 
 <a href="#geoPolyhedralButterfly" name="geoPolyhedralButterfly">#</a> d3.<b>geoPolyhedralButterfly</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/polyhedral/butterfly.js "Source")
 
