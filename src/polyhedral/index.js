@@ -106,9 +106,7 @@ export default function(root, face, r) {
     return rotateStream;
   };
 
-  if (r !== null) proj.angle(r * degrees);
-
-  return proj;
+  return proj.angle(r == null ? -30 : r * degrees);
 }
 
 function outline(stream, node, parent) {
