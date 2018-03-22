@@ -18,6 +18,10 @@
     {
       "name": "Jason Davies",
       "url": "http://www.jasondavies.com"
+    },
+    {
+      "name": "Philippe Rivière",
+      "url": "https://visionscarto.net"
     }
   ],
   "main": "build/d3-geo-projection.js",
