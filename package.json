@@ -25,8 +25,10 @@
     }
   ],
   "main": "build/d3-geo-projection.js",
-  "module": "index",
+  "unpkg": "build/d3-geo-projection.min.js",
+  "jsdelivr": "build/d3-geo-projection.min.js",
   "jsnext:main": "index",
+  "module": "index",
   "repository": {
     "type": "git",
     "url": "https://github.com/d3/d3-geo-projection.git"
