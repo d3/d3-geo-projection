@@ -13,8 +13,24 @@ export default function(input, digits) {
     return input.map(quantizePoint);
   }
 
+  function quantizePointsNoDuplicates(input) {
+    var point0 = quantizePoint(input[0]);
+    var output = [point0];
+    for (var i = 1; i < input.length; i++) {
+      var point = quantizePoint(input[i]);
+      if (point.length > 2 || point[0] != point0[0] || point[1] != point0[1]) {
+        output.push(point);
+        point0 = point;
+      }
+    }
+    if (output.length === 1 && input.length > 1) {
+      output.push(quantizePoint(input[input.length - 1]));
+    }
+    return output;
+  }
+
   function quantizePolygon(input) {
-    return input.map(quantizePoints);
+    return input.map(quantizePointsNoDuplicates);
   }
 
   function quantizeGeometry(input) {
@@ -23,7 +39,8 @@ export default function(input, digits) {
     switch (input.type) {
       case "GeometryCollection": output = {type: "GeometryCollection", geometries: input.geometries.map(quantizeGeometry)}; break;
       case "Point": output = {type: "Point", coordinates: quantizePoint(input.coordinates)}; break;
-      case "MultiPoint": case "LineString": output = {type: input.type, coordinates: quantizePoints(input.coordinates)}; break;
+      case "MultiPoint": output = {type: input.type, coordinates: quantizePoints(input.coordinates)}; break;
+      case "LineString": output = {type: input.type, coordinates: quantizePointsNoDuplicates(input.coordinates)}; break;
       case "MultiLineString": case "Polygon": output = {type: input.type, coordinates: quantizePolygon(input.coordinates)}; break;
       case "MultiPolygon": output = {type: "MultiPolygon", coordinates: input.coordinates.map(quantizePolygon)}; break;
       default: return input;
