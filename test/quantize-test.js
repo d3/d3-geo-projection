@@ -36,6 +36,28 @@ tape("quantize(LineString) quantizes coordinates", function(test) {
   test.end();
 });
 
+tape("quantize(LineString) does not repeat coordinates", function(test) {
+  test.deepEqual(d3.geoQuantize({
+    type: "LineString",
+    coordinates: [[0, 0], [0.3, 0.3], [1, 1]]
+  }, 0), {
+    type: "LineString",
+    coordinates: [[0, 0], [1, 1]]
+  });
+  test.end();
+});
+
+tape("quantize() does not return an invalid LineString", function(test) {
+  test.deepEqual(d3.geoQuantize({
+    type: "LineString",
+    coordinates: [[0, 0], [0.3, 0.3]]
+  }, 0), {
+    type: "LineString",
+    coordinates: [[0, 0], [0, 0]]
+  });
+  test.end();
+});
+
 tape("quantize(MultiLineString) quantizes coordinates", function(test) {
   test.deepEqual(d3.geoQuantize({
     type: "MultiLineString",
