@@ -13,6 +13,7 @@ commander
     .option("-o, --out <file>", "output file name; defaults to “-” for stdout", "-")
     .option("-p, --precision <value>", "number of output digits after the decimal point")
     .option("-n, --newline-delimited", "use newline-delimited JSON")
+    .option("-r, --require <module>", "require a module, will be available as req")
     .parse(process.argv);
 
 if (commander.args.length < 1) {
@@ -29,7 +30,9 @@ if (commander.args.length < 1) {
   commander.args.push("-");
 }
 
-var sandbox = {d3: d3, d: undefined, i: -1},
+var req = commander.require ? require(commander.require) : null;
+
+var sandbox = {d3: d3, d: undefined, i: -1, req: req},
     context = new vm.createContext(sandbox),
     projection = new vm.Script("(" + commander.args[0] + ")"),
     reader = read(commander.args[1], commander.newlineDelimited, project).then(end).catch(abort),
