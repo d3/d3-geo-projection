@@ -1057,6 +1057,17 @@ Reduce the precision for smaller output files. See also [d3.geoQuantize](#geoQua
 
 Accept [newline-delimited JSON](http://ndjson.org/) as input, with one feature per line, and generate newline-delimited JSON as output.
 
+### geoquantize
+
+<a href="#geoquantize" name="geoquantize">#</a> <b>geoquantize</b> [<i>options</i>…] [<i>file</i>] [<>](https://github.com/d3/d3-geo-projection/blob/master/bin/geoquantize "Source")
+
+Reads the GeoJSON object from the specified input *file* and outputs a new GeoJSON *object* with coordinates reduced to *precision*. Same options as [geoproject](#geoproject).
+
+```bash
+geoquantize us.json --precision 3 \
+  > us-quantized.json
+```
+
 ### geostitch
 
 <a href="#geostitch" name="geostitch">#</a> <b>geostitch</b> [<i>options</i>…] [<i>file</i>] [<>](https://github.com/d3/d3-geo-projection/blob/master/bin/geostitch "Source")
