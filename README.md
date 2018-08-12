@@ -1057,6 +1057,18 @@ Reduce the precision for smaller output files. See also [d3.geoQuantize](#geoQua
 
 Accept [newline-delimited JSON](http://ndjson.org/) as input, with one feature per line, and generate newline-delimited JSON as output.
 
+<a name="geoproject_require" href="#geoproject_require">#</a> geoproject <b>-r</b> <i>[name=]value</i>
+<br><a href="#geoproject_require">#</a> geoproject <b>--require</b> <i>[name=]value</i>
+
+Requires the specified *module*, making it available for use in any expressions used by this command. The loaded module is available as the symbol *name*. If *name* is not specified, it defaults to *module*. (If *module* is not a valid identifier, you must specify a *name*.) For example, to reproject the world on the [Airocean projection](https://github.com/d3/d3-geo-polygon/blob/master/README.md#geoAirocean):
+ ```
+geoproject --require d3=d3-geo-polygon 'd3.geoAirocean()' world.geojson
+```
+
+The required *module* is resolved relative to the [current working directory](https://nodejs.org/api/process.html#process_process_cwd). If the *module* is not found during normal resolution, the [global npm root](https://docs.npmjs.com/cli/root) is also searched, allowing you to require globally-installed modules from the command line.
+
+Multiple modules can be required by repeating this option.
+
 ### geostitch
 
 <a href="#geostitch" name="geostitch">#</a> <b>geostitch</b> [<i>options</i>…] [<i>file</i>] [<>](https://github.com/d3/d3-geo-projection/blob/master/bin/geostitch "Source")
