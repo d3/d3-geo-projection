@@ -37,6 +37,7 @@
     "geo2svg": "bin/geo2svg",
     "geograticule": "bin/geograticule",
     "geoproject": "bin/geoproject",
+    "geoquantize": "bin/geoquantize",
     "geostitch": "bin/geostitch"
   },
   "scripts": {
