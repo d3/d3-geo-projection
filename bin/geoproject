@@ -4,6 +4,7 @@ var commander = require("commander"),
     vm = require("vm"),
     d3 = Object.assign({}, require("d3-geo"), require("../")),
     read = require("./read"),
+    requires = require("./requires"),
     write = require("./write");
 
 commander
@@ -13,6 +14,7 @@ commander
     .option("-o, --out <file>", "output file name; defaults to “-” for stdout", "-")
     .option("-p, --precision <value>", "number of output digits after the decimal point")
     .option("-n, --newline-delimited", "use newline-delimited JSON")
+    .option("-r, --require <[name=]module>", "require a module", requires, {d3: d3, d: undefined, i: -1})
     .parse(process.argv);
 
 if (commander.args.length < 1) {
@@ -29,7 +31,7 @@ if (commander.args.length < 1) {
   commander.args.push("-");
 }
 
-var sandbox = {d3: d3, d: undefined, i: -1},
+var sandbox = commander.require,
     context = new vm.createContext(sandbox),
     projection = new vm.Script("(" + commander.args[0] + ")"),
     reader = read(commander.args[1], commander.newlineDelimited, project).then(end).catch(abort),
