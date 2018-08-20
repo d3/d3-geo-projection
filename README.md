@@ -279,7 +279,7 @@ The Eisenlohr conformal projection.
 <a href="#geoEqualEarth" name="geoEqualEarth">#</a> d3.<b>geoEqualEarth</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/equalEarth.js "Source")
 <br><a href="#geoEqualEarthRaw" name="geoEqualEarthRaw">#</a> d3.<b>geoEqualEarthRaw</b>
 
-[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/equalEarth.png" width="480" height="250">](https://beta.observablehq.com/@mbostock/equal-earth-projection)
+[<img src="https://raw.githubusercontent.com/d3/d3-geo/master/img/equalEarth.png" width="480" height="250">](http://shadedrelief.com/ee_proj/)
 
 The Equal Earth projection, by Bojan Šavrič _et al._, 2018.
 
