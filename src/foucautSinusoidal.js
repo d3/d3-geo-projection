@@ -23,12 +23,12 @@ export function foucautSinusoidalRaw(alpha) {
   }
 
   function forwardMeridian(phi) {
-      return forward(0, phi)[1];
+    return forward(0, phi)[1];
   }
 
   forward.invert = function(x, y) {
-    var phi = solve(forwardMeridian, y);
-    var lambda = x / ratio * (alpha + beta / cos(phi));
+    var phi = solve(forwardMeridian, y),
+        lambda = x / ratio * (alpha + beta / cos(phi));
     return [lambda, phi];
   };
 
