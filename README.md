@@ -719,6 +719,29 @@ The Van der Grinten III projection.
 
 The Van der Grinten IV projection.
 
+<a href="#geoWagner" name="geoWagner">#</a> d3.<b>geoWagner</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/wagner.js "Source")
+<br><a href="#geoWagnerRaw" name="geoWagnerRaw">#</a> d3.<b>geoWagnerRaw</b>
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/wagner.png" width="480" height="250">](https://map-projections.net/d3-customizable-wagner/)
+
+The Wagner projection is customizable: default values produce the Wagner VIII projection.
+
+<a href="#wagner_poleline" name="wagner_poleline">#</a> <i>wagner</i>.<b>poleline</b>([<i>poleline</i>])
+
+Defaults to 65°.
+
+<a href="#wagner_parallels" name="wagner_parallels">#</a> <i>wagner</i>.<b>parallels</b>([<i>parallels</i>])
+
+Defaults to 60°.
+
+<a href="#wagner_inflation" name="wagner_inflation">#</a> <i>wagner</i>.<b>inflation</b>([<i>inflation</i>])
+
+Defaults to 20.
+
+<a href="#wagner_ratio" name="wagner_ratio">#</a> <i>wagner</i>.<b>ratio</b>([<i>ratio</i>])
+
+Defaults to 200.
+
 <a href="#geoWagner4" name="geoWagner4">#</a> d3.<b>geoWagner4</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/wagner4.js "Source")
 <br><a href="#geoWagner4Raw" name="geoWagner4Raw">#</a> d3.<b>geoWagner4Raw</b>
 
