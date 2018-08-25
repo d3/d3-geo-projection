@@ -33,6 +33,7 @@ var points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
   d3.geoEisenlohr,
   d3.geoFahey,
   d3.geoFoucaut,
+  d3.geoFoucautSinusoidal,
   d3.geoGilbert,
   d3.geoGingery,
   d3.geoGinzburg4,
