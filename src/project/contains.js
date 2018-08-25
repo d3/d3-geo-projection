@@ -1,3 +1,5 @@
+import {geoContains} from "d3-geo";
+
 export default function(ring, point) {
   var x = point[0],
       y = point[1],
@@ -7,5 +9,5 @@ export default function(ring, point) {
         pj = ring[j], xj = pj[0], yj = pj[1];
     if (((yi > y) ^ (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi)) contains = !contains;
   }
-  return contains;
+  return contains || geoContains({type:"Polygon", coordinates: [ring]}, point);
 }
