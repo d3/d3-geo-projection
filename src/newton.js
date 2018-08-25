@@ -2,9 +2,9 @@ import {abs, epsilon} from "./math";
 
 // Newton-Raphson
 // Solve f(x) = y, start from x
-export function solve(f, y, x=0) {
+export function solve(f, y, x) {
   var steps = 100, delta, f0, f1;
-  x = +x;
+  x = +x || 0;
   y = +y;
   do {
     f0 = f(x);
