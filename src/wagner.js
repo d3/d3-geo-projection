@@ -96,5 +96,5 @@ export default function() {
   };
 
   return projection
-    .scale(163.775);
+      .scale(163.775);
 }
