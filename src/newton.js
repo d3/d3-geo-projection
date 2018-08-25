@@ -1,16 +1,16 @@
-import { abs, epsilon, sign } from "./math";
+import {abs, epsilon} from "./math";
 
 // Newton-Raphson
-// Solve f(x) = y, start from x = 0
-export function solve(f, y = 0, x = 0, steps = 100) {
-  var delta, f0, f1;
+// Solve f(x) = y, start from x
+export function solve(f, y, x=0) {
+  var steps = 100, delta, f0, f1;
+  x = +x;
+  y = +y;
   do {
     f0 = f(x);
     f1 = f(x + epsilon);
     if (f0 === f1) f1 = f0 + epsilon;
-    delta = (epsilon * (f0 - y)) / (f0 - f1);
-    if (abs(delta) > 0.1) delta = 0.1 * sign(delta);
-    x += delta;
+    x -= delta = (-1 * epsilon * (f0 - y)) / (f0 - f1);
   } while (steps-- > 0 && abs(delta) > epsilon);
   return steps < 0 ? NaN : x;
 }
