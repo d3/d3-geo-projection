@@ -4,7 +4,7 @@ import {abs, epsilon} from "./math";
 // Solve f(x) = y, start from x
 export function solve(f, y, x) {
   var steps = 100, delta, f0, f1;
-  x = +x || 0;
+  x = x === undefined ? 0 : +x;
   y = +y;
   do {
     f0 = f(x);
