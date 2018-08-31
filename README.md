@@ -1061,7 +1061,8 @@ Accept [newline-delimited JSON](http://ndjson.org/) as input, with one feature p
 <br><a href="#geoproject_require">#</a> geoproject <b>--require</b> <i>[name=]value</i>
 
 Requires the specified *module*, making it available for use in any expressions used by this command. The loaded module is available as the symbol *name*. If *name* is not specified, it defaults to *module*. (If *module* is not a valid identifier, you must specify a *name*.) For example, to reproject the world on the [Airocean projection](https://github.com/d3/d3-geo-polygon/blob/master/README.md#geoAirocean):
- ```
+
+```bash
 geoproject --require d3=d3-geo-polygon 'd3.geoAirocean()' world.geojson
 ```
 
