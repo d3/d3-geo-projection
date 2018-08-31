@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 var commander = require("commander"),
-    vm = require("vm"),
     d3 = Object.assign({}, require("d3-geo"), require("../")),
     read = require("./read"),
     write = require("./write");
@@ -9,7 +8,7 @@ var commander = require("commander"),
 commander
     .version(require("../package.json").version)
     .usage("[options] [file]")
-    .description("Transform GeoJSON, such as to project from spherical to planar coordinates.")
+    .description("Quantize GeoJSON.")
     .option("-o, --out <file>", "output file name; defaults to “-” for stdout", "-")
     .option("-p, --precision <value>", "number of output digits after the decimal point")
     .option("-n, --newline-delimited", "use newline-delimited JSON")
@@ -24,13 +23,10 @@ if (commander.args.length > 1) {
   commander.args.push("-");
 }
 
-var sandbox = {d3: d3, d: undefined, i: -1},
-    context = new vm.createContext(sandbox),
-    reader = read(commander.args[0], commander.newlineDelimited, quantize).then(end).catch(abort),
+var reader = read(commander.args[0], commander.newlineDelimited, quantize).then(end).catch(abort),
     writer = write(commander.out);
 
 function quantize(d, i) {
-  sandbox.d = d, sandbox.i = i;
   if (commander.precision != null) d = d3.geoQuantize(d, commander.precision);
   return writer.write(JSON.stringify(d) + "\n");
 }
