@@ -2,7 +2,7 @@ import {range} from "d3-array";
 import {geoStream, geoProjectionMutator as projectionMutator} from "d3-geo";
 import {collignonRaw} from "./collignon";
 import {cylindricalEqualAreaRaw} from "./cylindricalEqualArea";
-import {abs, floor, max, min, pi, radians, sqrtPi, tau} from "./math";
+import {abs, epsilon, floor, max, min, pi, radians, sqrtPi, tau} from "./math";
 
 var healpixParallel = 41 + 48 / 36 + 37 / 3600, // for K=3; TODO automate
     healpixLambert = cylindricalEqualAreaRaw(0);
@@ -52,12 +52,13 @@ export function healpixRaw(H) {
 }
 
 function sphere(step) {
+  var c = range(-180, 180 + step / 2, step).map(function(x, i) { return [x, i & 1 ? 90 - epsilon : healpixParallel]; })
+      .concat(range(180, -180 - step / 2, -step).map(function(x, i) { return [x, i & 1 ? -90 + epsilon : -healpixParallel]; }));
+  if (step === 180) c = c.map(d => [d[0]*(1-epsilon), d[1]]);
+
   return {
     type: "Polygon",
-    coordinates: [
-      range(-180, 180 + step / 2, step).map(function(x, i) { return [x, i & 1 ? 90 - 1e-6 : healpixParallel]; })
-      .concat(range(180, -180 - step / 2, -step).map(function(x, i) { return [x, i & 1 ? -90 + 1e-6 : -healpixParallel]; }))
-    ]
+    coordinates: [c]
   };
 }
 
