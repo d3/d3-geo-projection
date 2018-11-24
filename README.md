@@ -443,13 +443,13 @@ The pseudocylindrical, equal-area Goode homolosine projection is normally presen
 
 A customizable family of pseudocylindrical equal-area projections by Herbert Hufnagel.
 
-<a href="hufnagel_a" name="hufnagel_a">#</a> <i>hufnagel</i>.<b>a</b>([<i>a</i>])
+<a href="#hufnagel_a" name="hufnagel_a">#</a> <i>hufnagel</i>.<b>a</b>([<i>a</i>])
 
-<a href="hufnagel_b" name="hufnagel_b">#</a> <i>hufnagel</i>.<b>b</b>([<i>b</i>])
+<a href="#hufnagel_b" name="hufnagel_b">#</a> <i>hufnagel</i>.<b>b</b>([<i>b</i>])
 
-<a href="hufnagel_psiMax" name="hufnagel_psiMax">#</a> <i>hufnagel</i>.<b>psiMax</b>([<i>psiMax</i>])
+<a href="#hufnagel_psiMax" name="hufnagel_psiMax">#</a> <i>hufnagel</i>.<b>psiMax</b>([<i>psiMax</i>])
 
-<a href="hufnagel_ratio" name="hufnagel_ratio">#</a> <i>hufnagel</i>.<b>ratio</b>([<i>ratio</i>])
+<a href="#hufnagel_ratio" name="hufnagel_ratio">#</a> <i>hufnagel</i>.<b>ratio</b>([<i>ratio</i>])
 
 <a href="#geoHyperelliptical" name="geoHyperelliptical">#</a> d3.<b>geoHyperelliptical</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/hyperelliptical.js "Source")
 <br><a href="#geoHyperellipticalRaw" name="geoHyperellipticalRaw">#</a> d3.<b>geoHyperellipticalRaw</b>
