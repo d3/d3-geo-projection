@@ -49,6 +49,7 @@ var points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
   d3.geoHealpix,
   d3.geoHill,
   d3.geoHomolosine,
+  d3.geoHufnagel,
   // d3.geoInterrupt, // factory of factory
   d3.geoInterruptedBoggs,
   d3.geoInterruptedHomolosine,
