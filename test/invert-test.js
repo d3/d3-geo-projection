@@ -94,6 +94,7 @@ var points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
   d3.geoVanDerGrinten2,
   d3.geoVanDerGrinten3,
   d3.geoVanDerGrinten4,
+  d3.geoWagner,
   d3.geoWagner4,
   d3.geoWagner6,
   d3.geoWagner7,
