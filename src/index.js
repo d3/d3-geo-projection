@@ -39,6 +39,7 @@ export {default as geoHammerRetroazimuthal, hammerRetroazimuthalRaw as geoHammer
 export {default as geoHealpix, healpixRaw as geoHealpixRaw} from "./healpix.js";
 export {default as geoHill, hillRaw as geoHillRaw} from "./hill.js";
 export {default as geoHomolosine, homolosineRaw as geoHomolosineRaw} from "./homolosine.js";
+export {default as geoHufnagel, hufnagelRaw as geoHufnagelRaw} from "./hufnagel.js";
 export {default as geoHyperelliptical, hyperellipticalRaw as geoHyperellipticalRaw} from "./hyperelliptical";
 export {default as geoInterrupt} from "./interrupted/index";
 export {default as geoInterruptedBoggs} from "./interrupted/boggs";

@@ -43,6 +43,7 @@ for i in \
     healpix \
     hill \
     homolosine \
+    hufnagel \
     hyperelliptical \
     interruptedBoggs \
     interruptedHomolosine \
