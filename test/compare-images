@@ -27,6 +27,7 @@ for i in \
     eisenlohr \
     fahey \
     foucaut \
+    foucautSinusoidal \
     gilbert \
     gingery \
     ginzburg4 \
