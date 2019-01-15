@@ -28,6 +28,12 @@
   "unpkg": "dist/d3-geo-projection.min.js",
   "jsdelivr": "dist/d3-geo-projection.min.js",
   "module": "src/index.js",
+  "files": [
+    "bin/geo*",
+    "bin/**/*.js",
+    "dist/**/*.js",
+    "src/**/*.js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/d3/d3-geo-projection.git"
