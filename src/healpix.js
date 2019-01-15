@@ -51,14 +51,26 @@ export function healpixRaw(H) {
   return forward;
 }
 
-function sphere(step) {
-  var c = range(-180, 180 + step / 2, step).map(function(x, i) { return [x, i & 1 ? 90 - epsilon : healpixParallel]; })
-      .concat(range(180, -180 - step / 2, -step).map(function(x, i) { return [x, i & 1 ? -90 + epsilon : -healpixParallel]; }));
-  if (step === 180) c = c.map(d => [d[0]*(1-epsilon), d[1]]);
+function sphereTop(x, i) {
+  return [x, i & 1 ? 90 - epsilon : healpixParallel];
+}
 
+function sphereBottom(x, i) {
+  return [x, i & 1 ? -90 + epsilon : -healpixParallel];
+}
+
+function sphereNudge(d) {
+  return [d[0] * (1 - epsilon), d[1]];
+}
+
+function sphere(step) {
+  var c = [].concat(
+    range(-180, 180 + step / 2, step).map(sphereTop),
+    range(180, -180 - step / 2, -step).map(sphereBottom)
+  );
   return {
     type: "Polygon",
-    coordinates: [c]
+    coordinates: [step === 180 ? c.map(sphereNudge) : c]
   };
 }
 
