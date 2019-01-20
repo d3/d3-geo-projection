@@ -606,6 +606,13 @@ The [Natural Earth II](http://www.shadedrelief.com/NE2_proj/) projection. Compar
 
 The Nell–Hammer projection.
 
+<a href="#geoNicolosi" name="geoNicolosi">#</a> d3.<b>geoNicolosi</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/nicolosi.js "Source")
+<br><a href="#geoNicolosiRaw" name="geoNicolosiRaw">#</a> d3.<b>geoNicolosiRaw</b>
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/nicolosi.png" width="480" height="250">](https://beta.observablehq.com/@toja/nicolosi-globular-projection)
+
+The Nicolosi globular projection.
+
 <a href="#geoOrthographic" name="geoOrthographic">#</a> d3.<b>geoOrthographic</b>() [<>](https://github.com/d3/d3-geo/blob/master/src/projection/orthographic.js "Source") [\[d3-geo\]](https://github.com/d3/d3-geo/blob/master/README.md#geoOrthographic)
 <br><a href="#geoOrthographicRaw" name="geoOrthographicRaw">#</a> d3.<b>geoOrthographicRaw</b>
 
