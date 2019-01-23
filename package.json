@@ -54,7 +54,8 @@
   "dependencies": {
     "commander": "2",
     "d3-array": "1",
-    "d3-geo": "^1.10.0"
+    "d3-geo": "^1.10.0",
+    "resolve": "^1.1.10"
   },
   "devDependencies": {
     "canvas": "1",
