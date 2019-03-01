@@ -61,12 +61,14 @@ export default function() {
   p.stream = function(stream) {
     var rotate = p.rotate(),
         rotateStream = stream_(stream),
-        sphereStream = (p.rotate([0, 0]), stream_(stream));
+        sphereStream = (p.rotate([0, 0]), stream_(stream)),
+        precision = p.precision();
     p.rotate(rotate);
     rotateStream.sphere = function() {
       sphereStream.polygonStart(), sphereStream.lineStart();
-      for (var lambda = sPhi0 * -180; sPhi0 * lambda < 180; lambda += sPhi0 * 90) sphereStream.point(lambda, sPhi0 * 90);
-      if (phi0) while (sPhi0 * (lambda -= phi0) >= -180) { // TODO precision?
+      for (var lambda = sPhi0 * -180; sPhi0 * lambda < 180; lambda += sPhi0 * 90)
+        sphereStream.point(lambda, sPhi0 * 90);
+      if (phi0) while (sPhi0 * (lambda -= 3 * sPhi0 * precision) >= -180) {
         sphereStream.point(lambda, sPhi0 * -atan2(cos(lambda * radians / 2), tanPhi0) * degrees);
       }
       sphereStream.lineEnd(), sphereStream.polygonEnd();
