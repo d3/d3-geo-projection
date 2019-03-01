@@ -1,5 +1,5 @@
 var tape = require("tape"),
-    d3 = require("../");
+    d3 = Object.assign({}, require("d3-geo"), require("../"));
 
 require("./projectionEqual");
 
@@ -17,5 +17,10 @@ tape("geoArmadillo(point) returns the expected value", function(test) {
   test.projectionEqual(armadillo, [-179,  15], [185.122354, 111.792545]);
   test.projectionEqual(armadillo, [   1,   1], [482.617761, 247.528295]);
   test.projectionEqual(armadillo, [  45,  87], [540.406730,  56.511657]);
+  test.end();
+});
+
+tape("geoArmadillo.parallel(0) sphere works (#163)", function(test) {
+  test.assert(d3.geoPath(d3.geoArmadillo().parallel(0))({type:"Sphere"}));
   test.end();
 });

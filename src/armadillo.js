@@ -66,7 +66,7 @@ export default function() {
     rotateStream.sphere = function() {
       sphereStream.polygonStart(), sphereStream.lineStart();
       for (var lambda = sPhi0 * -180; sPhi0 * lambda < 180; lambda += sPhi0 * 90) sphereStream.point(lambda, sPhi0 * 90);
-      while (sPhi0 * (lambda -= phi0) >= -180) { // TODO precision?
+      if (phi0) while (sPhi0 * (lambda -= phi0) >= -180) { // TODO precision?
         sphereStream.point(lambda, sPhi0 * -atan2(cos(lambda * radians / 2), tanPhi0) * degrees);
       }
       sphereStream.lineEnd(), sphereStream.polygonEnd();
