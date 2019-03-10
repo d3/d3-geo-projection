@@ -17,8 +17,6 @@ var aitoff = d3.geoAitoff();
 </script>
 ```
 
-[Try d3-geo-projection in your browser.](https://tonicdev.com/npm/d3-geo-projection)
-
 ## API Reference
 
 * [Projections](#projections)
