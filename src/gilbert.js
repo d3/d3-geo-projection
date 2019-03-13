@@ -35,8 +35,8 @@ export default function(projectionType) {
   };
 
   function property(name) {
-    gilbert[name] = function(_, __) {
-      return arguments.length ? (projection[name](_, __), gilbert) : projection[name]();
+    gilbert[name] = function() {
+      return arguments.length ? (projection[name].apply(projection, arguments), gilbert) : projection[name]();
     };
   }
 
