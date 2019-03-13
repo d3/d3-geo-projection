@@ -35,8 +35,8 @@ export default function(projectionType) {
   };
 
   function property(name) {
-    gilbert[name] = function(_) {
-      return arguments.length ? (projection[name](_), gilbert) : projection[name]();
+    gilbert[name] = function(_, __) {
+      return arguments.length ? (projection[name](_, __), gilbert) : projection[name]();
     };
   }
 
@@ -51,6 +51,10 @@ export default function(projectionType) {
   property("angle");
   property("clipAngle");
   property("clipExtent");
+  property("fitExtent");
+  property("fitHeight");
+  property("fitSize");
+  property("fitWidth");
   property("scale");
   property("translate");
   property("precision");
