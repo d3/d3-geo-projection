@@ -57,6 +57,7 @@ var points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
   d3.geoInterruptedMollweideHemispheres,
   // d3.geoInterruptedSinuMollweide,
   d3.geoInterruptedSinusoidal,
+  d3.geoInterruptedQuarticAuthalic,
   d3.geoKavrayskiy7,
   d3.geoLagrange,
   d3.geoLarrivee,

@@ -63,6 +63,7 @@ export {default as geoMtFlatPolarSinusoidal, mtFlatPolarSinusoidalRaw as geoMtFl
 export {geoNaturalEarth1 as geoNaturalEarth, geoNaturalEarth1Raw as geoNaturalEarthRaw} from "d3-geo"; // DEPRECATED moved to d3-geo
 export {default as geoNaturalEarth2, naturalEarth2Raw as geoNaturalEarth2Raw} from "./naturalEarth2";
 export {default as geoNellHammer, nellHammerRaw as geoNellHammerRaw} from "./nellHammer";
+export {default as geoInterruptedQuarticAuthalic} from "./interrupted/quarticAuthalic";
 export {default as geoNicolosi, nicolosiRaw as geoNicolosiRaw} from "./nicolosi";
 export {default as geoPatterson, pattersonRaw as geoPattersonRaw} from "./patterson";
 export {default as geoPolyconic, polyconicRaw as geoPolyconicRaw} from "./polyconic";

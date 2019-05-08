@@ -871,6 +871,12 @@ Goode’s interrupted [Mollweide projection](#geoMollweide).
 
 The [Mollweide projection](#geoMollweide) interrupted into two (equal-area) hemispheres.
 
+<a href="#geoInterruptedQuarticAuthalic" name="geoInterruptedQuarticAuthalic">#</a> d3.<b>geoInterruptedQuarticAuthalic</b>() [<>](https://github.com/d3/d3-geo-projection/blob/master/src/quarticAuthalic.js "Source")
+
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/interruptedQuarticAuthalic.png" width="480" height="250">](https://observablehq.com/@piwodlaiwo/interrupted-quartic-authalic-projection)
+
+The [Quartic Authalic projection](https://observablehq.com/@d3/hammer?b=Infinity) interrupted into two hemispheres.
+
 ### Polyhedral Projections
 
 <a href="#geoPolyhedral" name="geoPolyhedral">#</a> d3.<b>geoPolyhedral</b>(<i>root</i>, <i>face</i>) [<>](https://github.com/d3/d3-geo-projection/blob/master/src/polyhedral/index.js "Source")
