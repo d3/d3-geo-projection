@@ -46,6 +46,7 @@ switch (projectionName) {
   case "interruptedSinuMollweide":
   case "interruptedMollweide":
   case "interruptedMollweideHemispheres":
+  case "interruptedQuarticAuthalic":
   case "littrow":
   case "modifiedStereographicGs50":
   case "modifiedStereographicMiller":

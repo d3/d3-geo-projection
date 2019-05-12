@@ -11,5 +11,6 @@ var lobes = [[ // northern hemisphere
 
 export default function() {
   return interrupt(hammerRaw(Infinity), lobes)
-      .rotate([20, 0]);
+      .rotate([20, 0])
+      .scale(152.63);
 }
