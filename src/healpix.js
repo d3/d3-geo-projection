@@ -4,7 +4,7 @@ import {collignonRaw} from "./collignon";
 import {cylindricalEqualAreaRaw} from "./cylindricalEqualArea";
 import {abs, epsilon, floor, max, min, pi, radians, sqrtPi, tau} from "./math";
 
-var healpixParallel = 41 + 48 / 36 + 37 / 3600, // for K=3; TODO automate
+var healpixParallel = 41 + 48 / 60 + 37 / 3600, // for K=3; TODO automate
     healpixLambert = cylindricalEqualAreaRaw(0);
 
 export function healpixRaw(H) {
