@@ -75,7 +75,8 @@ export function modifiedStereographicAlaska() {
   return modifiedStereographic(alaska, [152, -64])
       .scale(1500)
       .center([-160.908, 62.4864])
-      .clipAngle(25);
+      .clipAngle(30)
+      .angle(7.8);
 }
 
 export function modifiedStereographicGs48() {
