@@ -2,9 +2,10 @@ import {range} from "d3-array";
 import {geoStream, geoProjectionMutator as projectionMutator} from "d3-geo";
 import {collignonRaw} from "./collignon";
 import {cylindricalEqualAreaRaw} from "./cylindricalEqualArea";
-import {abs, epsilon, floor, max, min, pi, radians, sqrtPi, tau} from "./math";
+import {abs, asin, degrees, epsilon, floor, max, min, pi, radians, sqrtPi, tau} from "./math";
 
-var healpixParallel = 41 + 48 / 60 + 37 / 3600, // for K=3; TODO automate
+var K = 3,
+    healpixParallel = asin(1 - 1 / K) * degrees,
     healpixLambert = cylindricalEqualAreaRaw(0);
 
 export function healpixRaw(H) {
