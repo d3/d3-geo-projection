@@ -543,13 +543,13 @@ A [modified stereographic](#geoModifiedStereographic) projection for the conterm
 
 A [modified stereographic](#geoModifiedStereographic) projection for the United States including Alaska and Hawaii. Typically clipped to the geographic extent [[-180°, 15°], [-50°, 75°]].
 
-<a href="#geoModifiedStereographicMiller" name="geoModifiedStereographicMiller">#</a> d3.<b>geoModifiedStereographicMiller</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/master/src/modifiedStereographic.js)
+<a href="#geoModifiedStereographicMiller" name="geoModifiedStereographicMiller">#</a> d3.<b>geoModifiedStereographicMiller</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/master/src/modifiedStereographic.js), [Examples](https://observablehq.com/@d3/miller-oblated-stereographic)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/modifiedStereographicMiller.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/miller/)
 
 A [modified stereographic](#geoModifiedStereographic) projection for Europe and Africa. Typically clipped to the geographic extent [[-40°, -40°], [80°, 80°]].
 
-<a href="#geoModifiedStereographicLee" name="geoModifiedStereographicLee">#</a> d3.<b>geoModifiedStereographicLee</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/master/src/modifiedStereographic.js)
+<a href="#geoModifiedStereographicLee" name="geoModifiedStereographicLee">#</a> d3.<b>geoModifiedStereographicLee</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/master/src/modifiedStereographic.js), [Examples](https://observablehq.com/@d3/lee-oblated-stereographic)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/modifiedStereographicLee.png" width="480" height="250">](https://www.jasondavies.com/maps/modified-stereographic/lee/)
 
@@ -839,7 +839,7 @@ If *lobes* is specified, sets the new array of hemilobes and returns this projec
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/interruptedHomolosine.png" width="480" height="250">](https://observablehq.com/@d3/interrupted-goode-homolosine)
 
-Goode’s interrupted [homolosine projection](#geoHomolosine). Its [ocean-centric aspect](https://bl.ocks.org/Fil/d90a94d7333bfef753e92a4abb7611b4) is also well-known.
+Goode’s interrupted [homolosine projection](#geoHomolosine). Its [ocean-centric aspect](https://observablehq.com/@d3/interrupted-homolosine-oceans) is also well-known.
 
 <a href="#geoInterruptedSinusoidal" name="geoInterruptedSinusoidal">#</a> d3.<b>geoInterruptedSinusoidal</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/master/src/interrupted/sinusoidal.js), [Examples](https://observablehq.com/@d3/interrupted-sinusoidal)
 
