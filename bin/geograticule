@@ -15,7 +15,7 @@ commander
     .option("--step <value>", "the major and minor step", parseStep)
     .option("--step-minor <value>", "the minor step; defaults to " + graticule.stepMinor(), parseStep)
     .option("--step-major <value>", "the major step; defaults to " + graticule.stepMajor(), parseStep)
-    .option("--precision <value>", "the precision; defaults to " + graticule.precision(), graticule.precision())
+    .option("--precision <value>", "the precision; defaults to " + graticule.precision(), graticule.precision)
     .parse(process.argv);
 
 if (commander.args.length !== 0) {
@@ -37,7 +37,6 @@ if (commander.extentMinor != null) graticule.extentMinor(commander.extentMinor);
 if (commander.extentMajor != null) graticule.extentMajor(commander.extentMajor);
 if (commander.stepMinor != null) graticule.stepMinor(commander.stepMinor);
 if (commander.stepMajor != null) graticule.stepMajor(commander.stepMajor);
-if (commander.precision != null) graticule.precision(commander.precision);
 
 var writer = write(commander.out);
 writer.write(JSON.stringify(graticule()) + "\n");
