@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {asin, atan2, cos, sin, sqrt, tan} from "./math";
+import {asin, atan2, cos, sin, sqrt, tan} from "./math.js";
 
 export function wagner7Raw(lambda, phi) {
   var s = 0.90631 * sin(phi),

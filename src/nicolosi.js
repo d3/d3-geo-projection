@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, cos, halfPi, pi, sign, sin, sqrt} from "./math";
+import {abs, cos, halfPi, pi, sign, sin, sqrt} from "./math.js";
 import {solve} from "./newton.js";
 
 // Based on Torben Jansen's implementation

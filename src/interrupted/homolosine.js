@@ -1,5 +1,5 @@
-import {homolosineRaw} from "../homolosine";
-import interrupt from "./index";
+import {homolosineRaw} from "../homolosine.js";
+import interrupt from "./index.js";
 
 var lobes = [[ // northern hemisphere
   [[-180,   0], [-100,  90], [ -40,   0]],

@@ -1,6 +1,6 @@
 import {geoProjectionMutator as projectionMutator} from "d3-geo";
-import {abs, asin, pi, pow, sign, sin} from "./math";
-import {integrate} from "./integrate";
+import {abs, asin, pi, pow, sign, sin} from "./math.js";
+import {integrate} from "./integrate.js";
 
 export function hyperellipticalRaw(alpha, k, gamma) {
 

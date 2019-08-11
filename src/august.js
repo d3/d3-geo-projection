@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, arcosh, arsinh, asin, atan2, cos, cosh, sign, sin, sinh, sqrt, tan} from "./math";
+import {abs, arcosh, arsinh, asin, atan2, cos, cosh, sign, sin, sinh, sqrt, tan} from "./math.js";
 
 export function augustRaw(lambda, phi) {
   var tanPhi = tan(phi / 2),

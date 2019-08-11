@@ -1,6 +1,6 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, asin, atan2, cos, sign, epsilon, epsilon2, halfPi, pi, sin, sqrt} from "./math";
-import squareRaw from "./square";
+import {abs, asin, atan2, cos, sign, epsilon, epsilon2, halfPi, pi, sin, sqrt} from "./math.js";
+import squareRaw from "./square.js";
 
 export function gringortenRaw(lambda, phi) {
   var sLambda = sign(lambda),

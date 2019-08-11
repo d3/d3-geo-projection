@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, epsilon, pi, sign} from "./math";
+import {abs, epsilon, pi, sign} from "./math.js";
 
 export function laskowskiRaw(lambda, phi) {
   var lambda2 = lambda * lambda, phi2 = phi * phi;

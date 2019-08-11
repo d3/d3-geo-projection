@@ -1,5 +1,5 @@
 import {geoInterpolate as interpolate, geoProjection as projection, geoRotation as rotation} from "d3-geo";
-import {asin, degrees, pi, sin, radians} from "./math";
+import {asin, degrees, pi, sin, radians} from "./math.js";
 
 // Compute the origin as the midpoint of the two reference points.
 // Rotate one of the reference points by the origin.

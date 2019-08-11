@@ -1,6 +1,6 @@
 import {geoProjection as projection} from "d3-geo";
-import {mollweideBromleyTheta} from "./mollweide";
-import {abs, cos, epsilon, pi, quarterPi, sin, sqrt2} from "./math";
+import {mollweideBromleyTheta} from "./mollweide.js";
+import {abs, cos, epsilon, pi, quarterPi, sin, sqrt2} from "./math.js";
 
 var k = 2.00276,
     w = 1.11072;

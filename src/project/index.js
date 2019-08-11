@@ -1,7 +1,7 @@
 import {geoStream} from "d3-geo";
-import noop from "../noop";
-import clockwise from "./clockwise";
-import contains from "./contains";
+import noop from "../noop.js";
+import clockwise from "./clockwise.js";
+import contains from "./contains.js";
 
 export default function(object, projection) {
   var stream = projection.stream, project;

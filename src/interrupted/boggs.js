@@ -1,5 +1,5 @@
-import {boggsRaw} from "../boggs";
-import interrupt from "./index";
+import {boggsRaw} from "../boggs.js";
+import interrupt from "./index.js";
 
 var lobes = [[ // northern hemisphere
   [[-180,   0], [-100,  90], [ -40,   0]],

@@ -1,5 +1,5 @@
-import {sinuMollweideRaw} from "../sinuMollweide";
-import interrupt from "./index";
+import {sinuMollweideRaw} from "../sinuMollweide.js";
+import interrupt from "./index.js";
 
 var lobes = [[ // northern hemisphere
   [[-180,  35], [ -30,  90], [   0,  35]],

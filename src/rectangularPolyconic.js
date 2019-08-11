@@ -1,5 +1,5 @@
-import {abs, acos, asin, atan, cos, epsilon, pi, sin, tan} from "./math";
-import parallel1 from "./parallel1";
+import {abs, acos, asin, atan, cos, epsilon, pi, sin, tan} from "./math.js";
+import parallel1 from "./parallel1.js";
 
 export function rectangularPolyconicRaw(phi0) {
   var sinPhi0 = sin(phi0);

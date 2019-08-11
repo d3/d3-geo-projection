@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {atan, cos, radians, sqrt, tan} from "./math";
+import {atan, cos, radians, sqrt, tan} from "./math.js";
 
 var faheyK = cos(35 * radians);
 

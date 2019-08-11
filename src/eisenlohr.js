@@ -1,6 +1,6 @@
 import {geoProjection as projection} from "d3-geo";
-import {augustRaw} from "./august";
-import {abs, atan, cos, epsilon, halfPi, log, max, min, sin, sqrt, sqrt1_2, sqrt2} from "./math";
+import {augustRaw} from "./august.js";
+import {abs, atan, cos, epsilon, halfPi, log, max, min, sin, sqrt, sqrt1_2, sqrt2} from "./math.js";
 
 var eisenlohrK = 3 + 2 * sqrt2;
 

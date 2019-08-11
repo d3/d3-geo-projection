@@ -1,7 +1,7 @@
 import {geoProjection as projection} from "d3-geo";
-import {ellipticF, ellipticFi, ellipticJi} from "./elliptic";
-import {abs, atan, atan2, cos, exp, halfPi, log, pi, sin, sqrt, sqrt2, tan} from "./math";
-import squareRaw from "./square";
+import {ellipticF, ellipticFi, ellipticJi} from "./elliptic.js";
+import {abs, atan, atan2, cos, exp, halfPi, log, pi, sin, sqrt, sqrt2, tan} from "./math.js";
+import squareRaw from "./square.js";
 
 export function guyouRaw(lambda, phi) {
   var k_ = (sqrt2 - 1) / (sqrt2 + 1),

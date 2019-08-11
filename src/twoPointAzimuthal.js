@@ -1,6 +1,6 @@
 import {geoGnomonicRaw as gnomonicRaw} from "d3-geo";
-import {cos} from "./math";
-import twoPoint from "./twoPoint";
+import {cos} from "./math.js";
+import twoPoint from "./twoPoint.js";
 
 export function twoPointAzimuthalRaw(d) {
   var cosd = cos(d);

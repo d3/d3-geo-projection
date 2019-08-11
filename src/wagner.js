@@ -1,5 +1,5 @@
 import {geoProjectionMutator as projectionMutator} from "d3-geo";
-import {acos, asin, atan2, cos, degrees, epsilon, halfPi, max, min, pi, radians, sin, sqrt, tan} from "./math";
+import {acos, asin, atan2, cos, degrees, epsilon, halfPi, max, min, pi, radians, sin, sqrt, tan} from "./math.js";
 
 function wagnerFormula(cx, cy, m1, m2, n) {
   function forward(lambda, phi) {

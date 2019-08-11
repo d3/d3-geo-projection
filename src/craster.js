@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {asin, cos, sin, sqrt, sqrtPi} from "./math";
+import {asin, cos, sin, sqrt, sqrtPi} from "./math.js";
 
 var sqrt3 = sqrt(3);
 

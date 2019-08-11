@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {asin, atan2, cos, sin, sqrt} from "./math";
+import {asin, atan2, cos, sin, sqrt} from "./math.js";
 
 export function wiechelRaw(lambda, phi) {
   var cosPhi = cos(phi),

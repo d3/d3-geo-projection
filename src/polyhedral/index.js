@@ -1,6 +1,6 @@
 import {geoBounds as bounds, geoCentroid as centroid, geoInterpolate as interpolate, geoProjection as projection} from "d3-geo";
-import {abs, degrees, epsilon, radians} from "../math";
-import {default as matrix, multiply, inverse} from "./matrix";
+import {abs, degrees, epsilon, radians} from "../math.js";
+import {default as matrix, multiply, inverse} from "./matrix.js";
 
 // Creates a polyhedral projection.
 //  * root: a spanning tree of polygon faces.  Nodes are automatically

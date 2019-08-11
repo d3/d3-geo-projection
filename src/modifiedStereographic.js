@@ -1,5 +1,5 @@
 import {geoProjection as projection, geoRotation as rotation} from "d3-geo";
-import {abs, asin, atan, atan2, cos, epsilon, sin, sqrt} from "./math";
+import {abs, asin, atan, atan2, cos, epsilon, sin, sqrt} from "./math.js";
 
 export function modifiedStereographicRaw(C) {
   var m = C.length - 1;

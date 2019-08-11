@@ -1,5 +1,5 @@
-import parallel1 from "./parallel1";
-import {abs, cos, epsilon, halfPi, log, quarterPi, tan} from "./math";
+import parallel1 from "./parallel1.js";
+import {abs, cos, epsilon, halfPi, log, quarterPi, tan} from "./math.js";
 
 export function loximuthalRaw(phi0) {
   var cosPhi0 = cos(phi0),

@@ -1,6 +1,6 @@
 import {geoProjection as projection} from "d3-geo";
-import {aitoffRaw} from "./aitoff";
-import {halfPi, epsilon, sin, cos, sqrt, abs, acos} from "./math";
+import {aitoffRaw} from "./aitoff.js";
+import {halfPi, epsilon, sin, cos, sqrt, abs, acos} from "./math.js";
 
 export function winkel3Raw(lambda, phi) {
   var coordinates = aitoffRaw(lambda, phi);

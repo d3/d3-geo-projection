@@ -1,5 +1,5 @@
 import {geoProjectionMutator as projectionMutator, geoCircle} from "d3-geo";
-import {abs, acos, asin, atan2, cos, degrees, epsilon, halfPi, radians, sqrt, sin} from "./math";
+import {abs, acos, asin, atan2, cos, degrees, epsilon, halfPi, radians, sqrt, sin} from "./math.js";
 
 export function hammerRetroazimuthalRaw(phi0) {
   var sinPhi0 = sin(phi0),

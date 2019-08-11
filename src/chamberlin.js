@@ -1,5 +1,5 @@
 import {geoCentroid as centroid, geoProjection as projection, geoRotation as rotation} from "d3-geo";
-import {abs, acos, asin, atan2, cos, epsilon, floor, pi, radians, sin, sqrt} from "./math";
+import {abs, acos, asin, atan2, cos, epsilon, floor, pi, radians, sin, sqrt} from "./math.js";
 
 // Azimuthal distance.
 function distance(dPhi, c1, s1, c2, s2, dLambda) {

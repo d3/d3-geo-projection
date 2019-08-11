@@ -1,5 +1,5 @@
-import {atan, cos, tan} from "./math";
-import parallel1 from "./parallel1";
+import {atan, cos, tan} from "./math.js";
+import parallel1 from "./parallel1.js";
 
 export function cylindricalStereographicRaw(phi0) {
   var cosPhi0 = cos(phi0);

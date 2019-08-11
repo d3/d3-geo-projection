@@ -1,4 +1,4 @@
-import {abs, asin, cos, epsilon, pi, sin, sqrt} from "./math";
+import {abs, asin, cos, epsilon, pi, sin, sqrt} from "./math.js";
 
 export default function(a, b, c, d, e, f, g, h) {
   if (arguments.length < 8) h = 0;

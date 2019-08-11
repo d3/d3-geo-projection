@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, asin, cos, epsilon, halfPi, pi, sin, sqrt2} from "./math";
+import {abs, asin, cos, epsilon, halfPi, pi, sin, sqrt2} from "./math.js";
 
 export function mollweideBromleyTheta(cp, phi) {
   var cpsinPhi = cp * sin(phi), i = 30, delta;

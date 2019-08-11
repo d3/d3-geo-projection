@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, epsilon} from "./math";
+import {abs, epsilon} from "./math.js";
 
 // Based on Java implementation by Bojan Savric.
 // https://github.com/OSUCartography/JMapProjLib/blob/master/src/com/jhlabs/map/proj/PattersonProjection.java

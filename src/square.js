@@ -1,4 +1,4 @@
-import {halfPi, pi} from "./math";
+import {halfPi, pi} from "./math.js";
 
 export default function(project) {
   var dx = project(halfPi, 0)[0] - project(-halfPi, 0)[0];

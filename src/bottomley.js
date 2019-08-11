@@ -1,5 +1,5 @@
 import {geoProjectionMutator as projectionMutator} from "d3-geo";
-import {atan2, cos, halfPi, sin, sqrt} from "./math";
+import {atan2, cos, halfPi, sin, sqrt} from "./math.js";
 
 export function bottomleyRaw(sinPsi) {
 

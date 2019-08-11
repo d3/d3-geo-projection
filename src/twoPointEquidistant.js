@@ -1,6 +1,6 @@
 import {geoAzimuthalEquidistantRaw as azimuthalEquidistantRaw} from "d3-geo";
-import {acos, atan2, cos, sin, sqrt, tan} from "./math";
-import twoPoint from "./twoPoint";
+import {acos, atan2, cos, sin, sqrt, tan} from "./math.js";
+import twoPoint from "./twoPoint.js";
 
 // TODO clip to ellipse
 export function twoPointEquidistantRaw(z0) {

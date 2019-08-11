@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, acos, cos, epsilon, halfPi, sin, pi, sqrt, sqrt2} from "./math";
+import {abs, acos, cos, epsilon, halfPi, sin, pi, sqrt, sqrt2} from "./math.js";
 
 var pi_sqrt2 = pi / sqrt2;
 

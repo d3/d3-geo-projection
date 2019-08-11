@@ -1,4 +1,4 @@
-import {abs, asin, atan, cos, cosh, epsilon, exp, halfPi, log, pi, pow, quarterPi, sign, sin, sinh, sqrt, tan, tanh} from "./math";
+import {abs, asin, atan, cos, cosh, epsilon, exp, halfPi, log, pi, pow, quarterPi, sign, sin, sinh, sqrt, tan, tanh} from "./math.js";
 
 // Returns [sn, cn, dn](u + iv|m).
 export function ellipticJi(u, v, m) {

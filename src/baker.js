@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, atan, cos, epsilon2, exp, halfPi, log, quarterPi, sign, sin, sqrt, sqrt2, tan} from "./math";
+import {abs, atan, cos, epsilon2, exp, halfPi, log, quarterPi, sign, sin, sqrt, sqrt2, tan} from "./math.js";
 
 var sqrt8 = sqrt(8),
     phi0 = log(1 + sqrt2);

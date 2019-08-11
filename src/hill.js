@@ -1,5 +1,5 @@
 import {geoProjectionMutator as projectionMutator} from "d3-geo";
-import {abs, acos, asin, atan2, cos, epsilon2, halfPi, pi, sin, sqrt} from "./math";
+import {abs, acos, asin, atan2, cos, epsilon2, halfPi, pi, sin, sqrt} from "./math.js";
 
 export function hillRaw(K) {
   var L = 1 + K,

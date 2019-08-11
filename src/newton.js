@@ -1,4 +1,4 @@
-import {abs, epsilon} from "./math";
+import {abs, epsilon} from "./math.js";
 
 // Newton-Raphson
 // Solve f(x) = y, start from x

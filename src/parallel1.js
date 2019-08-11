@@ -1,5 +1,5 @@
 import {geoProjectionMutator as projectionMutator} from "d3-geo";
-import {degrees, radians} from "./math";
+import {degrees, radians} from "./math.js";
 
 export default function(projectAt) {
   var phi0 = 0,

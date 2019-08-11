@@ -1,5 +1,5 @@
 import {geoProjectionMutator as projectionMutator} from "d3-geo";
-import {abs, asin, atan2, cos, degrees, epsilon, halfPi, log, radians, sin, sqrt, tan} from "./math";
+import {abs, asin, atan2, cos, degrees, epsilon, halfPi, log, radians, sin, sqrt, tan} from "./math.js";
 
 export function airyRaw(beta) {
   var tanBeta_2 = tan(beta / 2),

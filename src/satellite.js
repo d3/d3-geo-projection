@@ -1,5 +1,5 @@
 import {geoProjectionMutator as projectionMutator} from "d3-geo";
-import {acos, asin, atan2, cos, degrees, radians, sin, sqrt} from "./math";
+import {acos, asin, atan2, cos, degrees, radians, sin, sqrt} from "./math.js";
 
 function satelliteVerticalRaw(P) {
   function forward(lambda, phi) {

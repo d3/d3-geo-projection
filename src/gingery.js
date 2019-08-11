@@ -1,5 +1,5 @@
 import {geoAzimuthalEquidistantRaw as azimuthalEquidistantRaw, geoProjectionMutator as projectionMutator} from "d3-geo";
-import {abs, asin, atan2, cos, degrees, epsilon, epsilon2, halfPi, pi, radians, round, sin, sqrt} from "./math";
+import {abs, asin, atan2, cos, degrees, epsilon, epsilon2, halfPi, pi, radians, round, sin, sqrt} from "./math.js";
 
 export function gingeryRaw(rho, n) {
   var k = 2 * pi / n,

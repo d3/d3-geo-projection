@@ -1,5 +1,5 @@
 import {geoProjectionMutator as projectionMutator, geoAzimuthalEquidistantRaw as azimuthalEquidistantRaw} from "d3-geo";
-import {abs, acos, asin, atan, atan2, cos, degrees, halfPi, pi, radians, round, sin, sqrt, tan} from "./math";
+import {abs, acos, asin, atan, atan2, cos, degrees, halfPi, pi, radians, round, sin, sqrt, tan} from "./math.js";
 
 export function berghausRaw(lobes) {
   var k = 2 * pi / lobes;

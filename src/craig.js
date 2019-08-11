@@ -1,5 +1,5 @@
-import {asin, atan2, cos, sin, sqrt, tan} from "./math";
-import parallel1 from "./parallel1";
+import {asin, atan2, cos, sin, sqrt, tan} from "./math.js";
+import parallel1 from "./parallel1.js";
 
 export function craigRaw(phi0) {
   var tanPhi0 = tan(phi0);

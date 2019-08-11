@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, cos, epsilon, tan} from "./math";
+import {abs, cos, epsilon, tan} from "./math.js";
 
 export function nellHammerRaw(lambda, phi) {
   return [

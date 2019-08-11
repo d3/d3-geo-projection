@@ -1,5 +1,5 @@
 import {geoEquirectangular, geoOrthographic} from "d3-geo";
-import {asin, atan, degrees, radians, sin, tan} from "./math";
+import {asin, atan, degrees, radians, sin, tan} from "./math.js";
 
 function gilbertForward(point) {
   return [point[0] / 2, asin(tan(point[1] / 2 * radians)) * degrees];

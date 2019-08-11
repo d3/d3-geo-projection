@@ -1,6 +1,6 @@
 import {geoProjectionMutator as projectionMutator} from "d3-geo";
-import {cos, halfPi, pi, sin, sqrt} from "./math";
-import {solve} from "./newton";
+import {cos, halfPi, pi, sin, sqrt} from "./math.js";
+import {solve} from "./newton.js";
 
 export function foucautSinusoidalRaw(alpha) {
   var beta = 1 - alpha,

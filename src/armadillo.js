@@ -1,5 +1,5 @@
 import {geoProjectionMutator as projectionMutator} from "d3-geo";
-import {abs, atan2, cos, degrees, epsilon, radians, sin, tan} from "./math";
+import {abs, atan2, cos, degrees, epsilon, radians, sin, tan} from "./math.js";
 
 export function armadilloRaw(phi0) {
   var sinPhi0 = sin(phi0),

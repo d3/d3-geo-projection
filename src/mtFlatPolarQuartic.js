@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, asin, cos, epsilon, sin, sqrt, sqrt1_2, sqrt2} from "./math";
+import {abs, asin, cos, epsilon, sin, sqrt, sqrt1_2, sqrt2} from "./math.js";
 
 export function mtFlatPolarQuarticRaw(lambda, phi) {
   var k = (1 + sqrt1_2) * sin(phi),

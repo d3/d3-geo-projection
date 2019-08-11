@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, epsilon} from "./math";
+import {abs, epsilon} from "./math.js";
 
 export function ginzburg8Raw(lambda, phi) {
   var lambda2 = lambda * lambda,

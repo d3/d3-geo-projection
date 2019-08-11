@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, epsilon, halfPi, pi, sign, sqrt} from "./math";
+import {abs, epsilon, halfPi, pi, sign, sqrt} from "./math.js";
 
 export function vanDerGrinten4Raw(lambda, phi) {
   if (!phi) return [lambda, 0];

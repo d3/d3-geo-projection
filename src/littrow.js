@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {acos, asin, cos, sign, sin, tan, sqrt, sqrt1_2} from "./math";
+import {acos, asin, cos, sign, sin, tan, sqrt, sqrt1_2} from "./math.js";
 
 export function littrowRaw(lambda, phi) {
   return [

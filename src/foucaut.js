@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {atan, cos, sqrtPi, tan} from "./math";
+import {atan, cos, sqrtPi, tan} from "./math.js";
 
 export function foucautRaw(lambda, phi) {
   var k = phi / 2, cosk = cos(k);

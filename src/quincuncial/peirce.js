@@ -1,5 +1,5 @@
-import {guyouRaw} from "../guyou";
-import quincuncial from "./index";
+import {guyouRaw} from "../guyou.js";
+import quincuncial from "./index.js";
 
 export default function() {
   return quincuncial(guyouRaw)

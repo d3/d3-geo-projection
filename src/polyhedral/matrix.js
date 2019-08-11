@@ -1,4 +1,4 @@
-import {atan2, cos, sin, sqrt} from "../math";
+import {atan2, cos, sin, sqrt} from "../math.js";
 
 // Note: 6-element arrays are used to denote the 3x3 affine transform matrix:
 // [a, b, c,

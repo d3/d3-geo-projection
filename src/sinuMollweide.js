@@ -1,6 +1,6 @@
 import {geoProjection as projection} from "d3-geo";
-import {mollweideRaw} from "./mollweide";
-import {sinusoidalRaw} from "./sinusoidal";
+import {mollweideRaw} from "./mollweide.js";
+import {sinusoidalRaw} from "./sinusoidal.js";
 
 export var sinuMollweidePhi = 0.7109889596207567;
 

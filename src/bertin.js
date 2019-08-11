@@ -1,6 +1,6 @@
 import {geoProjection as projection} from "d3-geo";
-import {hammerRaw} from "./hammer";
-import {cos, pi, sin} from "./math";
+import {hammerRaw} from "./hammer.js";
+import {cos, pi, sin} from "./math.js";
 
 // Bertin 1953 as a modified Briesemeister
 // https://bl.ocks.org/Fil/5b9ee9636dfb6ffa53443c9006beb642

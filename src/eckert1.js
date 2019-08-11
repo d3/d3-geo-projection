@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, pi, sqrt} from "./math";
+import {abs, pi, sqrt} from "./math.js";
 
 export function eckert1Raw(lambda, phi) {
   var alpha = sqrt(8 / (3 * pi));

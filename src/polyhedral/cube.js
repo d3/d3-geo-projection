@@ -1,4 +1,4 @@
-import {atan, degrees, sqrt1_2} from "../math";
+import {atan, degrees, sqrt1_2} from "../math.js";
 
 var phi1 = atan(sqrt1_2) * degrees;
 

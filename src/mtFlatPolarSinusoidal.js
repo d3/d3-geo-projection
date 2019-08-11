@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, asin, cos, epsilon, halfPi, pi, sin, sqrt} from "./math";
+import {abs, asin, cos, epsilon, halfPi, pi, sin, sqrt} from "./math.js";
 
 export function mtFlatPolarSinusoidalRaw(lambda, phi) {
   var A = sqrt(6 / (4 + pi)),

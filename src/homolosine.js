@@ -1,8 +1,8 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs} from "./math";
-import {mollweideRaw} from "./mollweide";
-import {sinusoidalRaw} from "./sinusoidal";
-import {sinuMollweidePhi, sinuMollweideY} from "./sinuMollweide";
+import {abs} from "./math.js";
+import {mollweideRaw} from "./mollweide.js";
+import {sinusoidalRaw} from "./sinusoidal.js";
+import {sinuMollweidePhi, sinuMollweideY} from "./sinuMollweide.js";
 
 export function homolosineRaw(lambda, phi) {
   return abs(phi) > sinuMollweidePhi

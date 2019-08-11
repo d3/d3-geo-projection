@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {atan, quarterPi, sin, tan} from "./math";
+import {atan, quarterPi, sin, tan} from "./math.js";
 
 export function timesRaw(lambda, phi) {
   var t = tan(phi / 2),

@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {atan, exp, log, quarterPi, pi, tan} from "./math";
+import {atan, exp, log, quarterPi, pi, tan} from "./math.js";
 
 export function millerRaw(lambda, phi) {
   return [lambda, 1.25 * log(tan(quarterPi + 0.4 * phi))];

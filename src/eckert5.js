@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {cos, pi, sqrt} from "./math";
+import {cos, pi, sqrt} from "./math.js";
 
 export function eckert5Raw(lambda, phi) {
   return [

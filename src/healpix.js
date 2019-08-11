@@ -1,8 +1,8 @@
 import {range} from "d3-array";
 import {geoStream, geoProjectionMutator as projectionMutator} from "d3-geo";
-import {collignonRaw} from "./collignon";
-import {cylindricalEqualAreaRaw} from "./cylindricalEqualArea";
-import {abs, asin, degrees, epsilon, floor, max, min, pi, radians, sqrtPi, tau} from "./math";
+import {collignonRaw} from "./collignon.js";
+import {cylindricalEqualAreaRaw} from "./cylindricalEqualArea.js";
+import {abs, asin, degrees, epsilon, floor, max, min, pi, radians, sqrtPi, tau} from "./math.js";
 
 var K = 3,
     healpixParallel = asin(1 - 1 / K) * degrees,

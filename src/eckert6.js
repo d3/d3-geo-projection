@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, asin, cos, epsilon, halfPi, pi, sin, sqrt} from "./math";
+import {abs, asin, cos, epsilon, halfPi, pi, sin, sqrt} from "./math.js";
 
 export function eckert6Raw(lambda, phi) {
   var k = (1 + halfPi) * sin(phi);

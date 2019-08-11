@@ -1,5 +1,5 @@
-import {hammerRaw} from "../hammer";
-import interrupt from "./index";
+import {hammerRaw} from "../hammer.js";
+import interrupt from "./index.js";
 
 var lobes = [[ // northern hemisphere
   [[-180,  0],  [-90,  90], [   0,  0]],

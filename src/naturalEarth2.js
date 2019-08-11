@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, epsilon2} from "./math";
+import {abs, epsilon2} from "./math.js";
 
 export function naturalEarth2Raw(lambda, phi) {
   var phi2 = phi * phi, phi4 = phi2 * phi2, phi6 = phi2 * phi4;

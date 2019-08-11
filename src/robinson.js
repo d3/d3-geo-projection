@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, degrees, epsilon2, floor, halfPi, max, min, pi, radians} from "./math";
+import {abs, degrees, epsilon2, floor, halfPi, max, min, pi, radians} from "./math.js";
 
 var K = [
   [0.9986, -0.062],

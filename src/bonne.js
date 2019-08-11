@@ -1,6 +1,6 @@
-import parallel1 from "./parallel1";
-import {atan2, cos, sin, sqrt, tan} from "./math";
-import {sinusoidalRaw} from "./sinusoidal";
+import parallel1 from "./parallel1.js";
+import {atan2, cos, sin, sqrt, tan} from "./math.js";
+import {sinusoidalRaw} from "./sinusoidal.js";
 
 export function bonneRaw(phi0) {
   if (!phi0) return sinusoidalRaw;

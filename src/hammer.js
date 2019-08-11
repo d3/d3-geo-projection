@@ -1,5 +1,5 @@
 import {geoAzimuthalEqualAreaRaw as azimuthalEqualAreaRaw, geoProjectionMutator as projectionMutator} from "d3-geo";
-import {asin, cos, sin} from "./math";
+import {asin, cos, sin} from "./math.js";
 
 export function hammerRaw(A, B) {
   if (arguments.length < 2) B = A;

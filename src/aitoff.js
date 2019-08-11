@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, acos, cos, epsilon, pi, sin, sinci, sqrt} from "./math";
+import {abs, acos, cos, epsilon, pi, sin, sinci, sqrt} from "./math.js";
 
 export function aitoffRaw(x, y) {
   var cosy = cos(y), sincia = sinci(acos(cosy * cos(x /= 2)));

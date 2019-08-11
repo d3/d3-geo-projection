@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, asin, pi, sign, sin, sqrt} from "./math";
+import {abs, asin, pi, sign, sin, sqrt} from "./math.js";
 
 export function eckert2Raw(lambda, phi) {
   var alpha = sqrt(4 - 3 * sin(abs(phi)));

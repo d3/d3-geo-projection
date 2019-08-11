@@ -1,5 +1,5 @@
-import {asin, cos, sin} from "./math";
-import parallel1 from "./parallel1";
+import {asin, cos, sin} from "./math.js";
+import parallel1 from "./parallel1.js";
 
 export function cylindricalEqualAreaRaw(phi0) {
   var cosPhi0 = cos(phi0);

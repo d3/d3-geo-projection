@@ -1,6 +1,6 @@
 import {merge} from "d3-array";
 import {geoStream, geoProjection as projection} from "d3-geo";
-import {abs, degrees, epsilon, radians} from "../math";
+import {abs, degrees, epsilon, radians} from "../math.js";
 
 function pointEqual(a, b) {
   return abs(a[0] - b[0]) < epsilon && abs(a[1] - b[1]) < epsilon;

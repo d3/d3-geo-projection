@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {cos} from "./math";
+import {cos} from "./math.js";
 
 export function sinusoidalRaw(lambda, phi) {
   return [lambda * cos(phi), phi];
