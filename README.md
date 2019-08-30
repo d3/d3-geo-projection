@@ -663,7 +663,7 @@ Defaults to 0°.
 
 <a href="#satellite_distance" name="satellite_distance">#</a> <i>satellite</i>.<b>distance</b>([<i>distance</i>])
 
-Distance from the center of the sphere to the point of view, as a proportion of the sphere’s radius; defaults to 2.0. The recommended maximum [clip angle](https://github.com/d3/d3-geo/blob/master/README.md#projection_clipAngle) for a given *distance* is acos(1 / *distance*) converted to degrees. If [tilt](#satellite_tilt) is also applied, then more conservative clipping may be necessary. For exact clipping, the in-development geographic projection pipeline is needed; see the [satellite example](https://bl.ocks.org/mbostock/e48a00d4db5c3b042145).
+Distance from the center of the sphere to the point of view, as a proportion of the sphere’s radius; defaults to 2.0. The recommended maximum [clip angle](https://github.com/d3/d3-geo/blob/master/README.md#projection_clipAngle) for a given *distance* is acos(1 / *distance*) converted to degrees. If [tilt](#satellite_tilt) is also applied, then more conservative clipping may be necessary. For exact clipping, the in-development geographic projection pipeline is needed; see the [satellite explorer](https://observablehq.com/@d3/satellite-explorer).
 
 <a href="#geoSinusoidal" name="geoSinusoidal">#</a> d3.<b>geoSinusoidal</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/master/src/sinusoidal.js), [Examples](https://observablehq.com/@d3/sinusoidal)
 <br><a href="#geoSinusoidalRaw" name="geoSinusoidalRaw">#</a> d3.<b>geoSinusoidalRaw</b>
