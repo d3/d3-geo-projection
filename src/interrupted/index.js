@@ -69,9 +69,13 @@ export default function(project, lobes) {
 
   function forward(lambda, phi) {
     var sign = phi < 0 ? -1 : +1, lobe = lobes[+(phi < 0)];
+    var a = sign * phi > sign * lobe[0][0][1] ? lobe[0][0][1] : phi;
     for (var i = 0, n = lobe.length - 1; i < n && lambda > lobe[i][2][0]; ++i);
     var p = project(lambda - lobe[i][1][0], phi);
-    p[0] += project(lobe[i][1][0], sign * phi > sign * lobe[i][0][1] ? lobe[i][0][1] : phi)[0];
+    p[0] += project(lobe[i][1][0] - lobe[i][0][0], a)[0];
+    for (var j = 0; j < i; ++j)
+      p[0] += project(lobe[j][2][0] - lobe[j][1][0], a)[0] - project(lobe[j][0][0] - lobe[j][1][0], a)[0];
+    p[0] += project(lobe[0][0][0], a)[0];
     return p;
   }
 
