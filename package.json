@@ -57,6 +57,7 @@
     "d3-geo": "^1.10.0",
     "resolve": "^1.1.10"
   },
+  "sideEffects": false,
   "devDependencies": {
     "canvas": "1",
     "d3-format": "1",
