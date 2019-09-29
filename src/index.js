@@ -90,9 +90,8 @@ export {default as geoVanDerGrinten, vanDerGrintenRaw as geoVanDerGrintenRaw} fr
 export {default as geoVanDerGrinten2, vanDerGrinten2Raw as geoVanDerGrinten2Raw} from "./vanDerGrinten2";
 export {default as geoVanDerGrinten3, vanDerGrinten3Raw as geoVanDerGrinten3Raw} from "./vanDerGrinten3";
 export {default as geoVanDerGrinten4, vanDerGrinten4Raw as geoVanDerGrinten4Raw} from "./vanDerGrinten4";
-export {default as geoWagner, wagnerRaw as geoWagnerRaw} from "./wagner.js";
+export {default as geoWagner, wagner7 as geoWagner7, wagnerRaw as geoWagnerRaw} from "./wagner.js";
 export {default as geoWagner4, wagner4Raw as geoWagner4Raw} from "./wagner4.js";
 export {default as geoWagner6, wagner6Raw as geoWagner6Raw} from "./wagner6.js";
-export {default as geoWagner7, wagner7Raw as geoWagner7Raw} from "./wagner7.js";
 export {default as geoWiechel, wiechelRaw as geoWiechelRaw} from "./wiechel.js";
 export {default as geoWinkel3, winkel3Raw as geoWinkel3Raw} from "./winkel3";
