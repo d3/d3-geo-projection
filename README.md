@@ -788,7 +788,6 @@ The Wagner IV projection, also known as Putniṇš P2´.
 The Wagner VI projection.
 
 <a href="#geoWagner7" name="geoWagner7">#</a> d3.<b>geoWagner7</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/master/src/wagner7.js), [Examples](ttps://observablehq.com/@d3/wagner-vii)
-<br><a href="#geoWagner7Raw" name="geoWagner7Raw">#</a> d3.<b>geoWagner7Raw</b>
 
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/master/img/wagner7.png" width="480" height="250">](https://observablehq.com/@d3/wagner-vii)
 

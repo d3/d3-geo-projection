@@ -61,7 +61,7 @@ export function wagnerRaw(poleline, parallels, inflation, ratio) {
   return wagnerFormula(cx, cy, m1, m2, n);
 }
 
-export default function() {
+export default function wagner() {
   // default values generate wagner8
   var poleline = 65 * radians,
       parallels = 60 * radians,
@@ -86,4 +86,13 @@ export default function() {
 
   return projection
     .scale(163.775);
+}
+
+export function wagner7() {
+  return wagner()
+      .poleline(65)
+      .parallels(60)
+      .inflation(0)
+      .ratio(200)
+      .scale(172.633);
 }
