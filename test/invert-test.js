@@ -12,13 +12,13 @@ var points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
   d3.geoAugust,
   d3.geoBaker,
   d3.geoBerghaus,
-  // d3.geoBertin1953,
+  d3.geoBertin1953,
   d3.geoBoggs,
   d3.geoBonne,
   d3.geoBottomley,
   d3.geoBromley,
-  // d3.geoChamberlin,
-  // d3.geoChamberlinAfrica,
+  // d3.geoChamberlin, // factory
+  d3.geoChamberlinAfrica,
   d3.geoCollignon,
   d3.geoCraig,
   d3.geoCraster,
@@ -55,7 +55,7 @@ var points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
   d3.geoInterruptedHomolosine,
   d3.geoInterruptedMollweide,
   d3.geoInterruptedMollweideHemispheres,
-  // d3.geoInterruptedSinuMollweide,
+  d3.geoInterruptedSinuMollweide,
   d3.geoInterruptedSinusoidal,
   d3.geoInterruptedQuarticAuthalic,
   d3.geoKavrayskiy7,
@@ -66,11 +66,11 @@ var points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
   d3.geoLoximuthal,
   d3.geoMiller,
   // d3.geoModifiedStereographic, // factory of factory
-  // d3.geoModifiedStereographicAlaska,
-  // d3.geoModifiedStereographicGs48,
-  // d3.geoModifiedStereographicGs50,
-  // d3.geoModifiedStereographicMiller,
-  // d3.geoModifiedStereographicLee,
+  // d3.geoModifiedStereographicAlaska, // see below
+  // d3.geoModifiedStereographicGs48, // see below
+  // d3.geoModifiedStereographicGs50, // see below
+  // d3.geoModifiedStereographicMiller, // see below
+  // d3.geoModifiedStereographicLee, // see below
   d3.geoMollweide,
   d3.geoMtFlatPolarParabolic,
   d3.geoMtFlatPolarQuartic,
@@ -90,7 +90,7 @@ var points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
   d3.geoSinusoidal,
   d3.geoTimes,
   // d3.geoTwoPointAzimuthal,
-  // d3.geoTwoPointAzimuthalUsa,
+  // d3.geoTwoPointAzimuthalUsa, // see below
   // d3.geoTwoPointEquidistant,
   d3.geoTwoPointEquidistantUsa,
   d3.geoVanDerGrinten,
@@ -106,6 +106,25 @@ var points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
 ].forEach(function(factory) {
   var name = factory.name, projection = factory();
   tape(name + "(point) and " + name + ".invert(point) are symmetric", function(test) {
+    points.forEach(function(point) {
+      test.projectionEqual(projection, point, projection(point));
+    });
+    test.end();
+  });
+});
+
+
+[
+{ factory: d3.geoModifiedStereographicAlaska, points: [[-149.9025632,61.2150138]] },
+{ factory: d3.geoModifiedStereographicGs48, points: [[-104.9833053, 39.7309179]] },
+{ factory: d3.geoModifiedStereographicGs50, points: [[-104.9833053, 39.7309179]] },
+{ factory: d3.geoModifiedStereographicMiller, points: [[0, 10]] },
+{ factory: d3.geoModifiedStereographicLee, points: [[179, 10]] },
+{ factory: d3.geoTwoPointAzimuthalUsa, points: [[-104.9833053, 39.7309179]] },
+].forEach(function(p) {
+  var factory = p.factory, points = p.points;
+  var name = factory.name, projection = factory();
+  tape(name + "(point) and " + name + ".invert(point) are symmetric YO", function(test) {
     points.forEach(function(point) {
       test.projectionEqual(projection, point, projection(point));
     });

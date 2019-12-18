@@ -1,5 +1,6 @@
 import {geoCentroid as centroid, geoProjection as projection, geoRotation as rotation} from "d3-geo";
 import {abs, acos, asin, atan2, cos, epsilon, floor, pi, radians, sin, sqrt} from "./math.js";
+import {solve2d} from "./newton.js";
 
 // Azimuthal distance.
 function distance(dPhi, c1, s1, c2, s2, dLambda) {
@@ -103,7 +104,9 @@ export default function chamberlin(p0, p1, p2) { // TODO order matters!
   var c = centroid({type: "MultiPoint", coordinates: [p0, p1, p2]}),
       R = [-c[0], -c[1]],
       r = rotation(R),
-      p = projection(chamberlinRaw(pointRadians(r(p0)), pointRadians(r(p1)), pointRadians(r(p2)))).rotate(R),
+      f = chamberlinRaw(pointRadians(r(p0)), pointRadians(r(p1)), pointRadians(r(p2)));
+  f.invert = solve2d(f);
+  var p = projection(f).rotate(R),
       center = p.center;
 
   delete p.rotate;

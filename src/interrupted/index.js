@@ -64,7 +64,7 @@ function interpolateSphere(lobes) {
   };
 }
 
-export default function(project, lobes) {
+export default function(project, lobes, inverse) {
   var sphere, bounds;
 
   function forward(lambda, phi) {
@@ -75,18 +75,21 @@ export default function(project, lobes) {
     return p;
   }
 
-  // Assumes mutually exclusive bounding boxes for lobes.
-  if (project.invert) forward.invert = function(x, y) {
-    var bound = bounds[+(y < 0)], lobe = lobes[+(y < 0)];
-    for (var i = 0, n = bound.length; i < n; ++i) {
-      var b = bound[i];
-      if (b[0][0] <= x && x < b[1][0] && b[0][1] <= y && y < b[1][1]) {
-        var p = project.invert(x - project(lobe[i][1][0], 0)[0], y);
-        p[0] += lobe[i][1][0];
-        return pointEqual(forward(p[0], p[1]), [x, y]) ? p : null;
+  if (inverse) {
+    forward.invert = inverse(forward);
+  } else if (project.invert) {
+    forward.invert = function(x, y) {
+      var bound = bounds[+(y < 0)], lobe = lobes[+(y < 0)];
+      for (var i = 0, n = bound.length; i < n; ++i) {
+        var b = bound[i];
+        if (b[0][0] <= x && x < b[1][0] && b[0][1] <= y && y < b[1][1]) {
+          var p = project.invert(x - project(lobe[i][1][0], 0)[0], y);
+          p[0] += lobe[i][1][0];
+          return pointEqual(forward(p[0], p[1]), [x, y]) ? p : null;
+        }
       }
-    }
-  };
+    };
+  }
 
   var p = projection(forward),
       stream_ = p.stream;
