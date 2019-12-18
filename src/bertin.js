@@ -1,6 +1,7 @@
 import {geoProjection as projection} from "d3-geo";
 import {hammerRaw} from "./hammer.js";
 import {cos, pi, sin} from "./math.js";
+import {solve2d} from "./newton.js";
 
 // Bertin 1953 as a modified Briesemeister
 // https://bl.ocks.org/Fil/5b9ee9636dfb6ffa53443c9006beb642
@@ -8,7 +9,7 @@ export function bertin1953Raw() {
   var hammer = hammerRaw(1.68, 2),
       fu = 1.4, k = 12;
 
-  return function(lambda, phi) {
+  function forward(lambda, phi) {
 
     if (lambda + phi < -fu) {
       var u = (lambda - phi + 1.6) * (lambda + phi + fu) / 8;
@@ -28,7 +29,10 @@ export function bertin1953Raw() {
     }
 
     return r;
-  };
+  }
+  
+  forward.invert = solve2d(forward);
+  return forward;
 }
 
 export default function() {
