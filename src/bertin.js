@@ -32,12 +32,9 @@ export function bertin1953Raw() {
 }
 
 export default function() {
-  var p = projection(bertin1953Raw());
-
-  p.rotate([-16.5, -42]);
-  delete p.rotate;
-
-  return p
+  // this projection should not be rotated
+  return projection(bertin1953Raw())
+    .rotate([-16.5, -42])
     .scale(176.57)
     .center([7.93, 0.09]);
 }
