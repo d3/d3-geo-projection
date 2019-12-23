@@ -19,13 +19,22 @@ export function solve(f, y, x) {
 // Solve f(a,b) = [x,y]
 export function solve2d(f, MAX_ITERATIONS = 40, eps = epsilon2) {
   return function(x, y, a = 0, b = 0) {
-    var tx, ty;
+    var err2, da, db;
     for (var i = 0; i < MAX_ITERATIONS; i++) {
-      var p = f(a, b);
-      // diffs
-      tx = p[0] - x;
-      ty = p[1] - y;
+      var p = f(a, b),
+        // diffs
+        tx = p[0] - x,
+        ty = p[1] - y;
       if (abs(tx) < eps && abs(ty) < eps) break; // we're there!
+
+      // backtrack if we overshot
+      var h = tx * tx + ty * ty;
+      if (h > err2) {
+        a -= da /= 2;
+        b -= db /= 2;
+        continue;
+      }
+      err2 = h;
 
       // partial derivatives
       var ea = (a > 0 ? -1 : 1) * eps,
@@ -39,9 +48,9 @@ export function solve2d(f, MAX_ITERATIONS = 40, eps = epsilon2) {
         // determinant
         D = dyb * dxa - dya * dxb,
         // newton step — or half-step for small D
-        l = (abs(D) < 0.5 ? 0.5 : 1) / D,
-        da = (ty * dxb - tx * dyb) * l,
-        db = (tx * dya - ty * dxa) * l;
+        l = (abs(D) < 0.5 ? 0.5 : 1) / D;
+      da = (ty * dxb - tx * dyb) * l;
+      db = (tx * dya - ty * dxa) * l;
       a += da;
       b += db;
       if (abs(da) < eps && abs(db) < eps) break; // we're crawling
