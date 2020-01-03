@@ -17,9 +17,13 @@ export function solve(f, y, x) {
 
 // Approximate Newton-Raphson in 2D
 // Solve f(a,b) = [x,y]
-export function solve2d(f, MAX_ITERATIONS = 40, eps = epsilon2) {
-  return function(x, y, a = 0, b = 0) {
+export function solve2d(f, MAX_ITERATIONS, eps) {
+  if (MAX_ITERATIONS === undefined) MAX_ITERATIONS = 40;
+  if (eps === undefined) eps = epsilon2;
+  return function(x, y, a, b) {
     var err2, da, db;
+    a = a === undefined ? 0 : +a;
+    b = b === undefined ? 0 : +b;
     for (var i = 0; i < MAX_ITERATIONS; i++) {
       var p = f(a, b),
         // diffs
