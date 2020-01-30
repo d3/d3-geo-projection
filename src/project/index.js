@@ -1,9 +1,10 @@
-import {geoStream} from "d3-geo";
+import {geoStream, geoContains, geoArea} from "d3-geo";
 import noop from "../noop.js";
-import clockwise from "./clockwise.js";
-import contains from "./contains.js";
+import planarClockwise from "./clockwise.js";
+import planarContains from "./contains.js";
+import {tau} from "../math.js";
 
-export default function(object, projection) {
+export default function(object, projection, spherical) {
   var stream = projection.stream, project;
   if (!stream) throw new Error("invalid projection");
   switch (object && object.type) {
@@ -11,8 +12,14 @@ export default function(object, projection) {
     case "FeatureCollection": project = projectFeatureCollection; break;
     default: project = projectGeometry; break;
   }
-  return project(object, stream);
-}
+
+var clockwise = !spherical
+  ? planarClockwise
+  : function(ring) { return geoArea({type: "Polygon", coordinates: [ring]}) < tau; };
+
+var contains = !spherical
+  ? planarContains
+  : function(ring, point) { return geoContains({type: "Polygon", coordinates: [ring]}, point); };
 
 function projectFeatureCollection(o, stream) {
   return {
@@ -134,3 +141,6 @@ var sinkPolygon = {
         : {type: "Polygon", coordinates: polygons[0]};
   }
 };
+
+  return project(object, stream);
+}
