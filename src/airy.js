@@ -23,9 +23,9 @@ export function airyRaw(beta) {
       var z_2 = z / 2,
           cosz_2 = cos(z_2),
           sinz_2 = sin(z_2),
-          tanz_2 = tan(z_2),
-          lnsecz_2 = log(1 / cosz_2);
-      z -= delta = (2 / tanz_2 * lnsecz_2 - b * tanz_2 - r) / (-lnsecz_2 / (sinz_2 * sinz_2) + 1 - b / (2 * cosz_2 * cosz_2));
+          tanz_2 = sinz_2 / cosz_2,
+          lnsecz_2 = -log(abs(cosz_2));
+      z -= delta = (2 / tanz_2 * lnsecz_2 - b * tanz_2 - r) / (-lnsecz_2 / (sinz_2 * sinz_2) + 1 - b / (2 * cosz_2 * cosz_2)) * (cosz_2 < 0 ? 0.7 : 1);
     } while (abs(delta) > epsilon && --i > 0);
     var sinz = sin(z);
     return [atan2(x * sinz, r * cos(z)), asin(y * sinz / r)];
