@@ -36,6 +36,7 @@ export function armadilloRaw(phi0) {
           denominator = dxdPhi * dydLambda - dydPhi * dxdLambda,
           dLambda = (fy * dxdPhi - fx * dydPhi) / denominator / 2,
           dPhi = (fx * dydLambda - fy * dxdLambda) / denominator;
+      if (abs(dPhi) > 2) dPhi /= 2;
       lambda -= dLambda, phi -= dPhi;
     } while ((abs(dLambda) > epsilon || abs(dPhi) > epsilon) && --i > 0);
     return sPhi0 * phi > -atan2(cos(lambda), tanPhi0) - 1e-3 ? [lambda * 2, phi] : null;
