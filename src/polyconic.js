@@ -24,7 +24,7 @@ polyconicRaw.invert = function(x, y) {
   } while (abs(delta) > epsilon && --i > 0);
   tanPhi = tan(phi);
   return [
-    (abs(y) < abs(phi + 1 / tanPhi) ? asin(x * tanPhi) : sign(x) * (acos(abs(x * tanPhi)) + halfPi)) / sin(phi),
+    (abs(y) < abs(phi + 1 / tanPhi) ? asin(x * tanPhi) : sign(y) * sign(x) * (acos(abs(x * tanPhi)) + halfPi)) / sin(phi),
     phi
   ];
 };
