@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, epsilon, halfPi, pi, sign, sqrt} from "./math.js";
+import {abs, epsilon, halfPi, min, pi, sign, sqrt} from "./math.js";
 
 export function vanDerGrinten4Raw(lambda, phi) {
   if (!phi) return [lambda, 0];
@@ -27,11 +27,13 @@ export function vanDerGrinten4Raw(lambda, phi) {
 vanDerGrinten4Raw.invert = function(x, y) {
   var delta;
   if (!x || !y) return [x, y];
-  y /= pi;
+  var sy = sign(y);
+  y = abs(y) / pi;
   var x1 = sign(x) * x / halfPi,
       D = (x1 * x1 - 1 + 4 * y * y) / abs(x1),
       D2 = D * D,
-      B = 2 * y,
+      B = y * (2 - (y > 0.5 ? min(y, abs(x)) : 0)),
+      r = x * x + y * y,
       i = 50;
   do {
     var B2 = B * B,
@@ -48,10 +50,10 @@ vanDerGrinten4Raw.invert = function(x, y) {
         f = D * (B_C2 + C2 - 1) + 2 * sqrtF - x1 * (4 * B_C2 + D2),
         f_ = D * (2 * C * C_ + 2 * B_C * (1 + C_)) + F_ / sqrtF - 8 * B_C * (D * (-1 + C2 + B_C2) + 2 * sqrtF) * (1 + C_) / (D2 + 4 * B_C2);
     B -= delta = f / f_;
-  } while (delta > epsilon && --i > 0);
+  } while (delta * r * r > epsilon && --i > 0);
   return [
     sign(x) * (sqrt(D * D + 4) + D) * pi / 4,
-    halfPi * B
+    sy * halfPi * B
   ];
 };
 
