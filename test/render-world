@@ -12,6 +12,9 @@ var fs = require("fs"),
     Canvas = require("canvas"),
     d3 = Object.assign({}, require("d3-geo"), require("../"));
 
+// canvas@2 compatibility check
+if (Canvas.Canvas) Canvas = Canvas.Canvas;
+
 var canvas = new Canvas(width, height),
     context = canvas.getContext("2d");
 
