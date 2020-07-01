@@ -714,7 +714,7 @@ The two-point azimuthal projection with points [-158°, 21.5°] and [-77°, 39°
 <a href="#geoTwoPointEquidistant" name="geoTwoPointEquidistant">#</a> d3.<b>geoTwoPointEquidistant</b>(<i>point0</i>, <i>point1</i>) · [Source](https://github.com/d3/d3-geo-projection/blob/master/src/twoPointEquidistant.js)
 <br><a href="#geoTwoPointEquidistantRaw" name="geoTwoPointEquidistantRaw">#</a> d3.<b>geoTwoPointEquidistantRaw</b>(<i>z0</i>)
 
-The two-point equidistant projection. This projection does not support [*projection*.rotate](https://github.com/d3/d3-geo/blob/master/README.md#projection_rotate), as the rotation is fixed by the two given points. Note: to show the whole Earth, this projection requires clipping to spherical polygons, which is not yet supported in D3. However, you can typically show most of the Earth by using D3’s great-circle clipping.
+The two-point equidistant projection. This projection does not support [*projection*.rotate](https://github.com/d3/d3-geo/blob/master/README.md#projection_rotate), as the rotation is fixed by the two given points. Note: to show the whole Earth, this projection requires clipping to spherical polygons ([example](https://observablehq.com/@d3/two-point-equidistant)).
 
 <a href="#geoTwoPointEquidistantUsa" name="geoTwoPointEquidistantUsa">#</a> d3.<b>geoTwoPointEquidistantUsa</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/master/src/twoPointEquidistant.js)
 
