@@ -60,7 +60,6 @@ export {default as geoMollweide, mollweideRaw as geoMollweideRaw} from "./mollwe
 export {default as geoMtFlatPolarParabolic, mtFlatPolarParabolicRaw as geoMtFlatPolarParabolicRaw} from "./mtFlatPolarParabolic";
 export {default as geoMtFlatPolarQuartic, mtFlatPolarQuarticRaw as geoMtFlatPolarQuarticRaw} from "./mtFlatPolarQuartic";
 export {default as geoMtFlatPolarSinusoidal, mtFlatPolarSinusoidalRaw as geoMtFlatPolarSinusoidalRaw} from "./mtFlatPolarSinusoidal";
-export {geoNaturalEarth1 as geoNaturalEarth, geoNaturalEarth1Raw as geoNaturalEarthRaw} from "d3-geo"; // DEPRECATED moved to d3-geo
 export {default as geoNaturalEarth2, naturalEarth2Raw as geoNaturalEarth2Raw} from "./naturalEarth2";
 export {default as geoNellHammer, nellHammerRaw as geoNellHammerRaw} from "./nellHammer";
 export {default as geoInterruptedQuarticAuthalic} from "./interrupted/quarticAuthalic";
@@ -74,7 +73,6 @@ export {default as geoPolyhedralWaterman} from "./polyhedral/waterman.js";
 export {default as geoProject} from "./project/index";
 export {default as geoGringortenQuincuncial} from "./quincuncial/gringorten.js";
 export {default as geoPeirceQuincuncial} from "./quincuncial/peirce.js";
-export {default as geoPierceQuincuncial} from "./quincuncial/peirce.js"; // DEPRECATED misspelling
 export {default as geoQuantize} from "./quantize";
 export {default as geoQuincuncial} from "./quincuncial/index.js";
 export {default as geoRectangularPolyconic, rectangularPolyconicRaw as geoRectangularPolyconicRaw} from "./rectangularPolyconic";

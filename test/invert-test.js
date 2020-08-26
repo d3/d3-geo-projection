@@ -75,13 +75,11 @@ var points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
   d3.geoMtFlatPolarParabolic,
   d3.geoMtFlatPolarQuartic,
   d3.geoMtFlatPolarSinusoidal,
-  d3.geoNaturalEarth,
   d3.geoNaturalEarth2,
   d3.geoNellHammer,
   d3.geoNicolosi,
   d3.geoPatterson,
   d3.geoPeirceQuincuncial,
-  // d3.geoPierceQuincuncial, // Alias of Peirce (typo)
   d3.geoPolyconic,
   d3.geoRectangularPolyconic,
   d3.geoRobinson,

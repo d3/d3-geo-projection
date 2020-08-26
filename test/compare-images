@@ -68,7 +68,6 @@ for i in \
     mtFlatPolarParabolic \
     mtFlatPolarQuartic \
     mtFlatPolarSinusoidal \
-    naturalEarth \
     naturalEarth2 \
     nellHammer \
     nicolosi \
