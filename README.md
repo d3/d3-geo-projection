@@ -7,9 +7,9 @@ Extended geographic projections for [d3-geo](https://github.com/d3/d3-geo). See 
 If you use NPM, `npm install d3-geo-projection`. Otherwise, download the [latest release](https://github.com/d3/d3-geo-projection/releases/latest). You can also load directly from [d3js.org](https://d3js.org) as a [standalone library](https://d3js.org/d3-geo-projection.v2.min.js). AMD, CommonJS, and vanilla environments are supported. In vanilla, a `d3` global is exported:
 
 ```html
-<script src="https://d3js.org/d3-array.v1.min.js"></script>
-<script src="https://d3js.org/d3-geo.v1.min.js"></script>
-<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+<script src="https://d3js.org/d3-array.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v3.min.js"></script>
 <script>
 
 var aitoff = d3.geoAitoff();
