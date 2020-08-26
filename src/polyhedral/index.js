@@ -7,8 +7,7 @@ import {default as matrix, multiply, inverse} from "./matrix.js";
 //    augmented with a transform matrix.
 //  * face: a function that returns the appropriate node for a given {lambda, phi}
 //    point (radians).
-//  * r: rotation angle for root face [deprecated by .angle()].
-export default function(root, face, r) {
+export default function(root, face) {
 
   recurse(root, {transform: null});
 
@@ -103,7 +102,7 @@ export default function(root, face, r) {
     return rotateStream;
   };
 
-  return proj.angle(r == null ? -30 : r * degrees);
+  return proj.angle(-30);
 }
 
 function outline(stream, node, parent) {
