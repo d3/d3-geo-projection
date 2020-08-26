@@ -216,10 +216,10 @@ cross-spawn@^6.0.5:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
-d3-array@2, d3-array@^2.5:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-2.5.1.tgz#cc785e1c4b560a34b8c77af9e6709bdf3f2ee117"
-  integrity sha512-cKvAlQZUKhXInw5mosJMtAYsY3dDYwTess/WOFUQTGcr8xV04SZMJs6n6QznsqZC5vJTkvZuCgsH9fo981ysPA==
+"d3-array@1 - 2", d3-array@>=2.5:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-2.6.0.tgz#b8df0c695eab26e2b2fd4ffe2d84bd703f8d0faf"
+  integrity sha512-1TgzIGb6hrHKSCGccdL209Ibk41HCeyv5znFEvJfBsBGhD3qpoHt/2W2ECpyLxpG1k7aNJz0BYrmLpVs9hIGNQ==
 
 "d3-format@1 - 2":
   version "2.0.0"
@@ -227,11 +227,11 @@ d3-array@2, d3-array@^2.5:
   integrity sha512-Ab3S6XuE/Q+flY96HXT0jOXcM4EAClYFnRGY5zsjRGNy6qCYrQsMffs7cV5Q9xejb35zxW5hf/guKw34kvIKsA==
 
 "d3-geo@1.12.0 - 2":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/d3-geo/-/d3-geo-2.0.0.tgz#aadb8a2804b690b868e5f153037217ba6fee9b20"
-  integrity sha512-28x4nHfMpTDOXlOXv2gb3WS6L4mtaWdz5ctC6ow+lGiFOpmc+8OtnDjAupCPBjQ+bMWUvP3F89akr94o//cXLQ==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/d3-geo/-/d3-geo-2.0.1.tgz#2437fdfed3fe3aba2812bd8f30609cac83a7ee39"
+  integrity sha512-M6yzGbFRfxzNrVhxDJXzJqSLQ90q1cCyb3EWFZ1LF4eWOBYxFypw7I/NFVBNXKNqxv1bqLathhYvdJ6DC+th3A==
   dependencies:
-    d3-array "^2.5"
+    d3-array ">=2.5"
 
 debug@^3.2.6:
   version "3.2.6"

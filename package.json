@@ -1,9 +1,6 @@
 {
   "name": "d3-geo-projection",
   "version": "3.0.0-rc.1",
-  "publishConfig": {
-    "tag": "next"
-  },
   "description": "Extended geographic projections for d3-geo.",
   "keywords": [
     "d3",
