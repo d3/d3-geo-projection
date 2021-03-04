@@ -924,13 +924,13 @@ The Peirce quincuncial projection is the quincuncial form of the [Guyou projecti
 
 Projects the specified GeoJSON *object* using the specified *projection*, returning a shallow copy of the specified GeoJSON *object* with projected coordinates. Typically, the input coordinates are spherical and the output coordinates are planar, but the *projection* can also be an [arbitrary geometric transformation](https://github.com/d3/d3-geo/blob/master/README.md#transforms).
 
-See also [geoproject](#geoproject).
+See also [geoproject](#geoproject-bin).
 
 <a href="#geoStitch" name="geoStitch">#</a> d3.<b>geoStitch</b>(<i>object</i>) · [Source](https://github.com/d3/d3-geo-projection/blob/master/src/stitch.js)
 
 Returns a shallow copy of the specified GeoJSON *object*, removing antimeridian and polar cuts, and replacing straight Cartesian line segments with geodesic segments. The input *object* must have coordinates in longitude and latitude in decimal degrees per [RFC 7946](https://tools.ietf.org/html/rfc7946). [Antimeridian cutting](https://bl.ocks.org/mbostock/3788999), if needed, can then be re-applied after rotating to the desired projection aspect.
 
-See also [geostitch](#geostitch).
+See also [geostitch](#geostitch-bin).
 
 <a href="#geoQuantize" name="geoQuantize">#</a> d3.<b>geoQuantize</b>(<i>object</i>, <i>digits</i>) · [Source](https://github.com/d3/d3-geo-projection/blob/master/src/quantize.js)
 
@@ -1064,7 +1064,7 @@ Sets the graticule’s [precision](https://github.com/d3/d3-geo/blob/master/READ
 
 ### geoproject
 
-<a href="#geoproject" name="geoproject">#</a> <b>geoproject</b> [<i>options</i>…] <i>projection</i> [<i>file</i>] · [Source](https://github.com/d3/d3-geo-projection/blob/master/bin/geoproject)
+<a href="#geoproject-bin" name="geoproject-bin">#</a> <b>geoproject</b> [<i>options</i>…] <i>projection</i> [<i>file</i>] · [Source](https://github.com/d3/d3-geo-projection/blob/master/bin/geoproject)
 
 Projects the GeoJSON object in the specified input *file* using the specified *projection*, outputting a new GeoJSON *object* with projected coordinates. For example, to project standard [WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System#A_new_World_Geodetic_System:_WGS_84) input using [d3.geoAlbersUsa](https://github.com/d3/d3-geo/blob/master/README.md#geoAlbersUsa):
 
@@ -1073,7 +1073,7 @@ geoproject 'd3.geoAlbersUsa()' us.json \
   > us-albers.json
 ```
 
-For geometry that crosses the antimeridian or surrounds a pole, you will want to pass input through [geostitch](#geostitch) first:
+For geometry that crosses the antimeridian or surrounds a pole, you will want to pass input through [geostitch](#geostitch-bin) first:
 
 ```bash
 geostitch world.json \
@@ -1142,7 +1142,7 @@ geoquantize us.json --precision 3 \
 
 ### geostitch
 
-<a href="#geostitch" name="geostitch">#</a> <b>geostitch</b> [<i>options</i>…] [<i>file</i>] · [Source](https://github.com/d3/d3-geo-projection/blob/master/bin/geostitch)
+<a href="#geostitch-bin" name="geostitch-bin">#</a> <b>geostitch</b> [<i>options</i>…] [<i>file</i>] · [Source](https://github.com/d3/d3-geo-projection/blob/master/bin/geostitch)
 
 Stitches the GeoJSON object in the specified input *file*, removing antimeridian and polar cuts, and replacing straight Cartesian line segments with geodesic segments. The input *object* must have coordinates in longitude and latitude in decimal degrees per [RFC 7946](https://tools.ietf.org/html/rfc7946). [Antimeridian cutting](https://bl.ocks.org/mbostock/3788999), if needed, can then be re-applied after rotating to the desired projection aspect.
 
