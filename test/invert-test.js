@@ -1,9 +1,7 @@
-var tape = require("tape"),
-    d3 = require("../");
+import * as d3 from "../src/index.js";
+import {assertProjectionEqual} from "./asserts.js";
 
-require("./projectionEqual");
-
-var points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
+const points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
 
 [
   d3.geoAiry,
@@ -102,13 +100,12 @@ var points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
   d3.geoWiechel,
   d3.geoWinkel3
 ].forEach(function(factory) {
-  var name = factory.name, projection = factory();
-  tape(name + "(point) and " + name + ".invert(point) are symmetric", function(test) {
+  const name = factory.name, projection = factory();
+  it(name + "(point) and " + name + ".invert(point) are symmetric", () => {
     points.forEach(function(point) {
-      test.projectionEqual(projection, point, projection(point));
+      assertProjectionEqual(projection, point, projection(point));
     });
-    test.end();
-  });
+});
 });
 
 
@@ -120,12 +117,11 @@ var points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
 { factory: d3.geoModifiedStereographicLee, points: [[179, 10]] },
 { factory: d3.geoTwoPointAzimuthalUsa, points: [[-104.9833053, 39.7309179]] },
 ].forEach(function(p) {
-  var factory = p.factory, points = p.points;
-  var name = factory.name, projection = factory();
-  tape(name + "(point) and " + name + ".invert(point) are symmetric YO", function(test) {
+  const factory = p.factory, points = p.points;
+  const name = factory.name, projection = factory();
+  it(name + "(point) and " + name + ".invert(point) are symmetric YO", () => {
     points.forEach(function(point) {
-      test.projectionEqual(projection, point, projection(point));
+      assertProjectionEqual(projection, point, projection(point));
     });
-    test.end();
-  });
+});
 });

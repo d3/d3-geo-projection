@@ -96,7 +96,7 @@ for i in \
     wiechel \
     winkel3 \
     ; do
-  test/render-world $i > test/output/$i.png \
+  node test/render-world.mjs $i > test/output/$i.png \
       && [ "$(gm compare -metric rmse img/$i.png test/output/$i.png 2>&1)" = "Image Difference (RootMeanSquaredError):
            Normalized    Absolute
           ============  ==========

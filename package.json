@@ -2,14 +2,18 @@
   "name": "d3-geo-projection",
   "version": "3.0.0",
   "description": "Extended geographic projections for d3-geo.",
+  "homepage": "https://d3js.org/d3-geo-projection/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d3/d3-geo-projection.git"
+  },
   "keywords": [
     "d3",
     "d3-module",
     "cartography",
     "projection"
   ],
-  "homepage": "https://d3js.org/d3-geo-projection/",
-  "license": "BSD-3-Clause",
+  "license": "ISC",
   "author": {
     "name": "Mike Bostock",
     "url": "https://bost.ocks.org/mike"
@@ -24,19 +28,46 @@
       "url": "https://visionscarto.net"
     }
   ],
-  "main": "dist/d3-geo-projection.js",
-  "unpkg": "dist/d3-geo-projection.min.js",
-  "jsdelivr": "dist/d3-geo-projection.min.js",
-  "module": "src/index.js",
+  "type": "module",
   "files": [
     "bin/geo*",
     "bin/**/*.js",
     "dist/**/*.js",
     "src/**/*.js"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/d3/d3-geo-projection.git"
+  "module": "src/index.js",
+  "main": "src/index.js",
+  "jsdelivr": "dist/d3-geo-projection.min.js",
+  "unpkg": "dist/d3-geo-projection.min.js",
+  "exports": {
+    "umd": "./dist/d3-geo-projection.min.js",
+    "default": "./src/index.js"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "commander": "2",
+    "d3-array": "1 - 2",
+    "d3-geo": "1.12.0 - 2",
+    "resolve": "^1.1.10"
+  },
+  "devDependencies": {
+    "canvas": "2",
+    "d3-format": "1 - 2",
+    "eslint": "7",
+    "mocha": "8",
+    "rollup": "2",
+    "rollup-plugin-terser": "1",
+    "topojson-client": "3",
+    "us-atlas": "1",
+    "world-atlas": "1"
+  },
+  "scripts": {
+    "test": "mocha 'test/**/*-test.js' && eslint src test",
+    "prepublishOnly": "rm -rf dist && yarn test && rollup -c && mkdir -p test/output && test/compare-images",
+    "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd -"
+  },
+  "engines": {
+    "node": ">=12"
   },
   "bin": {
     "geo2svg": "bin/geo2svg",
@@ -44,29 +75,5 @@
     "geoproject": "bin/geoproject",
     "geoquantize": "bin/geoquantize",
     "geostitch": "bin/geostitch"
-  },
-  "scripts": {
-    "pretest": "rollup -c",
-    "test": "tape 'test/**/*-test.js' && eslint src",
-    "prepublishOnly": "rm -rf dist && yarn test && mkdir -p test/output && test/compare-images",
-    "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd - && zip -j dist/${npm_package_name}.zip -- LICENSE README.md dist/${npm_package_name}.js dist/${npm_package_name}.min.js"
-  },
-  "dependencies": {
-    "commander": "2",
-    "d3-array": "1 - 2",
-    "d3-geo": "1.12.0 - 2",
-    "resolve": "^1.1.10"
-  },
-  "sideEffects": false,
-  "devDependencies": {
-    "canvas": "1 - 2",
-    "d3-format": "1 - 2",
-    "eslint": "5",
-    "rollup": "0.64",
-    "rollup-plugin-terser": "1",
-    "tape": "4",
-    "topojson-client": "3",
-    "us-atlas": "1",
-    "world-atlas": "1"
   }
 }

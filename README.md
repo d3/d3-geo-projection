@@ -4,15 +4,25 @@ Extended geographic projections for [d3-geo](https://github.com/d3/d3-geo). See 
 
 ## Installing
 
-If you use NPM, `npm install d3-geo-projection`. Otherwise, download the [latest release](https://github.com/d3/d3-geo-projection/releases/latest). You can also load directly from [d3js.org](https://d3js.org) as a [standalone library](https://d3js.org/d3-geo-projection.v2.min.js). AMD, CommonJS, and vanilla environments are supported. In vanilla, a `d3` global is exported:
+If you use npm, `npm install d3-geo-projection`. You can also download the [latest release on GitHub](https://github.com/d3/d3-geo-projection/releases/latest). For vanilla HTML in modern browsers, import d3-geo-projection from Skypack:
 
 ```html
-<script src="https://d3js.org/d3-array.v2.min.js"></script>
-<script src="https://d3js.org/d3-geo.v2.min.js"></script>
-<script src="https://d3js.org/d3-geo-projection.v3.min.js"></script>
+<script type="module">
+import {geoAitoff} from "https://cdn.skypack.dev/d3-geo-projection@4";
+
+const projection = geoAitoff();
+</script>
+```
+
+For legacy environments, you can load d3-geo-projection’s UMD bundle from an npm-based CDN such as jsDelivr; a `d3` global is exported:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-geo@3"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-geo-projection@4"></script>
 <script>
 
-var aitoff = d3.geoAitoff();
+const projection = d3.geoAitoff();
 
 </script>
 ```
