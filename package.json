@@ -1,6 +1,6 @@
 {
   "name": "d3-geo-projection",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Extended geographic projections for d3-geo.",
   "homepage": "https://d3js.org/d3-geo-projection/",
   "repository": {
