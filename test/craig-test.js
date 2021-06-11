@@ -1,8 +1,8 @@
-import * as d3 from "../src/index.js";
+import {geoCraig} from "../src/index.js";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoCraig(point) returns the expected values", () => {
-  const craig = d3.geoCraig().scale(150);
+  const craig = geoCraig().scale(150);
   assertProjectionEqual(craig, [   0,   0], [480.0000000,  250.000000]);
   assertProjectionEqual(craig, [   0, -90], [480.0000000,  400.000000]);
   assertProjectionEqual(craig, [   0,  90], [480.0000000,  100.000000]);
@@ -15,7 +15,7 @@ it("geoCraig(point) returns the expected values", () => {
 });
 
 it("craig.parallel(parallel) sets the standard parallel", () => {
-  const craig = d3.geoCraig().scale(150).parallel(30);
+  const craig = geoCraig().scale(150).parallel(30);
   assertProjectionEqual(craig, [   0,   0], [480.000000, 250.000000]);
   assertProjectionEqual(craig, [   0, -30], [480.000000, 313.397459]);
   assertProjectionEqual(craig, [   0,  30], [480.000000, 163.397459]);

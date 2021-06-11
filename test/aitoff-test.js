@@ -1,9 +1,9 @@
 import assert from "assert";
-import * as d3 from "../src/index.js";
+import {geoAitoff} from "../src/index.js";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoAitoff(point) returns the expected values", () => {
-  const aitoff = d3.geoAitoff().scale(150);
+  const aitoff = geoAitoff().scale(150);
   assertProjectionEqual(aitoff, [   0,   0], [480.000000, 250.000000]);
   assertProjectionEqual(aitoff, [   0, -90], [480.000000, 485.619449]);
   assertProjectionEqual(aitoff, [   0,  90], [480.000000,  14.380550]);
@@ -17,6 +17,6 @@ it("geoAitoff(point) returns the expected values", () => {
 });
 
 it("geoAitoff.invert(point) returns undefined for points outside the target region", () => {
-  const aitoff = d3.geoAitoff().scale(150);
+  const aitoff = geoAitoff().scale(150);
   assert.strictEqual(aitoff.invert([0, 0]), undefined);
 });

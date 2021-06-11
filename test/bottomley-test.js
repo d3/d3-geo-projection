@@ -1,8 +1,8 @@
-import * as d3 from "../src/index.js";
+import {geoBottomley} from "../src/index.js";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoBottomley(point) returns the expected values", () => {
-  const bottomley = d3.geoBottomley().scale(150);
+  const bottomley = geoBottomley().scale(150);
   assertProjectionEqual(bottomley, [   0,   0], [480.0000000, 250.000000]);
   assertProjectionEqual(bottomley, [   0, -90], [480.0000000, 485.619449]);
   assertProjectionEqual(bottomley, [   0,  89], [480.0000000,  16.998544]);

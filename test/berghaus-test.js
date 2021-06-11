@@ -1,8 +1,8 @@
-import * as d3 from "../src/index.js";
+import {geoBerghaus} from "../src/index.js";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoBerghaus(point) returns the expected values", () => {
-  const berghaus = d3.geoBerghaus().scale(150).translate([480, 250]).center([0, 0]);
+  const berghaus = geoBerghaus().scale(150).translate([480, 250]).center([0, 0]);
   assertProjectionEqual(berghaus, [  0,   0], [480.000000, 250.000000]);
   assertProjectionEqual(berghaus, [  0, -45], [480.000000, 367.809724]);
   assertProjectionEqual(berghaus, [  0,  45], [480.000000, 132.190275]);

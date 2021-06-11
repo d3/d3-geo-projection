@@ -1,8 +1,8 @@
 import assert from "assert";
-import * as d3 from "../src/index.js";
+import {geoQuantize} from "../src/index.js";
 
 it("quantize(Point) quantizes coordinates", () => {
-  assert.deepStrictEqual(d3.geoQuantize({
+  assert.deepStrictEqual(geoQuantize({
     type: "Point",
     coordinates: [0.1000001, 0.1000001]
   }, 2), {
@@ -12,7 +12,7 @@ it("quantize(Point) quantizes coordinates", () => {
 });
 
 it("quantize(MultiPoint) quantizes coordinates", () => {
-  assert.deepStrictEqual(d3.geoQuantize({
+  assert.deepStrictEqual(geoQuantize({
     type: "MultiPoint",
     coordinates: [[0.1000001, 0.1000001]]
   }, 2), {
@@ -22,7 +22,7 @@ it("quantize(MultiPoint) quantizes coordinates", () => {
 });
 
 it("quantize(LineString) quantizes coordinates", () => {
-  assert.deepStrictEqual(d3.geoQuantize({
+  assert.deepStrictEqual(geoQuantize({
     type: "LineString",
     coordinates: [[0.1000001, 0.1000001], [0.2000001, 0.2000001]]
   }, 2), {
@@ -32,7 +32,7 @@ it("quantize(LineString) quantizes coordinates", () => {
 });
 
 it("quantize(LineString) does not repeat coordinates", () => {
-  assert.deepStrictEqual(d3.geoQuantize({
+  assert.deepStrictEqual(geoQuantize({
     type: "LineString",
     coordinates: [[0, 0], [0.3, 0.3], [1, 1]]
   }, 0), {
@@ -42,7 +42,7 @@ it("quantize(LineString) does not repeat coordinates", () => {
 });
 
 it("quantize() does not return an invalid LineString", () => {
-  assert.deepStrictEqual(d3.geoQuantize({
+  assert.deepStrictEqual(geoQuantize({
     type: "LineString",
     coordinates: [[0, 0], [0.3, 0.3]]
   }, 0), {
@@ -52,7 +52,7 @@ it("quantize() does not return an invalid LineString", () => {
 });
 
 it("quantize(MultiLineString) quantizes coordinates", () => {
-  assert.deepStrictEqual(d3.geoQuantize({
+  assert.deepStrictEqual(geoQuantize({
     type: "MultiLineString",
     coordinates: [[[0.1000001, 0.1000001], [0.2000001, 0.2000001]]]
   }, 2), {
@@ -62,7 +62,7 @@ it("quantize(MultiLineString) quantizes coordinates", () => {
 });
 
 it("quantize(Polygon) quantizes coordinates", () => {
-  assert.deepStrictEqual(d3.geoQuantize({
+  assert.deepStrictEqual(geoQuantize({
     type: "Polygon",
     coordinates: [[[0.1000001, 0.1000001], [0.2000001, 0.1000001], [0.1000001, 0.2000001], [0.1000001, 0.1000001]]]
   }, 2), {
@@ -72,7 +72,7 @@ it("quantize(Polygon) quantizes coordinates", () => {
 });
 
 it("quantize(MultiPolygon) quantizes coordinates", () => {
-  assert.deepStrictEqual(d3.geoQuantize({
+  assert.deepStrictEqual(geoQuantize({
     type: "MultiPolygon",
     coordinates: [[[[0.1000001, 0.1000001], [0.2000001, 0.1000001], [0.1000001, 0.2000001], [0.1000001, 0.1000001]]]]
   }, 2), {
@@ -82,7 +82,7 @@ it("quantize(MultiPolygon) quantizes coordinates", () => {
 });
 
 it("quantize(Feature) quantizes coordinates", () => {
-  assert.deepStrictEqual(d3.geoQuantize({
+  assert.deepStrictEqual(geoQuantize({
     type: "Feature",
     id: "feature",
     bbox: [0.1, 0.1, 0.2, 0.2],
@@ -104,7 +104,7 @@ it("quantize(Feature) quantizes coordinates", () => {
 });
 
 it("quantize(FeatureCollection) quantizes coordinates", () => {
-  assert.deepStrictEqual(d3.geoQuantize({
+  assert.deepStrictEqual(geoQuantize({
     type: "FeatureCollection",
     bbox: [0.1, 0.1, 0.2, 0.2],
     features: [

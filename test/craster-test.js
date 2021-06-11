@@ -1,8 +1,8 @@
-import * as d3 from "../src/index.js";
+import {geoCraster} from "../src/index.js";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoCraster(point) returns the expected values", () => {
-  const craster = d3.geoCraster().scale(150);
+  const craster = geoCraster().scale(150);
   assertProjectionEqual(craster, [   0,   0], [480.000000, 250.000000]);
   assertProjectionEqual(craster, [   0, -90], [480.000000, 480.248509]);
   assertProjectionEqual(craster, [   0,  90], [480.000000,  19.751490]);

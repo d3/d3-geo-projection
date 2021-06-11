@@ -1,8 +1,8 @@
-import * as d3 from "../src/index.js";
+import {geoBaker} from "../src/index.js";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoBaker(point) returns the expected values", () => {
-  const baker = d3.geoBaker().scale(150);
+  const baker = geoBaker().scale(150);
   assertProjectionEqual(baker, [   0,   0], [480.000000, 250.000000]);
   assertProjectionEqual(baker, [   0, -90], [480.000000, 583.216220]);
   assertProjectionEqual(baker, [   0,  90], [480.000000, -83.216220]);

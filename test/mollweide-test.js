@@ -1,8 +1,8 @@
-import * as d3 from "../src/index.js";
+import {geoMollweide} from "../src/index.js";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoMollweide(point) returns the expected values", () => {
-  const mollweide = d3.geoMollweide().scale(150);
+  const mollweide = geoMollweide().scale(150);
   assertProjectionEqual(mollweide, [   0,   0], [480.000000, 250.000000]);
   assertProjectionEqual(mollweide, [   0, -90], [480.000000, 462.132034]);
   assertProjectionEqual(mollweide, [   0,  90], [480.000000,  37.867965]);

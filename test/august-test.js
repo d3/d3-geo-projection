@@ -1,8 +1,8 @@
-import * as d3 from "../src/index.js";
+import {geoAugust} from "../src/index.js";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoAugust(point) returns the expected values", () => {
-  const august = d3.geoAugust().scale(150);
+  const august = geoAugust().scale(150);
   assertProjectionEqual(august, [  0,   0], [480.000000,  250.000000]);
   assertProjectionEqual(august, [  0, -45], [480.000000,  378.067905]);
   assertProjectionEqual(august, [  0,  45], [480.000000,  121.932094]);

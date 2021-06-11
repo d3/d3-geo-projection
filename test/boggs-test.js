@@ -1,8 +1,8 @@
-import * as d3 from "../src/index.js";
+import {geoBoggs} from "../src/index.js";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoBoggs(point) returns the expected values", () => {
-  const boggs = d3.geoBoggs().scale(150);
+  const boggs = geoBoggs().scale(150);
   assertProjectionEqual(boggs, [   0,   0], [480.000000, 250.000000]);
   assertProjectionEqual(boggs, [   0, -90], [480.000000, 473.567218]);
   assertProjectionEqual(boggs, [   0,  90], [480.000000,  26.432781]);

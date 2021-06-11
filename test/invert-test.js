@@ -3,7 +3,7 @@ import {assertProjectionEqual} from "./asserts.js";
 
 const points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
 
-[
+for (const factory of [
   d3.geoAiry,
   d3.geoAitoff,
   d3.geoArmadillo,
@@ -99,29 +99,29 @@ const points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
   d3.geoWagner7,
   d3.geoWiechel,
   d3.geoWinkel3
-].forEach(function(factory) {
-  const name = factory.name, projection = factory();
-  it(name + "(point) and " + name + ".invert(point) are symmetric", () => {
-    points.forEach(function(point) {
+]) {
+  const name = factory.name;
+  const projection = factory();
+  it(`${name}(point) and ${name}.invert(point) are symmetric`, () => {
+    for (const point of points) {
       assertProjectionEqual(projection, point, projection(point));
-    });
-});
-});
+    }
+  });
+}
 
-
-[
-{ factory: d3.geoModifiedStereographicAlaska, points: [[-149.9025632,61.2150138]] },
-{ factory: d3.geoModifiedStereographicGs48, points: [[-104.9833053, 39.7309179]] },
-{ factory: d3.geoModifiedStereographicGs50, points: [[-104.9833053, 39.7309179]] },
-{ factory: d3.geoModifiedStereographicMiller, points: [[0, 10]] },
-{ factory: d3.geoModifiedStereographicLee, points: [[179, 10]] },
-{ factory: d3.geoTwoPointAzimuthalUsa, points: [[-104.9833053, 39.7309179]] },
-].forEach(function(p) {
-  const factory = p.factory, points = p.points;
-  const name = factory.name, projection = factory();
-  it(name + "(point) and " + name + ".invert(point) are symmetric YO", () => {
-    points.forEach(function(point) {
+for (const {factory, points} of [
+  {factory: d3.geoModifiedStereographicAlaska, points: [[-149.9025632,61.2150138]]},
+  {factory: d3.geoModifiedStereographicGs48, points: [[-104.9833053, 39.7309179]]},
+  {factory: d3.geoModifiedStereographicGs50, points: [[-104.9833053, 39.7309179]]},
+  {factory: d3.geoModifiedStereographicMiller, points: [[0, 10]]},
+  {factory: d3.geoModifiedStereographicLee, points: [[179, 10]]},
+  {factory: d3.geoTwoPointAzimuthalUsa, points: [[-104.9833053, 39.7309179]]},
+]) {
+  const name = factory.name;
+  const projection = factory();
+  it(`${name}(point) and ${name}.invert(point) are symmetric`, () => {
+    for (const point of points) {
       assertProjectionEqual(projection, point, projection(point));
-    });
-});
-});
+    }
+  });
+}

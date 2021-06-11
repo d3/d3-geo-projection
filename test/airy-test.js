@@ -1,8 +1,8 @@
-import * as d3 from "../src/index.js";
+import {geoAiry} from "../src/index.js";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoAiry(point) returns the expected values", () => {
-  const airy = d3.geoAiry().scale(150);
+  const airy = geoAiry().scale(150);
   assertProjectionEqual(airy, [   0,   0], [480.000000, 250.000000]);
   assertProjectionEqual(airy, [   0, -90], [480.000000, 457.944154]);
   assertProjectionEqual(airy, [ 180,  90], [480.000000,  42.055845]);
