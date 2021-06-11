@@ -1,10 +1,11 @@
-var tape = require("tape"),
-    d3 = require("../");
+import assert from "assert";
+import {readFile} from "fs/promises";
+import {geoStitch} from "../src/index.js";
 
-var epsilon = 1e-6;
+const epsilon = 1e-6;
 
-tape("stitch(Geometry) preserves the bbox of the input geometry", function(test) {
-  test.deepEqual(d3.geoStitch({
+it("stitch(Geometry) preserves the bbox of the input geometry", () => {
+  assert.deepStrictEqual(geoStitch({
     type: "Polygon",
     bbox: [-180, -90, 180, 90],
     coordinates: [
@@ -17,11 +18,10 @@ tape("stitch(Geometry) preserves the bbox of the input geometry", function(test)
       [[-180, -80], [-90, -80], [0, -80], [90, -80], [-180, -80]]
     ]
   });
-  test.end();
 });
 
-tape("stitch(Feature) preserves the id, bbox and properties of the input feature", function(test) {
-  test.deepEqual(d3.geoStitch({
+it("stitch(Feature) preserves the id, bbox and properties of the input feature", () => {
+  assert.deepStrictEqual(geoStitch({
     type: "Feature",
     id: "polygon",
     bbox: [-180, -90, 180, 90],
@@ -44,11 +44,10 @@ tape("stitch(Feature) preserves the id, bbox and properties of the input feature
       ]
     }
   });
-  test.end();
 });
 
-tape("stitch(FeatureCollection) preserves bbox of the input feature collection", function(test) {
-  test.deepEqual(d3.geoStitch({
+it("stitch(FeatureCollection) preserves bbox of the input feature collection", () => {
+  assert.deepStrictEqual(geoStitch({
     type: "FeatureCollection",
     bbox: [-180, -90, 180, 90],
     features: [
@@ -83,11 +82,10 @@ tape("stitch(FeatureCollection) preserves bbox of the input feature collection",
       }
     ]
   });
-  test.end();
 });
 
-tape("stitch(Polygon) applies an epsilon threshold to the poles and antimeridian", function(test) {
-  test.deepEqual(d3.geoStitch({
+it("stitch(Polygon) applies an epsilon threshold to the poles and antimeridian", () => {
+  assert.deepStrictEqual(geoStitch({
     type: "Polygon",
     coordinates: [
       [[-180 + epsilon, -80], [-90, -80], [0, -80], [90, -80], [180 - epsilon, -80], [180 - epsilon, -90 + epsilon], [90, -90 + epsilon], [0, -90 + epsilon], [-90, -90 + epsilon], [-180 - epsilon, -90 + epsilon], [-180 - epsilon, -80]]
@@ -98,7 +96,7 @@ tape("stitch(Polygon) applies an epsilon threshold to the poles and antimeridian
       [[-180, -80], [-90, -80], [0, -80], [90, -80], [-180, -80]]
     ]
   });
-  test.deepEqual(d3.geoStitch({
+  assert.deepStrictEqual(geoStitch({
     type: "Polygon",
     coordinates: [
       [[-180 - epsilon, -80], [-90, -80], [0, -80], [90, -80], [180 + epsilon, -80], [180 + epsilon, -90 - epsilon], [90, -90 - epsilon], [0, -90 - epsilon], [-90, -90 - epsilon], [-180 + epsilon, -90 - epsilon], [-180 + epsilon, -80]]
@@ -109,15 +107,14 @@ tape("stitch(Polygon) applies an epsilon threshold to the poles and antimeridian
       [[-180, -80], [-90, -80], [0, -80], [90, -80], [-180, -80]]
     ]
   });
-  test.end();
 });
 
 // A-----B-----C-----D-----E
 // |                       |
 // |                       |
 // J-----I-----H-----G-----F
-tape("stitch(Polygon) surrounding the South pole with a cut along the antimeridian", function(test) {
-  test.deepEqual(d3.geoStitch({
+it("stitch(Polygon) surrounding the South pole with a cut along the antimeridian", () => {
+  assert.deepStrictEqual(geoStitch({
     type: "Polygon",
     coordinates: [
       [[-180, -80], [-90, -80], [0, -80], [90, -80], [180, -80], [180, -90], [90, -90], [0, -90], [-90, -90], [-180, -90], [-180, -80]]
@@ -128,7 +125,6 @@ tape("stitch(Polygon) surrounding the South pole with a cut along the antimeridi
       [[-180, -80], [-90, -80], [0, -80], [90, -80], [-180, -80]]
     ]
   });
-  test.end();
 });
 
 // B-----C-----D-----E-----F
@@ -138,8 +134,8 @@ tape("stitch(Polygon) surrounding the South pole with a cut along the antimeridi
 // |                       |
 // |                       |
 // L-----K-----J-----I-----H
-tape("stitch(Polygon) surrounding the South pole with a cut along the antimeridian", function(test) {
-  test.deepEqual(d3.geoStitch({
+it("stitch(Polygon) surrounding the South pole with a cut along the antimeridian", () => {
+  assert.deepStrictEqual(geoStitch({
     type: "Polygon",
     coordinates: [
       [[-180, -85], [-180, -80], [-90, -80], [0, -80], [90, -80], [180, -80], [180, -85], [180, -90], [90, -90], [0, -90], [-90, -90], [-180, -90], [-180, -85]]
@@ -150,7 +146,6 @@ tape("stitch(Polygon) surrounding the South pole with a cut along the antimeridi
       [[-180, -80], [-90, -80], [0, -80], [90, -80], [-180, -80]]
     ]
   });
-  test.end();
 });
 
 // A-----B-----C-----D
@@ -162,8 +157,8 @@ tape("stitch(Polygon) surrounding the South pole with a cut along the antimeridi
 // L                 G
 // |                 |
 // K-----J-----I-----H
-tape("stitch(Polygon) with a hole across the antimeridian and cut along the antimeridian", function(test) {
-  test.deepEqual(d3.geoStitch({
+it("stitch(Polygon) with a hole across the antimeridian and cut along the antimeridian", () => {
+  assert.deepStrictEqual(geoStitch({
     type: "Polygon",
     coordinates: [
       [[-180, -60], [-180, -30], [-150, 0], [-180, 30], [-180, 60], [-60, 60], [60, 60], [180, 60], [180, 30], [150, 0], [180, -30], [180, -60], [60, -60], [-60, -60], [-180, -60]]
@@ -176,16 +171,14 @@ tape("stitch(Polygon) with a hole across the antimeridian and cut along the anti
       [[-180, 30], [150, 0], [-180, -30], [-150, 0], [-180, 30]] // hole
     ]
   });
-  test.end();
 });
 
 ["fiji", "antarctica", "russia"].forEach(function(name) {
-  tape("stitch(" + name + ")", function(test) {
-    var unstitched = require("./data/unstitched-" + name + ".json"),
-        stitched = require("./data/stitched-" + name + ".json"),
-        original = JSON.parse(JSON.stringify(unstitched));
-    test.deepEqual(d3.geoStitch(unstitched), stitched);
-    test.deepEqual(unstitched, original);
-    test.end();
+  it("stitch(" + name + ")", async () => {
+    const unstitched = JSON.parse(await readFile(`./test/data/unstitched-${name}.json`));
+    const stitched = JSON.parse(await readFile(`./test/data/stitched-${name}.json`));
+    const original = JSON.parse(JSON.stringify(unstitched));
+    assert.deepStrictEqual(geoStitch(unstitched), stitched);
+    assert.deepStrictEqual(unstitched, original);
   });
 });

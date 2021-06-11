@@ -1,9 +1,9 @@
-var fs = require("fs"),
-    readline = require("readline");
+import {createReadStream} from "fs";
+import {createInterface} from "readline";
 
-module.exports = function(file, newlineDelimited, callback) {
+export default function(file, newlineDelimited, callback) {
   var index = -1,
-      input = file === "-" ? process.stdin : fs.createReadStream(file);
+      input = file === "-" ? process.stdin : createReadStream(file);
 
   function readObject() {
     return new Promise(function(resolve, reject) {
@@ -18,7 +18,7 @@ module.exports = function(file, newlineDelimited, callback) {
   function readNewlineDelimitedObjects() {
     return new Promise(function(resolve, reject) {
       var queue = Promise.resolve();
-      readline.createInterface({
+      createInterface({
         input: input,
         output: null
       }).on("line", function(line) {
@@ -36,4 +36,4 @@ module.exports = function(file, newlineDelimited, callback) {
   return newlineDelimited
       ? readNewlineDelimitedObjects()
       : readObject().then(callbackObject);
-};
+}

@@ -1,98 +1,88 @@
-var tape = require("tape"),
-    d3 = require("../");
+import assert from "assert";
+import {geoQuantize} from "../src/index.js";
 
-var epsilon = 1e-6;
-
-tape("quantize(Point) quantizes coordinates", function(test) {
-  test.deepEqual(d3.geoQuantize({
+it("quantize(Point) quantizes coordinates", () => {
+  assert.deepStrictEqual(geoQuantize({
     type: "Point",
     coordinates: [0.1000001, 0.1000001]
   }, 2), {
     type: "Point",
     coordinates: [0.1, 0.1]
   });
-  test.end();
 });
 
-tape("quantize(MultiPoint) quantizes coordinates", function(test) {
-  test.deepEqual(d3.geoQuantize({
+it("quantize(MultiPoint) quantizes coordinates", () => {
+  assert.deepStrictEqual(geoQuantize({
     type: "MultiPoint",
     coordinates: [[0.1000001, 0.1000001]]
   }, 2), {
     type: "MultiPoint",
     coordinates: [[0.1, 0.1]]
   });
-  test.end();
 });
 
-tape("quantize(LineString) quantizes coordinates", function(test) {
-  test.deepEqual(d3.geoQuantize({
+it("quantize(LineString) quantizes coordinates", () => {
+  assert.deepStrictEqual(geoQuantize({
     type: "LineString",
     coordinates: [[0.1000001, 0.1000001], [0.2000001, 0.2000001]]
   }, 2), {
     type: "LineString",
     coordinates: [[0.1, 0.1], [0.2, 0.2]]
   });
-  test.end();
 });
 
-tape("quantize(LineString) does not repeat coordinates", function(test) {
-  test.deepEqual(d3.geoQuantize({
+it("quantize(LineString) does not repeat coordinates", () => {
+  assert.deepStrictEqual(geoQuantize({
     type: "LineString",
     coordinates: [[0, 0], [0.3, 0.3], [1, 1]]
   }, 0), {
     type: "LineString",
     coordinates: [[0, 0], [1, 1]]
   });
-  test.end();
 });
 
-tape("quantize() does not return an invalid LineString", function(test) {
-  test.deepEqual(d3.geoQuantize({
+it("quantize() does not return an invalid LineString", () => {
+  assert.deepStrictEqual(geoQuantize({
     type: "LineString",
     coordinates: [[0, 0], [0.3, 0.3]]
   }, 0), {
     type: "LineString",
     coordinates: [[0, 0], [0, 0]]
   });
-  test.end();
 });
 
-tape("quantize(MultiLineString) quantizes coordinates", function(test) {
-  test.deepEqual(d3.geoQuantize({
+it("quantize(MultiLineString) quantizes coordinates", () => {
+  assert.deepStrictEqual(geoQuantize({
     type: "MultiLineString",
     coordinates: [[[0.1000001, 0.1000001], [0.2000001, 0.2000001]]]
   }, 2), {
     type: "MultiLineString",
     coordinates: [[[0.1, 0.1], [0.2, 0.2]]]
   });
-  test.end();
 });
 
-tape("quantize(Polygon) quantizes coordinates", function(test) {
-  test.deepEqual(d3.geoQuantize({
+it("quantize(Polygon) quantizes coordinates", () => {
+  assert.deepStrictEqual(geoQuantize({
     type: "Polygon",
     coordinates: [[[0.1000001, 0.1000001], [0.2000001, 0.1000001], [0.1000001, 0.2000001], [0.1000001, 0.1000001]]]
   }, 2), {
     type: "Polygon",
     coordinates: [[[0.1, 0.1], [0.2, 0.1], [0.1, 0.2], [0.1, 0.1]]]
   });
-  test.end();
 });
 
-tape("quantize(MultiPolygon) quantizes coordinates", function(test) {
-  test.deepEqual(d3.geoQuantize({
+it("quantize(MultiPolygon) quantizes coordinates", () => {
+  assert.deepStrictEqual(geoQuantize({
     type: "MultiPolygon",
     coordinates: [[[[0.1000001, 0.1000001], [0.2000001, 0.1000001], [0.1000001, 0.2000001], [0.1000001, 0.1000001]]]]
   }, 2), {
     type: "MultiPolygon",
     coordinates: [[[[0.1, 0.1], [0.2, 0.1], [0.1, 0.2], [0.1, 0.1]]]]
   });
-  test.end();
 });
 
-tape("quantize(Feature) quantizes coordinates", function(test) {
-  test.deepEqual(d3.geoQuantize({
+it("quantize(Feature) quantizes coordinates", () => {
+  assert.deepStrictEqual(geoQuantize({
     type: "Feature",
     id: "feature",
     bbox: [0.1, 0.1, 0.2, 0.2],
@@ -111,11 +101,10 @@ tape("quantize(Feature) quantizes coordinates", function(test) {
       coordinates: [[[[0.1, 0.1], [0.2, 0.1], [0.1, 0.2], [0.1, 0.1]]]]
     }
   });
-  test.end();
 });
 
-tape("quantize(FeatureCollection) quantizes coordinates", function(test) {
-  test.deepEqual(d3.geoQuantize({
+it("quantize(FeatureCollection) quantizes coordinates", () => {
+  assert.deepStrictEqual(geoQuantize({
     type: "FeatureCollection",
     bbox: [0.1, 0.1, 0.2, 0.2],
     features: [
@@ -146,5 +135,4 @@ tape("quantize(FeatureCollection) quantizes coordinates", function(test) {
       }
     ]
   });
-  test.end();
 });

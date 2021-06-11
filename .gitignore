@@ -1,6 +1,5 @@
 *.sublime-workspace
 .DS_Store
 dist/
-test/output/
 node_modules
 npm-debug.log

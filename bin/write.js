@@ -1,4 +1,4 @@
-var fs = require("fs");
+import {createWriteStream} from "fs"
 
 function handleEpipe(error) {
   if (error.code === "EPIPE" || error.errno === "EPIPE") {
@@ -6,8 +6,8 @@ function handleEpipe(error) {
   }
 }
 
-module.exports = function(file) {
-  var output = (file === "-" ? process.stdout : fs.createWriteStream(file)).on("error", handleEpipe),
+export default function(file) {
+  var output = (file === "-" ? process.stdout : createWriteStream(file)).on("error", handleEpipe),
       queue = Promise.resolve();
   return {
     write: function(data) {
@@ -32,4 +32,4 @@ module.exports = function(file) {
       });
     }
   };
-};
+}
