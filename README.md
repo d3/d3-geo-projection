@@ -8,9 +8,11 @@ If you use npm, `npm install d3-geo-projection`. You can also download the [late
 
 ```html
 <script type="module">
+
 import {geoAitoff} from "https://cdn.skypack.dev/d3-geo-projection@4";
 
 const projection = geoAitoff();
+
 </script>
 ```
 
