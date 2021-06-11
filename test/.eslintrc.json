@@ -9,6 +9,7 @@
     "no-constant-condition": 0
   },
   "env": {
-    "mocha": true
+    "mocha": true,
+    "node": true
   }
 }
