@@ -1,11 +1,18 @@
 #!/usr/bin/env node
 
-var commander = require("commander"),
-    graticule = require("d3-geo").geoGraticule(),
-    write = require("./write");
+import {program} from "commander";
+import {geoGraticule} from "d3-geo";
+import {readFileSync} from "fs";
+import {dirname, resolve} from "path";
+import {fileURLToPath} from "url";
+import write from "./write.js";
 
-commander
-    .version(require("../package.json").version)
+const version = JSON.parse(readFileSync(resolve(dirname(fileURLToPath(import.meta.url)), "../package.json"))).version;
+
+const graticule = geoGraticule();
+
+const options = program
+    .version(version)
     .usage("[options]")
     .description("Generate a GeoJSON graticule.")
     .option("-o, --out <file>", "output file name; defaults to “-” for stdout", "-")
@@ -16,29 +23,30 @@ commander
     .option("--step-minor <value>", "the minor step; defaults to " + graticule.stepMinor(), parseStep)
     .option("--step-major <value>", "the major step; defaults to " + graticule.stepMajor(), parseStep)
     .option("--precision <value>", "the precision; defaults to " + graticule.precision(), graticule.precision)
-    .parse(process.argv);
+    .parse(process.argv)
+    .opts();
 
-if (commander.args.length !== 0) {
+if (program.args.length !== 0) {
   console.error();
   console.error("  error: unexpected arguments");
   console.error();
   process.exit(1);
 }
 
-if (commander.extent != null) {
-  if (commander.extentMinor == null) commander.extentMinor = commander.extent;
-  if (commander.extentMajor == null) commander.extentMajor = commander.extent;
+if (options.extent != null) {
+  if (options.extentMinor == null) options.extentMinor = options.extent;
+  if (options.extentMajor == null) options.extentMajor = options.extent;
 }
-if (commander.step != null) {
-  if (commander.stepMinor == null) commander.stepMinor = commander.step;
-  if (commander.stepMajor == null) commander.stepMajor = commander.step;
+if (options.step != null) {
+  if (options.stepMinor == null) options.stepMinor = options.step;
+  if (options.stepMajor == null) options.stepMajor = options.step;
 }
-if (commander.extentMinor != null) graticule.extentMinor(commander.extentMinor);
-if (commander.extentMajor != null) graticule.extentMajor(commander.extentMajor);
-if (commander.stepMinor != null) graticule.stepMinor(commander.stepMinor);
-if (commander.stepMajor != null) graticule.stepMajor(commander.stepMajor);
+if (options.extentMinor != null) graticule.extentMinor(options.extentMinor);
+if (options.extentMajor != null) graticule.extentMajor(options.extentMajor);
+if (options.stepMinor != null) graticule.stepMinor(options.stepMinor);
+if (options.stepMajor != null) graticule.stepMajor(options.stepMajor);
 
-var writer = write(commander.out);
+var writer = write(options.out);
 writer.write(JSON.stringify(graticule()) + "\n");
 writer.end().catch(abort);
 
