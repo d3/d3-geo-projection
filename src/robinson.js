@@ -46,7 +46,7 @@ export function robinsonRaw(lambda, phi) {
 }
 
 robinsonRaw.invert = function(x, y) {
-  var phi = y * 90,
+  var phi = y * degrees,
       i = min(18, abs(phi / 5)),
       i0 = max(0, floor(i));
   do {
