@@ -57,7 +57,8 @@ export default function() {
   // As a multiple of radius.
   p.distance = function(_) {
     if (!arguments.length) return distance;
-    return m(distance = +_, omega);
+    return m(distance = +_, omega)
+      .clipAngle(acos(1 / distance) * degrees - 1e-6);
   };
 
   p.tilt = function(_) {
