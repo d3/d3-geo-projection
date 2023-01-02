@@ -1,5 +1,5 @@
 import {geoProjectionMutator as projectionMutator} from "d3-geo";
-import {acos, asin, atan2, cos, degrees, radians, sin, sqrt} from "./math.js";
+import {acos, asin, atan2, cos, degrees, epsilon, radians, sin, sqrt} from "./math.js";
 
 function satelliteVerticalRaw(P) {
   function forward(lambda, phi) {
@@ -58,7 +58,7 @@ export default function() {
   p.distance = function(_) {
     if (!arguments.length) return distance;
     return m(distance = +_, omega)
-      .clipAngle(acos(1 / distance) * degrees - 1e-6);
+      .clipAngle(acos(1 / distance) * degrees - epsilon);
   };
 
   p.tilt = function(_) {
@@ -68,5 +68,5 @@ export default function() {
 
   return p
       .scale(432.147)
-      .clipAngle(acos(1 / distance) * degrees - 1e-6);
+      .clipAngle(acos(1 / distance) * degrees - epsilon);
 }
