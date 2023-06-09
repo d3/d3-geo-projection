@@ -48,7 +48,7 @@ Note: projections tagged \[d3-geo\] are exported by [d3-geo](https://github.com/
 
 Airy’s minimum-error azimuthal projection.
 
-<a href="airy_radius" name="airy_raidus">#</a> <i>airy</i>.<b>radius</b>([<i>radius</i>])
+<a href="#airy_radius" name="airy_raidus">#</a> <i>airy</i>.<b>radius</b>([<i>radius</i>])
 
 Defaults to 90°.
 
@@ -435,7 +435,7 @@ If *lobes* is specified, sets the number of lobes (the parameter *H* in the lite
 
 Hill eucyclic projection is pseudoconic and equal-area.
 
-<a href="hill_ratio" name="hill_ratio">#</a> <i>hill</i>.<b>ratio</b>([<i>ratio</i>])
+<a href="#hill_ratio" name="hill_ratio">#</a> <i>hill</i>.<b>ratio</b>([<i>ratio</i>])
 
 Defaults to 1. With a ratio of 0, this projection becomes the [Maurer No. 73](https://observablehq.com/@d3/hill-eucyclic?b=0). As it approaches ∞, the projection converges to the [Eckert IV](#geoEckert4).
 
@@ -918,9 +918,9 @@ Steve Waterman’s butterfly projection.
 
 Defines a new quincuncial projection for the specified [raw projection](#raw-projections) function *project*. The default rotation is [-90°, -90°, 45°] and the default clip angle is 180° - ε.
 
-<a href="#geoGringortenQuincuncial" name="geoGringortenQuincuncial">#</a> d3.<b>geoGringortenQuincuncial</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/main/src/quincuncial/gringorten.js)
+<a href="#geoGringortenQuincuncial" name="geoGringortenQuincuncial">#</a> d3.<b>geoGringortenQuincuncial</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/main/src/quincuncial/gringorten.js), [Examples](https://observablehq.com/@d3/gringorten-quincuncial)
 
-<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/main/img/gringortenQuincuncial.png" width="480" height="250">
+[<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/main/img/gringortenQuincuncial.png" width="480" height="250">](https://observablehq.com/@d3/gringorten-quincuncial)
 
 The Gringorten square equal-area projection.
 
