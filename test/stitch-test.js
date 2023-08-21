@@ -182,3 +182,28 @@ it("stitch(Polygon) with a hole across the antimeridian and cut along the antime
     assert.deepStrictEqual(unstitched, original);
   });
 });
+
+tape("stitch(Whole Earth Polygon) yields the Sphere", function(test) {
+  test.deepEqual(d3.geoStitch({
+    type: "Polygon",
+    coordinates: [
+      [[0, -90], [-180, 0], [0, 90], [180, 0], [0, -90]]
+    ]
+  }), {
+    type: "Sphere"
+  });
+  test.end();
+});
+
+tape("stitch(Whole Earth MultiPolygon) yields the Sphere", function(test) {
+  test.deepEqual(d3.geoStitch({
+    type: "MultiPolygon",
+    coordinates: [[
+      [[0, -90], [-180, 0], [0, 90], [180, 0], [0, -90]]
+    ]]
+  }), {
+    type: "Sphere"
+  });
+  test.end();
+});
+

@@ -185,6 +185,8 @@ function stitchGeometry(input) {
       extractFragments(input.coordinates, polygon, fragments = []);
       stitchFragments(fragments);
       output = {type: "Polygon", coordinates: polygon};
+      if (input.coordinates.length > 0 && output.coordinates.length === 0)
+        output = {type: "Sphere"};
       break;
     }
     case "MultiPolygon": {
@@ -193,6 +195,8 @@ function stitchGeometry(input) {
       while (++i < n) extractFragments(input.coordinates[i], polygons[i] = [], fragments);
       stitchFragments(fragments);
       output = {type: "MultiPolygon", coordinates: polygons.filter(nonempty)};
+      if (n > 0 && output.coordinates.length === 0)
+        output = {type: "Sphere"};
       break;
     }
     default: return input;
