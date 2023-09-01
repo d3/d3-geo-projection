@@ -1,4 +1,4 @@
-import {abs, asin, atan, cos, cosh, epsilon, exp, halfPi, log, pi, pow, quarterPi, sign, sin, sinh, sqrt, tan, tanh} from "./math.js";
+import {abs, asin, atan, cos, cosh, epsilon, exp, halfPi, log, pi, sign, sin, sinh, sqrt, tan, tanh} from "./math.js";
 
 // Returns [sn, cn, dn](u + iv|m).
 export function ellipticJi(u, v, m) {
@@ -96,23 +96,32 @@ export function ellipticFi(phi, psi, m) {
   ];
 }
 
-// Calculate F(phi|m) where m = k² = sin²α.
-// See Abramowitz and Stegun, 17.6.7.
+/*
+ * Computes the elliptic integral of the first kind.
+ * Algorithm from Bulirsch(1965), the implementation follows Snyder(1989), p. 239.
+ * https://observablehq.com/d/9c104687d45ef00e
+ */
 export function ellipticF(phi, m) {
-  if (!m) return phi;
-  if (m === 1) return log(tan(phi / 2 + quarterPi));
-  var a = 1,
-      b = sqrt(1 - m),
-      c = sqrt(m);
-  for (var i = 0; abs(c) > epsilon; i++) {
-    if (phi % pi) {
-      var dPhi = atan(b * tan(phi) / a);
-      if (dPhi < 0) dPhi += pi;
-      phi += dPhi + ~~(phi / pi) * pi;
-    } else phi += phi;
-    c = (a + b) / 2;
-    b = sqrt(a * b);
-    c = ((a = c) - b) / 2;
+  var C1 = 10e-4,
+      C2 = 10e-10;
+  
+  var sp = sin(phi),
+      k = sqrt(1 - m),
+      h = sp * sp;
+
+  // "incomplete" elliptic integral
+  if (k < epsilon) return log((1 + sp) / (1 - sp)) / 2;
+  var g, n, p, r, y;
+  m = 1, n = 0, g = m, p = m * k, m += k;
+  y = sqrt((1 - h) / h);
+  if (abs(y -= p / y) <= 0) y = C2 * sqrt(p);
+  while (abs(g - k) > C1 * g) {
+    k = 2 * sqrt(p), n += n;
+    if (y < 0) n += 1;
+    p = m * k, g = m, m += k;
+    if (abs(y -= p / y) <= 0) y = C2 * sqrt(p);
   }
-  return phi / (pow(2, i) * a);
+  if (y < 0) n += 1;
+  r = (atan(m / y) + pi * n) / m;
+  return sign(sp) * r;
 }
