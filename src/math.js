@@ -5,6 +5,7 @@ export var ceil = Math.ceil;
 export var cos = Math.cos;
 export var exp = Math.exp;
 export var floor = Math.floor;
+export var hypot = Math.hypot;
 export var log = Math.log;
 export var max = Math.max;
 export var min = Math.min;
