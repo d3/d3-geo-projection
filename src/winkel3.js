@@ -1,6 +1,6 @@
 import {geoProjection as projection} from "d3-geo";
 import {aitoffRaw} from "./aitoff.js";
-import {halfPi, epsilon, sin, cos, sqrt, abs, acos} from "./math.js";
+import {halfPi, epsilon, sin, cos, sqrt, abs, atan2} from "./math.js";
 
 export function winkel3Raw(lambda, phi) {
   var coordinates = aitoffRaw(lambda, phi);
@@ -22,8 +22,10 @@ winkel3Raw.invert = function(x, y) {
         coslambda_2 = cos(lambda / 2),
         sinlambda_2 = sin(lambda / 2),
         sin2lambda_2 = sinlambda_2 * sinlambda_2,
-        C = 1 - cos2phi * coslambda_2 * coslambda_2,
-        E = C ? acos(cosphi * coslambda_2) * sqrt(F = 1 / C) : F = 0,
+        // 1 - (cos(phi) * cos(lambda / 2))^2 and its acos(), computed so that
+        // they stay accurate close to the origin
+        C = sin2phi + cos2phi * sin2lambda_2,
+        E = C ? atan2(sqrt(C), cosphi * coslambda_2) * sqrt(F = 1 / C) : F = 0,
         F,
         fx = 0.5 * (2 * E * cosphi * sinlambda_2 + lambda / halfPi) - x,
         fy = 0.5 * (E * sinphi + phi) - y,
