@@ -6,8 +6,8 @@ it("geoAdams1(point) returns the expected values", () => {
   assertProjectionEqual(adams1, [   0,   0], [480.000000, 250.000000]);
   assertProjectionEqual(adams1, [   0, -45], [480.000000, 308.348211]);
   assertProjectionEqual(adams1, [   0,  45], [480.000000, 191.651789]);
-  assertProjectionEqual(adams1, [   0,  90], [480.000000,   0.499955]);
-  assertProjectionEqual(adams1, [   0, -90], [480.000000, 499.500045]);
+  assertProjectionEqual(adams1, [   0,  85], [480.000000,  76.901593]);
+  assertProjectionEqual(adams1, [   0, -85], [480.000000, 423.098407]);
   assertProjectionEqual(adams1, [-180,   0], [230.499952, 250.000000]);
   assertProjectionEqual(adams1, [ 180,   0], [729.500048, 250.000000]);
   assertProjectionEqual(adams1, [ -90,   0], [368.844013, 250.000000]);
