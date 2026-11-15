@@ -4,6 +4,7 @@ import {feature} from "topojson-client";
 import {geoGraticule, geoPath} from "d3-geo";
 import {
   geoAdams1,
+  geoAdams2,
   geoAiry,
   geoAitoff,
   geoArmadillo,
@@ -136,6 +137,10 @@ async function renderWorld(projection, {extent, clip = false} = {}) {
 
 export async function adams1() {
   return renderWorld(geoAdams1().precision(0.1));
+}
+
+export async function adams2() {
+  return renderWorld(geoAdams2().precision(0.1));
 }
 
 export async function airy() {

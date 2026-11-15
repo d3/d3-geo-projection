@@ -1,4 +1,5 @@
 export {default as geoAdams1, adams1Raw as geoAdams1Raw} from "./adams1.js";
+export {default as geoAdams2, adams2Raw as geoAdams2Raw} from "./adams2.js";
 export {default as geoAiry, airyRaw as geoAiryRaw} from "./airy.js";
 export {default as geoAitoff, aitoffRaw as geoAitoffRaw} from "./aitoff.js";
 export {default as geoArmadillo, armadilloRaw as geoArmadilloRaw} from "./armadillo.js";

@@ -46,7 +46,14 @@ Note: projections tagged \[d3-geo\] are exported by [d3-geo](https://github.com/
 
 <img src="https://raw.githubusercontent.com/d3/d3-geo-projection/main/img/adams1.png" width="480" height="250">
 
-Adams’s conformal projection of the world in a square I, with the poles at the midpoints of two opposite sides.
+Adams’s conformal projection of the world in a square I.
+
+<a href="#geoAdams2" name="geoAdams2">#</a> d3.<b>geoAdams2</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/main/src/adams2.js)
+<br><a href="#geoAdams2Raw" name="geoAdams2Raw">#</a> d3.<b>geoAdams2Raw</b>
+
+<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/main/img/adams2.png" width="480" height="250">
+
+Adams’s conformal projection of the world in a square II.
 
 <a href="#geoAiry" name="geoAiry">#</a> d3.<b>geoAiry</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/main/src/airy.js), [Examples](https://observablehq.com/@d3/airys-minimum-error)
 <br><a href="#geoAiryRaw" name="geoAiryRaw">#</a> d3.<b>geoAiryRaw</b>(<i>beta</i>)

@@ -5,6 +5,7 @@ const points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
 
 for (const factory of [
   d3.geoAdams1,
+  d3.geoAdams2,
   d3.geoAiry,
   d3.geoAitoff,
   d3.geoArmadillo,
