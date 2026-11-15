@@ -3,6 +3,7 @@ import {readFile} from "fs/promises";
 import {feature} from "topojson-client";
 import {geoGraticule, geoPath} from "d3-geo";
 import {
+  geoAdams1,
   geoAiry,
   geoAitoff,
   geoArmadillo,
@@ -131,6 +132,10 @@ async function renderWorld(projection, {extent, clip = false} = {}) {
   context.strokeStyle = "#000";
   context.stroke();
   return canvas;
+}
+
+export async function adams1() {
+  return renderWorld(geoAdams1().precision(0.1));
 }
 
 export async function airy() {

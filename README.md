@@ -41,6 +41,13 @@ const projection = d3.geoAitoff();
 
 Note: projections tagged \[d3-geo\] are exported by [d3-geo](https://github.com/d3/d3-geo), not d3-geo-projection. These commonly-used projections are also included in the [d3](https://github.com/d3/d3) default bundle.
 
+<a href="#geoAdams1" name="geoAdams1">#</a> d3.<b>geoAdams1</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/main/src/adams1.js)
+<br><a href="#geoAdams1Raw" name="geoAdams1Raw">#</a> d3.<b>geoAdams1Raw</b>
+
+<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/main/img/adams1.png" width="480" height="250">
+
+Adams’s conformal projection of the world in a square I, with the poles at the midpoints of two opposite sides.
+
 <a href="#geoAiry" name="geoAiry">#</a> d3.<b>geoAiry</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/main/src/airy.js), [Examples](https://observablehq.com/@d3/airys-minimum-error)
 <br><a href="#geoAiryRaw" name="geoAiryRaw">#</a> d3.<b>geoAiryRaw</b>(<i>beta</i>)
 
