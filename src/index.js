@@ -82,6 +82,7 @@ export {default as geoRobinson, robinsonRaw as geoRobinsonRaw} from "./robinson.
 export {default as geoSatellite, satelliteRaw as geoSatelliteRaw} from "./satellite.js";
 export {default as geoSinuMollweide, sinuMollweideRaw as geoSinuMollweideRaw} from "./sinuMollweide.js";
 export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./sinusoidal.js";
+export {default as geoSpilhaus} from "./spilhaus.js";
 export {default as geoStitch} from "./stitch.js";
 export {default as geoTimes, timesRaw as geoTimesRaw} from "./times.js";
 export {default as geoTwoPointAzimuthal, twoPointAzimuthalRaw as geoTwoPointAzimuthalRaw, twoPointAzimuthalUsa as geoTwoPointAzimuthalUsa} from "./twoPointAzimuthal.js";

@@ -86,6 +86,7 @@ for (const factory of [
   d3.geoSatellite,
   d3.geoSinuMollweide,
   d3.geoSinusoidal,
+  d3.geoSpilhaus,
   d3.geoTimes,
   // d3.geoTwoPointAzimuthal,
   // d3.geoTwoPointAzimuthalUsa, // see below

@@ -86,6 +86,7 @@ import {
   geoSatellite,
   geoSinuMollweide,
   geoSinusoidal,
+  geoSpilhaus,
   geoTimes,
   geoTwoPointAzimuthalUsa,
   geoTwoPointEquidistantUsa,
@@ -465,6 +466,10 @@ export async function sinuMollweide() {
 
 export async function sinusoidal() {
   return renderWorld(geoSinusoidal().precision(0.1));
+}
+
+export async function spilhaus() {
+  return renderWorld(geoSpilhaus().precision(0.1));
 }
 
 export async function times() {

@@ -705,6 +705,12 @@ The sinusoidal projection.
 
 Allen K. Philbrick’s Sinu-Mollweide projection. See also the [interrupted form](#interruptedSinuMollweide).
 
+<a href="#geoSpilhaus" name="geoSpilhaus">#</a> d3.<b>geoSpilhaus</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/main/src/spilhaus.js)
+
+<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/main/img/spilhaus.png" width="480" height="250">
+
+Spilhaus’s world ocean map in a square, an oblique aspect of the [Adams II projection](#geoAdams2).
+
 <a href="#geoStereographic" name="geoStereographic">#</a> d3.<b>geoStereographic</b>() · [Source](https://github.com/d3/d3-geo/blob/main/src/projection/stereographic.js) [\[d3-geo\]](https://github.com/d3/d3-geo/blob/main/README.md#geoStereographic), [Examples](https://observablehq.com/@d3/stereographic)
 <br><a href="#geoStereographicRaw" name="geoStereographicRaw">#</a> d3.<b>geoStereographicRaw</b>
 
