@@ -1,5 +1,5 @@
 import {geoProjection as projection} from "d3-geo";
-import {abs, halfPi, pi, sign, sqrt1_2} from "../math.js";
+import {abs, halfPi, pi, sqrt1_2} from "../math.js";
 
 export default function(project) {
   var dx = project(halfPi, 0)[0] - project(-halfPi, 0)[0];
@@ -12,7 +12,7 @@ export default function(project) {
     if (t) return [x, y];
     var d = dx * sqrt1_2,
         s = x > 0 ^ y > 0 ? -1 : 1;
-    return [s * x - sign(y) * d, s * y - sign(x) * d];
+    return [s * x - (y > 0 ? 1 : -1) * d, s * y - (x > 0 ? 1 : -1) * d];
   }
 
   if (project.invert) projectQuincuncial.invert = function(x0, y0) {
