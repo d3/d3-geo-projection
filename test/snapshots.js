@@ -3,6 +3,8 @@ import {readFile} from "fs/promises";
 import {feature} from "topojson-client";
 import {geoGraticule, geoPath} from "d3-geo";
 import {
+  geoAdams1,
+  geoAdams2,
   geoAiry,
   geoAitoff,
   geoArmadillo,
@@ -84,6 +86,7 @@ import {
   geoSatellite,
   geoSinuMollweide,
   geoSinusoidal,
+  geoSpilhaus,
   geoTimes,
   geoTwoPointAzimuthalUsa,
   geoTwoPointEquidistantUsa,
@@ -131,6 +134,14 @@ async function renderWorld(projection, {extent, clip = false} = {}) {
   context.strokeStyle = "#000";
   context.stroke();
   return canvas;
+}
+
+export async function adams1() {
+  return renderWorld(geoAdams1().precision(0.1));
+}
+
+export async function adams2() {
+  return renderWorld(geoAdams2().precision(0.1));
 }
 
 export async function airy() {
@@ -455,6 +466,10 @@ export async function sinuMollweide() {
 
 export async function sinusoidal() {
   return renderWorld(geoSinusoidal().precision(0.1));
+}
+
+export async function spilhaus() {
+  return renderWorld(geoSpilhaus().precision(0.1));
 }
 
 export async function times() {

@@ -41,6 +41,20 @@ const projection = d3.geoAitoff();
 
 Note: projections tagged \[d3-geo\] are exported by [d3-geo](https://github.com/d3/d3-geo), not d3-geo-projection. These commonly-used projections are also included in the [d3](https://github.com/d3/d3) default bundle.
 
+<a href="#geoAdams1" name="geoAdams1">#</a> d3.<b>geoAdams1</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/main/src/adams1.js)
+<br><a href="#geoAdams1Raw" name="geoAdams1Raw">#</a> d3.<b>geoAdams1Raw</b>
+
+<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/main/img/adams1.png" width="480" height="250">
+
+Adams’s conformal projection of the world in a square I.
+
+<a href="#geoAdams2" name="geoAdams2">#</a> d3.<b>geoAdams2</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/main/src/adams2.js)
+<br><a href="#geoAdams2Raw" name="geoAdams2Raw">#</a> d3.<b>geoAdams2Raw</b>
+
+<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/main/img/adams2.png" width="480" height="250">
+
+Adams’s conformal projection of the world in a square II.
+
 <a href="#geoAiry" name="geoAiry">#</a> d3.<b>geoAiry</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/main/src/airy.js), [Examples](https://observablehq.com/@d3/airys-minimum-error)
 <br><a href="#geoAiryRaw" name="geoAiryRaw">#</a> d3.<b>geoAiryRaw</b>(<i>beta</i>)
 
@@ -690,6 +704,12 @@ The sinusoidal projection.
 [<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/main/img/sinuMollweide.png" width="480" height="250">](https://observablehq.com/@d3/sinu-mollweide)
 
 Allen K. Philbrick’s Sinu-Mollweide projection. See also the [interrupted form](#interruptedSinuMollweide).
+
+<a href="#geoSpilhaus" name="geoSpilhaus">#</a> d3.<b>geoSpilhaus</b>() · [Source](https://github.com/d3/d3-geo-projection/blob/main/src/spilhaus.js)
+
+<img src="https://raw.githubusercontent.com/d3/d3-geo-projection/main/img/spilhaus.png" width="480" height="250">
+
+Spilhaus’s world ocean map in a square, an oblique aspect of the [Adams II projection](#geoAdams2).
 
 <a href="#geoStereographic" name="geoStereographic">#</a> d3.<b>geoStereographic</b>() · [Source](https://github.com/d3/d3-geo/blob/main/src/projection/stereographic.js) [\[d3-geo\]](https://github.com/d3/d3-geo/blob/main/README.md#geoStereographic), [Examples](https://observablehq.com/@d3/stereographic)
 <br><a href="#geoStereographicRaw" name="geoStereographicRaw">#</a> d3.<b>geoStereographicRaw</b>

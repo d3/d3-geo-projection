@@ -1,3 +1,5 @@
+export {default as geoAdams1, adams1Raw as geoAdams1Raw} from "./adams1.js";
+export {default as geoAdams2, adams2Raw as geoAdams2Raw} from "./adams2.js";
 export {default as geoAiry, airyRaw as geoAiryRaw} from "./airy.js";
 export {default as geoAitoff, aitoffRaw as geoAitoffRaw} from "./aitoff.js";
 export {default as geoArmadillo, armadilloRaw as geoArmadilloRaw} from "./armadillo.js";
@@ -80,6 +82,7 @@ export {default as geoRobinson, robinsonRaw as geoRobinsonRaw} from "./robinson.
 export {default as geoSatellite, satelliteRaw as geoSatelliteRaw} from "./satellite.js";
 export {default as geoSinuMollweide, sinuMollweideRaw as geoSinuMollweideRaw} from "./sinuMollweide.js";
 export {default as geoSinusoidal, sinusoidalRaw as geoSinusoidalRaw} from "./sinusoidal.js";
+export {default as geoSpilhaus} from "./spilhaus.js";
 export {default as geoStitch} from "./stitch.js";
 export {default as geoTimes, timesRaw as geoTimesRaw} from "./times.js";
 export {default as geoTwoPointAzimuthal, twoPointAzimuthalRaw as geoTwoPointAzimuthalRaw, twoPointAzimuthalUsa as geoTwoPointAzimuthalUsa} from "./twoPointAzimuthal.js";

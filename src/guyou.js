@@ -1,50 +1,26 @@
 import {geoProjection as projection} from "d3-geo";
-import {ellipticF, ellipticFi, ellipticJi} from "./elliptic.js";
-import {abs, atan, atan2, cos, exp, halfPi, log, pi, sin, sqrt, sqrt2, tan} from "./math.js";
+import {conformalSquare, conformalSquareInverse} from "./conformalSquare.js";
+import {atan2, cos, sin, sqrt, sqrt1_2, sqrt2} from "./math.js";
 import squareRaw from "./square.js";
 
+// Guyou's projection of the hemisphere |λ| <= π/2; see Snyder & Voxland, eqs. 225–226.
+// The output is scaled to keep the coordinates of the previous implementation.
+var scale = (2 + sqrt2) / 4;
+
 export function guyouRaw(lambda, phi) {
-  var k_ = (sqrt2 - 1) / (sqrt2 + 1),
-      k = sqrt(1 - k_ * k_),
-      K = ellipticF(halfPi, k * k),
-      f = -1,
-      psi = log(tan(pi / 4 + abs(phi) / 2)),
-      r = exp(f * psi) / sqrt(k_),
-      at = guyouComplexAtan(r * cos(f * lambda), r * sin(f * lambda)),
-      t = ellipticFi(at[0], at[1], k * k);
-  return [-t[1], (phi >= 0 ? 1 : -1) * (0.5 * K - t[0])];
-}
-
-function guyouComplexAtan(x, y) {
-  var x2 = x * x,
-      y_1 = y + 1,
-      t = 1 - x2 - y * y;
-  return [
-   0.5 * ((x >= 0 ? halfPi : -halfPi) - atan2(t, 2 * x)),
-    -0.25 * log(t * t + 4 * x2) +0.5 * log(y_1 * y_1 + x2)
-  ];
-}
-
-function guyouComplexDivide(a, b) {
-  var denominator = b[0] * b[0] + b[1] * b[1];
-  return [
-    (a[0] * b[0] + a[1] * b[1]) / denominator,
-    (a[1] * b[0] - a[0] * b[1]) / denominator
-  ];
+  var cosPhi = cos(phi),
+      u = cosPhi * sin(lambda),
+      v = sin(phi),
+      p = conformalSquare((u - v) * sqrt1_2, (u + v) * sqrt1_2, cosPhi * cos(lambda));
+  return [p[0] * scale, p[1] * scale];
 }
 
 guyouRaw.invert = function(x, y) {
-  var k_ = (sqrt2 - 1) / (sqrt2 + 1),
-      k = sqrt(1 - k_ * k_),
-      K = ellipticF(halfPi, k * k),
-      f = -1,
-      j = ellipticJi(0.5 * K - y, -x, k * k),
-      tn = guyouComplexDivide(j[0], j[1]),
-      lambda = atan2(tn[1], tn[0]) / f;
-  return [
-    lambda,
-    2 * atan(exp(0.5 / f * log(k_ * tn[0] * tn[0] + k_ * tn[1] * tn[1]))) - halfPi
-  ];
+  var p = conformalSquareInverse(x / scale, y / scale), // [cos a, cos b, cos c]
+      u = (p[0] + p[1]) * sqrt1_2,
+      v = (p[1] - p[0]) * sqrt1_2,
+      w = p[2];
+  return [atan2(u, w), atan2(v, sqrt(u * u + w * w))];
 };
 
 export default function() {

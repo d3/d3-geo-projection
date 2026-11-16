@@ -4,6 +4,8 @@ import {assertProjectionEqual} from "./asserts.js";
 const points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];
 
 for (const factory of [
+  d3.geoAdams1,
+  d3.geoAdams2,
   d3.geoAiry,
   d3.geoAitoff,
   d3.geoArmadillo,
@@ -84,6 +86,7 @@ for (const factory of [
   d3.geoSatellite,
   d3.geoSinuMollweide,
   d3.geoSinusoidal,
+  d3.geoSpilhaus,
   d3.geoTimes,
   // d3.geoTwoPointAzimuthal,
   // d3.geoTwoPointAzimuthalUsa, // see below
