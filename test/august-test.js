@@ -1,4 +1,5 @@
-import {geoAugust} from "../src/index.js";
+import {it} from "vitest";
+import {geoAugust} from "d3-geo-projection";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoAugust(point) returns the expected values", () => {

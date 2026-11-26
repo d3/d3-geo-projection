@@ -1,4 +1,5 @@
-import {geoWinkel3} from "../src/index.js";
+import {it} from "vitest";
+import {geoWinkel3} from "d3-geo-projection";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoWinkel3(point) returns the expected values", () => {

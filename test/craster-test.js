@@ -1,4 +1,5 @@
-import {geoCraster} from "../src/index.js";
+import {it} from "vitest";
+import {geoCraster} from "d3-geo-projection";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoCraster(point) returns the expected values", () => {

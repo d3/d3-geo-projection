@@ -1,6 +1,6 @@
 {
   "name": "d3-geo-projection",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Extended geographic projections for d3-geo.",
   "homepage": "https://d3js.org/d3-geo-projection/",
   "repository": {
@@ -32,15 +32,15 @@
   "files": [
     "bin/*.js",
     "dist/**/*.js",
-    "src/**/*.js"
+    "dist/**/*.mjs"
   ],
-  "module": "src/index.js",
-  "main": "src/index.js",
+  "module": "dist/d3-geo-projection.mjs",
+  "main": "dist/d3-geo-projection.mjs",
   "jsdelivr": "dist/d3-geo-projection.min.js",
   "unpkg": "dist/d3-geo-projection.min.js",
   "exports": {
     "umd": "./dist/d3-geo-projection.min.js",
-    "default": "./src/index.js"
+    "default": "./dist/d3-geo-projection.mjs"
   },
   "sideEffects": false,
   "dependencies": {
@@ -49,22 +49,25 @@
     "d3-geo": "1.12.0 - 3"
   },
   "devDependencies": {
-    "canvas": "2",
-    "d3-format": "1 - 3",
-    "eslint": "7",
-    "mocha": "9",
-    "pixelmatch": "5",
-    "pngjs": "4",
-    "rollup": "2",
-    "rollup-plugin-terser": "7",
-    "topojson-client": "3",
-    "us-atlas": "1",
-    "world-atlas": "1"
+    "@eslint/js": "^10.0.1",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^1.0.2",
+    "canvas": "^3.2.3",
+    "d3-format": "^3.1.2",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0",
+    "pixelmatch": "^8.0.0",
+    "pngjs": "^7.0.0",
+    "rollup": "^4.67.4",
+    "topojson-client": "^3.1.0",
+    "us-atlas": "^1.0.2",
+    "vitest": "^5.1.0",
+    "world-atlas": "^1.1.4"
   },
   "scripts": {
-    "test": "mocha 'test/**/*-test.js' && eslint src test",
-    "prepublishOnly": "rm -rf dist && yarn test && rollup -c && git push",
-    "postpublish": "git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v${npm_package_version%%.*}.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git add ${npm_package_name}.v${npm_package_version%%.*}.js ${npm_package_name}.v${npm_package_version%%.*}.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd -"
+    "test": "vitest",
+    "lint": "eslint",
+    "prepublishOnly": "rm -rf dist && rollup -c"
   },
   "engines": {
     "node": ">=12"
@@ -75,5 +78,10 @@
     "geoproject": "bin/geoproject.js",
     "geoquantize": "bin/geoquantize.js",
     "geostitch": "bin/geostitch.js"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "canvas"
+    ]
   }
 }

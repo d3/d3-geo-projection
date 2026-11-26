@@ -1,4 +1,5 @@
-import {geoCraig} from "../src/index.js";
+import {it} from "vitest";
+import {geoCraig} from "d3-geo-projection";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoCraig(point) returns the expected values", () => {

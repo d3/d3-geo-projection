@@ -1,4 +1,5 @@
-import {geoBoggs} from "../src/index.js";
+import {it} from "vitest";
+import {geoBoggs} from "d3-geo-projection";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoBoggs(point) returns the expected values", () => {

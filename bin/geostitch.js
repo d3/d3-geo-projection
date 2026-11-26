@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 import {program} from "commander";
-import {readFileSync} from "fs";
-import {dirname, resolve} from "path";
-import {fileURLToPath} from "url";
-import {geoStitch} from "../src/index.js";
+import {readFileSync} from "node:fs";
+import {dirname, resolve} from "node:path";
+import {fileURLToPath} from "node:url";
+import {geoStitch} from "d3-geo-projection";
 import read from "./read.js";
 import write from "./write.js";
 

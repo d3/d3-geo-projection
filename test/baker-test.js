@@ -1,4 +1,5 @@
-import {geoBaker} from "../src/index.js";
+import {it} from "vitest";
+import {geoBaker} from "d3-geo-projection";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoBaker(point) returns the expected values", () => {

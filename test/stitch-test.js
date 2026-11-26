@@ -1,6 +1,7 @@
-import assert from "assert";
-import {readFile} from "fs/promises";
-import {geoStitch} from "../src/index.js";
+import assert from "node:assert";
+import {readFile} from "node:fs/promises";
+import {it} from "vitest";
+import {geoStitch} from "d3-geo-projection";
 
 const epsilon = 1e-6;
 

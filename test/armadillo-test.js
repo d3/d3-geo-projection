@@ -1,5 +1,6 @@
-import assert from "assert";
-import {geoArmadillo} from "../src/index.js";
+import assert from "node:assert";
+import {it} from "vitest";
+import {geoArmadillo} from "d3-geo-projection";
 import {geoPath} from "d3-geo";
 import {assertProjectionEqual} from "./asserts.js";
 

@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
 import {program} from "commander";
-import {readFileSync} from "fs";
-import {dirname, resolve} from "path";
-import {fileURLToPath} from "url";
-import {createContext, Script} from "vm";
+import {readFileSync} from "node:fs";
+import {dirname, resolve} from "node:path";
+import {fileURLToPath} from "node:url";
+import {createContext, Script} from "node:vm";
 import * as d3Geo from "d3-geo";
-import * as d3GeoProjection from "../src/index.js";
-import {geoProject} from "../src/index.js";
+import * as d3GeoProjection from "d3-geo-projection";
+import {geoProject, geoQuantize} from "d3-geo-projection";
 import read from "./read.js";
 import write from "./write.js";
 

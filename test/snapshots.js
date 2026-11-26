@@ -1,5 +1,5 @@
 import {Canvas} from "canvas";
-import {readFile} from "fs/promises";
+import {readFile} from "node:fs/promises";
 import {feature} from "topojson-client";
 import {geoGraticule, geoPath} from "d3-geo";
 import {
@@ -97,7 +97,7 @@ import {
   geoWagner7,
   geoWiechel,
   geoWinkel3
-} from "../src/index.js";
+} from "d3-geo-projection";
 
 const width = 960;
 const height = 500;

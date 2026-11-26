@@ -1,5 +1,6 @@
-import assert from "assert";
-import {geoAitoff} from "../src/index.js";
+import assert from "node:assert";
+import {it} from "vitest";
+import {geoAitoff} from "d3-geo-projection";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoAitoff(point) returns the expected values", () => {
