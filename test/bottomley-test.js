@@ -1,4 +1,5 @@
-import {geoBottomley} from "../src/index.js";
+import {it} from "vitest";
+import {geoBottomley} from "d3-geo-projection";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoBottomley(point) returns the expected values", () => {

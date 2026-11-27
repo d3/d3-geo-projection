@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-import {EOL} from "os";
+import {EOL} from "node:os";
 import {program} from "commander";
 import {geoPath} from "d3-geo";
-import {readFileSync} from "fs";
-import {dirname, resolve} from "path";
-import {fileURLToPath} from "url";
-import {geoQuantize} from "../src/index.js";
+import {readFileSync} from "node:fs";
+import {dirname, resolve} from "node:path";
+import {fileURLToPath} from "node:url";
+import {geoQuantize} from "d3-geo-projection";
 import read from "./read.js";
 import write from "./write.js";
 

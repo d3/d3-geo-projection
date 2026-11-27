@@ -1,4 +1,5 @@
-import {geoBerghaus} from "../src/index.js";
+import {it} from "vitest";
+import {geoBerghaus} from "d3-geo-projection";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoBerghaus(point) returns the expected values", () => {

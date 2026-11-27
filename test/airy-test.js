@@ -1,4 +1,5 @@
-import {geoAiry} from "../src/index.js";
+import {it} from "vitest";
+import {geoAiry} from "d3-geo-projection";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoAiry(point) returns the expected values", () => {

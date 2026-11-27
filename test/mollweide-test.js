@@ -1,4 +1,5 @@
-import {geoMollweide} from "../src/index.js";
+import {it} from "vitest";
+import {geoMollweide} from "d3-geo-projection";
 import {assertProjectionEqual} from "./asserts.js";
 
 it("geoMollweide(point) returns the expected values", () => {

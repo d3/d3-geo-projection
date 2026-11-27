@@ -1,5 +1,6 @@
-import assert from "assert";
-import {geoQuantize} from "../src/index.js";
+import assert from "node:assert";
+import {it} from "vitest";
+import {geoQuantize} from "d3-geo-projection";
 
 it("quantize(Point) quantizes coordinates", () => {
   assert.deepStrictEqual(geoQuantize({

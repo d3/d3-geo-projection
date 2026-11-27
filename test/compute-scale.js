@@ -2,7 +2,7 @@
 
 import {format} from "d3-format";
 import {geoPath} from "d3-geo";
-import * as d3 from "../src/index.js";
+import * as d3 from "d3-geo-projection";
 
 const width = 960 - 1;
 const height = 500 - 1;

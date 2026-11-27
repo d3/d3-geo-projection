@@ -1,5 +1,5 @@
-import {createReadStream} from "fs";
-import {createInterface} from "readline";
+import {createReadStream} from "node:fs";
+import {createInterface} from "node:readline";
 
 export default function(file, newlineDelimited, callback) {
   var index = -1,

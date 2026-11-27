@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 import {program} from "commander";
-import {readFileSync} from "fs";
-import {dirname, resolve} from "path";
-import {fileURLToPath} from "url";
-import {geoQuantize} from "../src/index.js";
+import {readFileSync} from "node:fs";
+import {dirname, resolve} from "node:path";
+import {fileURLToPath} from "node:url";
+import {geoQuantize} from "d3-geo-projection";
 import read from "./read.js";
 import write from "./write.js";
 
@@ -36,7 +36,7 @@ reader.catch(error => {
   console.error(error.stack);
 });
 
-function quantize(d, i) {
+function quantize(d) {
   if (options.precision != null) d = geoQuantize(d, options.precision);
   return writer.write(JSON.stringify(d) + "\n");
 }

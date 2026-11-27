@@ -1,4 +1,4 @@
-import {createWriteStream} from "fs"
+import {createWriteStream} from "node:fs"
 
 function handleEpipe(error) {
   if (error.code === "EPIPE" || error.errno === "EPIPE") {

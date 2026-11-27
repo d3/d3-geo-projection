@@ -1,4 +1,5 @@
-import * as d3 from "../src/index.js";
+import {it} from "vitest";
+import * as d3 from "d3-geo-projection";
 import {assertProjectionEqual} from "./asserts.js";
 
 const points = [[0, 0], [30.3, 24.1], [-10, 42], [-2, -5], [0,-55]];

@@ -1,6 +1,7 @@
-import assert from "assert";
-import {mkdirSync, promises} from "fs";
-import {resolve} from "path";
+import assert from "node:assert";
+import {mkdirSync, promises} from "node:fs";
+import {resolve} from "node:path";
+import {it} from "vitest";
 import pixelmatch from "pixelmatch";
 import {PNG} from "pngjs";
 import * as snapshots from "./snapshots.js";

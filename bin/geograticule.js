@@ -2,9 +2,9 @@
 
 import {program} from "commander";
 import {geoGraticule} from "d3-geo";
-import {readFileSync} from "fs";
-import {dirname, resolve} from "path";
-import {fileURLToPath} from "url";
+import {readFileSync} from "node:fs";
+import {dirname, resolve} from "node:path";
+import {fileURLToPath} from "node:url";
 import write from "./write.js";
 
 const version = JSON.parse(readFileSync(resolve(dirname(fileURLToPath(import.meta.url)), "../package.json"))).version;
